@@ -31,7 +31,7 @@ npx shadcn@latest add field
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="field"
@@ -39,7 +39,7 @@ npx shadcn@latest add field
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -91,7 +91,7 @@ import {
 
 ### Field
 
-A single control with label, helper text, and validation.
+라벨·도움말·검증이 붙는 입력 한 칸입니다.
 
 ```text
 Field
@@ -103,7 +103,7 @@ Field
 
 ### FieldGroup
 
-Related fields in one group. Use `FieldSeparator` between sections when needed.
+관련된 입력을 한 그룹으로 묶습니다. 구획을 나눌 때는 사이에 `FieldSeparator`를 넣습니다.
 
 ```text
 FieldGroup
@@ -120,7 +120,7 @@ FieldGroup
 
 ### FieldSet
 
-Semantic grouping with a legend and description, usually containing a `FieldGroup`.
+legend와 설명으로 의미상 묶는 단위입니다. 보통 안에 `FieldGroup`이 들어갑니다.
 
 ```text
 FieldSet
@@ -139,7 +139,7 @@ FieldSet
 
 ## Anatomy
 
-The `Field` family is designed for composing accessible forms. A typical field is structured as follows:
+`Field` 계열은 접근성 있는 폼을 조합하기 위한 것입니다. 보통 이런 구조를 씁니다.
 
 ```tsx showLineNumbers
 <Field>
@@ -150,13 +150,13 @@ The `Field` family is designed for composing accessible forms. A typical field i
 </Field>
 ```
 
-- `Field` is the core wrapper for a single field.
-- `FieldContent` is a flex column that groups label and description. Not required if you have no description.
-- Wrap related fields with `FieldGroup`, and use `FieldSet` with `FieldLegend` for semantic grouping.
+- `Field`는 입력 한 칸을 감싸는 기본 래퍼입니다.
+- `FieldContent`는 라벨과 설명을 묶는 flex 세로 컨테이너입니다. 설명이 없다면 필요 없습니다.
+- 관련된 입력은 `FieldGroup`으로 묶고, 의미상 묶을 때는 `FieldSet`과 `FieldLegend`를 씁니다.
 
 ## Form
 
-See the [Form](/docs/forms) documentation for building forms with the `Field` component and [React Hook Form](/docs/forms/react-hook-form), [Tanstack Form](/docs/forms/tanstack-form), or [Formisch](/docs/forms/formisch).
+`Field` 컴포넌트와 [React Hook Form](/docs/forms/react-hook-form)·[Tanstack Form](/docs/forms/tanstack-form)·[Formisch](/docs/forms/formisch)로 폼을 만드는 방법은 [Form](/docs/forms) 문서를 보세요.
 
 ## Input
 
@@ -196,13 +196,13 @@ See the [Form](/docs/forms) documentation for building forms with the `Field` co
 
 ## Choice Card
 
-Wrap `Field` components inside `FieldLabel` to create selectable field groups. This works with `RadioItem`, `Checkbox` and `Switch` components.
+`Field`를 `FieldLabel` 안에 넣으면 고를 수 있는 입력 그룹이 됩니다. `RadioItem`·`Checkbox`·`Switch`와 함께 쓸 수 있습니다.
 
 <ComponentPreview styleName="base-nova" name="field-choice-card" />
 
 ## Field Group
 
-Stack `Field` components with `FieldGroup`. Add `FieldSeparator` to divide them.
+`FieldGroup`으로 `Field`를 쌓습니다. 사이를 나누려면 `FieldSeparator`를 넣습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -212,7 +212,7 @@ Stack `Field` components with `FieldGroup`. Add `FieldSeparator` to divide them.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -223,9 +223,9 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## Responsive Layout
 
-- **Vertical fields:** Default orientation stacks label, control, and helper text—ideal for mobile-first layouts.
-- **Horizontal fields:** Set `orientation="horizontal"` on `Field` to align the label and control side-by-side. Pair with `FieldContent` to keep descriptions aligned.
-- **Responsive fields:** Set `orientation="responsive"` for automatic column layouts inside container-aware parents. Apply `@container/field-group` classes on `FieldGroup` to switch orientations at specific breakpoints.
+- **세로 배치:** 기본값은 라벨·입력·도움말을 세로로 쌓습니다. 모바일을 먼저 생각한 화면에 알맞습니다.
+- **가로 배치:** `Field`에 `orientation="horizontal"`을 주면 라벨과 입력이 나란히 놓입니다. `FieldContent`와 함께 쓰면 설명 줄도 맞춰집니다.
+- **반응형 배치:** `orientation="responsive"`를 주면 컨테이너 크기에 따라 자동으로 열이 잡힙니다. `FieldGroup`에 `@container/field-group` 클래스를 붙이면 원하는 브레이크포인트에서 배치가 바뀝니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -235,9 +235,9 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## Validation and Errors
 
-- Add `data-invalid` to `Field` to switch the entire block into an error state.
-- Add `aria-invalid` on the input itself for assistive technologies.
-- Render `FieldError` immediately after the control or inside `FieldContent` to keep error messages aligned with the field.
+- `Field`에 `data-invalid`를 붙이면 블록 전체가 오류 상태로 바뀝니다.
+- 보조 기술을 위해 입력 자체에는 `aria-invalid`를 붙입니다.
+- 오류 메시지가 입력과 나란히 놓이도록 `FieldError`는 입력 바로 뒤나 `FieldContent` 안에 그립니다.
 
 ```tsx showLineNumbers /data-invalid/ /aria-invalid/
 <Field data-invalid>
@@ -249,15 +249,15 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## Accessibility
 
-- `FieldSet` and `FieldLegend` keep related controls grouped for keyboard and assistive tech users.
-- `Field` outputs `role="group"` so nested controls inherit labeling from `FieldLabel` and `FieldLegend` when combined.
-- Apply `FieldSeparator` sparingly to ensure screen readers encounter clear section boundaries.
+- `FieldSet`과 `FieldLegend`는 관련된 입력을 묶어 키보드 사용자와 보조 기술 사용자에게 도움을 줍니다.
+- `Field`는 `role="group"`을 내보내므로 함께 쓰면 안쪽 입력이 `FieldLabel`과 `FieldLegend`의 라벨을 물려받습니다.
+- `FieldSeparator`는 꼭 필요한 곳에만 써서 스크린 리더가 구획 경계를 분명하게 만나게 하세요.
 
 ## API Reference
 
 ### FieldSet
 
-Container that renders a semantic `fieldset` with spacing presets.
+여백 기본값이 들어간 의미상의 `fieldset`을 그리는 컨테이너입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -272,7 +272,7 @@ Container that renders a semantic `fieldset` with spacing presets.
 
 ### FieldLegend
 
-Legend element for a `FieldSet`. Switch to the `label` variant to align with label sizing.
+`FieldSet`의 legend 요소입니다. `label` variant로 바꾸면 라벨 크기에 맞춰집니다.
 
 | Prop        | Type                  | Default    |
 | ----------- | --------------------- | ---------- |
@@ -283,11 +283,11 @@ Legend element for a `FieldSet`. Switch to the `label` variant to align with lab
 <FieldLegend variant="label">Notification Preferences</FieldLegend>
 ```
 
-The `FieldLegend` has two variants: `legend` and `label`. The `label` variant applies label sizing and alignment. Handy if you have nested `FieldSet`.
+`FieldLegend` 에는 `legend`와 `label` 두 가지 variant가 있습니다. `label` variant는 라벨 크기와 정렬을 따릅니다. `FieldSet`이 중첩될 때 쓰기 좋습니다.
 
 ### FieldGroup
 
-Layout wrapper that stacks `Field` components and enables container queries for responsive orientations.
+`Field`를 쌓고 반응형 배치를 위해 컨테이너 쿼리를 켜 주는 배치 래퍼입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -302,7 +302,7 @@ Layout wrapper that stacks `Field` components and enables container queries for 
 
 ### Field
 
-The core wrapper for a single field. Provides orientation control, invalid state styling, and spacing.
+입력 한 칸을 감싸는 기본 래퍼입니다. 배치 방향, 오류 상태 스타일, 여백을 맡습니다.
 
 | Prop           | Type                                         | Default      |
 | -------------- | -------------------------------------------- | ------------ |
@@ -319,7 +319,7 @@ The core wrapper for a single field. Provides orientation control, invalid state
 
 ### FieldContent
 
-Flex column that groups control and descriptions when the label sits beside the control. Not required if you have no description.
+라벨이 입력 옆에 놓일 때 입력과 설명을 묶는 flex 세로 컨테이너입니다. 설명이 없다면 필요 없습니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -337,7 +337,7 @@ Flex column that groups control and descriptions when the label sits beside the 
 
 ### FieldLabel
 
-Label styled for both direct inputs and nested `Field` children.
+입력에 바로 붙일 때도, `Field`를 안에 중첩할 때도 쓸 수 있는 라벨입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -349,7 +349,7 @@ Label styled for both direct inputs and nested `Field` children.
 
 ### FieldTitle
 
-Renders a title with label styling inside `FieldContent`.
+`FieldContent` 안에서 라벨 스타일로 제목을 그립니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -364,7 +364,7 @@ Renders a title with label styling inside `FieldContent`.
 
 ### FieldDescription
 
-Helper text slot that automatically balances long lines in horizontal layouts.
+도움말 자리입니다. 가로 배치에서 긴 줄을 알아서 고르게 나눕니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -376,7 +376,7 @@ Helper text slot that automatically balances long lines in horizontal layouts.
 
 ### FieldSeparator
 
-Visual divider to separate sections inside a `FieldGroup`. Accepts optional inline content.
+`FieldGroup` 안의 구획을 나누는 구분선입니다. 가운데에 내용을 넣을 수도 있습니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -388,7 +388,7 @@ Visual divider to separate sections inside a `FieldGroup`. Accepts optional inli
 
 ### FieldError
 
-Accessible error container that accepts children or an `errors` array (e.g., from `react-hook-form`).
+접근성을 갖춘 오류 컨테이너입니다. 자식 요소나 `errors` 배열(예: `react-hook-form`)을 받습니다.
 
 | Prop        | Type                                       | Default |
 | ----------- | ------------------------------------------ | ------- |
@@ -399,6 +399,6 @@ Accessible error container that accepts children or an `errors` array (e.g., fro
 <FieldError errors={errors.username} />
 ```
 
-When the `errors` array contains multiple messages, the component renders a list automatically.
+`errors` 배열에 메시지가 여러 개면 자동으로 목록으로 그립니다.
 
-`FieldError` also accepts issues produced by any validator that implements [Standard Schema](https://standardschema.dev/), including Zod, Valibot, and ArkType. Pass the `issues` array from the schema result directly to render a unified error list across libraries.
+`FieldError`는 [Standard Schema](https://standardschema.dev/)를 구현한 검증 라이브러리가 만든 issue도 받습니다. Zod·Valibot·ArkType이 여기에 해당합니다. 스키마 결과의 `issues` 배열을 그대로 넘기면 라이브러리와 상관없이 같은 형태의 오류 목록이 그려집니다.
