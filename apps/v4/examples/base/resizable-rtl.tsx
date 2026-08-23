@@ -29,22 +29,6 @@ const translations: Translations = {
       three: "셋",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      one: "واحد",
-      two: "اثنان",
-      three: "ثلاثة",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      one: "אחד",
-      two: "שניים",
-      three: "שלושה",
-    },
-  },
 }
 
 export function ResizableRtl() {

@@ -44,31 +44,6 @@ const translations: Translations = {
       close: "닫기",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      open: "فتح",
-      editProfile: "تعديل الملف الشخصي",
-      description:
-        "قم بإجراء تغييرات على ملفك الشخصي هنا. انقر حفظ عند الانتهاء.",
-      name: "الاسم",
-      username: "اسم المستخدم",
-      save: "حفظ التغييرات",
-      close: "إغلاق",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      open: "פתח",
-      editProfile: "עריכת פרופיל",
-      description: "בצע שינויים בפרופיל שלך כאן. לחץ שמור כשתסיים.",
-      name: "שם",
-      username: "שם משתמש",
-      save: "שמור שינויים",
-      close: "סגור",
-    },
-  },
 }
 
 export function SheetRtl() {

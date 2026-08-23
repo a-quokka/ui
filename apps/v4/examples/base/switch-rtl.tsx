@@ -30,21 +30,6 @@ const translations: Translations = {
       description: "집중 모드가 기기 사이에 공유되고, 앱을 벗어나면 꺼집니다.",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      label: "المشاركة عبر الأجهزة",
-      description:
-        "يتم مشاركة التركيز عبر الأجهزة، ويتم إيقاف تشغيله عند مغادرة التطبيق.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      label: "שיתוף בין מכשירים",
-      description: "המיקוד משותף בין מכשירים, וכבה כשאתה עוזב את האפליקציה.",
-    },
-  },
 }
 
 export function SwitchRtl() {

@@ -41,27 +41,6 @@ const translations: Translations = {
       learnMore: "자세히 보기",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      title: "لا توجد مشاريع بعد",
-      description: "لم تقم بإنشاء أي مشاريع بعد. ابدأ بإنشاء مشروعك الأول.",
-      createProject: "إنشاء مشروع",
-      importProject: "استيراد مشروع",
-      learnMore: "تعرف على المزيد",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      title: "אין פרויקטים עדיין",
-      description:
-        "עדיין לא יצרת פרויקטים. התחל על ידי יצירת הפרויקט הראשון שלך.",
-      createProject: "צור פרויקט",
-      importProject: "ייבא פרויקט",
-      learnMore: "למד עוד",
-    },
-  },
 }
 
 export function EmptyRtl() {

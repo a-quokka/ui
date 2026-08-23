@@ -26,18 +26,6 @@ const translations: Translations = {
       tags: "태그",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      tags: "العلامات",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      tags: "תגיות",
-    },
-  },
 }
 
 export function ScrollAreaRtl() {

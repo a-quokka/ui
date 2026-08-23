@@ -54,36 +54,6 @@ const translations: Translations = {
       textareaDescription: "textarea 아래에 놓인 푸터입니다.",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      placeholder: "بحث...",
-      results: "١٢ نتيجة",
-      searching: "جاري البحث...",
-      saving: "جاري الحفظ...",
-      savingChanges: "جاري حفظ التغييرات...",
-      textareaLabel: "منطقة النص",
-      textareaPlaceholder: "اكتب تعليقًا...",
-      characterCount: "٠/٢٨٠",
-      post: "نشر",
-      textareaDescription: "تذييل موضع أسفل منطقة النص.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      placeholder: "חפש...",
-      results: "12 תוצאות",
-      searching: "מחפש...",
-      saving: "שומר...",
-      savingChanges: "שומר שינויים...",
-      textareaLabel: "אזור טקסט",
-      textareaPlaceholder: "כתוב תגובה...",
-      characterCount: "0/280",
-      post: "פרסם",
-      textareaDescription: "כותרת תחתונה ממוקמת מתחת לאזור הטקסט.",
-    },
-  },
 }
 
 export function InputGroupRtl() {

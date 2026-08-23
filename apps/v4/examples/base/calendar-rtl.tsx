@@ -18,14 +18,6 @@ const translations: Translations = {
     dir: "ltr",
     values: {},
   },
-  ar: {
-    dir: "rtl",
-    values: {},
-  },
-  he: {
-    dir: "rtl",
-    values: {},
-  },
 }
 
 const locales = {

@@ -32,26 +32,6 @@ const translations: Translations = {
       cancelled: "취소됨",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      placeholder: "اختر الحالة",
-      todo: "مهام",
-      inProgress: "قيد التنفيذ",
-      done: "منجز",
-      cancelled: "ملغي",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      placeholder: "בחר סטטוס",
-      todo: "לעשות",
-      inProgress: "בתהליך",
-      done: "הושלם",
-      cancelled: "בוטל",
-    },
-  },
 }
 
 export function NativeSelectRtl() {

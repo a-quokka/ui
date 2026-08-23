@@ -20,13 +20,11 @@
     ],
     "baseUrl": ".",
     "paths": {
-      // Temp aliases: registry sources import @/app/(create)/* (ships
-      // verbatim in published registry payloads) and a handful still use
-      // the legacy @/app/(app)/create/* path. The files actually live under
-      // app/(app)/(create)/*. Remove once the registry imports (and
-      // payloads) are migrated to the real path.
-      "@/app/(create)/*": ["./app/(app)/(create)/*"],
-      "@/app/(app)/create/*": ["./app/(app)/(create)/*"],
+      // 이 포크는 (create) 라우트 그룹을 걷어냈다. 다만 registry 블록 소스가
+      // @/app/(create)/* 경로를 그대로 담아 배포되므로(레지스트리 페이로드),
+      // 실제로 필요한 세 모듈만 lib/create-shims 로 옮기고 별칭을 다시 걸었다.
+      "@/app/(create)/*": ["./lib/create-shims/*"],
+      "@/app/(app)/create/*": ["./lib/create-shims/*"],
       "@/*": ["./*"],
       "react": ["./node_modules/@types/react"]
     }

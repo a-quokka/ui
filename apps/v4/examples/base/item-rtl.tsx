@@ -36,24 +36,6 @@ const translations: Translations = {
       verifiedTitle: "프로필 인증이 끝났습니다.",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      basicItem: "عنصر أساسي",
-      basicItemDesc: "عنصر بسيط يحتوي على عنوان ووصف.",
-      action: "إجراء",
-      verifiedTitle: "تم التحقق من ملفك الشخصي.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      basicItem: "פריט בסיסי",
-      basicItemDesc: "פריט פשוט עם כותרת ותיאור.",
-      action: "פעולה",
-      verifiedTitle: "הפרופיל שלך אומת.",
-    },
-  },
 }
 
 export function ItemRtl() {

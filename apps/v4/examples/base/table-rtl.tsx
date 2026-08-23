@@ -52,40 +52,6 @@ const translations: Translations = {
       total: "합계",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      caption: "قائمة بفواتيرك الأخيرة.",
-      invoice: "الفاتورة",
-      status: "الحالة",
-      method: "الطريقة",
-      amount: "المبلغ",
-      paid: "مدفوع",
-      pending: "قيد الانتظار",
-      unpaid: "غير مدفوع",
-      creditCard: "بطاقة ائتمانية",
-      paypal: "PayPal",
-      bankTransfer: "تحويل بنكي",
-      total: "المجموع",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      caption: "רשימת החשבוניות האחרונות שלך.",
-      invoice: "חשבונית",
-      status: "סטטוס",
-      method: "שיטה",
-      amount: "סכום",
-      paid: "שולם",
-      pending: "ממתין",
-      unpaid: "לא שולם",
-      creditCard: "כרטיס אשראי",
-      paypal: "PayPal",
-      bankTransfer: "העברה בנקאית",
-      total: 'סה"כ',
-    },
-  },
 }
 
 const invoices = [

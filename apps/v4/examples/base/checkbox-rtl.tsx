@@ -39,27 +39,6 @@ const translations: Translations = {
       enableNotificationsDescription: "알림은 언제든 켜고 끌 수 있습니다.",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      acceptTerms: "قبول الشروط والأحكام",
-      acceptTermsDescription: "بالنقر على هذا المربع، فإنك توافق على الشروط.",
-      enableNotifications: "تفعيل الإشعارات",
-      enableNotificationsDescription:
-        "يمكنك تفعيل أو إلغاء تفعيل الإشعارات في أي وقت.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      acceptTerms: "קבל תנאים והגבלות",
-      acceptTermsDescription:
-        "על ידי לחיצה על תיבת הסימון הזו, אתה מסכים לתנאים.",
-      enableNotifications: "הפעל התראות",
-      enableNotificationsDescription:
-        "אתה יכול להפעיל או להשבית התראות בכל עת.",
-    },
-  },
 }
 
 export function CheckboxRtl() {

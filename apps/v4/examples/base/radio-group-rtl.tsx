@@ -40,28 +40,6 @@ const translations: Translations = {
       compactDescription: "빽빽한 화면을 위한 최소 간격입니다.",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      default: "افتراضي",
-      defaultDescription: "تباعد قياسي لمعظم حالات الاستخدام.",
-      comfortable: "مريح",
-      comfortableDescription: "مساحة أكبر بين العناصر.",
-      compact: "مضغوط",
-      compactDescription: "تباعد أدنى للتخطيطات الكثيفة.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      default: "ברירת מחדל",
-      defaultDescription: "ריווח סטנדרטי לרוב מקרי השימוש.",
-      comfortable: "נוח",
-      comfortableDescription: "יותר מקום בין האלמנטים.",
-      compact: "קומפקטי",
-      compactDescription: "ריווח מינימלי לפריסות צפופות.",
-    },
-  },
 }
 
 export function RadioGroupRtl() {

@@ -839,14 +839,14 @@ export function DataTable<TData extends RowData>({
 
 ## Reusable Components
 
-데이터 테이블을 만들 때 쓸 만한 컴포넌트입니다. [Tasks](/examples/tasks) 데모에서 가져왔고, 이 데모는 features 객체와 그에 맞는 `TasksTableFeatures` 타입을 `data-table-features.ts` 모듈로 모든 컴포넌트가 나눠 씁니다. [Set up Table Features](#set-up-table-features)에서 만든 방식과 같습니다.
+데이터 테이블을 만들 때 쓸 만한 컴포넌트입니다. features 객체와 그에 맞는 `TasksTableFeatures` 타입을 `data-table-features.ts` 모듈로 모든 컴포넌트가 나눠 쓰는 구조이고, [Set up Table Features](#set-up-table-features)에서 만든 방식과 같습니다.
 
 ### Column header
 
 어떤 컬럼 헤더든 정렬·숨김이 가능해집니다.
 
 <ComponentSource
-  src="/app/(app)/examples/tasks/components/data-table-column-header.tsx"
+  src="/examples/data-table/data-table-column-header.tsx"
   title="components/data-table-column-header.tsx"
 />
 
@@ -865,7 +865,7 @@ export const columns = columnHelper.columns([
 페이지 크기와 선택 개수까지 포함한 페이지네이션 컨트롤을 붙입니다.
 
 <ComponentSource
-  src="/app/(app)/examples/tasks/components/data-table-pagination.tsx"
+  src="/examples/data-table/data-table-pagination.tsx"
   styleName="radix-nova"
 />
 
@@ -878,7 +878,7 @@ export const columns = columnHelper.columns([
 컬럼 표시 여부를 켜고 끄는 컴포넌트입니다.
 
 <ComponentSource
-  src="/app/(app)/examples/tasks/components/data-table-view-options.tsx"
+  src="/examples/data-table/data-table-view-options.tsx"
   styleName="radix-nova"
 />
 

@@ -25,38 +25,12 @@ const translations: Translations = {
       label: "업로드 진행률",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      label: "تقدم الرفع",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      label: "התקדמות העלאה",
-    },
-  },
-}
-
-function toArabicNumerals(num: number): string {
-  const arabicNumerals = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"]
-  return num
-    .toString()
-    .split("")
-    .map((digit) => arabicNumerals[parseInt(digit, 10)])
-    .join("")
 }
 
 export function ProgressRtl() {
   const { dir, t, language } = useTranslation(translations, "ko")
 
-  const formatNumber = (num: number): string => {
-    if (language === "ar") {
-      return toArabicNumerals(num)
-    }
-    return num.toString()
-  }
+  const formatNumber = (num: number): string => num.toString()
 
   return (
     <Progress value={56} className="w-full max-w-sm" dir={dir}>

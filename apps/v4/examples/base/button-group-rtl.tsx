@@ -66,38 +66,6 @@ const translations: Translations = {
       trash: "휴지통",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      archive: "أرشفة",
-      report: "تقرير",
-      snooze: "تأجيل",
-      markAsRead: "وضع علامة كمقروء",
-      addToCalendar: "إضافة إلى التقويم",
-      addToList: "إضافة إلى القائمة",
-      labelAs: "تصنيف كـ...",
-      personal: "شخصي",
-      work: "عمل",
-      other: "آخر",
-      trash: "سلة المهملات",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      archive: "ארכיון",
-      report: "דוח",
-      snooze: "דחה",
-      markAsRead: "סמן כנקרא",
-      addToCalendar: "הוסף ליומן",
-      addToList: "הוסף לרשימה",
-      labelAs: "תייג כ...",
-      personal: "אישי",
-      work: "עבודה",
-      other: "אחר",
-      trash: "פח",
-    },
-  },
 }
 
 export function ButtonGroupRtl() {

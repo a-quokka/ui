@@ -36,36 +36,6 @@ const translations: Translations = {
       legal: "법무",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      design: "تصميم",
-      engineering: "هندسة",
-      marketing: "تسويق",
-      product: "منتج",
-      research: "أبحاث",
-      sales: "مبيعات",
-      support: "دعم",
-      operations: "عمليات",
-      finance: "مالية",
-      legal: "قانوني",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      design: "עיצוב",
-      engineering: "הנדסה",
-      marketing: "שיווק",
-      product: "מוצר",
-      research: "מחקר",
-      sales: "מכירות",
-      support: "תמיכה",
-      operations: "תפעול",
-      finance: "כספים",
-      legal: "משפטי",
-    },
-  },
 }
 
 export function ScrollFadeRtl() {

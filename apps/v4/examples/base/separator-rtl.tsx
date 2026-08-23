@@ -27,24 +27,6 @@ const translations: Translations = {
         "원하는 대로 고치고 확장해 쓸 수 있는, 잘 다듬어진 컴포넌트 모음입니다.",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      title: "shadcn/ui",
-      subtitle: "الأساس لنظام التصميم الخاص بك",
-      description:
-        "مجموعة من المكونات المصممة بشكل جميل يمكنك تخصيصها وتوسيعها والبناء عليها.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      title: "shadcn/ui",
-      subtitle: "הבסיס למערכת העיצוב שלך",
-      description:
-        "סט של רכיבים מעוצבים בצורה יפה שאתה יכול להתאים אישית, להרחיב ולבנות עליהם.",
-    },
-  },
 }
 
 export function SeparatorRtl() {

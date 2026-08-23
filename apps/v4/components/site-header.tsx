@@ -1,18 +1,12 @@
-import Link from "next/link"
-import { PlusSignIcon } from "@hugeicons/core-free-icons"
-import { HugeiconsIcon } from "@hugeicons/react"
-
 import { getColors } from "@/lib/colors"
 import { siteConfig } from "@/lib/config"
 import { source } from "@/lib/source"
 import { CommandMenu } from "@/components/command-menu"
-import { DesignerActions } from "@/components/designer-actions"
 import { GitHubLink } from "@/components/github-link"
 import { MainNav } from "@/components/main-nav"
 import { MobileNav } from "@/components/mobile-nav"
 import { ModeSwitcher } from "@/components/mode-switcher"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
-import { Button } from "@/styles/radix-nova/ui/button"
 
 export function SiteHeader() {
   const colors = getColors()
@@ -43,16 +37,6 @@ export function SiteHeader() {
             <GitHubLink />
             <Separator orientation="vertical" />
             <ModeSwitcher />
-            <DesignerActions />
-            <div className="flex items-center gap-2 group-has-data-[slot=designer]/layout:hidden">
-              <Separator orientation="vertical" />
-              <Button asChild size="sm" className="h-[31px] rounded-lg">
-                <Link href="/create">
-                  <HugeiconsIcon icon={PlusSignIcon} />
-                  New
-                </Link>
-              </Button>
-            </div>
           </div>
         </div>
       </div>

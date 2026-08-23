@@ -7,14 +7,6 @@ export const legacyStyles = [
     name: "base-nova",
     title: "Base Nova",
   },
-  {
-    name: "radix-nova",
-    title: "Radix Nova",
-  },
-  {
-    name: "aria-nova",
-    title: "React Aria Nova",
-  },
 ] as const
 
 export type Style = (typeof legacyStyles)[number]

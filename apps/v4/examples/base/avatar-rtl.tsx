@@ -28,18 +28,6 @@ const translations: Translations = {
       moreUsers: "+3",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      moreUsers: "+٣",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      moreUsers: "+3",
-    },
-  },
 }
 
 export function AvatarRtl() {

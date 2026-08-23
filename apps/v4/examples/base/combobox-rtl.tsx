@@ -58,34 +58,6 @@ const translations: Translations = {
       health: "건강",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      label: "الفئات",
-      placeholder: "أضف فئات",
-      empty: "لم يتم العثور على فئات.",
-      technology: "التكنولوجيا",
-      design: "التصميم",
-      business: "الأعمال",
-      marketing: "التسويق",
-      education: "التعليم",
-      health: "الصحة",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      label: "קטגוריות",
-      placeholder: "הוסף קטגוריות",
-      empty: "לא נמצאו קטגוריות.",
-      technology: "טכנולוגיה",
-      design: "עיצוב",
-      business: "עסקים",
-      marketing: "שיווק",
-      education: "חינוך",
-      health: "בריאות",
-    },
-  },
 }
 
 export function ComboboxRtl() {

@@ -24,34 +24,12 @@ const translations: Translations = {
     dir: "ltr",
     values: {},
   },
-  ar: {
-    dir: "rtl",
-    values: {},
-  },
-  he: {
-    dir: "rtl",
-    values: {},
-  },
-}
-
-function toArabicNumerals(num: number): string {
-  const arabicNumerals = ["٠", "١", "٢", "٣", "٤", "٥", "٦", "٧", "٨", "٩"]
-  return num
-    .toString()
-    .split("")
-    .map((digit) => arabicNumerals[parseInt(digit, 10)])
-    .join("")
 }
 
 export function CarouselRtl() {
   const { dir, language } = useTranslation(translations, "ko")
 
-  const formatNumber = (num: number): string => {
-    if (language === "ar") {
-      return toArabicNumerals(num)
-    }
-    return num.toString()
-  }
+  const formatNumber = (num: number): string => num.toString()
 
   return (
     <Carousel

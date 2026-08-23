@@ -3,7 +3,6 @@
 import * as React from "react"
 import Link from "next/link"
 import { IconAlertCircle } from "@tabler/icons-react"
-import { I18nProvider } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 import {
@@ -14,7 +13,6 @@ import {
   type Translations,
 } from "@/components/language-selector"
 import { DirectionProvider as BaseDirectionProvider } from "@/registry/bases/base/ui/direction"
-import { DirectionProvider as RadixDirectionProvider } from "@/registry/bases/radix/ui/direction"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 import {
@@ -182,14 +180,6 @@ const directionTranslations: Translations<Record<string, never>> = {
     dir: "ltr",
     values: {},
   },
-  ar: {
-    dir: "rtl",
-    values: {},
-  },
-  he: {
-    dir: "rtl",
-    values: {},
-  },
 }
 
 function RtlLanguageSelector({ className }: { className?: string }) {
@@ -258,25 +248,8 @@ function DirectionProviderWrapper({
   const translation = useTranslation(directionTranslations, "ko")
   const dir = explicitDir ?? translation.dir
 
-  if (base === "base") {
-    return (
-      <BaseDirectionProvider direction={dir}>{children}</BaseDirectionProvider>
-    )
-  }
-
-  if (base === "aria") {
-    return (
-      <I18nProvider
-        locale={
-          explicitDir === "ltr"
-            ? "en"
-            : (translation.locale ?? translation.language)
-        }
-      >
-        {children}
-      </I18nProvider>
-    )
-  }
-
-  return <RadixDirectionProvider dir={dir}>{children}</RadixDirectionProvider>
+  // 이 포크는 base 한 벌만 담는다.
+  return (
+    <BaseDirectionProvider direction={dir}>{children}</BaseDirectionProvider>
+  )
 }

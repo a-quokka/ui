@@ -46,28 +46,6 @@ const translations: Translations = {
       breadcrumb: "Breadcrumb",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      home: "الرئيسية",
-      components: "المكونات",
-      documentation: "التوثيق",
-      themes: "السمات",
-      github: "جيت هاب",
-      breadcrumb: "مسار التنقل",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      home: "בית",
-      components: "רכיבים",
-      documentation: "תיעוד",
-      themes: "ערכות נושא",
-      github: "גיטהאב",
-      breadcrumb: "פירורי לחם",
-    },
-  },
 }
 
 export function BreadcrumbRtl() {

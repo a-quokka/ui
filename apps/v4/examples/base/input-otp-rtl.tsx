@@ -26,18 +26,6 @@ const translations: Translations = {
       verificationCode: "인증 번호",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      verificationCode: "رمز التحقق",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      verificationCode: "קוד אימות",
-    },
-  },
 }
 
 export function InputOTPRtl() {

@@ -10,7 +10,7 @@ import {
   PageHeaderDescription,
   PageHeaderHeading,
 } from "@/components/page-header"
-import { Button } from "@/styles/radix-nova/ui/button"
+import { Button } from "@/styles/base-nova/ui/button"
 
 import { CardsDemo } from "./cards"
 
@@ -53,10 +53,11 @@ export default function IndexPage() {
         <PageHeaderHeading className="max-w-4xl">{title}</PageHeaderHeading>
         <PageHeaderDescription>{description}</PageHeaderDescription>
         <PageActions>
-          <Button asChild className="h-[31px] rounded-lg">
-            <Link href="/create?preset=b27GcrRo">
-              Build Your Own <IconArrowRight data-icon="inline-end" />
-            </Link>
+          <Button
+            className="h-[31px] rounded-lg"
+            render={<Link href="/docs/components" />}
+          >
+            컴포넌트 보러 가기 <IconArrowRight data-icon="inline-end" />
           </Button>
         </PageActions>
       </PageHeader>

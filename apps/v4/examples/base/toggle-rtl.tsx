@@ -22,18 +22,6 @@ const translations: Translations = {
       label: "북마크",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      label: "إشارة مرجعية",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      label: "סימנייה",
-    },
-  },
 }
 
 export function ToggleRtl() {

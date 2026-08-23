@@ -42,32 +42,6 @@ const translations: Translations = {
       mobile: "모바일",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      january: "يناير",
-      february: "فبراير",
-      march: "مارس",
-      april: "أبريل",
-      may: "مايو",
-      june: "يونيو",
-      desktop: "سطح المكتب",
-      mobile: "الجوال",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      january: "ינואר",
-      february: "פברואר",
-      march: "מרץ",
-      april: "אפריל",
-      may: "מאי",
-      june: "יוני",
-      desktop: "מחשב",
-      mobile: "נייד",
-    },
-  },
 }
 
 const chartData = [

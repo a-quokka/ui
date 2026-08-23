@@ -29,20 +29,6 @@ const translations: Translations = {
       amount: "100,000원",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      title: "جاري معالجة الدفع...",
-      amount: "١٠٠.٠٠ دولار",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      title: "מעבד תשלום...",
-      amount: "$100.00",
-    },
-  },
 }
 
 export function SpinnerRtl() {

@@ -30,22 +30,6 @@ const translations: Translations = {
       description: "서비스에 대한 생각을 들려주세요.",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      label: "التعليقات",
-      placeholder: "تعليقاتك تساعدنا على التحسين...",
-      description: "شاركنا أفكارك حول خدمتنا.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      label: "משוב",
-      placeholder: "המשוב שלך עוזר לנו להשתפר...",
-      description: "שתף את מחשבותיך על השירות שלנו.",
-    },
-  },
 }
 
 export default function TextareaRtl() {

@@ -12,7 +12,7 @@ import {
   SelectValue,
 } from "@/styles/base-nova/ui/select"
 
-export type Language = "en" | "ko" | "ar" | "he"
+export type Language = "en" | "ko"
 
 export type Direction = "ltr" | "rtl"
 
@@ -32,9 +32,7 @@ export type Translations<
 
 export const languageOptions = [
   { value: "en", label: "English" },
-  { value: "ko", label: "Korean (한국어)" },
-  { value: "ar", label: "Arabic (العربية)" },
-  { value: "he", label: "Hebrew (עברית)" },
+  { value: "ko", label: "한국어" },
 ] as const
 
 type LanguageContextType = {

@@ -30,22 +30,6 @@ const translations: Translations = {
       description: "API 키는 암호화해 안전하게 보관합니다.",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      apiKey: "مفتاح API",
-      placeholder: "sk-...",
-      description: "مفتاح API الخاص بك مشفر ومخزن بأمان.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      apiKey: "מפתח API",
-      placeholder: "sk-...",
-      description: "מפתח ה-API שלך מוצפן ונשמר בצורה מאובטחת.",
-    },
-  },
 }
 
 export function InputRtl() {

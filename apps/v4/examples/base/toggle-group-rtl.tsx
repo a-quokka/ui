@@ -28,22 +28,6 @@ const translations: Translations = {
       cards: "카드",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      list: "قائمة",
-      grid: "شبكة",
-      cards: "بطاقات",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      list: "רשימה",
-      grid: "רשת",
-      cards: "כרטיסים",
-    },
-  },
 }
 
 export function ToggleGroupRtl() {

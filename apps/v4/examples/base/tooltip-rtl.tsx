@@ -36,30 +36,6 @@ const translations: Translations = {
       "inline-end": "Inline End",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      content: "إضافة إلى المكتبة",
-      "inline-start": "بداية السطر",
-      left: "يسار",
-      top: "أعلى",
-      bottom: "أسفل",
-      right: "يمين",
-      "inline-end": "نهاية السطر",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      content: "הוסף לספרייה",
-      "inline-start": "תחילת השורה",
-      left: "שמאל",
-      top: "למעלה",
-      bottom: "למטה",
-      right: "ימין",
-      "inline-end": "סוף השורה",
-    },
-  },
 }
 
 const physicalSides = ["left", "top", "bottom", "right"] as const

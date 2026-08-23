@@ -48,34 +48,6 @@ const translations: Translations = {
       loginWithGoogle: "Google로 로그인",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      title: "تسجيل الدخول إلى حسابك",
-      description: "أدخل بريدك الإلكتروني أدناه لتسجيل الدخول إلى حسابك",
-      signUp: "إنشاء حساب",
-      email: "البريد الإلكتروني",
-      emailPlaceholder: "m@example.com",
-      password: "كلمة المرور",
-      forgotPassword: "نسيت كلمة المرور؟",
-      login: "تسجيل الدخول",
-      loginWithGoogle: "تسجيل الدخول باستخدام Google",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      title: "התחבר לחשבון שלך",
-      description: "הזן את האימייל שלך למטה כדי להתחבר לחשבון שלך",
-      signUp: "הירשם",
-      email: "אימייל",
-      emailPlaceholder: "m@example.com",
-      password: "סיסמה",
-      forgotPassword: "שכחת את הסיסמה?",
-      login: "התחבר",
-      loginWithGoogle: "התחבר עם Google",
-    },
-  },
 }
 
 export function CardRtl() {

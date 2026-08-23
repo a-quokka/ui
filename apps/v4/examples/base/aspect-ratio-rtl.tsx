@@ -22,18 +22,6 @@ const translations: Translations = {
       caption: "멋진 풍경",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      caption: "منظر طبيعي جميل",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      caption: "נוף יפה",
-    },
-  },
 }
 
 export function AspectRatioRtl() {

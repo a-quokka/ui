@@ -9,13 +9,12 @@ import { ActiveThemeProvider } from "@/components/active-theme"
 import { Analytics } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/registry/bases/base/ui/sonner"
 import { TooltipProvider as BaseTooltipProvider } from "@/registry/bases/base/ui/tooltip"
-import { Toaster } from "@/registry/bases/radix/ui/sonner"
-import { TooltipProvider as RadixTooltipProvider } from "@/registry/bases/radix/ui/tooltip"
 import { Toaster as BaseToaster } from "@/styles/base-nova/ui/toast"
 
 import "@/app/globals.css"
-import "@/app/(app)/(typeset)/typeset.css"
+import "@/app/typeset.css"
 
 export const metadata: Metadata = {
   title: {
@@ -110,11 +109,9 @@ export default function RootLayout({
           <ActiveThemeProvider>
             <NuqsAdapter>
               <BaseTooltipProvider delay={0}>
-                <RadixTooltipProvider delayDuration={0}>
-                  {children}
-                  <Toaster position="top-center" />
-                  <BaseToaster />
-                </RadixTooltipProvider>
+                {children}
+                <Toaster position="top-center" />
+                <BaseToaster />
               </BaseTooltipProvider>
             </NuqsAdapter>
             <TailwindIndicator />

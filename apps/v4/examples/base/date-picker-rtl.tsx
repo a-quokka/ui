@@ -34,18 +34,6 @@ const translations: Translations = {
       placeholder: "날짜 선택",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      placeholder: "اختر تاريخًا",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      placeholder: "בחר תאריך",
-    },
-  },
 }
 
 const dayPickerLocales = {

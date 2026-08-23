@@ -39,30 +39,6 @@ const translations: Translations = {
       itemsDescription: "스튜디오 헤드폰 2개",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      orderNumber: "الطلب #4189",
-      status: "الحالة",
-      shipped: "تم الشحن",
-      shippingAddress: "عنوان الشحن",
-      address: "100 Market St, San Francisco",
-      items: "العناصر",
-      itemsDescription: "2x سماعات الاستوديو",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      orderNumber: "הזמנה #4189",
-      status: "סטטוס",
-      shipped: "נשלח",
-      shippingAddress: "כתובת משלוח",
-      address: "100 Market St, San Francisco",
-      items: "פריטים",
-      itemsDescription: "2x אוזניות סטודיו",
-    },
-  },
 }
 
 export function CollapsibleRtl() {

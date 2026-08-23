@@ -54,34 +54,6 @@ const translations: Translations = {
       billing: "결제",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      placeholder: "اكتب أمرًا أو ابحث...",
-      empty: "لم يتم العثور على نتائج.",
-      suggestions: "اقتراحات",
-      calendar: "التقويم",
-      searchEmoji: "البحث عن الرموز التعبيرية",
-      calculator: "الآلة الحاسبة",
-      settings: "الإعدادات",
-      profile: "الملف الشخصي",
-      billing: "الفوترة",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      placeholder: "הקלד פקודה או חפש...",
-      empty: "לא נמצאו תוצאות.",
-      suggestions: "הצעות",
-      calendar: "לוח שנה",
-      searchEmoji: "חפש אמוג'י",
-      calculator: "מחשבון",
-      settings: "הגדרות",
-      profile: "פרופיל",
-      billing: "חיוב",
-    },
-  },
 }
 
 export function CommandRtl() {

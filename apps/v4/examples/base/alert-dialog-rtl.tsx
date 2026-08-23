@@ -54,38 +54,6 @@ const translations: Translations = {
       allow: "허용",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      showDialog: "إظهار الحوار",
-      showDialogSm: "إظهار الحوار (صغير)",
-      title: "هل أنت متأكد تمامًا؟",
-      description:
-        "لا يمكن التراجع عن هذا الإجراء. سيؤدي هذا إلى حذف حسابك نهائيًا من خوادمنا.",
-      cancel: "إلغاء",
-      continue: "متابعة",
-      smallTitle: "السماح للملحق بالاتصال؟",
-      smallDescription: "هل تريد السماح لملحق USB بالاتصال بهذا الجهاز؟",
-      dontAllow: "عدم السماح",
-      allow: "السماح",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      showDialog: "הצג דיאלוג",
-      showDialogSm: "הצג דיאלוג (קטן)",
-      title: "האם אתה בטוח לחלוטין?",
-      description:
-        "פעולה זו לא ניתנת לביטול. זה ימחק לצמיתות את החשבון שלך מהשרתים שלנו.",
-      cancel: "ביטול",
-      continue: "המשך",
-      smallTitle: "לאפשר להתקן להתחבר?",
-      smallDescription: "האם אתה רוצה לאפשר להתקן USB להתחבר למכשיר זה?",
-      dontAllow: "אל תאפשר",
-      allow: "אפשר",
-    },
-  },
 }
 
 export function AlertDialogRtl() {

@@ -32,28 +32,6 @@ const translations: Translations = {
       bookmark: "북마크",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      badge: "شارة",
-      secondary: "ثانوي",
-      destructive: "مدمر",
-      outline: "مخطط",
-      verified: "متحقق",
-      bookmark: "إشارة مرجعية",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      badge: "תג",
-      secondary: "משני",
-      destructive: "הרסני",
-      outline: "קווי מתאר",
-      verified: "מאומת",
-      bookmark: "סימנייה",
-    },
-  },
 }
 
 export function BadgeRtl() {

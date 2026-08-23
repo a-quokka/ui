@@ -45,31 +45,6 @@ const translations: Translations = {
       saveChanges: "저장",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      openDialog: "فتح الحوار",
-      editProfile: "تعديل الملف الشخصي",
-      description:
-        "قم بإجراء تغييرات على ملفك الشخصي هنا. انقر فوق حفظ عند الانتهاء.",
-      name: "الاسم",
-      username: "اسم المستخدم",
-      cancel: "إلغاء",
-      saveChanges: "حفظ التغييرات",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      openDialog: "פתח דיאלוג",
-      editProfile: "ערוך פרופיל",
-      description: "בצע שינויים בפרופיל שלך כאן. לחץ על שמור כשתסיים.",
-      name: "שם",
-      username: "שם משתמש",
-      cancel: "בטל",
-      saveChanges: "שמור שינויים",
-    },
-  },
 }
 
 export function DialogRtl() {

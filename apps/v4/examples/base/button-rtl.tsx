@@ -28,24 +28,6 @@ const translations: Translations = {
       loading: "불러오는 중",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      button: "زر",
-      submit: "إرسال",
-      delete: "حذف",
-      loading: "جاري التحميل",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      button: "כפתור",
-      submit: "שלח",
-      delete: "מחק",
-      loading: "טוען",
-    },
-  },
 }
 
 export function ButtonRtl() {

@@ -22,18 +22,6 @@ const translations: Translations = {
       label: "이용약관에 동의합니다",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      label: "قبول الشروط والأحكام",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      label: "קבל תנאים והגבלות",
-    },
-  },
 }
 
 export function LabelRtl() {

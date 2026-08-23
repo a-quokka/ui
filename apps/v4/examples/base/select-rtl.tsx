@@ -51,38 +51,6 @@ const translations: Translations = {
       spinach: "시금치",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      selectFruit: "اختر فاكهة",
-      fruits: "الفواكه",
-      apple: "تفاح",
-      banana: "موز",
-      blueberry: "توت أزرق",
-      grapes: "عنب",
-      pineapple: "أناناس",
-      vegetables: "الخضروات",
-      carrot: "جزر",
-      broccoli: "بروكلي",
-      spinach: "سبانخ",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      selectFruit: "בחר פרי",
-      fruits: "פירות",
-      apple: "תפוח",
-      banana: "בננה",
-      blueberry: "אוכמניה",
-      grapes: "ענבים",
-      pineapple: "אננס",
-      vegetables: "ירקות",
-      carrot: "גזר",
-      broccoli: "ברוקולי",
-      spinach: "תרד",
-    },
-  },
 }
 
 export function SelectRtl() {

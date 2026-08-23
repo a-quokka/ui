@@ -1,4 +1,4 @@
-import { MessageScrollerDemo } from "@/examples/radix/message-scroller-demo"
+import { MessageScrollerDemo } from "@/examples/base/message-scroller-demo"
 
 import { AccountAccess } from "./account-access"
 import { AnalyticsCard } from "./analytics-card"

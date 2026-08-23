@@ -36,28 +36,6 @@ const translations: Translations = {
         "다크 모드를 지원합니다. 계정 설정에서 켤 수 있습니다.",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      paymentTitle: "تم الدفع بنجاح",
-      paymentDescription:
-        "تمت معالجة دفعتك البالغة 29.99 دولارًا. تم إرسال إيصال إلى عنوان بريدك الإلكتروني.",
-      featureTitle: "ميزة جديدة متاحة",
-      featureDescription:
-        "لقد أضفنا دعم الوضع الداكن. يمكنك تفعيله في إعدادات حسابك.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      paymentTitle: "התשלום בוצע בהצלחה",
-      paymentDescription:
-        "התשלום שלך בסך 29.99 דולר עובד. קבלה נשלחה לכתובת האימייל שלך.",
-      featureTitle: "תכונה חדשה זמינה",
-      featureDescription:
-        "הוספנו תמיכה במצב כהה. אתה יכול להפעיל אותו בהגדרות החשבון שלך.",
-    },
-  },
 }
 
 const alerts = [
