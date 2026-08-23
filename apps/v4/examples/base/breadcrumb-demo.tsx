@@ -23,7 +23,7 @@ export function BreadcrumbDemo() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink render={<a href="#" />}>Home</BreadcrumbLink>
+          <BreadcrumbLink render={<a href="#" />}>홈</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -32,12 +32,12 @@ export function BreadcrumbDemo() {
               render={<Button size="icon-sm" variant="ghost" />}
             >
               <BreadcrumbEllipsis />
-              <span className="sr-only">Toggle menu</span>
+              <span className="sr-only">메뉴 열기</span>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuGroup>
-                <DropdownMenuItem>Documentation</DropdownMenuItem>
-                <DropdownMenuItem>Themes</DropdownMenuItem>
+                <DropdownMenuItem>문서</DropdownMenuItem>
+                <DropdownMenuItem>테마</DropdownMenuItem>
                 <DropdownMenuItem>GitHub</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>
@@ -45,7 +45,7 @@ export function BreadcrumbDemo() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink render={<a href="#" />}>Components</BreadcrumbLink>
+          <BreadcrumbLink render={<a href="#" />}>컴포넌트</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>

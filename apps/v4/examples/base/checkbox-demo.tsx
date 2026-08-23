@@ -16,7 +16,7 @@ export default function CheckboxDemo() {
     <FieldGroup className="max-w-sm">
       <Field orientation="horizontal">
         <Checkbox id="terms-checkbox" name="terms-checkbox" />
-        <Label htmlFor="terms-checkbox">Accept terms and conditions</Label>
+        <Label htmlFor="terms-checkbox">이용약관에 동의합니다</Label>
       </Field>
       <Field orientation="horizontal">
         <Checkbox
@@ -26,24 +26,24 @@ export default function CheckboxDemo() {
         />
         <FieldContent>
           <FieldLabel htmlFor="terms-checkbox-2">
-            Accept terms and conditions
+            이용약관에 동의합니다
           </FieldLabel>
           <FieldDescription>
-            By clicking this checkbox, you agree to the terms.
+            이 체크박스를 누르면 약관에 동의하는 것으로 봅니다.
           </FieldDescription>
         </FieldContent>
       </Field>
       <Field orientation="horizontal" data-disabled>
         <Checkbox id="toggle-checkbox" name="toggle-checkbox" disabled />
-        <FieldLabel htmlFor="toggle-checkbox">Enable notifications</FieldLabel>
+        <FieldLabel htmlFor="toggle-checkbox">알림 켜기</FieldLabel>
       </Field>
       <FieldLabel>
         <Field orientation="horizontal">
           <Checkbox id="toggle-checkbox-2" name="toggle-checkbox-2" />
           <FieldContent>
-            <FieldTitle>Enable notifications</FieldTitle>
+            <FieldTitle>알림 켜기</FieldTitle>
             <FieldDescription>
-              You can enable or disable notifications at any time.
+              알림은 언제든 켜고 끌 수 있습니다.
             </FieldDescription>
           </FieldContent>
         </Field>

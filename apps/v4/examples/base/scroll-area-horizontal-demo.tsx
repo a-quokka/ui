@@ -32,17 +32,17 @@ export function ScrollAreaHorizontalDemo() {
             <div className="overflow-hidden rounded-md">
               <Image
                 src={artwork.art}
-                alt={`Photo by ${artwork.artist}`}
+                alt={`${artwork.artist} 의 사진`}
                 className="aspect-[3/4] h-fit w-fit object-cover"
                 width={300}
                 height={400}
               />
             </div>
             <figcaption className="pt-2 text-xs text-muted-foreground">
-              Photo by{" "}
               <span className="font-semibold text-foreground">
                 {artwork.artist}
-              </span>
+              </span>{" "}
+              의 사진
             </figcaption>
           </figure>
         ))}

@@ -9,24 +9,24 @@ export default function AccordionDemo() {
   return (
     <Accordion defaultValue={["shipping"]} className="max-w-lg">
       <AccordionItem value="shipping">
-        <AccordionTrigger>What are your shipping options?</AccordionTrigger>
+        <AccordionTrigger>배송 방법은 어떤 게 있나요?</AccordionTrigger>
         <AccordionContent>
-          We offer standard (5-7 days), express (2-3 days), and overnight
-          shipping. Free shipping on international orders.
+          일반(5~7일), 빠른 배송(2~3일), 익일 배송을 제공합니다. 해외 주문은
+          배송비가 무료입니다.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="returns">
-        <AccordionTrigger>What is your return policy?</AccordionTrigger>
+        <AccordionTrigger>반품 정책이 어떻게 되나요?</AccordionTrigger>
         <AccordionContent>
-          Returns accepted within 30 days. Items must be unused and in original
-          packaging. Refunds processed within 5-7 business days.
+          30일 안에 반품할 수 있습니다. 사용하지 않은 상품이어야 하고 원래 포장
+          그대로여야 합니다. 환불은 영업일 기준 5~7일 안에 처리됩니다.
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="support">
-        <AccordionTrigger>How can I contact customer support?</AccordionTrigger>
+        <AccordionTrigger>고객 지원은 어떻게 받나요?</AccordionTrigger>
         <AccordionContent>
-          Reach us via email, live chat, or phone. We respond within 24 hours
-          during business days.
+          이메일, 실시간 채팅, 전화로 문의하세요. 영업일 기준 24시간 안에
+          답변드립니다.
         </AccordionContent>
       </AccordionItem>
     </Accordion>

@@ -78,42 +78,42 @@ const data = {
     {
       name: "Acme Inc",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: "엔터프라이즈",
     },
     {
       name: "Acme Corp.",
       logo: AudioWaveform,
-      plan: "Startup",
+      plan: "스타트업",
     },
     {
       name: "Evil Corp.",
       logo: Command,
-      plan: "Free",
+      plan: "무료",
     },
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "플레이그라운드",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "기록",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "즐겨찾기",
           url: "#",
         },
         {
-          title: "Settings",
+          title: "설정",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "모델",
       url: "#",
       icon: Bot,
       items: [
@@ -132,47 +132,47 @@ const data = {
       ],
     },
     {
-      title: "Documentation",
+      title: "문서",
       url: "#",
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
+          title: "소개",
           url: "#",
         },
         {
-          title: "Get Started",
+          title: "시작하기",
           url: "#",
         },
         {
-          title: "Tutorials",
+          title: "튜토리얼",
           url: "#",
         },
         {
-          title: "Changelog",
+          title: "변경 기록",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "설정",
       url: "#",
       icon: Settings2,
       items: [
         {
-          title: "General",
+          title: "일반",
           url: "#",
         },
         {
-          title: "Team",
+          title: "팀",
           url: "#",
         },
         {
-          title: "Billing",
+          title: "결제",
           url: "#",
         },
         {
-          title: "Limits",
+          title: "한도",
           url: "#",
         },
       ],
@@ -180,17 +180,17 @@ const data = {
   ],
   projects: [
     {
-      name: "Design Engineering",
+      name: "디자인 엔지니어링",
       url: "#",
       icon: Frame,
     },
     {
-      name: "Sales & Marketing",
+      name: "세일즈 · 마케팅",
       url: "#",
       icon: PieChart,
     },
     {
-      name: "Travel",
+      name: "출장",
       url: "#",
       icon: Map,
     },
@@ -242,7 +242,7 @@ function TeamSwitcher({
           >
             <DropdownMenuGroup>
               <DropdownMenuLabel className="text-xs text-muted-foreground">
-                Teams
+                팀
               </DropdownMenuLabel>
               {teams.map((team, index) => (
                 <DropdownMenuItem
@@ -264,9 +264,7 @@ function TeamSwitcher({
                 <div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
                   <Plus className="size-4" />
                 </div>
-                <div className="font-medium text-muted-foreground">
-                  Add team
-                </div>
+                <div className="font-medium text-muted-foreground">팀 추가</div>
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
@@ -292,7 +290,7 @@ function NavMain({
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>플랫폼</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
@@ -340,7 +338,7 @@ function NavProjects({
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Projects</SidebarGroupLabel>
+      <SidebarGroupLabel>프로젝트</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
@@ -351,7 +349,7 @@ function NavProjects({
             <DropdownMenu>
               <DropdownMenuTrigger render={<SidebarMenuAction showOnHover />}>
                 <MoreHorizontal />
-                <span className="sr-only">More</span>
+                <span className="sr-only">더 보기</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 className="w-48 rounded-lg"
@@ -360,16 +358,16 @@ function NavProjects({
               >
                 <DropdownMenuItem>
                   <Folder className="text-muted-foreground" />
-                  <span>View Project</span>
+                  <span>프로젝트 보기</span>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Forward className="text-muted-foreground" />
-                  <span>Share Project</span>
+                  <span>프로젝트 공유</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <Trash2 className="text-muted-foreground" />
-                  <span>Delete Project</span>
+                  <span>프로젝트 삭제</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -378,7 +376,7 @@ function NavProjects({
         <SidebarMenuItem>
           <SidebarMenuButton className="text-sidebar-foreground/70">
             <MoreHorizontal className="text-sidebar-foreground/70" />
-            <span>More</span>
+            <span>더 보기</span>
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarMenu>
@@ -443,29 +441,29 @@ function NavUser({
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <Sparkles />
-                Upgrade to Pro
+                Pro 로 업그레이드
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <BadgeCheck />
-                Account
+                계정
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <CreditCard />
-                Billing
+                결제
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <Bell />
-                Notifications
+                알림
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <LogOut />
-                Log out
+                로그아웃
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>

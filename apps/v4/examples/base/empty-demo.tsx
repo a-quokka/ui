@@ -18,15 +18,14 @@ export default function EmptyDemo() {
         <EmptyMedia variant="icon">
           <IconFolderCode />
         </EmptyMedia>
-        <EmptyTitle>No Projects Yet</EmptyTitle>
+        <EmptyTitle>아직 프로젝트가 없습니다</EmptyTitle>
         <EmptyDescription>
-          You haven&apos;t created any projects yet. Get started by creating
-          your first project.
+          만든 프로젝트가 아직 없습니다. 첫 프로젝트를 만들어 보세요.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent className="flex-row justify-center gap-2">
-        <Button>Create Project</Button>
-        <Button variant="outline">Import Project</Button>
+        <Button>프로젝트 만들기</Button>
+        <Button variant="outline">프로젝트 가져오기</Button>
       </EmptyContent>
       <Button
         variant="link"
@@ -35,7 +34,7 @@ export default function EmptyDemo() {
         size="sm"
         nativeButton={false}
       >
-        Learn More <ArrowUpRightIcon />
+        자세히 보기 <ArrowUpRightIcon />
       </Button>
     </Empty>
   )

@@ -11,7 +11,7 @@ export function InputDemo() {
       <FieldLabel htmlFor="input-demo-api-key">API Key</FieldLabel>
       <Input id="input-demo-api-key" type="password" placeholder="sk-..." />
       <FieldDescription>
-        Your API key is encrypted and stored securely.
+        API 키는 암호화해 안전하게 보관합니다.
       </FieldDescription>
     </Field>
   )

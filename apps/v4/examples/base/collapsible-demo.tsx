@@ -20,26 +20,26 @@ export default function CollapsibleDemo() {
       className="flex w-[350px] flex-col gap-2"
     >
       <div className="flex items-center justify-between gap-4 px-4">
-        <h4 className="text-sm font-semibold">Order #4189</h4>
+        <h4 className="text-sm font-semibold">주문 #4189</h4>
         <CollapsibleTrigger
           render={<Button variant="ghost" size="icon" className="size-8" />}
         >
           <ChevronsUpDown />
-          <span className="sr-only">Toggle details</span>
+          <span className="sr-only">상세 보기</span>
         </CollapsibleTrigger>
       </div>
       <div className="flex items-center justify-between rounded-md border px-4 py-2 text-sm">
-        <span className="text-muted-foreground">Status</span>
-        <span className="font-medium">Shipped</span>
+        <span className="text-muted-foreground">상태</span>
+        <span className="font-medium">배송 중</span>
       </div>
       <CollapsibleContent className="flex flex-col gap-2">
         <div className="rounded-md border px-4 py-2 text-sm">
-          <p className="font-medium">Shipping address</p>
-          <p className="text-muted-foreground">100 Market St, San Francisco</p>
+          <p className="font-medium">배송지</p>
+          <p className="text-muted-foreground">서울시 중구 세종대로 110</p>
         </div>
         <div className="rounded-md border px-4 py-2 text-sm">
-          <p className="font-medium">Items</p>
-          <p className="text-muted-foreground">2x Studio Headphones</p>
+          <p className="font-medium">상품</p>
+          <p className="text-muted-foreground">스튜디오 헤드폰 2개</p>
         </div>
       </CollapsibleContent>
     </Collapsible>

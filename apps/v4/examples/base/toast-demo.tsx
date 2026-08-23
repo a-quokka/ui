@@ -6,10 +6,10 @@ import { toast } from "@/styles/base-nova/ui/toast"
 export function ToastDemo() {
   function showToast() {
     const id = toast.add({
-      title: "Event created",
-      description: "Sunday, December 3 at 9:00 AM",
+      title: "일정을 만들었습니다",
+      description: "12월 3일 일요일 오전 9시",
       actionProps: {
-        children: "Undo",
+        children: "실행 취소",
         onClick() {
           toast.close(id)
         },
@@ -19,7 +19,7 @@ export function ToastDemo() {
 
   return (
     <Button variant="outline" onClick={showToast}>
-      Show Toast
+      토스트 띄우기
     </Button>
   )
 }

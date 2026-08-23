@@ -10,22 +10,22 @@ export function MarkerDemo() {
         <MarkerIcon>
           <GitBranchIcon />
         </MarkerIcon>
-        <MarkerContent>Switched to a new branch</MarkerContent>
+        <MarkerContent>새 브랜치로 옮겼습니다</MarkerContent>
       </Marker>
       <Marker role="status">
         <MarkerIcon>
           <Spinner />
         </MarkerIcon>
-        <MarkerContent className="shimmer">Thinking...</MarkerContent>
+        <MarkerContent className="shimmer">생각하는 중...</MarkerContent>
       </Marker>
       <Marker variant="separator">
-        <MarkerContent>Conversation compacted</MarkerContent>
+        <MarkerContent>대화를 정리했습니다</MarkerContent>
       </Marker>
       <Marker>
         <MarkerIcon>
           <SearchIcon />
         </MarkerIcon>
-        <MarkerContent>Explored 4 files</MarkerContent>
+        <MarkerContent>파일 4개를 살펴봤습니다</MarkerContent>
       </Marker>
     </div>
   )

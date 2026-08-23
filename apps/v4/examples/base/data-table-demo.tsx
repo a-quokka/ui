@@ -111,21 +111,21 @@ export const columns = columnHelper.columns([
           table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected()
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
+        aria-label="전체 선택"
       />
     ),
     cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
+        aria-label="행 선택"
       />
     ),
     enableSorting: false,
     enableHiding: false,
   }),
   columnHelper.accessor("status", {
-    header: "Status",
+    header: "상태",
     cell: ({ row }) => (
       <div className="capitalize">{row.getValue("status")}</div>
     ),
@@ -137,7 +137,7 @@ export const columns = columnHelper.columns([
           variant="ghost"
           onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
         >
-          Email
+          이메일
           <ArrowUpDown />
         </Button>
       )
@@ -145,7 +145,7 @@ export const columns = columnHelper.columns([
     cell: ({ row }) => <div className="lowercase">{row.getValue("email")}</div>,
   }),
   columnHelper.accessor("amount", {
-    header: () => <div className="text-right">Amount</div>,
+    header: () => <div className="text-right">금액</div>,
     cell: ({ row }) => {
       const amount = parseFloat(row.getValue("amount"))
 
@@ -169,22 +169,22 @@ export const columns = columnHelper.columns([
           <DropdownMenuTrigger
             render={<Button variant="ghost" size="icon-xs" />}
           >
-            <span className="sr-only">Open menu</span>
+            <span className="sr-only">메뉴 열기</span>
             <MoreHorizontal />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-44">
             <DropdownMenuGroup>
-              <DropdownMenuLabel>Actions</DropdownMenuLabel>
+              <DropdownMenuLabel>동작</DropdownMenuLabel>
               <DropdownMenuItem
                 onClick={() => navigator.clipboard.writeText(payment.id)}
               >
-                Copy payment ID
+                결제 ID 복사
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>View customer</DropdownMenuItem>
-              <DropdownMenuItem>View payment details</DropdownMenuItem>
+              <DropdownMenuItem>고객 보기</DropdownMenuItem>
+              <DropdownMenuItem>결제 상세 보기</DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -222,7 +222,7 @@ export function DataTableDemo() {
     <div className="w-full">
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
+          placeholder="이메일 검색..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("email")?.setFilterValue(event.target.value)
@@ -233,7 +233,7 @@ export function DataTableDemo() {
           <DropdownMenuTrigger
             render={<Button variant="outline" className="ml-auto" />}
           >
-            Columns <ChevronDown />
+            열 <ChevronDown />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-44">
             <DropdownMenuGroup>
@@ -295,7 +295,7 @@ export function DataTableDemo() {
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  결과가 없습니다.
                 </TableCell>
               </TableRow>
             )}
@@ -304,8 +304,8 @@ export function DataTableDemo() {
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
         <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
+          {table.getFilteredSelectedRowModel().rows.length} /{" "}
+          {table.getFilteredRowModel().rows.length}행 선택됨
         </div>
         <div className="space-x-2">
           <Button
@@ -314,7 +314,7 @@ export function DataTableDemo() {
             onClick={() => table.previousPage()}
             disabled={!table.getCanPreviousPage()}
           >
-            Previous
+            이전
           </Button>
           <Button
             variant="outline"
@@ -322,7 +322,7 @@ export function DataTableDemo() {
             onClick={() => table.nextPage()}
             disabled={!table.getCanNextPage()}
           >
-            Next
+            다음
           </Button>
         </div>
       </div>

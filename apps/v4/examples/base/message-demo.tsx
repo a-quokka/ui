@@ -29,7 +29,7 @@ export function MessageDemo() {
         </MessageAvatar>
         <MessageContent>
           <Bubble>
-            <BubbleContent>Deploying to prod real quick.</BubbleContent>
+            <BubbleContent>운영에 잠깐 배포할게요.</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>
@@ -42,7 +42,7 @@ export function MessageDemo() {
         </MessageAvatar>
         <MessageContent>
           <Bubble variant="muted">
-            <BubbleContent>It&apos;s 4:55 PM. On a Friday.</BubbleContent>
+            <BubbleContent>지금 금요일 오후 4시 55분입니다.</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>
@@ -55,9 +55,9 @@ export function MessageDemo() {
         </MessageAvatar>
         <MessageContent>
           <Bubble>
-            <BubbleContent>It&apos;s a one-line change.</BubbleContent>
+            <BubbleContent>한 줄 고치는 거예요.</BubbleContent>
           </Bubble>
-          <MessageFooter>Delivered</MessageFooter>
+          <MessageFooter>전달됨</MessageFooter>
         </MessageContent>
       </Message>
       <Message>
@@ -70,13 +70,11 @@ export function MessageDemo() {
         <MessageContent>
           <BubbleGroup>
             <Bubble variant="muted">
-              <BubbleContent>
-                It&apos;s always a one-line change 😭.
-              </BubbleContent>
+              <BubbleContent>늘 한 줄이죠 😭.</BubbleContent>
             </Bubble>
             <Bubble variant="muted">
-              <BubbleContent>Alright, let me take a look.</BubbleContent>
-              <BubbleReactions aria-label="Reactions: thumbs up">
+              <BubbleContent>알겠어요. 한번 볼게요.</BubbleContent>
+              <BubbleReactions aria-label="반응: 좋아요">
                 <span>👍</span>
               </BubbleReactions>
             </Bubble>
@@ -85,7 +83,7 @@ export function MessageDemo() {
       </Message>
       <Marker role="status">
         <MarkerContent className="shimmer">
-          <span className="font-medium">Oliver</span> is typing...
+          <span className="font-medium">Oliver</span> 님이 입력 중...
         </MarkerContent>
       </Marker>
     </div>

@@ -18,31 +18,30 @@ export function DialogDemo() {
     <Dialog>
       <form>
         <DialogTrigger render={<Button variant="outline" />}>
-          Open Dialog
+          다이얼로그 열기
         </DialogTrigger>
         <DialogContent className="sm:max-w-sm">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>프로필 수정</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.
             </DialogDescription>
           </DialogHeader>
           <FieldGroup>
             <Field>
-              <Label htmlFor="name-1">Name</Label>
+              <Label htmlFor="name-1">이름</Label>
               <Input id="name-1" name="name" defaultValue="Pedro Duarte" />
             </Field>
             <Field>
-              <Label htmlFor="username-1">Username</Label>
+              <Label htmlFor="username-1">사용자 이름</Label>
               <Input id="username-1" name="username" defaultValue="@peduarte" />
             </Field>
           </FieldGroup>
           <DialogFooter>
             <DialogClose render={<Button variant="outline" />}>
-              Cancel
+              취소
             </DialogClose>
-            <Button type="submit">Save changes</Button>
+            <Button type="submit">저장</Button>
           </DialogFooter>
         </DialogContent>
       </form>

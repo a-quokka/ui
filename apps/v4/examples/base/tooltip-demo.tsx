@@ -9,10 +9,10 @@ export function TooltipDemo() {
   return (
     <Tooltip>
       <TooltipTrigger render={<Button variant="outline" />}>
-        Hover
+        마우스 올리기
       </TooltipTrigger>
       <TooltipContent>
-        <p>Add to library</p>
+        <p>라이브러리에 추가</p>
       </TooltipContent>
     </Tooltip>
   )
