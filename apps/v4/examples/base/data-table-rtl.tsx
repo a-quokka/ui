@@ -75,6 +75,32 @@ const translations: Translations = {
       pending: "Pending",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      filterEmails: "이메일 검색...",
+      columns: "열",
+      status: "상태",
+      email: "이메일",
+      amount: "금액",
+      actions: "동작",
+      copyPaymentId: "결제 ID 복사",
+      viewCustomer: "고객 보기",
+      viewPaymentDetails: "결제 상세 보기",
+      selectAll: "전체 선택",
+      selectRow: "행 선택",
+      openMenu: "메뉴 열기",
+      noResults: "결과가 없습니다.",
+      rowsSelected: "/",
+      rowsSelectedSuffix: "행 선택됨",
+      previous: "이전",
+      next: "다음",
+      success: "성공",
+      processing: "처리 중",
+      failed: "실패",
+      pending: "대기 중",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -187,7 +213,7 @@ const data: Payment[] = [
 ]
 
 export function DataTableRtl() {
-  const { t, dir, language } = useTranslation(translations, "ar")
+  const { t, dir, language } = useTranslation(translations, "ko")
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []

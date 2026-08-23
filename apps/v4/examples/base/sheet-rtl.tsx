@@ -32,6 +32,18 @@ const translations: Translations = {
       close: "Close",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      open: "열기",
+      editProfile: "프로필 수정",
+      description: "여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.",
+      name: "이름",
+      username: "사용자 이름",
+      save: "저장",
+      close: "닫기",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -60,7 +72,7 @@ const translations: Translations = {
 }
 
 export function SheetRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <Sheet>

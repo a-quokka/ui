@@ -24,6 +24,18 @@ const translations: Translations = {
       "inline-end": "Inline End",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      content: "라이브러리에 추가",
+      "inline-start": "Inline Start",
+      left: "Left",
+      top: "Top",
+      bottom: "Bottom",
+      right: "Right",
+      "inline-end": "Inline End",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -54,7 +66,7 @@ const physicalSides = ["left", "top", "bottom", "right"] as const
 const logicalSides = ["inline-start", "inline-end"] as const
 
 export function TooltipRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="grid gap-4">

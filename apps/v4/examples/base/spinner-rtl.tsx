@@ -22,6 +22,13 @@ const translations: Translations = {
       amount: "$100.00",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      title: "결제 처리 중...",
+      amount: "100,000원",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -39,7 +46,7 @@ const translations: Translations = {
 }
 
 export function SpinnerRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div

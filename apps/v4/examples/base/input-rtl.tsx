@@ -22,6 +22,14 @@ const translations: Translations = {
       description: "Your API key is encrypted and stored securely.",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      apiKey: "API Key",
+      placeholder: "sk-...",
+      description: "API 키는 암호화해 안전하게 보관합니다.",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -41,7 +49,7 @@ const translations: Translations = {
 }
 
 export function InputRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Field dir={dir}>

@@ -27,6 +27,18 @@ const translations: Translations = {
       itemsDescription: "2x Studio Headphones",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      orderNumber: "주문 #4189",
+      status: "상태",
+      shipped: "배송 중",
+      shippingAddress: "배송지",
+      address: "서울시 중구 세종대로 110",
+      items: "상품",
+      itemsDescription: "스튜디오 헤드폰 2개",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -54,7 +66,7 @@ const translations: Translations = {
 }
 
 export function CollapsibleRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (

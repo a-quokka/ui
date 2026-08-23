@@ -38,6 +38,22 @@ const translations: Translations = {
       allow: "Allow",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      showDialog: "다이얼로그 열기",
+      showDialogSm: "다이얼로그 열기 (sm)",
+      title: "정말 진행할까요?",
+      description:
+        "이 작업은 되돌릴 수 없습니다. 계정이 서버에서 완전히 삭제됩니다.",
+      cancel: "취소",
+      continue: "계속",
+      smallTitle: "액세서리 연결을 허용할까요?",
+      smallDescription: "이 기기에 USB 액세서리가 연결되도록 허용할까요?",
+      dontAllow: "허용 안 함",
+      allow: "허용",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -73,7 +89,7 @@ const translations: Translations = {
 }
 
 export function AlertDialogRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <div className="flex gap-4" dir={dir}>

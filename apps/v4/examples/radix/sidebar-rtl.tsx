@@ -291,7 +291,7 @@ function SidebarContentInner({
   user,
 }: {
   dir: "ltr" | "rtl"
-  t: typeof translations.ar.values
+  t: typeof translations.en.values
   navMain: Array<{
     title: string
     url: string

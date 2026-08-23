@@ -30,6 +30,17 @@ const translations: Translations = {
       learnMore: "Learn More",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      title: "아직 프로젝트가 없습니다",
+      description:
+        "만든 프로젝트가 아직 없습니다. 첫 프로젝트를 만들어 보세요.",
+      createProject: "프로젝트 만들기",
+      importProject: "프로젝트 가져오기",
+      learnMore: "자세히 보기",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -54,7 +65,7 @@ const translations: Translations = {
 }
 
 export function EmptyRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Empty dir={dir}>

@@ -29,6 +29,17 @@ const translations: Translations = {
       compactDescription: "Minimal spacing for dense layouts.",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      default: "기본",
+      defaultDescription: "대부분의 경우에 알맞은 기본 간격입니다.",
+      comfortable: "여유",
+      comfortableDescription: "요소 사이를 더 넓게 띄웁니다.",
+      compact: "촘촘",
+      compactDescription: "빽빽한 화면을 위한 최소 간격입니다.",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -54,7 +65,7 @@ const translations: Translations = {
 }
 
 export function RadioGroupRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <RadioGroup defaultValue="comfortable" className="w-fit" dir={dir}>

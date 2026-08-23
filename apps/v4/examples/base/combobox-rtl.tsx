@@ -44,6 +44,20 @@ const translations: Translations = {
       health: "Health",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      label: "분류",
+      placeholder: "분류 추가",
+      empty: "분류가 없습니다.",
+      technology: "기술",
+      design: "디자인",
+      business: "비즈니스",
+      marketing: "마케팅",
+      education: "교육",
+      health: "건강",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -75,7 +89,7 @@ const translations: Translations = {
 }
 
 export function ComboboxRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
   const anchor = useComboboxAnchor()
 
   const categoryLabels: Record<string, string> = {

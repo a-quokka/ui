@@ -16,6 +16,12 @@ const translations: Translations = {
       label: "Accept terms and conditions",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      label: "이용약관에 동의합니다",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -31,7 +37,7 @@ const translations: Translations = {
 }
 
 export function LabelRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="flex gap-2" dir={dir}>

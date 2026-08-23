@@ -20,6 +20,14 @@ const translations: Translations = {
       cards: "Cards",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      list: "목록",
+      grid: "격자",
+      cards: "카드",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -39,7 +47,7 @@ const translations: Translations = {
 }
 
 export function ToggleGroupRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <ToggleGroup variant="outline" defaultValue={["list"]} dir={dir}>

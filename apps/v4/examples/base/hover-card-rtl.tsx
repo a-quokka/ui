@@ -26,6 +26,20 @@ const translations: Translations = {
       "inline-end": "Inline End",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      trigger: "무선 헤드폰",
+      name: "무선 헤드폰",
+      price: "129,000원",
+      "inline-start": "Inline Start",
+      left: "Left",
+      top: "Top",
+      bottom: "Bottom",
+      right: "Right",
+      "inline-end": "Inline End",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -60,7 +74,7 @@ const physicalSides = ["left", "top", "bottom", "right"] as const
 const logicalSides = ["inline-start", "inline-end"] as const
 
 export function HoverCardRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="grid gap-4">

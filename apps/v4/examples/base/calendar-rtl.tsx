@@ -14,6 +14,10 @@ const translations: Translations = {
     dir: "ltr",
     values: {},
   },
+  ko: {
+    dir: "ltr",
+    values: {},
+  },
   ar: {
     dir: "rtl",
     values: {},
@@ -30,7 +34,7 @@ const locales = {
 } as const
 
 export function CalendarRtl() {
-  const { dir, language } = useTranslation(translations, "ar")
+  const { dir, language } = useTranslation(translations, "ko")
   const [date, setDate] = React.useState<Date | undefined>(new Date())
 
   return (

@@ -19,6 +19,15 @@ const translations: Translations = {
       loading: "Loading",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      button: "버튼",
+      submit: "제출",
+      delete: "삭제",
+      loading: "불러오는 중",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -40,7 +49,7 @@ const translations: Translations = {
 }
 
 export function ButtonRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="flex flex-wrap items-center gap-2 md:flex-row" dir={dir}>

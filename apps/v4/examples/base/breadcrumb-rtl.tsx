@@ -35,6 +35,17 @@ const translations: Translations = {
       breadcrumb: "Breadcrumb",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      home: "홈",
+      components: "컴포넌트",
+      documentation: "문서",
+      themes: "테마",
+      github: "GitHub",
+      breadcrumb: "Breadcrumb",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -60,7 +71,7 @@ const translations: Translations = {
 }
 
 export function BreadcrumbRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <Breadcrumb dir={dir}>

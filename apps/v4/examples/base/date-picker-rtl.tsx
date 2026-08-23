@@ -28,6 +28,12 @@ const translations: Translations = {
       placeholder: "Pick a date",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      placeholder: "날짜 선택",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -53,7 +59,7 @@ const dateFnsLocales = {
 } as const
 
 export function DatePickerRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
   const [date, setDate] = React.useState<Date>()
 
   const dateFnsLocale =

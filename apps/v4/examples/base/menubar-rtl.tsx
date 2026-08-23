@@ -62,6 +62,44 @@ const translations: Translations = {
       addProfile: "Add Profile...",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      file: "파일",
+      newTab: "새 탭",
+      newWindow: "새 창",
+      newIncognitoWindow: "새 시크릿 창",
+      share: "공유",
+      emailLink: "링크 메일로 보내기",
+      messages: "메시지",
+      notes: "메모",
+      print: "인쇄...",
+      edit: "편집",
+      undo: "실행 취소",
+      redo: "다시 실행",
+      find: "찾기",
+      searchTheWeb: "웹에서 검색",
+      findItem: "찾기...",
+      findNext: "다음 찾기",
+      findPrevious: "이전 찾기",
+      cut: "잘라내기",
+      copy: "복사",
+      paste: "붙여넣기",
+      view: "보기",
+      bookmarksBar: "북마크 바",
+      fullUrls: "전체 URL",
+      reload: "새로 고침",
+      forceReload: "강제 새로 고침",
+      toggleFullscreen: "전체 화면 전환",
+      hideSidebar: "사이드바 숨기기",
+      profiles: "프로필",
+      andy: "Andy",
+      benoit: "Benoit",
+      luis: "Luis",
+      editProfile: "수정...",
+      addProfile: "프로필 추가...",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -141,7 +179,7 @@ const translations: Translations = {
 }
 
 export function MenubarRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
   const [profile, setProfile] = React.useState("benoit")
 
   return (

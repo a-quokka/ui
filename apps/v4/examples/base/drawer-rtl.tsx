@@ -56,6 +56,28 @@ const translations = {
       slot630Description: "Last slot before kitchen closes",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      trigger: "Drawer 열기",
+      title: "배달 시간 고르기",
+      description: "주문을 최대한 빨리 준비하겠습니다.",
+      confirm: "이 시간으로 확정",
+      cancel: "취소",
+      toastTitle: "배달 시간이 확정됐습니다",
+      asapLabel: "일반 배달",
+      asapDescription: "25~35분 · 지금 기사 배정",
+      asapBadge: "가장 빠름",
+      slot500Label: "오후 5:00 ~ 5:15",
+      slot500Description: "오후 4:45에 조리를 시작합니다",
+      slot530Label: "오후 5:30 ~ 5:45",
+      slot530Description: "퇴근길에 받기 좋습니다",
+      slot600Label: "오후 6:00 ~ 6:15",
+      slot600Description: "가장 인기 있는 시간 · 주문이 몰립니다",
+      slot630Label: "오후 6:30 ~ 6:45",
+      slot630Description: "주방 마감 전 마지막 시간",
+    },
+  },
   ar: {
     dir: "rtl",
     locale: "ar-EG",
@@ -147,7 +169,7 @@ const deliveryTimes: Array<{
 ]
 
 export function DrawerRtl() {
-  const { dir, language, t } = useTranslation(translations, "ar")
+  const { dir, language, t } = useTranslation(translations, "ko")
   const [open, setOpen] = React.useState(false)
   const [deliveryTime, setDeliveryTime] = React.useState("asap")
   const isMobile = useIsMobile()

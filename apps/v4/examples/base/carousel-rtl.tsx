@@ -20,6 +20,10 @@ const translations: Translations = {
     dir: "ltr",
     values: {},
   },
+  ko: {
+    dir: "ltr",
+    values: {},
+  },
   ar: {
     dir: "rtl",
     values: {},
@@ -40,7 +44,7 @@ function toArabicNumerals(num: number): string {
 }
 
 export function CarouselRtl() {
-  const { dir, language } = useTranslation(translations, "ar")
+  const { dir, language } = useTranslation(translations, "ko")
 
   const formatNumber = (num: number): string => {
     if (language === "ar") {

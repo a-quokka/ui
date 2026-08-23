@@ -34,6 +34,20 @@ const translations: Translations = {
       loginWithGoogle: "Login with Google",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      title: "계정에 로그인",
+      description: "계정에 로그인하려면 아래에 이메일을 입력하세요",
+      signUp: "가입하기",
+      email: "이메일",
+      emailPlaceholder: "m@example.com",
+      password: "비밀번호",
+      forgotPassword: "비밀번호를 잊으셨나요?",
+      login: "로그인",
+      loginWithGoogle: "Google로 로그인",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -65,7 +79,7 @@ const translations: Translations = {
 }
 
 export function CardRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Card className="w-full max-w-sm" dir={dir}>

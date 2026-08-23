@@ -19,6 +19,12 @@ const translations: Translations = {
       label: "Upload progress",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      label: "업로드 진행률",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -43,7 +49,7 @@ function toArabicNumerals(num: number): string {
 }
 
 export function ProgressRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   const formatNumber = (num: number): string => {
     if (language === "ar") {

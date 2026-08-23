@@ -27,6 +27,15 @@ const translations: Translations = {
       verifiedTitle: "Your profile has been verified.",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      basicItem: "기본 아이템",
+      basicItemDesc: "제목과 설명이 있는 단순한 아이템입니다.",
+      action: "동작",
+      verifiedTitle: "프로필 인증이 끝났습니다.",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -48,7 +57,7 @@ const translations: Translations = {
 }
 
 export function ItemRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="flex w-full max-w-md flex-col gap-6" dir={dir}>

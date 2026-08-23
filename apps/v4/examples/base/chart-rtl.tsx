@@ -29,6 +29,19 @@ const translations: Translations = {
       mobile: "Mobile",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      january: "1월",
+      february: "2월",
+      march: "3월",
+      april: "4월",
+      may: "5월",
+      june: "6월",
+      desktop: "데스크톱",
+      mobile: "모바일",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -67,7 +80,7 @@ const chartData = [
 ]
 
 export function ChartRtl() {
-  const { t, dir } = useTranslation(translations, "ar")
+  const { t, dir } = useTranslation(translations, "ko")
 
   const chartConfig = {
     desktop: {

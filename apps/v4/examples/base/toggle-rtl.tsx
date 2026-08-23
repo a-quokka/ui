@@ -16,6 +16,12 @@ const translations: Translations = {
       label: "Bookmark",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      label: "북마크",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -31,7 +37,7 @@ const translations: Translations = {
 }
 
 export function ToggleRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Toggle aria-label="Toggle bookmark" size="sm" variant="outline" dir={dir}>

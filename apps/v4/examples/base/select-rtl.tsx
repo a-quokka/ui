@@ -35,6 +35,22 @@ const translations: Translations = {
       spinach: "Spinach",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      selectFruit: "과일 선택",
+      fruits: "과일",
+      apple: "사과",
+      banana: "바나나",
+      blueberry: "블루베리",
+      grapes: "포도",
+      pineapple: "파인애플",
+      vegetables: "채소",
+      carrot: "당근",
+      broccoli: "브로콜리",
+      spinach: "시금치",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -70,7 +86,7 @@ const translations: Translations = {
 }
 
 export function SelectRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
   const [selectedFruit, setSelectedFruit] = React.useState<string | null>(null)
 
   const fruits = [

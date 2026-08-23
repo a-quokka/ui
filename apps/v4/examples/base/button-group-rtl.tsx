@@ -50,6 +50,22 @@ const translations: Translations = {
       trash: "Trash",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      archive: "보관",
+      report: "신고",
+      snooze: "나중에",
+      markAsRead: "읽음으로 표시",
+      addToCalendar: "캘린더에 추가",
+      addToList: "목록에 추가",
+      labelAs: "라벨 지정...",
+      personal: "개인",
+      work: "업무",
+      other: "기타",
+      trash: "휴지통",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -85,7 +101,7 @@ const translations: Translations = {
 }
 
 export function ButtonGroupRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
   const [label, setLabel] = React.useState("personal")
 
   return (

@@ -22,6 +22,16 @@ const translations: Translations = {
       cancelled: "Cancelled",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      placeholder: "상태 선택",
+      todo: "할 일",
+      inProgress: "진행 중",
+      done: "완료",
+      cancelled: "취소됨",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -45,7 +55,7 @@ const translations: Translations = {
 }
 
 export function NativeSelectRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <NativeSelect dir={dir}>

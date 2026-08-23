@@ -50,6 +50,49 @@ const translations: Translations = {
         "The moral of the story is: never underestimate the power of a good laugh and always be careful of bad ideas.",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      title: "웃음에 매긴 세금: 농담세 연대기",
+      leadParagraph:
+        "옛날 어느 먼 나라에, 하루 종일 왕좌에 늘어져 있는 아주 게으른 왕이 있었습니다. 어느 날 신하들이 문제를 들고 왔습니다. 나라의 곳간이 바닥나고 있었던 것입니다.",
+      kingsPlan: "왕의 계획",
+      kingThought: "왕은 오래 고민한 끝에 마침내",
+      brilliantPlan: "기막힌 계획",
+      taxJokes:
+        "을 떠올렸습니다. 나라 안의 모든 농담에 세금을 매기기로 한 것입니다.",
+      blockquote:
+        '"어차피" 왕이 말했습니다. "누구나 좋은 농담을 즐기니, 그 값을 치르는 게 공평하지 않겠느냐."',
+      jokeTax: "농담세",
+      subjectsNotAmused:
+        "백성들은 조금도 즐겁지 않았습니다. 투덜대고 불평했지만 왕은 단호했습니다.",
+      level1: "1단계 말장난: 금화 5닢",
+      level2: "2단계 농담: 금화 10닢",
+      level3: "3단계 한 줄 유머: 금화 20닢",
+      stoppedTelling:
+        "그 뒤로 사람들은 농담을 하지 않게 됐고, 나라에는 우울이 내려앉았습니다. 하지만 왕의 어리석음에 굴하지 않은 사람이 하나 있었습니다. 조커스터라는 이름의 궁정 광대였습니다.",
+      jokestersRevolt: "조커스터의 반란",
+      sneaking:
+        "조커스터는 한밤중에 성으로 숨어들어 여기저기에 농담을 남기기 시작했습니다. 왕의 베개 밑에, 수프 속에, 심지어 왕실 화장실에까지. 왕은 노발대발했지만 조커스터를 막을 수 없었습니다.",
+      discovered:
+        "그러던 어느 날, 나라 사람들은 조커스터가 남긴 농담이 너무 웃겨서 도저히 참을 수 없다는 걸 알게 됐습니다. 그리고 한번 웃기 시작하자 멈출 수가 없었습니다.",
+      peoplesRebellion: "백성들의 반란",
+      uplifted:
+        "웃음에 기운을 얻은 백성들은 다시 농담과 말장난을 나누기 시작했고, 곧 온 나라가 그 농담에 함께했습니다.",
+      kingsTreasury: "왕의 곳간",
+      peoplesHappiness: "백성의 행복",
+      empty: "텅 빔",
+      overflowing: "넘침",
+      modest: "조금",
+      satisfied: "만족",
+      full: "가득",
+      ecstatic: "환희",
+      realized:
+        "백성들이 훨씬 행복해진 것을 본 왕은 자기 잘못을 깨닫고 농담세를 없앴습니다. 조커스터는 영웅이 됐고, 나라는 오래오래 행복했습니다.",
+      moral:
+        "이 이야기의 교훈은 이렇습니다. 좋은 웃음의 힘을 얕보지 말 것, 그리고 나쁜 아이디어를 늘 조심할 것.",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -137,7 +180,7 @@ const translations: Translations = {
 }
 
 export function TypographyRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div dir={dir}>

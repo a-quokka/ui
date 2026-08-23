@@ -33,6 +33,18 @@ const translations: Translations = {
       saveChanges: "Save changes",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      openDialog: "다이얼로그 열기",
+      editProfile: "프로필 수정",
+      description: "여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.",
+      name: "이름",
+      username: "사용자 이름",
+      cancel: "취소",
+      saveChanges: "저장",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -61,7 +73,7 @@ const translations: Translations = {
 }
 
 export function DialogRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <Dialog>

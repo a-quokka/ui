@@ -57,6 +57,36 @@ const translations: Translations = {
       left: "Left",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      open: "열기",
+      account: "계정",
+      profile: "프로필",
+      billing: "결제",
+      settings: "설정",
+      logout: "로그아웃",
+      team: "팀",
+      inviteUsers: "사용자 초대",
+      email: "이메일",
+      message: "메시지",
+      more: "더 보기",
+      calendar: "캘린더",
+      chat: "채팅",
+      webhook: "웹훅",
+      advanced: "고급...",
+      newTeam: "새 팀",
+      view: "보기",
+      statusBar: "상태 표시줄",
+      activityBar: "활동 표시줄",
+      panel: "패널",
+      position: "위치",
+      top: "위",
+      bottom: "아래",
+      right: "오른쪽",
+      left: "왼쪽",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -120,7 +150,7 @@ const translations: Translations = {
 }
 
 export function DropdownMenuRtl() {
-  const { dir, language, t } = useTranslation(translations, "ar")
+  const { dir, language, t } = useTranslation(translations, "ko")
   const [showStatusBar, setShowStatusBar] = React.useState(true)
   const [showActivityBar, setShowActivityBar] = React.useState(false)
   const [showPanel, setShowPanel] = React.useState(false)

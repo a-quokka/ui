@@ -16,6 +16,12 @@ const translations: Translations = {
       caption: "Beautiful landscape",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      caption: "멋진 풍경",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -31,7 +37,7 @@ const translations: Translations = {
 }
 
 export function AspectRatioRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <figure className="w-full max-w-sm" dir={dir}>

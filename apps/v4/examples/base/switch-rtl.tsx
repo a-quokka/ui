@@ -23,6 +23,13 @@ const translations: Translations = {
         "Focus is shared across devices, and turns off when you leave the app.",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      label: "여러 기기에서 함께 쓰기",
+      description: "집중 모드가 기기 사이에 공유되고, 앱을 벗어나면 꺼집니다.",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -41,7 +48,7 @@ const translations: Translations = {
 }
 
 export function SwitchRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Field orientation="horizontal" className="max-w-sm" dir={dir}>

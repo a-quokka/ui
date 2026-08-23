@@ -21,6 +21,17 @@ const translations: Translations = {
       bookmark: "Bookmark",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      badge: "배지",
+      secondary: "보조",
+      destructive: "경고",
+      outline: "외곽선",
+      verified: "인증됨",
+      bookmark: "북마크",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -46,7 +57,7 @@ const translations: Translations = {
 }
 
 export function BadgeRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="flex w-full flex-wrap justify-center gap-2" dir={dir}>

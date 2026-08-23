@@ -29,6 +29,16 @@ const translations: Translations = {
         "You can enable or disable notifications at any time.",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      acceptTerms: "이용약관에 동의합니다",
+      acceptTermsDescription:
+        "이 체크박스를 누르면 약관에 동의하는 것으로 봅니다.",
+      enableNotifications: "알림 켜기",
+      enableNotificationsDescription: "알림은 언제든 켜고 끌 수 있습니다.",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -53,7 +63,7 @@ const translations: Translations = {
 }
 
 export function CheckboxRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <FieldGroup className="max-w-sm" dir={dir}>

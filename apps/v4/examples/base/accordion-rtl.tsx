@@ -28,6 +28,20 @@ const translations: Translations = {
         "We accept all major credit cards, PayPal, and bank transfers. All payments are processed securely through our payment partners.",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      question1: "비밀번호를 어떻게 다시 설정하나요?",
+      answer1:
+        "로그인 화면에서 '비밀번호 찾기'를 누르고 이메일 주소를 입력하면 재설정 링크를 보내 드립니다.",
+      question2: "구독 요금제를 바꿀 수 있나요?",
+      answer2:
+        "네, 계정 설정에서 언제든 요금제를 올리거나 내릴 수 있습니다. 바뀐 내용은 다음 결제 주기부터 적용됩니다.",
+      question3: "어떤 결제 수단을 쓸 수 있나요?",
+      answer3:
+        "주요 신용카드와 PayPal, 계좌 이체를 지원합니다. 모든 결제는 결제 파트너를 통해 안전하게 처리됩니다.",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -76,7 +90,7 @@ const items = [
 ] as const
 
 export function AccordionRtl() {
-  const { t } = useTranslation(translations, "ar")
+  const { t } = useTranslation(translations, "ko")
 
   return (
     <Accordion defaultValue={["item-1"]} className="max-w-md">

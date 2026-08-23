@@ -58,6 +58,40 @@ const translations: Translations = {
       docs: "Docs",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      gettingStarted: "시작하기",
+      introduction: "소개",
+      introductionDesc: "Tailwind CSS 로 만든 재사용 가능한 컴포넌트입니다.",
+      installation: "설치",
+      installationDesc: "의존성을 설치하고 앱 구조를 잡는 방법입니다.",
+      typography: "Typography",
+      typographyDesc: "제목·문단·목록 등의 스타일입니다.",
+      components: "컴포넌트",
+      alertDialog: "Alert Dialog",
+      alertDialogDesc:
+        "중요한 내용으로 사용자를 멈춰 세우고 응답을 받는 모달 다이얼로그입니다.",
+      hoverCard: "Hover Card",
+      hoverCardDesc: "링크 뒤의 내용을 미리 보여 줍니다.",
+      progress: "Progress",
+      progressDesc:
+        "작업이 얼마나 진행됐는지 보여 줍니다. 보통 막대 형태입니다.",
+      scrollArea: "Scroll-area",
+      scrollAreaDesc: "내용을 시각적으로, 또 의미상으로 나눕니다.",
+      tabs: "Tabs",
+      tabsDesc:
+        "탭 패널이라 부르는 여러 겹의 구획을 한 번에 하나씩 보여 줍니다.",
+      tooltip: "Tooltip",
+      tooltipDesc:
+        "요소에 키보드 포커스가 가거나 마우스를 올리면 관련 정보를 띄웁니다.",
+      withIcon: "아이콘 함께 쓰기",
+      backlog: "백로그",
+      toDo: "할 일",
+      done: "완료",
+      docs: "문서",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -162,7 +196,7 @@ const components = [
 ] as const
 
 export function NavigationMenuRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <NavigationMenu dir={dir} align={dir === "rtl" ? "end" : "start"}>

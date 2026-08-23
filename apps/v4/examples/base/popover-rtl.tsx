@@ -28,6 +28,19 @@ const translations: Translations = {
       "inline-end": "Inline End",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      title: "크기",
+      description: "레이어의 크기를 정합니다.",
+      "inline-start": "Inline Start",
+      left: "Left",
+      top: "Top",
+      bottom: "Bottom",
+      right: "Right",
+      "inline-end": "Inline End",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -60,7 +73,7 @@ const physicalSides = ["left", "top", "bottom", "right"] as const
 const logicalSides = ["inline-start", "inline-end"] as const
 
 export function PopoverRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="grid gap-4">

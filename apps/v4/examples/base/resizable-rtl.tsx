@@ -21,6 +21,14 @@ const translations: Translations = {
       three: "Three",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      one: "하나",
+      two: "둘",
+      three: "셋",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -40,7 +48,7 @@ const translations: Translations = {
 }
 
 export function ResizableRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <ResizablePanelGroup

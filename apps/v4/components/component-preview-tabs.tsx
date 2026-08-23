@@ -60,7 +60,7 @@ export function ComponentPreviewTabs({
       {...props}
     >
       {direction === "rtl" ? (
-        <LanguageProvider defaultLanguage="ar">
+        <LanguageProvider defaultLanguage="ko">
           <div className="flex h-16 items-center border-b px-4">
             <RtlLanguageSelector />
             <Popover>
@@ -82,18 +82,13 @@ export function ComponentPreviewTabs({
                 className="w-56 text-xs"
               >
                 <div>
-                  I used AI to translate the text for demonstration purposes.
-                  It&apos;s not perfect and may contain errors.
+                  예시 문구는 데모용으로 옮긴 것이라 어색하거나 틀린 부분이 있을
+                  수 있습니다.
                 </div>
                 <Separator className="-mx-2.5 w-auto!" />
-                <div data-lang="ar">
-                  لقد استخدمت الذكاء الاصطناعي لترجمة النص للأغراض التجريبية
-                  فقط. قد لا تكون الترجمة دقيقة وقد تحتوي على أخطاء.
-                </div>
-                <Separator className="-mx-2.5 w-auto!" />
-                <div data-lang="he">
-                  השתמשתי בבינה מלאכותית כדי לתרגם את הטקסט למטרות הדגמה. זה לא
-                  מושלם ויכול להכיל שגיאות.
+                <div>
+                  The sample copy is for demonstration only and may read
+                  awkwardly or contain errors.
                 </div>
               </PopoverContent>
             </Popover>
@@ -183,6 +178,10 @@ const directionTranslations: Translations<Record<string, never>> = {
     dir: "ltr",
     values: {},
   },
+  ko: {
+    dir: "ltr",
+    values: {},
+  },
   ar: {
     dir: "rtl",
     values: {},
@@ -222,7 +221,7 @@ function PreviewWrapper({
 }) {
   // useTranslation handles the case when there's no LanguageProvider context.
   // It will fall back to local state with defaultLanguage.
-  const translation = useTranslation(directionTranslations, "ar")
+  const translation = useTranslation(directionTranslations, "ko")
   const dir = explicitDir ?? translation.dir
 
   return (
@@ -256,7 +255,7 @@ function DirectionProviderWrapper({
 }) {
   // useTranslation handles the case when there's no LanguageProvider context.
   // It will fall back to local state with defaultLanguage.
-  const translation = useTranslation(directionTranslations, "ar")
+  const translation = useTranslation(directionTranslations, "ko")
   const dir = explicitDir ?? translation.dir
 
   if (base === "base") {

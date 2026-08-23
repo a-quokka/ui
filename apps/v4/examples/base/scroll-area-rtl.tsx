@@ -20,6 +20,12 @@ const translations: Translations = {
       tags: "Tags",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      tags: "태그",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -35,7 +41,7 @@ const translations: Translations = {
 }
 
 export function ScrollAreaRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <ScrollArea className="h-72 w-48 rounded-md border" dir={dir}>

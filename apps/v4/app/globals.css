@@ -221,14 +221,6 @@
   button:active {
     @apply opacity-60 md:opacity-100;
   }
-
-  [data-lang="ar"] {
-    font-family: var(--font-ar);
-  }
-
-  [data-lang="he"] {
-    font-family: var(--font-he);
-  }
 }
 
 @utility border-grid {

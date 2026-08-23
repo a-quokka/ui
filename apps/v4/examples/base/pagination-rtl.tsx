@@ -24,6 +24,13 @@ const translations: Translations = {
       next: "Next",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      previous: "이전",
+      next: "다음",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -50,7 +57,7 @@ function toArabicNumerals(num: number): string {
 }
 
 export function PaginationRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   const formatNumber = (num: number): string => {
     if (language === "ar") {

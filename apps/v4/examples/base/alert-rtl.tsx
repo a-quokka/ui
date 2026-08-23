@@ -25,6 +25,17 @@ const translations: Translations = {
         "We've added dark mode support. You can enable it in your account settings.",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      paymentTitle: "결제가 끝났습니다",
+      paymentDescription:
+        "29.99달러 결제가 처리됐습니다. 영수증은 이메일로 보내 드렸습니다.",
+      featureTitle: "새 기능이 추가됐습니다",
+      featureDescription:
+        "다크 모드를 지원합니다. 계정 설정에서 켤 수 있습니다.",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -63,7 +74,7 @@ const alerts = [
 ] as const
 
 export function AlertRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="grid w-full max-w-md items-start gap-4" dir={dir}>

@@ -40,6 +40,20 @@ const translations: Translations = {
       billing: "Billing",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      placeholder: "명령을 입력하거나 검색하세요...",
+      empty: "결과가 없습니다.",
+      suggestions: "추천",
+      calendar: "캘린더",
+      searchEmoji: "이모지 검색",
+      calculator: "계산기",
+      settings: "설정",
+      profile: "프로필",
+      billing: "결제",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -71,7 +85,7 @@ const translations: Translations = {
 }
 
 export function CommandRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Command className="max-w-sm rounded-lg border" dir={dir}>

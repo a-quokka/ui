@@ -35,6 +35,23 @@ const translations: Translations = {
       total: "Total",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      caption: "최근 청구서 목록입니다.",
+      invoice: "청구서",
+      status: "상태",
+      method: "결제 수단",
+      amount: "금액",
+      paid: "결제 완료",
+      pending: "대기 중",
+      unpaid: "미결제",
+      creditCard: "신용카드",
+      paypal: "PayPal",
+      bankTransfer: "계좌 이체",
+      total: "합계",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -117,7 +134,7 @@ const invoices = [
 ]
 
 export function TableRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Table dir={dir}>

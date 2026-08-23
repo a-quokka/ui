@@ -89,6 +89,39 @@ const translations: Translations = {
       cancel: "Cancel",
     },
   },
+  ko: {
+    dir: "ltr",
+    values: {
+      paymentMethod: "결제 수단",
+      secureTransactions: "모든 거래는 암호화돼 안전하게 처리됩니다",
+      nameOnCard: "카드 소유자 이름",
+      cardNumber: "카드 번호",
+      cardNumberDescription: "16자리 카드 번호를 입력하세요",
+      month: "월",
+      year: "연도",
+      cvv: "CVV",
+      monthPlaceholder: "MM",
+      month01: "01",
+      month02: "02",
+      month03: "03",
+      month04: "04",
+      month05: "05",
+      month06: "06",
+      month07: "07",
+      month08: "08",
+      month09: "09",
+      month10: "10",
+      month11: "11",
+      month12: "12",
+      billingAddress: "청구지 주소",
+      billingAddressDescription: "결제 수단에 등록된 청구지 주소입니다",
+      sameAsShipping: "배송지와 같음",
+      comments: "메모",
+      commentsPlaceholder: "남길 말이 있으면 적어 주세요",
+      submit: "제출",
+      cancel: "취소",
+    },
+  },
   ar: {
     dir: "rtl",
     values: {
@@ -158,7 +191,7 @@ const translations: Translations = {
 }
 
 export function FieldRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   const getMonthLabel = (value: string | null): string => {
     if (value === null) return t.monthPlaceholder
