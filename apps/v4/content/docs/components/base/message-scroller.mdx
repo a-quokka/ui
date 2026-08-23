@@ -14,53 +14,39 @@ component: true
 
 ## What Makes a Great Streaming Chat Experience
 
-Building a chat interface used to be simple. You create an inverted list with
-an input. Type a message, it appends at the bottom. When a reply comes in, the
-list grows and scrolls. Done.
+채팅 화면은 원래 단순했습니다. 뒤집힌 목록에 입력창 하나를 붙이면 됩니다. 메시지를 쓰면 아래에 붙고, 답이 오면 목록이 자라면서 스크롤됩니다. 그걸로 끝이었습니다.
 
-Streaming breaks that model. Messages arrive in chunks while you may still be
-reading, scrolling, or looking somewhere else entirely.
+스트리밍이 이 구조를 깹니다. 읽는 중이든 스크롤하는 중이든 다른 곳을 보고 있든, 답은 조각조각 도착합니다.
 
-Now the challenge is preserving the reader's place while the conversation keeps
-changing. Get that wrong and the experience feels jumpy: people are pulled to
-the bottom, lose context, and have to find their way back.
+이제 문제는 대화가 계속 바뀌는 동안 읽던 자리를 지키는 것입니다. 여기서 어긋나면 화면이 튑니다. 읽는 사람이 자꾸 맨 아래로 끌려가고, 맥락을 놓치고, 다시 자리를 찾아야 합니다.
 
-In practice, this comes down to scroll: when to follow, when to hold, and when
-to let the reader decide. A great streaming chat should:
+결국 스크롤을 언제 따라가고, 언제 붙잡아 두고, 언제 읽는 사람에게 맡길지의 문제입니다. 좋은 스트리밍 채팅은 이렇게 동작해야 합니다.
 
-1. **Move only when the reader asked to move.** If someone is reading, don’t pull them somewhere else. Auto-scroll should never be the default.
-2. **Follow only while they’re following.** If they’re at the live edge, keep the stream in view. If they scroll away, leave them there.
-3. **Every interaction is a signal.** Scrolling is not the only one. Selecting text, using the keyboard, opening a link, or searching should all stop the interface from moving.
-4. **Start a new turn near the top of the viewport.** This gives the new turn somewhere it can be read from the beginning.
-5. **Then stream in the answer.** The answer should grow into the screen, not immediately push everything away.
-6. **Keep part of the previous conversation in context.** The prompt and reply should stay visually connected, and enough of the previous turn should remain visible so the reader knows where they are.
-7. **Let new content arrive offscreen.** The conversation can keep streaming without changing what the reader is looking at.
-8. **Show what’s happening out of view.** Make it clear when a response is still streaming or when new messages have arrived.
-9. **Make it easy to return to the latest reply.** A “Jump to latest” action should bring the reader back and resume following.
-10. **Let people jump anywhere in the conversation.** Long threads need message links, search, unread markers, and direct navigation.
-11. **Reopen where the reader left off.** A saved conversation should open at the last meaningful turn. Often this is the last user message. Not the absolute bottom.
-12. **Keep the reader’s place when layout changes.** Images load. Markdown expands. Code blocks render. Older messages appear above. None of that should make the reader lose their place.
-13. **Handle interruptions without stealing position.** Stopping, retrying, regenerating, branching, or errors should not unexpectedly move the conversation.
-14. **Stay responsive in long threads.** Streaming text, markdown, code, images, and long history should still feel responsive.
-15. **Be accessible without the noise.** Keep the transcript navigable, preserve keyboard focus, and announce important events at a comfortable pace.
+1. **읽는 사람이 움직이겠다고 했을 때만 움직입니다.** 읽고 있는 사람을 다른 곳으로 끌고 가지 마세요. 자동 스크롤이 기본값이어서는 안 됩니다.
+2. **따라가는 동안에만 따라갑니다.** 라이브 엣지에 있다면 새 내용이 계속 보이게 합니다. 스크롤해서 벗어났다면 그 자리에 그대로 둡니다.
+3. **모든 상호작용이 신호입니다.** 스크롤만이 아닙니다. 텍스트 선택, 키보드 조작, 링크 열기, 검색 모두 화면 이동을 멈춰야 합니다.
+4. **새 턴은 화면 위쪽에서 시작합니다.** 그래야 새 턴을 처음부터 읽을 자리가 생깁니다.
+5. **답은 그다음에 흘려보냅니다.** 답은 화면 안으로 자라 들어와야지, 나머지를 곧장 밀어내서는 안 됩니다.
+6. **직전 대화를 조금 남겨 둡니다.** 질문과 답이 시각적으로 이어져 보이고, 이전 턴이 충분히 남아 있어야 읽는 사람이 자기 위치를 압니다.
+7. **새 내용은 화면 밖에서 도착해도 됩니다.** 읽는 사람이 보고 있는 화면을 바꾸지 않고도 대화는 계속 흘러갈 수 있습니다.
+8. **화면 밖에서 벌어지는 일을 알려 줍니다.** 답이 아직 오는 중인지, 새 메시지가 도착했는지 분명히 보여 주세요.
+9. **최신 답으로 쉽게 돌아가게 합니다.** "최신으로 이동" 동작 하나로 돌아가고 다시 따라가기 시작해야 합니다.
+10. **대화 어디로든 건너뛸 수 있게 합니다.** 긴 스레드에는 메시지 링크, 검색, 안 읽음 표시, 바로 이동이 필요합니다.
+11. **읽던 자리에서 다시 엽니다.** 저장된 대화는 마지막으로 의미 있는 턴에서 열려야 합니다. 대개 마지막 사용자 메시지이지, 맨 아래가 아닙니다.
+12. **레이아웃이 바뀌어도 자리를 지킵니다.** 이미지가 로드되고, 마크다운이 펼쳐지고, 코드 블록이 그려지고, 위쪽에 예전 메시지가 붙습니다. 그중 무엇도 읽던 자리를 흔들어서는 안 됩니다.
+13. **중단이 위치를 빼앗지 않게 합니다.** 정지·재시도·재생성·분기·오류가 대화를 예상 밖으로 움직여서는 안 됩니다.
+14. **긴 스레드에서도 반응이 빨라야 합니다.** 스트리밍되는 텍스트, 마크다운, 코드, 이미지, 긴 기록이 쌓여도 반응이 무뎌지면 안 됩니다.
+15. **소음 없이 접근 가능해야 합니다.** 기록을 훑을 수 있게 두고, 키보드 포커스를 지키고, 중요한 사건만 알맞은 속도로 알려 주세요.
 
-**Never move the reader against their intent.**
+**읽는 사람의 의도를 거슬러 화면을 움직이지 마세요.**
 
 ## MessageScroller
 
-MessageScroller is a chat transcript scroller built for these behaviors.
-`MessageScrollerProvider` owns the scroll state and transcript-row behavior:
-opening position, streamed output, new-turn anchoring, prepended history,
-visibility, and scroll controls. `MessageScroller` is the styled frame that
-renders inside it.
+MessageScroller는 이런 동작을 위해 만든 채팅 기록 스크롤러입니다. `MessageScrollerProvider`가 스크롤 상태와 기록 행의 동작을 맡습니다. 여는 위치, 스트리밍 출력, 새 턴 고정, 앞쪽에 붙는 지난 기록, 노출 여부, 스크롤 제어가 여기에 들어갑니다. `MessageScroller`는 그 안에서 그려지는 스타일 프레임입니다.
 
-MessageScroller is scoped to the scroll viewport. It does not own messages, AI state,
-transport, persistence, branching, or model state. Your product code stays
-focused on composing messages, markers, tools, attachments, and prompt inputs.
+MessageScroller의 범위는 스크롤 뷰포트까지입니다. 메시지, AI 상태, 전송, 저장, 분기, 모델 상태는 다루지 않습니다. 제품 코드는 메시지·마커·도구·첨부·입력창을 조합하는 데 집중하면 됩니다.
 
-It gives you the scroll behavior that chat needs, without taking over the rest
-of the chat UI. And it stays fast, even in long conversations with rich
-markdown.
+채팅에 필요한 스크롤 동작만 제공하고 나머지 채팅 UI는 건드리지 않습니다. 마크다운이 많은 긴 대화에서도 빠릅니다.
 
 ## Installation
 
@@ -82,13 +68,13 @@ npx shadcn@latest add message-scroller
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @shadcn/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="message-scroller"
@@ -96,7 +82,7 @@ npm install @shadcn/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -139,8 +125,7 @@ import {
 </MessageScrollerProvider>
 ```
 
-`MessageScroller` fills its parent, so place it inside a height-constrained
-container.
+`MessageScroller`는 부모를 가득 채우므로 높이가 정해진 컨테이너 안에 두세요.
 
 ```tsx
 <div className="flex h-screen flex-col">
@@ -169,32 +154,20 @@ container.
 </MessageScrollerProvider>
 ```
 
-- **`MessageScrollerProvider`** — the headless root. Owns scroll state and the
-  behavior props for opening position, auto-scroll, anchoring, scroll commands,
-  and visibility tracking.
-- **`MessageScroller`** — the styled frame. Lays out the viewport, content, and
-  controls inside the provider.
-- **`MessageScrollerViewport`** — the scrollable element. Receives native scroll
-  events and preserves the visible row when older messages are prepended.
-- **`MessageScrollerContent`** — the transcript container. Holds the rows and
-  provides the live-region defaults for new messages.
-- **`MessageScrollerItem`** — the transcript row boundary. Wrap every direct
-  child of the content so the scroller can measure, anchor, preserve position,
-  track visibility, and jump to it. An item can be a message, marker, typing
-  indicator, separator, join/leave event, or "load earlier" row.
-- **`MessageScrollerButton`** — the scroll control. Scrolls to the start or end of the transcript and is inert until there is content in its direction.
+- **`MessageScrollerProvider`** — 헤드리스 루트입니다. 스크롤 상태와 함께 여는 위치, 자동 스크롤, 고정, 스크롤 명령, 노출 추적 관련 prop을 맡습니다.
+- **`MessageScroller`** — 스타일 프레임입니다. provider 안에서 뷰포트·콘텐츠·컨트롤을 배치합니다.
+- **`MessageScrollerViewport`** — 실제로 스크롤되는 요소입니다. 네이티브 스크롤 이벤트를 받고, 앞쪽에 지난 메시지가 붙어도 보고 있던 행을 그대로 지킵니다.
+- **`MessageScrollerContent`** — 기록 컨테이너입니다. 행을 담고 새 메시지용 라이브 리전 기본값을 제공합니다.
+- **`MessageScrollerItem`** — 기록 행의 경계입니다. 콘텐츠의 직계 자식은 모두 이걸로 감싸야 스크롤러가 크기를 재고, 고정하고, 위치를 지키고, 노출을 추적하고, 해당 행으로 이동할 수 있습니다. 메시지, 마커, 입력 중 표시, 구분선, 입퇴장 이벤트, "이전 기록 불러오기" 행 모두 아이템이 될 수 있습니다.
+- **`MessageScrollerButton`** — 스크롤 컨트롤입니다. 기록의 처음이나 끝으로 이동하고, 그 방향에 내용이 없으면 비활성 상태가 됩니다.
 
 ## Core Concepts
 
 ### Anchoring Turns
 
-A turn is the part of the conversation that starts a new exchange. In a simple
-AI chat, that is usually the user's message and the assistant reply that follows.
+턴은 새로운 주고받기가 시작되는 지점입니다. 단순한 AI 채팅이라면 보통 사용자 메시지와 뒤따르는 어시스턴트 답변입니다.
 
-An anchor is the row the viewport should treat as the start of that turn. Mark
-that row with `scrollAnchor`. When a new anchor is appended, the viewport moves
-it near the top and keeps a peek of the previous item above it, so the new turn
-does not feel detached from its context.
+앵커는 뷰포트가 그 턴의 시작으로 삼을 행입니다. 그 행에 `scrollAnchor`를 표시하세요. 새 앵커가 붙으면 뷰포트가 그 행을 위쪽으로 올리고 바로 위 항목을 조금 남겨 둡니다. 그래야 새 턴이 맥락에서 떨어져 보이지 않습니다.
 
 ```tsx
 // This tells the scroller to anchor the user's message for the next turn.
@@ -204,12 +177,9 @@ does not feel detached from its context.
 />
 ```
 
-Scroll anchors are not tied to message role. You can turn any row into an anchor:
-a user message, a system marker, a handoff event, or anything else that starts a
-meaningful turn. `MessageScroller` only needs to know which row should anchor the
-viewport.
+스크롤 앵커는 메시지 역할과 무관합니다. 사용자 메시지, 시스템 마커, 인계 이벤트 등 의미 있는 턴을 여는 행이면 무엇이든 앵커가 됩니다. `MessageScroller`는 어떤 행이 뷰포트를 고정할지만 알면 됩니다.
 
-In the following example, the user's message is anchored. When you send a new message, the viewport anchors it near the top and appends the assistant reply below it. Toggle the anchor to the assistant's message to see the difference.
+아래 예제에서는 사용자 메시지가 앵커입니다. 새 메시지를 보내면 뷰포트가 그 메시지를 위쪽에 고정하고 아래에 어시스턴트 답변을 붙입니다. 앵커를 어시스턴트 메시지로 바꿔 차이를 확인해 보세요.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -220,12 +190,9 @@ In the following example, the user's message is anchored. When you send a new me
 
 ### Group Chat
 
-In a group chat, the turn boundary is more specific than "the user message". It is often
-the message that asks the model to respond, or a marker like "Marcus joined the
-chat". Typing indicators and history controls usually should not anchor.
+그룹 채팅에서는 턴의 경계가 "사용자 메시지"보다 구체적입니다. 모델에게 답을 요청하는 메시지이거나 "Marcus 님이 참여했습니다" 같은 마커인 경우가 많습니다. 입력 중 표시나 기록 컨트롤은 보통 앵커가 되지 않아야 합니다.
 
-Because anchoring is role-independent, you can anchor a marker just as easily as
-a message.
+앵커는 역할과 무관하므로 마커도 메시지와 똑같이 앵커로 삼을 수 있습니다.
 
 ```tsx
 <MessageScrollerItem messageId="marcus-joined" scrollAnchor>
@@ -244,10 +211,7 @@ a message.
 
 ### Keeping Context Visible
 
-When a new turn starts, it should still feel like part of the same continuous
-thread. `scrollPreviousItemPeek` keeps a slice of the previous item visible
-above the anchor, so the reader keeps their context instead of feeling like the
-conversation restarted on a blank page.
+새 턴이 시작돼도 같은 대화가 이어지는 느낌이어야 합니다. `scrollPreviousItemPeek`은 앵커 위에 직전 항목의 일부를 남겨 둡니다. 그래야 대화가 빈 화면에서 다시 시작한 것처럼 느껴지지 않습니다.
 
 ```tsx
 // Keep 64px of the previous turn visible above the newly anchored row.
@@ -256,7 +220,7 @@ conversation restarted on a blank page.
 </MessageScrollerProvider>
 ```
 
-Adjust the peek amount in the example below to see how it affects the conversation.
+아래 예제에서 남겨 두는 양을 조절해 대화가 어떻게 달라지는지 확인해 보세요.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -267,16 +231,9 @@ Adjust the peek amount in the example below to see how it affects the conversati
 
 ### Following the Live Edge
 
-When the reader is at the live edge, either because they stayed there or
-returned there, `autoScroll` keeps streamed replies in view as they grow.
-Scrolling away from the live edge releases the view, whether by wheel, touch,
-keyboard scroll keys, or dragging the scrollbar. An explicit message jump
-releases it too. New chunks can then arrive without moving the reader.
+읽는 사람이 라이브 엣지에 있다면, 계속 거기 있었든 다시 돌아왔든, `autoScroll`이 흘러 들어오는 답을 계속 화면에 붙잡아 둡니다. 라이브 엣지에서 벗어나면 휠·터치·키보드 스크롤·스크롤바 드래그 무엇이든 따라가기를 놓습니다. 메시지로 직접 이동해도 마찬가지입니다. 그다음부터는 새 조각이 도착해도 화면이 움직이지 않습니다.
 
-`autoScroll` composes with turn anchoring. When a new turn anchors near the
-top, the view stays put while the reply streams into the room below it. Once
-the reply fills the viewport, the reader is back at the live edge and
-follow-output takes over from the anchor.
+`autoScroll`은 턴 고정과 함께 동작합니다. 새 턴이 위쪽에 고정되면 화면은 그대로 있고 그 아래 빈자리로 답이 흘러 들어옵니다. 답이 뷰포트를 채우면 읽는 사람은 다시 라이브 엣지에 있게 되고, 고정 대신 출력 따라가기가 이어받습니다.
 
 ```tsx
 <MessageScrollerProvider autoScroll>
@@ -291,22 +248,13 @@ follow-output takes over from the anchor.
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-Calling `scrollToEnd`, or pressing `MessageScrollerButton`, re-engages
-follow-output when `autoScroll` is enabled, so a reader who scrolled away can
-return to the live edge and keep following. The root and viewport expose
-`data-autoscrolling` while that programmatic scroll to the latest message runs,
-so you can conditionally apply styles during the transition.
+`autoScroll`이 켜져 있을 때 `scrollToEnd`를 부르거나 `MessageScrollerButton`을 누르면 출력 따라가기가 다시 켜집니다. 벗어났던 사람도 라이브 엣지로 돌아와 계속 따라갈 수 있습니다. 최신 메시지로 이동하는 동안 루트와 뷰포트에 `data-autoscrolling`이 붙으므로 그 사이에만 다른 스타일을 줄 수 있습니다.
 
 ### Opening Saved Threads
 
-It can seem reasonable to reopen a saved thread at the absolute end of the
-transcript, but that often drops the reader into the conversation without enough
-context. A better default is `"last-anchor"`: show the last meaningful turn,
-like the user's latest message, with the reply below it.
+저장된 스레드를 기록의 맨 끝에서 여는 게 자연스러워 보이지만, 그러면 맥락 없이 대화 한가운데로 떨어집니다. 더 나은 기본값은 `"last-anchor"` 입니다. 마지막으로 의미 있는 턴, 보통 사용자의 최근 메시지와 그 아래 답을 보여 줍니다.
 
-That gives the reader an immediate place in the thread. They can see what they
-asked, where the answer starts, and continue from there without reconstructing
-the conversation from the bottom edge.
+그러면 읽는 사람이 곧바로 자기 자리를 찾습니다. 무엇을 물었는지, 답이 어디서 시작하는지 보이고, 맨 아래에서부터 대화를 되짚지 않아도 됩니다.
 
 ```tsx
 <MessageScrollerProvider defaultScrollPosition="last-anchor">
@@ -322,21 +270,15 @@ the conversation from the bottom edge.
   hideCode
 />
 
-`"last-anchor"` is keyed on `scrollAnchor`, not message role. If no anchor
-exists, or the last anchored turn already fits in the viewport, it falls back to
-`"end"`.
+`"last-anchor"`는 메시지 역할이 아니라 `scrollAnchor`를 기준으로 합니다. 앵커가 없거나 마지막 앵커 턴이 이미 뷰포트에 다 들어온다면 `"end"`로 넘어갑니다.
 
-Use `"start"` when you want to resume at the beginning of a conversation, or
-`"end"` when the absolute latest message is the right place to land.
+대화를 처음부터 다시 볼 때는 `"start"`, 맨 마지막 메시지가 알맞은 자리일 때는 `"end"`를 쓰세요.
 
 ### Loading Earlier Messages
 
-Loading earlier messages should not move the conversation the reader is already
-looking at. When older rows are prepended above the current transcript,
-`MessageScrollerViewport` preserves the visible row so the reader stays in the
-same place while history loads above them.
+지난 메시지를 불러온다고 해서 지금 보고 있는 대화가 움직여서는 안 됩니다. 현재 기록 위에 예전 행이 붙을 때 `MessageScrollerViewport`가 보고 있던 행을 지켜 주므로, 위쪽에서 기록이 로드되는 동안에도 자리가 유지됩니다.
 
-This is enabled by default through `preserveScrollOnPrepend`.
+`preserveScrollOnPrepend`로 기본 적용됩니다.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -345,19 +287,13 @@ This is enabled by default through `preserveScrollOnPrepend`.
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-Use stable `messageId` values for message rows. That gives the scroller a
-specific row to preserve instead of guessing from whichever pixel happens to sit
-at the viewport edge.
+메시지 행에는 값이 바뀌지 않는 `messageId`를 쓰세요. 그래야 스크롤러가 뷰포트 가장자리에 걸친 픽셀로 짐작하지 않고 정확한 행을 지킵니다.
 
 ### Animating New Messages
 
-`MessageScrollerItem` can be animated directly. Create a motion version of the
-item, keep `messageId` and `scrollAnchor` on it, and use transform and opacity
-for the entrance.
+`MessageScrollerItem` 에는 애니메이션을 직접 걸 수 있습니다. 아이템의 모션 버전을 만들고 `messageId`와 `scrollAnchor`를 그대로 둔 뒤, 등장에는 transform과 opacity를 쓰세요.
 
-A common chat pattern is to animate the user's message when it is sent, then let
-the assistant reply stream into a regular row below it. Start the user row below
-its final position so it feels like it rises from the live edge of the viewport.
+사용자 메시지는 보낼 때 애니메이션을 주고 어시스턴트 답변은 그 아래 평범한 행으로 흘려보내는 방식이 흔합니다. 사용자 행을 최종 위치보다 아래에서 시작하면 뷰포트의 라이브 엣지에서 떠오르는 느낌이 납니다.
 
 ```tsx
 const MotionMessageScrollerItem = motion.create(MessageScrollerItem)
@@ -370,17 +306,11 @@ const MotionMessageScrollerItem = motion.create(MessageScrollerItem)
   previewClassName="h-auto theme-blue bg-surface dark:bg-background p-4 min-[480px]:p-8 min-[560px]:p-10 sm:px-10 sm:py-16"
 />
 
-Avoid animating height, margin, or padding for row entrances; those changes can
-fight the scroller's positioning work. If the reader prefers reduced motion,
-skip the entrance animation and keep the scroll behavior the same.
+행 등장에 height·margin·padding 애니메이션은 피하세요. 스크롤러의 위치 계산과 부딪힙니다. 모션 줄이기를 선호하는 사용자에게는 등장 애니메이션만 건너뛰고 스크롤 동작은 그대로 두세요.
 
 ### Jumping to Messages
 
-Search results, permalinks, outline items, and toolbar buttons often need to
-drive the transcript from outside the message list. Use `useMessageScroller` for
-those controls. Because the hooks read from `MessageScrollerProvider`, they work
-in any component inside the provider, including controls rendered outside the
-`MessageScroller` frame.
+검색 결과, 퍼머링크, 목차 항목, 툴바 버튼은 메시지 목록 바깥에서 기록을 움직여야 할 때가 많습니다. 그럴 때 `useMessageScroller`를 쓰세요. 훅이 `MessageScrollerProvider`에서 값을 읽으므로 provider 안이라면 `MessageScroller` 프레임 밖에 있는 컨트롤에서도 동작합니다.
 
 ```tsx
 import { useMessageScroller } from "@/components/ui/message-scroller"
@@ -398,20 +328,13 @@ const { scrollToMessage, scrollToEnd, scrollToStart } = useMessageScroller()
   hideCode
 />
 
-`scrollToMessage` targets the `messageId` on `MessageScrollerItem`, so rows that
-need to be addressable should have stable ids. `scrollToMessage` returns `false`
-when the target is not mounted and cannot be queued.
+`scrollToMessage`는 `MessageScrollerItem`의 `messageId`를 찾아갑니다. 이동 대상이 되는 행에는 값이 바뀌지 않는 id를 주세요. 대상이 마운트되지 않았고 대기시킬 수도 없으면 `false`를 반환합니다.
 
-`scrollToMessage` can queue a target before items exist, which covers
-client-resolved permalinks while the transcript mounts. After rows have mounted,
-a missing id returns `false` instead of starting a guessed retry loop. A `true`
-result means the scroll ran or was queued, not that the row is already in view.
+`scrollToMessage`는 아이템이 생기기 전에 대상을 대기시킬 수 있어서, 기록이 마운트되는 동안 클라이언트에서 풀리는 퍼머링크도 처리합니다. 행이 마운트된 뒤에 없는 id를 넘기면 짐작으로 재시도하지 않고 `false`를 반환합니다. `true`는 스크롤이 실행됐거나 대기됐다는 뜻이지, 그 행이 이미 화면에 있다는 뜻은 아닙니다.
 
 ### Tracking the Reader's Position
 
-Use `useMessageScrollerVisibility` to track the reader's position in the
-conversation. A common example is a table-of-contents or a jump menu that
-highlights the current anchored turn.
+대화에서 읽는 사람의 위치는 `useMessageScrollerVisibility`로 추적합니다. 현재 고정된 턴을 표시해 주는 목차나 이동 메뉴가 대표적인 예입니다.
 
 ```tsx
 import { useMessageScrollerVisibility } from "@/components/ui/message-scroller"
@@ -429,21 +352,13 @@ const { currentAnchorId, visibleMessageIds } = useMessageScrollerVisibility()
   hideCode
 />
 
-`currentAnchorId` answers "where am I" by reporting the current anchored turn,
-and it stays set after that anchor scrolls above the viewport. `visibleMessageIds`
-answers "what is on screen", in document order.
+`currentAnchorId`는 현재 고정된 턴을 알려 주는 "내가 어디에 있는가" 이고, 그 앵커가 뷰포트 위로 올라가도 값이 유지됩니다. `visibleMessageIds`는 "화면에 무엇이 있는가" 를 문서 순서대로 알려 줍니다.
 
-Visibility is pay-for-what-you-use. Tracking only runs while something
-subscribes to `useMessageScrollerVisibility`, and rows need a `messageId` to
-participate.
+노출 추적은 쓰는 만큼만 비용을 냅니다. `useMessageScrollerVisibility`를 구독하는 곳이 있을 때만 동작하고, 행에 `messageId`가 있어야 대상이 됩니다.
 
 ### Reading Scroll State
 
-Use `useMessageScrollerScrollable` when you need scroll state in JavaScript, such
-as a status indicator or a custom "jump to latest" control. It reports which
-edges the viewport can still scroll toward; "at the start/end" is the negation
-(`!start` / `!end`), and "scrollable at all" is `start || end`. For styling the
-scroller itself, prefer the `data-scrollable` attribute.
+상태 표시나 직접 만든 "최신으로 이동" 컨트롤처럼 자바스크립트에서 스크롤 상태가 필요하면 `useMessageScrollerScrollable`을 쓰세요. 뷰포트가 아직 어느 쪽으로 더 스크롤할 수 있는지 알려 줍니다. "처음/끝에 있다" 는 그 부정(`!start` / `!end`) 이고, "스크롤이 가능하다" 는 `start || end` 입니다. 스크롤러 자체를 꾸밀 때는 `data-scrollable` 속성을 쓰는 편이 낫습니다.
 
 ```tsx
 import { useMessageScrollerScrollable } from "@/components/ui/message-scroller"
@@ -462,36 +377,23 @@ const { start, end } = useMessageScrollerScrollable()
 
 ## Performance
 
-`MessageScroller` is benchmarked against large transcripts with markdown and
-composed message rows.
+`MessageScroller`는 마크다운과 조합형 메시지 행이 섞인 큰 기록으로 성능을 측정합니다.
 
-Our performance goal for `MessageScroller` is to keep the scroll hot path outside of React state: no React rerenders for
-transcript rows, no forced layout on every scroll, and as little off-screen paint
-work as the browser can avoid.
+목표는 스크롤 핫 패스를 React 상태 밖에 두는 것입니다. 기록 행을 다시 렌더링하지 않고, 스크롤할 때마다 레이아웃을 강제하지 않고, 화면 밖 페인트 작업은 브라우저가 건너뛸 수 있는 만큼 건너뜁니다.
 
-Scroll position, anchoring, and follow-output are tracked imperatively and mirrored onto the root and viewport through `data-*` attributes, so scrolling and streaming do not rerender transcript rows.
+스크롤 위치·고정·출력 따라가기는 명령형으로 추적해 루트와 뷰포트에 `data-*` 속성으로 반영합니다. 그래서 스크롤과 스트리밍이 기록 행을 다시 렌더링하지 않습니다.
 
-The styled `MessageScrollerItem` also ships with `content-visibility: auto` and
-`contain-intrinsic-size`. Rows stay in the DOM for selection, copy,
-find-in-page, SSR, and assistive tech, but the browser can skip rendering work
-for rows far outside the viewport.
+스타일이 적용된 `MessageScrollerItem` 에는 `content-visibility: auto`와 `contain-intrinsic-size`도 들어 있습니다. 행은 선택·복사·페이지 내 검색·SSR·보조 기술을 위해 DOM에 남지만, 뷰포트에서 멀리 떨어진 행은 브라우저가 렌더링 작업을 건너뜁니다.
 
-Visibility tracking is pay-for-what-you-use. A jump menu or active
-turn indicator costs nothing until something subscribes to
-`useMessageScrollerVisibility`.
+노출 추적은 쓰는 만큼만 비용을 냅니다. `useMessageScrollerVisibility`를 구독하기 전까지 이동 메뉴나 현재 턴 표시는 비용이 들지 않습니다.
 
-This is comfortable for the expected range of a chat transcript: hundreds to low
-thousands of turns, including messages with markdown and composed components.
+채팅 기록에서 기대할 만한 범위, 즉 마크다운과 조합 컴포넌트가 섞인 수백에서 수천 턴까지는 충분히 쾌적합니다.
 
 ## Virtualization
 
-Virtualization is intentionally left outside the primitive. `MessageScroller`
-renders real DOM rows and stays fast well into the thousands of turns (see
-[Performance](#performance)), so most transcripts never need it.
+가상화는 일부러 이 프리미티브 밖에 두었습니다. `MessageScroller`는 실제 DOM 행을 그리면서도 수천 턴까지 빠릅니다([Performance](#performance) 참고). 대부분의 기록에는 가상화가 필요 없습니다.
 
-When a transcript is large enough to need virtualization, use
-`MessageScrollerViewport` as the scroll element and let the virtualizer own the
-rows.
+가상화가 필요할 만큼 기록이 크다면 `MessageScrollerViewport`를 스크롤 요소로 쓰고 행은 가상화 라이브러리가 맡게 하세요.
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -554,16 +456,11 @@ function VirtualizedTranscript({
 
 ## Accessibility
 
-`MessageScroller` keeps the scroll container keyboard reachable and the
-transcript announceable without forcing a specific message UI.
+`MessageScroller`는 특정 메시지 UI를 강요하지 않으면서 스크롤 컨테이너를 키보드로 닿을 수 있게, 기록을 읽어 줄 수 있게 유지합니다.
 
-`MessageScrollerViewport` is a labelled, keyboard-focusable scroll region by
-default. It uses `role="region"`, `aria-label="Messages"`, and `tabIndex={0}`,
-so keyboard users can focus the transcript and scroll it directly.
+`MessageScrollerViewport`는 기본적으로 라벨이 붙은 키보드 포커스 가능한 스크롤 영역입니다. `role="region"`, `aria-label="Messages"`, `tabIndex={0}`을 써서 키보드 사용자가 기록에 포커스를 두고 직접 스크롤할 수 있습니다.
 
-`MessageScrollerContent` marks the transcript as a live region with
-`role="log"` and `aria-relevant="additions"`. New rows can be announced, but
-streamed text mutations do not have to be announced token by token.
+`MessageScrollerContent`는 `role="log"`와 `aria-relevant="additions"`로 기록을 라이브 리전으로 표시합니다. 새 행은 읽어 줄 수 있지만, 스트리밍되는 글자 변화까지 토큰 단위로 읽어 줄 필요는 없습니다.
 
 ```tsx
 <MessageScrollerContent aria-busy={status === "streaming"}>
@@ -571,21 +468,14 @@ streamed text mutations do not have to be announced token by token.
 </MessageScrollerContent>
 ```
 
-Pass `aria-busy` while a turn streams if announcements should wait for the
-completed message row.
+완성된 메시지 행이 나온 뒤에 읽어 줘야 한다면 턴이 스트리밍되는 동안 `aria-busy`를 넘기세요.
 
-`MessageScrollerButton` renders a real button. When there is nothing to scroll
-toward, it sets `inert`, uses `tabIndex={-1}`, and exposes `data-active="false"`
-so inactive scroll controls do not create extra focus stops.
+`MessageScrollerButton`은 진짜 button을 그립니다. 그 방향으로 스크롤할 내용이 없으면 `inert`를 걸고 `tabIndex={-1}`을 쓰며 `data-active="false"`를 노출해, 쓸모없는 스크롤 컨트롤이 포커스 순서를 늘리지 않게 합니다.
 
 ## Unstyled
 
-The behavior in `MessageScroller` comes from the `@shadcn/react` package. To use
-it directly with your own markup and styles, see
-[Message Scroller](/docs/react/message-scroller) under @shadcn/react.
+`MessageScroller`의 동작은 `@shadcn/react` 패키지에서 옵니다. 직접 만든 마크업과 스타일에 바로 쓰려면 @shadcn/react의 [Message Scroller](/docs/react/message-scroller)를 보세요.
 
 ## API Reference
 
-The props, data attributes, and hooks for every part are documented on the
-[@shadcn/react Message Scroller](/docs/react/message-scroller#api-reference) page.
-They are identical for the styled component and the unstyled parts.
+각 파트의 prop, 데이터 속성, 훅은 [@shadcn/react Message Scroller](/docs/react/message-scroller#api-reference) 페이지에 정리돼 있습니다. 스타일 컴포넌트와 스타일 없는 파트가 동일합니다.

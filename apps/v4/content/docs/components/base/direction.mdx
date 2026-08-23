@@ -8,9 +8,9 @@ links:
   api: https://base-ui.com/react/utils/direction-provider#api-reference
 ---
 
-The `DirectionProvider` component is used to set the text direction (`ltr` or `rtl`) for your application. This is essential for supporting right-to-left languages like Arabic, Hebrew, and Persian.
+`DirectionProvider`로 애플리케이션의 텍스트 방향(`ltr` 또는 `rtl`)을 정합니다. 아랍어·히브리어·페르시아어처럼 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 꼭 필요합니다.
 
-Here's a preview of the component in RTL mode. Use the language selector to switch the language. To see more examples, look for the RTL section on components pages.
+아래는 RTL 모드 미리보기입니다. 언어 선택기로 언어를 바꿔 보세요. 다른 예시는 각 컴포넌트 문서의 RTL 섹션에 있습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -41,13 +41,13 @@ npx shadcn@latest add direction
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="direction"
@@ -55,7 +55,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -81,7 +81,7 @@ import { DirectionProvider } from "@/components/ui/direction"
 
 ## useDirection
 
-The `useDirection` hook is used to get the current direction of the application.
+`useDirection` 훅으로 현재 애플리케이션의 방향을 읽습니다.
 
 ```tsx showLineNumbers
 import { useDirection } from "@/components/ui/direction"
