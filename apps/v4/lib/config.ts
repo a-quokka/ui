@@ -8,6 +8,8 @@ export const siteConfig = {
     twitter: "https://twitter.com/shadcn",
     github: "https://github.com/shadcn-ui/ui",
   },
+  // 범위: menu / sections / components 세 갈래만 쓴다.
+  // Blocks·Charts·Directory·Typeset·Create 는 이 포크에서 뺐다.
   navItems: [
     {
       href: "/",
@@ -20,26 +22,6 @@ export const siteConfig = {
     {
       href: "/docs/components",
       label: "Components",
-    },
-    {
-      href: "/blocks",
-      label: "Blocks",
-    },
-    {
-      href: "/charts/area",
-      label: "Charts",
-    },
-    {
-      href: "/docs/directory",
-      label: "Directory",
-    },
-    {
-      href: "/typeset",
-      label: "Typeset",
-    },
-    {
-      href: "/create",
-      label: "Create",
     },
   ],
 }

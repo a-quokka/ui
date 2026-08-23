@@ -18,7 +18,7 @@ import { ComponentPreview } from "./component-preview"
 
 export const revalidate = false
 export const dynamic = "force-static"
-export const dynamicParams = false
+export const dynamicParams = true
 
 const getCachedRegistryItem = React.cache(
   async (name: string, styleName: Style["name"]) => {
@@ -83,6 +83,11 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
+  // 이 포크의 범위는 menu / sections / components 다.
+  // 이 라우트는 문서에 박힌 미리보기 iframe 이 쓰므로 남기되,
+  // 사전 생성은 끊고 요청 시 생성으로 돌린다 (빌드 시간·산출물 절감).
+  return []
+
   const { Index } = await import("@/registry/__index__")
   // const { Index: BasesIndex } = await import("@/registry/bases/__index__")
   const { ExamplesIndex } = await import("@/examples/__index__")
