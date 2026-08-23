@@ -27,13 +27,13 @@ npx shadcn@latest add button-group
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="button-group"
@@ -41,7 +41,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -68,7 +68,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `ButtonGroup`:
+아래 구조로 `ButtonGroup`을 만듭니다.
 
 ```text
 ButtonGroup
@@ -79,9 +79,9 @@ ButtonGroup
 
 ## Accessibility
 
-- The `ButtonGroup` component has the `role` attribute set to `group`.
-- Use <Kbd>Tab</Kbd> to navigate between the buttons in the group.
-- Use `aria-label` or `aria-labelledby` to label the button group.
+- `ButtonGroup`은 `role` 속성이 `group`으로 지정돼 있습니다.
+- 그룹 안 버튼 사이는 <Kbd>Tab</Kbd> 으로 이동합니다.
+- 버튼 그룹에는 `aria-label`이나 `aria-labelledby`로 이름을 주세요.
 
 ```tsx showLineNumbers
 <ButtonGroup aria-label="Button group">
@@ -92,74 +92,74 @@ ButtonGroup
 
 ## ButtonGroup vs ToggleGroup
 
-- Use the `ButtonGroup` component when you want to group buttons that perform an action.
-- Use the `ToggleGroup` component when you want to group buttons that toggle a state.
+- 동작을 실행하는 버튼을 묶을 때는 `ButtonGroup`을 씁니다.
+- 상태를 켜고 끄는 버튼을 묶을 때는 `ToggleGroup`을 씁니다.
 
 ## Orientation
 
-Set the `orientation` prop to change the button group layout.
+`orientation` prop으로 버튼 그룹의 배치를 바꿉니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-orientation" />
 
 ## Size
 
-Control the size of buttons using the `size` prop on individual buttons.
+버튼 크기는 각 버튼의 `size` prop으로 정합니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-size" />
 
 ## Nested
 
-Nest `<ButtonGroup>` components to create button groups with spacing.
+`<ButtonGroup>`을 중첩하면 사이가 벌어진 버튼 그룹이 됩니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-nested" />
 
 ## Separator
 
-The `ButtonGroupSeparator` component visually divides buttons within a group.
+`ButtonGroupSeparator`는 그룹 안 버튼을 시각적으로 나눕니다.
 
-Buttons with variant `outline` do not need a separator since they have a border. For other variants, a separator is recommended to improve the visual hierarchy.
+`outline` variant 버튼은 테두리가 있어 구분선이 필요 없습니다. 다른 variant 라면 위계를 살리기 위해 구분선을 두는 편이 좋습니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-separator" />
 
 ## Split
 
-Create a split button group by adding two buttons separated by a `ButtonGroupSeparator`.
+버튼 두 개를 `ButtonGroupSeparator`로 나누면 분할 버튼 그룹이 됩니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-split" />
 
 ## Input
 
-Wrap an `Input` component with buttons.
+`Input` 컴포넌트를 버튼으로 감쌉니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-input" />
 
 ## Input Group
 
-Wrap an `InputGroup` component to create complex input layouts.
+`InputGroup`을 감싸면 복잡한 입력 배치를 만들 수 있습니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-input-group" />
 
 ## Dropdown Menu
 
-Create a split button group with a `DropdownMenu` component.
+`DropdownMenu`로 분할 버튼 그룹을 만듭니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-dropdown" />
 
 ## Select
 
-Pair with a `Select` component.
+`Select`와 함께 씁니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-select" />
 
 ## Popover
 
-Use with a `Popover` component.
+`Popover`와 함께 씁니다.
 
 <ComponentPreview styleName="base-nova" name="button-group-popover" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -171,7 +171,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### ButtonGroup
 
-The `ButtonGroup` component is a container that groups related buttons together with consistent styling.
+`ButtonGroup`은 관련된 버튼을 같은 스타일로 묶는 컨테이너입니다.
 
 | Prop          | Type                         | Default        |
 | ------------- | ---------------------------- | -------------- |
@@ -184,7 +184,7 @@ The `ButtonGroup` component is a container that groups related buttons together 
 </ButtonGroup>
 ```
 
-Nest multiple button groups to create complex layouts with spacing. See the [nested](#nested) example for more details.
+버튼 그룹을 중첩하면 사이가 벌어진 복잡한 배치를 만들 수 있습니다. 자세한 내용은 [nested](#nested) 예제를 보세요.
 
 ```tsx
 <ButtonGroup>
@@ -195,7 +195,7 @@ Nest multiple button groups to create complex layouts with spacing. See the [nes
 
 ### ButtonGroupSeparator
 
-The `ButtonGroupSeparator` component visually divides buttons within a group.
+`ButtonGroupSeparator`는 그룹 안 버튼을 시각적으로 나눕니다.
 
 | Prop          | Type                         | Default      |
 | ------------- | ---------------------------- | ------------ |
@@ -211,7 +211,7 @@ The `ButtonGroupSeparator` component visually divides buttons within a group.
 
 ### ButtonGroupText
 
-Use this component to display text within a button group.
+버튼 그룹 안에 글자를 보여 줄 때 씁니다.
 
 | Prop     | Type                 | Default |
 | -------- | -------------------- | ------- |
@@ -224,7 +224,7 @@ Use this component to display text within a button group.
 </ButtonGroup>
 ```
 
-Use the `render` prop to render a custom component as the text, for example a label.
+`render` prop으로 라벨처럼 원하는 컴포넌트를 글자 자리에 그립니다.
 
 ```tsx showLineNumbers
 import { ButtonGroupText } from "@/components/ui/button-group"

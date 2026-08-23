@@ -32,13 +32,13 @@ npx shadcn@latest add questionnaire
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependency:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @shadcn/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="questionnaire"
@@ -46,7 +46,7 @@ npm install @shadcn/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -110,8 +110,7 @@ const items = [
 ] as const
 ```
 
-Define the collection once: pass it to `Questionnaire` for server-rendered
-progress, actions, and shortcuts, then map it into the parts.
+항목 모음은 한 번만 정의합니다. `Questionnaire`에 넘기면 진행률·동작·단축키가 서버에서 그려지고, 그다음 각 파트로 나눠 그립니다.
 
 ```tsx
 <Questionnaire items={items} onSubmit={handleSubmit}>
@@ -183,19 +182,15 @@ Questionnaire
     └── QuestionnaireSubmit
 ```
 
-Questionnaire owns the ordered items, active item, answer state, validation,
-progress, and navigation. The containing page, card, dialog, or drawer owns
-close and cancellation behavior, persistence, transport, and branching.
+Questionnaire는 항목 순서, 현재 항목, 답변 상태, 검증, 진행률, 이동을 맡습니다. 이를 감싸는 페이지·카드·다이얼로그·drawer는 닫기와 취소, 저장, 전송, 분기를 맡습니다.
 
 ## Server Rendering
 
-Pass `items` to server-render the active item, progress, actions, and answer
-shortcuts. See the
-[headless Questionnaire](/docs/react/questionnaire) for the complete behavior.
+`items`를 넘기면 현재 항목·진행률·동작·답변 단축키가 서버에서 그려집니다. 전체 동작은 [headless Questionnaire](/docs/react/questionnaire)를 보세요.
 
 ## Multiple Selection
 
-Use `multiple` for an item that accepts more than one fixed answer.
+답을 여러 개 고를 수 있는 항목에는 `multiple`을 씁니다.
 
 <ComponentPreview
   align="end"
@@ -206,7 +201,7 @@ Use `multiple` for an item that accepts more than one fixed answer.
 
 ## Freeform Answer
 
-Compose `QuestionnaireInput` with fixed choices when the user can provide another answer.
+정해진 선택지 외에 직접 답을 적을 수 있게 하려면 `QuestionnaireInput`을 함께 조합합니다.
 
 <ComponentPreview
   align="end"
@@ -217,7 +212,7 @@ Compose `QuestionnaireInput` with fixed choices when the user can provide anothe
 
 ## Explicit Skip
 
-Add `QuestionnaireSkip` when an optional item may be intentionally left unanswered.
+선택 항목을 일부러 비워 둘 수 있게 하려면 `QuestionnaireSkip`을 넣습니다.
 
 <ComponentPreview
   align="end"
@@ -228,7 +223,7 @@ Add `QuestionnaireSkip` when an optional item may be intentionally left unanswer
 
 ## Shortcuts
 
-Assign a letter or number key to each answer with `shortcuts`.
+`shortcuts`로 각 답변에 글자나 숫자 키를 지정합니다.
 
 <ComponentPreview
   align="end"
@@ -239,7 +234,7 @@ Assign a letter or number key to each answer with `shortcuts`.
 
 ## Custom Validation
 
-Combine controlled navigation with an external schema such as Zod to return to an invalid item and present its error.
+이동을 직접 제어하고 Zod 같은 외부 스키마와 조합하면, 잘못된 항목으로 되돌아가 오류를 보여 줄 수 있습니다.
 
 <ComponentPreview
   align="end"
@@ -250,7 +245,7 @@ Combine controlled navigation with an external schema such as Zod to return to a
 
 ## Controlled
 
-Control the active item from host state, such as returning to an invalid step.
+잘못된 단계로 되돌아가는 경우처럼, 현재 항목을 바깥 상태에서 제어합니다.
 
 <ComponentPreview
   align="end"
@@ -261,7 +256,7 @@ Control the active item from host state, such as returning to an invalid step.
 
 ## Resume
 
-Restore a saved active item and default answers, then reset changes back to that saved state.
+저장해 둔 현재 항목과 기본 답변을 되살리고, 변경 사항을 그 상태로 되돌립니다.
 
 <ComponentPreview
   align="end"
@@ -272,7 +267,7 @@ Restore a saved active item and default answers, then reset changes back to that
 
 ## Conditional Items
 
-Disable items that do not apply to the user's earlier answers.
+앞선 답변에 해당하지 않는 항목은 비활성화합니다.
 
 <ComponentPreview
   align="end"
@@ -283,7 +278,7 @@ Disable items that do not apply to the user's earlier answers.
 
 ## Navigation State
 
-Read item status to opt into disabled navigation and custom action styling.
+항목 상태를 읽어 이동을 막거나 동작 버튼 스타일을 직접 지정합니다.
 
 <ComponentPreview
   align="end"
@@ -294,7 +289,7 @@ Read item status to opt into disabled navigation and custom action styling.
 
 ## Custom Progress
 
-Use the Progress render state to build a custom progress indicator.
+Progress의 render 상태로 진행률 표시를 직접 만듭니다.
 
 <ComponentPreview
   align="end"
@@ -305,7 +300,7 @@ Use the Progress render state to build a custom progress indicator.
 
 ## Animated Items
 
-Animate the active item while keeping progress and navigation stationary.
+진행률과 이동은 그대로 두고 현재 항목만 애니메이션으로 바꿉니다.
 
 <ComponentPreview
   align="end"
@@ -316,7 +311,7 @@ Animate the active item while keeping progress and navigation stationary.
 
 ## Card
 
-Compose Questionnaire with Card slots while keeping the question title and description semantic.
+질문 제목과 설명의 의미 구조를 지키면서 Questionnaire를 Card 슬롯과 조합합니다.
 
 <ComponentPreview
   align="end"
@@ -327,7 +322,7 @@ Compose Questionnaire with Card slots while keeping the question title and descr
 
 ## Dialog
 
-Compose Questionnaire inside a Dialog while keeping cancellation and dismissal host-owned.
+취소와 닫기는 바깥에 맡기고 Questionnaire를 Dialog 안에 조합합니다.
 
 <ComponentPreview
   align="end"
@@ -338,30 +333,16 @@ Compose Questionnaire inside a Dialog while keeping cancellation and dismissal h
 
 ## Accessibility
 
-`QuestionnaireItem` renders a `fieldset`, and `QuestionnaireTitle` renders its
-`legend`. Descriptions and active errors are associated with the current item,
-and invalid items and answer controls expose `aria-invalid`.
+`QuestionnaireItem`은 `fieldset`을, `QuestionnaireTitle`은 그 `legend`를 그립니다. 설명과 현재 오류는 현재 항목에 연결되고, 잘못된 항목과 답변 컨트롤에는 `aria-invalid`가 붙습니다.
 
-Fixed choices preserve native radio and checkbox behavior. Progress is exposed
-as a named progressbar, navigation uses real buttons, and inactive items and
-actions are hidden and inert. Successful navigation focuses the newly active
-item; failed validation focuses an available answer control.
+정해진 선택지는 네이티브 radio·checkbox 동작을 그대로 씁니다. 진행률은 이름이 붙은 progressbar로 노출되고, 이동에는 진짜 button을 쓰며, 현재가 아닌 항목과 동작은 감춰지고 조작되지 않습니다. 이동에 성공하면 새로 활성화된 항목에 포커스가 가고, 검증에 실패하면 조작 가능한 답변 컨트롤에 포커스가 갑니다.
 
-Always give `QuestionnaireInput` an accessible name with a visible label,
-`aria-label`, or `aria-labelledby`. A placeholder is not a label. See the
-[Questionnaire accessibility guide](/docs/react/questionnaire#accessibility)
-for labeling custom compositions and the complete keyboard behavior.
+`QuestionnaireInput` 에는 눈에 보이는 라벨이나 `aria-label`·`aria-labelledby`로 접근성 이름을 꼭 주세요. placeholder는 라벨이 아닙니다. 직접 조합할 때의 라벨 지정과 전체 키보드 동작은 [Questionnaire 접근성 가이드](/docs/react/questionnaire#accessibility)를 보세요.
 
 ## Unstyled
 
-The behavior in `Questionnaire` comes from the `@shadcn/react` package. To use
-it directly with your own markup and styles, see
-[Questionnaire](/docs/react/questionnaire) under @shadcn/react.
+`Questionnaire`의 동작은 `@shadcn/react` 패키지에서 옵니다. 직접 만든 마크업과 스타일에 바로 쓰려면 @shadcn/react의 [Questionnaire](/docs/react/questionnaire)를 보세요.
 
 ## API Reference
 
-The props, data attributes, and render states for every part are documented on
-the [@shadcn/react Questionnaire](/docs/react/questionnaire#api-reference) page.
-The styled components inherit the corresponding unstyled props. Navigation
-components also accept Button `size` and `variant` props, and
-`QuestionnaireActions` is a styled-only layout helper.
+각 파트의 prop, 데이터 속성, render 상태는 [@shadcn/react Questionnaire](/docs/react/questionnaire#api-reference) 페이지에 정리돼 있습니다. 스타일 컴포넌트는 대응하는 스타일 없는 prop을 그대로 물려받습니다. 이동 컴포넌트는 Button의 `size`와 `variant` prop도 받고, `QuestionnaireActions`는 스타일 버전에만 있는 배치 도우미입니다.

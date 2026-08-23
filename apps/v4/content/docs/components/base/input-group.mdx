@@ -33,7 +33,7 @@ npx shadcn@latest add input-group
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="input-group"
@@ -41,7 +41,7 @@ npx shadcn@latest add input-group
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -73,7 +73,7 @@ import {
 
 ## Composition
 
-Use the following composition to build an `InputGroup`:
+아래 구조로 `InputGroup`을 만듭니다.
 
 ```text
 InputGroup
@@ -85,17 +85,17 @@ InputGroup
 
 ## Align
 
-Use the `align` prop on `InputGroupAddon` to position the addon relative to the input.
+`InputGroupAddon`의 `align` prop으로 애드온을 입력 기준 어디에 둘지 정합니다.
 
 <Callout>
-  For proper focus management, `InputGroupAddon` should always be placed after
-  `InputGroupInput` or `InputGroupTextarea` in the DOM. Use the `align` prop to
-  visually position the addon.
+  포커스가 제대로 이동하려면 `InputGroupAddon`은 DOM에서 항상
+  `InputGroupInput`이나 `InputGroupTextarea` 뒤에 와야 합니다. 보이는 위치는
+  `align` prop으로 정하세요.
 </Callout>
 
 ### inline-start
 
-Use `align="inline-start"` to position the addon at the start of the input. This is the default.
+`align="inline-start"`로 애드온을 입력 앞에 둡니다. 기본값입니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -105,7 +105,7 @@ Use `align="inline-start"` to position the addon at the start of the input. This
 
 ### inline-end
 
-Use `align="inline-end"` to position the addon at the end of the input.
+`align="inline-end"`로 애드온을 입력 뒤에 둡니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -115,7 +115,7 @@ Use `align="inline-end"` to position the addon at the end of the input.
 
 ### block-start
 
-Use `align="block-start"` to position the addon above the input.
+`align="block-start"`로 애드온을 입력 위에 둡니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -125,7 +125,7 @@ Use `align="block-start"` to position the addon above the input.
 
 ### block-end
 
-Use `align="block-end"` to position the addon below the input.
+`align="block-end"`로 애드온을 입력 아래에 둡니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -191,9 +191,9 @@ Use `align="block-end"` to position the addon below the input.
 
 ## Custom Input
 
-Add the `data-slot="input-group-control"` attribute to your custom input for automatic focus state handling.
+직접 만든 입력에 `data-slot="input-group-control"` 속성을 붙이면 포커스 상태가 자동으로 처리됩니다.
 
-Here's an example of a custom resizable textarea from a third-party library.
+외부 라이브러리의 크기 조절 textarea를 쓴 예시입니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -203,7 +203,7 @@ Here's an example of a custom resizable textarea from a third-party library.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -216,7 +216,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### InputGroup
 
-The main component that wraps inputs and addons.
+입력과 애드온을 감싸는 기본 컴포넌트입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -231,11 +231,11 @@ The main component that wraps inputs and addons.
 
 ### InputGroupAddon
 
-Displays icons, text, buttons, or other content alongside inputs.
+입력 옆에 아이콘·글자·버튼 같은 내용을 보여 줍니다.
 
 <Callout icon={<IconInfoCircle />} title="Focus Navigation">
-  For proper focus navigation, the `InputGroupAddon` component should be placed
-  after the input. Set the `align` prop to position the addon.
+  포커스가 제대로 이동하려면 `InputGroupAddon`은 입력 뒤에 와야 합니다. 보이는
+  위치는 `align` prop으로 정하세요.
 </Callout>
 
 | Prop        | Type                                                             | Default          |
@@ -249,9 +249,9 @@ Displays icons, text, buttons, or other content alongside inputs.
 </InputGroupAddon>
 ```
 
-**For `<InputGroupInput />`, use the `inline-start` or `inline-end` alignment. For `<InputGroupTextarea />`, use the `block-start` or `block-end` alignment.**
+**`<InputGroupInput />` 에는 `inline-start`나 `inline-end`, `<InputGroupTextarea />` 에는 `block-start`나 `block-end`를 쓰세요.**
 
-The `InputGroupAddon` component can have multiple `InputGroupButton` components and icons.
+`InputGroupAddon` 안에는 `InputGroupButton`과 아이콘을 여러 개 둘 수 있습니다.
 
 ```tsx
 <InputGroupAddon>
@@ -262,7 +262,7 @@ The `InputGroupAddon` component can have multiple `InputGroupButton` components 
 
 ### InputGroupButton
 
-Displays buttons within input groups.
+입력 그룹 안에 버튼을 보여 줍니다.
 
 | Prop        | Type                                                                          | Default   |
 | ----------- | ----------------------------------------------------------------------------- | --------- |
@@ -279,13 +279,13 @@ Displays buttons within input groups.
 
 ### InputGroupInput
 
-Replacement for `<Input />` when building input groups. This component has the input group styles pre-applied and uses the unified `data-slot="input-group-control"` for focus state handling.
+입력 그룹을 만들 때 `<Input />` 대신 쓰는 컴포넌트입니다. 입력 그룹 스타일이 미리 적용돼 있고, 포커스 상태 처리를 위해 공통 `data-slot="input-group-control"`을 씁니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
-All other props are passed through to the underlying `<Input />` component.
+나머지 prop은 내부 `<Input />`으로 그대로 전달됩니다.
 
 ```tsx
 <InputGroup>
@@ -298,13 +298,13 @@ All other props are passed through to the underlying `<Input />` component.
 
 ### InputGroupTextarea
 
-Replacement for `<Textarea />` when building input groups. This component has the textarea group styles pre-applied and uses the unified `data-slot="input-group-control"` for focus state handling.
+입력 그룹을 만들 때 `<Textarea />` 대신 쓰는 컴포넌트입니다. textarea 그룹 스타일이 미리 적용돼 있고, 포커스 상태 처리를 위해 공통 `data-slot="input-group-control"`을 씁니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
-All other props are passed through to the underlying `<Textarea />` component.
+나머지 prop은 내부 `<Textarea />`로 그대로 전달됩니다.
 
 ```tsx
 <InputGroup>
