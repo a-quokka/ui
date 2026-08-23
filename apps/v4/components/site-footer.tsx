@@ -17,7 +17,7 @@ export function SiteFooter() {
             </a>{" "}
             at{" "}
             <a
-              href="https://vercel.com/new?utm_source=shadcn_site&utm_medium=web&utm_campaign=docs_cta_deploy_now_callout"
+              href="https://vercel.com"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"

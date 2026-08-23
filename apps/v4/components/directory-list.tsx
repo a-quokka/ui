@@ -37,11 +37,9 @@ import { Skeleton } from "@/styles/base-nova/ui/skeleton"
 import { SearchDirectory } from "./directory-search"
 
 function getHomepageUrl(homepage: string) {
-  const url = new URL(homepage)
-  url.searchParams.set("utm_source", "ui.shadcn.com")
-  url.searchParams.set("utm_medium", "referral")
-  url.searchParams.set("utm_campaign", "directory")
-  return url.toString()
+  // 포크에서 나간 클릭이 원본 사이트 유입으로 집계되지 않도록
+  // utm_source=ui.shadcn.com 계열 파라미터를 붙이지 않는다.
+  return new URL(homepage).toString()
 }
 
 function getPageHref(pathname: string, query: string, page: number) {
