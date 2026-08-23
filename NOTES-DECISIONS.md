@@ -51,6 +51,45 @@ Tailwind 의 `@source` 스캔 범위를 줄여 봐도 변화가 없었다.
    (`~/.local/share/com.vercel.cli` 없음), 로그인은 계정 인증이라 대신 못 한다.
    git 연동이 아닌 배포가 되는 것도 감안해야 한다.
 
+#### 1번을 고른다면 — 실행 계획은 이미 다 조사해 두었다
+
+의존 관계를 전부 훑어서, 무엇을 지우고 무엇을 먼저 옮겨야 하는지 확인했다.
+**삭제는 승인이 필요한 동작이라 실행하지 않았다.** 승인만 주면 그대로 진행한다.
+
+지울 것:
+
+```
+apps/v4/app/(app)/(create)
+apps/v4/app/(app)/(typeset)
+apps/v4/app/(app)/(styles)
+apps/v4/app/(app)/blocks
+apps/v4/app/(app)/charts
+apps/v4/app/(app)/directory
+apps/v4/app/(view)/preview        ← (view) 전체가 아니라 preview 만
+apps/v4/app/typeset.css/route.ts  ← typeset 커스터마이저 전용 라우트
+apps/v4/components/designer-actions.tsx
+```
+
+**`app/(view)/view/[style]/[name]` 는 남겨야 한다.** 컴포넌트 문서의 블록
+미리보기가 이 경로를 iframe 으로 띄운다 (`components/component-preview.tsx:50`,
+`components/block-viewer.tsx:252`). 이전 세션이 `(view)` 를 남긴 이유가 이것이다.
+
+지우기 전에 먼저 옮겨야 하는 것 둘:
+
+1. `app/(app)/(typeset)/typeset.css` → `app/typeset.css`
+   루트 레이아웃이 읽고, `.typeset` 클래스를 문서 본문(`mdx-components.tsx`,
+   `docs/[[...slug]]/page.tsx`, `docs/changelog/page.tsx`)이 쓴다. 파일은 살리고
+   위치만 옮긴 뒤 `app/layout.tsx:18` 의 import 를 고친다.
+2. `components/site-header.tsx` 에서 `DesignerActions` 사용을 걷어낸다.
+   이 컴포넌트가 `(create)` 의 `project-form`·`v0-button` 을 끌어온다.
+   헤더에서 Create 는 이미 내비게이션에서 빠져 있으니 같이 정리하면 된다.
+
+바깥에서 이 그룹들을 참조하는 곳은 위 두 군데가 전부다(전체 소스를 훑어 확인).
+`/preview/*` 링크는 `(typeset)` 과 `(create)` 안에서만 쓰이므로 함께 사라진다.
+
+실측 결과 이 구성에서 컴파일 최대 상주 메모리가 **6.8GB** 로 내려간다.
+8GB 컨테이너에 1.2GB 여유가 생긴다.
+
 곁들여: 아래 aria·radix 컴포넌트 문서 두 벌을 걷어내면 `/docs` 자체가 훨씬 가벼워진다.
 5.9GB 의 대부분이 미리보기용 예제·스타일 모듈 그래프(약 3,200개 모듈)다.
 이것도 범위 결정이라 손대지 않았다.
