@@ -34,13 +34,13 @@ npx shadcn@latest add checkbox
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="checkbox"
@@ -48,7 +48,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -68,8 +68,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 
 ## Checked State
 
-Use `defaultChecked` for uncontrolled checkboxes, or `checked` and
-`onCheckedChange` to control the state.
+제어하지 않는 체크박스에는 `defaultChecked`를, 상태를 제어하려면 `checked`와 `onCheckedChange`를 씁니다.
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -83,32 +82,31 @@ export function Example() {
 
 ## Invalid State
 
-Set `aria-invalid` on the checkbox and `data-invalid` on the field wrapper to
-show the invalid styles.
+오류 스타일을 보이려면 체크박스에 `aria-invalid`를, 감싸는 field에 `data-invalid`를 지정합니다.
 
 <ComponentPreview styleName="base-nova" name="checkbox-invalid" />
 
 ## Basic
 
-Pair the checkbox with `Field` and `FieldLabel` for proper layout and labeling.
+체크박스는 `Field`·`FieldLabel`과 함께 써야 배치와 라벨이 제대로 잡힙니다.
 
 <ComponentPreview styleName="base-nova" name="checkbox-basic" />
 
 ## Description
 
-Use `FieldContent` and `FieldDescription` for helper text.
+도움말에는 `FieldContent`와 `FieldDescription`을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="checkbox-description" />
 
 ## Disabled
 
-Use the `disabled` prop to prevent interaction and add the `data-disabled` attribute to the `<Field>` component for disabled styles.
+`disabled` prop으로 조작을 막고, 비활성 스타일은 `<Field>` 컴포넌트에 `data-disabled` 속성을 붙여 줍니다.
 
 <ComponentPreview styleName="base-nova" name="checkbox-disabled" />
 
 ## Group
 
-Use multiple fields to create a checkbox list.
+field를 여러 개 두면 체크박스 목록이 됩니다.
 
 <ComponentPreview styleName="base-nova" name="checkbox-group" />
 
@@ -122,7 +120,7 @@ Use multiple fields to create a checkbox list.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -133,4 +131,4 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## API Reference
 
-See the [Base UI](https://base-ui.com/react/components/checkbox#api-reference) documentation for more information.
+자세한 내용은 [Base UI](https://base-ui.com/react/components/checkbox#api-reference) 문서를 보세요.

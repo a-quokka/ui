@@ -16,7 +16,7 @@ links:
 
 ## About
 
-The `Resizable` component is built on top of [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) by [bvaughn](https://github.com/bvaughn).
+`Resizable`은 [bvaughn](https://github.com/bvaughn)이 만든 [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels) 위에 만들었습니다.
 
 ## Installation
 
@@ -38,13 +38,13 @@ npx shadcn@latest add resizable
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install react-resizable-panels
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="resizable"
@@ -52,7 +52,7 @@ npm install react-resizable-panels
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -80,7 +80,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `ResizablePanelGroup`:
+아래 구조로 `ResizablePanelGroup`을 만듭니다.
 
 ```text
 ResizablePanelGroup
@@ -91,33 +91,33 @@ ResizablePanelGroup
 
 ## Vertical
 
-Use `orientation="vertical"` for vertical resizing.
+세로로 크기를 조절하려면 `orientation="vertical"`을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="resizable-vertical" />
 
 ## Handle
 
-Use the `withHandle` prop on `ResizableHandle` to show a visible handle.
+`ResizableHandle`에 `withHandle` prop을 주면 손잡이가 눈에 보입니다.
 
 <ComponentPreview styleName="base-nova" name="resizable-handle" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview styleName="base-nova" name="resizable-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels/tree/main/packages/react-resizable-panels) documentation.
+자세한 내용은 [react-resizable-panels](https://github.com/bvaughn/react-resizable-panels/tree/main/packages/react-resizable-panels) 문서를 보세요.
 
 ## Changelog
 
 ### 2025-02-02 `react-resizable-panels` v4
 
-Updated to `react-resizable-panels` v4. See the [v4.0.0 release notes](https://github.com/bvaughn/react-resizable-panels/releases/tag/4.0.0) for full details.
+`react-resizable-panels` v4로 올렸습니다. 자세한 내용은 [v4.0.0 릴리스 노트](https://github.com/bvaughn/react-resizable-panels/releases/tag/4.0.0)를 보세요.
 
-If you're using `react-resizable-panels` primitives directly, note the following changes:
+`react-resizable-panels` 프리미티브를 직접 쓰고 있다면 아래가 달라졌습니다.
 
 | v3                           | v4                      |
 | ---------------------------- | ----------------------- |
@@ -131,6 +131,7 @@ If you're using `react-resizable-panels` primitives directly, note the following
 | `data-panel-group-direction` | `aria-orientation`      |
 
 <Callout>
-  The shadcn/ui wrapper components (`ResizablePanelGroup`, `ResizablePanel`,
-  `ResizableHandle`) remain unchanged.
+  shadcn/ui 래퍼
+  컴포넌트(`ResizablePanelGroup`·`ResizablePanel`·`ResizableHandle`)는
+  그대로입니다.
 </Callout>

@@ -8,8 +8,8 @@ component: true
 import { InfoIcon } from "lucide-react"
 
 <Callout variant="info" icon={<InfoIcon className="translate-y-[3px]!" />}>
-  For a styled select component, see the [Select](/docs/components/select)
-  component.
+  스타일이 적용된 셀렉트가 필요하면 [Select](/docs/components/select) 컴포넌트를
+  보세요.
 </Callout>
 
 <ComponentPreview styleName="base-nova" name="native-select-demo" />
@@ -34,7 +34,7 @@ npx shadcn@latest add native-select
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="native-select"
@@ -42,7 +42,7 @@ npx shadcn@latest add native-select
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -74,7 +74,7 @@ import {
 
 ### Simple
 
-Options placed directly under `NativeSelect` (no `NativeSelectOptGroup`).
+`NativeSelectOptGroup` 없이 `NativeSelect` 바로 아래에 옵션을 두는 구조입니다.
 
 ```text
 NativeSelect
@@ -86,7 +86,7 @@ NativeSelect
 
 ### With groups
 
-Use `NativeSelectOptGroup` to organize options into categories.
+`NativeSelectOptGroup`으로 옵션을 갈래별로 묶습니다.
 
 ```text
 NativeSelect
@@ -100,30 +100,30 @@ NativeSelect
 
 ## Groups
 
-Use `NativeSelectOptGroup` to organize options into categories.
+`NativeSelectOptGroup`으로 옵션을 갈래별로 묶습니다.
 
 <ComponentPreview styleName="base-nova" name="native-select-groups" />
 
 ## Disabled
 
-Add the `disabled` prop to the `NativeSelect` component to disable the select.
+`NativeSelect`에 `disabled` prop을 주면 셀렉트가 비활성화됩니다.
 
 <ComponentPreview styleName="base-nova" name="native-select-disabled" />
 
 ## Invalid
 
-Use `aria-invalid` to show validation errors and the `data-invalid` attribute to the `Field` component for styling.
+검증 오류는 `aria-invalid`로 표시하고, 스타일은 `Field` 컴포넌트의 `data-invalid` 속성으로 줍니다.
 
 <ComponentPreview styleName="base-nova" name="native-select-invalid" />
 
 ## Native Select vs Select
 
-- Use `NativeSelect` for native browser behavior, better performance, or mobile-optimized dropdowns.
-- Use `Select` for custom styling, animations, or complex interactions.
+- 브라우저 기본 동작이 필요하거나, 더 가볍게 만들고 싶거나, 모바일에 맞춘 드롭다운이 필요하면 `NativeSelect`를 씁니다.
+- 스타일을 직접 꾸미거나 애니메이션, 복잡한 상호작용이 필요하면 `Select`를 씁니다.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -135,7 +135,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### NativeSelect
 
-The main select component that wraps the native HTML select element.
+네이티브 HTML select 요소를 감싸는 기본 컴포넌트입니다.
 
 ```tsx
 <NativeSelect>
@@ -146,7 +146,7 @@ The main select component that wraps the native HTML select element.
 
 ### NativeSelectOption
 
-Represents an individual option within the select.
+셀렉트 안의 옵션 하나입니다.
 
 | Prop       | Type      | Default |
 | ---------- | --------- | ------- |
@@ -155,7 +155,7 @@ Represents an individual option within the select.
 
 ### NativeSelectOptGroup
 
-Groups related options together for better organization.
+관련된 옵션을 묶어 정리합니다.
 
 | Prop       | Type      | Default |
 | ---------- | --------- | ------- |

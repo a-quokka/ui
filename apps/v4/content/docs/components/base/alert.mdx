@@ -31,7 +31,7 @@ npx shadcn@latest add alert
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   styleName="base-nova"
@@ -39,7 +39,7 @@ npx shadcn@latest add alert
   title="components/ui/alert.tsx"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -73,7 +73,7 @@ import {
 
 ## Composition
 
-Use the following composition to build an `Alert`:
+아래 구조로 `Alert`를 만듭니다.
 
 ```text
 Alert
@@ -85,7 +85,7 @@ Alert
 
 ## Basic
 
-A basic alert with an icon, title and description.
+아이콘·제목·설명이 있는 기본 알림입니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -95,7 +95,7 @@ A basic alert with an icon, title and description.
 
 ## Destructive
 
-Use `variant="destructive"` to create a destructive alert.
+`variant="destructive"`로 경고 알림을 만듭니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -105,7 +105,7 @@ Use `variant="destructive"` to create a destructive alert.
 
 ## Action
 
-Use `AlertAction` to add a button or other action element to the alert.
+`AlertAction`으로 알림에 버튼 같은 동작 요소를 넣습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -115,7 +115,7 @@ Use `AlertAction` to add a button or other action element to the alert.
 
 ## Custom Colors
 
-You can customize the alert colors by adding custom classes such as `bg-amber-50 dark:bg-amber-950` to the `Alert` component.
+`Alert`에 `bg-amber-50 dark:bg-amber-950` 같은 클래스를 붙여 색을 바꿀 수 있습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -125,7 +125,7 @@ You can customize the alert colors by adding custom classes such as `bg-amber-50
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -138,7 +138,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### Alert
 
-The `Alert` component displays a callout for user attention.
+`Alert`는 사용자의 주의를 끄는 안내를 보여 줍니다.
 
 | Prop      | Type                         | Default     |
 | --------- | ---------------------------- | ----------- |
@@ -146,7 +146,7 @@ The `Alert` component displays a callout for user attention.
 
 ### AlertTitle
 
-The `AlertTitle` component displays the title of the alert.
+`AlertTitle`은 알림의 제목입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -154,7 +154,7 @@ The `AlertTitle` component displays the title of the alert.
 
 ### AlertDescription
 
-The `AlertDescription` component displays the description or content of the alert.
+`AlertDescription`은 알림의 설명이나 내용입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -162,7 +162,7 @@ The `AlertDescription` component displays the description or content of the aler
 
 ### AlertAction
 
-The `AlertAction` component displays an action element (like a button) positioned absolutely in the top-right corner of the alert.
+`AlertAction`은 버튼 같은 동작 요소를 알림 오른쪽 위에 고정해 보여 줍니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |

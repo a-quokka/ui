@@ -30,13 +30,13 @@ npx shadcn@latest add toggle-group
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="toggle-group"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -68,7 +68,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 
 ## Composition
 
-Use the following composition to build a `ToggleGroup`:
+아래 구조로 `ToggleGroup`을 만듭니다.
 
 ```text
 ToggleGroup
@@ -78,25 +78,25 @@ ToggleGroup
 
 ## Outline
 
-Use `variant="outline"` for an outline style.
+`variant="outline"`으로 테두리 스타일을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="toggle-group-outline" />
 
 ## Size
 
-Use the `size` prop to change the size of the toggle group.
+`size` prop으로 토글 그룹 크기를 바꿉니다.
 
 <ComponentPreview styleName="base-nova" name="toggle-group-sizes" />
 
 ## Spacing
 
-Use `spacing` to add spacing between toggle group items.
+`spacing`으로 토글 그룹 항목 사이에 간격을 줍니다.
 
 <ComponentPreview styleName="base-nova" name="toggle-group-spacing" />
 
 ## Vertical
 
-Use `orientation="vertical"` for vertical toggle groups.
+세로 토글 그룹에는 `orientation="vertical"`을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="toggle-group-vertical" />
 
@@ -106,7 +106,7 @@ Use `orientation="vertical"` for vertical toggle groups.
 
 ## Custom
 
-A custom toggle group example.
+직접 꾸민 토글 그룹 예제입니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -116,7 +116,7 @@ A custom toggle group example.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -126,10 +126,10 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## API Reference
 
-See the [Base UI Toggle Group](https://base-ui.com/react/components/toggle-group#api-reference) documentation.
+자세한 내용은 [Base UI Toggle Group](https://base-ui.com/react/components/toggle-group#api-reference) 문서를 보세요.
 
 ## Changelog
 
 ### 2026-05-17 Default Spacing
 
-Changed the default `spacing` from `0` to `2` so toggle groups render with space between items by default. Use `spacing={0}` for connected items.
+기본 `spacing`을 `0`에서 `2`로 바꿔, 이제 토글 그룹 항목 사이에 간격이 생깁니다. 붙여 놓으려면 `spacing={0}`을 쓰세요.
