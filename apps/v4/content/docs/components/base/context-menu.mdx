@@ -34,13 +34,13 @@ npx shadcn@latest add context-menu
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="context-menu"
@@ -48,7 +48,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -81,7 +81,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `ContextMenu`:
+아래 구조로 `ContextMenu`를 만듭니다.
 
 ```text
 ContextMenu
@@ -112,61 +112,61 @@ ContextMenu
 
 ## Basic
 
-A simple context menu with a few actions.
+동작 몇 개가 들어간 기본 컨텍스트 메뉴입니다.
 
 <ComponentPreview styleName="base-nova" name="context-menu-basic" />
 
 ## Submenu
 
-Use `ContextMenuSub` to nest secondary actions.
+보조 동작은 `ContextMenuSub`로 중첩합니다.
 
 <ComponentPreview styleName="base-nova" name="context-menu-submenu" />
 
 ## Shortcuts
 
-Add `ContextMenuShortcut` to show keyboard hints.
+`ContextMenuShortcut`으로 단축키를 표시합니다.
 
 <ComponentPreview styleName="base-nova" name="context-menu-shortcuts" />
 
 ## Groups
 
-Group related actions and separate them with dividers.
+관련된 동작을 묶고 구분선으로 나눕니다.
 
 <ComponentPreview styleName="base-nova" name="context-menu-groups" />
 
 ## Icons
 
-Combine icons with labels for quick scanning.
+아이콘과 라벨을 함께 두면 한눈에 들어옵니다.
 
 <ComponentPreview styleName="base-nova" name="context-menu-icons" />
 
 ## Checkboxes
 
-Use `ContextMenuCheckboxItem` for toggles.
+켜고 끄는 항목에는 `ContextMenuCheckboxItem`을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="context-menu-checkboxes" />
 
 ## Radio
 
-Use `ContextMenuRadioItem` for exclusive choices.
+하나만 고르는 선택에는 `ContextMenuRadioItem`을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="context-menu-radio" />
 
 ## Destructive
 
-Use `variant="destructive"` to style the menu item as destructive.
+`variant="destructive"`로 메뉴 항목을 경고 스타일로 만듭니다.
 
 <ComponentPreview styleName="base-nova" name="context-menu-destructive" />
 
 ## Sides
 
-Control submenu placement with side and align props.
+서브메뉴 위치는 side와 align prop으로 정합니다.
 
 <ComponentPreview styleName="base-nova" name="context-menu-sides" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -174,7 +174,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   direction="rtl"
 />
 
-Use `side="inline-end"` to place the menu on the logical right side of the trigger.
+`side="inline-end"`를 주면 메뉴가 트리거의 논리적 오른쪽에 놓입니다.
 
 ```tsx showLineNumbers
 <ContextMenu>
@@ -190,4 +190,4 @@ Use `side="inline-end"` to place the menu on the logical right side of the trigg
 
 ## API Reference
 
-See the [Base UI](https://base-ui.com/react/components/context-menu#api-reference) documentation for more information.
+자세한 내용은 [Base UI](https://base-ui.com/react/components/context-menu#api-reference) 문서를 보세요.
