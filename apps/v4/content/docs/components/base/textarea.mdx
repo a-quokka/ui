@@ -31,7 +31,7 @@ npx shadcn@latest add textarea
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="textarea"
@@ -39,7 +39,7 @@ npx shadcn@latest add textarea
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -59,7 +59,7 @@ import { Textarea } from "@/components/ui/textarea"
 
 ## Field
 
-Use `Field`, `FieldLabel`, and `FieldDescription` to create a textarea with a label and description.
+`Field`·`FieldLabel`·`FieldDescription`으로 라벨과 설명이 붙은 textarea를 만듭니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -69,7 +69,7 @@ Use `Field`, `FieldLabel`, and `FieldDescription` to create a textarea with a la
 
 ## Disabled
 
-Use the `disabled` prop to disable the textarea. To style the disabled state, add the `data-disabled` attribute to the `Field` component.
+`disabled` prop으로 textarea를 비활성화합니다. 비활성 상태를 꾸미려면 `Field` 컴포넌트에 `data-disabled` 속성을 붙이세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -79,7 +79,7 @@ Use the `disabled` prop to disable the textarea. To style the disabled state, ad
 
 ## Invalid
 
-Use the `aria-invalid` prop to mark the textarea as invalid. To style the invalid state, add the `data-invalid` attribute to the `Field` component.
+`aria-invalid` prop으로 textarea를 오류 상태로 표시합니다. 오류 상태를 꾸미려면 `Field` 컴포넌트에 `data-invalid` 속성을 붙이세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -89,7 +89,7 @@ Use the `aria-invalid` prop to mark the textarea as invalid. To style the invali
 
 ## Button
 
-Pair with `Button` to create a textarea with a submit button.
+`Button`과 함께 두면 제출 버튼이 붙은 textarea가 됩니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -99,6 +99,6 @@ Pair with `Button` to create a textarea with a submit button.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview styleName="base-nova" name="textarea-rtl" direction="rtl" />
