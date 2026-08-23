@@ -30,13 +30,13 @@ npx shadcn@latest add popover
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="popover"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -81,7 +81,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `Popover`:
+아래 구조로 `Popover`를 만듭니다.
 
 ```text
 Popover
@@ -91,28 +91,28 @@ Popover
 
 ## Basic
 
-A simple popover with a header, title, and description.
+헤더·제목·설명이 있는 단순한 팝오버입니다.
 
 <ComponentPreview styleName="base-nova" name="popover-basic" />
 
 ## Align
 
-Use the `align` prop on `PopoverContent` to control the horizontal alignment.
+`PopoverContent`의 `align` prop으로 가로 정렬을 정합니다.
 
 <ComponentPreview styleName="base-nova" name="popover-alignments" />
 
 ## With Form
 
-A popover with form fields inside.
+폼 입력이 들어간 팝오버입니다.
 
 <ComponentPreview styleName="base-nova" name="popover-form" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview styleName="base-nova" name="popover-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [Base UI Popover](https://base-ui.com/react/components/popover#api-reference) documentation.
+자세한 내용은 [Base UI Popover](https://base-ui.com/react/components/popover#api-reference) 문서를 보세요.

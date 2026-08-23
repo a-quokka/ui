@@ -30,13 +30,13 @@ npx shadcn@latest add progress
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="progress"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -66,7 +66,7 @@ import { Progress } from "@/components/ui/progress"
 
 ### With label and value
 
-Use `ProgressLabel` and `ProgressValue` to add a label and value display.
+`ProgressLabel`과 `ProgressValue`로 라벨과 값을 함께 보여 줍니다.
 
 ```tsx showLineNumbers
 import {
@@ -91,22 +91,22 @@ Progress
 
 ## Label
 
-Use `ProgressLabel` and `ProgressValue` to add a label and value display.
+`ProgressLabel`과 `ProgressValue`로 라벨과 값을 함께 보여 줍니다.
 
 <ComponentPreview styleName="base-nova" name="progress-label" />
 
 ## Controlled
 
-A progress bar that can be controlled by a slider.
+슬라이더로 조절할 수 있는 진행 표시입니다.
 
 <ComponentPreview styleName="base-nova" name="progress-controlled" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview styleName="base-nova" name="progress-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [Base UI Progress](https://base-ui.com/react/components/progress#api-reference) documentation.
+자세한 내용은 [Base UI Progress](https://base-ui.com/react/components/progress#api-reference) 문서를 보세요.

@@ -31,13 +31,13 @@ npx shadcn@latest add collapsible
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="collapsible"
@@ -45,7 +45,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -75,7 +75,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `Collapsible`:
+아래 구조로 `Collapsible`을 만듭니다.
 
 ```text
 Collapsible
@@ -85,7 +85,7 @@ Collapsible
 
 ## Controlled State
 
-Use the `open` and `onOpenChange` props to control the state.
+`open`과 `onOpenChange` prop으로 상태를 제어합니다.
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -112,13 +112,13 @@ export function Example() {
 
 ## Settings Panel
 
-Use a trigger button to reveal additional settings.
+트리거 버튼을 눌러 추가 설정을 펼칩니다.
 
 <ComponentPreview styleName="base-nova" name="collapsible-settings" />
 
 ## File Tree
 
-Use nested collapsibles to build a file tree.
+collapsible을 중첩하면 파일 트리를 만들 수 있습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -128,7 +128,7 @@ Use nested collapsibles to build a file tree.
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -139,4 +139,4 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## API Reference
 
-See the [Base UI](https://base-ui.com/react/components/collapsible#api-reference) documentation for more information.
+자세한 내용은 [Base UI](https://base-ui.com/react/components/collapsible#api-reference) 문서를 보세요.

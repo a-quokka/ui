@@ -22,13 +22,13 @@ links:
 
 <Steps className="mb-0 pt-2">
 
-<Step>Run the following command:</Step>
+<Step>아래 명령을 실행합니다.</Step>
 
 ```bash
 npx shadcn@latest add tooltip
 ```
 
-<Step>Add the `TooltipProvider` to the root of your app.</Step>
+<Step>앱의 루트에 `TooltipProvider`를 추가합니다.</Step>
 
 ```tsx title="app/layout.tsx" showLineNumbers {1,7}
 import { TooltipProvider } from "@/components/ui/tooltip"
@@ -52,13 +52,13 @@ export default function RootLayout({ children }) {
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="tooltip"
@@ -66,9 +66,9 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
-<Step>Add the `TooltipProvider` to the root of your app.</Step>
+<Step>앱의 루트에 `TooltipProvider`를 추가합니다.</Step>
 
 ```tsx title="app/layout.tsx" showLineNumbers {1,7}
 import { TooltipProvider } from "@/components/ui/tooltip"
@@ -111,7 +111,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `Tooltip`:
+아래 구조로 `Tooltip`을 만듭니다.
 
 ```text
 Tooltip
@@ -121,7 +121,7 @@ Tooltip
 
 ## Side
 
-Use the `side` prop to change the position of the tooltip.
+`side` prop으로 툴팁 위치를 바꿉니다.
 
 <ComponentPreview styleName="base-nova" name="tooltip-sides" />
 
@@ -131,16 +131,16 @@ Use the `side` prop to change the position of the tooltip.
 
 ## Disabled Button
 
-Show a tooltip on a disabled button by wrapping it with a span.
+비활성 버튼에 툴팁을 보여 주려면 버튼을 span으로 감쌉니다.
 
 <ComponentPreview styleName="base-nova" name="tooltip-disabled" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview styleName="base-nova" name="tooltip-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [Base UI Tooltip](https://base-ui.com/react/components/tooltip#api-reference) documentation.
+자세한 내용은 [Base UI Tooltip](https://base-ui.com/react/components/tooltip#api-reference) 문서를 보세요.

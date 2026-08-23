@@ -27,7 +27,7 @@ npx shadcn@latest add kbd
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="kbd"
@@ -35,7 +35,7 @@ npx shadcn@latest add kbd
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -55,7 +55,7 @@ import { Kbd } from "@/components/ui/kbd"
 
 ## Composition
 
-Use the following composition to build `Kbd` and `KbdGroup`:
+아래 구조로 `Kbd`와 `KbdGroup`을 만듭니다.
 
 ```text
 Kbd
@@ -66,31 +66,31 @@ KbdGroup
 
 ## Group
 
-Use the `KbdGroup` component to group keyboard keys together.
+`KbdGroup`으로 키를 여러 개 묶습니다.
 
 <ComponentPreview styleName="base-nova" name="kbd-group" />
 
 ## Button
 
-Use the `Kbd` component inside a `Button` component to display a keyboard key inside a button.
+`Button` 안에 `Kbd`를 넣어 버튼 안에 키를 보여 줍니다.
 
 <ComponentPreview styleName="base-nova" name="kbd-button" />
 
 ## Tooltip
 
-You can use the `Kbd` component inside a `Tooltip` component to display a tooltip with a keyboard key.
+`Tooltip` 안에 `Kbd`를 넣어 툴팁에 키를 보여 줍니다.
 
 <ComponentPreview styleName="base-nova" name="kbd-tooltip" />
 
 ## Input Group
 
-You can use the `Kbd` component inside a `InputGroupAddon` component to display a keyboard key inside an input group.
+`InputGroupAddon` 안에 `Kbd`를 넣어 입력 그룹 안에 키를 보여 줍니다.
 
 <ComponentPreview styleName="base-nova" name="kbd-input-group" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview styleName="base-nova" name="kbd-rtl" direction="rtl" />
 
@@ -98,7 +98,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### Kbd
 
-Use the `Kbd` component to display a keyboard key.
+`Kbd`로 키보드 키를 보여 줍니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -110,7 +110,7 @@ Use the `Kbd` component to display a keyboard key.
 
 ### KbdGroup
 
-Use the `KbdGroup` component to group `Kbd` components together.
+`KbdGroup`으로 `Kbd`를 여러 개 묶습니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |

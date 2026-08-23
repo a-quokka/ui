@@ -27,7 +27,7 @@ npx shadcn@latest add badge
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="badge"
@@ -35,7 +35,7 @@ npx shadcn@latest add badge
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -55,37 +55,37 @@ import { Badge } from "@/components/ui/badge"
 
 ## Variants
 
-Use the `variant` prop to change the variant of the badge.
+`variant` prop으로 배지의 변형을 바꿉니다.
 
 <ComponentPreview styleName="base-nova" name="badge-variants" />
 
 ## With Icon
 
-You can render an icon inside the badge. Use `data-icon="inline-start"` to render the icon on the left and `data-icon="inline-end"` to render the icon on the right.
+배지 안에 아이콘을 그릴 수 있습니다. 왼쪽에 두려면 `data-icon="inline-start"`, 오른쪽에 두려면 `data-icon="inline-end"`를 씁니다.
 
 <ComponentPreview styleName="base-nova" name="badge-icon" />
 
 ## With Spinner
 
-You can render a spinner inside the badge. Remember to add the `data-icon="inline-start"` or `data-icon="inline-end"` prop to the spinner.
+배지 안에 스피너를 그릴 수 있습니다. 스피너에 `data-icon="inline-start"`나 `data-icon="inline-end"` prop을 꼭 붙이세요.
 
 <ComponentPreview styleName="base-nova" name="badge-spinner" />
 
 ## Link
 
-Use the `render` prop to render a link as a badge.
+`render` prop으로 링크를 배지로 그립니다.
 
 <ComponentPreview styleName="base-nova" name="badge-link" />
 
 ## Custom Colors
 
-You can customize the colors of a badge by adding custom classes such as `bg-green-50 dark:bg-green-800` to the `Badge` component.
+`Badge`에 `bg-green-50 dark:bg-green-800` 같은 클래스를 붙여 색을 바꿀 수 있습니다.
 
 <ComponentPreview styleName="base-nova" name="badge-colors" />
 
 ## RTL
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+shadcn/ui에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인하세요.
 
 <ComponentPreview styleName="base-nova" name="badge-rtl" direction="rtl" />
 
@@ -93,7 +93,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### Badge
 
-The `Badge` component displays a badge or a component that looks like a badge.
+`Badge`는 배지 또는 배지처럼 보이는 요소를 보여 줍니다.
 
 | Prop        | Type                                                                          | Default     |
 | ----------- | ----------------------------------------------------------------------------- | ----------- |
