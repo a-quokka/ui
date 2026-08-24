@@ -515,7 +515,7 @@ npx shadcn@latest search http://localhost:3000/r/registry.json --query button
 
 #### View an item
 
-Then view one registry item by name.
+그다음 이름으로 항목 하나를 봅니다.
 
 ```bash
 npx shadcn@latest view http://localhost:3000/r/button.json
@@ -533,20 +533,20 @@ npx shadcn@latest add http://localhost:3000/r/button.json
 
 #### Add the registry
 
-You can also test your registry with a namespace. From a project with a
-`components.json` file, add your registry URL template to the project.
+네임스페이스로도 확인할 수 있습니다. `components.json` 이 있는 프로젝트에
+레지스트리 주소 템플릿을 추가하세요.
 
 ```bash
 npx shadcn@latest registry add @acme=http://localhost:3000/r/{name}.json
 ```
 
-The `{name}` placeholder must resolve to an item JSON file. For example,
-`@acme/button` resolves to `http://localhost:3000/r/button.json`. The catalog is
-still served separately at `http://localhost:3000/r/registry.json`.
+`{name}` 자리표시자는 항목 JSON 파일로 풀려야 합니다. 예를 들어 `@acme/button`
+은 `http://localhost:3000/r/button.json` 이 됩니다. 카탈로그는 여전히
+`http://localhost:3000/r/registry.json` 에서 따로 내보냅니다.
 
 #### List items
 
-Then list the items in your registry.
+그다음 레지스트리의 항목을 나열합니다.
 
 ```bash
 npx shadcn@latest list @acme
@@ -562,7 +562,7 @@ npx shadcn@latest search @acme --query button
 
 #### View an item
 
-View one registry item by name.
+이름으로 항목 하나를 봅니다.
 
 ```bash
 npx shadcn@latest view @acme/button
@@ -576,34 +576,32 @@ npx shadcn@latest view @acme/button
 npx shadcn@latest add @acme/button
 ```
 
-See the [Namespaced Registries](/docs/registry/namespace) docs for more
-information.
+자세한 내용은 [네임스페이스 레지스트리](/docs/registry/namespace) 문서를
+보세요.
 
 ## Publish your registry
 
-To make your registry available to other developers, publish your project to a
-public URL. Once deployed, users can install items directly from item URLs, or
-they can add your registry as a namespace in their project.
+다른 개발자가 쓰게 하려면 프로젝트를 공개 주소에 올리세요. 배포하고 나면
+사용자는 항목 주소로 바로 설치하거나, 자기 프로젝트에 네임스페이스로 등록해
+쓸 수 있습니다.
 
 ### Share namespace setup instructions
 
-If you want users to install items with a namespace like `@acme/button`, tell
-them to add your registry URL template to their project. The `{name}`
-placeholder is replaced by the item name when the CLI resolves the registry
-item.
+`@acme/button` 같은 네임스페이스로 설치하게 하려면, 사용자에게 레지스트리 주소
+템플릿을 프로젝트에 추가하라고 알려 주세요. CLI 가 항목을 풀 때 `{name}` 자리에
+항목 이름이 들어갑니다.
 
-The template must resolve to item JSON files. For example, `@acme/button`
-resolves to `https://acme.com/r/button.json`. Your registry catalog should still
-be served separately at `https://acme.com/r/registry.json`.
+템플릿은 항목 JSON 파일로 풀려야 합니다. 예를 들어 `@acme/button` 은
+`https://acme.com/r/button.json` 이 됩니다. 카탈로그는 여전히
+`https://acme.com/r/registry.json` 에서 따로 내보내야 합니다.
 
-They can add the namespace with the CLI.
+네임스페이스는 CLI 로 추가할 수 있습니다.
 
 ```bash
 npx shadcn@latest registry add @acme=https://acme.com/r/{name}.json
 ```
 
-Or they can add it manually under the `registries` field in their
-`components.json` file.
+또는 `components.json` 의 `registries` 필드에 직접 적어도 됩니다.
 
 ```json title="components.json" showLineNumbers
 {
@@ -613,7 +611,7 @@ Or they can add it manually under the `registries` field in their
 }
 ```
 
-Users can then consume items from your registry by namespace.
+그러면 사용자는 네임스페이스로 레지스트리 항목을 가져다 쓸 수 있습니다.
 
 ```bash
 npx shadcn@latest add @acme/button
@@ -621,21 +619,20 @@ npx shadcn@latest add @acme/button
 
 ### Add your namespace to the registry index
 
-If your registry is open source and publicly available, you can submit your
-namespace to the official registry index. This lets users add your namespace by
-name instead of pasting the full URL template.
+레지스트리가 오픈소스이고 공개돼 있다면 공식 레지스트리 색인에 네임스페이스를
+등록할 수 있습니다. 그러면 사용자가 전체 주소 템플릿을 붙여 넣지 않고 이름만으로
+추가할 수 있습니다.
 
-See the [Registry Index](/docs/registry/registry-index) docs for the submission
-requirements.
+등록 요건은 [레지스트리 색인](/docs/registry/registry-index) 문서를 보세요.
 
 ## Guidelines
 
-Here are some guidelines to follow when building components for a registry.
+레지스트리에 올릴 컴포넌트를 만들 때 지킬 것들입니다.
 
-- Place your registry item in the `registry/[STYLE]/[NAME]` directory. I'm using `default` as an example. It can be anything you want as long as it's nested under the `registry` directory.
-- For blocks, the following properties are required: `name`, `description`, `type` and `files`.
-- It is recommended to add a proper name and description to your registry item. This helps LLMs understand the component and its purpose.
-- Make sure to list all registry dependencies in `registryDependencies`. A registry dependency is an item address such as `button`, `@acme/input-form`, `acme/ui/button` or `http://localhost:3000/r/editor.json`.
-- Make sure to list all dependencies in `dependencies`. A dependency is the name of the package in the registry eg. `zod`, `sonner`, etc. To set a version, you can use the `name@version` format eg. `zod@^3.20.0`.
-- **Imports should always use the `@/registry` path.** eg. `import { HelloWorld } from "@/registry/default/hello-world/hello-world"`
-- Ideally, place your files within a registry item in `components`, `hooks`, `lib` directories.
+- 항목은 `registry/[STYLE]/[NAME]` 에 두세요. 예시로 `default` 를 썼을 뿐이고, `registry` 아래에만 있으면 이름은 무엇이든 됩니다.
+- 블록에는 `name`·`description`·`type`·`files` 가 반드시 있어야 합니다.
+- 항목에 제대로 된 이름과 설명을 붙이는 편이 좋습니다. LLM 이 그 컴포넌트가 무엇이고 무엇에 쓰이는지 이해하는 데 도움이 됩니다.
+- 레지스트리 의존성은 `registryDependencies` 에 빠짐없이 적으세요. 레지스트리 의존성은 `button`·`@acme/input-form`·`acme/ui/button`·`http://localhost:3000/r/editor.json` 같은 항목 주소입니다.
+- 패키지 의존성은 `dependencies` 에 빠짐없이 적으세요. `zod`·`sonner` 처럼 레지스트리에 있는 패키지 이름입니다. 버전을 지정하려면 `zod@^3.20.0` 처럼 `name@version` 형식을 쓰면 됩니다.
+- **import 는 항상 `@/registry` 경로를 쓰세요.** 예: `import { HelloWorld } from "@/registry/default/hello-world/hello-world"`
+- 항목 안의 파일은 되도록 `components`·`hooks`·`lib` 디렉터리에 나눠 두세요.

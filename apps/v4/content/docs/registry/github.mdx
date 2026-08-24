@@ -1,24 +1,24 @@
 ---
-title: GitHub Registries
-description: Use a GitHub repository as a registry.
+title: GitHub 레지스트리
+description: GitHub 저장소를 레지스트리로 씁니다.
 ---
 
-You can now turn **any GitHub repository into a registry.**
+이제 **어떤 GitHub 저장소든 레지스트리로 만들 수 있습니다.**
 
-Add a `registry.json` file to the root of the repo, describe the files you want
-to share, and users can install them with the `shadcn` CLI.
+저장소 루트에 `registry.json` 을 두고 나누고 싶은 파일을 적어 두면, 사용자가
+`shadcn` CLI 로 설치할 수 있습니다.
 
 ```bash
 npx shadcn@latest add <username>/<repo>/<item>
 ```
 
-You do not need to set up a registry server or publish generated JSON files. **The GitHub repository becomes the source registry.**
+레지스트리 서버를 세우거나 생성된 JSON 을 배포할 필요가 없습니다. **GitHub 저장소 자체가 원본 레지스트리가 됩니다.**
 
 ## Distribute Anything
 
-Registry items are **not limited to components or React code.** They can include
-any files from your repository: source files, configuration, docs, templates,
-workflows, rules or project conventions.
+레지스트리 항목은 **컴포넌트나 React 코드에 한정되지 않습니다.** 소스 파일,
+설정, 문서, 템플릿, 워크플로, 규칙, 프로젝트 관례 등 저장소의 어떤 파일이든
+담을 수 있습니다.
 
 <div className="not-prose my-6 overflow-hidden rounded-lg border text-sm">
   <div className="hidden grid-cols-[220px_1fr] border-b bg-muted/50 px-4 py-3 font-medium md:grid">
@@ -93,35 +93,33 @@ workflows, rules or project conventions.
 
 ## When to use GitHub
 
-Use a GitHub registry when:
+GitHub 레지스트리는 이럴 때 씁니다.
 
-- You already have reusable code in a GitHub repository.
-- You want users to install directly from `owner/repo/item`.
-- You want to distribute config files, rules, docs, templates, utilities or
-  any other files from the same repository.
-- You do not need a custom registry server or request authentication.
+- 다시 쓸 코드가 이미 GitHub 저장소에 있을 때
+- 사용자가 `owner/repo/item` 으로 바로 설치하게 하고 싶을 때
+- 같은 저장소의 설정 파일·규칙·문서·템플릿·유틸리티 같은 파일을 함께
+  나누고 싶을 때
+- 별도 레지스트리 서버나 요청 인증이 필요 없을 때
 
 ## Requirements
 
-A GitHub registry must:
+GitHub 레지스트리는 아래를 만족해야 합니다.
 
-- Be a `github.com` repository.
-- Have a `registry.json` file at the repository root.
-- Use valid `registry.json` and `registry-item.json` schemas.
-- Reference source files that exist in the repository.
+- `github.com` 저장소여야 합니다.
+- 저장소 루트에 `registry.json` 이 있어야 합니다.
+- `registry.json` 과 `registry-item.json` 스키마를 지켜야 합니다.
+- 참조하는 소스 파일이 실제로 저장소에 있어야 합니다.
 
-Public repositories work with zero configuration. Private repositories work
-with GitHub credentials. See
-[Private repositories](#private-repositories).
+공개 저장소는 설정 없이 그대로 동작합니다. 비공개 저장소는 GitHub 자격 증명이
+있으면 됩니다. [비공개 저장소](#private-repositories)를 보세요.
 
-GitHub Enterprise hosts are not supported by GitHub addresses. For custom
-registry servers with request authentication, use a
-[namespace](/docs/registry/namespace) with
-[authentication](/docs/registry/authentication).
+GitHub Enterprise 호스트는 GitHub 주소로 지원하지 않습니다. 요청 인증이 필요한
+레지스트리 서버라면 [네임스페이스](/docs/registry/namespace)와
+[인증](/docs/registry/authentication)을 쓰세요.
 
 ## Step 1: Add registry.json
 
-Given an existing repository:
+이미 있는 저장소가 이렇다고 하면,
 
 ```txt
 .
@@ -132,7 +130,7 @@ Given an existing repository:
     └── conventions.md
 ```
 
-Add `registry.json` at the root of the repository.
+저장소 루트에 `registry.json` 을 둡니다.
 
 ```txt
 .
@@ -144,7 +142,7 @@ Add `registry.json` at the root of the repository.
     └── conventions.md
 ```
 
-Define the item you want to distribute.
+나누고 싶은 항목을 정의합니다.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -179,7 +177,7 @@ Define the item you want to distribute.
 }
 ```
 
-Commit and push the file.
+파일을 커밋하고 푸시합니다.
 
 ```bash
 git add registry.json
@@ -193,7 +191,7 @@ git commit -m "add registry"
 git push
 ```
 
-Users can now install the item from GitHub.
+이제 사용자가 GitHub 에서 그 항목을 설치할 수 있습니다.
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions
@@ -201,11 +199,11 @@ npx shadcn@latest add acme/toolkit/project-conventions
 
 ## Step 2: Distribute any file
 
-A registry item can install one file or many files. Use the `files` array to
-declare the files that belong together.
+항목 하나가 파일 하나를 설치할 수도, 여러 개를 설치할 수도 있습니다. 함께
+묶이는 파일은 `files` 배열에 적으세요.
 
-For example, a testing setup can install a Vitest config, a setup file and a
-short team guide.
+예를 들어 테스트 설정 항목이 Vitest 설정, 셋업 파일, 짧은 팀 안내문을 함께
+설치할 수 있습니다.
 
 ```txt
 registry.json
@@ -250,14 +248,13 @@ test
 }
 ```
 
-Users install it the same way.
+설치 방법은 똑같습니다.
 
 ```bash
 npx shadcn@latest add acme/toolkit/vitest-setup
 ```
 
-Use `target` when a file should be written to a specific destination in the
-user's project.
+사용자 프로젝트의 특정 위치에 파일을 써야 한다면 `target` 을 쓰세요.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -286,16 +283,16 @@ npx shadcn@latest add acme/toolkit/editorconfig
 
 ## Step 3: Validate the registry
 
-Before sharing the registry, validate it from the CLI.
+레지스트리를 나누기 전에 CLI 로 검증하세요.
 
 ```bash
 npx shadcn@latest registry validate acme/toolkit
 ```
 
-The command reads the root `registry.json`, resolves includes, validates the
-registry items, and checks that referenced files exist.
+이 명령은 루트 `registry.json` 을 읽고 include 를 풀고 항목을 검증한 뒤,
+참조하는 파일이 실제로 있는지 확인합니다.
 
-You can also validate a branch, tag or commit SHA.
+브랜치·태그·커밋 SHA 를 지정해 검증할 수도 있습니다.
 
 ```bash
 npx shadcn@latest registry validate acme/toolkit#v1.0.0
@@ -303,19 +300,19 @@ npx shadcn@latest registry validate acme/toolkit#v1.0.0
 
 ## Step 4: List and search items
 
-Use `list` to see every item in the repository registry.
+`list` 로 저장소 레지스트리의 모든 항목을 봅니다.
 
 ```bash
 npx shadcn@latest list acme/toolkit
 ```
 
-Use `search` to filter the catalog.
+`search` 로 카탈로그를 거릅니다.
 
 ```bash
 npx shadcn@latest search acme/toolkit --query conventions
 ```
 
-Use `view` to inspect one item payload.
+`view` 로 항목 하나의 내용을 들여다봅니다.
 
 ```bash
 npx shadcn@latest view acme/toolkit/project-conventions
@@ -323,8 +320,7 @@ npx shadcn@latest view acme/toolkit/project-conventions
 
 ## Organize with include
 
-For larger repositories, keep item definitions close to the source files they
-describe.
+저장소가 크다면 항목 정의를 그 항목이 설명하는 소스 파일 가까이에 두세요.
 
 ```txt
 registry.json
@@ -336,7 +332,7 @@ rules
 └── registry.json
 ```
 
-The root `registry.json` can include the nested registry files.
+루트 `registry.json` 이 하위 레지스트리 파일들을 포함할 수 있습니다.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -347,7 +343,7 @@ The root `registry.json` can include the nested registry files.
 }
 ```
 
-The included registry file declares items for that directory.
+포함된 레지스트리 파일은 그 디렉터리의 항목을 선언합니다.
 
 ```json title="rules/registry.json" showLineNumbers
 {
@@ -376,13 +372,11 @@ npx shadcn@latest add acme/toolkit/project-conventions
 
 ## Registry dependencies
 
-Use `registryDependencies` when one registry item depends on another registry
-item.
+항목이 다른 항목에 기댄다면 `registryDependencies` 를 쓰세요.
 
 ### Same repository dependencies
 
-For dependencies in the same GitHub repository, use the full GitHub item
-address.
+같은 GitHub 저장소 안의 의존성이라면 전체 GitHub 항목 주소를 쓰세요.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -410,7 +404,7 @@ address.
 }
 ```
 
-A docs item can depend on a template item from the same repository.
+문서 항목이 같은 저장소의 템플릿 항목에 기댈 수 있습니다.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -434,8 +428,8 @@ A docs item can depend on a template item from the same repository.
 }
 ```
 
-A CI setup can depend on the same formatting and testing defaults that users can
-install separately.
+CI 설정 항목이, 사용자가 따로 설치할 수도 있는 포매팅·테스트 기본값에 기댈 수
+있습니다.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -464,8 +458,8 @@ install separately.
 
 ### External registry dependencies
 
-Items can also depend on external registries. Use the full item address for the
-registry that owns the dependency.
+다른 레지스트리에 기댈 수도 있습니다. 그 의존성을 가진 레지스트리의 전체 항목
+주소를 쓰세요.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -494,8 +488,8 @@ registry that owns the dependency.
 
 ### Dependency refs
 
-Refs are not inherited across dependencies. If a dependency should be pinned,
-include its own ref.
+ref 는 의존성에 물려받지 않습니다. 의존성을 고정하려면 그 의존성에도 ref 를
+적으세요.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -524,55 +518,55 @@ include its own ref.
 
 ## Useful commands
 
-List every item in a GitHub registry.
+GitHub 레지스트리의 모든 항목을 나열합니다.
 
 ```bash
 npx shadcn@latest list acme/toolkit
 ```
 
-Search a GitHub registry.
+GitHub 레지스트리를 검색합니다.
 
 ```bash
 npx shadcn@latest search acme/toolkit -q conventions
 ```
 
-Validate a GitHub registry.
+GitHub 레지스트리를 검증합니다.
 
 ```bash
 npx shadcn@latest registry validate acme/toolkit
 ```
 
-Install an item from a GitHub registry.
+GitHub 레지스트리에서 항목을 설치합니다.
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions
 ```
 
-View an item from a GitHub registry.
+GitHub 레지스트리의 항목을 봅니다.
 
 ```bash
 npx shadcn@latest view acme/toolkit/project-conventions
 ```
 
-Install an item whose registry item name contains `/`.
+항목 이름에 `/` 가 들어간 항목을 설치합니다.
 
 ```bash
 npx shadcn@latest add acme/toolkit/rules/agent
 ```
 
 <Callout>
-  For GitHub item addresses, the first two path segments are the GitHub owner
-  and repository. Any remaining segments are the registry item name, not a file
-  path. An address ending in `.json` is treated as a file path.
+  GitHub 항목 주소에서 앞의 두 조각은 GitHub 소유자와 저장소입니다. 나머지는
+  파일 경로가 아니라 항목 이름입니다. `.json` 으로 끝나는 주소는 파일 경로로
+  봅니다.
 </Callout>
 
-Install from a tag.
+태그에서 설치합니다.
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions#v1.0.0
 ```
 
-Install from a full commit SHA.
+전체 커밋 SHA 에서 설치합니다.
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions#c0ffee254729296a45d6691db565cf707a3fef5d
@@ -580,49 +574,47 @@ npx shadcn@latest add acme/toolkit/project-conventions#c0ffee254729296a45d6691db
 
 ## Refs
 
-Use `#ref` to install from a branch, tag or commit SHA.
+브랜치·태그·커밋 SHA 에서 설치하려면 `#ref` 를 씁니다.
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions#main
 ```
 
-Refs may contain slashes.
+ref 에는 슬래시가 들어갈 수 있습니다.
 
 ```bash
 npx shadcn@latest add acme/toolkit/project-conventions#feature/conventions
 ```
 
-If no ref is provided, the CLI uses the repository default branch.
+ref 를 주지 않으면 CLI 는 저장소의 기본 브랜치를 씁니다.
 
-The CLI uses Git to resolve branches, tags and short refs into a commit SHA
-before reading files. Full 40-character commit SHAs are used directly and do not
-require Git.
+CLI 는 파일을 읽기 전에 Git 으로 브랜치·태그·짧은 ref 를 커밋 SHA 로 풀어
+냅니다. 40자짜리 전체 SHA 는 그대로 쓰므로 Git 이 필요 없습니다.
 
 ## Private repositories
 
-Private `github.com` repositories work as registries too. You do not set up a
-server or configure anything in the registry itself. If you can read the
-repository, the CLI can install from it.
+비공개 `github.com` 저장소도 레지스트리로 쓸 수 있습니다. 서버를 세우거나
+레지스트리 쪽에 설정할 것은 없습니다. 저장소를 읽을 수 있으면 CLI 도 설치할 수
+있습니다.
 
 ### Use the GitHub CLI
 
-For local development, authenticate with the GitHub CLI once:
+로컬에서 작업한다면 GitHub CLI 로 한 번 인증해 두세요.
 
 ```bash
 gh auth login
 ```
 
-Then install from the private repository like any other GitHub registry.
+그다음은 다른 GitHub 레지스트리와 똑같이 설치하면 됩니다.
 
 ```bash
 npx shadcn@latest add acme/private-toolkit/project-conventions
 ```
 
-When a repository is not publicly readable, the CLI reads it through `gh`
-using your stored credentials. The token stays inside the GitHub CLI. It never
-enters the shadcn process.
+저장소가 공개로 읽히지 않으면 CLI 는 저장된 자격 증명으로 `gh` 를 통해 읽습니다.
+토큰은 GitHub CLI 안에만 있고 shadcn 프로세스로 넘어오지 않습니다.
 
-The first time a command uses your credentials, it prints a notice:
+명령이 처음으로 자격 증명을 쓸 때 안내를 출력합니다.
 
 ```txt
 ✔ Using gh credentials.
@@ -630,67 +622,62 @@ The first time a command uses your credentials, it prints a notice:
 
 ### Use a token in CI
 
-Where the GitHub CLI is not installed, set `GH_TOKEN` or `GITHUB_TOKEN`:
+GitHub CLI 가 없다면 `GH_TOKEN` 이나 `GITHUB_TOKEN` 을 지정하세요.
 
 ```bash
 GH_TOKEN=github_pat_xxx npx shadcn@latest add acme/private-toolkit/project-conventions
 ```
 
-- `GH_TOKEN` takes precedence over `GITHUB_TOKEN`.
-- Use a fine-grained personal access token scoped to the repository, with
-  **Contents: Read-only** access. This is the recommended credential.
-- When a token is set, it is used instead of the GitHub CLI and is only ever
-  sent to `api.github.com`.
+- `GH_TOKEN` 이 `GITHUB_TOKEN` 보다 우선합니다.
+- 저장소 범위로 좁힌 fine-grained 개인 접근 토큰에 **Contents: Read-only** 권한만
+  주는 것을 권합니다.
+- 토큰이 있으면 GitHub CLI 대신 그것을 쓰고, `api.github.com` 으로만 보냅니다.
 
 <Callout>
-  In GitHub Actions, the built-in `GITHUB_TOKEN` can generally only read the
-  repository that owns the workflow. To install from a private registry in
-  another repository, use a fine-grained personal access token or a GitHub App
-  installation token.
+  GitHub Actions 의 기본 `GITHUB_TOKEN` 은 보통 그 워크플로가 속한 저장소만 읽을
+  수 있습니다. 다른 저장소의 비공개 레지스트리에서 설치하려면 fine-grained 개인
+  접근 토큰이나 GitHub App 설치 토큰을 쓰세요.
 </Callout>
 
 ### How it works
 
-- Public repositories are always read anonymously. No credentials are used and
-  the GitHub CLI is never invoked.
-- The CLI tries anonymous access first. It only uses your credentials when the
-  repository's root `registry.json` is not publicly readable.
-- Ref resolution runs `git ls-remote` first. Git may already use a credential
-  helper you have configured, for example one installed by `gh auth setup-git`.
-- Private files are read through GitHub's Contents API, pinned to the resolved
-  commit SHA.
-- GitHub returns the same not-found response for private and missing
-  repositories. If your credentials cannot read the repository either, the CLI
-  cannot tell you which case it was.
+- 공개 저장소는 항상 익명으로 읽습니다. 자격 증명을 쓰지 않고 GitHub CLI 도
+  부르지 않습니다.
+- CLI 는 익명 접근을 먼저 시도합니다. 루트 `registry.json` 이 공개로 읽히지
+  않을 때만 자격 증명을 씁니다.
+- ref 해석은 `git ls-remote` 를 먼저 돌립니다. `gh auth setup-git` 으로 설정한
+  것처럼 이미 자격 증명 도우미가 있다면 Git 이 그것을 쓸 수 있습니다.
+- 비공개 파일은 해석된 커밋 SHA 에 고정해 GitHub Contents API 로 읽습니다.
+- GitHub 은 비공개 저장소와 없는 저장소에 같은 응답을 돌려줍니다. 자격 증명으로도
+  읽지 못하면 CLI 는 둘 중 어느 쪽인지 알려 줄 수 없습니다.
 
 ### Limits
 
-- Registry source files are limited to 5 MiB per file.
-- GitHub Enterprise hosts are not supported. GitHub addresses always resolve
-  against `github.com`.
-- Avoid symlinks in registry source files. Anonymous reads return the symlink
-  target path as text, while authenticated reads through the Contents API
-  return the target file's content.
+- 레지스트리 소스 파일은 하나당 5 MiB 까지입니다.
+- GitHub Enterprise 호스트는 지원하지 않습니다. GitHub 주소는 항상
+  `github.com` 기준으로 풀립니다.
+- 소스 파일에 심볼릭 링크는 피하세요. 익명으로 읽으면 링크가 가리키는 경로가
+  글자로 돌아오고, 인증해서 Contents API 로 읽으면 대상 파일의 내용이
+  돌아옵니다.
 
 ## Review before installing
 
-GitHub registry items install code and project files from GitHub repositories.
-Treat a GitHub item address like any other third-party code dependency.
+GitHub 레지스트리 항목은 GitHub 저장소의 코드와 프로젝트 파일을 설치합니다.
+GitHub 항목 주소는 다른 서드파티 의존성과 똑같이 다루세요.
 
-Before installing from a source you do not control:
+직접 관리하지 않는 곳에서 설치하기 전에 이렇게 확인하세요.
 
-- Review the repository and the root `registry.json`.
-- Review the item definition, especially `files`, `target`, `dependencies`,
-  `devDependencies`, `registryDependencies` and `envVars`.
-- Check any external registry dependencies. They can install files from other
-  registries.
-- Prefer pinned refs for published install commands. A full 40-character commit
-  SHA is the most reproducible option.
-- Use `shadcn view acme/toolkit/project-conventions` to inspect the resolved
-  item payload before installing.
-- Pipe `shadcn view` output to your agent or review tool if you want help
-  checking the item.
-- Use `shadcn add acme/toolkit/project-conventions --dry-run` to preview an
-  install without writing files.
-- Use `--diff` or `--view` with `shadcn add` to inspect file changes or file
-  contents before applying them.
+- 저장소와 루트 `registry.json` 을 읽어 봅니다.
+- 항목 정의를 읽습니다. 특히 `files`·`target`·`dependencies`·
+  `devDependencies`·`registryDependencies`·`envVars` 를 봅니다.
+- 외부 레지스트리 의존성이 있는지 확인합니다. 다른 레지스트리의 파일을 설치할
+  수 있습니다.
+- 공개하는 설치 명령에는 ref 를 고정하는 편이 낫습니다. 40자짜리 전체 커밋 SHA 가
+  가장 재현하기 좋습니다.
+- 설치 전에 `shadcn view acme/toolkit/project-conventions` 로 풀어낸 항목 내용을
+  확인합니다.
+- 확인에 도움이 필요하면 `shadcn view` 출력을 에이전트나 검토 도구에 넘기세요.
+- `shadcn add acme/toolkit/project-conventions --dry-run` 으로 파일을 쓰지 않고
+  설치 결과를 미리 봅니다.
+- `shadcn add` 에 `--diff` 나 `--view` 를 붙이면 적용 전에 파일 변경이나 내용을
+  확인할 수 있습니다.

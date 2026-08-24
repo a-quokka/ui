@@ -1,23 +1,20 @@
 ---
-title: Dynamic Search
-description: Implement server-side search for large registries.
+title: 동적 검색
+description: 큰 레지스트리를 위해 서버에서 검색을 처리합니다.
 ---
 
-By default, `shadcn search` fetches your entire `registry.json` and filters
-items locally. This works well for most registries and requires nothing more
-than a static file.
+`shadcn search` 는 기본적으로 `registry.json` 전체를 받아 로컬에서 거릅니다.
+대부분의 레지스트리에는 이것으로 충분하고 정적 파일 하나면 됩니다.
 
-For large registries with thousands of items, you can implement search on your
-registry server instead. The CLI forwards the search parameters to your
-registry and your server returns only the matching items.
+항목이 수천 개인 큰 레지스트리라면 검색을 서버에서 처리할 수 있습니다. CLI 가
+검색 조건을 레지스트리로 넘기고, 서버는 맞는 항목만 돌려줍니다.
 
-Dynamic search is opt-in and fully backwards compatible. Static registries
-keep working without any changes.
+동적 검색은 선택 사항이고 이전 방식과 완전히 호환됩니다. 정적 레지스트리는
+아무것도 고치지 않아도 그대로 동작합니다.
 
 ## How It Works
 
-When you run `shadcn search`, the CLI appends the search parameters to the
-catalog request:
+`shadcn search` 를 돌리면 CLI 가 카탈로그 요청에 검색 조건을 붙입니다.
 
 ```bash
 npx shadcn@latest search @acme --query button --limit 50
@@ -27,38 +24,34 @@ npx shadcn@latest search @acme --query button --limit 50
 GET https://acme.com/r/registry.json?q=button&limit=50&offset=0
 ```
 
-What happens next depends on your registry:
+그다음은 레지스트리에 따라 달라집니다.
 
-- **Static registries** ignore the query parameters and return the full
-  `registry.json`. The CLI filters the items locally. This is the default
-  behavior and requires no changes.
-- **Dynamic registries** filter the items server-side and return the matching
-  items along with a `pagination` object. When the CLI sees `pagination` in
-  the response, it trusts the results as pre-filtered and skips local
-  filtering.
+- **정적 레지스트리**는 쿼리 파라미터를 무시하고 `registry.json` 전체를
+  돌려줍니다. CLI 가 로컬에서 거릅니다. 기본 동작이고 고칠 것이 없습니다.
+- **동적 레지스트리**는 서버에서 걸러 맞는 항목과 `pagination` 객체를 함께
+  돌려줍니다. 응답에 `pagination` 이 있으면 CLI 는 이미 걸러진 결과로 보고
+  로컬 필터링을 건너뜁니다.
 
-The presence of `pagination` in the response is what tells the CLI your
-registry handles search server-side. There is no configuration or capability
-negotiation required.
+응답에 `pagination` 이 있는지가 서버에서 검색을 처리한다는 신호입니다. 따로
+설정하거나 기능을 협상할 필요가 없습니다.
 
 ## Query Parameters
 
-The CLI sends the following query parameters with every search request:
+CLI 는 검색 요청마다 아래 쿼리 파라미터를 보냅니다.
 
-| Parameter | Description                                                    |
-| --------- | -------------------------------------------------------------- |
-| `q`       | The search query string.                                       |
-| `type`    | Comma-separated item types, e.g. `registry:ui,registry:block`. |
-| `limit`   | Maximum number of items to return.                             |
-| `offset`  | Number of items to skip.                                       |
+| Parameter | Description                                                      |
+| --------- | ---------------------------------------------------------------- |
+| `q`       | 검색어 문자열입니다.                                             |
+| `type`    | 쉼표로 구분한 항목 종류입니다. 예: `registry:ui,registry:block`. |
+| `limit`   | 돌려줄 항목의 최대 개수입니다.                                   |
+| `offset`  | 건너뛸 항목 수입니다.                                            |
 
-All parameters are optional. A request without `q` or `type` should return
-all items, paginated.
+모든 파라미터는 선택입니다. `q` 나 `type` 없이 온 요청에는 전체 항목을
+페이지로 나눠 돌려주면 됩니다.
 
 ## Response Format
 
-Return your regular `registry.json` shape with an additional `pagination`
-object:
+평소의 `registry.json` 모양에 `pagination` 객체를 더해 돌려줍니다.
 
 ```json title="registry.json?q=button&limit=2"
 {
@@ -85,22 +78,22 @@ object:
 }
 ```
 
-Search results only need `name`, `type` and `description` for each item. You
-do not need to include `files`, `dependencies` or other item properties. The
-CLI fetches the full item definition when the user runs `shadcn add`.
+검색 결과에는 항목마다 `name`·`type`·`description` 만 있으면 됩니다. `files` 나
+`dependencies` 같은 나머지 속성은 넣지 않아도 됩니다. 전체 정의는 사용자가
+`shadcn add` 를 돌릴 때 CLI 가 따로 가져옵니다.
 
 ### pagination
 
-| Property  | Type      | Description                                        |
-| --------- | --------- | -------------------------------------------------- |
-| `total`   | `number`  | Total number of items matching the query.          |
-| `offset`  | `number`  | Number of items skipped.                           |
-| `limit`   | `number`  | Maximum number of items in this response.          |
-| `hasMore` | `boolean` | Whether more items are available beyond this page. |
+| Property  | Type      | Description                            |
+| --------- | --------- | -------------------------------------- |
+| `total`   | `number`  | 검색어에 맞는 전체 항목 수입니다.      |
+| `offset`  | `number`  | 건너뛴 항목 수입니다.                  |
+| `limit`   | `number`  | 이 응답에 담긴 항목의 최대 개수입니다. |
+| `hasMore` | `boolean` | 이 페이지 뒤에 더 있는지 여부입니다.   |
 
 ## Server Implementation
 
-Here's an example using a Next.js route handler:
+Next.js 라우트 핸들러로 만든 예시입니다.
 
 ```typescript title="app/r/registry.json/route.ts"
 import { NextRequest, NextResponse } from "next/server"
@@ -130,30 +123,29 @@ export async function GET(request: NextRequest) {
 }
 ```
 
-You can back `searchItems` with anything: a database query, a full-text
-search index or an external search service.
+`searchItems` 는 무엇으로 구현해도 됩니다. 데이터베이스 질의, 전문 검색 색인,
+외부 검색 서비스 무엇이든 좋습니다.
 
 ## Multiple Registries
 
-When searching a single registry, the CLI forwards all parameters and uses
-your `pagination` response as-is.
+레지스트리 하나를 검색할 때는 CLI 가 모든 파라미터를 넘기고 `pagination`
+응답을 그대로 씁니다.
 
-When searching multiple registries at once, e.g. `shadcn search @acme @lib`,
-a global `offset` cannot be split across registries. The CLI forwards `q` and
-`type` to each registry along with a `limit` large enough to fill the
-requested page (`offset + limit`), then merges and paginates the combined
-results locally. Server-side filtering still applies, so each registry only
-returns matching items.
+`shadcn search @acme @lib` 처럼 여러 레지스트리를 한 번에 검색할 때는 전체
+`offset` 을 레지스트리별로 쪼갤 수 없습니다. CLI 는 각 레지스트리에 `q` 와
+`type` 을, 그리고 요청한 페이지를 채울 만큼 큰 `limit`(`offset + limit`)을
+보낸 뒤 결과를 합쳐 로컬에서 페이지로 나눕니다. 서버 필터링은 그대로
+적용되므로 각 레지스트리는 맞는 항목만 돌려줍니다.
 
-If your registry caps the number of items per response below the requested
-`limit`, the CLI treats it as exhausted for deeper pages. Honor the requested
-`limit` where possible so all your matches stay reachable through paging.
+레지스트리가 응답당 항목 수를 요청한 `limit` 보다 작게 제한하면 CLI 는 더 뒤
+페이지가 없다고 봅니다. 되도록 요청한 `limit` 을 지켜야 모든 결과에 페이지로
+닿을 수 있습니다.
 
 ## Authentication
 
-Dynamic search works with all [authentication](/docs/registry/authentication)
-patterns. The CLI sends the configured headers and params with the search
-request, so you can scope search results to the authenticated user:
+동적 검색은 모든 [인증](/docs/registry/authentication) 방식과 함께 동작합니다.
+CLI 가 설정된 헤더와 파라미터를 검색 요청에도 실어 보내므로, 인증된 사용자에
+맞춰 결과 범위를 좁힐 수 있습니다.
 
 ```typescript title="app/r/registry.json/route.ts"
 export async function GET(request: NextRequest) {
@@ -172,28 +164,26 @@ export async function GET(request: NextRequest) {
 
 ## Backwards Compatibility
 
-- **Static registries** require no changes. Query parameters on a static file
-  are ignored by the file server and the CLI falls back to local filtering.
-- **Older CLI versions** fetch the catalog without query parameters and
-  ignore the `pagination` field. Your registry should return a sensible
-  default response for requests without parameters, e.g. the first page of
-  items.
-- **Ranking** is up to your server. When your registry returns pre-filtered
-  results, the CLI preserves your order instead of re-ranking locally.
+- **정적 레지스트리**는 고칠 것이 없습니다. 정적 파일에 붙은 쿼리 파라미터는
+  파일 서버가 무시하고 CLI 는 로컬 필터링으로 돌아갑니다.
+- **예전 CLI** 는 쿼리 파라미터 없이 카탈로그를 받고 `pagination` 을 무시합니다.
+  파라미터 없는 요청에는 첫 페이지처럼 적당한 기본 응답을 돌려주세요.
+- **정렬 순서**는 서버가 정합니다. 이미 걸러진 결과를 돌려주면 CLI 는 로컬에서
+  다시 정렬하지 않고 그 순서를 그대로 지킵니다.
 
 ## Testing
 
-Test your dynamic registry with `curl`:
+`curl` 로 동적 레지스트리를 확인합니다.
 
 ```bash
 curl "https://acme.com/r/registry.json?q=button&limit=10"
 ```
 
-Then verify with the CLI:
+그다음 CLI 로 확인합니다.
 
 ```bash
 npx shadcn@latest search @acme --query button
 ```
 
-To confirm server-side search is active, check that the response includes the
-`pagination` object and only the matching items.
+서버 검색이 동작하는지 보려면 응답에 `pagination` 객체가 있고 맞는 항목만
+담겨 있는지 확인하세요.
