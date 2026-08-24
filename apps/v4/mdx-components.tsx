@@ -13,6 +13,7 @@ import { ComponentSource } from "@/components/component-source"
 import { ComponentsList } from "@/components/components-list"
 import { CopyButton } from "@/components/copy-button"
 import { DirectoryList } from "@/components/directory-list"
+import { DropshotIcon, DropshotIconGrid } from "@/components/dropshot-icon-grid"
 import { getIconForLanguageExtension } from "@/components/icons"
 import {
   Accordion,
@@ -349,6 +350,8 @@ export const mdxComponents = {
   CodeCollapsibleWrapper,
   ComponentsList: ComponentsListWrapper,
   DirectoryList,
+  DropshotIcon,
+  DropshotIconGrid,
   Link,
   LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link
