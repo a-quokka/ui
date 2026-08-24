@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
+import { BrandAsset, BrandAssetGrid } from "@/components/brand-asset"
 import { Callout } from "@/components/callout"
 import { CodeBlockCommand } from "@/components/code-block-command"
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper"
@@ -349,6 +350,8 @@ export const mdxComponents = {
   ComponentSource,
   CodeCollapsibleWrapper,
   ComponentsList: ComponentsListWrapper,
+  BrandAsset,
+  BrandAssetGrid,
   DirectoryList,
   DropshotIcon,
   DropshotIconGrid,
