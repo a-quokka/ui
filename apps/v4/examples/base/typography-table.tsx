@@ -5,36 +5,36 @@ export function TypographyTable() {
         <thead>
           <tr className="m-0 border-t p-0 even:bg-muted">
             <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
-              King&apos;s Treasury
+              왕의 곳간
             </th>
             <th className="border px-4 py-2 text-left font-bold [&[align=center]]:text-center [&[align=right]]:text-right">
-              People&apos;s happiness
+              백성의 행복
             </th>
           </tr>
         </thead>
         <tbody>
           <tr className="m-0 border-t p-0 even:bg-muted">
             <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Empty
+              텅 빔
             </td>
             <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Overflowing
-            </td>
-          </tr>
-          <tr className="m-0 border-t p-0 even:bg-muted">
-            <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Modest
-            </td>
-            <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Satisfied
+              넘침
             </td>
           </tr>
           <tr className="m-0 border-t p-0 even:bg-muted">
             <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Full
+              조금
             </td>
             <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
-              Ecstatic
+              만족
+            </td>
+          </tr>
+          <tr className="m-0 border-t p-0 even:bg-muted">
+            <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
+              가득
+            </td>
+            <td className="border px-4 py-2 text-left [&[align=center]]:text-center [&[align=right]]:text-right">
+              환희
             </td>
           </tr>
         </tbody>

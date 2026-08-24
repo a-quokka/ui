@@ -29,7 +29,7 @@ export default function InputOTPControlled() {
       </InputOTP>
       <div className="text-center text-sm">
         {value === "" ? (
-          <>Enter your one-time password.</>
+          <>일회용 비밀번호를 입력하세요.</>
         ) : (
           <>You entered: {value}</>
         )}

@@ -14,14 +14,13 @@ export function DialogNoCloseButton() {
   return (
     <Dialog>
       <DialogTrigger render={<Button variant="outline" />}>
-        No Close Button
+        닫기 버튼 없음
       </DialogTrigger>
       <DialogContent showCloseButton={false}>
         <DialogHeader>
-          <DialogTitle>No Close Button</DialogTitle>
+          <DialogTitle>닫기 버튼 없음</DialogTitle>
           <DialogDescription>
-            This dialog doesn&apos;t have a close button in the top-right
-            corner.
+            이 다이얼로그에는 오른쪽 위 닫기 버튼이 없습니다.
           </DialogDescription>
         </DialogHeader>
       </DialogContent>

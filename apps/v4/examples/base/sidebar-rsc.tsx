@@ -65,7 +65,7 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>프로젝트</SidebarGroupLabel>
             <SidebarGroupContent>
               <React.Suspense fallback={<NavProjectsSkeleton />}>
                 <NavProjects />

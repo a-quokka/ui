@@ -16,10 +16,8 @@ export function ItemVariant() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Default Variant</ItemTitle>
-          <ItemDescription>
-            Transparent background with no border.
-          </ItemDescription>
+          <ItemTitle>기본 변형</ItemTitle>
+          <ItemDescription>테두리 없는 투명 배경입니다.</ItemDescription>
         </ItemContent>
       </Item>
       <Item variant="outline">
@@ -27,10 +25,8 @@ export function ItemVariant() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Outline Variant</ItemTitle>
-          <ItemDescription>
-            Outlined style with a visible border.
-          </ItemDescription>
+          <ItemTitle>Outline 변형</ItemTitle>
+          <ItemDescription>테두리가 보이는 스타일입니다.</ItemDescription>
         </ItemContent>
       </Item>
       <Item variant="muted">
@@ -38,10 +34,8 @@ export function ItemVariant() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Muted Variant</ItemTitle>
-          <ItemDescription>
-            Muted background for secondary content.
-          </ItemDescription>
+          <ItemTitle>Muted 변형</ItemTitle>
+          <ItemDescription>보조 내용에 쓰는 옅은 배경입니다.</ItemDescription>
         </ItemContent>
       </Item>
     </div>

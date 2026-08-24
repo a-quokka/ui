@@ -15,18 +15,18 @@ import { Label } from "@/styles/base-nova/ui/label"
 export function DialogCloseButton() {
   return (
     <Dialog>
-      <DialogTrigger render={<Button variant="outline" />}>Share</DialogTrigger>
+      <DialogTrigger render={<Button variant="outline" />}>공유</DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle>Share link</DialogTitle>
+          <DialogTitle>링크 공유</DialogTitle>
           <DialogDescription>
-            Anyone who has this link will be able to view this.
+            링크를 가진 사람은 누구나 볼 수 있습니다.
           </DialogDescription>
         </DialogHeader>
         <div className="flex items-center gap-2">
           <div className="grid flex-1 gap-2">
             <Label htmlFor="link" className="sr-only">
-              Link
+              링크
             </Label>
             <Input
               id="link"
@@ -36,7 +36,7 @@ export function DialogCloseButton() {
           </div>
         </div>
         <DialogFooter className="sm:justify-start">
-          <DialogClose render={<Button type="button" />}>Close</DialogClose>
+          <DialogClose render={<Button type="button" />}>닫기</DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

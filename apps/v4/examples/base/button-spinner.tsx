@@ -6,10 +6,10 @@ export default function ButtonLoading() {
     <div className="flex gap-2">
       <Button variant="outline" disabled>
         <Spinner data-icon="inline-start" />
-        Generating
+        생성 중
       </Button>
       <Button variant="secondary" disabled>
-        Downloading
+        내려받는 중
         <Spinner data-icon="inline-start" />
       </Button>
     </div>

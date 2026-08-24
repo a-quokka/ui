@@ -42,21 +42,21 @@ const initialItems = [
     type: "message",
     sender: "Grace",
     role: "participant",
-    text: "@mary, the astrophage line keeps matching Venus energy output. Can you check my math?",
+    text: "@mary, 아스트로파지 곡선이 계속 금성 에너지 출력과 맞아떨어져요. 계산 좀 봐 줄래요?",
   },
   {
     id: "group-2",
     type: "message",
     sender: "Mary (Agent)",
     role: "assistant",
-    text: "Yes. Confirmed. The curve points to a microorganism harvesting stellar energy and breeding near carbon dioxide. If @rocky agrees, this is the clue we need.",
+    text: "네, 확인했습니다. 곡선은 항성 에너지를 거둬들이며 이산화탄소 근처에서 번식하는 미생물을 가리킵니다. @rocky 도 동의한다면 우리가 찾던 실마리입니다.",
   },
   {
     id: "group-3",
     type: "message",
     sender: "Grace",
     role: "participant",
-    text: "ping @rocky",
+    text: "@rocky 호출",
     scrollAnchor: true,
   },
 ] satisfies GroupChatItem[]
@@ -64,7 +64,7 @@ const initialItems = [
 const rockyMarker = {
   id: "group-4",
   type: "event",
-  text: "Rocky has joined the chat",
+  text: "Rocky 님이 대화에 참여했습니다",
   scrollAnchor: true,
 } satisfies GroupChatItem
 
@@ -73,7 +73,7 @@ const rockyMessage = {
   type: "message",
   sender: "Rocky",
   role: "participant",
-  text: "Amaze. Astrophage eats light, makes heat, goes to carbon dioxide. Rocky has fuel model. Grace is smart.",
+  text: "놀랍다. 아스트로파지, 빛 먹고 열 만들고 이산화탄소로 간다. 로키는 연료 모형 있다. 그레이스는 똑똑하다.",
 } satisfies GroupChatItem
 
 type GroupChatItem =
@@ -112,10 +112,10 @@ export function MessageScrollerGroupChat() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Group Chat</CardTitle>
+            <CardTitle>그룹 채팅</CardTitle>
             <CardDescription>
-              A group chat with several participants and an assistant. The
-              Marker is marked as a turn.
+              참여자 여럿과 어시스턴트가 있는 그룹 채팅입니다. Marker 가 턴으로
+              지정돼 있습니다.
             </CardDescription>
             <CardAction>
               <Tooltip>
@@ -125,7 +125,7 @@ export function MessageScrollerGroupChat() {
                       type="button"
                       variant="outline"
                       size="icon"
-                      aria-label="Reset conversation"
+                      aria-label="대화 초기화"
                       disabled={rockyTurn === "idle"}
                       onClick={() => {
                         setRockyTurn("idle")
@@ -137,7 +137,7 @@ export function MessageScrollerGroupChat() {
                   <RotateCwIcon />
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Reset</p>
+                  <p>초기화</p>
                 </TooltipContent>
               </Tooltip>
             </CardAction>
@@ -184,8 +184,8 @@ export function MessageScrollerGroupChat() {
           </CardFooter>
         </Card>
         <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-balance text-muted-foreground">
-          When a user joins, a marker is created. scrollAnchor on the marker
-          marks it as the next turn
+          누군가 참여하면 마커가 생깁니다. 마커에 scrollAnchor 를 주면 그것이
+          다음 턴의 시작이 됩니다
         </div>
       </div>
     </MessageScrollerProvider>

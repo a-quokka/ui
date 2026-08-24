@@ -20,9 +20,9 @@ const frameworks = [
 export function ComboboxInvalid() {
   return (
     <Combobox items={frameworks}>
-      <ComboboxInput placeholder="Select a framework" aria-invalid="true" />
+      <ComboboxInput placeholder="프레임워크 선택" aria-invalid="true" />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>항목이 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>

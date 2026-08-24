@@ -49,32 +49,32 @@ const scriptedMessages: ChatMessage[] = [
   {
     id: "anchor-1-user",
     role: "user",
-    text: "Can you show me how anchoring behaves when a new prompt starts the turn?",
+    text: "새 질문으로 턴이 시작될 때 앵커가 어떻게 동작하는지 보여 줄래요?",
   },
   {
     id: "anchor-1-assistant",
     role: "assistant",
-    text: "Append the user prompt first, then append the assistant response. With User selected, the prompt settles near the top and the assistant response fills in below it.",
+    text: "먼저 사용자 질문을 붙이고 그다음 어시스턴트 답변을 붙입니다. User 를 고르면 질문이 위쪽에 자리 잡고 그 아래로 답변이 채워집니다.",
   },
   {
     id: "anchor-2-user",
     role: "user",
-    text: "What changes when assistant messages are the anchor?",
+    text: "어시스턴트 메시지를 앵커로 하면 무엇이 달라지나요?",
   },
   {
     id: "anchor-2-assistant",
     role: "assistant",
-    text: "Now each assistant response is the item `MessageScroller` keeps in view. This is useful when the reply is the moment you want readers to land on after each turn.",
+    text: "이제 `MessageScroller` 가 화면에 붙잡아 두는 것은 각 어시스턴트 답변입니다. 매 턴마다 답변에 시선이 닿기를 바랄 때 알맞습니다.",
   },
   {
     id: "anchor-3-user",
     role: "user",
-    text: "Can I switch roles and keep adding turns?",
+    text: "역할을 바꿔 가며 계속 이어 붙일 수 있나요?",
   },
   {
     id: "anchor-3-assistant",
     role: "assistant",
-    text: "Yes. The next appended message with the selected role becomes the anchor, so you can compare user and assistant anchoring without resetting the demo.",
+    text: "네. 고른 역할로 다음에 붙는 메시지가 앵커가 되므로, 데모를 초기화하지 않고도 사용자 앵커와 어시스턴트 앵커를 비교할 수 있습니다.",
   },
 ]
 
@@ -88,16 +88,16 @@ export function MessageScrollerAnchoring() {
     <div className="relative flex flex-col gap-4">
       <Card className="mx-auto h-140 w-full max-w-sm gap-0">
         <CardHeader className="border-b">
-          <CardTitle>Anchoring Turns</CardTitle>
+          <CardTitle>턴 고정</CardTitle>
           <CardDescription>
-            Choose which role settles near the top edge.
+            어느 역할이 위쪽에 자리 잡을지 고르세요.
           </CardDescription>
           <CardAction>
             <Button
               type="button"
               variant="outline"
               size="icon"
-              aria-label="Reset anchored turns"
+              aria-label="앵커 초기화"
               disabled={messages.length === 0}
               onClick={() => {
                 setMessages([])
@@ -115,9 +115,9 @@ export function MessageScrollerAnchoring() {
                 <EmptyMedia variant="icon">
                   <MessageCircleDashedIcon />
                 </EmptyMedia>
-                <EmptyTitle>No anchored messages yet</EmptyTitle>
+                <EmptyTitle>아직 앵커가 된 메시지가 없습니다</EmptyTitle>
                 <EmptyDescription>
-                  Send the first message to see the selected role anchor.
+                  첫 메시지를 보내면 고른 역할이 앵커가 되는 걸 볼 수 있습니다.
                 </EmptyDescription>
               </EmptyHeader>
             </Empty>
@@ -144,7 +144,7 @@ export function MessageScrollerAnchoring() {
         </CardContent>
         <CardFooter>
           <ToggleGroup
-            aria-label="Select scroll anchor role"
+            aria-label="앵커로 삼을 역할 선택"
             value={[anchorRole]}
             onValueChange={(value) => {
               const nextValue = value[0]
@@ -156,14 +156,14 @@ export function MessageScrollerAnchoring() {
               }
             }}
           >
-            <ToggleGroupItem value="user" aria-label="Anchor user messages">
-              User
+            <ToggleGroupItem value="user" aria-label="사용자 메시지를 앵커로">
+              사용자
             </ToggleGroupItem>
             <ToggleGroupItem
               value="assistant"
-              aria-label="Anchor assistant messages"
+              aria-label="어시스턴트 메시지를 앵커로"
             >
-              Assistant
+              어시스턴트
             </ToggleGroupItem>
           </ToggleGroup>
           <Button
@@ -181,13 +181,12 @@ export function MessageScrollerAnchoring() {
             }}
           >
             <ArrowUpIcon />
-            <span className="sr-only">Send Message</span>
+            <span className="sr-only">메시지 보내기</span>
           </Button>
         </CardFooter>
       </Card>
       <div className="mx-auto max-w-xs px-0.5 text-center text-xs text-muted-foreground">
-        Toggle the anchor role, then send messages to compare where turns
-        settle.
+        앵커 역할을 바꾼 뒤 메시지를 보내 턴이 어디에 자리 잡는지 비교해 보세요.
       </div>
     </div>
   )

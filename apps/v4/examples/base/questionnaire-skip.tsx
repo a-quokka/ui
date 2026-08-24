@@ -43,11 +43,7 @@ export function QuestionnaireSkipExample() {
     }
 
     toast("Agent brief submitted", {
-      description: `Task: ${answers.task ?? "None"} · Constraints: ${
-        answers.constraintStatus === "skipped"
-          ? "Skipped"
-          : (answers.constraints ?? "None")
-      } · Review: ${answers.review ?? "None"}`,
+      description: `Task: ${answers.task ?? "None"} · Constraints: ${answers.constraintStatus === "skipped" ? "Skipped" : (answers.constraints ?? "None")} · Review: ${answers.review ?? "None"}`,
     })
   }
 
@@ -61,14 +57,14 @@ export function QuestionnaireSkipExample() {
       <QuestionnaireProgress />
 
       <QuestionnaireItem name="task" required>
-        <QuestionnaireTitle>What kind of change is this?</QuestionnaireTitle>
+        <QuestionnaireTitle>어떤 종류의 변경인가요?</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose the category that best describes the work.
+          작업을 가장 잘 설명하는 갈래를 고르세요.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="feature">New feature</QuestionnaireChoice>
-          <QuestionnaireChoice value="fix">Bug fix</QuestionnaireChoice>
-          <QuestionnaireChoice value="refactor">Refactor</QuestionnaireChoice>
+          <QuestionnaireChoice value="feature">새 기능</QuestionnaireChoice>
+          <QuestionnaireChoice value="fix">버그 수정</QuestionnaireChoice>
+          <QuestionnaireChoice value="refactor">리팩터링</QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
@@ -77,45 +73,41 @@ export function QuestionnaireSkipExample() {
         name="constraints"
         onStatusChange={setConstraintStatus}
       >
-        <QuestionnaireTitle>
-          Are there any implementation constraints?
-        </QuestionnaireTitle>
+        <QuestionnaireTitle>구현에 제약이 있나요?</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Answer if needed, or intentionally skip this question.
+          필요하면 답하고, 아니면 이 질문은 건너뛰세요.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="no-dependencies">
-            Do not add dependencies
+            의존성을 추가하지 않는다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="no-migrations">
-            Do not change the database
+            데이터베이스는 건드리지 않는다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="preserve-api">
-            Preserve the public API
+            공개 API 를 유지한다
           </QuestionnaireChoice>
           <QuestionnaireInput
-            aria-label="Another implementation constraint"
-            placeholder="Describe another constraint…"
+            aria-label="다른 구현 제약"
+            placeholder="다른 제약을 적어 주세요…"
           />
         </QuestionnaireChoices>
       </QuestionnaireItem>
 
       <QuestionnaireItem name="review" required>
-        <QuestionnaireTitle>
-          How should the work be reviewed?
-        </QuestionnaireTitle>
+        <QuestionnaireTitle>작업을 어떻게 검토할까요?</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose the checks the agent should complete before handoff.
+          인계 전에 끝내야 할 검사를 고르세요.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="tests">
-            Run the test suite
+            테스트 전체를 돌린다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="diff">
-            Review the final diff
+            최종 diff 를 검토한다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="both">
-            Tests and diff review
+            테스트와 diff 검토
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -124,8 +116,8 @@ export function QuestionnaireSkipExample() {
       <QuestionnaireActions>
         <QuestionnairePrevious />
         <QuestionnaireSkip />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Submit brief</QuestionnaireSubmit>
+        <QuestionnaireNext>다음</QuestionnaireNext>
+        <QuestionnaireSubmit>요청 보내기</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

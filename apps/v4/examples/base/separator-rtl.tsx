@@ -13,9 +13,9 @@ const translations: Translations = {
     dir: "ltr",
     values: {
       title: "shadcn/ui",
-      subtitle: "The Foundation for your Design System",
+      subtitle: "디자인 시스템의 토대",
       description:
-        "A set of beautifully designed components that you can customize, extend, and build on.",
+        "원하는 대로 고치고 확장해 쓸 수 있는, 잘 다듬어진 컴포넌트 모음입니다.",
     },
   },
   ko: {

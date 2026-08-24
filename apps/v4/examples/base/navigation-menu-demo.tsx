@@ -65,7 +65,7 @@ export default function NavigationMenuDemo() {
               <ListItem href="/docs" title="Introduction">
                 Tailwind CSS 로 만든 재사용 가능한 컴포넌트입니다.
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
+              <ListItem href="/docs/installation" title="설치">
                 의존성을 설치하고 앱 구조를 잡는 방법입니다.
               </ListItem>
               <ListItem href="/docs/primitives/typography" title="Typography">

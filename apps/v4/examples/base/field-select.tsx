@@ -13,21 +13,21 @@ import {
 } from "@/styles/base-nova/ui/select"
 
 const items = [
-  { label: "Choose department", value: null },
-  { label: "Engineering", value: "engineering" },
-  { label: "Design", value: "design" },
-  { label: "Marketing", value: "marketing" },
-  { label: "Sales", value: "sales" },
-  { label: "Customer Support", value: "support" },
-  { label: "Human Resources", value: "hr" },
-  { label: "Finance", value: "finance" },
-  { label: "Operations", value: "operations" },
+  { label: "부서 선택", value: null },
+  { label: "엔지니어링", value: "engineering" },
+  { label: "디자인", value: "design" },
+  { label: "마케팅", value: "marketing" },
+  { label: "세일즈", value: "sales" },
+  { label: "고객 지원", value: "support" },
+  { label: "인사", value: "hr" },
+  { label: "재무", value: "finance" },
+  { label: "운영", value: "operations" },
 ]
 
 export default function FieldSelect() {
   return (
     <Field className="w-full max-w-xs">
-      <FieldLabel>Department</FieldLabel>
+      <FieldLabel>부서</FieldLabel>
       <Select items={items}>
         <SelectTrigger>
           <SelectValue />
@@ -42,9 +42,7 @@ export default function FieldSelect() {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <FieldDescription>
-        Select your department or area of work.
-      </FieldDescription>
+      <FieldDescription>소속 부서나 담당 영역을 고르세요.</FieldDescription>
     </Field>
   )
 }

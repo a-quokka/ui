@@ -25,7 +25,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      placeholder: "Pick a date",
+      placeholder: "날짜 선택",
     },
   },
   ko: {

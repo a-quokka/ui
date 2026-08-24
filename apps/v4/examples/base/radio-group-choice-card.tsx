@@ -15,7 +15,7 @@ export function RadioGroupChoiceCard() {
           <FieldContent>
             <FieldTitle>Plus</FieldTitle>
             <FieldDescription>
-              For individuals and small teams.
+              개인과 소규모 팀을 위한 요금제입니다.
             </FieldDescription>
           </FieldContent>
           <RadioGroupItem value="plus" id="plus-plan" />
@@ -25,7 +25,9 @@ export function RadioGroupChoiceCard() {
         <Field orientation="horizontal">
           <FieldContent>
             <FieldTitle>Pro</FieldTitle>
-            <FieldDescription>For growing businesses.</FieldDescription>
+            <FieldDescription>
+              성장하는 조직을 위한 요금제입니다.
+            </FieldDescription>
           </FieldContent>
           <RadioGroupItem value="pro" id="pro-plan" />
         </Field>
@@ -33,9 +35,9 @@ export function RadioGroupChoiceCard() {
       <FieldLabel htmlFor="enterprise-plan">
         <Field orientation="horizontal">
           <FieldContent>
-            <FieldTitle>Enterprise</FieldTitle>
+            <FieldTitle>엔터프라이즈</FieldTitle>
             <FieldDescription>
-              For large teams and enterprises.
+              큰 팀과 기업을 위한 요금제입니다.
             </FieldDescription>
           </FieldContent>
           <RadioGroupItem value="enterprise" id="enterprise-plan" />

@@ -17,9 +17,9 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      label: "Feedback",
-      placeholder: "Your feedback helps us improve...",
-      description: "Share your thoughts about our service.",
+      label: "의견",
+      placeholder: "남겨 주신 의견이 서비스를 더 낫게 만듭니다...",
+      description: "서비스에 대한 생각을 들려주세요.",
     },
   },
   ko: {

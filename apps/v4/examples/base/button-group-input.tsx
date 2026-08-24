@@ -7,8 +7,8 @@ import { Input } from "@/styles/base-nova/ui/input"
 export default function ButtonGroupInput() {
   return (
     <ButtonGroup>
-      <Input placeholder="Search..." />
-      <Button variant="outline" aria-label="Search">
+      <Input placeholder="검색..." />
+      <Button variant="outline" aria-label="검색">
         <SearchIcon />
       </Button>
     </ButtonGroup>

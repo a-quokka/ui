@@ -81,17 +81,16 @@ export function MessageScrollerAnimation() {
     <div className="relative flex flex-col gap-4">
       <Card className="mx-auto h-140 w-full max-w-sm gap-0">
         <CardHeader className="border-b">
-          <CardTitle>Animation</CardTitle>
+          <CardTitle>애니메이션</CardTitle>
           <CardDescription>
-            Choose how user messages are animated when they are added to the
-            conversation.
+            사용자 메시지가 대화에 붙을 때 어떻게 움직일지 고르세요.
           </CardDescription>
           <CardAction className="flex items-center gap-2">
             <Button
               type="button"
               variant="outline"
               size="icon"
-              aria-label="Reset animated messages"
+              aria-label="애니메이션 초기화"
               disabled={messages.length === 0 || isBusy}
               onClick={() => setMessages(initialMessages)}
             >
@@ -106,9 +105,9 @@ export function MessageScrollerAnimation() {
                 <EmptyMedia variant="icon">
                   <MessageCircleDashedIcon />
                 </EmptyMedia>
-                <EmptyTitle>No Messages Yet</EmptyTitle>
+                <EmptyTitle>아직 메시지가 없습니다</EmptyTitle>
                 <EmptyDescription>
-                  Click the button below to send the first message.
+                  아래 버튼을 눌러 첫 메시지를 보내세요.
                 </EmptyDescription>
               </EmptyHeader>
             </Empty>
@@ -143,7 +142,7 @@ export function MessageScrollerAnimation() {
               setPresetId(value as MessageAnimationId)
             }}
           >
-            <SelectTrigger aria-label="Animation preset">
+            <SelectTrigger aria-label="애니메이션 프리셋">
               <SelectValue>{preset.name}</SelectValue>
             </SelectTrigger>
             <SelectContent align="start" side="top">
@@ -170,12 +169,12 @@ export function MessageScrollerAnimation() {
             }}
           >
             <ArrowUpIcon />
-            <span className="sr-only">Send Message</span>
+            <span className="sr-only">메시지 보내기</span>
           </Button>
         </CardFooter>
       </Card>
       <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-balance text-muted-foreground">
-        Select an animation then click send to see it in action.
+        애니메이션을 고르고 보내기를 누르면 동작을 볼 수 있습니다.
       </div>
     </div>
   )

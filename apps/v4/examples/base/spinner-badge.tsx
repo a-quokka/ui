@@ -6,15 +6,15 @@ export function SpinnerBadge() {
     <div className="flex items-center gap-4 [--radius:1.2rem]">
       <Badge>
         <Spinner data-icon="inline-start" />
-        Syncing
+        동기화 중
       </Badge>
       <Badge variant="secondary">
         <Spinner data-icon="inline-start" />
-        Updating
+        업데이트 중
       </Badge>
       <Badge variant="outline">
         <Spinner data-icon="inline-start" />
-        Processing
+        처리 중
       </Badge>
     </div>
   )

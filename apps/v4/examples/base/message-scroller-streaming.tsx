@@ -99,9 +99,9 @@ export function MessageScrollerStreaming() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Streaming Messages</CardTitle>
+            <CardTitle>메시지 스트리밍</CardTitle>
             <CardDescription>
-              Auto-scroll follows the live edge of the conversation.
+              자동 스크롤이 대화의 라이브 엣지를 따라갑니다.
             </CardDescription>
             <CardAction>
               <Tooltip>
@@ -110,7 +110,7 @@ export function MessageScrollerStreaming() {
                     <Button
                       variant="outline"
                       size="icon"
-                      aria-label="Reset stream"
+                      aria-label="스트리밍 초기화"
                       onClick={() => setMessages(initialMessages)}
                       disabled={messages.length === 0 || isBusy}
                     />
@@ -119,7 +119,7 @@ export function MessageScrollerStreaming() {
                   <RotateCwIcon />
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Reset</p>
+                  <p>초기화</p>
                 </TooltipContent>
               </Tooltip>
             </CardAction>
@@ -131,9 +131,9 @@ export function MessageScrollerStreaming() {
                   <EmptyMedia variant="icon">
                     <MessageCircleDashedIcon />
                   </EmptyMedia>
-                  <EmptyTitle>Ready to Stream</EmptyTitle>
+                  <EmptyTitle>스트리밍 준비됨</EmptyTitle>
                   <EmptyDescription>
-                    Press send to stream a scripted launch summary.
+                    보내기를 누르면 준비된 출시 요약이 흘러나옵니다.
                   </EmptyDescription>
                 </EmptyHeader>
               </Empty>
@@ -178,7 +178,7 @@ export function MessageScrollerStreaming() {
                       getMessageText(nextMessage)
                     ) : (
                       <span className="text-muted-foreground">
-                        No messages queued. Reset the stream.
+                        대기 중인 메시지가 없습니다. 스트리밍을 초기화하세요.
                       </span>
                     )}
                   </span>
@@ -188,7 +188,7 @@ export function MessageScrollerStreaming() {
                     <DropdownMenuTrigger
                       render={
                         <InputGroupButton
-                          aria-label="Add files"
+                          aria-label="파일 추가"
                           type="button"
                           size="icon-sm"
                           variant="outline"
@@ -204,20 +204,19 @@ export function MessageScrollerStreaming() {
                     >
                       <DropdownMenuItem>
                         <PaperclipIcon />
-                        Add Photos & Files
+                        사진·파일 추가
                       </DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem>
                         <ImageIcon />
-                        Create Image
+                        이미지 만들기
                       </DropdownMenuItem>
                       <DropdownMenuItem>
                         <TelescopeIcon />
-                        Deep Research
+                        심층 리서치
                       </DropdownMenuItem>
                       <DropdownMenuItem>
-                        <GlobeIcon />
-                        Web Search
+                        <GlobeIcon />웹 검색
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -229,7 +228,7 @@ export function MessageScrollerStreaming() {
                     className="ml-auto"
                   >
                     <ArrowUpIcon />
-                    <span className="sr-only">Send</span>
+                    <span className="sr-only">보내기</span>
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
@@ -237,7 +236,7 @@ export function MessageScrollerStreaming() {
           </CardFooter>
         </Card>
         <div className="px-0.5 text-center text-xs text-muted-foreground">
-          Streaming is simulated. `autoScroll` is enabled.
+          스트리밍은 흉내 낸 것이고 `autoScroll` 이 켜져 있습니다.
         </div>
       </div>
     </MessageScrollerProvider>

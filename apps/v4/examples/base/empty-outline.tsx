@@ -17,14 +17,14 @@ export default function EmptyOutline() {
         <EmptyMedia variant="icon">
           <IconCloud />
         </EmptyMedia>
-        <EmptyTitle>Cloud Storage Empty</EmptyTitle>
+        <EmptyTitle>클라우드가 비어 있습니다</EmptyTitle>
         <EmptyDescription>
-          Upload files to your cloud storage to access them anywhere.
+          클라우드에 파일을 올려 두면 어디서든 열 수 있습니다.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <Button variant="outline" size="sm">
-          Upload Files
+          파일 올리기
         </Button>
       </EmptyContent>
     </Empty>

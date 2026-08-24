@@ -21,27 +21,27 @@ export function CommandWithShortcuts() {
   return (
     <div className="flex flex-col gap-4">
       <Button onClick={() => setOpen(true)} variant="outline" className="w-fit">
-        Open Menu
+        메뉴 열기
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <Command>
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder="명령을 입력하거나 검색하세요..." />
           <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Settings">
+            <CommandEmpty>결과가 없습니다.</CommandEmpty>
+            <CommandGroup heading="설정">
               <CommandItem>
                 <UserIcon />
-                <span>Profile</span>
+                <span>프로필</span>
                 <CommandShortcut>⌘P</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <CreditCardIcon />
-                <span>Billing</span>
+                <span>결제</span>
                 <CommandShortcut>⌘B</CommandShortcut>
               </CommandItem>
               <CommandItem>
                 <SettingsIcon />
-                <span>Settings</span>
+                <span>설정</span>
                 <CommandShortcut>⌘S</CommandShortcut>
               </CommandItem>
             </CommandGroup>

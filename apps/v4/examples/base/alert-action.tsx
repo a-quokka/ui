@@ -9,13 +9,13 @@ import { Button } from "@/styles/base-nova/ui/button"
 export default function AlertActionExample() {
   return (
     <Alert className="max-w-md">
-      <AlertTitle>Dark mode is now available</AlertTitle>
+      <AlertTitle>다크 모드를 쓸 수 있습니다</AlertTitle>
       <AlertDescription>
-        Enable it under your profile settings to get started.
+        프로필 설정에서 켜면 바로 쓸 수 있습니다.
       </AlertDescription>
       <AlertAction>
         <Button size="xs" variant="default">
-          Enable
+          켜기
         </Button>
       </AlertAction>
     </Alert>

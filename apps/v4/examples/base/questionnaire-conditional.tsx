@@ -53,9 +53,9 @@ export function QuestionnaireConditional() {
       <QuestionnaireProgress />
 
       <QuestionnaireItem name="runtime" required>
-        <QuestionnaireTitle>Where should the agent run?</QuestionnaireTitle>
+        <QuestionnaireTitle>에이전트를 어디서 돌릴까요?</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Cloud runs add an environment question to this flow.
+          클라우드에서 돌리면 환경을 묻는 단계가 하나 늘어납니다.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice
@@ -63,14 +63,14 @@ export function QuestionnaireConditional() {
             value="local"
             onChange={() => setRuntime("local")}
           >
-            Local workspace
+            로컬 작업 공간
           </QuestionnaireChoice>
           <QuestionnaireChoice
             checked={runtime === "cloud"}
             value="cloud"
             onChange={() => setRuntime("cloud")}
           >
-            Cloud workspace
+            클라우드 작업 공간
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -81,14 +81,12 @@ export function QuestionnaireConditional() {
         name="environment"
         required
       >
-        <QuestionnaireTitle>
-          Which cloud environment should it use?
-        </QuestionnaireTitle>
+        <QuestionnaireTitle>어떤 클라우드 환경을 쓸까요?</QuestionnaireTitle>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="preview">Preview</QuestionnaireChoice>
-          <QuestionnaireChoice value="staging">Staging</QuestionnaireChoice>
+          <QuestionnaireChoice value="preview">미리보기</QuestionnaireChoice>
+          <QuestionnaireChoice value="staging">스테이징</QuestionnaireChoice>
           <QuestionnaireChoice value="isolated">
-            Isolated sandbox
+            격리된 샌드박스
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -96,17 +94,17 @@ export function QuestionnaireConditional() {
 
       <QuestionnaireItem name="approval" required>
         <QuestionnaireTitle>
-          When should the agent request approval?
+          에이전트가 언제 승인을 받을까요?
         </QuestionnaireTitle>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="writes">
-            Before writing files
+            파일을 쓰기 전
           </QuestionnaireChoice>
           <QuestionnaireChoice value="commands">
-            Before running commands
+            명령을 실행하기 전
           </QuestionnaireChoice>
           <QuestionnaireChoice value="sensitive">
-            Only for sensitive actions
+            민감한 동작에만
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -114,8 +112,8 @@ export function QuestionnaireConditional() {
 
       <QuestionnaireActions>
         <QuestionnairePrevious />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Save execution plan</QuestionnaireSubmit>
+        <QuestionnaireNext>다음</QuestionnaireNext>
+        <QuestionnaireSubmit>실행 계획 저장</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

@@ -6,7 +6,7 @@ export default function ButtonRender() {
       href="#"
       className={buttonVariants({ variant: "secondary", size: "sm" })}
     >
-      Login
+      로그인
     </a>
   )
 }

@@ -22,39 +22,38 @@ export function MenubarIcons() {
   return (
     <Menubar className="w-72">
       <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarTrigger>파일</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
-            <FileIcon />
-            New File <MenubarShortcut>⌘N</MenubarShortcut>
+            <FileIcon />새 파일 <MenubarShortcut>⌘N</MenubarShortcut>
           </MenubarItem>
           <MenubarItem>
             <FolderIcon />
-            Open Folder
+            폴더 열기
           </MenubarItem>
           <MenubarSeparator />
           <MenubarItem>
             <SaveIcon />
-            Save <MenubarShortcut>⌘S</MenubarShortcut>
+            저장 <MenubarShortcut>⌘S</MenubarShortcut>
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>More</MenubarTrigger>
+        <MenubarTrigger>더 보기</MenubarTrigger>
         <MenubarContent>
           <MenubarGroup>
             <MenubarItem>
               <SettingsIcon />
-              Settings
+              설정
             </MenubarItem>
             <MenubarItem>
               <HelpCircleIcon />
-              Help
+              도움말
             </MenubarItem>
             <MenubarSeparator />
             <MenubarItem variant="destructive">
               <TrashIcon />
-              Delete
+              삭제
             </MenubarItem>
           </MenubarGroup>
         </MenubarContent>

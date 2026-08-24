@@ -29,7 +29,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      placeholder: "Type a command or search...",
+      placeholder: "명령을 입력하거나 검색하세요...",
       empty: "No results found.",
       suggestions: "Suggestions",
       calendar: "Calendar",

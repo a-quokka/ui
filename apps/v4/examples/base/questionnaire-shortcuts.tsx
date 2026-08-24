@@ -45,7 +45,7 @@ export function QuestionnaireShortcuts() {
   return (
     <div className="relative mx-auto flex h-full w-full max-w-md flex-col">
       <NativeSelect
-        aria-label="Shortcut style"
+        aria-label="단축키 방식"
         className="absolute end-0 top-0"
         value={shortcuts ?? "none"}
         onChange={(event) => {
@@ -55,9 +55,9 @@ export function QuestionnaireShortcuts() {
           )
         }}
       >
-        <NativeSelectOption value="none">No shortcuts</NativeSelectOption>
-        <NativeSelectOption value="letters">Letters</NativeSelectOption>
-        <NativeSelectOption value="numbers">Numbers</NativeSelectOption>
+        <NativeSelectOption value="none">단축키 없음</NativeSelectOption>
+        <NativeSelectOption value="letters">글자</NativeSelectOption>
+        <NativeSelectOption value="numbers">숫자</NativeSelectOption>
       </NativeSelect>
 
       <Questionnaire
@@ -68,27 +68,27 @@ export function QuestionnaireShortcuts() {
       >
         <QuestionnaireItem name="action" required>
           <QuestionnaireTitle>
-            What should the agent do next?
+            에이전트가 다음에 무엇을 할까요?
           </QuestionnaireTitle>
           <QuestionnaireDescription>
-            Use the displayed shortcut or navigate with the keyboard.
+            표시된 단축키를 쓰거나 키보드로 이동하세요.
           </QuestionnaireDescription>
           <QuestionnaireChoices>
             <QuestionnaireChoice value="inspect">
-              Inspect the implementation
+              구현을 살펴본다
             </QuestionnaireChoice>
             <QuestionnaireChoice value="tests">
-              Run the relevant tests
+              관련 테스트를 돌린다
             </QuestionnaireChoice>
             <QuestionnaireChoice value="patch">
-              Prepare the patch
+              패치를 준비한다
             </QuestionnaireChoice>
           </QuestionnaireChoices>
           <QuestionnaireError />
         </QuestionnaireItem>
 
         <QuestionnaireActions>
-          <QuestionnaireSubmit>Confirm action</QuestionnaireSubmit>
+          <QuestionnaireSubmit>동작 확인</QuestionnaireSubmit>
         </QuestionnaireActions>
       </Questionnaire>
     </div>

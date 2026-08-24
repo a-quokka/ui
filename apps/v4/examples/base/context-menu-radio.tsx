@@ -21,15 +21,15 @@ export function ContextMenuRadio() {
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          여기를 오른쪽 클릭
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          여기를 길게 누르기
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
-          <ContextMenuLabel>People</ContextMenuLabel>
+          <ContextMenuLabel>사람</ContextMenuLabel>
           <ContextMenuRadioGroup value={user} onValueChange={setUser}>
             <ContextMenuRadioItem value="pedro">
               Pedro Duarte
@@ -39,11 +39,11 @@ export function ContextMenuRadio() {
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
-          <ContextMenuLabel>Theme</ContextMenuLabel>
+          <ContextMenuLabel>테마</ContextMenuLabel>
           <ContextMenuRadioGroup value={theme} onValueChange={setTheme}>
-            <ContextMenuRadioItem value="light">Light</ContextMenuRadioItem>
-            <ContextMenuRadioItem value="dark">Dark</ContextMenuRadioItem>
-            <ContextMenuRadioItem value="system">System</ContextMenuRadioItem>
+            <ContextMenuRadioItem value="light">라이트</ContextMenuRadioItem>
+            <ContextMenuRadioItem value="dark">다크</ContextMenuRadioItem>
+            <ContextMenuRadioItem value="system">시스템</ContextMenuRadioItem>
           </ContextMenuRadioGroup>
         </ContextMenuGroup>
       </ContextMenuContent>

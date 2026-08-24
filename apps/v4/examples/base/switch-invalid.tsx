@@ -10,12 +10,8 @@ export function SwitchInvalid() {
   return (
     <Field orientation="horizontal" className="max-w-sm" data-invalid>
       <FieldContent>
-        <FieldLabel htmlFor="switch-terms">
-          Accept terms and conditions
-        </FieldLabel>
-        <FieldDescription>
-          You must accept the terms and conditions to continue.
-        </FieldDescription>
+        <FieldLabel htmlFor="switch-terms">이용약관에 동의합니다</FieldLabel>
+        <FieldDescription>계속하려면 약관에 동의해야 합니다.</FieldDescription>
       </FieldContent>
       <Switch id="switch-terms" aria-invalid />
     </Field>

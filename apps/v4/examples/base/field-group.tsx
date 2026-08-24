@@ -12,38 +12,37 @@ export default function FieldGroupExample() {
   return (
     <FieldGroup className="w-full max-w-xs">
       <FieldSet>
-        <FieldLabel>Responses</FieldLabel>
+        <FieldLabel>응답</FieldLabel>
         <FieldDescription>
-          Get notified when ChatGPT responds to requests that take time, like
-          research or image generation.
+          리서치나 이미지 생성처럼 시간이 걸리는 요청의 답이 오면 알려 드립니다.
         </FieldDescription>
         <FieldGroup data-slot="checkbox-group">
           <Field orientation="horizontal">
             <Checkbox id="push" defaultChecked disabled />
             <FieldLabel htmlFor="push" className="font-normal">
-              Push notifications
+              푸시 알림
             </FieldLabel>
           </Field>
         </FieldGroup>
       </FieldSet>
       <FieldSeparator />
       <FieldSet>
-        <FieldLabel>Tasks</FieldLabel>
+        <FieldLabel>작업</FieldLabel>
         <FieldDescription>
-          Get notified when tasks you&apos;ve created have updates.{" "}
-          <a href="#">Manage tasks</a>
+          만들어 둔 작업에 변화가 생기면 알려 드립니다.{" "}
+          <a href="#">작업 관리</a>
         </FieldDescription>
         <FieldGroup data-slot="checkbox-group">
           <Field orientation="horizontal">
             <Checkbox id="push-tasks" />
             <FieldLabel htmlFor="push-tasks" className="font-normal">
-              Push notifications
+              푸시 알림
             </FieldLabel>
           </Field>
           <Field orientation="horizontal">
             <Checkbox id="email-tasks" />
             <FieldLabel htmlFor="email-tasks" className="font-normal">
-              Email notifications
+              이메일 알림
             </FieldLabel>
           </Field>
         </FieldGroup>

@@ -53,16 +53,16 @@ export function QuestionnaireResume() {
       <QuestionnaireProgress />
 
       <QuestionnaireItem name="change" required>
-        <QuestionnaireTitle>What kind of migration is this?</QuestionnaireTitle>
+        <QuestionnaireTitle>어떤 종류의 마이그레이션인가요?</QuestionnaireTitle>
         <QuestionnaireDescription>
-          This answer was saved during the previous session.
+          이 답변은 지난번에 저장된 것입니다.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="incremental" defaultChecked>
-            Incremental migration
+            점진적 마이그레이션
           </QuestionnaireChoice>
           <QuestionnaireChoice value="cutover">
-            Single cutover
+            한 번에 전환
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -70,20 +70,20 @@ export function QuestionnaireResume() {
 
       <QuestionnaireItem name="verification" multiple required>
         <QuestionnaireTitle>
-          How should the migration be verified?
+          마이그레이션을 어떻게 검증할까요?
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          These checks were selected during the previous session.
+          이 검사들은 지난번에 골라 둔 것입니다.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="tests" defaultChecked>
-            Run migration tests
+            마이그레이션 테스트를 돌린다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="typecheck" defaultChecked>
-            Run the typecheck
+            타입 검사를 돌린다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="manual">
-            Perform a manual smoke test
+            직접 훑어보며 확인한다
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -91,24 +91,24 @@ export function QuestionnaireResume() {
 
       <QuestionnaireItem name="notes">
         <QuestionnaireTitle>
-          Anything else the agent should remember?
+          에이전트가 더 기억해야 할 것이 있나요?
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          This note was saved with the draft.
+          이 메모는 임시 저장과 함께 보관됐습니다.
         </QuestionnaireDescription>
         <QuestionnaireInput
-          aria-label="Saved migration note"
+          aria-label="저장된 마이그레이션 메모"
           defaultValue="Keep the existing public API stable."
         />
       </QuestionnaireItem>
 
       <QuestionnaireActions>
         <Button type="reset" variant="outline">
-          Reset changes
+          변경 되돌리기
         </Button>
         <QuestionnairePrevious />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Update draft</QuestionnaireSubmit>
+        <QuestionnaireNext>다음</QuestionnaireNext>
+        <QuestionnaireSubmit>임시 저장 갱신</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

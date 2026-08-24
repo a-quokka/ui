@@ -13,18 +13,18 @@ export function SpinnerInputGroup() {
   return (
     <div className="flex w-full max-w-md flex-col gap-4">
       <InputGroup>
-        <InputGroupInput placeholder="Send a message..." disabled />
+        <InputGroupInput placeholder="메시지를 입력하세요..." disabled />
         <InputGroupAddon align="inline-end">
           <Spinner />
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupTextarea placeholder="Send a message..." disabled />
+        <InputGroupTextarea placeholder="메시지를 입력하세요..." disabled />
         <InputGroupAddon align="block-end">
-          <Spinner /> Validating...
+          <Spinner /> 검증 중...
           <InputGroupButton className="ml-auto" variant="default">
             <ArrowUpIcon />
-            <span className="sr-only">Send</span>
+            <span className="sr-only">보내기</span>
           </InputGroupButton>
         </InputGroupAddon>
       </InputGroup>

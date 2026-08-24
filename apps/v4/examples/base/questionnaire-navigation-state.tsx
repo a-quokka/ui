@@ -65,17 +65,19 @@ export function QuestionnaireNavigationState() {
         required
         onStatusChange={(status) => setStatus("permission", status)}
       >
-        <QuestionnaireTitle>What may the agent modify?</QuestionnaireTitle>
+        <QuestionnaireTitle>
+          에이전트가 무엇을 고쳐도 될까요?
+        </QuestionnaireTitle>
         <QuestionnaireDescription>
-          Next is intentionally disabled until an answer is selected.
+          답을 고르기 전까지 다음 버튼은 일부러 비활성 상태입니다.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="files">Project files</QuestionnaireChoice>
+          <QuestionnaireChoice value="files">프로젝트 파일</QuestionnaireChoice>
           <QuestionnaireChoice value="tests">
-            Project files and tests
+            프로젝트 파일과 테스트
           </QuestionnaireChoice>
           <QuestionnaireChoice value="config">
-            Files, tests, and configuration
+            파일·테스트·설정
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -87,15 +89,13 @@ export function QuestionnaireNavigationState() {
         onStatusChange={(status) => setStatus("verification", status)}
       >
         <QuestionnaireTitle>
-          What must pass before completion?
+          완료 전에 무엇이 통과해야 하나요?
         </QuestionnaireTitle>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="tests">Tests</QuestionnaireChoice>
-          <QuestionnaireChoice value="types">
-            Tests and types
-          </QuestionnaireChoice>
+          <QuestionnaireChoice value="tests">테스트</QuestionnaireChoice>
+          <QuestionnaireChoice value="types">테스트와 타입</QuestionnaireChoice>
           <QuestionnaireChoice value="all">
-            Tests, types, and visual QA
+            테스트·타입·화면 QA
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -108,10 +108,10 @@ export function QuestionnaireNavigationState() {
           disabled={unanswered}
           variant="secondary"
         >
-          Next
+          다음
         </QuestionnaireNext>
         <QuestionnaireSubmit disabled={unanswered}>
-          Save permissions
+          권한 저장
         </QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>

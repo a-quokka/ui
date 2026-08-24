@@ -41,15 +41,15 @@ export default function EmptyAvatarGroup() {
             </Avatar>
           </div>
         </EmptyMedia>
-        <EmptyTitle>No Team Members</EmptyTitle>
+        <EmptyTitle>팀원이 없습니다</EmptyTitle>
         <EmptyDescription>
-          Invite your team to collaborate on this project.
+          이 프로젝트를 함께할 팀원을 초대하세요.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <Button size="sm">
           <PlusIcon />
-          Invite Members
+          멤버 초대
         </Button>
       </EmptyContent>
     </Empty>

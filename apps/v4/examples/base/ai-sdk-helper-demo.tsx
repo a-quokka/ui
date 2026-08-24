@@ -107,8 +107,8 @@ export function AiSdkHelperDemo() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>New Chat</CardTitle>
-            <CardDescription>How can I help you today?</CardDescription>
+            <CardTitle>새 대화</CardTitle>
+            <CardDescription>무엇을 도와드릴까요?</CardDescription>
             <CardAction>
               <Tooltip>
                 <TooltipTrigger
@@ -116,7 +116,7 @@ export function AiSdkHelperDemo() {
                     <Button
                       variant="outline"
                       size="icon"
-                      aria-label="Reset conversation"
+                      aria-label="대화 초기화"
                       onClick={() => setMessages(initialMessages)}
                       disabled={isBusy}
                     />
@@ -125,7 +125,7 @@ export function AiSdkHelperDemo() {
                   <RotateCwIcon />
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Reset</p>
+                  <p>초기화</p>
                 </TooltipContent>
               </Tooltip>
             </CardAction>
@@ -137,10 +137,10 @@ export function AiSdkHelperDemo() {
                   <EmptyMedia variant="icon">
                     <MessageCircleDashedIcon />
                   </EmptyMedia>
-                  <EmptyTitle>Morning, shadcn!</EmptyTitle>
+                  <EmptyTitle>안녕하세요, shadcn 님!</EmptyTitle>
                   <EmptyDescription>
-                    What are we working on today? Press send to start a new
-                    conversation
+                    오늘은 무엇을 해 볼까요? 보내기를 누르면 새 대화가
+                    시작됩니다
                   </EmptyDescription>
                 </EmptyHeader>
               </Empty>
@@ -177,10 +177,10 @@ export function AiSdkHelperDemo() {
             >
               <InputGroup>
                 <InputGroupTextarea
-                  aria-label="Next predefined message"
+                  aria-label="다음 준비된 메시지"
                   className="h-14 min-h-14 overflow-hidden px-3 py-2.5 opacity-60 data-[status=ready]:opacity-100"
                   data-status={status}
-                  placeholder="No messages queued. Reset the conversation."
+                  placeholder="대기 중인 메시지가 없습니다. 대화를 초기화하세요."
                   value={nextMessage ? getMessageText(nextMessage) : ""}
                   readOnly
                 />
@@ -189,7 +189,7 @@ export function AiSdkHelperDemo() {
                     <DropdownMenuTrigger
                       render={
                         <InputGroupButton
-                          aria-label="Add files"
+                          aria-label="파일 추가"
                           type="button"
                           size="icon-sm"
                           variant="outline"
@@ -205,20 +205,19 @@ export function AiSdkHelperDemo() {
                     >
                       <DropdownMenuItem>
                         <PaperclipIcon />
-                        Add Photos & Files
+                        사진·파일 추가
                       </DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem>
                         <ImageIcon />
-                        Create Image
+                        이미지 만들기
                       </DropdownMenuItem>
                       <DropdownMenuItem>
                         <TelescopeIcon />
-                        Deep Research
+                        심층 리서치
                       </DropdownMenuItem>
                       <DropdownMenuItem>
-                        <GlobeIcon />
-                        Web Search
+                        <GlobeIcon />웹 검색
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -230,7 +229,7 @@ export function AiSdkHelperDemo() {
                     className="ml-auto"
                   >
                     <ArrowUpIcon />
-                    <span className="sr-only">Send</span>
+                    <span className="sr-only">보내기</span>
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
@@ -238,7 +237,7 @@ export function AiSdkHelperDemo() {
           </CardFooter>
         </Card>
         <div className="px-0.5 text-center text-xs text-muted-foreground">
-          Demo is read only. Press send to send messages.
+          읽기 전용 데모입니다. 보내기를 누르면 다음 메시지가 이어집니다.
         </div>
       </div>
     </MessageScrollerProvider>

@@ -15,7 +15,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      content: "Add to library",
+      content: "라이브러리에 추가",
       "inline-start": "Inline Start",
       left: "Left",
       top: "Top",

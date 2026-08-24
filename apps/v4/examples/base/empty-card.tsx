@@ -17,18 +17,17 @@ export function EmptyInCard() {
         <EmptyMedia variant="icon">
           <FolderIcon />
         </EmptyMedia>
-        <EmptyTitle>No projects yet</EmptyTitle>
+        <EmptyTitle>아직 프로젝트가 없습니다</EmptyTitle>
         <EmptyDescription>
-          You haven&apos;t created any projects yet. Get started by creating
-          your first project.
+          만든 프로젝트가 아직 없습니다. 첫 프로젝트를 만들어 보세요.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <div className="flex gap-2">
           <Button render={<a href="#" />} nativeButton={false}>
-            Create project
+            프로젝트 만들기
           </Button>
-          <Button variant="outline">Import project</Button>
+          <Button variant="outline">프로젝트 가져오기</Button>
         </div>
         <Button
           variant="link"
@@ -36,7 +35,7 @@ export function EmptyInCard() {
           className="text-muted-foreground"
           nativeButton={false}
         >
-          Learn more <ArrowUpRightIcon />
+          자세히 보기 <ArrowUpRightIcon />
         </Button>
       </EmptyContent>
     </Empty>

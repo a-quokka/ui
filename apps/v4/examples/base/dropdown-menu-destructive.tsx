@@ -16,24 +16,24 @@ export function DropdownMenuDestructive() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Actions
+        동작
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <PencilIcon />
-            Edit
+            편집
           </DropdownMenuItem>
           <DropdownMenuItem>
             <ShareIcon />
-            Share
+            공유
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem variant="destructive">
             <TrashIcon />
-            Delete
+            삭제
           </DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

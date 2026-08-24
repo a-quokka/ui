@@ -6,10 +6,10 @@ export function BadgeWithSpinner() {
     <div className="flex flex-wrap gap-2">
       <Badge variant="destructive">
         <Spinner data-icon="inline-start" />
-        Deleting
+        삭제 중
       </Badge>
       <Badge variant="secondary">
-        Generating
+        생성 중
         <Spinner data-icon="inline-end" />
       </Badge>
     </div>

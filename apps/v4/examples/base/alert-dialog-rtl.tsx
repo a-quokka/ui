@@ -26,9 +26,9 @@ const translations: Translations = {
     values: {
       showDialog: "Show Dialog",
       showDialogSm: "Show Dialog (sm)",
-      title: "Are you absolutely sure?",
+      title: "정말 진행할까요?",
       description:
-        "This action cannot be undone. This will permanently delete your account from our servers.",
+        "이 작업은 되돌릴 수 없습니다. 계정이 서버에서 완전히 삭제됩니다.",
       cancel: "Cancel",
       continue: "Continue",
       smallTitle: "Allow accessory to connect?",

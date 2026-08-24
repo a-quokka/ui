@@ -22,7 +22,7 @@ export function BreadcrumbDropdown() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="/" />}>Home</BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/" />}>홈</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
           <DotIcon />
@@ -32,13 +32,13 @@ export function BreadcrumbDropdown() {
             <DropdownMenuTrigger
               render={<button className="flex items-center gap-1" />}
             >
-              Components
+              컴포넌트
               <ChevronDownIcon data-icon="inline-end" className="size-3.5" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start">
               <DropdownMenuGroup>
-                <DropdownMenuItem>Documentation</DropdownMenuItem>
-                <DropdownMenuItem>Themes</DropdownMenuItem>
+                <DropdownMenuItem>문서</DropdownMenuItem>
+                <DropdownMenuItem>테마</DropdownMenuItem>
                 <DropdownMenuItem>GitHub</DropdownMenuItem>
               </DropdownMenuGroup>
             </DropdownMenuContent>

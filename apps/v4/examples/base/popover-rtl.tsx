@@ -18,8 +18,8 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "Dimensions",
-      description: "Set the dimensions for the layer.",
+      title: "크기",
+      description: "레이어의 크기를 정합니다.",
       "inline-start": "Inline Start",
       left: "Left",
       top: "Top",

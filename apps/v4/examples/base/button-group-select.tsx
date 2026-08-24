@@ -15,9 +15,9 @@ import {
 } from "@/styles/base-nova/ui/select"
 
 const CURRENCIES = [
-  { label: "US Dollar", value: "$" },
-  { label: "Euro", value: "€" },
-  { label: "British Pound", value: "£" },
+  { label: "미국 달러", value: "$" },
+  { label: "유로", value: "€" },
+  { label: "영국 파운드", value: "£" },
 ]
 
 export default function ButtonGroupSelect() {
@@ -46,7 +46,7 @@ export default function ButtonGroupSelect() {
         <Input placeholder="10.00" pattern="[0-9]*" />
       </ButtonGroup>
       <ButtonGroup>
-        <Button aria-label="Send" size="icon" variant="outline">
+        <Button aria-label="보내기" size="icon" variant="outline">
           <ArrowRightIcon />
         </Button>
       </ButtonGroup>

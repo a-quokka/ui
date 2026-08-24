@@ -15,21 +15,21 @@ export function CardImage() {
       <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
       <img
         src="https://avatar.vercel.sh/shadcn1"
-        alt="Event cover"
+        alt="행사 표지"
         className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
       />
       <CardHeader>
         <CardAction>
-          <Badge variant="secondary">Featured</Badge>
+          <Badge variant="secondary">추천</Badge>
         </CardAction>
-        <CardTitle>Design systems meetup</CardTitle>
+        <CardTitle>디자인 시스템 밋업</CardTitle>
         <CardDescription>
-          A practical talk on component APIs, accessibility, and shipping
-          faster.
+          컴포넌트 API, 접근성, 그리고 더 빨리 내보내는 방법에 대한 실무
+          발표입니다.
         </CardDescription>
       </CardHeader>
       <CardFooter>
-        <Button className="w-full">View Event</Button>
+        <Button className="w-full">일정 보기</Button>
       </CardFooter>
     </Card>
   )

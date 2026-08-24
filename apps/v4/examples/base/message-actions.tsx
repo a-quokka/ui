@@ -20,21 +20,26 @@ export function MessageActionsDemo() {
         <MessageContent>
           <Bubble variant="muted">
             <BubbleContent>
-              The install failure is coming from the workspace package.
+              설치 실패는 워크스페이스 패키지에서 나오고 있어요.
             </BubbleContent>
           </Bubble>
           <MessageFooter>
-            <Button variant="ghost" size="icon" aria-label="Copy" title="Copy">
+            <Button variant="ghost" size="icon" aria-label="복사" title="복사">
               <CopyIcon />
             </Button>
-            <Button variant="ghost" size="icon" aria-label="Like" title="Like">
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label="좋아요"
+              title="좋아요"
+            >
               <ThumbsUpIcon />
             </Button>
             <Button
               variant="ghost"
               size="icon"
-              aria-label="Dislike"
-              title="Dislike"
+              aria-label="싫어요"
+              title="싫어요"
             >
               <ThumbsDownIcon />
             </Button>
@@ -44,15 +49,17 @@ export function MessageActionsDemo() {
       <Message align="end">
         <MessageContent>
           <Bubble>
-            <BubbleContent>Okay drop me a link. Taking a look...</BubbleContent>
+            <BubbleContent>링크 주세요. 한번 볼게요...</BubbleContent>
           </Bubble>
           <MessageFooter className="gap-2">
-            <span className="font-normal text-destructive">Failed to send</span>
+            <span className="font-normal text-destructive">
+              보내지 못했습니다
+            </span>
             <Button
               variant="ghost"
               size="icon-xs"
-              title="Retry"
-              aria-label="Retry"
+              title="다시 시도"
+              aria-label="다시 시도"
             >
               <RefreshCcwIcon />
             </Button>

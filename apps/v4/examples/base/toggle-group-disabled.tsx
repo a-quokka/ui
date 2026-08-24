@@ -8,13 +8,13 @@ import {
 export function ToggleGroupDisabled() {
   return (
     <ToggleGroup disabled>
-      <ToggleGroupItem value="bold" aria-label="Toggle bold">
+      <ToggleGroupItem value="bold" aria-label="굵게">
         <Bold />
       </ToggleGroupItem>
-      <ToggleGroupItem value="italic" aria-label="Toggle italic">
+      <ToggleGroupItem value="italic" aria-label="기울임">
         <Italic />
       </ToggleGroupItem>
-      <ToggleGroupItem value="strikethrough" aria-label="Toggle strikethrough">
+      <ToggleGroupItem value="strikethrough" aria-label="취소선">
         <Underline />
       </ToggleGroupItem>
     </ToggleGroup>

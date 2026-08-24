@@ -31,8 +31,8 @@ export default function InputGroupButtonExample() {
         <InputGroupInput placeholder="https://x.com/shadcn" readOnly />
         <InputGroupAddon align="inline-end">
           <InputGroupButton
-            aria-label="Copy"
-            title="Copy"
+            aria-label="복사"
+            title="복사"
             size="icon-xs"
             onClick={() => {
               copyToClipboard("https://x.com/shadcn")
@@ -53,8 +53,8 @@ export default function InputGroupButtonExample() {
             align="start"
             className="flex flex-col gap-1 rounded-xl text-sm"
           >
-            <p className="font-medium">Your connection is not secure.</p>
-            <p>You should not enter any sensitive information on this site.</p>
+            <p className="font-medium">연결이 안전하지 않습니다.</p>
+            <p>이 사이트에 민감한 정보를 입력하지 마세요.</p>
           </PopoverContent>
         </Popover>
         <InputGroupAddon className="pl-1.5 text-muted-foreground">
@@ -74,9 +74,9 @@ export default function InputGroupButtonExample() {
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Type to search..." />
+        <InputGroupInput placeholder="검색어를 입력하세요..." />
         <InputGroupAddon align="inline-end">
-          <InputGroupButton variant="secondary">Search</InputGroupButton>
+          <InputGroupButton variant="secondary">검색</InputGroupButton>
         </InputGroupAddon>
       </InputGroup>
     </div>

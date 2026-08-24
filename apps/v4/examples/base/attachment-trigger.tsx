@@ -29,19 +29,21 @@ export function AttachmentTriggerDemo() {
           </AttachmentMedia>
           <AttachmentContent>
             <AttachmentTitle>research-summary.pdf</AttachmentTitle>
-            <AttachmentDescription>Open preview dialog</AttachmentDescription>
+            <AttachmentDescription>
+              미리보기 다이얼로그 열기
+            </AttachmentDescription>
           </AttachmentContent>
           <AttachmentActions>
-            <AttachmentAction aria-label="Copy link">
+            <AttachmentAction aria-label="링크 복사">
               <CopyIcon />
             </AttachmentAction>
-            <AttachmentAction aria-label="Remove research-summary.pdf">
+            <AttachmentAction aria-label="research-summary.pdf 삭제">
               <XIcon />
             </AttachmentAction>
           </AttachmentActions>
           <DialogTrigger
             render={
-              <AttachmentTrigger aria-label="Preview research-summary.pdf" />
+              <AttachmentTrigger aria-label="research-summary.pdf 미리보기" />
             }
           />
         </Attachment>
@@ -49,8 +51,8 @@ export function AttachmentTriggerDemo() {
           <DialogHeader>
             <DialogTitle>research-summary.pdf</DialogTitle>
             <DialogDescription>
-              The attachment trigger fills the card and opens the dialog, while
-              the actions stay independently clickable above it.
+              첨부 트리거가 카드를 가득 채우며 다이얼로그를 열고, 그 위의 동작
+              버튼은 따로 눌립니다.
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

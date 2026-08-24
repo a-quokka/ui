@@ -9,16 +9,16 @@ import {
 } from "@/styles/base-nova/ui/select"
 
 const items = [
-  { label: "Select a fruit", value: null },
-  { label: "Apple", value: "apple" },
-  { label: "Banana", value: "banana" },
-  { label: "Blueberry", value: "blueberry" },
+  { label: "과일 선택", value: null },
+  { label: "사과", value: "apple" },
+  { label: "바나나", value: "banana" },
+  { label: "블루베리", value: "blueberry" },
 ]
 
 export function SelectInvalid() {
   return (
     <Field data-invalid className="w-full max-w-48">
-      <FieldLabel>Fruit</FieldLabel>
+      <FieldLabel>과일</FieldLabel>
       <Select items={items}>
         <SelectTrigger aria-invalid>
           <SelectValue />
@@ -33,7 +33,7 @@ export function SelectInvalid() {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <FieldError>Please select a fruit.</FieldError>
+      <FieldError>과일을 골라 주세요.</FieldError>
     </Field>
   )
 }

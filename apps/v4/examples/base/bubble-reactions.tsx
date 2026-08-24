@@ -14,12 +14,12 @@ export function BubbleReactionsDemo() {
     <div className="flex w-full max-w-sm flex-col gap-12 py-12">
       <Bubble variant="muted" align="end">
         <BubbleContent>
-          I don&apos;t need tests, I know my code works.
+          테스트는 필요 없어요. 제 코드는 잘 돌아가거든요.
         </BubbleContent>
         <BubbleReactions
           align="start"
           role="img"
-          aria-label="Reactions: thumbs up, surprised"
+          aria-label="반응: 좋아요, 놀람"
         >
           <span>👍</span>
           <span>😮</span>
@@ -27,13 +27,9 @@ export function BubbleReactionsDemo() {
       </Bubble>
       <Bubble variant="muted">
         <BubbleContent>
-          Bold. Fine I&apos;ll add some tests. I&apos;ll let you know when
-          they&apos;re done.
+          대담하네요. 알겠어요, 테스트를 좀 붙일게요. 다 되면 알려 드릴게요.
         </BubbleContent>
-        <BubbleReactions
-          role="img"
-          aria-label="Reactions: eyes, rocket, and 2 more"
-        >
+        <BubbleReactions role="img" aria-label="반응: 눈, 로켓, 그리고 2개 더">
           <span>👀</span>
           <span>🚀</span>
           <span>+2</span>
@@ -41,27 +37,27 @@ export function BubbleReactionsDemo() {
       </Bubble>
       <Bubble variant="default" align="end">
         <BubbleContent>
-          Tests passed on the first try. All 142 of them. Looking good!
+          테스트가 한 번에 다 통과했어요. 142개 전부요. 좋네요!
         </BubbleContent>
         <BubbleReactions
           side="top"
           align="start"
           role="img"
-          aria-label="Reactions: party popper, clapping hands"
+          aria-label="반응: 축포, 박수"
         >
           <span>🎉</span>
           <span>👏</span>
         </BubbleReactions>
       </Bubble>
       <Bubble variant="destructive">
-        <BubbleContent>Are you sure I can run this command?</BubbleContent>
+        <BubbleContent>이 명령을 실행해도 될까요?</BubbleContent>
         <BubbleReactions>
           <Button
             variant="ghost"
             size="xs"
             onClick={() => toast.success("You clicked yes, running command...")}
           >
-            Yes, run it
+            네, 실행하세요
           </Button>
         </BubbleReactions>
       </Bubble>

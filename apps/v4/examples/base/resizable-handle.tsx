@@ -12,13 +12,13 @@ export default function ResizableHandleDemo() {
     >
       <ResizablePanel defaultSize="25%">
         <div className="flex h-full items-center justify-center p-6">
-          <span className="font-semibold">Sidebar</span>
+          <span className="font-semibold">사이드바</span>
         </div>
       </ResizablePanel>
       <ResizableHandle withHandle />
       <ResizablePanel defaultSize="75%">
         <div className="flex h-full items-center justify-center p-6">
-          <span className="font-semibold">Content</span>
+          <span className="font-semibold">내용</span>
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>

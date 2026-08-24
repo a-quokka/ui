@@ -28,22 +28,22 @@ const messages = [
   {
     id: "open-1",
     role: "user",
-    text: "This is the first message the user sent in the conversation.",
+    text: "대화에서 사용자가 처음 보낸 메시지입니다.",
   },
   {
     id: "open-2",
     role: "assistant",
-    text: "Workspace creation rose 8%, but first invite completion only rose 2%.",
+    text: "워크스페이스 생성은 8% 늘었는데 첫 초대 완료는 2% 느는 데 그쳤습니다.",
   },
   {
     id: "open-3",
     role: "user",
-    text: "This is the last message the user sent in the conversation.",
+    text: "대화에서 사용자가 마지막으로 보낸 메시지입니다.",
   },
   {
     id: "open-4",
     role: "assistant",
-    text: "Start with the invite step. Teams are creating workspaces but waiting to add collaborators.\n\nRecommended follow-up:\n\n1. Compare invite drop-off by account size.\n2. Check whether users who skip invites still return within 24 hours.\n3. Review the empty-state copy on the first project screen.\n4. Segment activation by template, since template users may not need invites right away.\n\nIf that pattern holds, the next experiment should make collaboration useful earlier instead of prompting for invites harder.",
+    text: "초대 단계부터 보세요. 팀들이 워크스페이스는 만들지만 협업자 추가는 미루고 있습니다.\n\n이어서 볼 것:\n\n1. 계정 규모별로 초대 이탈률을 비교합니다.\n2. 초대를 건너뛴 사용자가 24시간 안에 다시 오는지 확인합니다.\n3. 첫 프로젝트 화면의 빈 상태 문구를 점검합니다.\n4. 템플릿별로 활성화를 나눠 봅니다. 템플릿을 쓰는 사용자는 초대가 당장 필요 없을 수 있습니다.\n\n이 흐름이 맞다면 다음 실험은 초대를 더 세게 권하는 쪽이 아니라, 협업이 더 일찍 쓸모 있어지도록 만드는 쪽이어야 합니다.",
   },
 ] satisfies Array<{
   id: string
@@ -70,10 +70,8 @@ export function MessageScrollerOpeningPosition() {
     <div className="relative flex flex-col gap-4">
       <Card className="mx-auto h-140 w-full max-w-sm gap-0">
         <CardHeader className="gap-1 border-b">
-          <CardTitle>Opening Position</CardTitle>
-          <CardDescription>
-            Choose where a saved transcript opens.
-          </CardDescription>
+          <CardTitle>여는 위치</CardTitle>
+          <CardDescription>저장된 기록을 어디서 열지 고르세요.</CardDescription>
         </CardHeader>
         <CardContent className="flex-1 overflow-hidden p-0">
           <MessageScrollerProvider>
@@ -109,8 +107,8 @@ export function MessageScrollerOpeningPosition() {
         </CardFooter>
       </Card>
       <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-muted-foreground">
-        Toggle the defaultScrollPosition to see where the transcript starts when
-        you open the thread
+        defaultScrollPosition 을 바꿔 가며 스레드를 열었을 때 기록이 어디서
+        시작하는지 확인해 보세요
       </div>
     </div>
   )

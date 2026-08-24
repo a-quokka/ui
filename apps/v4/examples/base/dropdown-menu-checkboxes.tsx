@@ -20,29 +20,29 @@ export function DropdownMenuCheckboxes() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
+        열기
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+          <DropdownMenuLabel>화면</DropdownMenuLabel>
           <DropdownMenuCheckboxItem
             checked={showStatusBar ?? false}
             onCheckedChange={setShowStatusBar}
           >
-            Status Bar
+            상태 표시줄
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={showActivityBar}
             onCheckedChange={setShowActivityBar}
             disabled
           >
-            Activity Bar
+            활동 표시줄
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={showPanel}
             onCheckedChange={setShowPanel}
           >
-            Panel
+            패널
           </DropdownMenuCheckboxItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>

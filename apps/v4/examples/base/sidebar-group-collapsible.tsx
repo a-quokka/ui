@@ -30,7 +30,7 @@ export default function AppSidebar() {
                 render={<CollapsibleTrigger />}
                 className="text-sm hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
               >
-                Help
+                도움말
                 <ChevronDownIcon className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
               </SidebarGroupLabel>
               <CollapsibleContent>
@@ -39,13 +39,13 @@ export default function AppSidebar() {
                     <SidebarMenuItem>
                       <SidebarMenuButton>
                         <LifeBuoyIcon />
-                        Support
+                        지원
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
                       <SidebarMenuButton>
                         <SendIcon />
-                        Feedback
+                        의견
                       </SidebarMenuButton>
                     </SidebarMenuItem>
                   </SidebarMenu>

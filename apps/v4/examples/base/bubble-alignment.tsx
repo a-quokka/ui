@@ -5,12 +5,12 @@ export function BubbleAlignmentDemo() {
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Bubble variant="muted">
         <BubbleContent>
-          This bubble is aligned to the start. This is the default alignment.
+          이 말풍선은 시작 쪽에 붙습니다. 기본 정렬입니다.
         </BubbleContent>
       </Bubble>
       <Bubble align="end">
         <BubbleContent>
-          This bubble is aligned to the end. Use this for user messages.
+          이 말풍선은 끝 쪽에 붙습니다. 사용자 메시지에 씁니다.
         </BubbleContent>
       </Bubble>
     </div>

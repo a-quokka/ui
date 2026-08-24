@@ -6,10 +6,10 @@ import { Input } from "@/styles/base-nova/ui/input"
 export function InputButtonGroup() {
   return (
     <Field>
-      <FieldLabel htmlFor="input-button-group">Search</FieldLabel>
+      <FieldLabel htmlFor="input-button-group">검색</FieldLabel>
       <ButtonGroup>
-        <Input id="input-button-group" placeholder="Type to search..." />
-        <Button variant="outline">Search</Button>
+        <Input id="input-button-group" placeholder="검색어를 입력하세요..." />
+        <Button variant="outline">검색</Button>
       </ButtonGroup>
     </Field>
   )

@@ -11,7 +11,7 @@ import {
 export function InputInputGroup() {
   return (
     <Field>
-      <FieldLabel htmlFor="input-group-url">Website URL</FieldLabel>
+      <FieldLabel htmlFor="input-group-url">웹사이트 주소</FieldLabel>
       <InputGroup>
         <InputGroupInput id="input-group-url" placeholder="example.com" />
         <InputGroupAddon>

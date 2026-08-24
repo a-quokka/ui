@@ -26,14 +26,14 @@ export default function EmptyAvatar() {
             <AvatarFallback>LR</AvatarFallback>
           </Avatar>
         </EmptyMedia>
-        <EmptyTitle>User Offline</EmptyTitle>
+        <EmptyTitle>오프라인 사용자</EmptyTitle>
         <EmptyDescription>
-          This user is currently offline. You can leave a message to notify them
-          or try again later.
+          이 사용자는 지금 오프라인입니다. 메시지를 남겨 두거나 나중에 다시
+          시도하세요.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
-        <Button size="sm">Leave Message</Button>
+        <Button size="sm">메시지 남기기</Button>
       </EmptyContent>
     </Empty>
   )

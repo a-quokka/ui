@@ -28,13 +28,13 @@ export function AvatarDropdown() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-32">
         <DropdownMenuGroup>
-          <DropdownMenuItem>Profile</DropdownMenuItem>
-          <DropdownMenuItem>Billing</DropdownMenuItem>
-          <DropdownMenuItem>Settings</DropdownMenuItem>
+          <DropdownMenuItem>프로필</DropdownMenuItem>
+          <DropdownMenuItem>결제</DropdownMenuItem>
+          <DropdownMenuItem>설정</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem variant="destructive">Log out</DropdownMenuItem>
+          <DropdownMenuItem variant="destructive">로그아웃</DropdownMenuItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
     </DropdownMenu>

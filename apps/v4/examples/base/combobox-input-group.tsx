@@ -54,13 +54,13 @@ const timezones = [
 export function ComboxboxInputGroup() {
   return (
     <Combobox items={timezones}>
-      <ComboboxInput placeholder="Select a timezone">
+      <ComboboxInput placeholder="시간대 선택">
         <InputGroupAddon>
           <GlobeIcon />
         </InputGroupAddon>
       </ComboboxInput>
       <ComboboxContent alignOffset={-28} className="w-60">
-        <ComboboxEmpty>No timezones found.</ComboboxEmpty>
+        <ComboboxEmpty>시간대가 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(group) => (
             <ComboboxGroup key={group.value} items={group.items}>

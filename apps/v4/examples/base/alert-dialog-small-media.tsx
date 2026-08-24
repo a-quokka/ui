@@ -18,7 +18,7 @@ export function AlertDialogSmallWithMedia() {
   return (
     <AlertDialog>
       <AlertDialogTrigger
-        render={<Button variant="outline">Show Dialog</Button>}
+        render={<Button variant="outline">다이얼로그 열기</Button>}
       />
 
       <AlertDialogContent size="sm">
@@ -26,14 +26,14 @@ export function AlertDialogSmallWithMedia() {
           <AlertDialogMedia>
             <BluetoothIcon />
           </AlertDialogMedia>
-          <AlertDialogTitle>Allow accessory to connect?</AlertDialogTitle>
+          <AlertDialogTitle>액세서리 연결을 허용할까요?</AlertDialogTitle>
           <AlertDialogDescription>
-            Do you want to allow the USB accessory to connect to this device?
+            이 기기에 USB 액세서리가 연결되도록 허용할까요?
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Don&apos;t allow</AlertDialogCancel>
-          <AlertDialogAction>Allow</AlertDialogAction>
+          <AlertDialogCancel>허용 안 함</AlertDialogCancel>
+          <AlertDialogAction>허용</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

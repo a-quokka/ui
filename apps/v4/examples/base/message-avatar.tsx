@@ -27,7 +27,7 @@ export function MessageAvatarDemo() {
         <MessageContent>
           <Bubble variant="muted">
             <BubbleContent>
-              The build failed during dependency installation.
+              의존성을 설치하다가 빌드가 실패했어요.
             </BubbleContent>
           </Bubble>
         </MessageContent>
@@ -41,7 +41,7 @@ export function MessageAvatarDemo() {
         </MessageAvatar>
         <MessageContent>
           <Bubble>
-            <BubbleContent>Can you share the exact error?</BubbleContent>
+            <BubbleContent>정확한 오류 메시지를 보여 줄래요?</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>
@@ -55,12 +55,12 @@ export function MessageAvatarDemo() {
         <MessageContent>
           <BubbleGroup>
             <Bubble variant="muted">
-              <BubbleContent>Here&apos;s the error from the logs</BubbleContent>
+              <BubbleContent>로그에 찍힌 오류예요</BubbleContent>
             </Bubble>
             <Bubble variant="muted">
               <BubbleContent>
-                Something went wrong with the build. The libraries are not
-                installed correctly. Try running the build again.
+                빌드에 문제가 생겼습니다. 라이브러리가 제대로 설치되지 않았어요.
+                빌드를 다시 돌려 보세요.
               </BubbleContent>
             </Bubble>
           </BubbleGroup>

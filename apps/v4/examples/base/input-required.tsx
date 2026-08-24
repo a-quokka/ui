@@ -9,14 +9,10 @@ export function InputRequired() {
   return (
     <Field>
       <FieldLabel htmlFor="input-required">
-        Required Field <span className="text-destructive">*</span>
+        필수 항목 <span className="text-destructive">*</span>
       </FieldLabel>
-      <Input
-        id="input-required"
-        placeholder="This field is required"
-        required
-      />
-      <FieldDescription>This field must be filled out.</FieldDescription>
+      <Input id="input-required" placeholder="필수 항목입니다" required />
+      <FieldDescription>반드시 입력해야 하는 항목입니다.</FieldDescription>
     </Field>
   )
 }

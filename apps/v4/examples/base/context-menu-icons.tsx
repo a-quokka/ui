@@ -19,32 +19,32 @@ export function ContextMenuIcons() {
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          여기를 오른쪽 클릭
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          여기를 길게 누르기
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuItem>
             <CopyIcon />
-            Copy
+            복사
           </ContextMenuItem>
           <ContextMenuItem>
             <ScissorsIcon />
-            Cut
+            잘라내기
           </ContextMenuItem>
           <ContextMenuItem>
             <ClipboardPasteIcon />
-            Paste
+            붙여넣기
           </ContextMenuItem>
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
           <ContextMenuItem variant="destructive">
             <TrashIcon />
-            Delete
+            삭제
           </ContextMenuItem>
         </ContextMenuGroup>
       </ContextMenuContent>

@@ -15,7 +15,7 @@ export function BreadcrumbEllipsisDemo() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="/" />}>Home</BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/" />}>홈</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -24,7 +24,7 @@ export function BreadcrumbEllipsisDemo() {
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink render={<Link href="/docs/components" />}>
-            Components
+            컴포넌트
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />

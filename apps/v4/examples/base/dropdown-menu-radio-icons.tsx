@@ -20,18 +20,18 @@ export function DropdownMenuRadioIcons() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Payment Method
+        결제 수단
       </DropdownMenuTrigger>
       <DropdownMenuContent className="min-w-56">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Select Payment Method</DropdownMenuLabel>
+          <DropdownMenuLabel>결제 수단 선택</DropdownMenuLabel>
           <DropdownMenuRadioGroup
             value={paymentMethod}
             onValueChange={setPaymentMethod}
           >
             <DropdownMenuRadioItem value="card">
               <CreditCardIcon />
-              Credit Card
+              신용카드
             </DropdownMenuRadioItem>
             <DropdownMenuRadioItem value="paypal">
               <WalletIcon />
@@ -39,7 +39,7 @@ export function DropdownMenuRadioIcons() {
             </DropdownMenuRadioItem>
             <DropdownMenuRadioItem value="bank">
               <Building2Icon />
-              Bank Transfer
+              계좌 이체
             </DropdownMenuRadioItem>
           </DropdownMenuRadioGroup>
         </DropdownMenuGroup>

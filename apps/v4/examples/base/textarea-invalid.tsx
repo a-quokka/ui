@@ -8,13 +8,13 @@ import { Textarea } from "@/styles/base-nova/ui/textarea"
 export function TextareaInvalid() {
   return (
     <Field data-invalid>
-      <FieldLabel htmlFor="textarea-invalid">Message</FieldLabel>
+      <FieldLabel htmlFor="textarea-invalid">메시지</FieldLabel>
       <Textarea
         id="textarea-invalid"
-        placeholder="Type your message here."
+        placeholder="메시지를 입력하세요."
         aria-invalid
       />
-      <FieldDescription>Please enter a valid message.</FieldDescription>
+      <FieldDescription>올바른 메시지를 입력해 주세요.</FieldDescription>
     </Field>
   )
 }

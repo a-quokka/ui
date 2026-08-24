@@ -5,8 +5,8 @@ import { Input } from "@/styles/base-nova/ui/input"
 export function InputInline() {
   return (
     <Field orientation="horizontal">
-      <Input type="search" placeholder="Search..." />
-      <Button>Search</Button>
+      <Input type="search" placeholder="검색..." />
+      <Button>검색</Button>
     </Field>
   )
 }

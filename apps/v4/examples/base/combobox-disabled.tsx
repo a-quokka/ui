@@ -20,9 +20,9 @@ const frameworks = [
 export function ComboboxDisabled() {
   return (
     <Combobox items={frameworks}>
-      <ComboboxInput placeholder="Select a framework" disabled />
+      <ComboboxInput placeholder="프레임워크 선택" disabled />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>항목이 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>

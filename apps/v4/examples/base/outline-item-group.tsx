@@ -17,8 +17,8 @@ export function OutlineItemGroup() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Item 1</ItemTitle>
-          <ItemDescription>First item with icon.</ItemDescription>
+          <ItemTitle>항목 1</ItemTitle>
+          <ItemDescription>아이콘이 있는 첫 아이템입니다.</ItemDescription>
         </ItemContent>
       </Item>
       <Item variant="outline">
@@ -26,8 +26,8 @@ export function OutlineItemGroup() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Item 2</ItemTitle>
-          <ItemDescription>Second item with icon.</ItemDescription>
+          <ItemTitle>항목 2</ItemTitle>
+          <ItemDescription>아이콘이 있는 두 번째 아이템입니다.</ItemDescription>
         </ItemContent>
       </Item>
       <Item variant="outline">
@@ -35,8 +35,8 @@ export function OutlineItemGroup() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Item 3</ItemTitle>
-          <ItemDescription>Third item with icon.</ItemDescription>
+          <ItemTitle>항목 3</ItemTitle>
+          <ItemDescription>아이콘이 있는 세 번째 아이템입니다.</ItemDescription>
         </ItemContent>
       </Item>
     </ItemGroup>

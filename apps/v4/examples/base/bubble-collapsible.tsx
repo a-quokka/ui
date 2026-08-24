@@ -28,7 +28,7 @@ export function BubbleCollapsible() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Bubble variant="muted">
-        <BubbleContent>How can I help you today?</BubbleContent>
+        <BubbleContent>무엇을 도와드릴까요?</BubbleContent>
       </Bubble>
 
       <Bubble variant="muted" align="end">

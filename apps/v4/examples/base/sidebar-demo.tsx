@@ -122,7 +122,7 @@ const data = {
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "탐색기",
           url: "#",
         },
         {

@@ -7,7 +7,7 @@ export default function ButtonGroupOrientation() {
   return (
     <ButtonGroup
       orientation="vertical"
-      aria-label="Media controls"
+      aria-label="미디어 컨트롤"
       className="h-fit"
     >
       <Button variant="outline" size="icon">

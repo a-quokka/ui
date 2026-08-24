@@ -19,17 +19,17 @@ export function CommandBasic() {
   return (
     <div className="flex flex-col gap-4">
       <Button onClick={() => setOpen(true)} variant="outline" className="w-fit">
-        Open Menu
+        메뉴 열기
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <Command>
-          <CommandInput placeholder="Type a command or search..." />
+          <CommandInput placeholder="명령을 입력하거나 검색하세요..." />
           <CommandList>
-            <CommandEmpty>No results found.</CommandEmpty>
-            <CommandGroup heading="Suggestions">
-              <CommandItem>Calendar</CommandItem>
-              <CommandItem>Search Emoji</CommandItem>
-              <CommandItem>Calculator</CommandItem>
+            <CommandEmpty>결과가 없습니다.</CommandEmpty>
+            <CommandGroup heading="추천">
+              <CommandItem>캘린더</CommandItem>
+              <CommandItem>이모지 검색</CommandItem>
+              <CommandItem>계산기</CommandItem>
             </CommandGroup>
           </CommandList>
         </Command>

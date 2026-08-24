@@ -20,13 +20,12 @@ export default function EmptyInputGroup() {
       <EmptyHeader>
         <EmptyTitle>404 - Not Found</EmptyTitle>
         <EmptyDescription>
-          The page you&apos;re looking for doesn&apos;t exist. Try searching for
-          what you need below.
+          찾으시는 페이지가 없습니다. 아래에서 검색해 보세요.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <InputGroup className="sm:w-3/4">
-          <InputGroupInput placeholder="Try searching for pages..." />
+          <InputGroupInput placeholder="페이지를 검색해 보세요..." />
           <InputGroupAddon>
             <SearchIcon />
           </InputGroupAddon>
@@ -35,7 +34,7 @@ export default function EmptyInputGroup() {
           </InputGroupAddon>
         </InputGroup>
         <EmptyDescription>
-          Need help? <a href="#">Contact support</a>
+          도움이 필요하신가요? <a href="#">지원팀에 문의</a>
         </EmptyDescription>
       </EmptyContent>
     </Empty>

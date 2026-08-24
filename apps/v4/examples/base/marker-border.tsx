@@ -9,19 +9,19 @@ export function MarkerBorderDemo() {
         <MarkerIcon>
           <GitBranchIcon />
         </MarkerIcon>
-        <MarkerContent>Switched to release-candidate</MarkerContent>
+        <MarkerContent>release-candidate 로 옮겼습니다</MarkerContent>
       </Marker>
       <Marker variant="border">
         <MarkerIcon>
           <SearchIcon />
         </MarkerIcon>
-        <MarkerContent>Reviewed 8 related files</MarkerContent>
+        <MarkerContent>관련 파일 8개를 살펴봤습니다</MarkerContent>
       </Marker>
       <Marker variant="border">
         <MarkerIcon>
           <FileTextIcon />
         </MarkerIcon>
-        <MarkerContent>Opened implementation notes</MarkerContent>
+        <MarkerContent>구현 메모를 열었습니다</MarkerContent>
       </Marker>
     </div>
   )

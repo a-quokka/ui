@@ -19,17 +19,17 @@ export function InputGroupBlockStart() {
   return (
     <FieldGroup className="max-w-sm">
       <Field>
-        <FieldLabel htmlFor="block-start-input">Input</FieldLabel>
+        <FieldLabel htmlFor="block-start-input">입력</FieldLabel>
         <InputGroup className="h-auto">
           <InputGroupInput
             id="block-start-input"
-            placeholder="Enter your name"
+            placeholder="이름을 입력하세요"
           />
           <InputGroupAddon align="block-start">
-            <InputGroupText>Full Name</InputGroupText>
+            <InputGroupText>이름</InputGroupText>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>Header positioned above the input.</FieldDescription>
+        <FieldDescription>입력 위에 놓인 헤더입니다.</FieldDescription>
       </Field>
       <Field>
         <FieldLabel htmlFor="block-start-textarea">Textarea</FieldLabel>
@@ -44,13 +44,11 @@ export function InputGroupBlockStart() {
             <InputGroupText className="font-mono">script.js</InputGroupText>
             <InputGroupButton size="icon-xs" className="ml-auto">
               <CopyIcon />
-              <span className="sr-only">Copy</span>
+              <span className="sr-only">복사</span>
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>
-          Header positioned above the textarea.
-        </FieldDescription>
+        <FieldDescription>textarea 위에 놓인 헤더입니다.</FieldDescription>
       </Field>
     </FieldGroup>
   )

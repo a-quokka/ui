@@ -15,7 +15,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      trigger: "Wireless Headphones",
+      trigger: "무선 헤드폰",
       name: "Wireless Headphones",
       price: "$99.99",
       "inline-start": "Inline Start",

@@ -9,31 +9,32 @@ export function BubbleVariantsDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-12 py-12">
       <Bubble>
-        <BubbleContent>This is the default primary bubble.</BubbleContent>
+        <BubbleContent>기본 primary 말풍선입니다.</BubbleContent>
       </Bubble>
       <Bubble variant="secondary" align="end">
-        <BubbleContent>This is the secondary variant.</BubbleContent>
+        <BubbleContent>secondary 변형입니다.</BubbleContent>
       </Bubble>
       <Bubble variant="muted">
         <BubbleContent>
-          This one is muted. It uses a lower emphasis color for the chat bubble.
+          이건 muted 입니다. 말풍선에 강조를 낮춘 색을 씁니다.
         </BubbleContent>
-        <BubbleReactions role="img" aria-label="Reaction: thumbs up">
+        <BubbleReactions role="img" aria-label="반응: 좋아요">
           <span>👍</span>
         </BubbleReactions>
       </Bubble>
       <Bubble variant="tinted" align="end">
         <BubbleContent>
-          This one is tinted. The tint is a softer color derived from the
-          primary color.
+          이건 tinted 입니다. primary 색을 옅게 풀어낸 색을 씁니다.
         </BubbleContent>
       </Bubble>
       <Bubble variant="outline">
-        <BubbleContent>We can also use an outlined variant.</BubbleContent>
+        <BubbleContent>
+          테두리가 있는 outline 변형도 쓸 수 있습니다.
+        </BubbleContent>
       </Bubble>
       <Bubble variant="destructive" align="end">
-        <BubbleContent>Or a destructive variant with a reaction.</BubbleContent>
-        <BubbleReactions role="img" aria-label="Reaction: fire">
+        <BubbleContent>반응이 달린 destructive 변형입니다.</BubbleContent>
+        <BubbleReactions role="img" aria-label="반응: 불">
           <span>🔥</span>
         </BubbleReactions>
       </Bubble>

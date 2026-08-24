@@ -11,7 +11,7 @@ export function SliderControlled() {
   return (
     <div className="mx-auto grid w-full max-w-xs gap-3">
       <div className="flex items-center justify-between gap-2">
-        <Label htmlFor="slider-demo-temperature">Temperature</Label>
+        <Label htmlFor="slider-demo-temperature">온도</Label>
         <span className="text-sm text-muted-foreground">
           {value.join(", ")}
         </span>

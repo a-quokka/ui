@@ -16,7 +16,7 @@ export function MessageMarkdownDemo() {
         <MessageContent>
           <Bubble>
             <BubbleContent>
-              How do I render markdown in a message?
+              메시지에서 마크다운은 어떻게 그리나요?
             </BubbleContent>
           </Bubble>
         </MessageContent>

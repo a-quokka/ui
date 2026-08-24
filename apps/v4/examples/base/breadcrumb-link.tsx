@@ -15,13 +15,13 @@ export function BreadcrumbLinkDemo() {
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink render={<Link href="#link-component" />}>
-            Home
+            홈
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbLink render={<Link href="#link-component" />}>
-            Components
+            컴포넌트
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />

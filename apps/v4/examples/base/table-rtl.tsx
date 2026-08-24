@@ -21,9 +21,9 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      caption: "A list of your recent invoices.",
+      caption: "최근 청구서 목록입니다.",
       invoice: "Invoice",
-      status: "Status",
+      status: "상태",
       method: "Method",
       amount: "Amount",
       paid: "Paid",

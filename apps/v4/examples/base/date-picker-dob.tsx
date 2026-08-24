@@ -17,7 +17,7 @@ export function DatePickerSimple() {
 
   return (
     <Field className="mx-auto w-44">
-      <FieldLabel htmlFor="date">Date of birth</FieldLabel>
+      <FieldLabel htmlFor="date">생년월일</FieldLabel>
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger
           render={

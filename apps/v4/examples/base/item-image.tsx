@@ -11,19 +11,19 @@ import {
 
 const music = [
   {
-    title: "Midnight City Lights",
+    title: "한밤의 도시 불빛",
     artist: "Neon Dreams",
     album: "Electric Nights",
     duration: "3:45",
   },
   {
-    title: "Coffee Shop Conversations",
+    title: "카페의 대화들",
     artist: "The Morning Brew",
     album: "Urban Stories",
     duration: "4:05",
   },
   {
-    title: "Digital Rain",
+    title: "디지털 레인",
     artist: "Cyber Symphony",
     album: "Binary Beats",
     duration: "3:30",

@@ -10,10 +10,9 @@ export default function AlertColors() {
   return (
     <Alert className="max-w-md border-amber-200 bg-amber-50 text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-50">
       <AlertTriangleIcon />
-      <AlertTitle>Your subscription will expire in 3 days.</AlertTitle>
+      <AlertTitle>구독이 3일 뒤에 만료됩니다.</AlertTitle>
       <AlertDescription>
-        Renew now to avoid service interruption or upgrade to a paid plan to
-        continue using the service.
+        서비스가 끊기지 않도록 지금 갱신하거나 유료 요금제로 올리세요.
       </AlertDescription>
     </Alert>
   )

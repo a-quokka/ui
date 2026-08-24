@@ -22,14 +22,14 @@ export function TableActions() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead>Product</TableHead>
-          <TableHead>Price</TableHead>
-          <TableHead className="text-right">Actions</TableHead>
+          <TableHead>상품</TableHead>
+          <TableHead>가격</TableHead>
+          <TableHead className="text-right">동작</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         <TableRow>
-          <TableCell className="font-medium">Wireless Mouse</TableCell>
+          <TableCell className="font-medium">무선 마우스</TableCell>
           <TableCell>$29.99</TableCell>
           <TableCell className="text-right">
             <DropdownMenu>
@@ -39,21 +39,19 @@ export function TableActions() {
                 }
               >
                 <MoreHorizontalIcon />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">메뉴 열기</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Edit</DropdownMenuItem>
-                <DropdownMenuItem>Duplicate</DropdownMenuItem>
+                <DropdownMenuItem>편집</DropdownMenuItem>
+                <DropdownMenuItem>복제</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem variant="destructive">
-                  Delete
-                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">삭제</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">Mechanical Keyboard</TableCell>
+          <TableCell className="font-medium">기계식 키보드</TableCell>
           <TableCell>$129.99</TableCell>
           <TableCell className="text-right">
             <DropdownMenu>
@@ -63,21 +61,19 @@ export function TableActions() {
                 }
               >
                 <MoreHorizontalIcon />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">메뉴 열기</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Edit</DropdownMenuItem>
-                <DropdownMenuItem>Duplicate</DropdownMenuItem>
+                <DropdownMenuItem>편집</DropdownMenuItem>
+                <DropdownMenuItem>복제</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem variant="destructive">
-                  Delete
-                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">삭제</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
         </TableRow>
         <TableRow>
-          <TableCell className="font-medium">USB-C Hub</TableCell>
+          <TableCell className="font-medium">USB-C 허브</TableCell>
           <TableCell>$49.99</TableCell>
           <TableCell className="text-right">
             <DropdownMenu>
@@ -87,15 +83,13 @@ export function TableActions() {
                 }
               >
                 <MoreHorizontalIcon />
-                <span className="sr-only">Open menu</span>
+                <span className="sr-only">메뉴 열기</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Edit</DropdownMenuItem>
-                <DropdownMenuItem>Duplicate</DropdownMenuItem>
+                <DropdownMenuItem>편집</DropdownMenuItem>
+                <DropdownMenuItem>복제</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem variant="destructive">
-                  Delete
-                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">삭제</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>

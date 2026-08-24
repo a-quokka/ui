@@ -19,7 +19,7 @@ const translations: Translations = {
     dir: "ltr",
     values: {
       orderNumber: "Order #4189",
-      status: "Status",
+      status: "상태",
       shipped: "Shipped",
       shippingAddress: "Shipping address",
       address: "100 Market St, San Francisco",
@@ -58,7 +58,7 @@ export function CollapsibleRtl() {
           render={<Button variant="ghost" size="icon" className="size-8" />}
         >
           <ChevronsUpDown />
-          <span className="sr-only">Toggle details</span>
+          <span className="sr-only">상세 보기</span>
         </CollapsibleTrigger>
       </div>
       <div className="flex items-center justify-between rounded-md border px-4 py-2 text-sm">

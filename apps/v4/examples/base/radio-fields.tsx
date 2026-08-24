@@ -14,45 +14,43 @@ export function RadioFields() {
   return (
     <FieldGroup>
       <FieldSet>
-        <FieldLegend variant="label">Subscription Plan</FieldLegend>
+        <FieldLegend variant="label">구독 요금제</FieldLegend>
         <RadioGroup defaultValue="free">
           <Field orientation="horizontal">
             <RadioGroupItem value="free" id="radio-free" />
             <FieldLabel htmlFor="radio-free" className="font-normal">
-              Free Plan
+              무료 요금제
             </FieldLabel>
           </Field>
           <Field orientation="horizontal">
             <RadioGroupItem value="pro" id="radio-pro" />
             <FieldLabel htmlFor="radio-pro" className="font-normal">
-              Pro Plan
+              Pro 요금제
             </FieldLabel>
           </Field>
           <Field orientation="horizontal">
             <RadioGroupItem value="enterprise" id="radio-enterprise" />
             <FieldLabel htmlFor="radio-enterprise" className="font-normal">
-              Enterprise
+              엔터프라이즈
             </FieldLabel>
           </Field>
         </RadioGroup>
       </FieldSet>
       <FieldSet>
-        <FieldLegend variant="label">Battery Level</FieldLegend>
-        <FieldDescription>
-          Choose your preferred battery level.
-        </FieldDescription>
+        <FieldLegend variant="label">배터리 수준</FieldLegend>
+        <FieldDescription>원하는 배터리 수준을 고르세요.</FieldDescription>
         <RadioGroup>
           <Field orientation="horizontal">
             <RadioGroupItem value="high" id="battery-high" />
-            <FieldLabel htmlFor="battery-high">High</FieldLabel>
+            <FieldLabel htmlFor="battery-high">높음</FieldLabel>
           </Field>
           <Field orientation="horizontal">
             <RadioGroupItem value="medium" id="battery-medium" />
-            <FieldLabel htmlFor="battery-medium">Medium</FieldLabel>
+            <FieldLabel htmlFor="battery-medium">보통</FieldLabel>
           </Field>
           <Field orientation="horizontal">
             <RadioGroupItem value="low" id="battery-low" />
-            <FieldLabel htmlFor="battery-low">Low</FieldLabel>
+            <FieldLabel htmlFor="battery-low">낮음</FieldLabel>
           </Field>
         </RadioGroup>
       </FieldSet>
@@ -60,9 +58,9 @@ export function RadioFields() {
         <Field orientation="horizontal">
           <RadioGroupItem value="option1" id="radio-content-1" />
           <FieldContent>
-            <FieldLabel htmlFor="radio-content-1">Enable Touch ID</FieldLabel>
+            <FieldLabel htmlFor="radio-content-1">Touch ID 켜기</FieldLabel>
             <FieldDescription>
-              Enable Touch ID to quickly unlock your device.
+              Touch ID 를 켜면 기기를 빠르게 잠금 해제할 수 있습니다.
             </FieldDescription>
           </FieldContent>
         </Field>
@@ -70,11 +68,11 @@ export function RadioFields() {
           <RadioGroupItem value="option2" id="radio-content-2" />
           <FieldContent>
             <FieldLabel htmlFor="radio-content-2">
-              Enable Touch ID and Face ID to make it even faster to unlock your
-              device. This is a long label to test the layout.
+              Touch ID 와 Face ID 를 켜면 기기를 더 빨리 잠금 해제할 수
+              있습니다. 배치를 확인하려고 일부러 길게 쓴 라벨입니다.
             </FieldLabel>
             <FieldDescription>
-              Enable Touch ID to quickly unlock your device.
+              Touch ID 를 켜면 기기를 빠르게 잠금 해제할 수 있습니다.
             </FieldDescription>
           </FieldContent>
         </Field>
@@ -84,9 +82,9 @@ export function RadioFields() {
           <Field orientation="horizontal">
             <RadioGroupItem value="title1" id="radio-title-1" />
             <FieldContent>
-              <FieldTitle>Enable Touch ID</FieldTitle>
+              <FieldTitle>Touch ID 켜기</FieldTitle>
               <FieldDescription>
-                Enable Touch ID to quickly unlock your device.
+                Touch ID 를 켜면 기기를 빠르게 잠금 해제할 수 있습니다.
               </FieldDescription>
             </FieldContent>
           </Field>
@@ -96,18 +94,18 @@ export function RadioFields() {
             <RadioGroupItem value="title2" id="radio-title-2" />
             <FieldContent>
               <FieldTitle>
-                Enable Touch ID and Face ID to make it even faster to unlock
-                your device. This is a long label to test the layout.
+                Touch ID 와 Face ID 를 켜면 기기를 더 빨리 잠금 해제할 수
+                있습니다. 배치를 확인하려고 일부러 길게 쓴 라벨입니다.
               </FieldTitle>
               <FieldDescription>
-                Enable Touch ID to quickly unlock your device.
+                Touch ID 를 켜면 기기를 빠르게 잠금 해제할 수 있습니다.
               </FieldDescription>
             </FieldContent>
           </Field>
         </FieldLabel>
       </RadioGroup>
       <FieldSet>
-        <FieldLegend variant="label">Invalid Radio Group</FieldLegend>
+        <FieldLegend variant="label">오류 라디오 그룹</FieldLegend>
         <RadioGroup>
           <Field data-invalid orientation="horizontal">
             <RadioGroupItem
@@ -115,7 +113,7 @@ export function RadioFields() {
               id="radio-invalid-1"
               aria-invalid
             />
-            <FieldLabel htmlFor="radio-invalid-1">Invalid Option 1</FieldLabel>
+            <FieldLabel htmlFor="radio-invalid-1">오류 항목 1</FieldLabel>
           </Field>
           <Field data-invalid orientation="horizontal">
             <RadioGroupItem
@@ -123,24 +121,20 @@ export function RadioFields() {
               id="radio-invalid-2"
               aria-invalid
             />
-            <FieldLabel htmlFor="radio-invalid-2">Invalid Option 2</FieldLabel>
+            <FieldLabel htmlFor="radio-invalid-2">오류 항목 2</FieldLabel>
           </Field>
         </RadioGroup>
       </FieldSet>
       <FieldSet>
-        <FieldLegend variant="label">Disabled Radio Group</FieldLegend>
+        <FieldLegend variant="label">비활성 라디오 그룹</FieldLegend>
         <RadioGroup disabled>
           <Field data-disabled orientation="horizontal">
             <RadioGroupItem value="disabled1" id="radio-disabled-1" disabled />
-            <FieldLabel htmlFor="radio-disabled-1">
-              Disabled Option 1
-            </FieldLabel>
+            <FieldLabel htmlFor="radio-disabled-1">비활성 항목 1</FieldLabel>
           </Field>
           <Field data-disabled orientation="horizontal">
             <RadioGroupItem value="disabled2" id="radio-disabled-2" disabled />
-            <FieldLabel htmlFor="radio-disabled-2">
-              Disabled Option 2
-            </FieldLabel>
+            <FieldLabel htmlFor="radio-disabled-2">비활성 항목 2</FieldLabel>
           </Field>
         </RadioGroup>
       </FieldSet>

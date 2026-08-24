@@ -16,7 +16,7 @@ export function ToggleGroupFontWeightSelector() {
   const [fontWeight, setFontWeight] = React.useState("normal")
   return (
     <Field>
-      <FieldLabel>Font Weight</FieldLabel>
+      <FieldLabel>글자 굵기</FieldLabel>
       <ToggleGroup
         value={[fontWeight]}
         onValueChange={(value) => setFontWeight(value[0])}
@@ -26,39 +26,39 @@ export function ToggleGroupFontWeightSelector() {
       >
         <ToggleGroupItem
           value="light"
-          aria-label="Light"
+          aria-label="라이트"
           className="flex size-16 flex-col items-center justify-center rounded-xl"
         >
           <span className="text-2xl leading-none font-light">Aa</span>
-          <span className="text-xs text-muted-foreground">Light</span>
+          <span className="text-xs text-muted-foreground">라이트</span>
         </ToggleGroupItem>
         <ToggleGroupItem
           value="normal"
-          aria-label="Normal"
+          aria-label="보통"
           className="flex size-16 flex-col items-center justify-center rounded-xl"
         >
           <span className="text-2xl leading-none font-normal">Aa</span>
-          <span className="text-xs text-muted-foreground">Normal</span>
+          <span className="text-xs text-muted-foreground">보통</span>
         </ToggleGroupItem>
         <ToggleGroupItem
           value="medium"
-          aria-label="Medium"
+          aria-label="보통"
           className="flex size-16 flex-col items-center justify-center rounded-xl"
         >
           <span className="text-2xl leading-none font-medium">Aa</span>
-          <span className="text-xs text-muted-foreground">Medium</span>
+          <span className="text-xs text-muted-foreground">보통</span>
         </ToggleGroupItem>
         <ToggleGroupItem
           value="bold"
-          aria-label="Bold"
+          aria-label="굵게"
           className="flex size-16 flex-col items-center justify-center rounded-xl"
         >
           <span className="text-2xl leading-none font-bold">Aa</span>
-          <span className="text-xs text-muted-foreground">Bold</span>
+          <span className="text-xs text-muted-foreground">굵게</span>
         </ToggleGroupItem>
       </ToggleGroup>
       <FieldDescription>
-        Use{" "}
+        사용{" "}
         <code className="rounded-md bg-muted px-1 py-0.5 font-mono">
           font-{fontWeight}
         </code>{" "}

@@ -6,11 +6,11 @@ import {
 export function ToggleGroupOutline() {
   return (
     <ToggleGroup variant="outline" defaultValue={["all"]}>
-      <ToggleGroupItem value="all" aria-label="Toggle all">
-        All
+      <ToggleGroupItem value="all" aria-label="전체">
+        전체
       </ToggleGroupItem>
-      <ToggleGroupItem value="missed" aria-label="Toggle missed">
-        Missed
+      <ToggleGroupItem value="missed" aria-label="부재중">
+        부재중
       </ToggleGroupItem>
     </ToggleGroup>
   )

@@ -20,19 +20,19 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Help</SidebarGroupLabel>
+            <SidebarGroupLabel>도움말</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
                     <LifeBuoyIcon />
-                    Support
+                    지원
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton>
                     <SendIcon />
-                    Feedback
+                    의견
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>

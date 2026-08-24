@@ -8,9 +8,9 @@ import { Input } from "@/styles/base-nova/ui/input"
 export function InputFile() {
   return (
     <Field>
-      <FieldLabel htmlFor="picture">Picture</FieldLabel>
+      <FieldLabel htmlFor="picture">사진</FieldLabel>
       <Input id="picture" type="file" />
-      <FieldDescription>Select a picture to upload.</FieldDescription>
+      <FieldDescription>올릴 사진을 고르세요.</FieldDescription>
     </Field>
   )
 }

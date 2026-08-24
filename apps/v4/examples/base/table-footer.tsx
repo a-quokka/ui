@@ -57,13 +57,13 @@ const invoices = [
 export function TableFooterExample() {
   return (
     <Table>
-      <TableCaption>A list of your recent invoices.</TableCaption>
+      <TableCaption>최근 청구서 목록입니다.</TableCaption>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">Invoice</TableHead>
-          <TableHead>Status</TableHead>
-          <TableHead>Method</TableHead>
-          <TableHead className="text-right">Amount</TableHead>
+          <TableHead className="w-[100px]">청구서</TableHead>
+          <TableHead>상태</TableHead>
+          <TableHead>결제 수단</TableHead>
+          <TableHead className="text-right">금액</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -78,7 +78,7 @@ export function TableFooterExample() {
       </TableBody>
       <TableFooter>
         <TableRow>
-          <TableCell colSpan={3}>Total</TableCell>
+          <TableCell colSpan={3}>합계</TableCell>
           <TableCell className="text-right">$2,500.00</TableCell>
         </TableRow>
       </TableFooter>

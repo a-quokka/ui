@@ -26,14 +26,14 @@ export default function InputGroupLabel() {
         <InputGroupInput id="email-2" placeholder="shadcn@vercel.com" />
         <InputGroupAddon align="block-start">
           <Label htmlFor="email-2" className="text-foreground">
-            Email
+            이메일
           </Label>
           <Tooltip>
             <TooltipTrigger
               render={
                 <InputGroupButton
                   variant="ghost"
-                  aria-label="Help"
+                  aria-label="도움말"
                   className="ml-auto rounded-full"
                   size="icon-xs"
                 />
@@ -42,7 +42,7 @@ export default function InputGroupLabel() {
               <InfoIcon />
             </TooltipTrigger>
             <TooltipContent>
-              <p>We&apos;ll use this to send you notifications</p>
+              <p>알림을 보낼 때 씁니다</p>
             </TooltipContent>
           </Tooltip>
         </InputGroupAddon>

@@ -13,7 +13,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      caption: "Beautiful landscape",
+      caption: "멋진 풍경",
     },
   },
   ko: {
@@ -32,7 +32,7 @@ export function AspectRatioRtl() {
       <AspectRatio ratio={16 / 9} className="rounded-lg bg-muted">
         <Image
           src="https://avatar.vercel.sh/shadcn1"
-          alt="Photo"
+          alt="사진"
           fill
           className="rounded-lg object-cover grayscale dark:brightness-20"
         />

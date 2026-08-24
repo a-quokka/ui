@@ -15,18 +15,18 @@ export function DropdownMenuBasic() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
+        열기
       </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuItem>Profile</DropdownMenuItem>
-          <DropdownMenuItem>Billing</DropdownMenuItem>
-          <DropdownMenuItem>Settings</DropdownMenuItem>
+          <DropdownMenuLabel>내 계정</DropdownMenuLabel>
+          <DropdownMenuItem>프로필</DropdownMenuItem>
+          <DropdownMenuItem>결제</DropdownMenuItem>
+          <DropdownMenuItem>설정</DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>GitHub</DropdownMenuItem>
-        <DropdownMenuItem>Support</DropdownMenuItem>
+        <DropdownMenuItem>지원</DropdownMenuItem>
         <DropdownMenuItem disabled>API</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

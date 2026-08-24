@@ -17,25 +17,25 @@ const tableData = [
     id: "1",
     name: "Sarah Chen",
     email: "sarah.chen@example.com",
-    role: "Admin",
+    role: "관리자",
   },
   {
     id: "2",
     name: "Marcus Rodriguez",
     email: "marcus.rodriguez@example.com",
-    role: "User",
+    role: "사용자",
   },
   {
     id: "3",
     name: "Priya Patel",
     email: "priya.patel@example.com",
-    role: "User",
+    role: "사용자",
   },
   {
     id: "4",
     name: "David Kim",
     email: "david.kim@example.com",
-    role: "Editor",
+    role: "편집자",
   },
 ]
 
@@ -76,9 +76,9 @@ export function CheckboxInTable() {
               onCheckedChange={handleSelectAll}
             />
           </TableHead>
-          <TableHead>Name</TableHead>
-          <TableHead>Email</TableHead>
-          <TableHead>Role</TableHead>
+          <TableHead>이름</TableHead>
+          <TableHead>이메일</TableHead>
+          <TableHead>역할</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>

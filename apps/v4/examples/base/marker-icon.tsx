@@ -9,19 +9,19 @@ export function MarkerIconDemo() {
         <MarkerIcon>
           <GitBranchIcon />
         </MarkerIcon>
-        <MarkerContent>Switched to a new branch</MarkerContent>
+        <MarkerContent>새 브랜치로 옮겼습니다</MarkerContent>
       </Marker>
       <Marker variant="separator">
         <MarkerIcon>
           <SearchIcon />
         </MarkerIcon>
-        <MarkerContent>Explored 4 files</MarkerContent>
+        <MarkerContent>파일 4개를 살펴봤습니다</MarkerContent>
       </Marker>
       <Marker className="flex-col">
         <MarkerIcon>
           <BookOpenCheck />
         </MarkerIcon>
-        <MarkerContent>Syncing completed</MarkerContent>
+        <MarkerContent>동기화가 끝났습니다</MarkerContent>
       </Marker>
     </div>
   )

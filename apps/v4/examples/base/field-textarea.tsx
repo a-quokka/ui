@@ -12,15 +12,13 @@ export default function FieldTextarea() {
     <FieldSet className="w-full max-w-xs">
       <FieldGroup>
         <Field>
-          <FieldLabel htmlFor="feedback">Feedback</FieldLabel>
+          <FieldLabel htmlFor="feedback">의견</FieldLabel>
           <Textarea
             id="feedback"
-            placeholder="Your feedback helps us improve..."
+            placeholder="남겨 주신 의견이 서비스를 더 낫게 만듭니다..."
             rows={4}
           />
-          <FieldDescription>
-            Share your thoughts about our service.
-          </FieldDescription>
+          <FieldDescription>서비스에 대한 생각을 들려주세요.</FieldDescription>
         </Field>
       </FieldGroup>
     </FieldSet>

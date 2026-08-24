@@ -11,17 +11,17 @@ import {
 
 export function SelectGroups() {
   const fruits = [
-    { label: "Apple", value: "apple" },
-    { label: "Banana", value: "banana" },
-    { label: "Blueberry", value: "blueberry" },
+    { label: "사과", value: "apple" },
+    { label: "바나나", value: "banana" },
+    { label: "블루베리", value: "blueberry" },
   ]
   const vegetables = [
-    { label: "Carrot", value: "carrot" },
-    { label: "Broccoli", value: "broccoli" },
-    { label: "Spinach", value: "spinach" },
+    { label: "당근", value: "carrot" },
+    { label: "브로콜리", value: "broccoli" },
+    { label: "시금치", value: "spinach" },
   ]
   const allItems = [
-    { label: "Select a fruit", value: null },
+    { label: "과일 선택", value: null },
     ...fruits,
     ...vegetables,
   ]
@@ -32,7 +32,7 @@ export function SelectGroups() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
+          <SelectLabel>과일</SelectLabel>
           {fruits.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}
@@ -41,7 +41,7 @@ export function SelectGroups() {
         </SelectGroup>
         <SelectSeparator />
         <SelectGroup>
-          <SelectLabel>Vegetables</SelectLabel>
+          <SelectLabel>채소</SelectLabel>
           {vegetables.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}

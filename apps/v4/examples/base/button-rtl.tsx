@@ -41,7 +41,7 @@ export function ButtonRtl() {
         {t.submit}{" "}
         <ArrowRightIcon className="rtl:rotate-180" data-icon="inline-end" />
       </Button>
-      <Button variant="outline" size="icon" aria-label="Add">
+      <Button variant="outline" size="icon" aria-label="추가">
         <PlusIcon />
       </Button>
       <Button variant="secondary" disabled>

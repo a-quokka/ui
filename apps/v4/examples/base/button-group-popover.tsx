@@ -26,29 +26,29 @@ export default function ButtonGroupPopover() {
       <Popover>
         <PopoverTrigger
           render={
-            <Button variant="outline" size="icon" aria-label="Open Popover" />
+            <Button variant="outline" size="icon" aria-label="팝오버 열기" />
           }
         >
           <ChevronDownIcon />
         </PopoverTrigger>
         <PopoverContent align="end" className="rounded-xl text-sm">
           <PopoverHeader>
-            <PopoverTitle>Start a new task with Copilot</PopoverTitle>
+            <PopoverTitle>Copilot 으로 새 작업 시작</PopoverTitle>
             <PopoverDescription>
-              Describe your task in natural language.
+              하고 싶은 일을 문장으로 적어 주세요.
             </PopoverDescription>
           </PopoverHeader>
           <Field>
             <FieldLabel htmlFor="task" className="sr-only">
-              Task Description
+              작업 설명
             </FieldLabel>
             <Textarea
               id="task"
-              placeholder="I need to..."
+              placeholder="이걸 하고 싶어요..."
               className="resize-none"
             />
             <FieldDescription>
-              Copilot will open a pull request for review.
+              Copilot 이 검토용 풀 리퀘스트를 엽니다.
             </FieldDescription>
           </Field>
         </PopoverContent>

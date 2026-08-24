@@ -7,10 +7,10 @@ export function BadgeWithIconLeft() {
     <div className="flex flex-wrap gap-2">
       <Badge variant="secondary">
         <BadgeCheck data-icon="inline-start" />
-        Verified
+        인증됨
       </Badge>
       <Badge variant="outline">
-        Bookmark
+        북마크
         <BookmarkIcon data-icon="inline-end" />
       </Badge>
     </div>

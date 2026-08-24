@@ -18,21 +18,21 @@ export function AlertDialogWithMedia() {
   return (
     <AlertDialog>
       <AlertDialogTrigger
-        render={<Button variant="outline">Share Project</Button>}
+        render={<Button variant="outline">프로젝트 공유</Button>}
       />
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogMedia>
             <CircleFadingPlusIcon />
           </AlertDialogMedia>
-          <AlertDialogTitle>Share this project?</AlertDialogTitle>
+          <AlertDialogTitle>이 프로젝트를 공유할까요?</AlertDialogTitle>
           <AlertDialogDescription>
-            Anyone with the link will be able to view and edit this project.
+            링크를 가진 사람은 누구나 이 프로젝트를 보고 편집할 수 있습니다.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
-          <AlertDialogAction>Share</AlertDialogAction>
+          <AlertDialogCancel>취소</AlertDialogCancel>
+          <AlertDialogAction>공유</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>

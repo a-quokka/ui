@@ -12,7 +12,7 @@ export function BubbleLinkButtonDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Bubble variant="muted">
-        <BubbleContent>How can I help you today?</BubbleContent>
+        <BubbleContent>무엇을 도와드릴까요?</BubbleContent>
       </Bubble>
       <BubbleGroup>
         <Bubble variant="tinted" align="end">
@@ -21,7 +21,7 @@ export function BubbleLinkButtonDemo() {
               <button onClick={() => toast("You clicked forgot password")} />
             }
           >
-            I forgot my password
+            비밀번호를 잊어버렸어요
           </BubbleContent>
         </Bubble>
         <Bubble variant="tinted" align="end">
@@ -32,7 +32,7 @@ export function BubbleLinkButtonDemo() {
               />
             }
           >
-            I need help with my subscription
+            구독 관련해서 도움이 필요해요
           </BubbleContent>
         </Bubble>
         <Bubble variant="tinted" align="end">
@@ -45,7 +45,7 @@ export function BubbleLinkButtonDemo() {
               />
             }
           >
-            Something else. Talk to a human.
+            다른 문제예요. 상담원과 연결해 주세요.
           </BubbleContent>
         </Bubble>
       </BubbleGroup>

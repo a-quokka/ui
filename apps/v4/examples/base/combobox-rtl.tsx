@@ -33,8 +33,8 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      label: "Categories",
-      placeholder: "Add categories",
+      label: "분류",
+      placeholder: "분류 추가",
       empty: "No categories found.",
       technology: "Technology",
       design: "Design",

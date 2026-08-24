@@ -13,9 +13,9 @@ export function ItemLink() {
     <div className="flex w-full max-w-md flex-col gap-4">
       <Item render={<a href="#" />}>
         <ItemContent>
-          <ItemTitle>Visit our documentation</ItemTitle>
+          <ItemTitle>문서 보러 가기</ItemTitle>
           <ItemDescription>
-            Learn how to get started with our components.
+            컴포넌트를 어떻게 시작하는지 알아보세요.
           </ItemDescription>
         </ItemContent>
         <ItemActions>
@@ -27,9 +27,9 @@ export function ItemLink() {
         render={<a href="#" target="_blank" rel="noopener noreferrer" />}
       >
         <ItemContent>
-          <ItemTitle>External resource</ItemTitle>
+          <ItemTitle>외부 자료</ItemTitle>
           <ItemDescription>
-            Opens in a new tab with security attributes.
+            보안 속성이 붙은 새 탭에서 열립니다.
           </ItemDescription>
         </ItemContent>
         <ItemActions>

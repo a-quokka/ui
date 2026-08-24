@@ -8,13 +8,13 @@ export function MarkerStatusDemo() {
         <MarkerIcon>
           <Spinner />
         </MarkerIcon>
-        <MarkerContent>Compacting conversation</MarkerContent>
+        <MarkerContent>대화를 정리하는 중</MarkerContent>
       </Marker>
       <Marker variant="separator" role="status">
         <MarkerIcon>
           <Spinner />
         </MarkerIcon>
-        <MarkerContent>Running tests</MarkerContent>
+        <MarkerContent>테스트를 돌리는 중</MarkerContent>
       </Marker>
     </div>
   )

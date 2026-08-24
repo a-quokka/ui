@@ -19,7 +19,7 @@ const translations: Translations = {
     values: {
       apiKey: "API Key",
       placeholder: "sk-...",
-      description: "Your API key is encrypted and stored securely.",
+      description: "API 키는 암호화해 안전하게 보관합니다.",
     },
   },
   ko: {

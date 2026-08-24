@@ -15,44 +15,44 @@ export function MenubarSubmenu() {
   return (
     <Menubar className="w-72">
       <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarTrigger>파일</MenubarTrigger>
         <MenubarContent>
           <MenubarSub>
-            <MenubarSubTrigger>Share</MenubarSubTrigger>
+            <MenubarSubTrigger>공유</MenubarSubTrigger>
             <MenubarSubContent>
-              <MenubarItem>Email link</MenubarItem>
-              <MenubarItem>Messages</MenubarItem>
-              <MenubarItem>Notes</MenubarItem>
+              <MenubarItem>링크 메일로 보내기</MenubarItem>
+              <MenubarItem>메시지</MenubarItem>
+              <MenubarItem>메모</MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
           <MenubarSeparator />
           <MenubarItem>
-            Print... <MenubarShortcut>⌘P</MenubarShortcut>
+            인쇄... <MenubarShortcut>⌘P</MenubarShortcut>
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarTrigger>편집</MenubarTrigger>
         <MenubarContent>
           <MenubarItem>
-            Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+            실행 취소 <MenubarShortcut>⌘Z</MenubarShortcut>
           </MenubarItem>
           <MenubarItem>
-            Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+            다시 실행 <MenubarShortcut>⇧⌘Z</MenubarShortcut>
           </MenubarItem>
           <MenubarSeparator />
           <MenubarSub>
-            <MenubarSubTrigger>Find</MenubarSubTrigger>
+            <MenubarSubTrigger>찾기</MenubarSubTrigger>
             <MenubarSubContent>
-              <MenubarItem>Find...</MenubarItem>
-              <MenubarItem>Find Next</MenubarItem>
-              <MenubarItem>Find Previous</MenubarItem>
+              <MenubarItem>찾기...</MenubarItem>
+              <MenubarItem>다음 찾기</MenubarItem>
+              <MenubarItem>이전 찾기</MenubarItem>
             </MenubarSubContent>
           </MenubarSub>
           <MenubarSeparator />
-          <MenubarItem>Cut</MenubarItem>
-          <MenubarItem>Copy</MenubarItem>
-          <MenubarItem>Paste</MenubarItem>
+          <MenubarItem>잘라내기</MenubarItem>
+          <MenubarItem>복사</MenubarItem>
+          <MenubarItem>붙여넣기</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
     </Menubar>

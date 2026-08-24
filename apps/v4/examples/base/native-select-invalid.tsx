@@ -6,10 +6,10 @@ import {
 export function NativeSelectInvalid() {
   return (
     <NativeSelect aria-invalid="true">
-      <NativeSelectOption value="">Error state</NativeSelectOption>
-      <NativeSelectOption value="apple">Apple</NativeSelectOption>
-      <NativeSelectOption value="banana">Banana</NativeSelectOption>
-      <NativeSelectOption value="blueberry">Blueberry</NativeSelectOption>
+      <NativeSelectOption value="">오류 상태</NativeSelectOption>
+      <NativeSelectOption value="apple">사과</NativeSelectOption>
+      <NativeSelectOption value="banana">바나나</NativeSelectOption>
+      <NativeSelectOption value="blueberry">블루베리</NativeSelectOption>
     </NativeSelect>
   )
 }

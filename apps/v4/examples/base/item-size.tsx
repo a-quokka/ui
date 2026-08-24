@@ -16,9 +16,9 @@ export function ItemSizeDemo() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Default Size</ItemTitle>
+          <ItemTitle>기본 크기</ItemTitle>
           <ItemDescription>
-            The standard size for most use cases.
+            대부분의 경우에 알맞은 기본 크기입니다.
           </ItemDescription>
         </ItemContent>
       </Item>
@@ -27,8 +27,10 @@ export function ItemSizeDemo() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Small Size</ItemTitle>
-          <ItemDescription>A compact size for dense layouts.</ItemDescription>
+          <ItemTitle>작은 크기</ItemTitle>
+          <ItemDescription>
+            빽빽한 화면을 위한 촘촘한 크기입니다.
+          </ItemDescription>
         </ItemContent>
       </Item>
       <Item variant="outline" size="xs">
@@ -36,8 +38,8 @@ export function ItemSizeDemo() {
           <InboxIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Extra Small Size</ItemTitle>
-          <ItemDescription>The most compact size available.</ItemDescription>
+          <ItemTitle>아주 작은 크기</ItemTitle>
+          <ItemDescription>가장 촘촘한 크기입니다.</ItemDescription>
         </ItemContent>
       </Item>
     </div>

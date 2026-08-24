@@ -13,15 +13,15 @@ export default function KbdTooltip() {
       <ButtonGroup>
         <Tooltip>
           <TooltipTrigger render={<Button variant="outline" />}>
-            Save
+            저장
           </TooltipTrigger>
           <TooltipContent>
-            Save Changes <Kbd>S</Kbd>
+            저장 <Kbd>S</Kbd>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
           <TooltipTrigger render={<Button variant="outline" />}>
-            Print
+            인쇄
           </TooltipTrigger>
           <TooltipContent>
             Print Document{" "}

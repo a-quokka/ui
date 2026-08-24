@@ -11,7 +11,7 @@ export default function KbdInputGroup() {
   return (
     <div className="flex w-full max-w-xs flex-col gap-6">
       <InputGroup>
-        <InputGroupInput placeholder="Search..." />
+        <InputGroupInput placeholder="검색..." />
         <InputGroupAddon>
           <SearchIcon />
         </InputGroupAddon>

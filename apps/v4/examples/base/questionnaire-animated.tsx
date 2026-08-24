@@ -48,61 +48,55 @@ export function QuestionnaireAnimated() {
       <QuestionnaireProgress />
 
       <QuestionnaireItem className={itemClassName} name="task" required>
-        <QuestionnaireTitle>What should the agent do?</QuestionnaireTitle>
+        <QuestionnaireTitle>에이전트가 무엇을 할까요?</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose the task for this run.
+          이번에 맡길 작업을 고르세요.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="implement">
-            Implement the requested change
+            요청한 변경을 구현한다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="debug">
-            Debug the current behavior
+            지금 동작을 디버깅한다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="review">
-            Review the implementation
+            구현을 검토한다
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireItem className={itemClassName} name="review" required>
-        <QuestionnaireTitle>
-          How should the work be reviewed?
-        </QuestionnaireTitle>
+        <QuestionnaireTitle>작업을 어떻게 검토할까요?</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Select the verification depth.
+          검증 수준을 고르세요.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="targeted">
-            Targeted checks
+            필요한 검사만
           </QuestionnaireChoice>
           <QuestionnaireChoice value="complete">
-            Complete test suite
+            테스트 전체
           </QuestionnaireChoice>
           <QuestionnaireChoice value="manual">
-            Tests and manual QA
+            테스트와 수동 QA
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireItem className={itemClassName} name="delivery" required>
-        <QuestionnaireTitle>
-          How should the result be delivered?
-        </QuestionnaireTitle>
+        <QuestionnaireTitle>결과를 어떻게 전달할까요?</QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose the final handoff format.
+          최종 인계 형식을 고르세요.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="summary">
-            Concise summary
-          </QuestionnaireChoice>
+          <QuestionnaireChoice value="summary">간결한 요약</QuestionnaireChoice>
           <QuestionnaireChoice value="diff">
-            Summary and changed files
+            요약과 바뀐 파일
           </QuestionnaireChoice>
           <QuestionnaireChoice value="handoff">
-            Detailed review handoff
+            상세 검토 인계
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -110,8 +104,8 @@ export function QuestionnaireAnimated() {
 
       <QuestionnaireActions>
         <QuestionnairePrevious />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Save workflow</QuestionnaireSubmit>
+        <QuestionnaireNext>다음</QuestionnaireNext>
+        <QuestionnaireSubmit>워크플로 저장</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

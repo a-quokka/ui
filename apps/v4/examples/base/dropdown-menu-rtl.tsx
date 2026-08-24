@@ -39,7 +39,7 @@ const translations: Translations = {
       team: "Team",
       inviteUsers: "Invite users",
       email: "Email",
-      message: "Message",
+      message: "메시지",
       more: "More",
       calendar: "Calendar",
       chat: "Chat",

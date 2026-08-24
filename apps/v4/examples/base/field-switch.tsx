@@ -4,7 +4,7 @@ import { Switch } from "@/styles/base-nova/ui/switch"
 export default function FieldSwitch() {
   return (
     <Field orientation="horizontal" className="w-fit">
-      <FieldLabel htmlFor="2fa">Multi-factor authentication</FieldLabel>
+      <FieldLabel htmlFor="2fa">다단계 인증</FieldLabel>
       <Switch id="2fa" />
     </Field>
   )

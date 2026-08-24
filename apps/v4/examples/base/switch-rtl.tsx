@@ -18,9 +18,8 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      label: "Share across devices",
-      description:
-        "Focus is shared across devices, and turns off when you leave the app.",
+      label: "여러 기기에서 함께 쓰기",
+      description: "집중 모드가 기기 사이에 공유되고, 앱을 벗어나면 꺼집니다.",
     },
   },
   ko: {

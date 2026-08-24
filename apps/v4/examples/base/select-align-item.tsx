@@ -21,12 +21,12 @@ import {
 import { Switch } from "@/styles/base-nova/ui/switch"
 
 const items = [
-  { label: "Select a fruit", value: null },
-  { label: "Apple", value: "apple" },
-  { label: "Banana", value: "banana" },
-  { label: "Blueberry", value: "blueberry" },
-  { label: "Grapes", value: "grapes" },
-  { label: "Pineapple", value: "pineapple" },
+  { label: "과일 선택", value: null },
+  { label: "사과", value: "apple" },
+  { label: "바나나", value: "banana" },
+  { label: "블루베리", value: "blueberry" },
+  { label: "포도", value: "grapes" },
+  { label: "파인애플", value: "pineapple" },
 ]
 
 export function SelectAlignItem() {
@@ -36,9 +36,9 @@ export function SelectAlignItem() {
     <FieldGroup className="w-full max-w-xs">
       <Field orientation="horizontal">
         <FieldContent>
-          <FieldLabel htmlFor="align-item">Align Item</FieldLabel>
+          <FieldLabel htmlFor="align-item">항목 맞춤</FieldLabel>
           <FieldDescription>
-            Toggle to align the item with the trigger.
+            선택된 항목을 트리거에 맞출지 켜고 끕니다.
           </FieldDescription>
         </FieldContent>
         <Switch

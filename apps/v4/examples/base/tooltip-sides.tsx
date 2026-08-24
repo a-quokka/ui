@@ -16,7 +16,7 @@ export function TooltipSides() {
             {side}
           </TooltipTrigger>
           <TooltipContent side={side}>
-            <p>Add to library</p>
+            <p>라이브러리에 추가</p>
           </TooltipContent>
         </Tooltip>
       ))}

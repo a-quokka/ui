@@ -76,7 +76,7 @@ export function ButtonGroupRtl() {
     <div dir={dir}>
       <ButtonGroup>
         <ButtonGroup className="hidden sm:flex">
-          <Button variant="outline" size="icon" aria-label="Go Back">
+          <Button variant="outline" size="icon" aria-label="뒤로">
             <ArrowLeftIcon className="rtl:rotate-180" />
           </Button>
         </ButtonGroup>
@@ -89,11 +89,7 @@ export function ButtonGroupRtl() {
           <DropdownMenu>
             <DropdownMenuTrigger
               render={
-                <Button
-                  variant="outline"
-                  size="icon"
-                  aria-label="More Options"
-                />
+                <Button variant="outline" size="icon" aria-label="더 보기" />
               }
             >
               <MoreHorizontalIcon />

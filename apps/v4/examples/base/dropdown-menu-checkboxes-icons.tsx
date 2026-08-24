@@ -23,11 +23,11 @@ export function DropdownMenuCheckboxesIcons() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Notifications
+        알림
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-48">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Notification Preferences</DropdownMenuLabel>
+          <DropdownMenuLabel>알림 설정</DropdownMenuLabel>
           <DropdownMenuCheckboxItem
             checked={notifications.email}
             onCheckedChange={(checked) =>
@@ -35,7 +35,7 @@ export function DropdownMenuCheckboxesIcons() {
             }
           >
             <MailIcon />
-            Email notifications
+            이메일 알림
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={notifications.sms}
@@ -44,7 +44,7 @@ export function DropdownMenuCheckboxesIcons() {
             }
           >
             <MessageSquareIcon />
-            SMS notifications
+            문자 알림
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={notifications.push}
@@ -53,7 +53,7 @@ export function DropdownMenuCheckboxesIcons() {
             }
           >
             <BellIcon />
-            Push notifications
+            푸시 알림
           </DropdownMenuCheckboxItem>
         </DropdownMenuGroup>
       </DropdownMenuContent>
