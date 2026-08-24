@@ -44,7 +44,7 @@ const spokenLanguages = [
 const formSchema = z.object({
   language: z
     .string()
-    .min(1, "Please select your spoken language.")
+    .min(1, "사용 언어를 골라 주세요.")
     .refine((val) => val !== "auto", {
       message: "자동 감지는 쓸 수 없습니다. 언어를 직접 고르세요.",
     }),

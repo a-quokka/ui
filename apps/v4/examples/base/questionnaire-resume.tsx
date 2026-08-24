@@ -98,7 +98,7 @@ export function QuestionnaireResume() {
         </QuestionnaireDescription>
         <QuestionnaireInput
           aria-label="저장된 마이그레이션 메모"
-          defaultValue="Keep the existing public API stable."
+          defaultValue="기존 공개 API 를 그대로 유지합니다."
         />
       </QuestionnaireItem>
 

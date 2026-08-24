@@ -50,7 +50,7 @@ const plans = [
 ] as const
 
 const formSchema = z.object({
-  plan: z.string().min(1, "You must select a subscription plan to continue."),
+  plan: z.string().min(1, "계속하려면 구독 플랜을 골라야 합니다."),
 })
 
 export default function FormRhfRadioGroup() {

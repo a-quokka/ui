@@ -25,7 +25,7 @@ const items = [
 ] as const
 
 const itemLabels: Record<string, string> = {
-  scope: "Change scope",
+  scope: "범위 바꾸기",
   checks: "Verification",
   output: "Final output",
 }

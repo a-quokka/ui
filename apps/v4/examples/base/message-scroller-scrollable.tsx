@@ -88,7 +88,7 @@ function ScrollStateFooter() {
 
 function getScrollStatus({ start, end }: { start: boolean; end: boolean }) {
   if (start && end) {
-    return "You can scroll both ways."
+    return "양쪽으로 스크롤할 수 있습니다."
   }
 
   if (end) {
@@ -99,5 +99,5 @@ function getScrollStatus({ start, end }: { start: boolean; end: boolean }) {
     return "맨 아래입니다. 위로만 스크롤할 수 있습니다."
   }
 
-  return "All messages fit in the viewport."
+  return "메시지가 모두 화면에 들어옵니다."
 }

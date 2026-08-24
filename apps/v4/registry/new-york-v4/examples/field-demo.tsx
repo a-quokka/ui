@@ -132,7 +132,7 @@ export default function FieldDemo() {
                 </FieldLabel>
                 <Textarea
                   id="checkout-7j9-optional-comments"
-                  placeholder="Add any additional comments"
+                  placeholder="덧붙일 말이 있으면 적어 주세요"
                   className="resize-none"
                 />
               </Field>

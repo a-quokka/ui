@@ -1,10 +1,10 @@
 const items = [
-  "Inbox triage",
-  "Design review",
-  "API contract",
-  "QA pass",
-  "Launch notes",
-  "Metrics follow-up",
+  "받은 편지함 정리",
+  "디자인 검토",
+  "API 계약",
+  "QA 점검",
+  "출시 노트",
+  "지표 후속 확인",
 ]
 
 const tags = [

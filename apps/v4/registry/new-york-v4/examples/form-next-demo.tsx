@@ -100,7 +100,7 @@ export default function FormNextDemo() {
                 />
                 <InputGroupAddon align="block-end">
                   <InputGroupText className="tabular-nums">
-                    {descriptionLength}/100 characters
+                    {descriptionLength}/100자
                   </InputGroupText>
                 </InputGroupAddon>
               </InputGroup>

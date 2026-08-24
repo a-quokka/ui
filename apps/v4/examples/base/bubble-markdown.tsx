@@ -11,7 +11,7 @@ export function BubbleMarkdownDemo() {
       </Bubble>
       <Bubble variant="ghost">
         <BubbleContent>
-          <Markdown>{`Ghost bubbles work for assistant text, **markdown**, and other content that should not be framed.
+          <Markdown>{`고스트 말풍선은 어시스턴트 글과 **마크다운**처럼 테두리를 두르지 않아야 하는 내용에 씁니다.
 
 This is perfect for assistant messages that should not have a frame and can take the full width of the container. You can also render \`code\` in it.
 

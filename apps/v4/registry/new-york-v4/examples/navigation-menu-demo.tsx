@@ -20,36 +20,35 @@ const components: { title: string; href: string; description: string }[] = [
     title: "Alert Dialog",
     href: "/docs/primitives/alert-dialog",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "중요한 내용으로 사용자를 멈춰 세우고 답을 기다리는 모달 대화 상자입니다.",
   },
   {
     title: "Hover Card",
     href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    description: "링크 뒤의 내용을 미리 보여 줍니다.",
   },
   {
     title: "Progress",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+      "작업이 얼마나 진행됐는지 보여 줍니다. 보통 진행 막대로 그립니다.",
   },
   {
     title: "Scroll-area",
     href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    description: "내용을 보기에도 의미상으로도 나눕니다.",
   },
   {
     title: "Tabs",
     href: "/docs/primitives/tabs",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "탭 패널이라 부르는 여러 겹의 영역을 한 번에 하나씩 보여 줍니다.",
   },
   {
     title: "Tooltip",
     href: "/docs/primitives/tooltip",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "요소에 키보드 포커스가 가거나 마우스를 올리면 관련 정보를 띄웁니다.",
   },
 ]
 

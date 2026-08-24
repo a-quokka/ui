@@ -59,7 +59,7 @@ export function QuestionnaireProgressExample() {
               ))}
             </div>
             <span>
-              Checkpoint {state.current} of {state.total}
+              지점 {state.current} / {state.total}
             </span>
           </div>
         )}

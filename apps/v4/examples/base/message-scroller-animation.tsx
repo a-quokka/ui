@@ -48,20 +48,22 @@ import {
 } from "@/styles/base-rhea/ui/select"
 
 const chat = createChat()
-  .user("Can user messages pop in like iMessage without breaking anchoring?")
-  .sleep(1000)
-  .assistant(
-    "Yes. Animate the user row with transform and opacity, and let the assistant response stream normally below it.\n\nThat keeps the row measurement predictable while still giving the newly sent bubble a more tactile entrance."
+  .user(
+    "고정을 깨지 않으면서 iMessage 처럼 사용자 메시지가 톡 튀어나오게 할 수 있나요?"
   )
-  .user("What makes the animation feel more like iMessage?")
   .sleep(1000)
   .assistant(
-    "Use a quick spring from the trailing edge: a little scale, a small upward move, and no layout animation.\n\nThe bubble feels tactile, but the measured row stays predictable, so anchoring and auto-scroll do not have to fight a changing layout."
+    "됩니다. 사용자 행은 transform 과 opacity 로 움직이고, 어시스턴트 응답은 그 아래에서 평소대로 흐르게 하세요.\n\n그러면 행 높이 계산이 예측 가능한 채로 남으면서도 새로 보낸 말풍선에 손맛이 생깁니다."
   )
-  .user("Can I switch between presets while testing the same thread?")
+  .user("어떻게 하면 iMessage 에 더 가까운 느낌이 나나요?")
   .sleep(1000)
   .assistant(
-    "Yes. Keep the conversation in place while you change the preset, then send the next message to compare the new entrance against the same context.\n\nThat makes it easier to judge the difference between a subtle fade, a snappy pop, and a more dramatic 3D tilt without rebuilding the scenario each time."
+    "끝쪽에서 시작하는 짧은 스프링을 쓰세요. 살짝 커지고 조금 위로 올라오되 레이아웃 애니메이션은 넣지 않습니다.\n\n말풍선에는 손맛이 생기지만 측정된 행은 그대로라, 고정과 자동 스크롤이 바뀌는 레이아웃과 싸우지 않아도 됩니다."
+  )
+  .user("같은 대화를 두고 프리셋을 바꿔 가며 볼 수 있나요?")
+  .sleep(1000)
+  .assistant(
+    "됩니다. 대화를 그대로 둔 채 프리셋만 바꾸고 다음 메시지를 보내면 같은 맥락에서 새 등장 효과를 견줄 수 있습니다.\n\n그러면 은은한 페이드와 경쾌한 팝, 과감한 3D 기울임의 차이를 매번 상황을 다시 만들지 않고도 판단할 수 있습니다."
   )
 
 const initialMessages = chat.get(0)

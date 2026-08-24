@@ -52,7 +52,7 @@ const plans = [
 const FormSchema = v.object({
   plan: v.pipe(
     v.string(),
-    v.minLength(1, "You must select a subscription plan to continue.")
+    v.minLength(1, "계속하려면 구독 플랜을 골라야 합니다.")
   ),
 })
 

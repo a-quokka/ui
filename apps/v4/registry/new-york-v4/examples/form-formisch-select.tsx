@@ -45,10 +45,10 @@ const spokenLanguages = [
 const FormSchema = v.object({
   language: v.pipe(
     v.string(),
-    v.minLength(1, "Please select your spoken language."),
+    v.minLength(1, "사용 언어를 골라 주세요."),
     v.check(
       (value) => value !== "auto",
-      "Auto-detection is not allowed. Please select a specific language."
+      "자동 감지는 쓸 수 없습니다. 언어를 직접 고르세요."
     )
   ),
 })

@@ -26,8 +26,8 @@ import { Textarea } from "@/registry/new-york-v4/ui/textarea"
 const formSchema = z.object({
   about: z
     .string()
-    .min(10, "Please provide at least 10 characters.")
-    .max(200, "Please keep it under 200 characters."),
+    .min(10, "10자 이상 적어 주세요.")
+    .max(200, "200자 이내로 적어 주세요."),
 })
 
 export default function FormTanstackTextarea() {

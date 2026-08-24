@@ -62,23 +62,20 @@ const addons = [
 const FormSchema = v.object({
   plan: v.pipe(
     v.string(),
-    v.minLength(1, "Please select a subscription plan"),
+    v.minLength(1, "구독 플랜을 골라 주세요"),
     v.check(
       (value) => value === "basic" || value === "pro",
-      "Invalid plan selection. Please choose Basic or Pro"
+      "올바르지 않은 플랜입니다. 베이직이나 프로를 고르세요"
     )
   ),
-  billingPeriod: v.pipe(
-    v.string(),
-    v.minLength(1, "Please select a billing period")
-  ),
+  billingPeriod: v.pipe(v.string(), v.minLength(1, "결제 주기를 골라 주세요")),
   addons: v.pipe(
     v.array(v.string()),
-    v.minLength(1, "Please select at least one add-on"),
-    v.maxLength(3, "You can select up to 3 add-ons"),
+    v.minLength(1, "추가 기능을 하나 이상 골라 주세요"),
+    v.maxLength(3, "추가 기능은 최대 3개까지 고를 수 있습니다"),
     v.check(
       (value) => value.every((addon) => addons.some((a) => a.id === addon)),
-      "You selected an invalid add-on"
+      "올바르지 않은 추가 기능입니다"
     )
   ),
   emailNotifications: v.boolean(),

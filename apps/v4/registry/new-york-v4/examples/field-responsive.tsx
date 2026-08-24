@@ -36,7 +36,7 @@ export default function FieldResponsive() {
                 <FieldLabel htmlFor="lastName">Message</FieldLabel>
                 <FieldDescription>
                   You can write your message here. Keep it short, preferably
-                  under 100 characters.
+                  100자 이내로 적어 주세요.
                 </FieldDescription>
               </FieldContent>
               <Textarea

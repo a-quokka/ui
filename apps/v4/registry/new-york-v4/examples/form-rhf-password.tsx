@@ -71,7 +71,7 @@ const formSchema = z.object({
     )
     .refine(
       (val) => /[!@#$%^&*(),.?":{}|<>]/.test(val),
-      "Password must contain at least one special character"
+      "비밀번호에 특수문자가 하나 이상 있어야 합니다"
     ),
 })
 

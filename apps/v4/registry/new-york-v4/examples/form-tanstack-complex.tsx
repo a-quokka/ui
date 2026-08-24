@@ -55,21 +55,21 @@ const addons = [
 const formSchema = z.object({
   plan: z
     .string({
-      required_error: "Please select a subscription plan",
+      required_error: "구독 플랜을 골라 주세요",
     })
-    .min(1, "Please select a subscription plan")
+    .min(1, "구독 플랜을 골라 주세요")
     .refine((value) => value === "basic" || value === "pro", {
       message: "올바르지 않은 플랜입니다. 베이직이나 프로를 고르세요",
     }),
   billingPeriod: z
     .string({
-      required_error: "Please select a billing period",
+      required_error: "결제 주기를 골라 주세요",
     })
-    .min(1, "Please select a billing period"),
+    .min(1, "결제 주기를 골라 주세요"),
   addons: z
     .array(z.string())
-    .min(1, "Please select at least one add-on")
-    .max(3, "You can select up to 3 add-ons")
+    .min(1, "추가 기능을 하나 이상 골라 주세요")
+    .max(3, "추가 기능은 최대 3개까지 고를 수 있습니다")
     .refine(
       (value) => value.every((addon) => addons.some((a) => a.id === addon)),
       {

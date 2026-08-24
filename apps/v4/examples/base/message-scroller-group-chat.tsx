@@ -104,7 +104,7 @@ export function MessageScrollerGroupChat() {
         ? [...initialItems, rockyMarker]
         : initialItems
   const buttonLabel =
-    rockyTurn === "idle" ? "Add Rocky" : "Send Message as Rocky"
+    rockyTurn === "idle" ? "Add Rocky" : "Rocky 로 메시지 보내기"
   const isComplete = rockyTurn === "message"
 
   return (
@@ -178,8 +178,8 @@ export function MessageScrollerGroupChat() {
             </Button>
             <p className="text-xs text-muted-foreground">
               {rockyTurn === "idle"
-                ? "This will create a marker and make it the anchor"
-                : "Now send Rocky's reply into the conversation"}
+                ? "표식을 만들고 그것을 기준으로 삼습니다"
+                : "이제 Rocky 의 답을 대화에 넣습니다"}
             </p>
           </CardFooter>
         </Card>

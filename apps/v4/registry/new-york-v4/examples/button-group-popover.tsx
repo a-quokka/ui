@@ -29,7 +29,7 @@ export default function ButtonGroupPopover() {
           <Separator />
           <div className="p-4 text-sm *:[p:not(:last-child)]:mb-2">
             <Textarea
-              placeholder="Describe your task in natural language."
+              placeholder="하고 싶은 일을 말하듯 적어 주세요."
               className="mb-4 resize-none"
             />
             <p className="font-medium">Start a new task with Copilot</p>

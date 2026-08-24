@@ -27,29 +27,29 @@ import {
 } from "@/styles/base-rhea/ui/message-scroller"
 
 const chat = createChat()
-  .user("Review the incident handoff and tell me what to read first.", {
+  .user("장애 인수인계를 보고 무엇부터 읽어야 할지 알려 주세요.", {
     id: "vis-brief",
   })
   .assistant(
-    "Start with the summary and the impact section. The regression affected the upload queue, but the recovery path completed for every queued job."
+    "요약과 영향 절부터 보세요. 업로드 대기열에 문제가 있었지만 대기 중이던 작업은 모두 복구가 끝났습니다."
   )
-  .user("What was the customer impact?", {
+  .user("고객에게는 어떤 영향이 있었나요?", {
     id: "vis-impact",
   })
   .assistant(
-    "Impact was limited to delayed processing.\n\nNo records were dropped, and the reconciliation worker confirmed each retry batch. Support saw confusion from two customers, but there were no checkout or billing errors."
+    "영향은 처리 지연에 그쳤습니다.\n\n유실된 기록은 없고 대사 작업자가 재시도 배치를 하나씩 확인했습니다. 고객 두 분이 혼란을 겪었지만 결제나 청구 오류는 없었습니다."
   )
-  .user("What actions are open?", {
+  .user("남은 조치는 무엇인가요?", {
     id: "vis-actions",
   })
   .assistant(
-    "Keep the retry window enabled until the next deploy, then add a queue-depth alert as the long-term fix.\n\nThe alert should fire on sustained queue growth, not a single short spike."
+    "다음 배포까지 재시도 구간을 켜 두고, 장기 대책으로 대기열 깊이 경보를 붙이세요.\n\n경보는 짧게 튀는 한 번이 아니라 꾸준히 늘어날 때 울려야 합니다."
   )
-  .user("Give me the follow-up checklist.", {
+  .user("후속 조치 목록을 주세요.", {
     id: "vis-checklist",
   })
   .assistant(
-    "After that, compare the queue recovery graph with the deploy timeline so the handoff shows exactly when processing returned to baseline. That makes it easier for support and engineering to answer the same customer questions without re-reading the whole incident thread.\n\nI would also add a short owner note beside each follow-up item. The checklist is small, but ownership keeps the retry-window decision, alert tuning, and support macro from drifting into separate follow-up conversations.\n\nKeep the retry window enabled until the next deploy, then add a queue-depth alert as the long-term fix.\n\nThe alert should fire on sustained queue growth, not a single short spike."
+    "After that, compare the queue recovery graph with the deploy timeline so the handoff shows exactly when processing returned to baseline. That makes it easier for support and engineering to answer the same customer questions without re-reading the whole incident thread.\n\nI would also add a short owner note beside each follow-up item. The checklist is small, but ownership keeps the retry-window decision, alert tuning, and support macro from drifting into separate follow-up conversations.\n\n다음 배포까지 재시도 구간을 켜 두고, 장기 대책으로 대기열 깊이 경보를 붙이세요.\n\n경보는 짧게 튀는 한 번이 아니라 꾸준히 늘어날 때 울려야 합니다."
   )
 
 const messages = chat.get()

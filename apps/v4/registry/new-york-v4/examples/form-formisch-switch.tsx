@@ -28,10 +28,7 @@ import { Switch } from "@/registry/new-york-v4/ui/switch"
 const FormSchema = v.object({
   twoFactor: v.pipe(
     v.boolean(),
-    v.check(
-      (value) => value === true,
-      "It is highly recommended to enable two-factor authentication."
-    )
+    v.check((value) => value === true, "2단계 인증을 켜기를 강하게 권합니다.")
   ),
 })
 

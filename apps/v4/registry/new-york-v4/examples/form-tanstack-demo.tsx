@@ -33,12 +33,12 @@ import {
 const formSchema = z.object({
   title: z
     .string()
-    .min(5, "Bug title must be at least 5 characters.")
-    .max(32, "Bug title must be at most 32 characters."),
+    .min(5, "버그 제목은 5자 이상이어야 합니다.")
+    .max(32, "버그 제목은 32자를 넘을 수 없습니다."),
   description: z
     .string()
-    .min(20, "Description must be at least 20 characters.")
-    .max(100, "Description must be at most 100 characters."),
+    .min(20, "설명은 20자 이상이어야 합니다.")
+    .max(100, "설명은 100자를 넘을 수 없습니다."),
 })
 
 export default function BugReportForm() {
@@ -132,7 +132,7 @@ export default function BugReportForm() {
                       />
                       <InputGroupAddon align="block-end">
                         <InputGroupText className="tabular-nums">
-                          {field.state.value.length}/100 characters
+                          {field.state.value.length}/100자
                         </InputGroupText>
                       </InputGroupAddon>
                     </InputGroup>

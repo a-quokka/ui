@@ -33,13 +33,13 @@ import {
 const FormSchema = v.object({
   title: v.pipe(
     v.string(),
-    v.minLength(5, "Bug title must be at least 5 characters."),
-    v.maxLength(32, "Bug title must be at most 32 characters.")
+    v.minLength(5, "버그 제목은 5자 이상이어야 합니다."),
+    v.maxLength(32, "버그 제목은 32자를 넘을 수 없습니다.")
   ),
   description: v.pipe(
     v.string(),
-    v.minLength(20, "Description must be at least 20 characters."),
-    v.maxLength(100, "Description must be at most 100 characters.")
+    v.minLength(20, "설명은 20자 이상이어야 합니다."),
+    v.maxLength(100, "설명은 100자를 넘을 수 없습니다.")
   ),
 })
 
@@ -120,7 +120,7 @@ export default function BugReportForm() {
                     />
                     <InputGroupAddon align="block-end">
                       <InputGroupText className="tabular-nums">
-                        {(field.input ?? "").length}/100 characters
+                        {(field.input ?? "").length}/100자
                       </InputGroupText>
                     </InputGroupAddon>
                   </InputGroup>

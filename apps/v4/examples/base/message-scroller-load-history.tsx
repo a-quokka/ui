@@ -33,25 +33,25 @@ import {
 } from "@/styles/base-rhea/ui/tooltip"
 
 const chat = createChat()
-  .user("Can you summarize the incident channel?")
+  .user("장애 채널 내용을 정리해 줄 수 있나요?")
   .assistant(
-    "The first alert was a delayed export job. It started backing up around 09:42 UTC and triggered the warning once the retry queue crossed the threshold.\n\nNo customer-facing checkout paths were affected, but exports for larger workspaces were running about 12 minutes behind."
+    "첫 경보는 지연된 내보내기 작업이었습니다. 09:42 UTC 무렵부터 밀리기 시작했고 재시도 대기열이 기준을 넘으면서 경고가 떴습니다.\n\n결제 화면에는 영향이 없었지만 큰 워크스페이스의 내보내기가 12분쯤 늦어졌습니다."
   )
-  .user("Was checkout affected?")
+  .user("결제에는 영향이 있었나요?")
   .assistant(
-    "No checkout errors were reported. Payment authorization, order creation, and confirmation emails stayed inside their normal latency bands.\n\nThe only elevated metric was export queue depth, which maps to analytics downloads instead of checkout."
+    "결제 오류는 보고되지 않았습니다. 결제 승인·주문 생성·확인 메일 모두 평소 지연 범위 안에 있었습니다.\n\n올라간 지표는 내보내기 대기열 깊이 하나뿐이고, 이는 결제가 아니라 분석 자료 내려받기와 이어집니다."
   )
-  .user("What changed in the last deploy?")
+  .user("직전 배포에서 무엇이 바뀌었나요?")
   .assistant(
-    "Only the export queue worker changed. The deploy moved large CSV jobs onto the shared retry policy, which made each failed attempt hold a worker slot longer than before.\n\nThe app deploy did not include checkout, pricing, or billing API changes."
+    "내보내기 대기열 작업자만 바뀌었습니다. 큰 CSV 작업이 공용 재시도 정책으로 옮겨지면서 실패할 때마다 작업자 자리를 전보다 오래 붙잡게 됐습니다.\n\n결제·가격·청구 API 는 이번 배포에 들어 있지 않았습니다."
   )
-  .user("Do we need to roll back?")
+  .user("롤백해야 할까요?")
   .assistant(
-    "Not yet. Queue depth is recovering after we reduced retry concurrency, and the oldest pending job is now under five minutes old.\n\nKeep rollback ready if the queue starts climbing again, but the current trend points toward recovery."
+    "아직은 아닙니다. 재시도 동시성을 줄인 뒤로 대기열이 회복 중이고, 가장 오래 기다린 작업도 이제 5분 미만입니다.\n\n대기열이 다시 늘면 바로 롤백할 수 있게 준비만 해 두세요. 지금 흐름은 회복 쪽입니다."
   )
-  .user("Keep watching for customer-visible issues.")
+  .user("고객에게 보이는 문제가 없는지 계속 지켜봐 주세요.")
   .assistant(
-    "I will watch the queue and support tags for another 15 minutes. I am tracking export failures, delayed download requests, and any support thread that mentions missing reports.\n\nIf those stay quiet through the next batch window, we can close this as an internal degradation."
+    "앞으로 15분 더 대기열과 고객 문의 태그를 보겠습니다. 내보내기 실패, 지연된 내려받기 요청, 보고서가 안 온다는 문의를 함께 추적합니다.\n\n다음 배치 구간까지 조용하면 내부 성능 저하로 닫아도 되겠습니다."
   )
 
 const history = chat.get()

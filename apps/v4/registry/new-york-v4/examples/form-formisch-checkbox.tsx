@@ -42,10 +42,10 @@ const FormSchema = v.object({
   responses: v.boolean(),
   tasks: v.pipe(
     v.array(v.string()),
-    v.minLength(1, "Please select at least one notification type."),
+    v.minLength(1, "알림 종류를 하나 이상 골라 주세요."),
     v.check(
       (value) => value.every((task) => tasks.some((t) => t.id === task)),
-      "Invalid notification type selected."
+      "올바르지 않은 알림 종류입니다."
     )
   ),
 })

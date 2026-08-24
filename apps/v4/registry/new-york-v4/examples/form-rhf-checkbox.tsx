@@ -42,7 +42,7 @@ const formSchema = z.object({
   responses: z.boolean(),
   tasks: z
     .array(z.string())
-    .min(1, "Please select at least one notification type.")
+    .min(1, "알림 종류를 하나 이상 골라 주세요.")
     .refine(
       (value) => value.every((task) => tasks.some((t) => t.id === task)),
       {

@@ -34,29 +34,29 @@ import {
 
 const chat = createChat()
   .user(
-    "We're seeing activation dip after workspace creation. Can you help me find the likely step?",
+    "워크스페이스를 만든 뒤로 활성화율이 떨어지고 있어요. 어느 단계가 문제일지 찾아 줄 수 있나요?",
     { id: "command-activation" }
   )
   .assistant(
-    "The sharpest drop is between creating the workspace and inviting the first teammate.\n\nWorkspace creation is still healthy, but the invite step is where users pause. That suggests the product is asking for collaboration before the user has enough confidence in the workspace."
+    "가장 크게 떨어지는 구간은 워크스페이스 생성과 첫 동료 초대 사이입니다.\n\n생성 자체는 여전히 건강한데 초대 단계에서 멈춥니다. 사용자가 워크스페이스에 아직 확신이 없는 상태에서 협업을 요구하고 있다는 뜻입니다."
   )
-  .user("What should I compare before we change the onboarding flow?", {
+  .user("온보딩 흐름을 바꾸기 전에 무엇을 견줘 봐야 할까요?", {
     id: "command-compare",
   })
   .assistant(
-    "Compare three cohorts:\n\n1. Users who choose a template before inviting teammates.\n2. Users who start from a blank workspace.\n3. Users who skip invites and return within 24 hours.\n\nIf template users invite faster, the fix is probably better first-run guidance rather than a louder invite prompt."
+    "세 무리를 견줘 보세요.\n\n1. 동료를 초대하기 전에 템플릿을 고른 사용자\n2. 빈 워크스페이스에서 시작한 사용자\n3. 초대를 건너뛰고 24시간 안에 돌아온 사용자\n\n템플릿을 쓴 쪽이 더 빨리 초대한다면, 초대 안내를 더 크게 띄우는 것보다 첫 사용 안내를 다듬는 게 답일 가능성이 큽니다."
   )
-  .user("Can you turn that into an experiment?", {
+  .user("그걸 실험으로 만들어 줄 수 있나요?", {
     id: "command-experiment",
   })
   .assistant(
-    "Yes. Create a variant that shows a short checklist after workspace creation:\n\n- Pick a template.\n- Add one project detail.\n- Invite a teammate when the workspace has context.\n\nMeasure first invite completion, 24-hour return rate, and whether teams create a second project."
+    "됩니다. 워크스페이스를 만든 뒤 짧은 체크리스트를 보여 주는 변형을 만드세요.\n\n- 템플릿을 고른다\n- 프로젝트 정보를 하나 적는다\n- 워크스페이스에 맥락이 생기면 동료를 초대한다\n\n첫 초대 완료율, 24시간 재방문율, 두 번째 프로젝트 생성 여부를 재면 됩니다."
   )
-  .user("What's the risk if we delay the invite prompt?", {
+  .user("초대 안내를 뒤로 미루면 어떤 위험이 있나요?", {
     id: "command-risk",
   })
   .assistant(
-    "The main risk is reducing team creation for accounts that already know who they want to invite.\n\nTo protect that path, keep the invite action visible in the header and only change the primary empty-state guidance. That gives confident teams a direct route without forcing uncertain users through the invite step too early."
+    "이미 누구를 초대할지 아는 계정의 팀 생성이 줄어드는 것이 가장 큰 위험입니다.\n\n그 길을 지키려면 초대 버튼은 헤더에 그대로 두고 빈 화면의 주 안내만 바꾸세요. 확신 있는 팀에는 지름길을 남기면서, 아직 망설이는 사용자를 초대 단계로 너무 일찍 밀어 넣지 않게 됩니다."
   )
 
 const messages = chat.get()

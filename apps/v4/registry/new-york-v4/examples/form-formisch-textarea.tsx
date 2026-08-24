@@ -27,8 +27,8 @@ import { Textarea } from "@/registry/new-york-v4/ui/textarea"
 const FormSchema = v.object({
   about: v.pipe(
     v.string(),
-    v.minLength(10, "Please provide at least 10 characters."),
-    v.maxLength(200, "Please keep it under 200 characters.")
+    v.minLength(10, "10자 이상 적어 주세요."),
+    v.maxLength(200, "200자 이내로 적어 주세요.")
   ),
 })
 
