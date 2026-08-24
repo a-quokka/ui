@@ -7,22 +7,22 @@ description: 네임스페이스로 여러 자원 레지스트리를 설정해 �
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Decentralized Namespace System](#decentralized-namespace-system)
-- [Getting Started](#getting-started)
-- [Registry Naming Convention](#registry-naming-convention)
-- [Configuration](#configuration)
-- [Authentication & Security](#authentication--security)
-- [Versioning](#versioning)
-- [Dependency Resolution](#dependency-resolution)
-- [Built-in Registries](#built-in-registries)
-- [CLI Commands](#cli-commands)
-- [Error Handling](#error-handling)
-- [Creating Your Own Registry](#creating-your-own-registry)
-- [Example Configurations](#example-configurations)
-- [Technical Details](#technical-details)
-- [Best Practices](#best-practices)
-- [Troubleshooting](#troubleshooting)
+- [개요](#overview)
+- [분산형 네임스페이스](#decentralized-namespace-system)
+- [시작하기](#getting-started)
+- [레지스트리 이름 규칙](#registry-naming-convention)
+- [설정](#configuration)
+- [인증과 보안](#authentication--security)
+- [버전 관리](#versioning)
+- [의존성 해석](#dependency-resolution)
+- [내장 레지스트리](#built-in-registries)
+- [CLI 명령](#cli-commands)
+- [오류 처리](#error-handling)
+- [직접 레지스트리 만들기](#creating-your-own-registry)
+- [설정 예시](#example-configurations)
+- [기술 상세](#technical-details)
+- [권장 사항](#best-practices)
+- [문제 해결](#troubleshooting)
 
 ---
 
@@ -365,21 +365,21 @@ REGISTRY_TOKEN=your_secret_token_here
 
 ### Resource Validation
 
-All resources fetched from registries are validated against our registry item schema before installation. This ensures:
+레지스트리에서 받은 자원은 설치 전에 항목 스키마로 검증합니다. 그래서 이런 것이 보장됩니다.
 
-- **Structure validation**: Resources must conform to the expected JSON schema
-- **Type safety**: Resource types are validated (`registry:ui`, `registry:lib`, etc.)
-- **No arbitrary code execution**: Resources are data files, not executable scripts
+- **구조 검증**: 자원이 정해진 JSON 스키마를 따라야 합니다
+- **타입 안전**: 자원 종류(`registry:ui`·`registry:lib` 등)를 검증합니다
+- **임의 코드 실행 없음**: 자원은 데이터 파일이지 실행되는 스크립트가 아닙니다
 
 ### Environment Variable Security
 
-Environment variables used for authentication are:
+인증에 쓰는 환경 변수는 이렇게 다룹니다.
 
-- **Never logged**: The CLI never logs or displays environment variable values
-- **Expanded at runtime**: Variables are only expanded when needed, not stored
-- **Isolated per registry**: Each registry maintains its own authentication context
+- **기록하지 않음**: CLI 는 환경 변수 값을 기록하거나 보여 주지 않습니다
+- **필요할 때만 채움**: 필요한 순간에만 값을 채우고 저장하지 않습니다
+- **레지스트리별 분리**: 레지스트리마다 인증 맥락을 따로 둡니다
 
-Example of secure configuration:
+안전한 설정 예시입니다.
 
 ```json title="components.json" showLineNumbers
 {
@@ -394,7 +394,7 @@ Example of secure configuration:
 }
 ```
 
-Never commit actual tokens to version control. Use `.env.local`:
+실제 토큰을 버전 관리에 커밋하지 마세요. `.env.local` 을 쓰세요.
 
 ```bash title=".env.local"
 PRIVATE_REGISTRY_TOKEN=actual_token_here
@@ -402,11 +402,11 @@ PRIVATE_REGISTRY_TOKEN=actual_token_here
 
 ### HTTPS Enforcement
 
-We strongly recommend using HTTPS for all registry URLs:
+레지스트리 주소에는 반드시 HTTPS 를 쓰기를 권합니다.
 
-- **Encrypted transport**: Prevents man-in-the-middle attacks
-- **Certificate validation**: Ensures you're connecting to the legitimate registry
-- **Credential protection**: Headers and tokens are encrypted in transit
+- **암호화된 전송**: 중간자 공격을 막습니다
+- **인증서 검증**: 진짜 레지스트리에 연결하고 있는지 확인합니다
+- **자격 증명 보호**: 헤더와 토큰이 전송 중 암호화됩니다
 
 ```json title="components.json" showLineNumbers
 {
@@ -419,32 +419,32 @@ We strongly recommend using HTTPS for all registry URLs:
 
 ### Content Security
 
-Resources from registries are treated as data, not code:
+레지스트리의 자원은 코드가 아니라 데이터로 다룹니다.
 
-1. **JSON parsing only**: Resources must be valid JSON
-2. **Schema validation**: Must match the registry item schema
-3. **File path restrictions**: Files can only be written to configured paths
-4. **No script execution**: The CLI doesn't execute any code from registry resources
+1. **JSON 파싱만**: 자원은 올바른 JSON 이어야 합니다
+2. **스키마 검증**: 레지스트리 항목 스키마와 맞아야 합니다
+3. **경로 제한**: 파일은 설정된 경로에만 쓸 수 있습니다
+4. **스크립트 실행 없음**: CLI 는 자원에 담긴 코드를 실행하지 않습니다
 
 ### Registry Trust Model
 
-The namespace system operates on a trust model:
+네임스페이스 체계는 신뢰를 전제로 동작합니다.
 
-- **You trust what you install**: Only add registries you trust to your configuration
-- **Explicit configuration**: Registries must be explicitly configured in `components.json`
-- **No automatic registry discovery**: The CLI never automatically adds registries
-- **Dependency transparency**: All dependencies are clearly listed in registry items
+- **설치하는 것은 신뢰해야 합니다**: 믿을 수 있는 레지스트리만 설정에 넣으세요
+- **명시적 설정**: 레지스트리는 `components.json` 에 직접 적어야 합니다
+- **자동 탐색 없음**: CLI 가 레지스트리를 알아서 추가하는 일은 없습니다
+- **의존성 투명성**: 모든 의존성이 항목에 분명히 적혀 있습니다
 
 ### Best Practices for Registry Operators
 
-If you're running your own registry:
+직접 레지스트리를 운영한다면 이렇게 하세요.
 
-1. **Use HTTPS always**: Never serve registry content over HTTP
-2. **Implement authentication**: Require API keys or tokens for private registries
-3. **Rate limiting**: Protect your registry from abuse
-4. **Content validation**: Validate resources before serving them
+1. **항상 HTTPS**: 레지스트리 내용을 HTTP 로 내보내지 마세요
+2. **인증 붙이기**: 비공개 레지스트리에는 API 키나 토큰을 요구하세요
+3. **요청 제한**: 남용되지 않도록 보호하세요
+4. **내용 검증**: 내보내기 전에 자원을 검증하세요
 
-Example secure registry setup:
+안전한 레지스트리 설정 예시입니다.
 
 ```json title="components.json" showLineNumbers
 {
@@ -460,13 +460,13 @@ Example secure registry setup:
 
 ### Inspecting Resources Before Installation
 
-The CLI provides transparency about what's being installed. You can see the payload of a registry item using the following command:
+CLI 는 무엇이 설치되는지 그대로 보여 줍니다. 아래 명령으로 항목의 내용을 볼 수 있습니다.
 
 ```bash
 npx shadcn@latest view @acme/button
 ```
 
-This will output the payload of the registry item to the console.
+항목의 내용이 콘솔에 출력됩니다.
 
 ---
 
@@ -474,7 +474,7 @@ This will output the payload of the registry item to the console.
 
 ### Basic Dependency Resolution
 
-Resources can have dependencies across different registries:
+자원은 서로 다른 레지스트리에 걸쳐 의존할 수 있습니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -490,40 +490,40 @@ Resources can have dependencies across different registries:
 }
 ```
 
-The CLI automatically resolves and installs all dependencies from their respective registries.
+CLI 가 각 레지스트리에서 의존성을 모두 풀어 설치합니다.
 
 ### Advanced Dependency Resolution
 
-Understanding how dependencies are resolved internally is important if you're developing registries or need to customize third-party resources.
+레지스트리를 만들거나 서드파티 자원을 고쳐 써야 한다면 의존성이 내부에서 어떻게 풀리는지 알아 두는 게 좋습니다.
 
 ### How Resolution Works
 
-When you run `npx shadcn@latest add @namespace/resource`, the CLI does the following:
+`npx shadcn@latest add @namespace/resource` 를 돌리면 CLI 는 이렇게 동작합니다.
 
-1. **Clears registry context** to start fresh
-2. **Fetches the main resource** from the specified registry
-3. **Recursively resolves dependencies** from their respective registries
-4. **Applies topological sorting** to ensure proper installation order
-5. **Deduplicates files** based on target paths (last one wins)
-6. **Deep merges configurations** (tailwind, cssVars, css, envVars)
+1. **레지스트리 맥락을 비우고** 새로 시작합니다
+2. 지정된 레지스트리에서 **주 자원을 가져옵니다**
+3. 각 레지스트리에서 **의존성을 재귀로 풀어냅니다**
+4. 설치 순서가 맞도록 **위상 정렬**합니다
+5. 대상 경로를 기준으로 **파일 중복을 제거**합니다(마지막 것이 이깁니다)
+6. 설정(tailwind·cssVars·css·envVars)을 **깊게 병합**합니다
 
-This means that if you run the following command:
+그래서 아래 명령을 돌리면,
 
 ```bash
 npx shadcn@latest add @acme/auth @custom/login-form
 ```
 
-The `login-form.ts` from `@custom/login-form` will override the `login-form.ts` from `@acme/auth` because it's resolved last.
+`@custom/login-form` 의 `login-form.ts` 가 나중에 풀리므로 `@acme/auth` 의 것을 덮어씁니다.
 
 ### Overriding Third-Party Resources
 
-You can leverage the dependency resolution process to override any third-party resource by adding them to your custom resource under `registryDependencies` and overriding with your own custom values.
+이 해석 순서를 이용하면 서드파티 자원을 덮어쓸 수 있습니다. 직접 만든 자원의 `registryDependencies` 에 넣고 원하는 값으로 덮으면 됩니다.
 
 #### Example: Customizing a Third-Party Button
 
-Let's say you want to customize a button from a vendor registry:
+외부 레지스트리의 버튼을 고쳐 쓴다고 해 봅시다.
 
-**1. Original vendor button** (`@vendor/button`):
+**1. 원본 버튼** (`@vendor/button`)
 
 ```json title="button.json" showLineNumbers
 {
@@ -544,7 +544,7 @@ Let's say you want to customize a button from a vendor registry:
 }
 ```
 
-**2. Create your custom override** (`@my-company/custom-button`):
+**2. 덮어쓸 항목 만들기** (`@my-company/custom-button`)
 
 ```json title="custom-button.json" showLineNumbers
 {
@@ -561,19 +561,19 @@ Let's say you want to customize a button from a vendor registry:
 }
 ```
 
-**3. Install your custom version**:
+**3. 만든 버전을 설치**
 
 ```bash
 npx shadcn@latest add @my-company/custom-button
 ```
 
-This installs the original button from `@vendor/button` and then overrides the `cssVars` with your own custom values.
+그러면 `@vendor/button` 의 원본 버튼을 설치한 뒤 `cssVars` 를 여러분이 정한 값으로 덮습니다.
 
 ### Advanced Override Patterns
 
 #### Extending Without Replacing
 
-Keep the original and add extensions:
+원본은 그대로 두고 확장만 더합니다.
 
 ```json title="extended-table.json" showLineNumbers
 {
@@ -588,11 +588,11 @@ Keep the original and add extensions:
 }
 ```
 
-This will install the original table from `@vendor/table` and then add your extensions to `components/ui/table-extended.tsx`.
+`@vendor/table` 의 원본 표를 설치한 뒤 확장을 `components/ui/table-extended.tsx` 에 더합니다.
 
 #### Partial Override (Multi-file Resources)
 
-Override only specific files from a complex component:
+복합 컴포넌트에서 특정 파일만 덮어씁니다.
 
 ```json title="custom-auth.json" showLineNumbers
 {
@@ -612,7 +612,7 @@ Override only specific files from a complex component:
 
 ### Resolution Order Example
 
-When you install `@custom/dashboard` that depends on multiple resources:
+여러 자원에 기대는 `@custom/dashboard` 를 설치하면,
 
 ```json title="dashboard.json" showLineNumbers
 {
@@ -625,23 +625,23 @@ When you install `@custom/dashboard` that depends on multiple resources:
 }
 ```
 
-Resolution order:
+해석 순서는 이렇습니다.
 
-1. `@shadcn/card` - installs to `components/ui/card.tsx`
-2. `@vendor/chart` - installs to `components/ui/chart.tsx`
-3. `@custom/card` - overwrites `components/ui/card.tsx` (if same target)
+1. `@shadcn/card` — `components/ui/card.tsx` 에 설치
+2. `@vendor/chart` — `components/ui/chart.tsx` 에 설치
+3. `@custom/card` — 대상이 같다면 `components/ui/card.tsx` 를 덮어씀
 
 ### Key Resolution Features
 
-1. **Source Tracking**: Each resource knows which registry it came from, avoiding naming conflicts
-2. **Circular Dependency Prevention**: Automatically detects and prevents circular dependencies
-3. **Smart Installation Order**: Dependencies are installed first, then the resources that use them
+1. **출처 추적**: 자원마다 어느 레지스트리에서 왔는지 알고 있어 이름이 겹치지 않습니다
+2. **순환 의존성 방지**: 순환을 자동으로 찾아 막습니다
+3. **설치 순서 정리**: 의존성을 먼저 설치하고 그것을 쓰는 자원을 나중에 설치합니다
 
 ---
 
 ## Versioning
 
-You can implement versioning for your registry resources using query parameters. This allows users to pin specific versions or use different release channels.
+쿼리 파라미터로 자원에 버전을 붙일 수 있습니다. 그러면 사용자가 특정 버전에 고정하거나 다른 배포 채널을 쓸 수 있습니다.
 
 ### Basic Version Parameter
 
@@ -656,11 +656,11 @@ You can implement versioning for your registry resources using query parameters.
 }
 ```
 
-This resolves `@versioned/button` to: `https://registry.example.com/button?version=v2`
+그러면 `@versioned/button` 은 `https://registry.example.com/button?version=v2` 로 풀립니다.
 
 ### Dynamic Version Selection
 
-Use environment variables to control versions across your project:
+환경 변수로 프로젝트 전체의 버전을 관리합니다.
 
 ```json title="components.json" showLineNumbers
 {
@@ -675,12 +675,12 @@ Use environment variables to control versions across your project:
 
 그러면 이런 것이 가능합니다.
 
-- Set `REGISTRY_VERSION=v1.2.3` in production
-- Override per environment (dev, staging, prod)
+- 운영에서는 `REGISTRY_VERSION=v1.2.3` 을 지정합니다
+- 환경(dev·staging·prod)마다 다르게 덮어씁니다
 
 ### Semantic Versioning
 
-Implement semantic versioning with range support:
+범위를 지원하는 유의적 버전을 씁니다.
 
 ```json title="components.json" showLineNumbers
 {
@@ -696,22 +696,22 @@ Implement semantic versioning with range support:
 
 ### Version Resolution Best Practices
 
-1. **Use environment variables** for version control across environments
-2. **Provide sensible defaults** using the `${VAR:-default}` syntax
-3. **Document version schemes** clearly for registry users
-4. **Support version pinning** for reproducible builds
-5. **Implement version discovery** endpoints (e.g., `/versions/{name}`)
-6. **Cache versioned resources** appropriately with proper cache headers
+1. 환경마다 버전을 다루려면 **환경 변수**를 씁니다
+2. `${VAR:-default}` 문법으로 **적당한 기본값**을 둡니다
+3. 사용자를 위해 **버전 규칙을 분명히 적어 둡니다**
+4. 재현 가능한 빌드를 위해 **버전 고정**을 지원합니다
+5. `/versions/{name}` 같은 **버전 조회 엔드포인트**를 둡니다
+6. 캐시 헤더를 제대로 붙여 **버전별 자원을 캐시**합니다
 
 ---
 
 ## CLI Commands
 
-The shadcn CLI provides several commands for working with namespaced registries:
+shadcn CLI 에는 네임스페이스 레지스트리를 다루는 명령이 여럿 있습니다.
 
 ### Adding Resources
 
-Install resources from any configured registry:
+설정한 어느 레지스트리에서든 자원을 설치합니다.
 
 ```bash
 # Install from a specific registry
@@ -729,7 +729,7 @@ npx shadcn@latest add ./local-registry/button.json
 
 ### Viewing Resources
 
-Inspect registry items before installation:
+설치 전에 항목을 들여다봅니다.
 
 ```bash
 # View a resource from a registry
@@ -742,17 +742,17 @@ npx shadcn@latest view @v0/dashboard @shadcn/card
 npx shadcn@latest view https://registry.example.com/button.json
 ```
 
-The `view` command displays:
+`view` 는 이런 것을 보여 줍니다.
 
-- Resource metadata (name, type, description)
-- Dependencies and registry dependencies
-- File contents that will be installed
-- CSS variables and Tailwind configuration
-- Required environment variables
+- 자원 메타데이터(이름·종류·설명)
+- 의존성과 레지스트리 의존성
+- 설치될 파일 내용
+- CSS 변수와 Tailwind 설정
+- 필요한 환경 변수
 
 ### Searching Registries
 
-Search for available resources in registries:
+레지스트리에서 쓸 수 있는 자원을 찾습니다.
 
 ```bash
 # Search a specific registry
@@ -771,11 +771,11 @@ npx shadcn@latest search @v0 --limit 10 --offset 20
 npx shadcn@latest list @acme
 ```
 
-Search results include:
+검색 결과에는 이런 것이 담깁니다.
 
-- Resource name and type
-- Description
-- Registry source
+- 자원 이름과 종류
+- 설명
+- 어느 레지스트리에서 왔는지
 
 ---
 
@@ -783,7 +783,7 @@ Search results include:
 
 ### Registry Not Configured
 
-If you reference a registry that isn't configured:
+설정하지 않은 레지스트리를 참조하면,
 
 ```bash
 npx shadcn@latest add @non-existent/component
@@ -802,7 +802,7 @@ Unknown registry "@non-existent". Make sure it is defined in components.json as 
 
 ### Missing Environment Variables
 
-If required environment variables are not set:
+필요한 환경 변수가 없으면,
 
 ```txt
 Registry "@private" requires the following environment variables:
@@ -820,11 +820,11 @@ Set the required environment variables to your .env or .env.local file.
 The item at https://registry.company.com/button.json was not found. It may not exist at the registry.
 ```
 
-This usually means:
+보통 이런 경우입니다.
 
-- The resource name is misspelled
-- The resource doesn't exist in the registry
-- The registry URL pattern is incorrect
+- 자원 이름을 잘못 적었습니다
+- 그 자원이 레지스트리에 없습니다
+- 레지스트리 주소 형식이 잘못됐습니다
 
 ### Authentication Failures
 
@@ -846,17 +846,17 @@ Verify your API key has the necessary permissions.
 
 ## Creating Your Own Registry
 
-To make your registry compatible with the namespace system, you can serve any type of resource - components, libraries, utilities, AI prompts, themes, configurations, or any other shareable code/content:
+네임스페이스 체계와 맞추면 어떤 자원이든 내보낼 수 있습니다. 컴포넌트·라이브러리·유틸리티·AI 프롬프트·테마·설정 등 나눌 수 있는 것이면 무엇이든 됩니다.
 
-1. **Implement the registry item schema**: Your registry must return JSON that conforms to the [registry item schema](/docs/registry/registry-item-json).
+1. **항목 스키마 지키기**: 레지스트리는 [registry item 스키마](/docs/registry/registry-item-json)를 따르는 JSON 을 돌려줘야 합니다.
 
-2. **Support the URL pattern**: Include `{name}` in your URL template where the resource name will be inserted.
+2. **주소 형식 지원**: 자원 이름이 들어갈 자리에 `{name}` 을 넣어 주소 템플릿을 만듭니다.
 
-3. **Define resource types**: Use appropriate `type` fields to identify your resources (e.g., `registry:ui`, `registry:lib`, `registry:ai`, `registry:theme`, etc.).
+3. **자원 종류 정의**: `registry:ui`·`registry:lib`·`registry:ai`·`registry:theme` 처럼 알맞은 `type` 을 지정합니다.
 
-4. **Handle authentication** (if needed): Accept authentication via headers or query parameters.
+4. **인증 처리**(필요하다면): 헤더나 쿼리 파라미터로 인증을 받습니다.
 
-5. **Document your namespace**: Provide clear instructions for users to configure your registry:
+5. **네임스페이스 안내**: 사용자가 레지스트리를 설정하는 방법을 분명히 적어 둡니다.
 
 ```json title="components.json" showLineNumbers
 {
@@ -872,43 +872,43 @@ To make your registry compatible with the namespace system, you can serve any ty
 
 ### Parser Pattern
 
-The namespace parser uses the following regex pattern:
+네임스페이스 파서는 아래 정규식을 씁니다.
 
 ```regex title="namespace-parser.js"
 /^(@[a-zA-Z0-9](?:[a-zA-Z0-9-_]*[a-zA-Z0-9])?)\/(.+)$/
 ```
 
-This ensures valid namespace formatting and proper component name extraction.
+그래서 네임스페이스 형식이 올바른지 확인하고 컴포넌트 이름을 제대로 뽑아냅니다.
 
 ### Resolution Process
 
-1. **Parse**: Extract namespace and component name from `@namespace/component`
-2. **Lookup**: Find registry configuration for `@namespace`
-3. **Build URL**: Replace placeholders with actual values
-4. **Set Headers**: Apply authentication headers if configured
-5. **Fetch**: Retrieve component from the resolved URL
-6. **Validate**: Ensure response matches registry item schema
-7. **Resolve Dependencies**: Recursively fetch any registry dependencies
+1. **파싱**: `@namespace/component` 에서 네임스페이스와 컴포넌트 이름을 뽑습니다
+2. **조회**: `@namespace` 의 레지스트리 설정을 찾습니다
+3. **주소 만들기**: 자리표시자를 실제 값으로 바꿉니다
+4. **헤더 설정**: 설정된 인증 헤더를 붙입니다
+5. **가져오기**: 풀어낸 주소에서 컴포넌트를 받습니다
+6. **검증**: 응답이 항목 스키마와 맞는지 확인합니다
+7. **의존성 해석**: 레지스트리 의존성을 재귀로 가져옵니다
 
 ### Cross-Registry Dependencies
 
-When a component has dependencies from different registries, the resolver:
+컴포넌트가 여러 레지스트리에 걸쳐 의존할 때, 해석기는 이렇게 합니다.
 
-1. Maintains separate authentication contexts for each registry
-2. Resolves each dependency from its respective source
-3. Deduplicates files based on target paths
-4. Merges configurations (tailwind, cssVars, etc.) from all sources
+1. 레지스트리마다 인증 맥락을 따로 유지합니다
+2. 각 의존성을 원래 출처에서 풀어냅니다
+3. 대상 경로를 기준으로 파일 중복을 제거합니다
+4. 모든 출처의 설정(tailwind·cssVars 등)을 병합합니다
 
 ---
 
 ## Best Practices
 
-1. **Use environment variables** for sensitive data like API keys and tokens
-2. **Namespace your registry** with a unique, descriptive name
-3. **Document authentication requirements** clearly for users
-4. **Implement proper error responses** with helpful messages
-5. **Cache registry responses** when possible to improve performance
-6. **Support style variants** if your components have multiple themes
+1. API 키나 토큰 같은 민감한 값은 **환경 변수**에 둡니다
+2. 겹치지 않고 뜻이 분명한 이름으로 **네임스페이스를 정합니다**
+3. **인증 조건을 분명히 적어 둡니다**
+4. 도움이 되는 메시지를 담아 **오류 응답을 제대로 돌려줍니다**
+5. 가능하면 **응답을 캐시**해 속도를 높입니다
+6. 컴포넌트에 테마가 여럿이라면 **스타일 변형을 지원합니다**
 
 ---
 
@@ -916,20 +916,20 @@ When a component has dependencies from different registries, the resolver:
 
 ### Resources not found
 
-- Verify the registry URL is correct and accessible
-- Check that the `{name}` placeholder is included in the URL
-- Ensure the resource exists in the registry
-- Confirm the resource type matches what the registry provides
+- 레지스트리 주소가 맞고 닿는지 확인합니다
+- 주소에 `{name}` 자리표시자가 있는지 봅니다
+- 그 자원이 레지스트리에 있는지 확인합니다
+- 자원 종류가 레지스트리가 제공하는 것과 맞는지 봅니다
 
 ### Authentication issues
 
-- Confirm environment variables are set correctly
-- Verify API keys/tokens are valid and not expired
-- Check that headers are being sent in the correct format
+- 환경 변수가 제대로 설정됐는지 확인합니다
+- API 키나 토큰이 유효하고 만료되지 않았는지 봅니다
+- 헤더가 올바른 형식으로 전송되는지 봅니다
 
 ### Dependency conflicts
 
-- Review resources with the same name from different registries
-- Use fully qualified names (`@namespace/resource`) to avoid ambiguity
-- Check for circular dependencies between registries
-- Ensure resource types are compatible when mixing registries
+- 여러 레지스트리에 이름이 같은 자원이 있는지 살핍니다
+- 모호하지 않도록 `@namespace/resource` 처럼 전체 이름을 씁니다
+- 레지스트리 사이에 순환 의존성이 있는지 확인합니다
+- 레지스트리를 섞어 쓸 때 자원 종류가 맞는지 봅니다

@@ -1,22 +1,22 @@
 ---
 title: Open in v0
-description: Integrate your registry with Open in v0.
+description: 레지스트리를 Open in v0 와 연결합니다.
 ---
 
-If your registry is hosted and publicly accessible via a URL, you can open a registry item in v0 by using the `https://v0.dev/chat/api/open?url=[URL]` endpoint.
+레지스트리가 공개 주소로 열려 있다면 `https://v0.dev/chat/api/open?url=[URL]` 로 항목을 v0 에서 열 수 있습니다.
 
 eg. [https://v0.dev/chat/api/open?url=https://ui.shadcn.com/r/styles/new-york/login-01.json](https://v0.dev/chat/api/open?url=https://ui.shadcn.com/r/styles/new-york/login-01.json)
 
 <Callout className="mt-6">
-  **Important:** `Open in v0` does not support `cssVars`, `css`, `envVars`,
-  namespaced registries, or advanced authentication methods.
+  **중요:** `Open in v0` 는 `cssVars`·`css`·`envVars` 와 네임스페이스
+  레지스트리, 그리고 복잡한 인증 방식을 지원하지 않습니다.
 </Callout>
 
 ## Button
 
-See [Build your Open in v0 button](https://v0.dev/chat/button) for more information on how to build your own `Open in v0` button.
+직접 `Open in v0` 버튼을 만드는 방법은 [Build your Open in v0 button](https://v0.dev/chat/button) 을 보세요.
 
-Here's a simple example of how to add a `Open in v0` button to your site.
+사이트에 `Open in v0` 버튼을 넣는 간단한 예시입니다.
 
 ```tsx showLineNumbers
 import { Button } from "@/components/ui/button"
@@ -61,22 +61,22 @@ export function OpenInV0Button({ url }: { url: string }) {
 
 ## Authentication
 
-Open in v0 only supports query parameter authentication. It does not support namespaced registries or advanced authentication methods like Bearer tokens or API keys in headers.
+Open in v0 는 쿼리 파라미터 인증만 지원합니다. 네임스페이스 레지스트리나 헤더의 Bearer 토큰·API 키 같은 방식은 지원하지 않습니다.
 
 ### Using Query Parameter Authentication
 
-To add authentication to your registry for Open in v0, use a `token` query parameter:
+Open in v0 를 위해 인증을 붙이려면 `token` 쿼리 파라미터를 쓰세요.
 
 ```
 https://registry.company.com/r/hello-world.json?token=your_secure_token_here
 ```
 
-When implementing this on your registry server:
+레지스트리 서버에서는 이렇게 구현합니다.
 
-1. Check for the `token` query parameter
-2. Validate the token against your authentication system
-3. Return a `401 Unauthorized` response if the token is invalid or missing
-4. Both the shadcn CLI and Open in v0 will handle the 401 response and display an appropriate message to users
+1. `token` 쿼리 파라미터가 있는지 확인합니다
+2. 인증 체계로 토큰을 검증합니다
+3. 토큰이 없거나 잘못됐으면 `401 Unauthorized` 를 돌려줍니다
+4. shadcn CLI 와 Open in v0 모두 401 을 알아서 처리해 사용자에게 알맞은 메시지를 보여 줍니다
 
 ### Example Implementation
 
@@ -101,6 +101,6 @@ export async function GET(request: NextRequest) {
 ```
 
 <Callout className="mt-6">
-  **Security Note:** Make sure to encrypt and expire tokens. Never expose
-  production tokens in documentation or examples.
+  **보안 참고:** 토큰은 반드시 암호화하고 만료되게 하세요. 운영 토큰을 문서나
+  예시에 노출하지 마세요.
 </Callout>
