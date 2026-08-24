@@ -170,7 +170,7 @@ import { Bubble, BubbleContent } from "@/components/ui/bubble"
 export function BubbleLinkDemo() {
   return (
     <Bubble variant="muted">
-      <BubbleContent render={<button />}>Click here</BubbleContent>
+      <BubbleContent render={<button />}>여기를 누르세요</BubbleContent>
     </Bubble>
   )
 }
@@ -225,7 +225,7 @@ export function BubbleLinkDemo() {
 반응은 이모지가 한 줄로 늘어선 모양입니다. 스크린 리더는 각 글자를 맥락 없이 읽고 `+8` 같은 숫자도 그대로 읽습니다. 줄 전체를 이미지 하나로 묶고 설명이 담긴 `aria-label`을 주면 한 번만 읽힙니다. `role="img"`를 쓰면 개별 이모지가 보조 기술에서 감춰지므로 `aria-hidden`은 따로 필요 없습니다.
 
 ```tsx showLineNumbers
-<BubbleReactions role="img" aria-label="Reactions: thumbs up, fire, and 8 more">
+<BubbleReactions role="img" aria-label="반응: 좋아요, 불, 외 8개">
   <span>👍</span>
   <span>🔥</span>
   <span>+8</span>
@@ -236,7 +236,7 @@ export function BubbleLinkDemo() {
 
 ```tsx showLineNumbers
 <BubbleReactions>
-  <Button aria-label="Thumbs up" variant="secondary" size="icon-xs">
+  <Button aria-label="좋아요" variant="secondary" size="icon-xs">
     <ThumbsUpIcon />
   </Button>
 </BubbleReactions>

@@ -84,6 +84,54 @@ rss.xml, 홈 화면의 Announcement 배너, Typeset·Directory 문서, `/colors`
 
 페이지 194 → 133.
 
+### B-6. 제품 이름을 Dropshot UI 로 — 완료
+
+바꾼 것은 이 포크의 정체성을 가리키는 자리뿐이다. 브라우저 탭 제목, 문서 산문
+65곳, foundation 문서 표기(`드롭샷` → `Dropshot`), 예제 안의 데모 인물·제목.
+
+남긴 것은 바꾸면 문서가 틀리거나 사용자가 따라 할 수 없게 되는 이름들이다.
+CLI(`npx shadcn@latest`), 패키지(`@shadcn/react`), MCP 서버·스킬 이름,
+`ui.shadcn.com` 주소, figma 문서의 서드파티 제품명, LICENSE·푸터 저작자 표기.
+
+> **되짚어 볼 것:** "shadcn/ui 레지스트리" 라는 표현은 CLI 가 실제로 해석하는
+> 기본 레지스트리라 그대로 뒀다. 이 포크가 자체 레지스트리를 운영할 계획이라면
+> 바꾸는 게 맞다.
+
+### B-7. 죽은 링크·리다이렉트 정리 — 완료
+
+배포된 130개 페이지의 렌더 결과를 전수 검사해 찾았다.
+
+- **Typography 문서가 404 였다.** 사이드바에 링크가 있고 페이지도 살아 있는데
+  `/docs/components/base/typography` → `/docs/typeset` 리다이렉트가 가로챘고
+  그 목적지는 이미 지운 페이지였다
+- 설치 문서 7개의 `href="/create"` 버튼. 이전 정리에서 마크다운 링크만 걷어내고
+  JSX `<Link href>` 를 놓쳤다
+- `/charts`·`/directory`·`/themes` 리다이렉트, `(root)/meta.json` 의
+  `typeset`·`blocks`·`[Changelog]`
+- 명령 팔레트의 Styles 그룹(→ 삭제된 `/create`)
+
+### B-8. 코드 예제 안의 문구까지 한국어 — 완료
+
+본문에 직접 쓰인 ```tsx 펜스 안의 화면 문구 110종. 본문과 미리보기는 한국어인데
+스니펫만 영어라 어긋나 있었다. JSX 텍스트 노드와 문구 prop 만 건드렸고
+value·name·id·href 같은 식별자는 손대지 않았다. 고유명사 6종은 남겼다
+(Acme Inc, Evil Rabbit, INV001, Credit Card, PDF · 2.4 MB, Open in v0).
+
+### B-9. 검증 방식
+
+130개 페이지의 **렌더된 HTML** 과 **배포된 사이트 크롤** 두 가지로 확인한다.
+빌드 통과만으로는 위 문제들이 하나도 안 잡혔다.
+
+| 항목 | 결과 |
+|---|---|
+| `<title>` 에 Dropshot UI 없는 페이지 | 0 |
+| 의도치 않은 shadcn 잔여 문구 | 0 |
+| 닿지 않는 내부 링크(리다이렉트 반영) | 0 |
+| 목적지 없는 리다이렉트 | 0 |
+| 배포 사이트 크롤 136페이지 | 전부 200 |
+
+검사 스크립트는 세션 스크래치패드의 `crawl.py` 에 있다.
+
 ### B-5. 드롭샷 토큰화 — 완료
 
 `.dark` 는 TOKEN-MAP 원본 값, 반경은 `rounded-N = N×4px`, 폰트는 Dropshot Sans

@@ -74,9 +74,9 @@ const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"]
 export function ExampleCombobox() {
   return (
     <Combobox items={frameworks}>
-      <ComboboxInput placeholder="Select a framework" />
+      <ComboboxInput placeholder="프레임워크를 고르세요" />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>항목이 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>
@@ -179,9 +179,9 @@ export function ExampleComboboxCustomItems() {
       items={frameworks}
       itemToStringValue={(framework) => framework.label}
     >
-      <ComboboxInput placeholder="Select a framework" />
+      <ComboboxInput placeholder="프레임워크를 고르세요" />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>항목이 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(framework) => (
             <ComboboxItem key={framework.value} value={framework}>
@@ -233,10 +233,10 @@ export function ExampleComboboxMultiple() {
             <ComboboxChip key={item}>{item}</ComboboxChip>
           ))}
         </ComboboxValue>
-        <ComboboxChipsInput placeholder="Add framework" />
+        <ComboboxChipsInput placeholder="프레임워크 추가" />
       </ComboboxChips>
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>항목이 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>

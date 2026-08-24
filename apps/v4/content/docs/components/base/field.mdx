@@ -67,21 +67,21 @@ import {
 ```tsx showLineNumbers
 <FieldSet>
   <FieldLegend>Profile</FieldLegend>
-  <FieldDescription>This appears on invoices and emails.</FieldDescription>
+  <FieldDescription>청구서와 이메일에 표시됩니다.</FieldDescription>
   <FieldGroup>
     <Field>
-      <FieldLabel htmlFor="name">Full name</FieldLabel>
+      <FieldLabel htmlFor="name">이름</FieldLabel>
       <Input id="name" autoComplete="off" placeholder="Evil Rabbit" />
-      <FieldDescription>This appears on invoices and emails.</FieldDescription>
+      <FieldDescription>청구서와 이메일에 표시됩니다.</FieldDescription>
     </Field>
     <Field>
       <FieldLabel htmlFor="username">Username</FieldLabel>
       <Input id="username" autoComplete="off" aria-invalid />
-      <FieldError>Choose another username.</FieldError>
+      <FieldError>다른 사용자 이름을 골라 주세요.</FieldError>
     </Field>
     <Field orientation="horizontal">
       <Switch id="newsletter" />
-      <FieldLabel htmlFor="newsletter">Subscribe to the newsletter</FieldLabel>
+      <FieldLabel htmlFor="newsletter">뉴스레터 구독</FieldLabel>
     </Field>
   </FieldGroup>
 </FieldSet>
@@ -145,8 +145,8 @@ FieldSet
 <Field>
   <FieldLabel htmlFor="input-id">Label</FieldLabel>
   {/* Input, Select, Switch, etc. */}
-  <FieldDescription>Optional helper text.</FieldDescription>
-  <FieldError>Validation message.</FieldError>
+  <FieldDescription>선택 도움말입니다.</FieldDescription>
+  <FieldError>검증 메시지입니다.</FieldError>
 </Field>
 ```
 
@@ -243,7 +243,7 @@ Dropshot UI에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인�
 <Field data-invalid>
   <FieldLabel htmlFor="email">Email</FieldLabel>
   <Input id="email" type="email" aria-invalid />
-  <FieldError>Enter a valid email address.</FieldError>
+  <FieldError>올바른 이메일 주소를 입력하세요.</FieldError>
 </Field>
 ```
 
@@ -280,7 +280,7 @@ Dropshot UI에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인�
 | `className` | `string`              |            |
 
 ```tsx
-<FieldLegend variant="label">Notification Preferences</FieldLegend>
+<FieldLegend variant="label">알림 설정</FieldLegend>
 ```
 
 `FieldLegend` 에는 `legend`와 `label` 두 가지 variant가 있습니다. `label` variant는 라벨 크기와 정렬을 따릅니다. `FieldSet`이 중첩될 때 쓰기 좋습니다.
@@ -312,7 +312,7 @@ Dropshot UI에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인�
 
 ```tsx
 <Field orientation="horizontal">
-  <FieldLabel htmlFor="remember">Remember me</FieldLabel>
+  <FieldLabel htmlFor="remember">로그인 상태 유지</FieldLabel>
   <Switch id="remember" />
 </Field>
 ```
@@ -330,7 +330,7 @@ Dropshot UI에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인�
   <Checkbox id="notifications" />
   <FieldContent>
     <FieldLabel htmlFor="notifications">Notifications</FieldLabel>
-    <FieldDescription>Email, SMS, and push options.</FieldDescription>
+    <FieldDescription>이메일·문자·푸시 설정입니다.</FieldDescription>
   </FieldContent>
 </Field>
 ```
@@ -357,8 +357,8 @@ Dropshot UI에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인�
 
 ```tsx
 <FieldContent>
-  <FieldTitle>Enable Touch ID</FieldTitle>
-  <FieldDescription>Unlock your device faster.</FieldDescription>
+  <FieldTitle>Touch ID 켜기</FieldTitle>
+  <FieldDescription>기기를 더 빠르게 잠금 해제합니다.</FieldDescription>
 </FieldContent>
 ```
 
@@ -371,7 +371,7 @@ Dropshot UI에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인�
 | `className` | `string` |         |
 
 ```tsx
-<FieldDescription>We never share your email with anyone.</FieldDescription>
+<FieldDescription>이메일은 어디에도 공유하지 않습니다.</FieldDescription>
 ```
 
 ### FieldSeparator
@@ -383,7 +383,7 @@ Dropshot UI에서 RTL을 켜려면 [RTL 설정 가이드](/docs/rtl)를 확인�
 | `className` | `string` |         |
 
 ```tsx
-<FieldSeparator>Or continue with</FieldSeparator>
+<FieldSeparator>또는 다음으로 계속</FieldSeparator>
 ```
 
 ### FieldError

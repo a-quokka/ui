@@ -55,7 +55,7 @@ TanStack Form 과 `<Field />` 를 함께 쓴 기본 예시입니다.
           field.state.meta.isTouched && !field.state.meta.isValid
         return (
           <Field data-invalid={isInvalid}>
-            <FieldLabel htmlFor={field.name}>Bug Title</FieldLabel>
+            <FieldLabel htmlFor={field.name}>버그 제목</FieldLabel>
             <Input
               id={field.name}
               name={field.name}
@@ -63,7 +63,7 @@ TanStack Form 과 `<Field />` 를 함께 쓴 기본 예시입니다.
               onBlur={field.handleBlur}
               onChange={(e) => field.handleChange(e.target.value)}
               aria-invalid={isInvalid}
-              placeholder="Login button not working on mobile"
+              placeholder="모바일에서 로그인 버튼이 안 눌립니다"
               autoComplete="off"
             />
             <FieldDescription>
@@ -321,7 +321,7 @@ const form = useForm({
           onBlur={field.handleBlur}
           onChange={(e) => field.handleChange(e.target.value)}
           aria-invalid={isInvalid}
-          placeholder="I'm a software engineer..."
+          placeholder="저는 소프트웨어 엔지니어입니다..."
           className="min-h-[120px]"
         />
         <FieldDescription>
@@ -591,7 +591,7 @@ TanStack Form 은 `mode="array"` 로 배열 필드를 다룹니다. 항목을 �
   children={(field) => {
     return (
       <FieldSet>
-        <FieldLegend variant="label">Email Addresses</FieldLegend>
+        <FieldLegend variant="label">이메일 주소</FieldLegend>
         <FieldDescription>
           Add up to 5 email addresses where we can contact you.
         </FieldDescription>

@@ -41,14 +41,14 @@ Next.js 에서 `useActionState` 와 Server Actions 로 폼을 만드는 방법�
 <Form action={formAction}>
   <FieldGroup>
     <Field data-invalid={!!formState.errors?.title?.length}>
-      <FieldLabel htmlFor="title">Bug Title</FieldLabel>
+      <FieldLabel htmlFor="title">버그 제목</FieldLabel>
       <Input
         id="title"
         name="title"
         defaultValue={formState.values.title}
         disabled={pending}
         aria-invalid={!!formState.errors?.title?.length}
-        placeholder="Login button not working on mobile"
+        placeholder="모바일에서 로그인 버튼이 안 눌립니다"
         autoComplete="off"
       />
       <FieldDescription>

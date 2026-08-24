@@ -327,7 +327,7 @@ export function AppSidebar() {
 <SidebarGroup>
   <SidebarGroupLabel>Application</SidebarGroupLabel>
   <SidebarGroupAction>
-    <Plus /> <span className="sr-only">Add Project</span>
+    <Plus /> <span className="sr-only">프로젝트 추가</span>
   </SidebarGroupAction>
   <SidebarGroupContent></SidebarGroupContent>
 </SidebarGroup>
@@ -406,7 +406,7 @@ export function AppSidebar() {
     <span>Home</span>
   </SidebarMenuButton>
   <SidebarMenuAction>
-    <Plus /> <span className="sr-only">Add Project</span>
+    <Plus /> <span className="sr-only">프로젝트 추가</span>
   </SidebarMenuAction>
 </SidebarMenuItem>
 ```
@@ -461,7 +461,7 @@ import { useSidebar } from "@/components/ui/sidebar"
 export function CustomTrigger() {
   const { toggleSidebar } = useSidebar()
 
-  return <button onClick={toggleSidebar}>Toggle Sidebar</button>
+  return <button onClick={toggleSidebar}>사이드바 전환</button>
 }
 ```
 

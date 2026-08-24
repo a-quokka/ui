@@ -69,13 +69,13 @@ Formisch 의 `<Field />` 와 shadcn 의 `<Field />` 를 함께 쓴 기본 예시
     <FormischField of={form} path={["title"]}>
       {(field) => (
         <Field data-invalid={field.errors !== null}>
-          <FieldLabel htmlFor="form-title">Bug Title</FieldLabel>
+          <FieldLabel htmlFor="form-title">버그 제목</FieldLabel>
           <Input
             {...field.props}
             id="form-title"
             value={field.input}
             aria-invalid={field.errors !== null}
-            placeholder="Login button not working on mobile"
+            placeholder="모바일에서 로그인 버튼이 안 눌립니다"
             autoComplete="off"
           />
           <FieldDescription>
@@ -312,13 +312,13 @@ Formisch 는 필드를 요소에 연결하는 방법을 두 가지 제공합니�
 <FormischField of={form} path={["about"]}>
   {(field) => (
     <Field data-invalid={field.errors !== null}>
-      <FieldLabel htmlFor="form-about">More about you</FieldLabel>
+      <FieldLabel htmlFor="form-about">더 알려 주세요</FieldLabel>
       <Textarea
         {...field.props}
         id="form-about"
         value={field.input}
         aria-invalid={field.errors !== null}
-        placeholder="I'm a software engineer..."
+        placeholder="저는 소프트웨어 엔지니어입니다..."
         className="min-h-[120px]"
       />
       <FieldDescription>
@@ -350,7 +350,7 @@ Formisch 는 필드를 요소에 연결하는 방법을 두 가지 제공합니�
   {(field) => (
     <Field orientation="responsive" data-invalid={field.errors !== null}>
       <FieldContent>
-        <FieldLabel htmlFor="form-language">Spoken Language</FieldLabel>
+        <FieldLabel htmlFor="form-language">사용 언어</FieldLabel>
         <FieldDescription>
           For best results, select the language you speak.
         </FieldDescription>
@@ -603,7 +603,7 @@ export function ExampleForm() {
 
 ```tsx showLineNumbers title="form.tsx"
 <FieldSet className="gap-4">
-  <FieldLegend variant="label">Email Addresses</FieldLegend>
+  <FieldLegend variant="label">이메일 주소</FieldLegend>
   <FieldDescription>
     Add up to 5 email addresses where we can contact you.
   </FieldDescription>

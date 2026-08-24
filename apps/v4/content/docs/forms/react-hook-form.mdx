@@ -45,12 +45,12 @@ React Hook Form 의 `<Controller />` 와 `<Field />` 를 함께 쓴 기본 예�
   control={form.control}
   render={({ field, fieldState }) => (
     <Field data-invalid={fieldState.invalid}>
-      <FieldLabel htmlFor={field.name}>Bug Title</FieldLabel>
+      <FieldLabel htmlFor={field.name}>버그 제목</FieldLabel>
       <Input
         {...field}
         id={field.name}
         aria-invalid={fieldState.invalid}
-        placeholder="Login button not working on mobile"
+        placeholder="모바일에서 로그인 버튼이 안 눌립니다"
         autoComplete="off"
       />
       <FieldDescription>
@@ -269,12 +269,12 @@ textarea 에는 `field` 객체를 textarea 에 펼쳐 넣습니다.
   control={form.control}
   render={({ field, fieldState }) => (
     <Field data-invalid={fieldState.invalid}>
-      <FieldLabel htmlFor="form-rhf-textarea-about">More about you</FieldLabel>
+      <FieldLabel htmlFor="form-rhf-textarea-about">더 알려 주세요</FieldLabel>
       <Textarea
         {...field}
         id="form-rhf-textarea-about"
         aria-invalid={fieldState.invalid}
-        placeholder="I'm a software engineer..."
+        placeholder="저는 소프트웨어 엔지니어입니다..."
         className="min-h-[120px]"
       />
       <FieldDescription>
@@ -538,7 +538,7 @@ export function ExampleForm() {
 
 ```tsx showLineNumbers title="form.tsx"
 <FieldSet className="gap-4">
-  <FieldLegend variant="label">Email Addresses</FieldLegend>
+  <FieldLegend variant="label">이메일 주소</FieldLegend>
   <FieldDescription>
     Add up to 5 email addresses where we can contact you.
   </FieldDescription>

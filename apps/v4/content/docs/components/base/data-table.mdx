@@ -400,7 +400,7 @@ export const columns = columnHelper.columns([
           <DropdownMenuTrigger
             render={<Button variant="ghost" className="h-8 w-8 p-0" />}
           >
-            <span className="sr-only">Open menu</span>
+            <span className="sr-only">메뉴 열기</span>
             <MoreHorizontal className="h-4 w-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
@@ -411,8 +411,8 @@ export const columns = columnHelper.columns([
               Copy payment ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <DropdownMenuItem>고객 보기</DropdownMenuItem>
+            <DropdownMenuItem>결제 내역 보기</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       )
@@ -615,7 +615,7 @@ export function DataTable<TData extends RowData>({
     <div>
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
+          placeholder="이메일 거르기..."
           value={(table.getColumn("email")?.getFilterValue() as string) ?? ""}
           onChange={(event) =>
             table.getColumn("email")?.setFilterValue(event.target.value)
@@ -693,7 +693,7 @@ export function DataTable<TData extends RowData>({
     <div>
       <div className="flex items-center py-4">
         <Input
-          placeholder="Filter emails..."
+          placeholder="이메일 거르기..."
           value={table.getColumn("email")?.getFilterValue() as string}
           onChange={(event) =>
             table.getColumn("email")?.setFilterValue(event.target.value)
@@ -765,14 +765,14 @@ export const columns = columnHelper.columns([
           table.getIsSomePageRowsSelected() && !table.getIsAllPageRowsSelected()
         }
         onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
-        aria-label="Select all"
+        aria-label="전체 선택"
       />
     ),
     cell: ({ row }) => (
       <Checkbox
         checked={row.getIsSelected()}
         onCheckedChange={(value) => row.toggleSelected(!!value)}
-        aria-label="Select row"
+        aria-label="행 선택"
       />
     ),
     enableSorting: false,
