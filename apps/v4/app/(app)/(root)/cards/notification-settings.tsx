@@ -19,26 +19,26 @@ import {
 const NOTIFICATIONS = [
   {
     id: "transactions",
-    label: "Transaction alerts",
-    description: "Deposits, withdrawals, and transfers.",
+    label: "거래 알림",
+    description: "입금·출금·이체입니다.",
     defaultChecked: true,
   },
   {
     id: "security",
-    label: "Security alerts",
-    description: "Login attempts and account changes.",
+    label: "보안 알림",
+    description: "로그인 시도와 계정 변경입니다.",
     defaultChecked: true,
   },
   {
     id: "goals",
-    label: "Goal milestones",
-    description: "Updates at 25%, 50%, 75%, and 100%.",
+    label: "목표 이정표",
+    description: "25%·50%·75%·100% 에 알려 드립니다.",
     defaultChecked: false,
   },
   {
     id: "market",
-    label: "Market updates",
-    description: "Daily portfolio summary and price alerts.",
+    label: "시장 소식",
+    description: "하루치 포트폴리오 요약과 시세 알림입니다.",
     defaultChecked: false,
   },
 ]
@@ -47,9 +47,9 @@ export function NotificationSettings() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Notifications</CardTitle>
+        <CardTitle>알림</CardTitle>
         <CardDescription>
-          Choose which email and push alerts you want to receive.
+          받고 싶은 이메일·푸시 알림을 고르세요.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -69,7 +69,7 @@ export function NotificationSettings() {
         </FieldGroup>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Save Preferences</Button>
+        <Button className="w-full">설정 저장</Button>
       </CardFooter>
     </Card>
   )

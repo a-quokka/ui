@@ -69,16 +69,16 @@ export function DividendIncome() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Q2 Dividend Income</CardTitle>
+        <CardTitle>2분기 배당 수익</CardTitle>
         <CardDescription>
-          Quarterly dividend payouts across your portfolio holdings.
+          보유 종목 전체의 분기 배당 지급입니다.
         </CardDescription>
         <CardAction>
           <Button
             variant="ghost"
             size="icon-sm"
             className="bg-muted"
-            aria-label="Dismiss dividend income"
+            aria-label="배당 수익 카드 닫기"
           >
             <HugeiconsIcon icon={Cancel01Icon} strokeWidth={2} />
           </Button>

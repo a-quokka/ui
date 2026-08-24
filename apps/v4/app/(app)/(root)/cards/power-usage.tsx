@@ -24,14 +24,14 @@ export function PowerUsage() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Power Usage</CardTitle>
-        <CardDescription>Whole Home</CardDescription>
+        <CardTitle>전력 사용량</CardTitle>
+        <CardDescription>집 전체</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col gap-4">
         <div
           className="flex h-[140px] w-full items-end gap-2"
           role="img"
-          aria-label="Power usage by hour"
+          aria-label="시간대별 전력 사용량"
         >
           {chartData.map((item) => (
             <div
@@ -51,13 +51,11 @@ export function PowerUsage() {
         <Separator />
         <div className="grid grid-cols-2 gap-4">
           <div className="flex flex-col gap-0.5">
-            <span className="text-sm text-muted-foreground">
-              Currently Using
-            </span>
+            <span className="text-sm text-muted-foreground">현재 사용량</span>
             <span className="text-lg font-semibold tabular-nums">3.4 kW</span>
           </div>
           <div className="flex flex-col gap-0.5">
-            <span className="text-sm text-muted-foreground">Solar Gen</span>
+            <span className="text-sm text-muted-foreground">태양광 발전</span>
             <span className="text-lg font-semibold tabular-nums">+1.2 kW</span>
           </div>
         </div>

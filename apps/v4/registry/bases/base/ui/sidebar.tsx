@@ -196,8 +196,8 @@ function Sidebar({
           side={side}
         >
           <SheetHeader className="sr-only">
-            <SheetTitle>Sidebar</SheetTitle>
-            <SheetDescription>Displays the mobile sidebar.</SheetDescription>
+            <SheetTitle>사이드바</SheetTitle>
+            <SheetDescription>모바일 사이드바를 보여 줍니다.</SheetDescription>
           </SheetHeader>
           <div className="flex h-full w-full flex-col">{children}</div>
         </SheetContent>
@@ -279,7 +279,7 @@ function SidebarTrigger({
         remixicon="RiSideBarLine"
         className="cn-rtl-flip"
       />
-      <span className="sr-only">Toggle Sidebar</span>
+      <span className="sr-only">사이드바 전환</span>
     </Button>
   )
 }
@@ -291,7 +291,7 @@ function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
     <button
       data-sidebar="rail"
       data-slot="sidebar-rail"
-      aria-label="Toggle Sidebar"
+      aria-label="사이드바 전환"
       tabIndex={-1}
       onClick={toggleSidebar}
       title="Toggle Sidebar"

@@ -203,7 +203,7 @@ function CarouselPrevious({
         remixicon="RiArrowLeftSLine"
         className="cn-rtl-flip"
       />
-      <span className="sr-only">Previous slide</span>
+      <span className="sr-only">이전 슬라이드</span>
     </Button>
   )
 }
@@ -240,7 +240,7 @@ function CarouselNext({
         remixicon="RiArrowRightSLine"
         className="cn-rtl-flip"
       />
-      <span className="sr-only">Next slide</span>
+      <span className="sr-only">다음 슬라이드</span>
     </Button>
   )
 }

@@ -199,7 +199,7 @@ export function DocsSidebar({
                         {PAGES_NEW.includes(href) && (
                           <span
                             className="flex size-2 rounded-full bg-blue-500"
-                            title="New"
+                            title="신규"
                           />
                         )}
                       </Link>
@@ -245,7 +245,7 @@ export function DocsSidebar({
                               {PAGES_NEW.includes(page.url) && (
                                 <span
                                   className="flex size-2 rounded-full bg-blue-500"
-                                  title="New"
+                                  title="신규"
                                 />
                               )}
                             </Link>

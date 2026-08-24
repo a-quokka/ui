@@ -92,7 +92,7 @@ const items = [
     ],
   },
   {
-    title: "API Reference",
+    title: "API 레퍼런스",
     url: "#",
     items: [
       {
@@ -108,7 +108,7 @@ const items = [
         url: "#",
       },
       {
-        title: "next.config.js Options",
+        title: "next.config.js 옵션",
         url: "#",
       },
       {
@@ -134,7 +134,7 @@ const items = [
         url: "#",
       },
       {
-        title: "Next.js Compiler",
+        title: "Next.js 컴파일러",
         url: "#",
       },
       {

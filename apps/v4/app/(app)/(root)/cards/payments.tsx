@@ -40,7 +40,7 @@ export function Payments() {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink href="#">Home</BreadcrumbLink>
+              <BreadcrumbLink href="#">홈</BreadcrumbLink>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
@@ -50,7 +50,7 @@ export function Payments() {
                     <Button
                       size="icon-sm"
                       variant="ghost"
-                      aria-label="Account options"
+                      aria-label="계정 설정"
                     />
                   }
                 >
@@ -58,20 +58,20 @@ export function Payments() {
                     icon={MoreHorizontalCircle01Icon}
                     strokeWidth={2}
                   />
-                  <span className="sr-only">Account options</span>
+                  <span className="sr-only">계정 설정</span>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">
                   <DropdownMenuGroup>
-                    <DropdownMenuItem>Profile</DropdownMenuItem>
-                    <DropdownMenuItem>Statements</DropdownMenuItem>
-                    <DropdownMenuItem>Documents</DropdownMenuItem>
+                    <DropdownMenuItem>프로필</DropdownMenuItem>
+                    <DropdownMenuItem>거래 명세서</DropdownMenuItem>
+                    <DropdownMenuItem>문서</DropdownMenuItem>
                   </DropdownMenuGroup>
                 </DropdownMenuContent>
               </DropdownMenu>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Payments</BreadcrumbPage>
+              <BreadcrumbPage>결제</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -84,9 +84,9 @@ export function Payments() {
                 <HugeiconsIcon icon={Settings01Icon} strokeWidth={2} />
               </ItemMedia>
               <ItemContent>
-                <ItemTitle>Change transfer limit</ItemTitle>
+                <ItemTitle>이체 한도 변경</ItemTitle>
                 <ItemDescription>
-                  Adjust how much you can send from your balance.
+                  잔액에서 보낼 수 있는 한도를 조정합니다.
                 </ItemDescription>
               </ItemContent>
               <HugeiconsIcon
@@ -102,9 +102,9 @@ export function Payments() {
                 <HugeiconsIcon icon={Calendar03Icon} strokeWidth={2} />
               </ItemMedia>
               <ItemContent>
-                <ItemTitle>Scheduled transfers</ItemTitle>
+                <ItemTitle>예약 이체</ItemTitle>
                 <ItemDescription>
-                  Set up a transfer to send at a later date.
+                  나중에 보낼 이체를 예약합니다.
                 </ItemDescription>
               </ItemContent>
               <HugeiconsIcon
@@ -120,9 +120,9 @@ export function Payments() {
                 <HugeiconsIcon icon={RefreshIcon} strokeWidth={2} />
               </ItemMedia>
               <ItemContent>
-                <ItemTitle>Recurring card payments</ItemTitle>
+                <ItemTitle>정기 카드 결제</ItemTitle>
                 <ItemDescription>
-                  Manage your repeated card transactions.
+                  반복되는 카드 결제를 관리합니다.
                 </ItemDescription>
               </ItemContent>
               <HugeiconsIcon

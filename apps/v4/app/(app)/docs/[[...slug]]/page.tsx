@@ -111,7 +111,7 @@ export default async function Page(props: {
                       >
                         <Link href={neighbours.previous.url}>
                           <IconArrowLeft />
-                          <span className="sr-only">Previous</span>
+                          <span className="sr-only">이전</span>
                         </Link>
                       </Button>
                     )}
@@ -123,7 +123,7 @@ export default async function Page(props: {
                         asChild
                       >
                         <Link href={neighbours.next.url}>
-                          <span className="sr-only">Next</span>
+                          <span className="sr-only">다음</span>
                           <IconArrowRight />
                         </Link>
                       </Button>

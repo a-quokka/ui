@@ -61,9 +61,19 @@ webpack 전환은 더 나빴고(로컬에서 JS heap OOM), Node 힙을 조여도
 
 ### B-3. 한국어화 — 완료
 
-- 컴포넌트 문서 64개 본문 전체 (유닛 1,118개)
+- **`content/docs` 전 구역 본문 완료.** components / installation / registry /
+  foundation / forms / react / helpers / rtl / utils / dark-mode / (root).
+  남은 영어는 고유명사(React Hook Form·TanStack AI 등), 코드 식별자,
+  HTTP 상태 문자열, 링크 목록뿐이다
 - 예제 513개 중 442개에 한국어가 들어갔다. 나머지는 문구가 없는 배치 전용 예제다
 - RTL 예제 57개에 한국어 문안 추가, 아랍어·히브리어 삭제
+- 홈 화면: 히어로 제목·설명, 데모 카드 16개 문안 전부
+- 사이트 크롬: 사이드바 "신규" 배지, 코드 접기/펼치기, 문서 이전·다음,
+  테마 전환, 레지스트리 추가 대화 상자, 페이지네이션
+- 컴포넌트 소스의 접근성 문자열(`sr-only`·`aria-label`) — breadcrumb·carousel·
+  dialog·sheet·sidebar·pagination·toast·spinner. `registry/bases/base/ui` 가
+  원본이고 `styles/*` 는 registry:build 가 다시 만든다
+- 메타데이터: `og:locale` 을 `ko_KR` 로, `siteConfig.description` 한국어로
 - 언어 선택기는 English · 한국어 둘
 
 ### B-4. upstream 히스토리·레거시 페이지 정리 — 완료
@@ -97,11 +107,19 @@ rss.xml, 홈 화면의 Announcement 배너, Typeset·Directory 문서, `/colors`
 
 ## D. 남은 것
 
-- **Calendar 데모가 아직 영어 달력이다.** `react-day-picker` 에 `locale` 을 넘기지
-  않아 월·요일 이름이 영어로 나온다. `date-fns/locale/ko` 를 넘기면 된다
-- **텍스트 버튼의 완전 pill(69px)** 은 변수로 안 된다. 버튼 소스를 고쳐야 한다
 - **차트 팔레트는 임시값이다.** 드롭샷에 차트 색이 없어 secondary 400 단계를
-  색상환 순서로 임의 배정했다
+  색상환 순서로 임의 배정했다. → **A 항목에 가까운 결정 사항**
 - **`## RTL` 섹션은 이제 LTR 로 렌더된다.** English·한국어 둘 다 `ltr` 이라
-  방향 시연이 되지 않는다. 지시대로 en/ko 만 남긴 결과다
-- 로컬 시각 확인은 지침대로 dev 서버를 띄우지 않아 배포된 프리뷰로만 했다
+  방향 시연이 되지 않는다. 지시대로 en/ko 만 남긴 결과다. 섹션을 지울지 결정 필요
+- **`registry/bases/base/blocks/*` 는 영어 그대로다.** dashboard-01, sidebar-01~16,
+  login-01~05 등. 문서에서 이름만 언급될 뿐 렌더되는 페이지가 없어 손대지 않았다.
+  사용자가 `shadcn add` 로 설치하는 템플릿이라 한국어화가 오히려 어색할 수 있다
+- 로컬 시각 확인은 지침대로 dev 서버를 띄우지 않아 배포된 프리뷰로만 했다.
+  이 저장소에 `bun` 이 없어 `registry:build` 를 로컬에서 돌리지 못했다
+  (Vercel 빌드에서는 돌아간다)
+
+### D 에서 빠진 것 — 이번에 처리 완료
+
+- Calendar 데모 한국어 달력 (`date-fns/locale` 의 `ko`)
+- 텍스트 버튼 완전 pill(69px)
+- 타이포그래피 램프 20단계를 `registry/styles/style-*.css` 의 `@apply` 에 반영

@@ -151,10 +151,10 @@ export function DirectoryAddProvider({
             }
           >
             {hasCopied ? <IconCheck /> : <IconCopy />}
-            <span className="sr-only">Copy command</span>
+            <span className="sr-only">명령 복사</span>
           </TooltipTrigger>
           <TooltipContent>
-            {hasCopied ? "Copied!" : "Copy command"}
+            {hasCopied ? "복사했습니다" : "명령 복사"}
           </TooltipContent>
         </Tooltip>
       </div>
@@ -177,7 +177,7 @@ export function DirectoryAddProvider({
         <Drawer open={isOpen} onOpenChange={setIsOpen}>
           <DrawerContent>
             <DrawerHeader>
-              <DrawerTitle>Add Registry</DrawerTitle>
+              <DrawerTitle>레지스트리 추가</DrawerTitle>
               <DrawerDescription>
                 Run this command to add {selectedRegistry?.name} to your
                 project.
@@ -185,7 +185,7 @@ export function DirectoryAddProvider({
             </DrawerHeader>
             <div className="px-4">{Content}</div>
             <DrawerFooter>
-              <DrawerClose render={<Button size="sm" />}>Done</DrawerClose>
+              <DrawerClose render={<Button size="sm" />}>완료</DrawerClose>
             </DrawerFooter>
           </DrawerContent>
         </Drawer>
@@ -193,7 +193,7 @@ export function DirectoryAddProvider({
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
           <DialogContent className="animate-none! sm:max-w-md">
             <DialogHeader>
-              <DialogTitle>Add Registry</DialogTitle>
+              <DialogTitle>레지스트리 추가</DialogTitle>
               <DialogDescription>
                 Run this command to add {selectedRegistry?.name} to your
                 project.

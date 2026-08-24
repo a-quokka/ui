@@ -19,10 +19,10 @@ export function SavingsTargets() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Savings Targets</CardTitle>
+        <CardTitle>저축 목표</CardTitle>
         <CardDescription>
-          Active milestones for 2024 across your portfolio. Monitor how close
-          you are to each savings goal.
+          포트폴리오 전체의 2024년 진행 중인 이정표입니다. 저축 목표에 얼마나
+          가까워졌는지 살펴보세요.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -34,12 +34,12 @@ export function SavingsTargets() {
           >
             <ItemContent className="gap-3">
               <ItemDescription className="cn-font-heading text-xs font-medium tracking-wider text-muted-foreground uppercase">
-                Retirement
+                은퇴
               </ItemDescription>
               <span className="text-3xl font-semibold tabular-nums">
                 $420,000
               </span>
-              <Progress value={65} aria-label="Retirement savings progress" />
+              <Progress value={65} aria-label="은퇴 저축 진행률" />
             </ItemContent>
             <ItemFooter>
               <span className="text-sm text-muted-foreground">
@@ -55,12 +55,12 @@ export function SavingsTargets() {
           >
             <ItemContent className="gap-3">
               <ItemDescription className="cn-font-heading text-xs font-medium tracking-wider text-muted-foreground uppercase">
-                Real Estate
+                부동산
               </ItemDescription>
               <span className="text-3xl font-semibold tabular-nums">
                 $85,000
               </span>
-              <Progress value={32} aria-label="Real estate savings progress" />
+              <Progress value={32} aria-label="부동산 저축 진행률" />
             </ItemContent>
             <ItemFooter>
               <span className="text-sm text-muted-foreground">
@@ -73,7 +73,7 @@ export function SavingsTargets() {
       </CardContent>
       <CardFooter>
         <CardDescription className="text-center">
-          You have not met your targets for this year.
+          올해 목표에는 아직 이르지 못했습니다.
         </CardDescription>
       </CardFooter>
     </Card>

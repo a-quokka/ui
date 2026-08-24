@@ -13,9 +13,9 @@ import { Button } from "@/styles/base-nova/ui/button"
 
 import { CardsDemo } from "./cards"
 
-const title = "The Foundation for your Design System"
+const title = "디자인 시스템의 바탕"
 const description =
-  "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code."
+  "직접 고치고, 넓히고, 그 위에 쌓아 올릴 수 있는 잘 다듬어진 컴포넌트 모음입니다. 여기서 시작해 여러분의 것으로 만드세요. 열린 소스, 열린 코드."
 
 export const dynamic = "force-static"
 export const revalidate = false
@@ -66,7 +66,7 @@ export default function IndexPage() {
               src="/images/full-light.png"
               width={2560}
               height={2764}
-              alt="Dashboard"
+              alt="대시보드"
               className="block h-auto w-full dark:hidden"
               priority
             />
@@ -74,7 +74,7 @@ export default function IndexPage() {
               src="/images/full-dark.png"
               width={2560}
               height={2764}
-              alt="Dashboard"
+              alt="대시보드"
               className="hidden h-auto w-full dark:block"
               priority
             />

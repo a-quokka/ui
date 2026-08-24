@@ -3,7 +3,7 @@ export const siteConfig = {
   url: "https://ui.shadcn.com",
   ogImage: "https://ui.shadcn.com/og.jpg",
   description:
-    "A set of beautifully designed components that you can customize, extend, and build on. Start here then make it your own. Open Source. Open Code.",
+    "직접 고치고, 넓히고, 그 위에 쌓아 올릴 수 있는 잘 다듬어진 컴포넌트 모음입니다. 여기서 시작해 여러분의 것으로 만드세요. 열린 소스, 열린 코드.",
   links: {
     twitter: "https://twitter.com/shadcn",
     github: "https://github.com/shadcn-ui/ui",

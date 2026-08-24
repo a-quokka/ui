@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
   description: siteConfig.description,
-  keywords: ["Next.js", "React", "Tailwind CSS", "Components", "shadcn"],
+  keywords: ["Next.js", "React", "Tailwind CSS", "컴포넌트", "shadcn"],
   authors: [
     {
       name: "shadcn",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   creator: "shadcn",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "ko_KR",
     url: process.env.NEXT_PUBLIC_APP_URL!,
     title: siteConfig.name,
     description: siteConfig.description,

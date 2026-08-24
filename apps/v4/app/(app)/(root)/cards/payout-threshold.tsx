@@ -29,26 +29,24 @@ import {
 import { Textarea } from "@/styles/base-rhea/ui/textarea"
 
 const CURRENCIES = [
-  { label: "USD — United States Dollar", value: "usd" },
-  { label: "EUR — Euro", value: "eur" },
-  { label: "GBP — British Pound", value: "gbp" },
-  { label: "JPY — Japanese Yen", value: "jpy" },
+  { label: "USD — 미국 달러", value: "usd" },
+  { label: "EUR — 유로", value: "eur" },
+  { label: "GBP — 영국 파운드", value: "gbp" },
+  { label: "JPY — 일본 엔", value: "jpy" },
 ]
 
 export function PayoutThreshold() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Payout Threshold</CardTitle>
-        <CardDescription>
-          Set the minimum balance required before a payout is triggered.
-        </CardDescription>
+        <CardTitle>지급 기준액</CardTitle>
+        <CardDescription>지급이 시작되는 최소 잔액을 정합니다.</CardDescription>
         <CardAction>
           <Button
             variant="ghost"
             size="icon-sm"
             className="bg-muted"
-            aria-label="Dismiss payout threshold"
+            aria-label="지급 기준액 카드 닫기"
           >
             <HugeiconsIcon icon={Cancel01Icon} strokeWidth={2} />
           </Button>
@@ -57,9 +55,7 @@ export function PayoutThreshold() {
       <CardContent>
         <FieldGroup>
           <Field>
-            <FieldLabel htmlFor="preferred-currency">
-              Preferred Currency
-            </FieldLabel>
+            <FieldLabel htmlFor="preferred-currency">기본 통화</FieldLabel>
             <Select items={CURRENCIES} defaultValue="usd">
               <SelectTrigger id="preferred-currency" className="w-full">
                 <SelectValue />
@@ -77,9 +73,7 @@ export function PayoutThreshold() {
           </Field>
           <Field>
             <div className="flex items-baseline justify-between">
-              <FieldLabel id="min-payout-label">
-                Minimum Payout Amount
-              </FieldLabel>
+              <FieldLabel id="min-payout-label">최소 지급 금액</FieldLabel>
               <span className="text-2xl font-semibold tabular-nums">
                 $2500.00
               </span>
@@ -95,17 +89,17 @@ export function PayoutThreshold() {
             </div>
           </Field>
           <Field>
-            <FieldLabel htmlFor="payout-notes">Notes</FieldLabel>
+            <FieldLabel htmlFor="payout-notes">메모</FieldLabel>
             <Textarea
               id="payout-notes"
-              placeholder="Add any notes for this payout configuration..."
+              placeholder="이 지급 설정에 남길 메모를 적어 주세요..."
               className="min-h-[100px]"
             />
           </Field>
         </FieldGroup>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Save Threshold</Button>
+        <Button className="w-full">기준액 저장</Button>
       </CardFooter>
     </Card>
   )

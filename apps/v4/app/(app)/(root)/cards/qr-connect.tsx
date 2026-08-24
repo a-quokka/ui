@@ -39,7 +39,7 @@ export function QrConnect() {
             viewBox="0 0 21 21"
             className="size-40 text-black"
             role="img"
-            aria-label="Connect device QR code"
+            aria-label="기기 연결 QR 코드"
             shapeRendering="crispEdges"
           >
             <rect width="21" height="21" fill="white" />
@@ -54,9 +54,9 @@ export function QrConnect() {
         </div>
       </CardContent>
       <CardHeader className="text-center">
-        <CardTitle>Scan to connect your mobile device</CardTitle>
+        <CardTitle>휴대폰을 연결하려면 스캔하세요</CardTitle>
         <CardDescription className="text-balance">
-          Open the Ledger mobile app and scan this code to link your device.
+          Ledger 모바일 앱을 열고 이 코드를 스캔해 기기를 연결하세요.
         </CardDescription>
       </CardHeader>
     </Card>

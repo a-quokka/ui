@@ -70,7 +70,7 @@ export function ComponentPreviewTabs({
                     className="ml-auto size-7"
                   >
                     <IconAlertCircle />
-                    <span className="sr-only">Toggle</span>
+                    <span className="sr-only">전환</span>
                   </Button>
                 }
               ></PopoverTrigger>
