@@ -25,9 +25,9 @@ import {
 
 const people = [
   {
-    username: "shadcn",
+    username: "dropshot",
     avatar: "https://github.com/shadcn.png",
-    email: "shadcn@vercel.com",
+    email: "dropshot@dropshot.io",
   },
   {
     username: "maxleiter",

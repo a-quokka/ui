@@ -72,11 +72,11 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
     <form className={cn("grid items-start gap-6", className)}>
       <div className="grid gap-3">
         <Label htmlFor="email">이메일</Label>
-        <Input type="email" id="email" defaultValue="shadcn@example.com" />
+        <Input type="email" id="email" defaultValue="dropshot@example.com" />
       </div>
       <div className="grid gap-3">
         <Label htmlFor="username">사용자 이름</Label>
-        <Input id="username" defaultValue="@shadcn" />
+        <Input id="username" defaultValue="@dropshot" />
       </div>
       <Button type="submit">저장</Button>
     </form>

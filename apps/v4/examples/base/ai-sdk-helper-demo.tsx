@@ -137,7 +137,7 @@ export function AiSdkHelperDemo() {
                   <EmptyMedia variant="icon">
                     <MessageCircleDashedIcon />
                   </EmptyMedia>
-                  <EmptyTitle>안녕하세요, shadcn 님!</EmptyTitle>
+                  <EmptyTitle>안녕하세요, dropshot 님!</EmptyTitle>
                   <EmptyDescription>
                     오늘은 무엇을 해 볼까요? 보내기를 누르면 새 대화가
                     시작됩니다

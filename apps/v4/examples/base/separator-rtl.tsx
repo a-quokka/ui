@@ -12,7 +12,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "shadcn/ui",
+      title: "Dropshot UI",
       subtitle: "디자인 시스템의 토대",
       description:
         "원하는 대로 고치고 확장해 쓸 수 있는, 잘 다듬어진 컴포넌트 모음입니다.",
@@ -21,7 +21,7 @@ const translations: Translations = {
   ko: {
     dir: "ltr",
     values: {
-      title: "shadcn/ui",
+      title: "Dropshot UI",
       subtitle: "디자인 시스템의 토대",
       description:
         "원하는 대로 고치고 확장해 쓸 수 있는, 잘 다듬어진 컴포넌트 모음입니다.",

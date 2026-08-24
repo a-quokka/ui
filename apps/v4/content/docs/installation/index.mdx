@@ -3,24 +3,9 @@ title: 설치
 description: 의존성을 설치하고 앱 구조를 잡는 방법입니다.
 ---
 
-<Callout className="mb-6 border-emerald-600 bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-900">
-
-**새 프로젝트에 권합니다.** shadcn/create 로 프리셋을 눈으로 보며 만들면 프레임워크에 맞는 설치 명령이 나옵니다.
-
-</Callout>
-
 지금 상황에 맞는 방법을 고르세요.
 
 <div className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
-  <LinkedCard
-    href="#use-create"
-    className="items-start gap-1 p-6 text-sm md:p-6"
-  >
-    <div className="font-medium">Use shadcn/create</div>
-    <div className="leading-relaxed text-muted-foreground">
-      프리셋을 눈으로 보며 만들고 설치 명령을 뽑습니다.
-    </div>
-  </LinkedCard>
   <LinkedCard href="#use-cli" className="items-start gap-1 p-6 text-sm md:p-6">
     <div className="font-medium">Use the CLI</div>
     <div className="leading-relaxed text-muted-foreground">
@@ -37,24 +22,6 @@ description: 의존성을 설치하고 앱 구조를 잡는 방법입니다.
     </div>
   </LinkedCard>
 </div>
-
-<div id="use-create" className="scroll-mt-24" />
-## Use shadcn/create
-
-프리셋을 눈으로 보며 만들고, 고른 값을 미리 보고, 프레임워크에 맞는 설치 명령을 뽑습니다.
-
-<Button asChild size="sm">
-  <Link
-    href="/create"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-6 no-underline!"
-  >
-    shadcn/create 열기
-  </Link>
-</Button>
-
-Next.js·Vite·Laravel·React Router·Astro·TanStack Start 를 지원합니다.
 
 <div id="use-cli" className="scroll-mt-24" />
 ## Use the CLI
@@ -78,7 +45,7 @@ Laravel 은 `laravel new` 로 앱을 먼저 만든 뒤 `npx shadcn@latest init` 
 
 ## Choose Your Framework
 
-Laravel 은 `shadcn/create` 나 `shadcn init` 을 쓰기 전에 `laravel new` 부터 시작합니다.
+Laravel 은 `shadcn init` 을 쓰기 전에 `laravel new` 부터 시작합니다.
 
 <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6">
   <LinkedCard href="/docs/installation/next">

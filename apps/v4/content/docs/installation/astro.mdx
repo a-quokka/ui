@@ -7,15 +7,6 @@ description: Astro 에 Dropshot UI 를 설치하고 설정합니다.
 
 <div className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
   <LinkedCard
-    href="#scaffold-with-create"
-    className="items-start gap-1 p-6 text-sm md:p-6"
-  >
-    <div className="font-medium">Use shadcn/create</div>
-    <div className="leading-relaxed text-muted-foreground">
-      프리셋을 만들고 Astro 프로젝트 명령을 뽑습니다.
-    </div>
-  </LinkedCard>
-  <LinkedCard
     href="#scaffold-with-cli"
     className="items-start gap-1 p-6 text-sm md:p-6"
   >
@@ -34,85 +25,6 @@ description: Astro 에 Dropshot UI 를 설치하고 설정합니다.
     </div>
   </LinkedCard>
 </div>
-
-<div id="scaffold-with-create" className="scroll-mt-24" />
-## Use shadcn/create
-
-<Steps>
-
-### Build Your Preset
-
-shadcn/create 를 열어 프리셋을 눈으로 보며 만듭니다. 스타일·색·폰트·아이콘을 고르면 됩니다.
-
-<Button asChild size="sm">
-  <Link
-    href="/create?template=astro"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mt-6 no-underline!"
-  >
-    shadcn/create 열기
-  </Link>
-</Button>
-
-### Create Project
-
-`Create Project` 를 누르고 패키지 매니저를 고른 뒤 만들어진 명령을 복사하세요.
-
-만들어진 명령은 대체로 이런 모양입니다.
-
-```bash
-npx shadcn@latest init --preset [CODE] --template astro
-```
-
-실제 명령에는 고른 옵션(`--base`·`--monorepo`·`--rtl` 등)이 함께 들어갑니다.
-
-### Add Components
-
-프로젝트에 `Card` 컴포넌트를 추가합니다.
-
-```bash
-npx shadcn@latest add card
-```
-
-모노레포로 만들었다면 `apps/web` 에서 명령을 돌리거나 저장소 루트에서 워크스페이스를 지정하세요.
-
-```bash
-npx shadcn@latest add card -c apps/web
-```
-
-위 명령으로 `Card` 컴포넌트가 프로젝트에 추가됩니다. 이렇게 가져다 쓰면 됩니다.
-
-```astro title="src/pages/index.astro" showLineNumbers
----
-import Layout from "@/layouts/main.astro"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
----
-
-<Layout>
-  <Card className="max-w-sm">
-    <CardHeader>
-      <CardTitle>Project Overview</CardTitle>
-      <CardDescription>
-        Track progress and recent activity for your Astro app.
-      </CardDescription>
-    </CardHeader>
-    <CardContent>
-      Your design system is ready. Start building your next component.
-    </CardContent>
-  </Card>
-</Layout>
-```
-
-모노레포로 만들었다면 `apps/web/src/pages/index.astro` 를 고치고 `@workspace/ui/components/card` 에서 가져오세요. `apps/web/src/layouts/main.astro` 레이아웃이 `@workspace/ui/globals.css` 를 이미 불러옵니다.
-
-</Steps>
 
 <div id="scaffold-with-cli" className="scroll-mt-24" />
 ## Use the CLI

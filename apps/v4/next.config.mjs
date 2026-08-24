@@ -108,22 +108,6 @@ const nextConfig = {
         destination: "/docs/forms",
         permanent: true,
       },
-      // Typography redirects to /docs/typeset.
-      {
-        source: "/docs/components/base/typography",
-        destination: "/docs/typeset",
-        permanent: true,
-      },
-      {
-        source: "/docs/components/radix/typography",
-        destination: "/docs/typeset",
-        permanent: true,
-      },
-      {
-        source: "/docs/components/aria/typography",
-        destination: "/docs/typeset",
-        permanent: true,
-      },
       // Base UI Sonner redirects to Toast.
       {
         source: "/docs/components/base/sonner",
@@ -173,11 +157,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/charts",
-        destination: "/charts/area",
-        permanent: true,
-      },
-      {
         source: "/view/styles/:style/:name",
         destination: "/view/:name",
         permanent: true,
@@ -193,11 +172,6 @@ const nextConfig = {
         permanent: false,
       },
       {
-        source: "/directory",
-        destination: "/docs/directory",
-        permanent: false,
-      },
-      {
         source: "/new",
         destination: "/docs/new",
         permanent: false,
@@ -210,11 +184,6 @@ const nextConfig = {
       {
         source: "/cli",
         destination: "/docs/cli",
-        permanent: true,
-      },
-      {
-        source: "/themes",
-        destination: "/create",
         permanent: true,
       },
       {

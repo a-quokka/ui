@@ -21,7 +21,7 @@ export function MessageHeaderFooterDemo() {
         <MessageContent>
           <Bubble>
             <BubbleContent>
-              리포트를 팀에 보내 주세요. 도움이 필요하면 @shadcn 을 부르세요.
+              리포트를 팀에 보내 주세요. 도움이 필요하면 @dropshot 을 부르세요.
             </BubbleContent>
           </Bubble>
           <MessageFooter>

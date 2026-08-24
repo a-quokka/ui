@@ -30,7 +30,7 @@ export function DialogCloseButton() {
             </Label>
             <Input
               id="link"
-              defaultValue="https://ui.shadcn.com/docs/installation"
+              defaultValue="https://dropshot.io/docs/installation"
               readOnly
             />
           </div>

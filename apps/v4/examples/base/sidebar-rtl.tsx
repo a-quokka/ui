@@ -228,7 +228,7 @@ function AppSidebar() {
   ]
 
   const user = {
-    name: "shadcn",
+    name: "dropshot",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   }
