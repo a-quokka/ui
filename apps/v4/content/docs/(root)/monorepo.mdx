@@ -1,18 +1,16 @@
 ---
-title: Monorepo
-description: Using shadcn/ui components and CLI in a monorepo.
+title: 모노레포
+description: 모노레포에서 shadcn/ui 컴포넌트와 CLI 를 쓰는 방법입니다.
 ---
 
-Until now, using shadcn/ui in a monorepo was a bit of a pain. You could add
-components using the CLI, but you had to manage where the components
-were installed and manually fix import paths.
+지금까지 모노레포에서 shadcn/ui 를 쓰는 건 번거로웠습니다. CLI 로 컴포넌트를
+추가할 수는 있었지만 어디에 설치할지 직접 챙기고 import 경로도 손으로
+고쳐야 했습니다.
 
-With the new monorepo support in the CLI, we've made it a lot easier to use
-shadcn/ui in a monorepo.
+CLI 에 모노레포 지원이 들어가면서 훨씬 수월해졌습니다.
 
-The CLI now understands the monorepo structure and will install the components,
-dependencies and registry dependencies to the correct paths and handle imports
-for you.
+이제 CLI 가 모노레포 구조를 이해해서 컴포넌트와 의존성, 레지스트리 의존성을
+알맞은 경로에 설치하고 import 도 알아서 처리합니다.
 
 ## Getting started
 
@@ -20,13 +18,13 @@ for you.
 
 ### Create a new monorepo project
 
-To create a new monorepo project, run the `init` command with the `--monorepo` flag.
+새 모노레포 프로젝트를 만들려면 `init` 에 `--monorepo` 플래그를 줍니다.
 
 ```bash
 npx shadcn@latest init --monorepo
 ```
 
-Then select the template you want to use.
+그다음 쓰고 싶은 템플릿을 고릅니다.
 
 ```bash
 ? Select a template ›
@@ -37,14 +35,14 @@ Then select the template you want to use.
     Astro
 ```
 
-This will create a new monorepo project with two workspaces: `web` and `ui`,
-and [Turborepo](https://turbo.build/repo/docs) as the build system.
+그러면 `web` 과 `ui` 두 워크스페이스를 가진 모노레포가 만들어지고 빌드 시스템으로
+[Turborepo](https://turbo.build/repo/docs) 가 들어갑니다.
 
-Everything is set up for you, so you can start adding components to your project.
+설정이 다 돼 있으니 바로 컴포넌트를 추가하면 됩니다.
 
 ### Add components to your project
 
-To add components to your project, run the `add` command **in the path of your app**.
+컴포넌트를 추가하려면 **앱 경로 안에서** `add` 명령을 돌리세요.
 
 ```bash
 cd apps/web
@@ -54,22 +52,22 @@ cd apps/web
 npx shadcn@latest add [COMPONENT]
 ```
 
-The CLI will figure out what type of component you are adding and install the
-correct files to the correct path.
+CLI 가 어떤 종류의 컴포넌트인지 알아내어 알맞은 파일을 알맞은 경로에
+설치합니다.
 
-For example, if you run `npx shadcn@latest add button`, the CLI will install the button component under `packages/ui` and update the import path for components in `apps/web`.
+예를 들어 `npx shadcn@latest add button` 을 돌리면 button 컴포넌트가 `packages/ui` 아래에 설치되고 `apps/web` 의 import 경로가 갱신됩니다.
 
-If you run `npx shadcn@latest add login-01`, the CLI will install the `button`, `label`, `input` and `card` components under `packages/ui` and the `login-form` component under `apps/web/components`.
+`npx shadcn@latest add login-01` 을 돌리면 `button`·`label`·`input`·`card` 는 `packages/ui` 아래에, `login-form` 은 `apps/web/components` 아래에 설치됩니다.
 
 ### Importing components
 
-You can import components from the `@workspace/ui` package as follows:
+`@workspace/ui` 패키지에서 컴포넌트를 이렇게 가져옵니다.
 
 ```tsx
 import { Button } from "@workspace/ui/components/button"
 ```
 
-You can also import hooks and utilities from the `@workspace/ui` package.
+훅과 유틸리티도 `@workspace/ui` 패키지에서 가져올 수 있습니다.
 
 ```tsx
 import { useTheme } from "@workspace/ui/hooks/use-theme"
@@ -80,7 +78,7 @@ import { cn } from "@workspace/ui/lib/utils"
 
 ## File Structure
 
-When you create a new monorepo project, the CLI will create the following file structure:
+새 모노레포를 만들면 CLI 가 아래 구조를 만들어 줍니다.
 
 ```txt
 apps
@@ -109,9 +107,9 @@ turbo.json
 
 ## Requirements
 
-1. Every workspace must have a `components.json` file. A `package.json` file tells npm how to install the dependencies. A `components.json` file tells the CLI how and where to install components.
+1. 모든 워크스페이스에 `components.json` 이 있어야 합니다. `package.json` 이 npm 에 의존성 설치 방법을 알려 주듯, `components.json` 은 CLI 에 컴포넌트를 어떻게 어디에 설치할지 알려 줍니다.
 
-2. The `components.json` file must properly define aliases for the workspace. This tells the CLI how to import components, hooks, utilities, etc.
+2. `components.json` 에 워크스페이스 별칭이 제대로 정의돼 있어야 합니다. 그래야 CLI 가 컴포넌트·훅·유틸리티를 어떻게 가져올지 압니다.
 
 ```json showLineNumbers title="apps/web/components.json"
 {
@@ -159,29 +157,29 @@ turbo.json
 }
 ```
 
-3. Ensure you have the same `style`, `iconLibrary` and `baseColor` in both `components.json` files.
+3. 두 `components.json` 의 `style`·`iconLibrary`·`baseColor` 를 같게 맞추세요.
 
-4. **For Tailwind CSS v4, leave the `tailwind` config empty in the `components.json` file.**
+4. **Tailwind CSS v4 라면 `components.json` 의 `tailwind` 설정을 비워 두세요.**
 
-By following these requirements, the CLI will be able to install ui components, blocks, libs and hooks to the correct paths and handle imports for you.
+이 조건을 지키면 CLI 가 UI 컴포넌트·블록·lib·훅을 알맞은 경로에 설치하고 import 도 알아서 처리합니다.
 
 <Callout className="mt-6">
-  `package.json#imports` works well for package-local aliases inside a
-  workspace, for example inside `packages/ui`. For shared workspace imports such
-  as `@workspace/ui/components`, keep explicit aliases in `components.json`. The
-  CLI uses those aliases to route files across workspace boundaries.
+  `package.json#imports` 는 `packages/ui` 처럼 워크스페이스 안에서만 쓰는 별칭에
+  잘 맞습니다. `@workspace/ui/components` 같은 공용 import 는 `components.json`
+  에 별칭을 그대로 두세요. CLI 가 워크스페이스 경계를 넘어 파일을 보낼 때 그
+  별칭을 씁니다.
 </Callout>
 
 ## Using `package.json#imports`
 
-For a monorepo that uses package imports and does not rely on
-`tsconfig.json` `paths`, use:
+패키지 import 를 쓰고 `tsconfig.json` 의 `paths` 에 기대지 않는 모노레포라면
+이렇게 하세요.
 
-- local `#...` aliases for files inside each workspace
-- workspace package `exports` for shared imports such as
-  `@workspace/ui/components`
+- 워크스페이스 안의 파일에는 로컬 `#...` 별칭
+- `@workspace/ui/components` 같은 공용 import 에는 워크스페이스 패키지의
+  `exports`
 
-For example, an app workspace can use local package imports:
+예를 들어 앱 워크스페이스는 로컬 패키지 import 를 쓸 수 있습니다.
 
 ```json showLineNumbers title="apps/web/package.json"
 {
@@ -211,7 +209,7 @@ For example, an app workspace can use local package imports:
 }
 ```
 
-And the shared UI package can expose its install targets with `exports`:
+그리고 공용 UI 패키지는 `exports` 로 설치 대상을 노출합니다.
 
 ```json showLineNumbers title="packages/ui/package.json"
 {
@@ -244,11 +242,10 @@ And the shared UI package can expose its install targets with `exports`:
 }
 ```
 
-In this setup:
+이 구성에서는 이렇게 동작합니다.
 
-- files added from the app to the shared UI package are routed through
-  `@workspace/ui/...`
-- files added inside `packages/ui` use the package-local `#...` aliases
-- the shared package must export any path referenced by another workspace
+- 앱에서 공용 UI 패키지로 추가되는 파일은 `@workspace/ui/...` 를 거칩니다
+- `packages/ui` 안에서 추가되는 파일은 패키지 로컬 `#...` 별칭을 씁니다
+- 다른 워크스페이스가 참조하는 경로는 공용 패키지가 반드시 export 해야 합니다
 
-For framework-specific package import setup, see the [package imports guide](/docs/package-imports).
+프레임워크별 패키지 import 설정은 [패키지 import 문서](/docs/package-imports)를 보세요.
