@@ -1,23 +1,22 @@
 ---
 title: TanStack Form
-description: Build forms in React using TanStack Form and Zod.
+description: TanStack Form 과 Zod 로 React 폼을 만듭니다.
 links:
   doc: https://tanstack.com/form
 ---
 
 import { InfoIcon } from "lucide-react"
 
-This guide explores how to build forms using TanStack Form. You'll learn to create forms with the `<Field />` component, implement schema validation with Zod, handle errors, and ensure accessibility.
+TanStack Form 으로 폼을 만드는 방법을 살펴봅니다. `<Field />` 로 폼을 만들고, Zod 로 스키마 검증을 붙이고, 오류를 처리하고, 접근성을 챙기는 것까지 다룹니다.
 
 ## Demo
 
-We'll start by building the following form. It has a simple text input and a textarea. On submit, we'll validate the form data and display any errors.
+먼저 아래 폼을 만듭니다. 텍스트 입력 하나와 textarea 하나가 있고, 제출하면 데이터를 검증해 오류를 보여 줍니다.
 
 <Callout icon={<InfoIcon />}>
-  **Note:** For the purpose of this demo, we have intentionally disabled browser
-  validation to show how schema validation and form errors work in TanStack
-  Form. It is recommended to add basic browser validation in your production
-  code.
+  **참고:** TanStack Form 의 스키마 검증과 오류 처리를 보여 주려고 이 데모에서는
+  브라우저 기본 검증을 일부러 껐습니다. 실제 코드에는 기본 검증을 함께 두는 편이
+  좋습니다.
 </Callout>
 
 <ComponentPreview
@@ -29,17 +28,17 @@ We'll start by building the following form. It has a simple text input and a tex
 
 ## Approach
 
-This form leverages TanStack Form for powerful, headless form handling. We'll build our form using the `<Field />` component, which gives you **complete flexibility over the markup and styling**.
+이 폼은 강력한 헤드리스 폼 처리를 위해 TanStack Form 을 씁니다. `<Field />` 로 만들기 때문에 **마크업과 스타일을 온전히 마음대로** 할 수 있습니다.
 
-- Uses TanStack Form's `useForm` hook for form state management.
-- `form.Field` component with render prop pattern for controlled inputs.
-- `<Field />` components for building accessible forms.
-- Client-side validation using Zod.
-- Real-time validation feedback.
+- 폼 상태는 TanStack Form 의 `useForm` 훅으로 관리합니다.
+- 제어되는 입력에는 render prop 방식의 `form.Field` 를 씁니다.
+- 접근성 있는 폼은 `<Field />` 로 만듭니다.
+- 클라이언트 검증은 Zod 로 합니다.
+- 검증 결과를 실시간으로 알려 줍니다.
 
 ## Anatomy
 
-Here's a basic example of a form using TanStack Form with the `<Field />` component.
+TanStack Form 과 `<Field />` 를 함께 쓴 기본 예시입니다.
 
 ```tsx showLineNumbers {15-31}
 <form
@@ -84,12 +83,11 @@ Here's a basic example of a form using TanStack Form with the `<Field />` compon
 
 ### Create a schema
 
-We'll start by defining the shape of our form using a Zod schema.
+먼저 Zod 스키마로 폼의 모양을 정의합니다.
 
 <Callout icon={<InfoIcon />}>
-  **Note:** This example uses `zod v3` for schema validation. TanStack Form
-  integrates seamlessly with Zod and other Standard Schema validation libraries
-  through its validators API.
+  **참고:** 이 예시는 `zod v3` 로 검증합니다. TanStack Form 은 validators API 로
+  Zod 를 비롯한 Standard Schema 라이브러리와 매끄럽게 이어집니다.
 </Callout>
 
 ```tsx showLineNumbers title="form.tsx"
@@ -109,7 +107,7 @@ const formSchema = z.object({
 
 ### Set up the form
 
-Use the `useForm` hook from TanStack Form to create your form instance with Zod validation.
+TanStack Form 의 `useForm` 훅으로 Zod 검증이 붙은 폼 인스턴스를 만듭니다.
 
 ```tsx showLineNumbers title="form.tsx" {10-21}
 import { useForm } from "@tanstack/react-form"
@@ -147,11 +145,11 @@ export function BugReportForm() {
 }
 ```
 
-We are using `onSubmit` to validate the form data here. TanStack Form supports other validation modes, which you can read about in the [documentation](https://tanstack.com/form/latest/docs/framework/react/guides/dynamic-validation).
+여기서는 `onSubmit` 으로 데이터를 검증합니다. TanStack Form 은 다른 검증 모드도 지원합니다. 자세한 내용은 [공식 문서](https://tanstack.com/form/latest/docs/framework/react/guides/dynamic-validation)를 보세요.
 
 ### Build the form
 
-We can now build the form using the `form.Field` component from TanStack Form and the `<Field />` component.
+이제 TanStack Form 의 `form.Field` 와 `<Field />` 로 폼을 만듭니다.
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-tanstack-demo.tsx"
@@ -160,15 +158,15 @@ We can now build the form using the `form.Field` component from TanStack Form an
 
 ### Done
 
-That's it. You now have a fully accessible form with client-side validation.
+여기까지입니다. 이제 클라이언트 검증이 붙은, 접근성을 갖춘 폼이 생겼습니다.
 
-When you submit the form, the `onSubmit` function will be called with the validated form data. If the form data is invalid, TanStack Form will display the errors next to each field.
+폼을 제출하면 검증된 데이터와 함께 `onSubmit` 이 불립니다. 데이터가 올바르지 않으면 TanStack Form 이 각 필드 옆에 오류를 보여 줍니다.
 
 ## Validation
 
 ### Client-side Validation
 
-TanStack Form validates your form data using the Zod schema. Validation happens in real-time as the user types.
+TanStack Form 은 Zod 스키마로 데이터를 검증합니다. 사용자가 입력하는 동안 실시간으로 검증합니다.
 
 ```tsx showLineNumbers title="form.tsx" {13-15}
 import { useForm } from "@tanstack/react-form"
@@ -197,13 +195,13 @@ export function BugReportForm() {
 
 ### Validation Modes
 
-TanStack Form supports different validation strategies through the `validators` option:
+TanStack Form 은 `validators` 옵션으로 여러 검증 방식을 지원합니다.
 
-| Mode         | Description                          |
-| ------------ | ------------------------------------ |
-| `"onChange"` | Validation triggers on every change. |
-| `"onBlur"`   | Validation triggers on blur.         |
-| `"onSubmit"` | Validation triggers on submit.       |
+| Mode         | Description                  |
+| ------------ | ---------------------------- |
+| `"onChange"` | 값이 바뀔 때마다 검증합니다. |
+| `"onBlur"`   | 포커스가 빠질 때 검증합니다. |
+| `"onSubmit"` | 제출할 때 검증합니다.        |
 
 ```tsx showLineNumbers title="form.tsx" {6-9}
 const form = useForm({
@@ -221,10 +219,10 @@ const form = useForm({
 
 ## Displaying Errors
 
-Display errors next to the field using `<FieldError />`. For styling and accessibility:
+오류는 `<FieldError />` 로 입력 옆에 보여 줍니다. 스타일과 접근성을 위해 이렇게 하세요.
 
-- Add the `data-invalid` prop to the `<Field />` component.
-- Add the `aria-invalid` prop to the form control such as `<Input />`, `<SelectTrigger />`, `<Checkbox />`, etc.
+- `<Field />` 에 `data-invalid` prop 을 붙입니다.
+- `<Input />`·`<SelectTrigger />`·`<Checkbox />` 같은 입력에는 `aria-invalid` prop 을 붙입니다.
 
 ```tsx showLineNumbers title="form.tsx" {4,18}
 <form.Field
@@ -255,8 +253,8 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 
 ### Input
 
-- For input fields, use `field.state.value` and `field.handleChange` on the `<Input />` component.
-- To show errors, add the `aria-invalid` prop to the `<Input />` component and the `data-invalid` prop to the `<Field />` component.
+- 입력 필드는 `<Input />` 에 `field.state.value` 와 `field.handleChange` 를 씁니다.
+- 오류를 보이려면 `<Input />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -296,8 +294,8 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 
 ### Textarea
 
-- For textarea fields, use `field.state.value` and `field.handleChange` on the `<Textarea />` component.
-- To show errors, add the `aria-invalid` prop to the `<Textarea />` component and the `data-invalid` prop to the `<Field />` component.
+- textarea 는 `<Textarea />` 에 `field.state.value` 와 `field.handleChange` 를 씁니다.
+- 오류를 보이려면 `<Textarea />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -339,8 +337,8 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 
 ### Select
 
-- For select components, use `field.state.value` and `field.handleChange` on the `<Select />` component.
-- To show errors, add the `aria-invalid` prop to the `<SelectTrigger />` component and the `data-invalid` prop to the `<Field />` component.
+- 셀렉트는 `<Select />` 에 `field.state.value` 와 `field.handleChange` 를 씁니다.
+- 오류를 보이려면 `<SelectTrigger />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -390,10 +388,10 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 
 ### Checkbox
 
-- For checkbox, use `field.state.value` and `field.handleChange` on the `<Checkbox />` component.
-- To show errors, add the `aria-invalid` prop to the `<Checkbox />` component and the `data-invalid` prop to the `<Field />` component.
-- For checkbox arrays, use `mode="array"` on the `<form.Field />` component and TanStack Form's array helpers.
-- Remember to add `data-slot="checkbox-group"` to the `<FieldGroup />` component for proper styling and spacing.
+- 체크박스는 `<Checkbox />` 에 `field.state.value` 와 `field.handleChange` 를 씁니다.
+- 오류를 보이려면 `<Checkbox />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
+- 체크박스 배열은 `<form.Field />` 에 `mode="array"` 를 주고 TanStack Form 의 배열 도우미를 씁니다.
+- 스타일과 간격이 맞도록 `<FieldGroup />` 에 `data-slot="checkbox-group"` 을 꼭 붙이세요.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -455,8 +453,8 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 
 ### Radio Group
 
-- For radio groups, use `field.state.value` and `field.handleChange` on the `<RadioGroup />` component.
-- To show errors, add the `aria-invalid` prop to the `<RadioGroupItem />` component and the `data-invalid` prop to the `<Field />` component.
+- 라디오 그룹은 `<RadioGroup />` 에 `field.state.value` 와 `field.handleChange` 를 씁니다.
+- 오류를 보이려면 `<RadioGroupItem />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -509,8 +507,8 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 
 ### Switch
 
-- For switches, use `field.state.value` and `field.handleChange` on the `<Switch />` component.
-- To show errors, add the `aria-invalid` prop to the `<Switch />` component and the `data-invalid` prop to the `<Field />` component.
+- 스위치는 `<Switch />` 에 `field.state.value` 와 `field.handleChange` 를 씁니다.
+- 오류를 보이려면 `<Switch />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -550,7 +548,7 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 
 ### Complex Forms
 
-Here is an example of a more complex form with multiple fields and validation.
+입력이 여러 개이고 검증이 붙은 조금 복잡한 폼 예시입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -561,7 +559,7 @@ Here is an example of a more complex form with multiple fields and validation.
 
 ## Resetting the Form
 
-Use `form.reset()` to reset the form to its default values.
+`form.reset()` 으로 폼을 기본값으로 되돌립니다.
 
 ```tsx showLineNumbers
 <Button type="button" variant="outline" onClick={() => form.reset()}>
@@ -571,7 +569,7 @@ Use `form.reset()` to reset the form to its default values.
 
 ## Array Fields
 
-TanStack Form provides powerful array field management with `mode="array"`. This allows you to dynamically add, remove, and update array items with full validation support.
+TanStack Form 은 `mode="array"` 로 배열 필드를 다룹니다. 항목을 동적으로 더하고 빼고 고칠 수 있으며 검증도 그대로 적용됩니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -580,11 +578,11 @@ TanStack Form provides powerful array field management with `mode="array"`. This
   chromeLessOnMobile
 />
 
-This example demonstrates managing multiple email addresses with array fields. Users can add up to 5 email addresses, remove individual addresses, and each address is validated independently.
+배열 필드로 여러 이메일 주소를 다루는 예시입니다. 최대 5개까지 더할 수 있고, 하나씩 뺄 수 있으며, 주소마다 따로 검증합니다.
 
 ### Array Field Structure
 
-Use `mode="array"` on the parent field to enable array field management.
+부모 필드에 `mode="array"` 를 주면 배열 필드로 다룰 수 있습니다.
 
 ```tsx showLineNumbers title="form.tsx" {3,12-14}
 <form.Field
@@ -610,7 +608,7 @@ Use `mode="array"` on the parent field to enable array field management.
 
 ### Nested Fields
 
-Access individual array items using bracket notation: `fieldName[index].propertyName`. This example uses `InputGroup` to display the remove button inline with the input.
+배열 항목은 `fieldName[index].propertyName` 처럼 대괄호로 가리킵니다. 이 예시는 `InputGroup` 으로 삭제 버튼을 입력과 같은 줄에 놓았습니다.
 
 ```tsx showLineNumbers title="form.tsx"
 <form.Field
@@ -658,7 +656,7 @@ Access individual array items using bracket notation: `fieldName[index].property
 
 ### Adding Items
 
-Use `field.pushValue(item)` to add items to an array field. You can disable the button when the array reaches its maximum length.
+배열 필드에 항목을 더할 때는 `field.pushValue(item)` 을 씁니다. 최대 개수에 이르면 버튼을 잠글 수 있습니다.
 
 ```tsx showLineNumbers title="form.tsx"
 <Button
@@ -674,7 +672,7 @@ Use `field.pushValue(item)` to add items to an array field. You can disable the 
 
 ### Removing Items
 
-Use `field.removeValue(index)` to remove items from an array field. You can conditionally show the remove button only when there's more than one item.
+배열 필드에서 항목을 뺄 때는 `field.removeValue(index)` 를 씁니다. 항목이 둘 이상일 때만 삭제 버튼을 보여 줄 수도 있습니다.
 
 ```tsx showLineNumbers title="form.tsx"
 {
@@ -691,7 +689,7 @@ Use `field.removeValue(index)` to remove items from an array field. You can cond
 
 ### Array Validation
 
-Validate array fields using Zod's array methods.
+배열 필드는 Zod 의 배열 메서드로 검증합니다.
 
 ```tsx showLineNumbers title="form.tsx"
 const formSchema = z.object({
