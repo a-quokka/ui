@@ -39,10 +39,6 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/cli",
   },
   {
-    name: "Typeset",
-    href: "/docs/typeset",
-  },
-  {
     name: "Skills",
     href: "/docs/skills",
   },
@@ -50,13 +46,9 @@ const TOP_LEVEL_SECTIONS = [
     name: "Registry",
     href: "/docs/registry",
   },
-  {
-    name: "Changelog",
-    href: "/docs/changelog",
-  },
 ]
-const EXCLUDED_SECTIONS = ["installation", "dark-mode", "changelog", "rtl"]
-const EXCLUDED_PAGES = ["/docs", "/docs/changelog", "/docs/rtl", "/docs/new"]
+const EXCLUDED_SECTIONS = ["installation", "dark-mode", "rtl"]
+const EXCLUDED_PAGES = ["/docs", "/docs/rtl", "/docs/new"]
 
 function readScrollState() {
   try {

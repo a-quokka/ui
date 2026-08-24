@@ -54,10 +54,6 @@ const TOP_LEVEL_SECTIONS = [
     name: "Forms",
     href: "/docs/forms",
   },
-  {
-    name: "Changelog",
-    href: "/docs/changelog",
-  },
 ]
 
 export function MobileNav({
