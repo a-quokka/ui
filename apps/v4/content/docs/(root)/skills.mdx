@@ -1,19 +1,19 @@
 ---
-title: Skills
-description: Give your AI assistant deep knowledge of shadcn/ui components, patterns, and best practices.
+title: 스킬
+description: AI 어시스턴트에게 shadcn/ui 의 컴포넌트와 패턴, 관행을 깊이 알려 줍니다.
 ---
 
-Skills give AI assistants like Claude Code project-aware context about shadcn/ui. When installed, your AI assistant knows how to find, install, compose, and customize components using the correct APIs and patterns for your project.
+스킬은 Claude Code 같은 AI 어시스턴트에게 shadcn/ui 에 대한 프로젝트 맥락을 줍니다. 설치해 두면 어시스턴트가 프로젝트에 맞는 API 와 패턴으로 컴포넌트를 찾고, 설치하고, 조합하고, 고치는 법을 알게 됩니다.
 
-For example, you can ask your AI assistant to:
+예를 들어 이런 걸 시킬 수 있습니다.
 
-- _"Add a login form with email and password fields."_
-- _"Create a settings page with a form for updating profile information."_
-- _"Build a dashboard with a sidebar, stats cards, and a data table."_
-- _"Switch to --preset [CODE]"_
-- _"Can you add a hero from @tailark?"_
+- _"이메일과 비밀번호가 있는 로그인 폼을 넣어 줘."_
+- _"프로필 정보를 수정하는 폼이 있는 설정 페이지를 만들어 줘."_
+- _"사이드바와 통계 카드, 데이터 테이블이 있는 대시보드를 만들어 줘."_
+- _"--preset [CODE] 로 바꿔 줘"_
+- _"@tailark 에서 히어로 하나 가져와 줄래?"_
 
-The skill reads your project's `components.json` and provides the assistant with your framework, aliases, installed components, icon library, and base library so it can generate correct code on the first try.
+스킬은 프로젝트의 `components.json` 을 읽어 프레임워크, 별칭, 설치된 컴포넌트, 아이콘 라이브러리, 기반 라이브러리를 어시스턴트에게 알려 줍니다. 그래서 처음부터 맞는 코드를 만들 수 있습니다.
 
 ---
 
@@ -23,49 +23,49 @@ The skill reads your project's `components.json` and provides the assistant with
 npx skills add shadcn/ui
 ```
 
-This installs the shadcn skill into your project. Once installed, your AI assistant automatically loads it when working with shadcn/ui components.
+이 명령으로 shadcn 스킬이 프로젝트에 설치됩니다. 설치해 두면 shadcn/ui 컴포넌트를 다룰 때 어시스턴트가 알아서 불러옵니다.
 
-Learn more about skills at [skills.sh](https://skills.sh).
+스킬에 대한 자세한 내용은 [skills.sh](https://skills.sh) 를 보세요.
 
 ---
 
 ## What's Included
 
-The skill provides your AI assistant with the following knowledge:
+스킬은 AI 어시스턴트에게 다음을 알려 줍니다.
 
 ### Project Context
 
-On every interaction, the skill runs `shadcn info --json` to get your project's configuration: framework, Tailwind version, aliases, base library (`base`, `radix`, or `aria`), icon library, installed components, and resolved file paths.
+어시스턴트는 매번 `shadcn info --json` 을 돌려 프로젝트 설정을 읽습니다. 프레임워크, Tailwind 버전, 별칭, 기반 라이브러리(`base`·`radix`·`aria`), 아이콘 라이브러리, 설치된 컴포넌트, 해석된 파일 경로가 담깁니다.
 
 ### CLI Commands
 
-Full reference for all CLI commands: `init`, `add`, `search`, `view`, `docs`, `diff`, `info`, and `build`. Includes flags, dry-run mode, smart merge workflows, presets, and templates.
+`init`·`add`·`search`·`view`·`docs`·`diff`·`info`·`build` 전체 CLI 명령 레퍼런스입니다. 플래그, dry-run 모드, 스마트 병합 흐름, 프리셋, 템플릿까지 담겨 있습니다.
 
 ### Theming and Customization
 
-How CSS variables, OKLCH colors, dark mode, custom colors, border radius, and component variants work. Includes guidance for both Tailwind v3 and v4.
+CSS 변수, OKLCH 색상, 다크 모드, 사용자 색상, 모서리 반경, 컴포넌트 변형이 어떻게 동작하는지. Tailwind v3 와 v4 모두를 다룹니다.
 
 ### Registry Authoring
 
-How to build and publish custom component registries: `registry.json` format, item types, file objects, dependencies, CSS variables, building, hosting, and user configuration.
+직접 만든 컴포넌트 레지스트리를 만들고 배포하는 법. `registry.json` 형식, 항목 종류, 파일 객체, 의존성, CSS 변수, 빌드, 호스팅, 사용자 설정까지.
 
 ### MCP Server
 
-Setup and tools for the shadcn MCP server, which lets AI assistants search, browse, and install components from registries.
+shadcn MCP 서버 설정과 도구. AI 어시스턴트가 레지스트리에서 컴포넌트를 찾고, 둘러보고, 설치할 수 있게 해 줍니다.
 
 ---
 
 ## How It Works
 
-1. **Project detection** — The skill activates when it finds a `components.json` file in your project.
-2. **Context injection** — It runs `shadcn info --json` to read your project configuration and injects the result into the assistant's context.
-3. **Pattern enforcement** — The assistant follows shadcn/ui composition rules: using `FieldGroup` for forms, `ToggleGroup` for option sets, semantic colors, and correct base-specific APIs.
-4. **Component discovery** — The assistant uses `shadcn docs`, `shadcn search`, or MCP tools to find components and their documentation before generating code.
+1. **프로젝트 감지** — 프로젝트에 `components.json` 이 있으면 스킬이 켜집니다.
+2. **맥락 주입** — `shadcn info --json` 을 돌려 프로젝트 설정을 읽고 어시스턴트의 맥락에 넣습니다.
+3. **패턴 강제** — 어시스턴트가 shadcn/ui 의 조합 규칙을 따릅니다. 폼에는 `FieldGroup`, 선택지 묶음에는 `ToggleGroup`, 의미 단위 색상, 기반 라이브러리에 맞는 API 를 씁니다.
+4. **컴포넌트 탐색** — 코드를 만들기 전에 `shadcn docs`·`shadcn search` 나 MCP 도구로 컴포넌트와 문서를 먼저 찾습니다.
 
 ## Learn More
 
-- [CLI](/docs/cli) — Full CLI command reference
-- [MCP Server](/docs/mcp) — Connect the MCP server for registry access
-- [Theming](/docs/theming) — CSS variables and customization
-- [Registry](/docs/registry) — Building and publishing custom registries
-- [skills.sh](https://skills.sh) — Learn more about AI skills
+- [CLI](/docs/cli) — 전체 CLI 명령 레퍼런스
+- [MCP Server](/docs/mcp) — 레지스트리에 닿는 MCP 서버 연결
+- [Theming](/docs/theming) — CSS 변수와 커스터마이징
+- [Registry](/docs/registry) — 레지스트리 만들기와 배포
+- [skills.sh](https://skills.sh) — AI 스킬 더 알아보기

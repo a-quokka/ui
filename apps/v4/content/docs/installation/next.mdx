@@ -1,9 +1,9 @@
 ---
 title: Next.js
-description: Install and configure shadcn/ui for Next.js.
+description: Next.js 에 shadcn/ui 를 설치하고 설정합니다.
 ---
 
-Choose the setup that matches your starting point.
+지금 상황에 맞는 방법을 고르세요.
 
 <div className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
   <LinkedCard
@@ -12,7 +12,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Use shadcn/create</div>
     <div className="leading-relaxed text-muted-foreground">
-      Build your preset and generate a Next.js project command.
+      프리셋을 만들고 Next.js 프로젝트 명령을 뽑습니다.
     </div>
   </LinkedCard>
   <LinkedCard
@@ -21,7 +21,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Use the CLI</div>
     <div className="leading-relaxed text-muted-foreground">
-      Scaffold a new Next.js project directly from the terminal.
+      터미널에서 바로 새 Next.js 프로젝트를 만듭니다.
     </div>
   </LinkedCard>
   <LinkedCard
@@ -30,7 +30,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Existing Project</div>
     <div className="leading-relaxed text-muted-foreground">
-      Configure shadcn/ui manually in an existing Next.js project.
+      이미 있는 Next.js 프로젝트에 shadcn/ui 를 직접 설정합니다.
     </div>
   </LinkedCard>
 </div>
@@ -42,7 +42,7 @@ Choose the setup that matches your starting point.
 
 ### Build Your Preset
 
-Open shadcn/create and build your preset visually. Choose your style, colors, fonts, icons, and more.
+shadcn/create 를 열어 프리셋을 눈으로 보며 만듭니다. 스타일·색·폰트·아이콘을 고르면 됩니다.
 
 <Button asChild size="sm">
   <Link
@@ -51,37 +51,37 @@ Open shadcn/create and build your preset visually. Choose your style, colors, fo
     rel="noopener noreferrer"
     className="mt-6 no-underline!"
   >
-    Open shadcn/create
+    shadcn/create 열기
   </Link>
 </Button>
 
 ### Create Project
 
-Click `Create Project`, choose your package manager, and copy the generated command.
+`Create Project` 를 누르고 패키지 매니저를 고른 뒤 만들어진 명령을 복사하세요.
 
-The generated command will look similar to this:
+만들어진 명령은 대체로 이런 모양입니다.
 
 ```bash
 npx shadcn@latest init --preset [CODE] --template next
 ```
 
-The exact command will include your selected options such as `--base`, `--monorepo`, or `--rtl`.
+실제 명령에는 고른 옵션(`--base`·`--monorepo`·`--rtl` 등)이 함께 들어갑니다.
 
 ### Add Components
 
-Add the `Card` component to your project:
+프로젝트에 `Card` 컴포넌트를 추가합니다.
 
 ```bash
 npx shadcn@latest add card
 ```
 
-If you created a monorepo, run the command from `apps/web` or specify the workspace from the repo root:
+모노레포로 만들었다면 `apps/web` 에서 명령을 돌리거나 저장소 루트에서 워크스페이스를 지정하세요.
 
 ```bash
 npx shadcn@latest add card -c apps/web
 ```
 
-The command above will add the `Card` component to your project. You can then import it like this:
+위 명령으로 `Card` 컴포넌트가 프로젝트에 추가됩니다. 이렇게 가져다 쓰면 됩니다.
 
 ```tsx showLineNumbers title="app/page.tsx"
 import {
@@ -109,7 +109,7 @@ export default function Home() {
 }
 ```
 
-If you created a monorepo, update `apps/web/app/page.tsx` and import from `@workspace/ui/components/card` instead.
+모노레포로 만들었다면 `apps/web/app/page.tsx` 를 고치고 `@workspace/ui/components/card` 에서 가져오세요.
 
 </Steps>
 
@@ -120,13 +120,13 @@ If you created a monorepo, update `apps/web/app/page.tsx` and import from `@work
 
 ### Create Project
 
-Run the `init` command to scaffold a new Next.js project. Follow the prompts to configure your project: base, preset, monorepo, and more.
+`init` 명령으로 새 Next.js 프로젝트를 만듭니다. 물어보는 대로 base·프리셋·모노레포 등을 정하세요.
 
 ```bash
 npx shadcn@latest init -t next
 ```
 
-**For a monorepo project, use `--monorepo` flag:**
+**모노레포라면 `--monorepo` 플래그를 씁니다.**
 
 ```bash
 npx shadcn@latest init -t next --monorepo
@@ -134,19 +134,19 @@ npx shadcn@latest init -t next --monorepo
 
 ### Add Components
 
-Add the `Card` component to your project:
+프로젝트에 `Card` 컴포넌트를 추가합니다.
 
 ```bash
 npx shadcn@latest add card
 ```
 
-If you created a monorepo, run the command from `apps/web` or specify the workspace from the repo root:
+모노레포로 만들었다면 `apps/web` 에서 명령을 돌리거나 저장소 루트에서 워크스페이스를 지정하세요.
 
 ```bash
 npx shadcn@latest add card -c apps/web
 ```
 
-The command above will add the `Card` component to your project. You can then import it like this:
+위 명령으로 `Card` 컴포넌트가 프로젝트에 추가됩니다. 이렇게 가져다 쓰면 됩니다.
 
 ```tsx showLineNumbers title="app/page.tsx"
 import {
@@ -174,7 +174,7 @@ export default function Home() {
 }
 ```
 
-If you created a monorepo, update `apps/web/app/page.tsx` and import from `@workspace/ui/components/card` instead.
+모노레포로 만들었다면 `apps/web/app/page.tsx` 를 고치고 `@workspace/ui/components/card` 에서 가져오세요.
 
 </Steps>
 
@@ -185,29 +185,29 @@ If you created a monorepo, update `apps/web/app/page.tsx` and import from `@work
 
 ### Create Project
 
-If you need a new Next.js project, create one with `create-next-app`. Otherwise, skip this step.
+새 Next.js 프로젝트가 필요하면 `create-next-app` 으로 만드세요. 아니라면 이 단계는 건너뜁니다.
 
 ```bash
 npx create-next-app@latest
 ```
 
-Choose the recommended defaults so Tailwind CSS, the App Router, and the default `@/*` import alias are configured for you.
+권장 기본값을 고르면 Tailwind CSS, App Router, 기본 `@/*` import 별칭이 함께 설정됩니다.
 
-If you prefer a `src/` directory, use `--src-dir` or choose `Yes` when prompted:
+`src/` 디렉터리를 쓰고 싶다면 `--src-dir` 을 주거나 물어볼 때 `Yes` 를 고르세요.
 
 ```bash
 npx create-next-app@latest --src-dir
 ```
 
-With `--src-dir`, Next.js places your app in `src/app` and configures the `@/*` alias to point to `./src/*`.
+`--src-dir` 을 쓰면 Next.js 가 앱을 `src/app` 에 두고 `@/*` 별칭이 `./src/*` 를 가리키게 합니다.
 
 ### Configure Tailwind CSS and Import Aliases
 
-If you created your project with the recommended `create-next-app` defaults, you can skip this step.
+`create-next-app` 권장 기본값으로 프로젝트를 만들었다면 이 단계는 건너뛰어도 됩니다.
 
-If you're adding shadcn/ui to an older or custom Next.js app, make sure Tailwind CSS is installed first. You can follow the official [Next.js installation guide](https://nextjs.org/docs/app/getting-started).
+예전 버전이거나 직접 꾸린 Next.js 앱에 붙인다면 Tailwind CSS 가 먼저 설치돼 있어야 합니다. [Next.js 설치 문서](https://nextjs.org/docs/app/getting-started)를 따라가면 됩니다.
 
-Then make sure your `tsconfig.json` includes the `@/*` import alias:
+그다음 `tsconfig.json` 에 `@/*` import 별칭이 있는지 확인하세요.
 
 ```json title="tsconfig.json" showLineNumbers
 {
@@ -219,11 +219,11 @@ Then make sure your `tsconfig.json` includes the `@/*` import alias:
 }
 ```
 
-If you used `--src-dir`, point the alias to `./src/*` instead.
+`--src-dir` 을 썼다면 별칭이 `./src/*` 를 가리키게 하세요.
 
 ### Run the CLI
 
-Run the `shadcn` init command to set up shadcn/ui in your project.
+`shadcn` init 명령으로 프로젝트에 shadcn/ui 를 설정합니다.
 
 ```bash
 npx shadcn@latest init
@@ -231,13 +231,13 @@ npx shadcn@latest init
 
 ### Add Components
 
-You can now start adding components to your project.
+이제 프로젝트에 컴포넌트를 추가할 수 있습니다.
 
 ```bash
 npx shadcn@latest add button
 ```
 
-The command above will add the `Button` component to your project. You can then import it like this:
+위 명령으로 `Button` 컴포넌트가 프로젝트에 추가됩니다. 이렇게 가져다 쓰면 됩니다.
 
 ```tsx showLineNumbers title="app/page.tsx"
 import { Button } from "@/components/ui/button"
@@ -251,6 +251,6 @@ export default function Home() {
 }
 ```
 
-If you used `--src-dir`, add the component to `src/app/page.tsx` instead.
+`--src-dir` 을 썼다면 컴포넌트를 `src/app/page.tsx` 에 넣으세요.
 
 </Steps>

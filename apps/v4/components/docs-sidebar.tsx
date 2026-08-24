@@ -21,17 +21,17 @@ import {
 } from "@/registry/new-york-v4/ui/sidebar"
 
 const TOP_LEVEL_SECTIONS = [
-  { name: "Introduction", href: "/docs" },
+  { name: "소개", href: "/docs" },
   {
-    name: "Components",
+    name: "컴포넌트",
     href: "/docs/components",
   },
   {
-    name: "Installation",
+    name: "설치",
     href: "/docs/installation",
   },
   {
-    name: "Theming",
+    name: "테마",
     href: "/docs/theming",
   },
   {
@@ -39,11 +39,11 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/cli",
   },
   {
-    name: "Skills",
+    name: "스킬",
     href: "/docs/skills",
   },
   {
-    name: "Registry",
+    name: "레지스트리",
     href: "/docs/registry",
   },
 ]
@@ -174,7 +174,7 @@ export function DocsSidebar({
       >
         <SidebarGroup className="pt-12">
           <SidebarGroupLabel className="font-medium text-muted-foreground">
-            Sections
+            섹션
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>

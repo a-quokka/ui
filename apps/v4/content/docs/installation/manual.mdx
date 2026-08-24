@@ -1,19 +1,19 @@
 ---
-title: Manual Installation
-description: Add dependencies to your project manually.
+title: 직접 설치
+description: 의존성을 직접 추가하는 방법입니다.
 ---
 
 <Steps>
 
 ### Add Tailwind CSS
 
-Components are styled using Tailwind CSS. You need to install Tailwind CSS in your project.
+컴포넌트는 Tailwind CSS 로 꾸며집니다. 프로젝트에 Tailwind CSS 를 설치해야 합니다.
 
-[Follow the Tailwind CSS installation instructions to get started.](https://tailwindcss.com/docs/installation)
+[Tailwind CSS 설치 안내를 따라 시작하세요.](https://tailwindcss.com/docs/installation)
 
 ### Add dependencies
 
-Add the following dependencies to your project:
+프로젝트에 아래 의존성을 추가합니다.
 
 ```bash
 npm install shadcn class-variance-authority clsx tailwind-merge lucide-react tw-animate-css
@@ -21,7 +21,7 @@ npm install shadcn class-variance-authority clsx tailwind-merge lucide-react tw-
 
 ### Configure import aliases
 
-Choose one of the following alias setups.
+아래 별칭 설정 중 하나를 고르세요.
 
 #### Option A: `tsconfig.json` paths
 
@@ -57,14 +57,14 @@ Choose one of the following alias setups.
 }
 ```
 
-The `@` alias is a preference. You can use other aliases if you want. If you
-use `package.json#imports`, keep the matching alias roots in `components.json`.
-See the <Link href="/docs/package-imports">package imports guide</Link> for
-framework-specific setup.
+`@` 별칭은 취향입니다. 다른 별칭을 써도 됩니다. `package.json#imports` 를
+쓴다면 `components.json` 에도 같은 별칭 루트를 맞춰 두세요.
+프레임워크별 설정은 <Link href="/docs/package-imports">패키지 import 문서</Link>를
+보세요.
 
 ### Configure styles
 
-Add the following to your styles/globals.css file. You can learn more about using CSS variables for theming in the [theming section](/docs/theming).
+styles/globals.css 에 아래를 추가하세요. CSS 변수로 테마를 쓰는 방법은 [테마 문서](/docs/theming)에서 더 볼 수 있습니다.
 
 <CodeCollapsibleWrapper>
 
@@ -211,7 +211,7 @@ export function cn(...inputs: ClassValue[]) {
 
 ### Create a `components.json` file
 
-Create a `components.json` file in the root of your project.
+프로젝트 루트에 `components.json` 파일을 만듭니다.
 
 ```json title="components.json" showLineNumbers
 {
@@ -237,7 +237,7 @@ Create a `components.json` file in the root of your project.
 }
 ```
 
-If you're using `package.json#imports`, use the corresponding `#...` aliases instead:
+`package.json#imports` 를 쓴다면 그에 맞는 `#...` 별칭을 쓰세요.
 
 ```json title="components.json" showLineNumbers
 {
@@ -253,6 +253,6 @@ If you're using `package.json#imports`, use the corresponding `#...` aliases ins
 
 ### That's it
 
-You can now start adding components to your project.
+이제 프로젝트에 컴포넌트를 추가할 수 있습니다.
 
 </Steps>

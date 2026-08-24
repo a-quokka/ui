@@ -13,15 +13,15 @@ export const siteConfig = {
   navItems: [
     {
       href: "/",
-      label: "Home",
+      label: "홈",
     },
     {
       href: "/docs/installation",
-      label: "Docs",
+      label: "문서",
     },
     {
       href: "/docs/components",
-      label: "Components",
+      label: "컴포넌트",
     },
   ],
 }

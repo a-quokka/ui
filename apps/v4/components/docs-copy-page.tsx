@@ -37,7 +37,7 @@ const menuItems = {
           fill="currentColor"
         />
       </svg>
-      View as Markdown
+      Markdown 으로 보기
     </a>
   ),
   v0: (url: string) => (
@@ -177,7 +177,7 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
           onClick={() => copyToClipboard(page)}
         >
           {isCopied ? <IconCheck /> : <IconCopy />}
-          Copy Page
+          페이지 복사
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild className="hidden sm:flex">

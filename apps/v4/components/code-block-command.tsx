@@ -120,7 +120,7 @@ export function CodeBlockCommand({
         className="absolute top-2 right-2 z-10 size-7 opacity-70 hover:opacity-100 focus-visible:opacity-100"
         onClick={copyCommand}
       >
-        <span className="sr-only">Copy</span>
+        <span className="sr-only">복사</span>
         {hasCopied ? <IconCheck /> : <IconCopy />}
       </Button>
     </div>

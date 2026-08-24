@@ -1,15 +1,15 @@
 ---
-title: Installation
-description: How to install dependencies and structure your app.
+title: 설치
+description: 의존성을 설치하고 앱 구조를 잡는 방법입니다.
 ---
 
 <Callout className="mb-6 border-emerald-600 bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-900">
 
-**Recommended for new projects:** Use shadcn/create to build your preset visually and generate the right setup command for your framework.
+**새 프로젝트에 권합니다.** shadcn/create 로 프리셋을 눈으로 보며 만들면 프레임워크에 맞는 설치 명령이 나옵니다.
 
 </Callout>
 
-Choose the setup that matches your starting point.
+지금 상황에 맞는 방법을 고르세요.
 
 <div className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
   <LinkedCard
@@ -18,13 +18,13 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Use shadcn/create</div>
     <div className="leading-relaxed text-muted-foreground">
-      Build your preset visually and generate a setup command.
+      프리셋을 눈으로 보며 만들고 설치 명령을 뽑습니다.
     </div>
   </LinkedCard>
   <LinkedCard href="#use-cli" className="items-start gap-1 p-6 text-sm md:p-6">
     <div className="font-medium">Use the CLI</div>
     <div className="leading-relaxed text-muted-foreground">
-      Scaffold a supported template directly from the terminal.
+      터미널에서 바로 지원 템플릿을 만듭니다.
     </div>
   </LinkedCard>
   <LinkedCard
@@ -33,7 +33,7 @@ Choose the setup that matches your starting point.
   >
     <div className="font-medium">Existing Project</div>
     <div className="leading-relaxed text-muted-foreground">
-      Add shadcn/ui to an app you already created.
+      이미 만들어 둔 앱에 shadcn/ui 를 붙입니다.
     </div>
   </LinkedCard>
 </div>
@@ -41,7 +41,7 @@ Choose the setup that matches your starting point.
 <div id="use-create" className="scroll-mt-24" />
 ## Use shadcn/create
 
-Build your preset visually, preview your choices, and generate a framework-specific setup command.
+프리셋을 눈으로 보며 만들고, 고른 값을 미리 보고, 프레임워크에 맞는 설치 명령을 뽑습니다.
 
 <Button asChild size="sm">
   <Link
@@ -50,35 +50,35 @@ Build your preset visually, preview your choices, and generate a framework-speci
     rel="noopener noreferrer"
     className="mt-6 no-underline!"
   >
-    Open shadcn/create
+    shadcn/create 열기
   </Link>
 </Button>
 
-Available for Next.js, Vite, Laravel, React Router, Astro, and TanStack Start.
+Next.js·Vite·Laravel·React Router·Astro·TanStack Start 를 지원합니다.
 
 <div id="use-cli" className="scroll-mt-24" />
 ## Use the CLI
 
-Use the CLI to scaffold a new project directly from the terminal:
+CLI 로 터미널에서 바로 새 프로젝트를 만듭니다.
 
 ```bash
 npx shadcn@latest init -t [framework]
 ```
 
-Supported templates: `next`, `vite`, `start`, `react-router`, and `astro`.
+지원 템플릿은 `next`·`vite`·`start`·`react-router`·`astro` 입니다.
 
-For Laravel, create the app first with `laravel new`, then run `npx shadcn@latest init`.
+Laravel 은 `laravel new` 로 앱을 먼저 만든 뒤 `npx shadcn@latest init` 을 돌리세요.
 
 <div id="existing-project" className="scroll-mt-24" />
 ## Existing Project
 
-Each framework guide includes an `Existing Project` section with the manual setup steps for that framework.
+프레임워크별 문서에는 직접 설정하는 방법을 담은 `Existing Project` 절이 있습니다.
 
-Pick your framework below and follow that path.
+아래에서 프레임워크를 고르고 그 문서를 따라가세요.
 
 ## Choose Your Framework
 
-For Laravel, start with `laravel new` before using `shadcn/create` or `shadcn init`.
+Laravel 은 `shadcn/create` 나 `shadcn init` 을 쓰기 전에 `laravel new` 부터 시작합니다.
 
 <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6">
   <LinkedCard href="/docs/installation/next">
