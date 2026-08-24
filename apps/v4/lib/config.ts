@@ -1,8 +1,7 @@
 export const siteConfig = {
   name: "Dropshot UI",
-  url: "https://shadcn-ui-fork-a-quokkas-projects.vercel.app",
-  ogImage:
-    "https://shadcn-ui-fork-a-quokkas-projects.vercel.app/opengraph-image.png",
+  url: "https://shadcn-ui-fork.vercel.app",
+  ogImage: "https://shadcn-ui-fork.vercel.app/opengraph-image.png",
   description:
     "직접 고치고, 넓히고, 그 위에 쌓아 올릴 수 있는 잘 다듬어진 컴포넌트 모음입니다. 여기서 시작해 여러분의 것으로 만드세요. 열린 소스, 열린 코드.",
   links: {

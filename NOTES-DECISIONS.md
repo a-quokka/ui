@@ -10,6 +10,12 @@
 `main` 은 upstream 머지를 쉽게 하려고 원본 커밋 `ac60ef5` 그대로 두고 있었다.
 프로덕션 주소를 얻기 위해 `--no-ff` 로 합쳤다(`98b3f4b`, 커밋 40개).
 
+프로덕션: https://shadcn-ui-fork.vercel.app
+
+Vercel 이 정규 프로덕션 주소로 쓰는 값이 이것이라 `siteConfig.url`·`ogImage`·
+`registry.json` 의 `homepage` 도 여기에 맞췄다. `...-a-quokkas-projects...` 쪽도
+같은 곳으로 열리지만 정규 주소가 아니다.
+
 **대가:** upstream 을 다시 머지하려면 이제 충돌을 감수해야 한다. `main` 을 원본
 그대로 두던 이점을 여기서 포기했다. upstream 을 자주 따라갈 계획이라면
 Vercel 프로덕션 브랜치를 따로 두는 쪽이 나았다.
@@ -77,8 +83,10 @@ webpack 전환은 더 나빴고(로컬에서 JS heap OOM), Node 힙을 조여도
 `NEXT_PUBLIC_APP_URL` → `VERCEL_PROJECT_PRODUCTION_URL` → `VERCEL_URL` →
 `http://localhost:4000` 순으로 떨어진다.
 
-**Vercel 프로젝트에 이 변수를 직접 설정해 두면 더 낫다.** 지금은 프리뷰마다
-배포 URL 이 달라지므로 og 이미지 주소 같은 절대 경로가 배포마다 바뀐다.
+**Vercel 에 이 변수를 따로 넣을 필요는 없다.** 한때 프리뷰마다 주소가 달라진다고
+적어 두었는데 틀린 말이었다. `VERCEL_PROJECT_PRODUCTION_URL` 은 프리뷰 환경에도
+주입되므로 체인이 이미 프로덕션 주소로 안정적으로 풀린다. 실제로 프로덕션과
+브랜치 프리뷰가 똑같이 `https://shadcn-ui-fork.vercel.app` 을 쓴다.
 
 ### B-3. 한국어화 — 완료
 
