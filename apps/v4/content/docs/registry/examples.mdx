@@ -46,7 +46,7 @@ The following registry item is a custom style that doesn't extend shadcn/ui. See
 
 It can be used to create a new style from scratch, i.e. custom components, css vars, dependencies, etc.
 
-On `npx shadcn add`, the following will:
+`npx shadcn add` 를 돌리면 이런 일이 일어납니다.
 
 - Install `tailwind-merge` and `clsx` as dependencies.
 - Add the `utils` registry item from the shadcn/ui registry.
@@ -176,7 +176,7 @@ This block installs the `login-01` block from the shadcn/ui registry.
 
 You can install a block from the shadcn/ui registry and override the primitives using your custom ones.
 
-On `npx shadcn add`, the following will:
+`npx shadcn add` 를 돌리면 이런 일이 일어납니다.
 
 - Add the `login-01` block from the shadcn/ui registry.
 - Override the `button`, `input`, and `label` primitives with the ones from the remote registry.
@@ -977,11 +977,11 @@ You can add environment variables using the `envVars` field.
 }
 ```
 
-Environment variables are added to the `.env.local` or `.env` file. Existing variables are not overwritten.
+환경 변수는 `.env.local` 이나 `.env` 에 추가됩니다. 기존 변수는 덮어쓰지 않습니다.
 
 <Callout>
 
-**IMPORTANT:** Use `envVars` to add development or example variables. Do NOT use it to add production variables.
+**중요:** `envVars` 는 개발용이나 예시 변수를 넣는 용도입니다. 운영 변수를 넣지 마세요.
 
 </Callout>
 

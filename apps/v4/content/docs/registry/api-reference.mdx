@@ -1,13 +1,13 @@
 ---
-title: API Reference
-description: Programmatic API for working with registries, schemas and presets.
+title: API 레퍼런스
+description: 레지스트리·스키마·프리셋을 코드로 다루는 API 입니다.
 ---
 
-The `shadcn` package exposes a set of programmatic APIs in addition to the CLI.
-You can use these to fetch, resolve, and install registry items, validate
-registry JSON, and build custom tooling on top of the registry.
+`shadcn` 패키지는 CLI 말고도 코드에서 쓸 수 있는 API 를 제공합니다. 이것으로
+레지스트리 항목을 가져오고 풀고 설치하거나, 레지스트리 JSON 을 검증하거나,
+레지스트리 위에 직접 도구를 만들 수 있습니다.
 
-Each API is available under a dedicated subpath import.
+각 API 는 전용 하위 경로로 import 합니다.
 
 ```ts
 import { getRegistryItems } from "shadcn/registry"
@@ -15,27 +15,26 @@ import { registryItemSchema } from "shadcn/schema"
 ```
 
 <Callout className="mt-6">
-  The CLI commands themselves are not part of the public API. Only the imports
-  documented below are considered stable.
+  CLI 명령 자체는 공개 API 가 아닙니다. 아래 문서에 있는 import 만 안정적인
+  것으로 봅니다.
 </Callout>
 
 ## shadcn/registry
 
-Fetch and resolve items from configured registries.
+설정된 레지스트리에서 항목을 가져오고 풀어냅니다.
 
-Most functions accept an options object. The two options below are common to all
-of them. In the examples that follow, `config` refers to this optional value —
-omit it to use the built-in registries.
+대부분의 함수는 옵션 객체를 받습니다. 아래 두 옵션은 모든 함수에 공통입니다.
+이어지는 예시에서 `config` 가 이 값을 가리키며, 생략하면 내장 레지스트리를
+씁니다.
 
 ### config
 
-- **Type:** `Partial<Config>`
-- **Default:** built-in registries only
+- **타입:** `Partial<Config>`
+- **기본값:** 내장 레지스트리만
 
-The registry configuration to use. Its `registries` field maps a namespace
-(e.g. `@acme`) to a URL and any authentication headers or environment
-variables required to reach it. Use
-[`getRegistriesConfig`](#getregistriesconfig) to load it from your project.
+쓸 레지스트리 설정입니다. `registries` 필드가 네임스페이스(예: `@acme`)를
+주소와, 거기에 닿는 데 필요한 인증 헤더나 환경 변수에 연결합니다. 프로젝트에서
+불러오려면 [`getRegistriesConfig`](#getregistriesconfig) 를 쓰세요.
 
 ```ts showLineNumbers
 import { getRegistryItems } from "shadcn/registry"
@@ -51,16 +50,16 @@ const items = await getRegistryItems(["@acme/login-form"], {
 
 ### useCache
 
-- **Type:** `boolean`
-- **Default:** `true`
+- **타입:** `boolean`
+- **기본값:** `true`
 
-Registry responses are cached **in memory for the lifetime of the process**,
-keyed by the resolved URL. Because the in-flight promise is cached, concurrent
-requests for the same URL are de-duplicated into a single fetch.
+레지스트리 응답은 해석된 주소를 키로 삼아 **프로세스가 사는 동안 메모리에**
+캐시됩니다. 진행 중인 promise 도 캐시되므로 같은 주소로 동시에 들어온 요청은
+하나의 fetch 로 합쳐집니다.
 
-Leave this enabled for one-off scripts and CLI runs. Set it to `false` in
-long-running processes (servers, watchers, the MCP server) where the registry
-can change between requests and you need fresh data each time.
+한 번 돌리고 마는 스크립트나 CLI 에서는 켜 두세요. 서버·워처·MCP 서버처럼
+오래 도는 프로세스에서는 요청 사이에 레지스트리가 바뀔 수 있으니 `false` 로
+두고 매번 새로 받으세요.
 
 ```ts
 const fresh = await getRegistry("@shadcn", { useCache: false })
@@ -68,9 +67,8 @@ const fresh = await getRegistry("@shadcn", { useCache: false })
 
 ### getRegistriesConfig
 
-Load registry configuration from a project directory. The function reads
-`components.json` when present; otherwise it reads the top-level `registries`
-field from `package.json`.
+프로젝트 디렉터리에서 레지스트리 설정을 읽습니다. `components.json` 이 있으면
+그것을, 없으면 `package.json` 최상위의 `registries` 필드를 읽습니다.
 
 ```ts showLineNumbers
 import { getRegistriesConfig } from "shadcn/registry"
@@ -80,7 +78,7 @@ const config = await getRegistriesConfig(process.cwd())
 
 ### getRegistry
 
-Fetch a single registry by name.
+이름으로 레지스트리 하나를 가져옵니다.
 
 ```ts showLineNumbers
 import { getRegistry } from "shadcn/registry"
@@ -93,7 +91,7 @@ const registry = await getRegistry("@acme", {
 
 ### getRegistryItems
 
-Fetch one or more registry items by their qualified names.
+정규화된 이름으로 레지스트리 항목을 하나 이상 가져옵니다.
 
 ```ts showLineNumbers
 import { getRegistryItems } from "shadcn/registry"
@@ -104,7 +102,7 @@ const items = await getRegistryItems(["@acme/button", "@acme/card"], {
 })
 ```
 
-Returns an array of registry items:
+레지스트리 항목 배열을 돌려줍니다.
 
 ```json showLineNumbers
 [
@@ -125,10 +123,10 @@ Returns an array of registry items:
 
 ### resolveRegistryItems
 
-Resolve multiple items together with their registry dependencies, merged into a
-single tree. Unlike [`getRegistryItems`](#getregistryitems), which returns the
-items as a list, this walks each item's `registryDependencies` and flattens
-everything — files, dependencies, CSS variables — into one installable object.
+여러 항목과 그 레지스트리 의존성을 함께 풀어 하나의 트리로 합칩니다. 항목을
+목록으로 돌려주는 [`getRegistryItems`](#getregistryitems) 와 달리, 각 항목의
+`registryDependencies` 를 따라가며 파일·의존성·CSS 변수를 모두 평평하게 펴서
+설치 가능한 객체 하나로 만듭니다.
 
 ```ts showLineNumbers
 import { resolveRegistryItems } from "shadcn/registry"
@@ -139,7 +137,7 @@ const tree = await resolveRegistryItems(
 )
 ```
 
-Returns a single merged tree:
+합쳐진 트리 하나를 돌려줍니다.
 
 ```json showLineNumbers
 {
@@ -166,9 +164,9 @@ Returns a single merged tree:
 
 ### addRegistryItems
 
-Resolve and install registry items into an existing project. This is the
-programmatic equivalent of `shadcn add` and applies files, package dependencies,
-environment variables, CSS, and Tailwind configuration declared by the items.
+레지스트리 항목을 풀어 기존 프로젝트에 설치합니다. `shadcn add` 를 코드로
+부르는 것과 같고, 항목이 선언한 파일·패키지 의존성·환경 변수·CSS·Tailwind
+설정을 적용합니다.
 
 ```ts showLineNumbers
 import { addRegistryItems, getRegistriesConfig } from "shadcn/registry"
@@ -184,21 +182,21 @@ await addRegistryItems(["@acme/agent"], {
 })
 ```
 
-`addRegistryItems` does not read project configuration files itself. Pass the
-result of [`getRegistriesConfig`](#getregistriesconfig), or provide `config`
-directly. A config containing only `registries` is enough when every requested
-item and dependency is universal: a `registry:item` or `registry:file` whose
-files all declare explicit targets. Other items require a full resolved project
-config, including its aliases and `resolvedPaths`. Every custom registry
-namespace referenced by an item or dependency must be present in `config`.
+`addRegistryItems` 는 프로젝트 설정 파일을 스스로 읽지 않습니다.
+[`getRegistriesConfig`](#getregistriesconfig) 의 결과를 넘기거나 `config` 를 직접
+주세요. 요청한 항목과 의존성이 모두 범용이라면, 즉 파일마다 대상이 명시된
+`registry:item` 이나 `registry:file` 뿐이라면 `registries` 만 담은 설정으로도
+충분합니다. 그 밖의 항목은 별칭과 `resolvedPaths` 를 포함한 완전한 프로젝트
+설정이 필요합니다. 항목이나 의존성이 참조하는 커스텀 네임스페이스는 모두
+`config` 에 있어야 합니다.
 
-The function throws errors instead of exiting the process and never prompts.
-Existing files are skipped unless `overwrite` is enabled, and npm uses
-`--force` for React 19 peer dependency conflicts.
+이 함수는 프로세스를 끝내는 대신 오류를 던지며 아무것도 묻지 않습니다.
+`overwrite` 를 켜지 않으면 기존 파일은 건너뛰고, React 19 peer dependency 충돌이
+있으면 npm 은 `--force` 를 씁니다.
 
 ### getRegistries
 
-Fetch the registry directory.
+레지스트리 디렉터리를 가져옵니다.
 
 ```ts showLineNumbers
 import { getRegistries } from "shadcn/registry"
@@ -206,7 +204,7 @@ import { getRegistries } from "shadcn/registry"
 const registries = await getRegistries({ useCache: true })
 ```
 
-Returns an array of registry entries:
+레지스트리 항목 목록을 돌려줍니다.
 
 ```json
 [
@@ -220,7 +218,7 @@ Returns an array of registry entries:
 
 ### searchRegistries
 
-Search across one or more registries with fuzzy matching.
+하나 이상의 레지스트리를 흐린 일치로 검색합니다.
 
 ```ts showLineNumbers
 import { searchRegistries } from "shadcn/registry"
@@ -235,7 +233,7 @@ const results = await searchRegistries(["@shadcn"], {
 })
 ```
 
-Returns matching items wrapped in pagination metadata:
+맞는 항목을 페이지 정보와 함께 돌려줍니다.
 
 ```json
 {
@@ -255,8 +253,8 @@ Returns matching items wrapped in pagination metadata:
 
 ### loadRegistry
 
-Read and resolve a local `registry.json` file from disk, following any
-`include` references, and return the registry catalog.
+디스크에 있는 `registry.json` 을 읽고 `include` 참조까지 풀어 카탈로그를
+돌려줍니다.
 
 ```ts showLineNumbers
 import { loadRegistry } from "shadcn/registry"
@@ -267,21 +265,20 @@ const catalog = await loadRegistry({
 })
 ```
 
-The returned catalog lists every item but **omits file contents** — like a
-built `registry.json` index.
+돌려주는 카탈로그에는 모든 항목이 들어 있지만 **파일 내용은 빠져 있습니다.**
+빌드된 `registry.json` 색인과 같습니다.
 
 <Callout className="mt-6" title="How is this different from getRegistry?">
-  [`getRegistry`](#getregistry) fetches a **remote** registry over the network
-  (by namespace, URL or GitHub address) and expects the served catalog to
-  already be flattened — it rejects catalogs that still use `include`.
-  `loadRegistry` reads a **local** `registry.json` from disk and resolves
-  `include` references itself.
+  [`getRegistry`](#getregistry) 는 네임스페이스·주소·GitHub 주소로 **원격**
+  레지스트리를 네트워크에서 가져오며, 카탈로그가 이미 평평하게 펴져 있어야
+  합니다. `include` 가 남아 있으면 거부합니다. `loadRegistry` 는 디스크의
+  **로컬** `registry.json` 을 읽고 `include` 를 직접 풀어 냅니다.
 </Callout>
 
 ### loadRegistryItem
 
-Read a single item from a local `registry.json` by name, with its file contents
-read from disk and inlined.
+로컬 `registry.json` 에서 이름으로 항목 하나를 읽고, 파일 내용을 디스크에서
+읽어 함께 담아 돌려줍니다.
 
 ```ts showLineNumbers
 import { loadRegistryItem } from "shadcn/registry"
@@ -289,7 +286,7 @@ import { loadRegistryItem } from "shadcn/registry"
 const item = await loadRegistryItem("login-form", { cwd: process.cwd() })
 ```
 
-Returns a fully resolved registry item with file contents:
+파일 내용까지 모두 채워진 레지스트리 항목을 돌려줍니다.
 
 ```json
 {
@@ -307,16 +304,15 @@ Returns a fully resolved registry item with file contents:
 ```
 
 <Callout className="mt-6" title="How is this different from getRegistryItems?">
-  [`getRegistryItems`](#getregistryitems) resolves items from a **remote**
-  registry over the network. `loadRegistryItem` builds a single item on demand
-  from your **local** source files, reading each file from disk. Use it in a
-  dynamic route that serves `registry-item.json` responses.
+  [`getRegistryItems`](#getregistryitems) 는 **원격** 레지스트리에서 항목을 풀어
+  옵니다. `loadRegistryItem` 은 **로컬** 소스 파일을 디스크에서 읽어 항목 하나를
+  그때그때 만듭니다. `registry-item.json` 을 내보내는 동적 라우트에 쓰세요.
 </Callout>
 
 ### Errors
 
-All registry functions throw typed errors that extend `RegistryError`. Use the
-`RegistryErrorCode` enum or `instanceof` checks to handle them.
+모든 레지스트리 함수는 `RegistryError` 를 상속한 타입 있는 오류를 던집니다.
+`RegistryErrorCode` enum 이나 `instanceof` 로 구분해 처리하세요.
 
 ```ts showLineNumbers
 import { RegistryError, RegistryNotFoundError } from "shadcn/registry"
@@ -330,7 +326,7 @@ try {
 }
 ```
 
-Available error classes:
+쓸 수 있는 오류 클래스입니다.
 
 - `RegistryError`
 - `RegistryNotFoundError`
@@ -348,8 +344,8 @@ Available error classes:
 
 ## shadcn/schema
 
-The Zod schemas used to validate `registry.json`, `registry-item.json` and
-`components.json`. Useful for validating registry data in your own tooling.
+`registry.json`·`registry-item.json`·`components.json` 을 검증하는 Zod 스키마입니다.
+직접 만든 도구에서 레지스트리 데이터를 검증할 때 씁니다.
 
 ```ts
 import { registryItemSchema, registrySchema } from "shadcn/schema"
@@ -360,7 +356,7 @@ if (!result.success) {
 }
 ```
 
-Key schemas:
+주요 스키마입니다.
 
 - `registrySchema`
 - `registryItemSchema`
@@ -372,7 +368,7 @@ Key schemas:
 - `configSchema`
 - `presetSchema`
 
-Inferred types are exported alongside them:
+여기서 추론한 타입도 함께 내보냅니다.
 
 - `Registry`
 - `RegistryItem`
@@ -383,13 +379,13 @@ Inferred types are exported alongside them:
 
 ## shadcn/preset
 
-Encode, decode and validate theme presets, plus the preset option constants used
-by the theme editor.
+테마 프리셋을 인코딩·디코딩·검증하고, 테마 편집기가 쓰는 프리셋 옵션 상수도
+제공합니다.
 
 ### encodePreset
 
-Encode a `Partial<PresetConfig>` into a short, URL-safe preset code. Any fields
-you omit fall back to `DEFAULT_PRESET_CONFIG`.
+`Partial<PresetConfig>` 를 짧고 주소에 넣기 좋은 프리셋 코드로 바꿉니다.
+빠뜨린 필드는 `DEFAULT_PRESET_CONFIG` 값을 씁니다.
 
 ```ts showLineNumbers
 import { encodePreset } from "shadcn/preset"
@@ -403,7 +399,7 @@ const code = encodePreset({
 })
 ```
 
-Returns a version-prefixed string:
+버전 접두가 붙은 문자열을 돌려줍니다.
 
 ```ts showLineNumbers
 "bJ4FLU0"
@@ -411,8 +407,8 @@ Returns a version-prefixed string:
 
 ### decodePreset
 
-Decode a preset code back into a full `PresetConfig`. Returns `null` if the code
-is missing or invalid.
+프리셋 코드를 온전한 `PresetConfig` 로 되돌립니다. 코드가 없거나 잘못됐으면
+`null` 을 돌려줍니다.
 
 ```ts showLineNumbers
 import { decodePreset } from "shadcn/preset"
