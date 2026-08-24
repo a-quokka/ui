@@ -358,7 +358,7 @@ export async function GET(
 
 <Accordion type="single" collapsible>
   <AccordionItem value="content-negotiation">
-    <AccordionTrigger>Content negotiation</AccordionTrigger>
+    <AccordionTrigger>콘텐츠 협상</AccordionTrigger>
     <AccordionContent>
 
 `shadcn` CLI 는 **HTTP 콘텐츠 협상**을 지원합니다. 그래서 도메인 루트를 포함해 어떤 주소에 레지스트리를 두고도, 누가 요청했는지에 따라 다른 내용을 내보낼 수 있습니다.
@@ -367,29 +367,27 @@ export async function GET(
 
 <ul>
   <li>
-    <strong>HTML</strong> to browsers — a landing page, documentation, or
-    marketing site.
+    브라우저에는 <strong>HTML</strong> — 소개 페이지·문서·마케팅 사이트.
   </li>
   <li>
-    <strong>JSON</strong> to the <code>shadcn</code> CLI — an installable
-    registry item.
+    <code>shadcn</code> CLI 에는 <strong>JSON</strong> — 설치할 수 있는
+    레지스트리 항목.
   </li>
   <li>
-    <strong>Markdown</strong> to AI agents and LLMs — a machine-readable version
-    of your content.
+    AI 에이전트와 LLM 에는 <strong>Markdown</strong> — 기계가 읽을 수 있는 형태.
   </li>
 </ul>
 
 클라이언트가 `Accept` 요청 헤더로 원하는 것을 알리면 서버가 무엇을 돌려줄지 정합니다.
 
-#### Request headers
+**요청 헤더**
 
 CLI 는 레지스트리에 요청할 때 아래 헤더를 보냅니다.
 
 - **User-Agent**: `shadcn`
 - **Accept**: `application/vnd.shadcn.v1+json, application/json;q=0.9`
 
-#### Root hosting
+**루트에 두기**
 
 서버에서 이 헤더를 확인하면 CLI 요청은 설치 가능한 레지스트리 항목으로, 브라우저 요청은 문서나 홈페이지로 보낼 수 있습니다.
 
@@ -468,16 +466,16 @@ app.get("/", (req, res) => {
 
 <ul>
   <li>
-    <strong>Branded Registry URLs</strong>:{" "}
+    <strong>브랜드가 드러나는 주소</strong>:{" "}
     <code>shadcn add https://ui.example.com</code>
   </li>
   <li>
-    <strong>Shorter URLs</strong>: Users type your domain root, not{" "}
-    <code>/r/</code> or <code>/registry/</code> sub-paths.
+    <strong>짧은 주소</strong>: <code>/r/</code> 나 <code>/registry/</code> 같은
+    하위 경로 없이 도메인 루트만 적으면 됩니다.
   </li>
   <li>
-    <strong>Easy Mnemonics</strong>: Easier for users to remember and share your
-    registry.
+    <strong>기억하기 쉬움</strong>: 사용자가 레지스트리를 외우고 나누기
+    쉬워집니다.
   </li>
 </ul>
 
