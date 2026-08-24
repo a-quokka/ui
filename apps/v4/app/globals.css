@@ -93,6 +93,12 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-active: var(--primary-active);
+  --color-primary-emphasis: var(--primary-emphasis);
+  --color-secondary-hover: var(--secondary-hover);
+  --color-destructive-hover: var(--destructive-hover);
+  --color-destructive-active: var(--destructive-active);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -144,13 +150,21 @@
   --popover-foreground: #15191e;
   --primary: #6633ff;
   --primary-foreground: #ffffff;
+  /* Dropshot primary 스케일. shadcn 은 불투명도로 상태를 만들지만
+     Dropshot 은 단계로 만든다. 어두운 면에서 채도가 유지된다. */
+  --primary-hover: #5a20f1;
+  --primary-active: #4d07d8;
+  --primary-emphasis: #7f5cff;
   --secondary: #f0f3f6;
+  --secondary-hover: #e5e8ed;
   --secondary-foreground: #15191e;
   --muted: #f4f7f9;
   --muted-foreground: #5e656f;
   --accent: #f0f3f6;
   --accent-foreground: #15191e;
   --destructive: #df1b36;
+  --destructive-hover: #e62e48;
+  --destructive-active: #eb5d70;
   --destructive-foreground: #ffffff;
   --border: #e5e8ed;
   --input: #e5e8ed;
@@ -188,13 +202,21 @@
   --popover-foreground: #e5e8ed;
   --primary: #6633ff;
   --primary-foreground: #ffffff;
+  /* Dropshot primary 스케일. shadcn 은 불투명도로 상태를 만들지만
+     Dropshot 은 단계로 만든다. 어두운 면에서 채도가 유지된다. */
+  --primary-hover: #5a20f1;
+  --primary-active: #4d07d8;
+  --primary-emphasis: #7f5cff;
   --secondary: #2a2f36;
+  --secondary-hover: #393e46;
   --secondary-foreground: #ffffff;
   --muted: #2a2f36;
   --muted-foreground: #8e97a4;
   --accent: #393e46;
   --accent-foreground: #f0f3f6;
   --destructive: #e62e48;
+  --destructive-hover: #ea4855;
+  --destructive-active: #ed5f6b;
   --destructive-foreground: #ffffff;
   --border: #393e46;
   --input: #393e46;
