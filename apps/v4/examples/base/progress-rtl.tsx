@@ -16,7 +16,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      label: "업로드 진행률",
+      label: "Upload progress",
     },
   },
   ko: {

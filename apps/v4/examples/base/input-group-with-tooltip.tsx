@@ -127,7 +127,7 @@ export function InputGroupWithTooltip({
             <InputGroupAddon align="inline-end">
               <InputGroupButton
                 size="icon-xs"
-                onClick={() => toast("Added to favorites")}
+                onClick={() => toast("즐겨찾기에 추가했습니다")}
               >
                 <StarIcon />
               </InputGroupButton>

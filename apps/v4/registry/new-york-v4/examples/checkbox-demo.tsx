@@ -8,12 +8,12 @@ export default function CheckboxDemo() {
     <div className="flex flex-col gap-6">
       <div className="flex items-center gap-3">
         <Checkbox id="terms" />
-        <Label htmlFor="terms">Accept terms and conditions</Label>
+        <Label htmlFor="terms">이용약관에 동의합니다</Label>
       </div>
       <div className="flex items-start gap-3">
         <Checkbox id="terms-2" defaultChecked />
         <div className="grid gap-2">
-          <Label htmlFor="terms-2">Accept terms and conditions</Label>
+          <Label htmlFor="terms-2">이용약관에 동의합니다</Label>
           <p className="text-sm text-muted-foreground">
             By clicking this checkbox, you agree to the terms and conditions.
           </p>
@@ -34,7 +34,7 @@ export default function CheckboxDemo() {
             Enable notifications
           </p>
           <p className="text-sm text-muted-foreground">
-            You can enable or disable notifications at any time.
+            알림은 언제든 켜고 끌 수 있습니다.
           </p>
         </div>
       </Label>

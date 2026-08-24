@@ -19,7 +19,7 @@ const translations: Translations = {
     dir: "ltr",
     values: {
       orderNumber: "Order #4189",
-      status: "상태",
+      status: "Status",
       shipped: "Shipped",
       shippingAddress: "Shipping address",
       address: "100 Market St, San Francisco",

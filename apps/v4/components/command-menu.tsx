@@ -397,7 +397,7 @@ export function CommandMenu({
           {...props}
         >
           <span className="hidden xl:inline-flex">문서 검색...</span>
-          <span className="inline-flex xl:hidden">Search...</span>
+          <span className="inline-flex xl:hidden">검색...</span>
         </Button>
       </DialogTrigger>
       <DialogContent className="rounded-xl border-none bg-clip-padding p-2 pb-11 shadow-2xl ring-4 ring-neutral-200/80 dark:bg-neutral-900 dark:ring-neutral-800">

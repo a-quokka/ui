@@ -34,7 +34,7 @@ export function QuestionnaireFreeform() {
 
     const approach = new FormData(event.currentTarget).get("approach")
 
-    toast("Approach selected", {
+    toast("방식을 골랐습니다", {
       description: `Approach: ${approach ?? "None"}`,
     })
   }

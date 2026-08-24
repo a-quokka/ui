@@ -13,7 +13,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      label: "북마크",
+      label: "Bookmark",
     },
   },
   ko: {

@@ -148,7 +148,7 @@ export function MessageScrollerLoadHistory() {
               disabled={!canLoadHistory}
               onClick={() => {
                 setVisibleCount(history.length)
-                toast("History loaded", {
+                toast("이전 기록을 불러왔습니다", {
                   description: "위로 올리면 이전 메시지를 볼 수 있습니다.",
                 })
               }}

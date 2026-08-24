@@ -34,7 +34,7 @@ export function QuestionnaireMultiple() {
 
     const context = new FormData(event.currentTarget).getAll("context")
 
-    toast("Context selected", {
+    toast("맥락을 골랐습니다", {
       description: `Context: ${context.join(", ") || "None"}`,
     })
   }

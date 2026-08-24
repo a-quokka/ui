@@ -13,7 +13,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      caption: "멋진 풍경",
+      caption: "Beautiful landscape",
     },
   },
   ko: {

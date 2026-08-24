@@ -26,7 +26,7 @@ import { Switch } from "@/registry/new-york-v4/ui/switch"
 
 const formSchema = z.object({
   twoFactor: z.boolean().refine((val) => val === true, {
-    message: "It is highly recommended to enable two-factor authentication.",
+    message: "2단계 인증을 켜기를 강하게 권합니다.",
   }),
 })
 
@@ -39,7 +39,7 @@ export default function FormTanstackSwitch() {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      toast("You submitted the following values:", {
+      toast("아래 값을 제출했습니다.", {
         description: (
           <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
             <code>{JSON.stringify(value, null, 2)}</code>
@@ -59,10 +59,8 @@ export default function FormTanstackSwitch() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader>
-        <CardTitle>Security Settings</CardTitle>
-        <CardDescription>
-          Manage your account security preferences.
-        </CardDescription>
+        <CardTitle>보안 설정</CardTitle>
+        <CardDescription>계정 보안 설정을 관리합니다.</CardDescription>
       </CardHeader>
       <CardContent>
         <form
@@ -82,11 +80,10 @@ export default function FormTanstackSwitch() {
                   <Field orientation="horizontal" data-invalid={isInvalid}>
                     <FieldContent>
                       <FieldLabel htmlFor="form-tanstack-switch-twoFactor">
-                        Multi-factor authentication
+                        다단계 인증
                       </FieldLabel>
                       <FieldDescription>
-                        Enable multi-factor authentication to secure your
-                        account.
+                        계정을 지키려면 다단계 인증을 켜세요.
                       </FieldDescription>
                       {isInvalid && (
                         <FieldError errors={field.state.meta.errors} />
@@ -109,10 +106,10 @@ export default function FormTanstackSwitch() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-tanstack-switch">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

@@ -43,7 +43,7 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/skills",
   },
   {
-    name: "MCP Server",
+    name: "MCP 서버",
     href: "/docs/mcp",
   },
   {
@@ -51,7 +51,7 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/registry",
   },
   {
-    name: "Forms",
+    name: "폼",
     href: "/docs/forms",
   },
 ]
@@ -94,10 +94,10 @@ export function MobileNav({
                 )}
               />
             </div>
-            <span className="sr-only">Toggle Menu</span>
+            <span className="sr-only">메뉴 열기</span>
           </div>
           <span className="flex h-8 items-center text-lg leading-none font-medium">
-            Menu
+            메뉴
           </span>
         </Button>
       </PopoverTrigger>
@@ -111,7 +111,7 @@ export function MobileNav({
         <div className="flex flex-col gap-12 overflow-auto px-6 py-6">
           <div className="flex flex-col gap-4">
             <div className="text-sm font-medium text-muted-foreground">
-              Menu
+              메뉴
             </div>
             <div className="flex flex-col gap-3">
               {items.map((item, index) => (
@@ -123,7 +123,7 @@ export function MobileNav({
           </div>
           <div className="flex flex-col gap-4">
             <div className="text-sm font-medium text-muted-foreground">
-              Sections
+              섹션
             </div>
             <div className="flex flex-col gap-3">
               {TOP_LEVEL_SECTIONS.map(({ name, href }) => {
@@ -136,7 +136,7 @@ export function MobileNav({
                     {PAGES_NEW.includes(href) && (
                       <span
                         className="flex size-2 rounded-full bg-blue-500"
-                        title="New"
+                        title="신규"
                       />
                     )}
                   </MobileLink>

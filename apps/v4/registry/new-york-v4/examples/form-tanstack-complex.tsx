@@ -37,18 +37,18 @@ import { Switch } from "@/registry/new-york-v4/ui/switch"
 const addons = [
   {
     id: "analytics",
-    title: "Analytics",
-    description: "Advanced analytics and reporting",
+    title: "분석",
+    description: "고급 분석과 보고서",
   },
   {
     id: "backup",
-    title: "Backup",
-    description: "Automated daily backups",
+    title: "백업",
+    description: "매일 자동 백업",
   },
   {
     id: "support",
-    title: "Priority Support",
-    description: "24/7 premium customer support",
+    title: "우선 지원",
+    description: "24시간 프리미엄 고객 지원",
   },
 ] as const
 
@@ -59,7 +59,7 @@ const formSchema = z.object({
     })
     .min(1, "Please select a subscription plan")
     .refine((value) => value === "basic" || value === "pro", {
-      message: "Invalid plan selection. Please choose Basic or Pro",
+      message: "올바르지 않은 플랜입니다. 베이직이나 프로를 고르세요",
     }),
   billingPeriod: z
     .string({
@@ -73,7 +73,7 @@ const formSchema = z.object({
     .refine(
       (value) => value.every((addon) => addons.some((a) => a.id === addon)),
       {
-        message: "You selected an invalid add-on",
+        message: "올바르지 않은 추가 기능입니다",
       }
     ),
   emailNotifications: z.boolean(),
@@ -91,7 +91,7 @@ export default function FormTanstackComplex() {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      toast("You submitted the following values:", {
+      toast("아래 값을 제출했습니다.", {
         description: (
           <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
             <code>{JSON.stringify(value, null, 2)}</code>
@@ -126,10 +126,8 @@ export default function FormTanstackComplex() {
                   field.state.meta.isTouched && !field.state.meta.isValid
                 return (
                   <FieldSet>
-                    <FieldLegend>Subscription Plan</FieldLegend>
-                    <FieldDescription>
-                      Choose your subscription plan.
-                    </FieldDescription>
+                    <FieldLegend>구독 플랜</FieldLegend>
+                    <FieldDescription>구독 플랜을 고르세요.</FieldDescription>
                     <RadioGroup
                       name={field.name}
                       value={field.state.value}
@@ -141,9 +139,9 @@ export default function FormTanstackComplex() {
                           data-invalid={isInvalid}
                         >
                           <FieldContent>
-                            <FieldTitle>Basic</FieldTitle>
+                            <FieldTitle>베이직</FieldTitle>
                             <FieldDescription>
-                              For individuals and small teams
+                              개인과 소규모 팀에 맞습니다
                             </FieldDescription>
                           </FieldContent>
                           <RadioGroupItem
@@ -159,9 +157,9 @@ export default function FormTanstackComplex() {
                           data-invalid={isInvalid}
                         >
                           <FieldContent>
-                            <FieldTitle>Pro</FieldTitle>
+                            <FieldTitle>프로</FieldTitle>
                             <FieldDescription>
-                              For businesses with higher demands
+                              요구가 큰 기업에 맞습니다
                             </FieldDescription>
                           </FieldContent>
                           <RadioGroupItem
@@ -187,7 +185,7 @@ export default function FormTanstackComplex() {
                   field.state.meta.isTouched && !field.state.meta.isValid
                 return (
                   <Field data-invalid={isInvalid}>
-                    <FieldLabel htmlFor={field.name}>Billing Period</FieldLabel>
+                    <FieldLabel htmlFor={field.name}>결제 주기</FieldLabel>
                     <Select
                       name={field.name}
                       value={field.state.value}
@@ -195,15 +193,15 @@ export default function FormTanstackComplex() {
                       aria-invalid={isInvalid}
                     >
                       <SelectTrigger id={field.name}>
-                        <SelectValue placeholder="Select" />
+                        <SelectValue placeholder="선택" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="monthly">Monthly</SelectItem>
-                        <SelectItem value="yearly">Yearly</SelectItem>
+                        <SelectItem value="monthly">월 결제</SelectItem>
+                        <SelectItem value="yearly">연 결제</SelectItem>
                       </SelectContent>
                     </Select>
                     <FieldDescription>
-                      Choose how often you want to be billed.
+                      얼마나 자주 결제할지 고르세요.
                     </FieldDescription>
                     {isInvalid && (
                       <FieldError errors={field.state.meta.errors} />
@@ -221,9 +219,9 @@ export default function FormTanstackComplex() {
                   field.state.meta.isTouched && !field.state.meta.isValid
                 return (
                   <FieldSet>
-                    <FieldLegend>Add-ons</FieldLegend>
+                    <FieldLegend>추가 기능</FieldLegend>
                     <FieldDescription>
-                      Select additional features you&apos;d like to include.
+                      함께 쓸 기능을 고르세요.
                     </FieldDescription>
                     <FieldGroup data-slot="checkbox-group">
                       {addons.map((addon) => (
@@ -277,11 +275,9 @@ export default function FormTanstackComplex() {
                 return (
                   <Field orientation="horizontal" data-invalid={isInvalid}>
                     <FieldContent>
-                      <FieldLabel htmlFor={field.name}>
-                        Email Notifications
-                      </FieldLabel>
+                      <FieldLabel htmlFor={field.name}>이메일 알림</FieldLabel>
                       <FieldDescription>
-                        Receive email updates about your subscription
+                        구독 관련 소식을 이메일로 받습니다
                       </FieldDescription>
                     </FieldContent>
                     <Switch
@@ -304,7 +300,7 @@ export default function FormTanstackComplex() {
       <CardFooter>
         <Field orientation="horizontal" className="justify-end">
           <Button type="submit" form="subscription-form">
-            Save Preferences
+            설정 저장
           </Button>
         </Field>
       </CardFooter>

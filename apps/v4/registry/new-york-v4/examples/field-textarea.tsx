@@ -16,7 +16,7 @@ export default function FieldTextarea() {
             <FieldLabel htmlFor="feedback">Feedback</FieldLabel>
             <Textarea
               id="feedback"
-              placeholder="Your feedback helps us improve..."
+              placeholder="의견을 주시면 개선에 씁니다..."
               rows={4}
             />
             <FieldDescription>

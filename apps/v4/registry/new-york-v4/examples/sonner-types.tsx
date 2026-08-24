@@ -18,23 +18,21 @@ export default function SonnerTypes() {
       </Button>
       <Button
         variant="outline"
-        onClick={() =>
-          toast.info("Be at the area 10 minutes before the event time")
-        }
+        onClick={() => toast.info("일정 시작 10분 전까지 도착하세요")}
       >
         Info
       </Button>
       <Button
         variant="outline"
         onClick={() =>
-          toast.warning("Event start time cannot be earlier than 8am")
+          toast.warning("일정 시작 시각은 오전 8시보다 이를 수 없습니다")
         }
       >
         Warning
       </Button>
       <Button
         variant="outline"
-        onClick={() => toast.error("Event has not been created")}
+        onClick={() => toast.error("일정을 만들지 못했습니다")}
       >
         Error
       </Button>

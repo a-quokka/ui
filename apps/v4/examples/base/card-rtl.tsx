@@ -23,8 +23,8 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "계정에 로그인",
-      description: "계정에 로그인하려면 아래에 이메일을 입력하세요",
+      title: "Login to your account",
+      description: "Enter your email below to login to your account",
       signUp: "Sign Up",
       email: "Email",
       emailPlaceholder: "m@example.com",

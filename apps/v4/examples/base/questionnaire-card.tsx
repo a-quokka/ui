@@ -49,7 +49,7 @@ export function QuestionnaireCard() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Agent task created", {
+    toast("에이전트 작업을 만들었습니다", {
       description: `Task: ${formData.get("task") ?? "None"} · Handoff: ${formData.get("output") ?? "None"}`,
     })
   }

@@ -52,7 +52,7 @@ export default function FormTanstackArray() {
       onBlur: formSchema,
     },
     onSubmit: async ({ value }) => {
-      toast("You submitted the following values:", {
+      toast("아래 값을 제출했습니다.", {
         description: (
           <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
             <code>{JSON.stringify(value, null, 2)}</code>
@@ -72,8 +72,8 @@ export default function FormTanstackArray() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader className="border-b">
-        <CardTitle>Contact Emails</CardTitle>
-        <CardDescription>Manage your contact email addresses.</CardDescription>
+        <CardTitle>연락용 이메일</CardTitle>
+        <CardDescription>연락받을 이메일 주소를 관리합니다.</CardDescription>
       </CardHeader>
       <CardContent>
         <form
@@ -89,9 +89,9 @@ export default function FormTanstackArray() {
                 field.state.meta.isTouched && !field.state.meta.isValid
               return (
                 <FieldSet className="gap-4">
-                  <FieldLegend variant="label">Email Addresses</FieldLegend>
+                  <FieldLegend variant="label">이메일 주소</FieldLegend>
                   <FieldDescription>
-                    Add up to 5 email addresses where we can contact you.
+                    연락받을 이메일 주소를 최대 5개까지 더할 수 있습니다.
                   </FieldDescription>
                   <FieldGroup className="gap-4">
                     {field.state.value.map((_, index) => (
@@ -154,7 +154,7 @@ export default function FormTanstackArray() {
                       onClick={() => field.pushValue({ address: "" })}
                       disabled={field.state.value.length >= 5}
                     >
-                      Add Email Address
+                      이메일 주소 추가
                     </Button>
                   </FieldGroup>
                   {isInvalid && <FieldError errors={field.state.meta.errors} />}
@@ -167,10 +167,10 @@ export default function FormTanstackArray() {
       <CardFooter className="border-t">
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-tanstack-array">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

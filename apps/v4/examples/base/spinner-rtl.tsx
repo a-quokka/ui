@@ -18,7 +18,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "결제 처리 중...",
+      title: "Processing payment...",
       amount: "$100.00",
     },
   },

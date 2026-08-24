@@ -34,18 +34,18 @@ import {
 const plans = [
   {
     id: "starter",
-    title: "Starter (100K tokens/month)",
-    description: "For everyday use with basic features.",
+    title: "스타터 (월 10만 토큰)",
+    description: "기본 기능으로 일상적인 작업에 씁니다.",
   },
   {
     id: "pro",
-    title: "Pro (1M tokens/month)",
-    description: "For advanced AI usage with more features.",
+    title: "프로 (월 100만 토큰)",
+    description: "기능이 더 많은 고급 AI 작업에 씁니다.",
   },
   {
     id: "enterprise",
-    title: "Enterprise (Unlimited tokens)",
-    description: "For large teams and heavy usage.",
+    title: "엔터프라이즈 (토큰 무제한)",
+    description: "큰 팀과 많은 사용량에 맞습니다.",
   },
 ] as const
 
@@ -62,7 +62,7 @@ export default function FormRhfRadioGroup() {
   })
 
   function onSubmit(data: z.infer<typeof formSchema>) {
-    toast("You submitted the following values:", {
+    toast("아래 값을 제출했습니다.", {
       description: (
         <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
           <code>{JSON.stringify(data, null, 2)}</code>
@@ -81,10 +81,8 @@ export default function FormRhfRadioGroup() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader>
-        <CardTitle>Subscription Plan</CardTitle>
-        <CardDescription>
-          See pricing and features for each plan.
-        </CardDescription>
+        <CardTitle>구독 플랜</CardTitle>
+        <CardDescription>플랜별 가격과 기능을 봅니다.</CardDescription>
       </CardHeader>
       <CardContent>
         <form id="form-rhf-radiogroup" onSubmit={form.handleSubmit(onSubmit)}>
@@ -94,9 +92,9 @@ export default function FormRhfRadioGroup() {
               control={form.control}
               render={({ field, fieldState }) => (
                 <FieldSet data-invalid={fieldState.invalid}>
-                  <FieldLegend>Plan</FieldLegend>
+                  <FieldLegend>플랜</FieldLegend>
                   <FieldDescription>
-                    You can upgrade or downgrade your plan at any time.
+                    플랜은 언제든 올리거나 내릴 수 있습니다.
                   </FieldDescription>
                   <RadioGroup
                     name={field.name}
@@ -140,10 +138,10 @@ export default function FormRhfRadioGroup() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-rhf-radiogroup">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

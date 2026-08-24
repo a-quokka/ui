@@ -11,7 +11,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "웃음에 매긴 세금: 농담세 연대기",
+      title: "Taxing Laughter: The Joke Tax Chronicles",
       leadParagraph:
         "Once upon a time, in a far-off land, there was a very lazy king who spent all day lounging on his throne. One day, his advisors came to him with a problem: the kingdom was running out of money.",
       kingsPlan: "The King's Plan",

@@ -23,31 +23,31 @@ import {
 
 const projects = [
   {
-    name: "Design Engineering",
+    name: "디자인 엔지니어링",
     url: "#",
     icon: FrameIcon,
     badge: "24",
   },
   {
-    name: "Sales & Marketing",
+    name: "영업·마케팅",
     url: "#",
     icon: PieChartIcon,
     badge: "12",
   },
   {
-    name: "Travel",
+    name: "출장",
     url: "#",
     icon: MapIcon,
     badge: "3",
   },
   {
-    name: "Support",
+    name: "지원",
     url: "#",
     icon: LifeBuoyIcon,
     badge: "21",
   },
   {
-    name: "Feedback",
+    name: "피드백",
     url: "#",
     icon: SendIcon,
     badge: "8",

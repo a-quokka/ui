@@ -257,7 +257,7 @@ function DirectoryListContent() {
               </ItemActions>
               <ItemFooter className="justify-start pl-16 sm:hidden">
                 <Button size="sm" variant="outline">
-                  View <IconArrowUpRight />
+                  보기 <IconArrowUpRight />
                 </Button>
                 <DirectoryAddButton registry={registry} />
               </ItemFooter>

@@ -61,7 +61,7 @@ export function DirectoryAddButton({
       className="relative z-10"
       onClick={() => open(registry)}
     >
-      Add <IconPlus />
+      추가 <IconPlus />
     </Button>
   )
 }

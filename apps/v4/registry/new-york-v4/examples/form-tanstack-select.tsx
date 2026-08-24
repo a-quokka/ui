@@ -32,13 +32,13 @@ import {
 } from "@/registry/new-york-v4/ui/select"
 
 const spokenLanguages = [
-  { label: "English", value: "en" },
-  { label: "Spanish", value: "es" },
-  { label: "French", value: "fr" },
-  { label: "German", value: "de" },
-  { label: "Italian", value: "it" },
-  { label: "Chinese", value: "zh" },
-  { label: "Japanese", value: "ja" },
+  { label: "영어", value: "en" },
+  { label: "스페인어", value: "es" },
+  { label: "프랑스어", value: "fr" },
+  { label: "독일어", value: "de" },
+  { label: "이탈리아어", value: "it" },
+  { label: "중국어", value: "zh" },
+  { label: "일본어", value: "ja" },
 ] as const
 
 const formSchema = z.object({
@@ -46,8 +46,7 @@ const formSchema = z.object({
     .string()
     .min(1, "Please select your spoken language.")
     .refine((val) => val !== "auto", {
-      message:
-        "Auto-detection is not allowed. Please select a specific language.",
+      message: "자동 감지는 쓸 수 없습니다. 언어를 직접 고르세요.",
     }),
 })
 
@@ -60,7 +59,7 @@ export default function FormTanstackSelect() {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      toast("You submitted the following values:", {
+      toast("아래 값을 제출했습니다.", {
         description: (
           <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
             <code>{JSON.stringify(value, null, 2)}</code>
@@ -80,10 +79,8 @@ export default function FormTanstackSelect() {
   return (
     <Card className="w-full sm:max-w-lg">
       <CardHeader>
-        <CardTitle>Language Preferences</CardTitle>
-        <CardDescription>
-          Select your preferred spoken language.
-        </CardDescription>
+        <CardTitle>언어 설정</CardTitle>
+        <CardDescription>주로 쓰는 언어를 고르세요.</CardDescription>
       </CardHeader>
       <CardContent>
         <form
@@ -103,10 +100,10 @@ export default function FormTanstackSelect() {
                   <Field orientation="responsive" data-invalid={isInvalid}>
                     <FieldContent>
                       <FieldLabel htmlFor="form-tanstack-select-language">
-                        Spoken Language
+                        사용 언어
                       </FieldLabel>
                       <FieldDescription>
-                        For best results, select the language you speak.
+                        실제로 말하는 언어를 고르면 결과가 가장 좋습니다.
                       </FieldDescription>
                       {isInvalid && (
                         <FieldError errors={field.state.meta.errors} />
@@ -122,10 +119,10 @@ export default function FormTanstackSelect() {
                         aria-invalid={isInvalid}
                         className="min-w-[120px]"
                       >
-                        <SelectValue placeholder="Select" />
+                        <SelectValue placeholder="선택" />
                       </SelectTrigger>
                       <SelectContent position="item-aligned">
-                        <SelectItem value="auto">Auto</SelectItem>
+                        <SelectItem value="auto">자동</SelectItem>
                         <SelectSeparator />
                         {spokenLanguages.map((language) => (
                           <SelectItem
@@ -147,10 +144,10 @@ export default function FormTanstackSelect() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-tanstack-select">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

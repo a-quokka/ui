@@ -64,7 +64,7 @@ export function InputOTPForm() {
             확인
           </Button>
           <div className="text-sm text-muted-foreground">
-            Having trouble signing in?{" "}
+            로그인이 안 되나요?{" "}
             <a
               href="#"
               className="underline underline-offset-4 transition-colors hover:text-primary"

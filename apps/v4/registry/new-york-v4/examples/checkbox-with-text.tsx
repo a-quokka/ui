@@ -11,7 +11,7 @@ export default function CheckboxWithText() {
           htmlFor="terms1"
           className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
         >
-          Accept terms and conditions
+          이용약관에 동의합니다
         </label>
         <p className="text-sm text-muted-foreground">
           You agree to our Terms of Service and Privacy Policy.

@@ -29,7 +29,7 @@ export default function InputGroupTooltip() {
               </InputGroupButton>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Password must be at least 8 characters</p>
+              <p>비밀번호는 8자 이상이어야 합니다</p>
             </TooltipContent>
           </Tooltip>
         </InputGroupAddon>

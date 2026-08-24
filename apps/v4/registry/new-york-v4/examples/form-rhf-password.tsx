@@ -32,23 +32,23 @@ import { Progress } from "@/registry/new-york-v4/ui/progress"
 const passwordRequirements = [
   {
     id: "length",
-    label: "At least 8 characters",
+    label: "8자 이상",
     test: (val: string) => val.length >= 8,
   },
   {
     id: "lowercase",
-    label: "One lowercase letter",
+    label: "소문자 하나",
     test: (val: string) => /[a-z]/.test(val),
   },
   {
     id: "uppercase",
-    label: "One uppercase letter",
+    label: "대문자 하나",
     test: (val: string) => /[A-Z]/.test(val),
   },
-  { id: "number", label: "One number", test: (val: string) => /\d/.test(val) },
+  { id: "number", label: "숫자 하나", test: (val: string) => /\d/.test(val) },
   {
     id: "special",
-    label: "One special character",
+    label: "특수문자 하나",
     test: (val: string) => /[!@#$%^&*(),.?":{}|<>]/.test(val),
   },
 ]
@@ -56,18 +56,18 @@ const passwordRequirements = [
 const formSchema = z.object({
   password: z
     .string()
-    .min(8, "Password must be at least 8 characters")
+    .min(8, "비밀번호는 8자 이상이어야 합니다")
     .refine(
       (val) => /[a-z]/.test(val),
-      "Password must contain at least one lowercase letter"
+      "비밀번호에 소문자가 하나 이상 있어야 합니다"
     )
     .refine(
       (val) => /[A-Z]/.test(val),
-      "Password must contain at least one uppercase letter"
+      "비밀번호에 대문자가 하나 이상 있어야 합니다"
     )
     .refine(
       (val) => /\d/.test(val),
-      "Password must contain at least one number"
+      "비밀번호에 숫자가 하나 이상 있어야 합니다"
     )
     .refine(
       (val) => /[!@#$%^&*(),.?":{}|<>]/.test(val),
@@ -107,7 +107,7 @@ export default function FormRhfPassword() {
     metRequirements.length === passwordRequirements.length
 
   function onSubmit(data: z.infer<typeof formSchema>) {
-    toast("You submitted the following values:", {
+    toast("아래 값을 제출했습니다.", {
       description: (
         <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
           <code>{JSON.stringify(data, null, 2)}</code>
@@ -126,10 +126,8 @@ export default function FormRhfPassword() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader className="border-b">
-        <CardTitle>Create Password</CardTitle>
-        <CardDescription>
-          Choose a strong password to secure your account.
-        </CardDescription>
+        <CardTitle>비밀번호 만들기</CardTitle>
+        <CardDescription>계정을 지킬 강한 비밀번호를 고르세요.</CardDescription>
       </CardHeader>
       <CardContent>
         <form id="form-rhf-password" onSubmit={form.handleSubmit(onSubmit)}>
@@ -140,14 +138,14 @@ export default function FormRhfPassword() {
               render={({ field, fieldState }) => (
                 <Field data-invalid={fieldState.invalid}>
                   <FieldLabel htmlFor="form-rhf-password-input">
-                    Password
+                    비밀번호
                   </FieldLabel>
                   <InputGroup>
                     <InputGroupInput
                       {...field}
                       id="form-rhf-password-input"
                       type="password"
-                      placeholder="Enter your password"
+                      placeholder="비밀번호를 입력하세요"
                       aria-invalid={fieldState.invalid}
                       autoComplete="new-password"
                     />
@@ -212,10 +210,10 @@ export default function FormRhfPassword() {
       <CardFooter className="border-t">
         <Field>
           <Button type="submit" form="form-rhf-password">
-            Create Password
+            비밀번호 만들기
           </Button>
           <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
+            초기화
           </Button>
         </Field>
       </CardFooter>

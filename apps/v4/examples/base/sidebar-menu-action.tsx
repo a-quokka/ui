@@ -30,27 +30,27 @@ import {
 
 const projects = [
   {
-    name: "Design Engineering",
+    name: "디자인 엔지니어링",
     url: "#",
     icon: FrameIcon,
   },
   {
-    name: "Sales & Marketing",
+    name: "영업·마케팅",
     url: "#",
     icon: PieChartIcon,
   },
   {
-    name: "Travel",
+    name: "출장",
     url: "#",
     icon: MapIcon,
   },
   {
-    name: "Support",
+    name: "지원",
     url: "#",
     icon: LifeBuoyIcon,
   },
   {
-    name: "Feedback",
+    name: "피드백",
     url: "#",
     icon: SendIcon,
   },

@@ -43,7 +43,7 @@ export function QuestionnaireDialog() {
     const formData = new FormData(event.currentTarget)
 
     setOpen(false)
-    toast("Clarification sent", {
+    toast("확인 질문을 보냈습니다", {
       description: `Scope: ${formData.get("scope") ?? "None"} · Verification: ${formData.get("tests") ?? "None"}`,
     })
   }

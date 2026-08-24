@@ -33,13 +33,13 @@ import {
 } from "@/registry/new-york-v4/ui/select"
 
 const spokenLanguages = [
-  { label: "English", value: "en" },
-  { label: "Spanish", value: "es" },
-  { label: "French", value: "fr" },
-  { label: "German", value: "de" },
-  { label: "Italian", value: "it" },
-  { label: "Chinese", value: "zh" },
-  { label: "Japanese", value: "ja" },
+  { label: "영어", value: "en" },
+  { label: "스페인어", value: "es" },
+  { label: "프랑스어", value: "fr" },
+  { label: "독일어", value: "de" },
+  { label: "이탈리아어", value: "it" },
+  { label: "중국어", value: "zh" },
+  { label: "일본어", value: "ja" },
 ] as const
 
 const formSchema = z.object({
@@ -47,8 +47,7 @@ const formSchema = z.object({
     .string()
     .min(1, "Please select your spoken language.")
     .refine((val) => val !== "auto", {
-      message:
-        "Auto-detection is not allowed. Please select a specific language.",
+      message: "자동 감지는 쓸 수 없습니다. 언어를 직접 고르세요.",
     }),
 })
 
@@ -61,7 +60,7 @@ export default function FormRhfSelect() {
   })
 
   function onSubmit(data: z.infer<typeof formSchema>) {
-    toast("You submitted the following values:", {
+    toast("아래 값을 제출했습니다.", {
       description: (
         <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
           <code>{JSON.stringify(data, null, 2)}</code>
@@ -80,10 +79,8 @@ export default function FormRhfSelect() {
   return (
     <Card className="w-full sm:max-w-lg">
       <CardHeader>
-        <CardTitle>Language Preferences</CardTitle>
-        <CardDescription>
-          Select your preferred spoken language.
-        </CardDescription>
+        <CardTitle>언어 설정</CardTitle>
+        <CardDescription>주로 쓰는 언어를 고르세요.</CardDescription>
       </CardHeader>
       <CardContent>
         <form id="form-rhf-select" onSubmit={form.handleSubmit(onSubmit)}>
@@ -98,10 +95,10 @@ export default function FormRhfSelect() {
                 >
                   <FieldContent>
                     <FieldLabel htmlFor="form-rhf-select-language">
-                      Spoken Language
+                      사용 언어
                     </FieldLabel>
                     <FieldDescription>
-                      For best results, select the language you speak.
+                      실제로 말하는 언어를 고르면 결과가 가장 좋습니다.
                     </FieldDescription>
                     {fieldState.invalid && (
                       <FieldError errors={[fieldState.error]} />
@@ -117,10 +114,10 @@ export default function FormRhfSelect() {
                       aria-invalid={fieldState.invalid}
                       className="min-w-[120px]"
                     >
-                      <SelectValue placeholder="Select" />
+                      <SelectValue placeholder="선택" />
                     </SelectTrigger>
                     <SelectContent position="item-aligned">
-                      <SelectItem value="auto">Auto</SelectItem>
+                      <SelectItem value="auto">자동</SelectItem>
                       <SelectSeparator />
                       {spokenLanguages.map((language) => (
                         <SelectItem key={language.value} value={language.value}>
@@ -138,10 +135,10 @@ export default function FormRhfSelect() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-rhf-select">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

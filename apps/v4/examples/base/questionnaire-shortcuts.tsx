@@ -37,7 +37,7 @@ export function QuestionnaireShortcuts() {
 
     const action = new FormData(event.currentTarget).get("action")
 
-    toast("Next action selected", {
+    toast("다음 동작을 골랐습니다", {
       description: `Action: ${action ?? "None"} · Shortcuts: ${shortcuts ?? "none"}`,
     })
   }

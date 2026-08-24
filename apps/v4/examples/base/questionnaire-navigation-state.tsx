@@ -45,7 +45,7 @@ export function QuestionnaireNavigationState() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Permissions saved", {
+    toast("권한을 저장했습니다", {
       description: `Permission: ${formData.get("permission") ?? "None"} · Verification: ${formData.get("verification") ?? "None"}`,
     })
   }

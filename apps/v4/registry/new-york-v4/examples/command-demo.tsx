@@ -21,7 +21,7 @@ import {
 export default function CommandDemo() {
   return (
     <Command className="rounded-lg border shadow-md md:min-w-[450px]">
-      <CommandInput placeholder="Type a command or search..." />
+      <CommandInput placeholder="명령을 입력하거나 검색하세요..." />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">

@@ -48,8 +48,8 @@ export default function FormNextDemo() {
 
   React.useEffect(() => {
     if (formState.success) {
-      toast("Thank you for your feedback", {
-        description: "We'll review your report and get back to you soon.",
+      toast("의견 고맙습니다", {
+        description: "신고를 확인하고 곧 알려 드리겠습니다.",
       })
     }
   }, [formState.success])
@@ -61,23 +61,23 @@ export default function FormNextDemo() {
   return (
     <Card className="w-full max-w-md">
       <CardHeader>
-        <CardTitle>Bug Report</CardTitle>
+        <CardTitle>버그 신고</CardTitle>
         <CardDescription>
-          Help us improve by reporting bugs you encounter.
+          겪으신 버그를 알려 주시면 개선에 씁니다.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <Form action={formAction} id="bug-report-form">
           <FieldGroup>
             <Field data-invalid={!!formState.errors?.title?.length}>
-              <FieldLabel htmlFor="title">Bug Title</FieldLabel>
+              <FieldLabel htmlFor="title">버그 제목</FieldLabel>
               <Input
                 id="title"
                 name="title"
                 defaultValue={formState.values.title}
                 disabled={pending}
                 aria-invalid={!!formState.errors?.title?.length}
-                placeholder="Login button not working on mobile"
+                placeholder="모바일에서 로그인 버튼이 안 눌립니다"
                 autoComplete="off"
               />
               {formState.errors?.title && (
@@ -85,13 +85,13 @@ export default function FormNextDemo() {
               )}
             </Field>
             <Field data-invalid={!!formState.errors?.description?.length}>
-              <FieldLabel htmlFor="description">Description</FieldLabel>
+              <FieldLabel htmlFor="description">설명</FieldLabel>
               <InputGroup>
                 <InputGroupTextarea
                   id="description"
                   name="description"
                   defaultValue={formState.values.description}
-                  placeholder="I'm having an issue with the login button on mobile."
+                  placeholder="모바일에서 로그인 버튼에 문제가 있습니다."
                   rows={6}
                   className="min-h-24 resize-none"
                   disabled={pending}
@@ -105,8 +105,7 @@ export default function FormNextDemo() {
                 </InputGroupAddon>
               </InputGroup>
               <FieldDescription>
-                Include steps to reproduce, expected behavior, and what actually
-                happened.
+                재현 방법과 기대한 동작, 실제로 일어난 일을 함께 적어 주세요.
               </FieldDescription>
               {formState.errors?.description && (
                 <FieldError>{formState.errors.description[0]}</FieldError>

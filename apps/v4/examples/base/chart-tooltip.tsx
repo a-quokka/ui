@@ -34,8 +34,8 @@ export function ChartTooltipDemo() {
         <TooltipDemo
           label="페이지 조회수"
           payload={[
-            { name: "Desktop", value: 186, fill: "var(--chart-1)" },
-            { name: "Mobile", value: 80, fill: "var(--chart-2)" },
+            { name: "데스크톱", value: 186, fill: "var(--chart-1)" },
+            { name: "모바일", value: 80, fill: "var(--chart-2)" },
           ]}
           className="w-[8rem]"
         />
@@ -78,7 +78,7 @@ export function ChartTooltipDemo() {
       <div className="hidden! md:flex!">
         <TooltipDemo
           label="페이지 조회수"
-          payload={[{ name: "Desktop", value: 12486, fill: "var(--chart-3)" }]}
+          payload={[{ name: "데스크톱", value: 12486, fill: "var(--chart-3)" }]}
           className="w-[9rem]"
           indicator="line"
         />

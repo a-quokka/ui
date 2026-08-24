@@ -92,7 +92,7 @@ export function InputGroupWithAddons() {
             <StarIcon />
             <InputGroupButton
               size="icon-xs"
-              onClick={() => toast("Copied to clipboard")}
+              onClick={() => toast("클립보드에 복사했습니다")}
             >
               <CopyIcon />
             </InputGroupButton>

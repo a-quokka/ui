@@ -15,7 +15,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      placeholder: "상태 선택",
+      placeholder: "Select status",
       todo: "Todo",
       inProgress: "In Progress",
       done: "Done",

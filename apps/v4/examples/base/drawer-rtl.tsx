@@ -37,9 +37,9 @@ const translations = {
     dir: "ltr",
     locale: "en-US",
     values: {
-      trigger: "Drawer 열기",
-      title: "배달 시간 고르기",
-      description: "주문을 최대한 빨리 준비하겠습니다.",
+      trigger: "Open Drawer",
+      title: "Pick a delivery time",
+      description: "We'll prepare your order as soon as possible.",
       confirm: "Confirm Delivery Time",
       cancel: "Cancel",
       toastTitle: "Delivery time confirmed",

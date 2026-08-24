@@ -6,7 +6,7 @@ export function BubbleMarkdownDemo() {
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Bubble align="end" variant="muted">
         <BubbleContent>
-          <Markdown>{`Hello! Are you actually **thinking**?`}</Markdown>
+          <Markdown>{`안녕하세요. 정말 **생각**하고 있나요?`}</Markdown>
         </BubbleContent>
       </Bubble>
       <Bubble variant="ghost">

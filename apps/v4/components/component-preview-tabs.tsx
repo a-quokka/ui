@@ -123,18 +123,18 @@ export function ComponentPreviewTabs({
             <>
               {direction === "rtl" && (
                 <div className="relative z-10 no-scrollbar overflow-x-auto border-t bg-code p-6 font-mono text-sm text-muted-foreground">
-                  <pre>{`// You will notice this example uses dir and data-lang attributes.
-// This is because this site is not RTL by default.
-// In your application, you won't need these.`}</pre>
+                  <pre>{`// 이 예시에는 dir 과 data-lang 속성이 붙어 있습니다.
+// 이 사이트가 기본으로 RTL 이 아니라서 그렇습니다.
+// 여러분의 앱에서는 필요 없습니다.`}</pre>
                   <span>
-                    {"// See the "}
+                    {"// 자세한 내용은 "}
                     <Link
                       href="/docs/rtl"
                       className="underline underline-offset-4"
                     >
-                      RTL guide
+                      RTL 설정 가이드
                     </Link>
-                    {" for more information."}
+                    {" 를 보세요."}
                   </span>
                 </div>
               )}

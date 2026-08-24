@@ -24,7 +24,8 @@ const translations: Translations = {
     values: {
       open: "Open",
       editProfile: "Edit profile",
-      description: "여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.",
+      description:
+        "Make changes to your profile here. Click save when you're done.",
       name: "Name",
       username: "Username",
       save: "Save changes",

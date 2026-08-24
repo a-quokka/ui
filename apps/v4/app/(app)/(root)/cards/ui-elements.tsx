@@ -55,7 +55,7 @@ export function UIElements() {
       <CardContent className="flex flex-col gap-6">
         <div className="flex gap-2">
           <Button>
-            Button{" "}
+            기본{" "}
             <HugeiconsIcon
               icon={ArrowRight02Icon}
               strokeWidth={2}

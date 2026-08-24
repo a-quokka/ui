@@ -37,7 +37,7 @@ export function QuestionnaireResume() {
       notes: formData.get("notes"),
     }
 
-    toast("Draft updated", {
+    toast("임시 저장을 갱신했습니다", {
       description: `Migration: ${answers.change ?? "None"} · Verification: ${answers.verification.join(", ") || "None"} · Notes: ${answers.notes || "None"}`,
     })
   }
@@ -47,7 +47,7 @@ export function QuestionnaireResume() {
       className="mx-auto max-w-md"
       defaultItem="verification"
       items={items}
-      onReset={() => toast("Saved answers restored")}
+      onReset={() => toast("저장해 둔 답을 되살렸습니다")}
       onSubmit={handleSubmit}
     >
       <QuestionnaireProgress />

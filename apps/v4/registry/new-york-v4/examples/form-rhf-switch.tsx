@@ -27,7 +27,7 @@ import { Switch } from "@/registry/new-york-v4/ui/switch"
 
 const formSchema = z.object({
   twoFactor: z.boolean().refine((val) => val === true, {
-    message: "It is highly recommended to enable two-factor authentication.",
+    message: "2단계 인증을 켜기를 강하게 권합니다.",
   }),
 })
 
@@ -40,7 +40,7 @@ export default function FormRhfSwitch() {
   })
 
   function onSubmit(data: z.infer<typeof formSchema>) {
-    toast("You submitted the following values:", {
+    toast("아래 값을 제출했습니다.", {
       description: (
         <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
           <code>{JSON.stringify(data, null, 2)}</code>
@@ -59,10 +59,8 @@ export default function FormRhfSwitch() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader>
-        <CardTitle>Security Settings</CardTitle>
-        <CardDescription>
-          Manage your account security preferences.
-        </CardDescription>
+        <CardTitle>보안 설정</CardTitle>
+        <CardDescription>계정 보안 설정을 관리합니다.</CardDescription>
       </CardHeader>
       <CardContent>
         <form id="form-rhf-switch" onSubmit={form.handleSubmit(onSubmit)}>
@@ -77,10 +75,10 @@ export default function FormRhfSwitch() {
                 >
                   <FieldContent>
                     <FieldLabel htmlFor="form-rhf-switch-twoFactor">
-                      Multi-factor authentication
+                      다단계 인증
                     </FieldLabel>
                     <FieldDescription>
-                      Enable multi-factor authentication to secure your account.
+                      계정을 지키려면 다단계 인증을 켜세요.
                     </FieldDescription>
                     {fieldState.invalid && (
                       <FieldError errors={[fieldState.error]} />
@@ -102,10 +100,10 @@ export default function FormRhfSwitch() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-rhf-switch">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

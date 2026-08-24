@@ -55,7 +55,9 @@ export function BubbleReactionsDemo() {
           <Button
             variant="ghost"
             size="xs"
-            onClick={() => toast.success("You clicked yes, running command...")}
+            onClick={() =>
+              toast.success("확인을 눌렀습니다. 명령을 실행합니다...")
+            }
           >
             네, 실행하세요
           </Button>

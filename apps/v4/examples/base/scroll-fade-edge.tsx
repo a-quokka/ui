@@ -8,14 +8,14 @@ const items = [
 ]
 
 const tags = [
-  "Design",
-  "Engineering",
-  "Marketing",
-  "Product",
-  "Research",
-  "Sales",
-  "Support",
-  "Operations",
+  "디자인",
+  "엔지니어링",
+  "마케팅",
+  "프로덕트",
+  "리서치",
+  "영업",
+  "지원",
+  "운영",
 ]
 
 export function ScrollFadeEdge() {

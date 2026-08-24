@@ -58,11 +58,10 @@ export function ToggleGroupFontWeightSelector() {
         </ToggleGroupItem>
       </ToggleGroup>
       <FieldDescription>
-        사용{" "}
         <code className="rounded-md bg-muted px-1 py-0.5 font-mono">
           font-{fontWeight}
         </code>{" "}
-        to set the font weight.
+        로 글자 굵기를 정합니다.
       </FieldDescription>
     </Field>
   )

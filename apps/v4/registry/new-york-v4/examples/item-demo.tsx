@@ -17,7 +17,7 @@ export default function ItemDemo() {
         <ItemContent>
           <ItemTitle>Basic Item</ItemTitle>
           <ItemDescription>
-            A simple item with title and description.
+            제목과 설명만 있는 단순한 항목입니다.
           </ItemDescription>
         </ItemContent>
         <ItemActions>
@@ -32,7 +32,7 @@ export default function ItemDemo() {
             <BadgeCheckIcon className="size-5" />
           </ItemMedia>
           <ItemContent>
-            <ItemTitle>Your profile has been verified.</ItemTitle>
+            <ItemTitle>프로필 확인이 끝났습니다.</ItemTitle>
           </ItemContent>
           <ItemActions>
             <ChevronRightIcon className="size-4" />

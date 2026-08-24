@@ -53,7 +53,7 @@ export default function BugReportForm() {
   })
 
   const handleSubmit: SubmitHandler<typeof FormSchema> = (output) => {
-    toast("You submitted the following values:", {
+    toast("아래 값을 제출했습니다.", {
       description: (
         <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
           <code>{JSON.stringify(output, null, 2)}</code>
@@ -72,9 +72,9 @@ export default function BugReportForm() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader>
-        <CardTitle>Bug Report</CardTitle>
+        <CardTitle>버그 신고</CardTitle>
         <CardDescription>
-          Help us improve by reporting bugs you encounter.
+          겪으신 버그를 알려 주시면 개선에 씁니다.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -84,14 +84,14 @@ export default function BugReportForm() {
               {(field) => (
                 <Field data-invalid={field.errors !== null}>
                   <FieldLabel htmlFor="form-formisch-demo-title">
-                    Bug Title
+                    버그 제목
                   </FieldLabel>
                   <Input
                     {...field.props}
                     id="form-formisch-demo-title"
                     value={field.input ?? ""}
                     aria-invalid={field.errors !== null}
-                    placeholder="Login button not working on mobile"
+                    placeholder="모바일에서 로그인 버튼이 안 눌립니다"
                     autoComplete="off"
                   />
                   {field.errors && (
@@ -106,14 +106,14 @@ export default function BugReportForm() {
               {(field) => (
                 <Field data-invalid={field.errors !== null}>
                   <FieldLabel htmlFor="form-formisch-demo-description">
-                    Description
+                    설명
                   </FieldLabel>
                   <InputGroup>
                     <InputGroupTextarea
                       {...field.props}
                       id="form-formisch-demo-description"
                       value={field.input ?? ""}
-                      placeholder="I'm having an issue with the login button on mobile."
+                      placeholder="모바일에서 로그인 버튼에 문제가 있습니다."
                       rows={6}
                       className="min-h-24 resize-none"
                       aria-invalid={field.errors !== null}
@@ -125,8 +125,8 @@ export default function BugReportForm() {
                     </InputGroupAddon>
                   </InputGroup>
                   <FieldDescription>
-                    Include steps to reproduce, expected behavior, and what
-                    actually happened.
+                    재현 방법과 기대한 동작, 실제로 일어난 일을 함께 적어
+                    주세요.
                   </FieldDescription>
                   {field.errors && (
                     <FieldError
@@ -142,10 +142,10 @@ export default function BugReportForm() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => reset(form)}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-formisch-demo">
-            Submit
+            제출
           </Button>
         </Field>
       </CardFooter>

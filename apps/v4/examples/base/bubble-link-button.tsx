@@ -18,7 +18,7 @@ export function BubbleLinkButtonDemo() {
         <Bubble variant="tinted" align="end">
           <BubbleContent
             render={
-              <button onClick={() => toast("You clicked forgot password")} />
+              <button onClick={() => toast("비밀번호 찾기를 눌렀습니다")} />
             }
           >
             비밀번호를 잊어버렸어요
@@ -26,11 +26,7 @@ export function BubbleLinkButtonDemo() {
         </Bubble>
         <Bubble variant="tinted" align="end">
           <BubbleContent
-            render={
-              <button
-                onClick={() => toast("You clicked help with subscription")}
-              />
-            }
+            render={<button onClick={() => toast("구독 문의를 눌렀습니다")} />}
           >
             구독 관련해서 도움이 필요해요
           </BubbleContent>
@@ -40,7 +36,7 @@ export function BubbleLinkButtonDemo() {
             render={
               <button
                 onClick={() =>
-                  toast("You clicked something else. Talk to a human.")
+                  toast("다른 문의를 눌렀습니다. 상담원에게 연결합니다.")
                 }
               />
             }

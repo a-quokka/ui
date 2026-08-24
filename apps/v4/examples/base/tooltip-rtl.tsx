@@ -15,7 +15,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      content: "라이브러리에 추가",
+      content: "Add to library",
       "inline-start": "Inline Start",
       left: "Left",
       top: "Top",
@@ -28,12 +28,12 @@ const translations: Translations = {
     dir: "ltr",
     values: {
       content: "라이브러리에 추가",
-      "inline-start": "Inline Start",
-      left: "Left",
-      top: "Top",
-      bottom: "Bottom",
-      right: "Right",
-      "inline-end": "Inline End",
+      "inline-start": "시작 쪽",
+      left: "왼쪽",
+      top: "위",
+      bottom: "아래",
+      right: "오른쪽",
+      "inline-end": "끝 쪽",
     },
   },
 }

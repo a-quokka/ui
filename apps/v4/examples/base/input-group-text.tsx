@@ -37,7 +37,7 @@ export default function InputGroupTextExample() {
         <InputGroupTextarea placeholder="메시지를 입력하세요" />
         <InputGroupAddon align="block-end">
           <InputGroupText className="text-xs text-muted-foreground">
-            120 characters left
+            120자 남음
           </InputGroupText>
         </InputGroupAddon>
       </InputGroup>

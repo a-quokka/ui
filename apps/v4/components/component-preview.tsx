@@ -75,7 +75,7 @@ export function ComponentPreview({
         <code className="relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm">
           {name}
         </code>{" "}
-        not found in registry.
+        을 레지스트리에서 찾지 못했습니다.
       </p>
     )
   }

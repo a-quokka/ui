@@ -88,7 +88,7 @@ export function QuestionnaireValidation() {
 
     if (result.success) {
       setErrors({})
-      toast("Agent response configured", {
+      toast("에이전트 응답 설정을 저장했습니다", {
         description: `Detail: ${result.data.detail} · Audience: ${result.data.audience}`,
       })
       return

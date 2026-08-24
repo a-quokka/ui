@@ -15,7 +15,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      trigger: "무선 헤드폰",
+      trigger: "Wireless Headphones",
       name: "Wireless Headphones",
       price: "$99.99",
       "inline-start": "Inline Start",
@@ -32,12 +32,12 @@ const translations: Translations = {
       trigger: "무선 헤드폰",
       name: "무선 헤드폰",
       price: "129,000원",
-      "inline-start": "Inline Start",
-      left: "Left",
-      top: "Top",
-      bottom: "Bottom",
-      right: "Right",
-      "inline-end": "Inline End",
+      "inline-start": "시작 쪽",
+      left: "왼쪽",
+      top: "위",
+      bottom: "아래",
+      right: "오른쪽",
+      "inline-end": "끝 쪽",
     },
   },
 }

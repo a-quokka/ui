@@ -44,7 +44,7 @@ export default function FormFormischSwitch() {
   })
 
   const handleSubmit: SubmitHandler<typeof FormSchema> = (output) => {
-    toast("You submitted the following values:", {
+    toast("아래 값을 제출했습니다.", {
       description: (
         <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
           <code>{JSON.stringify(output, null, 2)}</code>
@@ -63,10 +63,8 @@ export default function FormFormischSwitch() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader>
-        <CardTitle>Security Settings</CardTitle>
-        <CardDescription>
-          Manage your account security preferences.
-        </CardDescription>
+        <CardTitle>보안 설정</CardTitle>
+        <CardDescription>계정 보안 설정을 관리합니다.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form of={form} id="form-formisch-switch" onSubmit={handleSubmit}>
@@ -79,10 +77,10 @@ export default function FormFormischSwitch() {
                 >
                   <FieldContent>
                     <FieldLabel htmlFor="form-formisch-switch-twoFactor">
-                      Multi-factor authentication
+                      다단계 인증
                     </FieldLabel>
                     <FieldDescription>
-                      Enable multi-factor authentication to secure your account.
+                      계정을 지키려면 다단계 인증을 켜세요.
                     </FieldDescription>
                     {field.errors && (
                       <FieldError
@@ -105,10 +103,10 @@ export default function FormFormischSwitch() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => reset(form)}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-formisch-switch">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

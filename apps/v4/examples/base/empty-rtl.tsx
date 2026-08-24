@@ -22,9 +22,9 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "아직 프로젝트가 없습니다",
+      title: "No Projects Yet",
       description:
-        "만든 프로젝트가 아직 없습니다. 첫 프로젝트를 만들어 보세요.",
+        "You haven't created any projects yet. Get started by creating your first project.",
       createProject: "Create Project",
       importProject: "Import Project",
       learnMore: "Learn More",

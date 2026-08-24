@@ -65,7 +65,7 @@ export default function FormFormischArray() {
   })
 
   const handleSubmit: SubmitHandler<typeof FormSchema> = (output) => {
-    toast("You submitted the following values:", {
+    toast("아래 값을 제출했습니다.", {
       description: (
         <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
           <code>{JSON.stringify(output, null, 2)}</code>
@@ -84,17 +84,17 @@ export default function FormFormischArray() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader className="border-b">
-        <CardTitle>Contact Emails</CardTitle>
-        <CardDescription>Manage your contact email addresses.</CardDescription>
+        <CardTitle>연락용 이메일</CardTitle>
+        <CardDescription>연락받을 이메일 주소를 관리합니다.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form of={form} id="form-formisch-array" onSubmit={handleSubmit}>
           <FieldArray of={form} path={["emails"]}>
             {(fieldArray) => (
               <FieldSet className="gap-4">
-                <FieldLegend variant="label">Email Addresses</FieldLegend>
+                <FieldLegend variant="label">이메일 주소</FieldLegend>
                 <FieldDescription>
-                  Add up to 5 email addresses where we can contact you.
+                  연락받을 이메일 주소를 최대 5개까지 더할 수 있습니다.
                 </FieldDescription>
                 <FieldGroup className="gap-4">
                   {fieldArray.items.map((item, index) => (
@@ -162,7 +162,7 @@ export default function FormFormischArray() {
                     }
                     disabled={fieldArray.items.length >= 5}
                   >
-                    Add Email Address
+                    이메일 주소 추가
                   </Button>
                 </FieldGroup>
                 {fieldArray.errors && (
@@ -178,10 +178,10 @@ export default function FormFormischArray() {
       <CardFooter className="border-t">
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => reset(form)}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-formisch-array">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

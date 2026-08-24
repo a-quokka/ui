@@ -53,8 +53,8 @@ export default function FormNextComplex() {
 
   React.useEffect(() => {
     if (formState.success) {
-      toast.success("Preferences saved", {
-        description: "Your subscription plan has been updated.",
+      toast.success("설정을 저장했습니다", {
+        description: "구독 플랜을 바꿨습니다.",
       })
     }
   }, [formState.success])
@@ -65,10 +65,8 @@ export default function FormNextComplex() {
         <Form action={formAction} id="subscription-form">
           <FieldGroup>
             <FieldSet data-invalid={!!formState.errors?.plan?.length}>
-              <FieldLegend>Subscription Plan</FieldLegend>
-              <FieldDescription>
-                Choose your subscription plan.
-              </FieldDescription>
+              <FieldLegend>구독 플랜</FieldLegend>
+              <FieldDescription>구독 플랜을 고르세요.</FieldDescription>
               <RadioGroup
                 name="plan"
                 defaultValue={formState.values.plan}
@@ -78,9 +76,9 @@ export default function FormNextComplex() {
                 <FieldLabel htmlFor="basic">
                   <Field orientation="horizontal">
                     <FieldContent>
-                      <FieldTitle>Basic</FieldTitle>
+                      <FieldTitle>베이직</FieldTitle>
                       <FieldDescription>
-                        For individuals and small teams
+                        개인과 소규모 팀에 맞습니다
                       </FieldDescription>
                     </FieldContent>
                     <RadioGroupItem value="basic" id="basic" />
@@ -89,9 +87,9 @@ export default function FormNextComplex() {
                 <FieldLabel htmlFor="pro">
                   <Field orientation="horizontal">
                     <FieldContent>
-                      <FieldTitle>Pro</FieldTitle>
+                      <FieldTitle>프로</FieldTitle>
                       <FieldDescription>
-                        For businesses with higher demands
+                        요구가 큰 기업에 맞습니다
                       </FieldDescription>
                     </FieldContent>
                     <RadioGroupItem value="pro" id="pro" />
@@ -104,7 +102,7 @@ export default function FormNextComplex() {
             </FieldSet>
             <FieldSeparator />
             <Field data-invalid={!!formState.errors?.billingPeriod?.length}>
-              <FieldLabel htmlFor="billingPeriod">Billing Period</FieldLabel>
+              <FieldLabel htmlFor="billingPeriod">결제 주기</FieldLabel>
               <Select
                 name="billingPeriod"
                 defaultValue={formState.values.billingPeriod}
@@ -112,15 +110,15 @@ export default function FormNextComplex() {
                 aria-invalid={!!formState.errors?.billingPeriod?.length}
               >
                 <SelectTrigger id="billingPeriod">
-                  <SelectValue placeholder="Select" />
+                  <SelectValue placeholder="선택" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="monthly">Monthly</SelectItem>
-                  <SelectItem value="yearly">Yearly</SelectItem>
+                  <SelectItem value="monthly">월 결제</SelectItem>
+                  <SelectItem value="yearly">연 결제</SelectItem>
                 </SelectContent>
               </Select>
               <FieldDescription>
-                Choose how often you want to be billed.
+                얼마나 자주 결제할지 고르세요.
               </FieldDescription>
               {formState.errors?.billingPeriod && (
                 <FieldError>{formState.errors.billingPeriod[0]}</FieldError>
@@ -128,10 +126,8 @@ export default function FormNextComplex() {
             </Field>
             <FieldSeparator />
             <FieldSet>
-              <FieldLegend>Add-ons</FieldLegend>
-              <FieldDescription>
-                Select additional features you&apos;d like to include.
-              </FieldDescription>
+              <FieldLegend>추가 기능</FieldLegend>
+              <FieldDescription>함께 쓸 기능을 고르세요.</FieldDescription>
               <FieldGroup data-slot="checkbox-group">
                 {addons.map((addon) => (
                   <Field
@@ -164,10 +160,10 @@ export default function FormNextComplex() {
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldLabel htmlFor="emailNotifications">
-                  Email Notifications
+                  이메일 알림
                 </FieldLabel>
                 <FieldDescription>
-                  Receive email updates about your subscription
+                  구독 관련 소식을 이메일로 받습니다
                 </FieldDescription>
               </FieldContent>
               <Switch

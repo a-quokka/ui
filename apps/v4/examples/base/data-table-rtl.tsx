@@ -54,7 +54,7 @@ const translations: Translations = {
     values: {
       filterEmails: "Filter emails...",
       columns: "Columns",
-      status: "상태",
+      status: "Status",
       email: "Email",
       amount: "Amount",
       actions: "Actions",

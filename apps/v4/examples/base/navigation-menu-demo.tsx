@@ -62,7 +62,7 @@ export default function NavigationMenuDemo() {
           <NavigationMenuTrigger>시작하기</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="w-96">
-              <ListItem href="/docs" title="Introduction">
+              <ListItem href="/docs" title="소개">
                 Tailwind CSS 로 만든 재사용 가능한 컴포넌트입니다.
               </ListItem>
               <ListItem href="/docs/installation" title="설치">

@@ -4,12 +4,11 @@ export default function KbdGroupExample() {
   return (
     <div className="flex flex-col items-center gap-4">
       <p className="text-sm text-muted-foreground">
-        Use{" "}
         <KbdGroup>
           <Kbd>Ctrl + B</Kbd>
           <Kbd>Ctrl + K</Kbd>
         </KbdGroup>{" "}
-        to open the command palette
+        로 명령 팔레트를 엽니다
       </p>
     </div>
   )

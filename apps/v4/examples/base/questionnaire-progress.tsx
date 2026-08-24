@@ -30,7 +30,7 @@ export function QuestionnaireProgressExample() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Pull request plan ready", {
+    toast("풀 리퀘스트 계획이 준비됐습니다", {
       description: `Scope: ${formData.get("scope") ?? "None"} · Commits: ${formData.get("strategy") ?? "None"} · Tests: ${formData.get("tests") ?? "None"} · Delivery: ${formData.get("delivery") ?? "None"}`,
     })
   }

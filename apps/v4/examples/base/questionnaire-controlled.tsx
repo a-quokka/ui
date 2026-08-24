@@ -38,7 +38,7 @@ export function QuestionnaireControlled() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Agent workflow configured", {
+    toast("에이전트 흐름 설정을 저장했습니다", {
       description: `Scope: ${formData.get("scope") ?? "None"} · Verification: ${formData.get("checks") ?? "None"} · Output: ${formData.get("output") ?? "None"}`,
     })
   }
@@ -49,7 +49,7 @@ export function QuestionnaireControlled() {
         className="absolute end-0 top-0 text-sm text-muted-foreground"
         role="status"
       >
-        Current checkpoint: {itemLabels[item]}
+        현재 지점: {itemLabels[item]}
       </p>
 
       <Questionnaire

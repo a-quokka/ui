@@ -24,7 +24,7 @@ export default function KbdTooltip() {
             인쇄
           </TooltipTrigger>
           <TooltipContent>
-            Print Document{" "}
+            문서 인쇄{" "}
             <KbdGroup>
               <Kbd>Ctrl</Kbd>
               <Kbd>P</Kbd>

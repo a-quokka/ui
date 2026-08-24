@@ -39,7 +39,7 @@ export default function FormTanstackTextarea() {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      toast("You submitted the following values:", {
+      toast("아래 값을 제출했습니다.", {
         description: (
           <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
             <code>{JSON.stringify(value, null, 2)}</code>
@@ -59,9 +59,9 @@ export default function FormTanstackTextarea() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader>
-        <CardTitle>Personalization</CardTitle>
+        <CardTitle>개인화</CardTitle>
         <CardDescription>
-          Customize your experience by telling us more about yourself.
+          자신에 대해 알려 주시면 경험을 맞춰 드립니다.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -81,7 +81,7 @@ export default function FormTanstackTextarea() {
                 return (
                   <Field data-invalid={isInvalid}>
                     <FieldLabel htmlFor="form-tanstack-textarea-about">
-                      More about you
+                      더 알려 주세요
                     </FieldLabel>
                     <Textarea
                       id="form-tanstack-textarea-about"
@@ -90,12 +90,11 @@ export default function FormTanstackTextarea() {
                       onBlur={field.handleBlur}
                       onChange={(e) => field.handleChange(e.target.value)}
                       aria-invalid={isInvalid}
-                      placeholder="I'm a software engineer..."
+                      placeholder="저는 소프트웨어 엔지니어입니다..."
                       className="min-h-[120px]"
                     />
                     <FieldDescription>
-                      Tell us more about yourself. This will be used to help us
-                      personalize your experience.
+                      자신에 대해 더 알려 주세요. 경험을 맞춰 드리는 데 씁니다.
                     </FieldDescription>
                     {isInvalid && (
                       <FieldError errors={field.state.meta.errors} />
@@ -110,10 +109,10 @@ export default function FormTanstackTextarea() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => form.reset()}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-tanstack-textarea">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

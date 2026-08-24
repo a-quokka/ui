@@ -82,10 +82,10 @@ export default function NavigationMenuDemo() {
                 Re-usable components built using Radix UI and Tailwind CSS.
               </ListItem>
               <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
+                의존성을 설치하고 앱 구조를 잡는 방법입니다.
               </ListItem>
               <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+                제목·본문·목록 등의 글 스타일입니다
               </ListItem>
             </ul>
           </NavigationMenuContent>

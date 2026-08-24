@@ -31,7 +31,7 @@ export default function AppSidebar() {
             <SidebarGroupLabel>프로젝트</SidebarGroupLabel>
             <SidebarGroupAction
               title="프로젝트 추가"
-              onClick={() => toast("You clicked the group action!")}
+              onClick={() => toast("그룹 동작을 눌렀습니다")}
             >
               <PlusIcon /> <span className="sr-only">프로젝트 추가</span>
             </SidebarGroupAction>

@@ -23,8 +23,8 @@ const messages = Array.from({ length: 12 }, (_, index) => ({
   role: index % 2 === 0 ? "user" : "assistant",
   text:
     index % 2 === 0
-      ? `Review scroll checkpoint ${index + 1}.`
-      : `Checkpoint ${index + 1} is synced. The scrollable hook updates as the viewport moves.\n\nWhen the reader is at the first message, the footer should only point them down. Once they move into the middle of the transcript, it should explain that both directions are available.\n\nAt the latest message, the footer should switch again and only point them back up.`,
+      ? `스크롤 지점 ${index + 1} 을 봐 주세요.`
+      : `지점 ${index + 1} 을 맞췄습니다. 뷰포트가 움직일 때마다 scrollable 훅이 갱신됩니다.\n\n맨 처음 메시지에 있으면 아래쪽만 가리켜야 합니다. 중간으로 오면 양쪽 다 갈 수 있다고 알려 줘야 합니다.\n\n마지막 메시지에서는 다시 위쪽만 가리켜야 합니다.`,
 })) satisfies Array<{
   id: string
   role: "user" | "assistant"
@@ -92,11 +92,11 @@ function getScrollStatus({ start, end }: { start: boolean; end: boolean }) {
   }
 
   if (end) {
-    return "You are at the top. You can only scroll down."
+    return "맨 위입니다. 아래로만 스크롤할 수 있습니다."
   }
 
   if (start) {
-    return "You are at the bottom. You can only scroll up."
+    return "맨 아래입니다. 위로만 스크롤할 수 있습니다."
   }
 
   return "All messages fit in the viewport."

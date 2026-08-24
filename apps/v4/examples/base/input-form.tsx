@@ -65,7 +65,7 @@ export function InputForm() {
         </div>
         <Field>
           <FieldLabel htmlFor="form-address">주소</FieldLabel>
-          <Input id="form-address" type="text" placeholder="123 Main St" />
+          <Input id="form-address" type="text" placeholder="테헤란로 123" />
         </Field>
         <Field orientation="horizontal">
           <Button type="button" variant="outline">

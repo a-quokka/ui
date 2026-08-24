@@ -38,7 +38,7 @@ export function QuestionnaireConditional() {
 
     const formData = new FormData(event.currentTarget)
 
-    toast("Execution plan saved", {
+    toast("실행 계획을 저장했습니다", {
       description: `Runtime: ${formData.get("runtime") ?? "None"} · Environment: ${formData.get("environment") ?? "Not applicable"} · Approval: ${formData.get("approval") ?? "None"}`,
     })
   }

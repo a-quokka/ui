@@ -8,7 +8,7 @@ export default function CheckboxDisabled() {
         htmlFor="terms2"
         className="text-sm leading-none font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
       >
-        Accept terms and conditions
+        이용약관에 동의합니다
       </label>
     </div>
   )

@@ -22,6 +22,8 @@ function Questionnaire({
 
 function QuestionnaireProgress({
   className,
+  children,
+  render,
   ...props
 }: React.ComponentProps<typeof QuestionnairePrimitive.Progress>) {
   return (
@@ -31,8 +33,21 @@ function QuestionnaireProgress({
         "cn-questionnaire-progress min-h-[1lh] w-fit min-w-[14ch] font-medium text-muted-foreground tabular-nums",
         className
       )}
+      // 프리미티브의 기본 문구는 `Question 1 of 3` 이다. 한국어 어순에 맞게 다시 쓴다.
+      render={
+        render ??
+        (children
+          ? undefined
+          : (renderProps, state) => (
+              <div {...renderProps}>
+                {state.total ? `질문 ${state.current} / ${state.total}` : null}
+              </div>
+            ))
+      }
       {...props}
-    />
+    >
+      {children}
+    </QuestionnairePrimitive.Progress>
   )
 }
 
@@ -189,6 +204,7 @@ function QuestionnaireInput({
 
 function QuestionnaireError({
   className,
+  children,
   ...props
 }: React.ComponentProps<typeof QuestionnairePrimitive.Error>) {
   return (
@@ -196,7 +212,11 @@ function QuestionnaireError({
       data-slot="questionnaire-error"
       className={cn("cn-questionnaire-error text-destructive", className)}
       {...props}
-    />
+    >
+      {/* 프리미티브 기본값이 영어라 한국어 문구를 넣는다. 필수·선택 구분은
+          프리미티브만 알고 있으므로 양쪽에 통하는 한 문장으로 쓴다. */}
+      {children ?? "답을 골라 주세요."}
+    </QuestionnairePrimitive.Error>
   )
 }
 
@@ -236,7 +256,7 @@ function QuestionnairePrevious({
       )}
       {...props}
     >
-      {children ?? "Previous"}
+      {children ?? "이전"}
     </QuestionnairePrimitive.Previous>
   )
 }
@@ -261,7 +281,7 @@ function QuestionnaireSkip({
       )}
       {...props}
     >
-      {children ?? "Skip"}
+      {children ?? "건너뛰기"}
     </QuestionnairePrimitive.Skip>
   )
 }
@@ -286,7 +306,7 @@ function QuestionnaireNext({
       )}
       {...props}
     >
-      {children ?? "Next"}
+      {children ?? "다음"}
     </QuestionnairePrimitive.Next>
   )
 }
@@ -311,7 +331,7 @@ function QuestionnaireSubmit({
       )}
       {...props}
     >
-      {children ?? "Submit"}
+      {children ?? "제출"}
     </QuestionnairePrimitive.Submit>
   )
 }

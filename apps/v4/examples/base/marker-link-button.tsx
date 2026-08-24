@@ -19,7 +19,7 @@ export function MarkerLinkButtonDemo() {
           <button
             type="button"
             className="transition-colors hover:text-foreground"
-            onClick={() => toast("You clicked the revert button")}
+            onClick={() => toast("되돌리기를 눌렀습니다")}
           />
         }
       >

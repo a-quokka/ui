@@ -45,7 +45,7 @@ export default function FormFormischInput() {
   })
 
   const handleSubmit: SubmitHandler<typeof FormSchema> = (output) => {
-    toast("You submitted the following values:", {
+    toast("아래 값을 제출했습니다.", {
       description: (
         <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
           <code>{JSON.stringify(output, null, 2)}</code>
@@ -64,10 +64,8 @@ export default function FormFormischInput() {
   return (
     <Card className="w-full sm:max-w-md">
       <CardHeader>
-        <CardTitle>Profile Settings</CardTitle>
-        <CardDescription>
-          Update your profile information below.
-        </CardDescription>
+        <CardTitle>프로필 설정</CardTitle>
+        <CardDescription>아래에서 프로필 정보를 고칩니다.</CardDescription>
       </CardHeader>
       <CardContent>
         <Form of={form} id="form-formisch-input" onSubmit={handleSubmit}>
@@ -76,7 +74,7 @@ export default function FormFormischInput() {
               {(field) => (
                 <Field data-invalid={field.errors !== null}>
                   <FieldLabel htmlFor="form-formisch-input-username">
-                    Username
+                    사용자 이름
                   </FieldLabel>
                   <Input
                     {...field.props}
@@ -87,9 +85,8 @@ export default function FormFormischInput() {
                     autoComplete="username"
                   />
                   <FieldDescription>
-                    This is your public display name. Must be between 3 and 10
-                    characters. Must only contain letters, numbers, and
-                    underscores.
+                    공개되는 표시 이름입니다. 3자에서 10자 사이여야 하고
+                    영문자·숫자·밑줄만 쓸 수 있습니다.
                   </FieldDescription>
                   {field.errors && (
                     <FieldError
@@ -105,10 +102,10 @@ export default function FormFormischInput() {
       <CardFooter>
         <Field orientation="horizontal">
           <Button type="button" variant="outline" onClick={() => reset(form)}>
-            Reset
+            초기화
           </Button>
           <Button type="submit" form="form-formisch-input">
-            Save
+            저장
           </Button>
         </Field>
       </CardFooter>

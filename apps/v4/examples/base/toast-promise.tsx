@@ -7,7 +7,7 @@ export function ToastPromise() {
   function showToast() {
     toast.promise(
       new Promise<{ name: string }>((resolve) => {
-        window.setTimeout(() => resolve({ name: "Event" }), 2000)
+        window.setTimeout(() => resolve({ name: "일정" }), 2000)
       }),
       {
         loading: "Creating event…",

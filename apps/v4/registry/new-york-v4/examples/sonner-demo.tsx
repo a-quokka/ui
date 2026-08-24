@@ -10,7 +10,7 @@ export default function SonnerDemo() {
       variant="outline"
       onClick={() =>
         toast("Event has been created", {
-          description: "Sunday, December 03, 2023 at 9:00 AM",
+          description: "2023년 12월 3일 일요일 오전 9시",
           action: {
             label: "Undo",
             onClick: () => console.log("Undo"),

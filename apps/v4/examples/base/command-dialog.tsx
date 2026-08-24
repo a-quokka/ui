@@ -39,10 +39,10 @@ export function CommandDialogDemo() {
   return (
     <>
       <p className="text-sm text-muted-foreground">
-        Press{" "}
         <kbd className="pointer-events-none inline-flex h-5 items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100 select-none">
           <span className="text-xs">⌘</span>J
-        </kbd>
+        </kbd>{" "}
+        를 누르세요
       </p>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="명령을 입력하거나 검색하세요..." />

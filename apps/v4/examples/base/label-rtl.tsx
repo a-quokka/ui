@@ -13,7 +13,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      label: "이용약관에 동의합니다",
+      label: "Accept terms and conditions",
     },
   },
   ko: {

@@ -27,7 +27,7 @@ export default function FieldDemo() {
           <FieldSet>
             <FieldLegend>Payment Method</FieldLegend>
             <FieldDescription>
-              All transactions are secure and encrypted
+              모든 거래는 암호화되어 안전합니다
             </FieldDescription>
             <FieldGroup>
               <Field>
@@ -50,7 +50,7 @@ export default function FieldDemo() {
                   required
                 />
                 <FieldDescription>
-                  Enter your 16-digit card number
+                  16자리 카드 번호를 입력하세요
                 </FieldDescription>
               </Field>
               <div className="grid grid-cols-3 gap-4">
@@ -107,7 +107,7 @@ export default function FieldDemo() {
           <FieldSet>
             <FieldLegend>Billing Address</FieldLegend>
             <FieldDescription>
-              The billing address associated with your payment method
+              결제 수단에 등록된 청구 주소입니다
             </FieldDescription>
             <FieldGroup>
               <Field orientation="horizontal">

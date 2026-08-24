@@ -16,7 +16,7 @@ export function FieldFieldset() {
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="street">상세 주소</FieldLabel>
-          <Input id="street" type="text" placeholder="123 Main St" />
+          <Input id="street" type="text" placeholder="테헤란로 123" />
         </Field>
         <div className="grid grid-cols-2 gap-4">
           <Field>

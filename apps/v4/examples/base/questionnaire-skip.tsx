@@ -42,7 +42,7 @@ export function QuestionnaireSkipExample() {
       review: formData.get("review"),
     }
 
-    toast("Agent brief submitted", {
+    toast("에이전트 요청을 보냈습니다", {
       description: `Task: ${answers.task ?? "None"} · Constraints: ${answers.constraintStatus === "skipped" ? "Skipped" : (answers.constraints ?? "None")} · Review: ${answers.review ?? "None"}`,
     })
   }

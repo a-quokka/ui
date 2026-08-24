@@ -27,7 +27,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      placeholder: "검색...",
+      placeholder: "Search...",
       results: "12 results",
       searching: "Searching...",
       saving: "Saving...",
