@@ -1,9 +1,9 @@
 ---
 title: 스킬
-description: AI 어시스턴트에게 shadcn/ui 의 컴포넌트와 패턴, 관행을 깊이 알려 줍니다.
+description: AI 어시스턴트에게 Dropshot UI 의 컴포넌트와 패턴, 관행을 깊이 알려 줍니다.
 ---
 
-스킬은 Claude Code 같은 AI 어시스턴트에게 shadcn/ui 에 대한 프로젝트 맥락을 줍니다. 설치해 두면 어시스턴트가 프로젝트에 맞는 API 와 패턴으로 컴포넌트를 찾고, 설치하고, 조합하고, 고치는 법을 알게 됩니다.
+스킬은 Claude Code 같은 AI 어시스턴트에게 Dropshot UI 에 대한 프로젝트 맥락을 줍니다. 설치해 두면 어시스턴트가 프로젝트에 맞는 API 와 패턴으로 컴포넌트를 찾고, 설치하고, 조합하고, 고치는 법을 알게 됩니다.
 
 예를 들어 이런 걸 시킬 수 있습니다.
 
@@ -23,7 +23,7 @@ description: AI 어시스턴트에게 shadcn/ui 의 컴포넌트와 패턴, 관�
 npx skills add shadcn/ui
 ```
 
-이 명령으로 shadcn 스킬이 프로젝트에 설치됩니다. 설치해 두면 shadcn/ui 컴포넌트를 다룰 때 어시스턴트가 알아서 불러옵니다.
+이 명령으로 shadcn 스킬이 프로젝트에 설치됩니다. 설치해 두면 Dropshot UI 컴포넌트를 다룰 때 어시스턴트가 알아서 불러옵니다.
 
 스킬에 대한 자세한 내용은 [skills.sh](https://skills.sh) 를 보세요.
 
@@ -59,7 +59,7 @@ shadcn MCP 서버 설정과 도구. AI 어시스턴트가 레지스트리에서 
 
 1. **프로젝트 감지** — 프로젝트에 `components.json` 이 있으면 스킬이 켜집니다.
 2. **맥락 주입** — `shadcn info --json` 을 돌려 프로젝트 설정을 읽고 어시스턴트의 맥락에 넣습니다.
-3. **패턴 강제** — 어시스턴트가 shadcn/ui 의 조합 규칙을 따릅니다. 폼에는 `FieldGroup`, 선택지 묶음에는 `ToggleGroup`, 의미 단위 색상, 기반 라이브러리에 맞는 API 를 씁니다.
+3. **패턴 강제** — 어시스턴트가 Dropshot UI 의 조합 규칙을 따릅니다. 폼에는 `FieldGroup`, 선택지 묶음에는 `ToggleGroup`, 의미 단위 색상, 기반 라이브러리에 맞는 API 를 씁니다.
 4. **컴포넌트 탐색** — 코드를 만들기 전에 `shadcn docs`·`shadcn search` 나 MCP 도구로 컴포넌트와 문서를 먼저 찾습니다.
 
 ## Learn More

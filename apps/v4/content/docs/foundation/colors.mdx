@@ -1,9 +1,9 @@
 ---
 title: Colors
-description: 드롭샷 면 위계와 강조색을 shadcn 시맨틱 변수에 얹은 결과입니다.
+description: Dropshot 면 위계와 강조색을 shadcn 시맨틱 변수에 얹은 결과입니다.
 ---
 
-드롭샷은 다크 전용 시스템입니다. 면을 밝기로 네 단계 나누고, 그 위에 보라 강조
+Dropshot 은 다크 전용 시스템입니다. 면을 밝기로 네 단계 나누고, 그 위에 보라 강조
 하나를 얹는 것이 전부입니다. 아래 값은 `apps/v4/app/globals.css` 의 `.dark` 블록에
 그대로 들어 있습니다.
 
@@ -45,7 +45,7 @@ description: 드롭샷 면 위계와 강조색을 shadcn 시맨틱 변수에 얹
 
 글자는 두 단계만 씁니다. 본문은 `grayscale-200`, 라벨은 `grayscale-500` 입니다.
 
-| 변수                     | 값        | 드롭샷        | 쓰이는 곳        |
+| 변수                     | 값        | Dropshot      | 쓰이는 곳        |
 | ------------------------ | --------- | ------------- | ---------------- |
 | `--foreground`           | `#E5E8ED` | grayscale-200 | 본문             |
 | `--muted-foreground`     | `#8E97A4` | grayscale-500 | 라벨·보조 문구   |
@@ -78,9 +78,9 @@ description: 드롭샷 면 위계와 강조색을 shadcn 시맨틱 변수에 얹
 ## Charts
 
 <Callout>
-  **드롭샷에는 차트 팔레트가 없습니다.** 아래 다섯 색은 secondary 스케일의 400
-  단계를 색상환 순서로 임시 배정한 값입니다. 확정값이 아니니 차트를 실제로 쓰기
-  전에 계열 수·순서·색맹 대응을 정해야 합니다.
+  **Dropshot 에는 차트 팔레트가 없습니다.** 아래 다섯 색은 secondary 스케일의
+  400 단계를 색상환 순서로 임시 배정한 값입니다. 확정값이 아니니 차트를 실제로
+  쓰기 전에 계열 수·순서·색맹 대응을 정해야 합니다.
 </Callout>
 
 <div className="not-prose my-6 grid grid-cols-5 gap-2">
@@ -91,7 +91,7 @@ description: 드롭샷 면 위계와 강조색을 shadcn 시맨틱 변수에 얹
   <div className="h-14 rounded-md bg-[#F86C25]" title="chart-5 #F86C25" />
 </div>
 
-| 변수        | 값        | 드롭샷      |
+| 변수        | 값        | Dropshot    |
 | ----------- | --------- | ----------- |
 | `--chart-1` | `#6633FF` | primary-400 |
 | `--chart-2` | `#1A87FF` | blue-400    |
@@ -101,7 +101,7 @@ description: 드롭샷 면 위계와 강조색을 shadcn 시맨틱 변수에 얹
 
 ## Sidebar
 
-| 변수                | 값        | 드롭샷        | 쓰이는 곳        |
+| 변수                | 값        | Dropshot      | 쓰이는 곳        |
 | ------------------- | --------- | ------------- | ---------------- |
 | `--sidebar`         | `#1F242A` | grayscale-850 | 사이드바 면      |
 | `--sidebar-accent`  | `#2A2F36` | grayscale-800 | 활성 항목 배경   |
@@ -111,7 +111,7 @@ description: 드롭샷 면 위계와 강조색을 shadcn 시맨틱 변수에 얹
 ## Light mode
 
 <Callout>
-  **라이트 팔레트는 드롭샷에 없습니다.** 같은 grayscale 램프를 뒤집어 파생한
+  **라이트 팔레트는 Dropshot 에 없습니다.** 같은 grayscale 램프를 뒤집어 파생한
   값이고, `primary` 와 차트만 원본을 씁니다. 확정값이 아닙니다. 문서 사이트는
   다크를 기본값으로 열립니다.
 </Callout>
@@ -127,17 +127,17 @@ description: 드롭샷 면 위계와 강조색을 shadcn 시맨틱 변수에 얹
 
 ## Radius
 
-드롭샷의 `rounded-N` 은 **N × 4px** 입니다. Tailwind 기본 스케일과 값이 다르므로
+Dropshot 의 `rounded-N` 은 **N × 4px** 입니다. Tailwind 기본 스케일과 값이 다르므로
 배수 계산을 걷어내고 실제 사용 값을 직접 지정했습니다.
 
-| Tailwind                      | 값     | 드롭샷 이름 | 쓰이는 곳          |
-| ----------------------------- | ------ | ----------- | ------------------ |
-| `--radius-sm`                 | `4px`  | `rounded-1` | 프로그레스         |
-| `--radius-md` · `--radius-lg` | `8px`  | `rounded-2` | 카드·모달·드롭다운 |
-| `--radius-xl`                 | `12px` | `rounded-3` | 구독권·크레딧 카드 |
-| `--radius-2xl`                | `16px` | `rounded-4` | 배지               |
-| `--radius-3xl`                | `20px` | `rounded-5` |                    |
-| `--radius-4xl`                | `24px` | `rounded-6` |                    |
+| Tailwind                      | 값     | Dropshot 이름 | 쓰이는 곳          |
+| ----------------------------- | ------ | ------------- | ------------------ |
+| `--radius-sm`                 | `4px`  | `rounded-1`   | 프로그레스         |
+| `--radius-md` · `--radius-lg` | `8px`  | `rounded-2`   | 카드·모달·드롭다운 |
+| `--radius-xl`                 | `12px` | `rounded-3`   | 구독권·크레딧 카드 |
+| `--radius-2xl`                | `16px` | `rounded-4`   | 배지               |
+| `--radius-3xl`                | `20px` | `rounded-5`   |                    |
+| `--radius-4xl`                | `24px` | `rounded-6`   |                    |
 
 원본 이름인 `rounded-1` 부터 `rounded-6` 까지도 유틸리티로 함께 쓸 수 있습니다.
 

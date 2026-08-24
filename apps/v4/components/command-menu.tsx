@@ -6,7 +6,6 @@ import { IconArrowRight } from "@tabler/icons-react"
 import { useDocsSearch } from "fumadocs-core/search/client"
 import { CornerDownLeftIcon, SquareDashedIcon } from "lucide-react"
 import { Dialog as DialogPrimitive } from "radix-ui"
-import { encodePreset } from "shadcn/preset"
 
 import { type Color, type ColorPalette } from "@/lib/colors"
 import { trackEvent } from "@/lib/events"
@@ -37,7 +36,6 @@ import {
 } from "@/registry/new-york-v4/ui/dialog"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
-import { STYLES } from "@/registry/styles"
 
 export function CommandMenu({
   tree,
@@ -58,7 +56,7 @@ export function CommandMenu({
   const [open, setOpen] = React.useState(false)
   const [renderDelayedGroups, setRenderDelayedGroups] = React.useState(false)
   const [selectedType, setSelectedType] = React.useState<
-    "color" | "page" | "component" | "block" | "style" | null
+    "color" | "page" | "component" | "block" | null
   >(null)
   const [copyPayload, setCopyPayload] = React.useState("")
 
@@ -209,40 +207,6 @@ export function CommandMenu({
       </CommandGroup>
     )
   }, [navItems, runCommand, router])
-
-  const stylesSection = React.useMemo(() => {
-    return (
-      <CommandGroup
-        heading="Styles"
-        className="p-0! **:[[cmdk-group-heading]]:scroll-mt-16 **:[[cmdk-group-heading]]:p-3! **:[[cmdk-group-heading]]:pb-1!"
-      >
-        {STYLES.map((style) => (
-          <CommandMenuItem
-            key={style.name}
-            value={`Style ${style.title} ${style.description}`}
-            keywords={["style", "preset", style.name, style.title]}
-            onHighlight={() => {
-              setSelectedType("style")
-              setCopyPayload("")
-            }}
-            onSelect={() => {
-              runCommand(() =>
-                router.push(
-                  `/create?preset=${encodePreset({ style: style.name })}`
-                )
-              )
-            }}
-          >
-            {style.icon}
-            {style.title}
-            <span className="ml-auto text-xs font-normal text-muted-foreground">
-              Open style in shadcn/create
-            </span>
-          </CommandMenuItem>
-        ))}
-      </CommandGroup>
-    )
-  }, [runCommand, router])
 
   const pageGroupsSection = React.useMemo(() => {
     return tree.children.map((group) => {
@@ -461,7 +425,6 @@ export function CommandMenu({
               {query.isLoading ? "검색 중..." : "결과가 없습니다."}
             </CommandEmpty>
             {navItemsSection}
-            {stylesSection}
             {renderDelayedGroups ? (
               <>
                 {pageGroupsSection}
@@ -485,7 +448,6 @@ export function CommandMenu({
               ? "페이지로 이동"
               : null}
             {selectedType === "color" ? "OKLCH 복사" : null}
-            {selectedType === "style" ? "Open in shadcn/create" : null}
           </div>
           {copyPayload && (
             <>

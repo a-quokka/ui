@@ -1,7 +1,4 @@
 {
   "root": true,
-  "pages": [
-    "foundation",
-    "components"
-  ]
+  "pages": ["foundation", "components"]
 }
