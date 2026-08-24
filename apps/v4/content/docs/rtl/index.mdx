@@ -1,9 +1,9 @@
 ---
 title: "RTL"
-description: "Right-to-left support for shadcn/ui components."
+description: "shadcn/ui 컴포넌트의 오른쪽에서 왼쪽 배치 지원."
 ---
 
-shadcn/ui components have first-class support for right-to-left (RTL) layouts. Text alignment, positioning, and directional styles automatically adapt for languages like Arabic, Hebrew, and Persian.
+shadcn/ui 컴포넌트는 오른쪽에서 왼쪽(RTL) 배치를 정식으로 지원합니다. 아랍어·히브리어·페르시아어 같은 언어에서 글자 정렬과 위치, 방향 관련 스타일이 알아서 맞춰집니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -15,11 +15,11 @@ shadcn/ui components have first-class support for right-to-left (RTL) layouts. T
   className="mb-8"
 />
 
-When you install components, the CLI automatically transforms physical positioning classes to logical equivalents, so your components work seamlessly in both LTR and RTL contexts.
+컴포넌트를 설치할 때 CLI 가 방향이 박힌 위치 클래스를 논리 속성으로 바꿔 줍니다. 그래서 LTR 과 RTL 어디서도 그대로 동작합니다.
 
 ## Get Started
 
-Select your framework to get started with RTL support.
+RTL 을 시작할 프레임워크를 고르세요.
 
 <div className="mt-6 grid gap-4 sm:grid-cols-2 sm:gap-6">
   <LinkedCard href="/docs/rtl/next">
@@ -63,40 +63,40 @@ Select your framework to get started with RTL support.
 
 ## How it works
 
-When you add components with `rtl: true` set in your `components.json`, the shadcn CLI automatically transforms classes and props to be RTL compatible:
+`components.json` 에 `rtl: true` 를 두고 컴포넌트를 추가하면 shadcn CLI 가 클래스와 prop 을 RTL 에 맞게 바꿔 줍니다.
 
-- Physical positioning classes like `left-*` and `right-*` are converted to logical equivalents like `start-*` and `end-*`.
-- Directional props are updated to use logical values.
-- Text alignment and spacing classes are adjusted accordingly.
-- Supported icons are automatically flipped using `rtl:rotate-180`.
+- `left-*`·`right-*` 처럼 방향이 박힌 클래스가 `start-*`·`end-*` 같은 논리 속성으로 바뀝니다.
+- 방향을 가리키는 prop 이 논리 값으로 바뀝니다.
+- 글자 정렬과 간격 클래스도 그에 맞게 조정됩니다.
+- 지원하는 아이콘은 `rtl:rotate-180` 으로 자동으로 뒤집힙니다.
 
 ## Try it out
 
-Click the link below to open a Next.js project with RTL support in v0.
+아래 링크를 누르면 RTL 이 설정된 Next.js 프로젝트가 v0 에서 열립니다.
 
 [![Open in v0](https://v0.app/chat-static/button.svg)](https://v0.app/chat/api/open?url=https://github.com/shadcn-ui/next-template-rtl)
 
 ## Supported Styles
 
-Automatic RTL transformation via the CLI is only available for projects created using `shadcn create` with the new styles (`base-nova`, `radix-nova`, etc.).
+CLI 를 통한 자동 RTL 변환은 `shadcn create` 로 새 스타일(`base-nova`·`radix-nova` 등)을 써서 만든 프로젝트에서만 됩니다.
 
-For other styles, see the [Migration Guide](#migrating-existing-components).
+다른 스타일이라면 [Migration Guide](#migrating-existing-components) 를 보세요.
 
 ## Font Recommendations
 
-For the best RTL experience, we recommend using fonts that have proper support for your target language. [Noto](https://fonts.google.com/noto) is a great font family for this and it pairs well with Inter and Geist.
+RTL 을 제대로 쓰려면 대상 언어를 잘 지원하는 폰트를 권합니다. [Noto](https://fonts.google.com/noto) 가 이런 용도에 좋고 Inter·Geist 와도 잘 어울립니다.
 
-See your framework's RTL guide under [Get Started](#get-started) for details on installing and configuring RTL fonts.
+RTL 폰트를 설치하고 설정하는 방법은 [Get Started](#get-started) 아래의 프레임워크별 RTL 문서를 보세요.
 
 ## Animations
 
-The CLI also handles animation classes, automatically transforming physical directional animations to their logical equivalents. For example, `slide-in-from-right` becomes `slide-in-from-end`.
+CLI 는 애니메이션 클래스도 처리해 방향이 박힌 애니메이션을 논리 속성으로 바꿉니다. 예를 들어 `slide-in-from-right` 는 `slide-in-from-end` 가 됩니다.
 
-This ensures animations like dropdowns, popovers, and tooltips animate in the correct direction based on the document's text direction.
+그래서 드롭다운·팝오버·툴팁 같은 애니메이션이 문서의 글자 방향에 맞는 쪽으로 움직입니다.
 
-**A note on tw-animate-css:**
+**tw-animate-css 관련 참고:**
 
-There is a [known issue](https://github.com/Wombosvideo/tw-animate-css/issues/67) with the `tw-animate-css` library where the logical slide utilities are not working as expected. For now, make sure you pass in the `dir` prop to portal elements.
+`tw-animate-css` 에는 논리 slide 유틸리티가 기대대로 동작하지 않는 [알려진 문제](https://github.com/Wombosvideo/tw-animate-css/issues/67)가 있습니다. 당분간은 portal 요소에 `dir` prop 을 꼭 넘기세요.
 
 ```tsx showLineNumbers /dir="rtl"/
 <Popover>
@@ -118,21 +118,21 @@ There is a [known issue](https://github.com/Wombosvideo/tw-animate-css/issues/67
 
 ## Migrating existing components
 
-If you have existing components installed before enabling RTL, you can migrate them using the CLI as follows:
+RTL 을 켜기 전에 설치한 컴포넌트가 있다면 CLI 로 이렇게 옮길 수 있습니다.
 
 <Steps>
 
-<Step>Run the migrate command</Step>
+<Step>migrate 명령을 실행합니다</Step>
 
 ```bash
 npx shadcn@latest migrate rtl [path]
 ```
 
-`[path]` accepts a path or glob pattern to migrate. If you don't provide a path, it will migrate all the files in the `ui` directory.
+`[path]` 에는 옮길 경로나 glob 패턴을 줍니다. 주지 않으면 `ui` 디렉터리의 모든 파일을 옮깁니다.
 
 ### Manual Migration (Optional)
 
-The following components are not automatically migrated by the CLI. Follow the RTL support section for each component to manually migrate them.
+아래 컴포넌트는 CLI 가 자동으로 옮기지 않습니다. 각 컴포넌트 문서의 RTL 지원 절을 따라 직접 옮기세요.
 
 - [Calendar](/docs/components/base/calendar#rtl-support)
 - [Pagination](/docs/components/base/pagination#rtl-support)
@@ -140,7 +140,7 @@ The following components are not automatically migrated by the CLI. Follow the R
 
 ### Migrate Icons
 
-Some icons like `ArrowRightIcon` or `ChevronLeftIcon` might need the `rtl:rotate-180` class to be flipped correctly. Add the `rtl:rotate-180` class to the icon component to flip it correctly.
+`ArrowRightIcon` 이나 `ChevronLeftIcon` 같은 아이콘은 제대로 뒤집히려면 `rtl:rotate-180` 클래스가 필요할 수 있습니다. 아이콘 컴포넌트에 그 클래스를 붙이세요.
 
 ```tsx showLineNumbers /rtl:rotate-180/
 <ArrowRightIcon className="rtl:rotate-180" />
@@ -148,7 +148,7 @@ Some icons like `ArrowRightIcon` or `ChevronLeftIcon` might need the `rtl:rotate
 
 ### Add direction component
 
-Add the direction component to your project.
+프로젝트에 direction 컴포넌트를 추가합니다.
 
 ```bash
 npx shadcn@latest add direction
@@ -156,8 +156,8 @@ npx shadcn@latest add direction
 
 ### Add DirectionProvider
 
-Follow your framework's documentation for details on how to add the `DirectionProvider` component to your project.
+`DirectionProvider` 를 프로젝트에 넣는 방법은 쓰는 프레임워크의 문서를 따르세요.
 
-See the [Get Started](#get-started) section for details on how to add the `DirectionProvider` component to your project.
+`DirectionProvider` 를 넣는 방법은 [Get Started](#get-started) 절을 보세요.
 
 </Steps>

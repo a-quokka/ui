@@ -1,6 +1,6 @@
 ---
 title: Vite
-description: Adding dark mode to your Vite app.
+description: Vite 앱에 다크 모드를 붙입니다.
 ---
 
 ## Create a theme provider
@@ -83,7 +83,7 @@ export const useTheme = () => {
 
 ## Wrap your root layout
 
-Add the `ThemeProvider` to your root layout.
+루트 레이아웃에 `ThemeProvider` 를 넣습니다.
 
 ```tsx {1,5-7} title="App.tsx" showLineNumbers
 import { ThemeProvider } from "@/components/theme-provider"
@@ -101,7 +101,7 @@ export default App
 
 ## Add a mode toggle
 
-Place a mode toggle on your site to toggle between light and dark mode.
+라이트 모드와 다크 모드를 오갈 수 있는 전환 버튼을 사이트에 둡니다.
 
 ```tsx title="components/mode-toggle.tsx" showLineNumbers
 import { Moon, Sun } from "lucide-react"

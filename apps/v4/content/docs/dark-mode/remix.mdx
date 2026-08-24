@@ -1,13 +1,13 @@
 ---
 title: Remix
-description: Adding dark mode to your Remix app.
+description: Remix 앱에 다크 모드를 붙입니다.
 ---
 
 <Steps>
 
 ## Modify your tailwind.css file
 
-Add `:root[class~="dark"]` to your tailwind.css file. This will allow you to use the `dark` class on your html element to apply dark mode styles.
+tailwind.css 에 `:root[class~="dark"]` 를 추가하세요. 그러면 html 요소에 `dark` 클래스를 붙여 다크 모드 스타일을 적용할 수 있습니다.
 
 ```css {2} title="app/tailwind.css" showLineNumbers
 .dark,
@@ -18,7 +18,7 @@ Add `:root[class~="dark"]` to your tailwind.css file. This will allow you to use
 
 ## Install remix-themes
 
-Start by installing `remix-themes`:
+`remix-themes` 를 설치하는 것부터 시작합니다.
 
 ```bash
 npm install remix-themes
@@ -51,7 +51,7 @@ export const themeSessionResolver = createThemeSessionResolver(sessionStorage)
 
 ## Set up Remix Themes
 
-Add the `ThemeProvider` to your root layout.
+루트 레이아웃에 `ThemeProvider` 를 넣습니다.
 
 ```tsx {1-3,6-11,15-22,25-26,28,33} title="app/root.tsx" showLineNumbers
 import clsx from "clsx"
@@ -103,7 +103,7 @@ export function App() {
 
 ## Add an action route
 
-Create a file in `/routes/action.set-theme.ts`. Ensure that you pass the filename to the ThemeProvider component. This route is used to store the preferred theme in the session storage when the user changes it.
+`/routes/action.set-theme.ts` 파일을 만드세요. 그 파일 이름을 ThemeProvider 에 넘겨야 합니다. 사용자가 테마를 바꿀 때 세션 저장소에 기록하는 라우트입니다.
 
 ```tsx title="app/routes/action.set-theme.ts" showLineNumbers
 import { createThemeAction } from "remix-themes"
@@ -115,7 +115,7 @@ export const action = createThemeAction(themeSessionResolver)
 
 ## Add a mode toggle
 
-Place a mode toggle on your site to toggle between light and dark mode.
+라이트 모드와 다크 모드를 오갈 수 있는 전환 버튼을 사이트에 둡니다.
 
 ```tsx title="components/mode-toggle.tsx" showLineNumbers
 import { Moon, Sun } from "lucide-react"

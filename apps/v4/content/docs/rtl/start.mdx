@@ -1,11 +1,11 @@
 ---
 title: TanStack Start
-description: Create a new TanStack Start project with RTL support.
+description: RTL 이 설정된 TanStack Start 프로젝트를 새로 만듭니다.
 ---
 
 <Callout className="mb-6 border-emerald-600 bg-emerald-100 dark:border-emerald-400 dark:bg-emerald-900">
 
-**Starting a new project?** Use shadcn/create for a fully configured TanStack Start app with custom themes, Base UI or Radix, and icon libraries.
+**새로 시작하시나요?** shadcn/create 를 쓰면 테마·Base UI 또는 Radix·아이콘 라이브러리까지 설정된 TanStack Start 앱을 바로 만들 수 있습니다.
 
 </Callout>
 
@@ -13,15 +13,15 @@ description: Create a new TanStack Start project with RTL support.
 
 ### Create Project
 
-Create a new project using the `--rtl` flag and the `start` template.
+`--rtl` 플래그와 `start` 템플릿으로 새 프로젝트를 만듭니다.
 
-**You can skip this step if you have already created a project using shadcn/create.**
+**shadcn/create 로 프로젝트를 만들었다면 이 단계는 건너뛰어도 됩니다.**
 
 ```bash
 npx shadcn@latest create --template start --rtl
 ```
 
-This will create a `components.json` file with the `rtl: true` flag.
+그러면 `rtl: true` 가 설정된 `components.json` 이 만들어집니다.
 
 ```json title="components.json" showLineNumbers {4}
 {
@@ -33,9 +33,9 @@ This will create a `components.json` file with the `rtl: true` flag.
 
 ### Add DirectionProvider
 
-Add the `dir="rtl"` and `lang="ar"` attributes to the `html` tag. Update `lang="ar"` to your target language.
+`html` 태그에 `dir="rtl"` 과 `lang="ar"` 을 붙입니다. `lang="ar"` 은 대상 언어로 바꾸세요.
 
-Then wrap your app with the `DirectionProvider` component with the `direction="rtl"` prop in your `__root.tsx`:
+그다음 `__root.tsx` 에서 앱을 `direction="rtl"` 을 준 `DirectionProvider` 로 감쌉니다.
 
 ```tsx title="src/routes/__root.tsx" showLineNumbers {1,9,14-16}
 import { DirectionProvider } from "@/components/ui/direction"
@@ -61,15 +61,15 @@ function RootComponent() {
 
 ### Add Font
 
-For the best RTL experience, we recommend using fonts that have proper support for your target language. [Noto](https://fonts.google.com/noto) is a great font family for this and it pairs well with Inter and Geist.
+RTL 을 제대로 쓰려면 대상 언어를 잘 지원하는 폰트를 권합니다. [Noto](https://fonts.google.com/noto) 가 이런 용도에 좋고 Inter·Geist 와도 잘 어울립니다.
 
-Install the font using [Fontsource](https://fontsource.org/fonts/noto-sans-arabic):
+[Fontsource](https://fontsource.org/fonts/noto-sans-arabic) 로 폰트를 설치합니다.
 
 ```bash
 npm install @fontsource-variable/noto-sans-arabic
 ```
 
-Import the font in your `styles.css`:
+`styles.css` 에서 폰트를 불러옵니다.
 
 ```css title="src/styles.css" showLineNumbers {4,7}
 @import "tailwindcss";
@@ -82,11 +82,11 @@ Import the font in your `styles.css`:
 }
 ```
 
-For other languages, eg. Hebrew, you can use `@fontsource-variable/noto-sans-hebrew`.
+히브리어처럼 다른 언어라면 `@fontsource-variable/noto-sans-hebrew` 를 쓰면 됩니다.
 
 ### Add Components
 
-You are now ready to add components to your project. The CLI will take care of handling RTL support for you.
+이제 컴포넌트를 추가할 준비가 됐습니다. RTL 지원은 CLI 가 알아서 처리합니다.
 
 ```bash
 npx shadcn@latest add item
