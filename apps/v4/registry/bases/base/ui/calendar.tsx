@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { ko } from "date-fns/locale"
 import {
   DayPicker,
   getDefaultClassNames,
@@ -18,7 +19,8 @@ function Calendar({
   showOutsideDays = true,
   captionLayout = "label",
   buttonVariant = "ghost",
-  locale,
+  // 이 포크는 한국어 문서다. 넘기지 않으면 월·요일이 영어로 나온다.
+  locale = ko,
   formatters,
   components,
   ...props
