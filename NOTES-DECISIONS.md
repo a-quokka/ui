@@ -37,7 +37,7 @@ Vercel 프로덕션은 `main` 에 붙어 있고, `main` 은 upstream 머지를 �
 | 시점 | 최대 상주 메모리 | 페이지 | 컴파일 |
 |---|---|---|---|
 | 손대기 전 | 8.5 GB | 341 | 25초 |
-| 지금 | **4.5 GB** | 194 | 11초 |
+| 지금 | **4.2 GB** | 133 | 12초 |
 
 무엇을 지웠는지는 커밋 `ef5c1e2` 에 적어 두었다. 요약하면 base 한 벌만 남기고
 `(create)`·`(typeset)`·`(styles)`·`blocks`·`charts`·`(view)/preview`·`(app)/examples`
@@ -66,7 +66,15 @@ webpack 전환은 더 나빴고(로컬에서 JS heap OOM), Node 힙을 조여도
 - RTL 예제 57개에 한국어 문안 추가, 아랍어·히브리어 삭제
 - 언어 선택기는 English · 한국어 둘
 
-### B-4. 드롭샷 토큰화 — 완료
+### B-4. upstream 히스토리·레거시 페이지 정리 — 완료
+
+지운 라우트로 가는 죽은 링크가 문서에 남아 있어 함께 정리했다. changelog 57개와
+rss.xml, 홈 화면의 Announcement 배너, Typeset·Directory 문서, `/colors` 페이지를
+지웠다. 남은 문서의 `/create`·`/blocks` 링크는 문장은 두고 링크만 걷어냈다.
+
+페이지 194 → 133.
+
+### B-5. 드롭샷 토큰화 — 완료
 
 `.dark` 는 TOKEN-MAP 원본 값, 반경은 `rounded-N = N×4px`, 폰트는 Dropshot Sans
 세 웨이트를 CDN 에서 받는다. Foundation 섹션에 Colors·Typography 두 페이지를 새로 넣었다.
