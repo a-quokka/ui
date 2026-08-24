@@ -1,17 +1,17 @@
 ---
 title: AI SDK
-description: Create AI SDK messages and stream predefined conversations through useChat without a model, API route, network request, or API key.
+description: 모델·API 라우트·네트워크 요청·API 키 없이 AI SDK 메시지를 만들고, 미리 적어 둔 대화를 useChat 으로 흘려보냅니다.
 ---
 
-`@shadcn/helpers/ai-sdk` lets you write an AI conversation in code and stream it
-through `useChat`, with no model, API route, network request, or API key.
+`@shadcn/helpers/ai-sdk` 를 쓰면 AI 대화를 코드로 적어 `useChat` 으로 흘려보낼 수
+있습니다. 모델도 API 라우트도 네트워크 요청도 API 키도 필요 없습니다.
 
-Because the conversation streams through the real `useChat` lifecycle, your
-components behave exactly as they would in production.
+대화가 진짜 `useChat` 수명 주기를 그대로 타고 흐르므로, 컴포넌트도 운영 환경과 똑같이
+움직입니다.
 
-It supports every part type the AI SDK does: reasoning, tools, data, files,
-sources, and custom parts. Tool calls can also pause for real user input,
-including approvals. See [Human in the Loop](#human-in-the-loop).
+AI SDK 가 다루는 모든 조각(추론·도구·데이터·파일·출처·직접 만든 조각)을 지원합니다.
+도구 호출은 승인을 비롯해 실제 사용자 입력을 기다리며 멈출 수도 있습니다.
+[사람이 끼어드는 흐름](#human-in-the-loop)을 보세요.
 
 ```ts showLineNumbers
 import { createChat } from "@shadcn/helpers/ai-sdk"
@@ -23,9 +23,8 @@ const chat = createChat()
   .assistant("Press ⌘K to search and ⌘Enter to submit.")
 ```
 
-Pass the chat to `useChat` with its initial messages and local transport.
-`useChat` receives the same typed `UIMessage[]` it would get from a streamed
-response.
+처음 메시지와 로컬 transport 를 함께 `useChat` 에 넘기세요. `useChat` 은 스트리밍 응답에서
+받았을 것과 똑같이 타입이 붙은 `UIMessage[]` 를 받습니다.
 
 ```tsx showLineNumbers
 import { useChat } from "@ai-sdk/react"
@@ -53,24 +52,23 @@ function Chat() {
 }
 ```
 
-`get(0)` starts with no messages. `sendMessage(nextMessage)` sends the next
-predefined user message; the transport then streams its assistant response.
+`get(0)` 은 메시지 없이 시작합니다. `sendMessage(nextMessage)` 로 다음 사용자 메시지를
+보내면 transport 가 그에 대한 어시스턴트 응답을 흘려보냅니다.
 
 ---
 
 ## What It's For
 
-The helper decouples your chat UI from the model and the backend, so you can
-work on the frontend on its own. It runs offline, instantly, and the same way every time.
+이 도우미는 채팅 UI 를 모델·백엔드와 떼어 놓아 프론트엔드만 따로 만들 수 있게 합니다.
+연결 없이도 곧바로, 언제나 똑같이 동작합니다.
 
-- **Build components.** Develop message bubbles, tool cards, and reasoning
-  panels against realistic streaming output, without wiring up a model first.
-- **Preview and demo.** Ship reproducible previews, screenshots, and videos
-  that never depend on a live model.
-- **Write docs.** Power documentation examples with conversations that render
-  the same way on every load.
-- **Test.** Assert against a deterministic stream in CI, with no network calls,
-  token spend, or flaky model output.
+- **컴포넌트 만들기.** 모델을 붙이지 않고도 실제 같은 스트리밍 출력으로 말풍선·도구
+  카드·추론 패널을 만듭니다.
+- **미리 보기와 시연.** 모델에 기대지 않는, 언제나 같은 미리 보기·스크린샷·영상을
+  만듭니다.
+- **문서 쓰기.** 열 때마다 똑같이 그려지는 대화로 문서 예시를 채웁니다.
+- **테스트.** 네트워크 호출도, 토큰 비용도, 들쭉날쭉한 모델 출력도 없이 CI 에서 항상
+  같은 스트림을 검증합니다.
 
 ---
 
@@ -80,15 +78,15 @@ work on the frontend on its own. It runs offline, instantly, and the same way ev
 npm install @shadcn/helpers
 ```
 
-This helper works alongside your existing AI SDK setup (`ai` and
-`@ai-sdk/react`). Import the helpers from `@shadcn/helpers/ai-sdk`.
+이 도우미는 이미 쓰고 있는 AI SDK 구성(`ai` 와 `@ai-sdk/react`)과 함께 씁니다.
+`@shadcn/helpers/ai-sdk` 에서 가져오세요.
 
 ---
 
 ## Usage
 
-Create a conversation, pass its messages and transport to `useChat`, then send
-each predefined user message with `next()`.
+대화를 만들고 그 메시지와 transport 를 `useChat` 에 넘긴 뒤, `next()` 로 미리 적어 둔
+사용자 메시지를 하나씩 보냅니다.
 
 ```tsx showLineNumbers {3-4,6-10,12-13,16-21,28-34}
 "use client"
@@ -144,9 +142,9 @@ export function Chat() {
 
 ## User Messages
 
-Messages added with this helper use the `user` and `assistant` roles. Use
-`user()` to add a user message. Existing AI SDK messages are preserved when
-you start with `createChat({ messages })`.
+이 도우미로 더한 메시지는 `user` 와 `assistant` 역할을 씁니다. 사용자 메시지는
+`user()` 로 더합니다. `createChat({ messages })` 로 시작하면 원래 있던 AI SDK 메시지는
+그대로 남습니다.
 
 ```ts
 const chat = createChat().user("What changed in this release?")
@@ -157,7 +155,7 @@ message.role // "user"
 message.parts // [{ type: "text", text: "What changed in this release?" }]
 ```
 
-Pass an `id` or metadata as the second argument when you need them.
+필요하면 두 번째 인자로 `id` 나 메타데이터를 넘기세요.
 
 ```ts
 chat.user("What changed in this release?", {
@@ -168,13 +166,13 @@ chat.user("What changed in this release?", {
 })
 ```
 
-User messages can also include files. See [Files](#files).
+사용자 메시지에는 파일도 담을 수 있습니다. [파일](#files)을 보세요.
 
 ---
 
 ## Assistant Messages
 
-Use `assistant()` to add an assistant message.
+어시스턴트 메시지는 `assistant()` 로 더합니다.
 
 ```ts
 const chat = createChat().assistant(
@@ -187,8 +185,8 @@ message.role // "assistant"
 message.parts // [{ type: "text", text: "The release adds...", state: "done" }]
 ```
 
-A string creates one text part. You can also pass an array of AI SDK message
-parts.
+문자열을 넘기면 텍스트 조각 하나가 만들어집니다. AI SDK 메시지 조각의 배열을 넘겨도
+됩니다.
 
 ```ts
 chat.assistant([
@@ -197,7 +195,7 @@ chat.assistant([
 ])
 ```
 
-Use the writer callback when the message has more than plain text.
+메시지에 단순한 글 말고 다른 것이 담긴다면 writer 콜백을 쓰세요.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -206,20 +204,20 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-The writer adds parts in the order you call them.
+writer 는 부른 순서대로 조각을 더합니다.
 
 ---
 
 ## Message Parts
 
-An assistant message can contain many part types. Add them with the `writer`
-passed to `assistant()`, in the order you call them:
+어시스턴트 메시지에는 여러 종류의 조각이 담길 수 있습니다. `assistant()` 가 넘겨주는
+`writer` 로 부른 순서대로 더하세요.
 
-- [Text](#text) and [Reasoning](#reasoning)
-- [Tool Calls](#tool-calls)
-- [Data](#data)
-- [Files](#files) and [Sources](#sources)
-- [Step Starts](#step-starts) and [Custom Parts](#custom-parts)
+- [텍스트](#text)와 [추론](#reasoning)
+- [도구 호출](#tool-calls)
+- [데이터](#data)
+- [파일](#files)과 [출처](#sources)
+- [단계 시작](#step-starts)과 [직접 만든 조각](#custom-parts)
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -235,7 +233,7 @@ chat.assistant(({ writer }) => {
 
 ## Text
 
-Use `text()` to add a text part.
+텍스트 조각은 `text()` 로 더합니다.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -244,18 +242,18 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-Each call creates a separate text part. Text streams word by word when the chat
-is used with `chat.transport()`.
+부를 때마다 텍스트 조각이 따로 만들어집니다. `chat.transport()` 와 함께 쓰면 글이 한
+낱말씩 흘러나옵니다.
 
-Use `mode: "instant"` to send the whole part at once, or `delayMs` to change the
-delay between its text deltas.
+조각을 한 번에 보내려면 `mode: "instant"` 를, 글자가 나오는 간격을 바꾸려면 `delayMs` 를
+쓰세요.
 
 ```ts
 writer.text("Done.", { mode: "instant" })
 writer.text("This part streams more slowly.", { delayMs: 100 })
 ```
 
-Pass an `id` when the text part needs a stable identifier.
+텍스트 조각에 고정된 식별자가 필요하면 `id` 를 넘기세요.
 
 ```ts
 writer.text("The final answer.", { id: "answer" })
@@ -265,7 +263,7 @@ writer.text("The final answer.", { id: "answer" })
 
 ## Reasoning
 
-Use `reasoning()` to add a reasoning part.
+추론 조각은 `reasoning()` 으로 더합니다.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -274,7 +272,7 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-Reasoning uses the same `id`, `delayMs`, and `mode` options as text.
+추론도 텍스트와 똑같이 `id`·`delayMs`·`mode` 옵션을 씁니다.
 
 ```ts
 writer.reasoning("Checking the forecast.", { mode: "instant" })
@@ -284,8 +282,8 @@ writer.reasoning("Checking the forecast.", { mode: "instant" })
 
 ## Tool Calls
 
-Use `tool()` to add a tool call. It returns a handle that follows the tool from
-input to output.
+도구 호출은 `tool()` 로 더합니다. 입력부터 출력까지 그 도구를 따라다니는 핸들을
+돌려줍니다.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -305,7 +303,7 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-The tool can finish with `output()`, `error()`, or `denied()`.
+도구는 `output()`·`error()`·`denied()` 중 하나로 끝냅니다.
 
 ```ts
 writer.tool("getWeather", { input: { city: "San Francisco" } }).error()
@@ -313,8 +311,8 @@ writer.tool("getWeather", { input: { city: "San Francisco" } }).error()
 writer.tool("getWeather", { input: { city: "San Francisco" } }).denied()
 ```
 
-Pass `dynamic: true` to create an AI SDK `dynamic-tool` part instead of a typed
-`tool-<name>` part.
+`dynamic: true` 를 주면 타입이 붙은 `tool-<name>` 대신 AI SDK 의 `dynamic-tool` 조각이
+만들어집니다.
 
 ```ts
 writer.tool("getWeather", {
@@ -324,8 +322,8 @@ writer.tool("getWeather", {
 })
 ```
 
-Type the tool name, input, and output by passing your message type to
-`createChat`. It takes the same type parameter as `useChat`.
+메시지 타입을 `createChat` 에 넘기면 도구 이름·입력·출력에 타입이 붙습니다. `useChat` 과
+같은 타입 매개변수를 받습니다.
 
 ```ts
 import type { UIMessage } from "ai"
@@ -342,7 +340,7 @@ type ChatMessage = UIMessage<unknown, Record<string, never>, Tools>
 const chat = createChat<ChatMessage>()
 ```
 
-Define the message type once and use it for both `createChat` and `useChat`.
+메시지 타입을 한 번 정의해 `createChat` 과 `useChat` 양쪽에 쓰세요.
 
 ```ts
 const { messages } = useChat<ChatMessage>({
@@ -351,23 +349,23 @@ const { messages } = useChat<ChatMessage>({
 })
 ```
 
-A tool call can also wait for the user instead of finishing in the script.
-See [Human in the Loop](#human-in-the-loop).
+도구 호출은 코드 안에서 끝내지 않고 사용자를 기다릴 수도 있습니다.
+[사람이 끼어드는 흐름](#human-in-the-loop)을 보세요.
 
 ---
 
 ## Human in the Loop
 
-A tool call can pause and hand control to the real user. The helper supports
-both AI SDK human-in-the-loop flows: client-executed tools, where the user
-supplies the output, and approval-gated tools, where the user approves or
-denies before a scripted output streams.
+도구 호출은 멈춰 서서 실제 사용자에게 차례를 넘길 수 있습니다. AI SDK 의 두 가지
+흐름을 모두 지원합니다. 하나는 사용자가 출력을 직접 주는 클라이언트 실행 도구,
+다른 하나는 사용자가 허락하거나 거절한 뒤에야 미리 적어 둔 출력이 흐르는 승인형
+도구입니다.
 
 ### Pause a Tool Call
 
-Leave a tool call unresolved to pause the turn. The input streams, the turn
-finishes, and the part stays in the `input-available` state until the client
-supplies its output with `addToolOutput`.
+도구 호출을 끝내지 않고 두면 그 차례가 멈춥니다. 입력이 흐르고 차례는 끝나지만,
+클라이언트가 `addToolOutput` 으로 출력을 줄 때까지 조각은 `input-available` 상태로
+남습니다.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -378,10 +376,10 @@ chat.assistant(({ writer }) => {
 
 ### Require Approval
 
-Pass `needsApproval: true` to pause behind the user's decision. `output` then
-means "stream this after approval" instead of "resolve immediately". Denial
-streams `tool-output-denied` automatically, and `errorText` with
-`needsApproval` scripts a tool that fails after approval.
+`needsApproval: true` 를 주면 사용자의 결정을 기다리며 멈춥니다. 이때 `output` 은 "바로
+끝내라"가 아니라 "허락받은 뒤에 흘려보내라"는 뜻입니다. 거절하면 `tool-output-denied`
+가 저절로 흐르고, `needsApproval` 과 `errorText` 를 함께 주면 허락 뒤에 실패하는 도구가
+됩니다.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -394,15 +392,14 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-Calling `output()`, `error()`, or `denied()` on the handle of a
-`needsApproval` call throws. The user's decision resolves it.
+`needsApproval` 호출의 핸들에서 `output()`·`error()`·`denied()` 를 부르면 예외가
+납니다. 결정은 사용자가 합니다.
 
 ### Continuations
 
-A callback turn scripted immediately after a paused turn becomes a
-continuation. It does not materialize when the script is built. It runs when
-the follow-up request arrives, and its context includes `toolCall`: the
-paused call joined with what the user did.
+멈춘 차례 바로 뒤에 적어 둔 콜백 차례는 이어지는 차례가 됩니다. 대본을 만들 때는
+실행되지 않고, 다음 요청이 올 때 실행됩니다. 그 맥락에는 멈췄던 호출과 사용자가 한
+일을 합친 `toolCall` 이 담깁니다.
 
 ```ts
 chat
@@ -418,30 +415,30 @@ chat
   })
 ```
 
-For a client-executed tool, `toolCall.output` is the output the user
-submitted. For an approval, `toolCall.approved` and `toolCall.denied` carry
-the decision, and the scripted output streams before the callback's content.
+클라이언트 실행 도구라면 `toolCall.output` 이 사용자가 낸 출력입니다. 승인형이라면
+`toolCall.approved` 와 `toolCall.denied` 에 결정이 담기고, 미리 적어 둔 출력이 콜백
+내용보다 먼저 흐릅니다.
 
-| Property     | Description                                                    |
-| ------------ | -------------------------------------------------------------- |
-| `name`       | The tool name. Comparing it narrows `input` and `output`.      |
-| `toolCallId` | The paused call's ID.                                          |
-| `input`      | The tool input.                                                |
-| `output`     | The user-submitted output, or the gated output after approval. |
-| `approved`   | `true` when the user approved. Approval calls only.            |
-| `denied`     | `true` when the user denied. Approval calls only.              |
+| Property     | Description                                                                 |
+| ------------ | --------------------------------------------------------------------------- |
+| `name`       | 도구 이름입니다. 이 값을 비교하면 `input` 과 `output` 의 타입이 좁혀집니다. |
+| `toolCallId` | 멈춘 호출의 ID 입니다.                                                      |
+| `input`      | 도구 입력입니다.                                                            |
+| `output`     | 사용자가 낸 출력, 또는 허락받은 뒤에 흐르는 출력입니다.                     |
+| `approved`   | 사용자가 허락하면 `true` 입니다. 승인형 호출에만 있습니다.                  |
+| `denied`     | 사용자가 거절하면 `true` 입니다. 승인형 호출에만 있습니다.                  |
 
-Continuation context also includes `messages`, the live transcript, and
-`toolCalls`, every paused call when a turn has more than one.
+이어지는 차례의 맥락에는 현재 대화 기록인 `messages` 와, 한 차례에 멈춘 호출이 여럿일
+때 그 전부를 담은 `toolCalls` 도 들어 있습니다.
 
-Continuations must stay pure. Regenerating re-resolves them against the
-current transcript, so a changed decision produces the other branch.
+이어지는 차례는 부수 효과가 없어야 합니다. 다시 만들 때 현재 대화 기록을 기준으로 다시
+풀어내므로, 결정이 달라지면 다른 갈래가 나옵니다.
 
 ### Client Wiring
 
-The client side uses the AI SDK as-is. Submit a client-executed tool's output
-with `addToolOutput`, answer an approval with `addToolApprovalResponse`, and
-let `sendAutomaticallyWhen` send the follow-up request.
+클라이언트 쪽은 AI SDK 를 그대로 씁니다. 클라이언트 실행 도구의 출력은
+`addToolOutput` 으로 내고, 승인은 `addToolApprovalResponse` 로 답하며, 다음 요청은
+`sendAutomaticallyWhen` 이 보내게 두세요.
 
 ```tsx
 import {
@@ -470,20 +467,19 @@ addToolOutput({
 addToolApprovalResponse({ id: part.approval.id, approved: true })
 ```
 
-The continuation streams as a new step of the paused assistant message. The
-client merges its parts into that message instead of adding a new one, and
-the helper emits the step boundary and omits the continuation's message id so
-the merge stays in place and the automatic send does not re-trigger.
+이어지는 차례는 멈춰 있던 어시스턴트 메시지의 새 단계로 흐릅니다. 클라이언트는 새
+메시지를 만들지 않고 그 조각을 원래 메시지에 합칩니다. 도우미는 단계 경계를 내보내고
+이어지는 차례의 메시지 id 를 비워, 합치기가 유지되고 자동 전송이 다시 일어나지 않게
+합니다.
 
-In development, the helper warns when a `needsApproval` call has no
-continuation turn after it, and when a continuation resolves without a
-pending tool call.
+개발 중에는 `needsApproval` 호출 뒤에 이어지는 차례가 없거나, 멈춘 도구 호출 없이
+이어지는 차례가 풀릴 때 도우미가 경고합니다.
 
 ---
 
 ## Data
 
-Use `data()` to add a typed `data-*` part.
+타입이 붙은 `data-*` 조각은 `data()` 로 더합니다.
 
 ```ts
 type DataParts = {
@@ -506,8 +502,8 @@ const chat = createChat<UIMessage<unknown, DataParts>>().assistant(
 )
 ```
 
-Send the same `type` and `id` again to update the part in place. This is useful
-for states such as loading to success.
+같은 `type` 과 `id` 로 다시 보내면 그 조각이 제자리에서 갱신됩니다. 불러오는 중에서
+성공으로 넘어가는 상태 표시에 좋습니다.
 
 ```ts
 writer.data({
@@ -522,8 +518,8 @@ writer.data({
 })
 ```
 
-Set `transient: true` for an update that should stream to the client but should
-not remain in the final message.
+클라이언트로 흘려보내되 마지막 메시지에는 남기고 싶지 않다면 `transient: true` 를
+주세요.
 
 ```ts
 writer.data({
@@ -537,7 +533,7 @@ writer.data({
 
 ## Files
 
-Add files to a user message with the `files` option.
+사용자 메시지에 파일을 넣을 때는 `files` 옵션을 씁니다.
 
 ```ts
 chat.user("Summarize this report.", {
@@ -551,7 +547,7 @@ chat.user("Summarize this report.", {
 })
 ```
 
-Use `file()` to add a file to an assistant message.
+어시스턴트 메시지에 파일을 넣을 때는 `file()` 을 씁니다.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -563,7 +559,7 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-Use `reasoningFile()` for a file attached to a reasoning part.
+추론 조각에 붙는 파일은 `reasoningFile()` 로 넣습니다.
 
 ```ts
 writer.reasoningFile({
@@ -577,7 +573,7 @@ writer.reasoningFile({
 
 ## Sources
 
-Use `sourceUrl()` to add a URL source.
+주소 출처는 `sourceUrl()` 로 더합니다.
 
 ```ts
 writer.sourceUrl({
@@ -587,7 +583,7 @@ writer.sourceUrl({
 })
 ```
 
-Use `sourceDocument()` to add a document source.
+문서 출처는 `sourceDocument()` 로 더합니다.
 
 ```ts
 writer.sourceDocument({
@@ -602,7 +598,7 @@ writer.sourceDocument({
 
 ## Step Starts
 
-Use `stepStart()` to add an AI SDK step boundary.
+AI SDK 의 단계 경계는 `stepStart()` 로 더합니다.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -617,7 +613,7 @@ chat.assistant(({ writer }) => {
 
 ## Custom Parts
 
-Use `custom()` to add a custom part.
+직접 만든 조각은 `custom()` 으로 더합니다.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -625,15 +621,15 @@ chat.assistant(({ writer }) => {
 })
 ```
 
-The message receives a `custom` part with the given `kind`. The AI SDK expects
-kinds in the `{provider}.{provider-type}` format. Calling `custom()` without a
-kind uses `"test.output"`.
+메시지에 주어진 `kind` 를 가진 `custom` 조각이 담깁니다. AI SDK 는 kind 가
+`{provider}.{provider-type}` 형식이기를 바랍니다. `custom()` 을 kind 없이 부르면
+`"test.output"` 이 쓰입니다.
 
 ---
 
 ## Reading Messages
 
-Use `get()` to return messages from the start of the conversation.
+대화 처음부터의 메시지를 얻으려면 `get()` 을 씁니다.
 
 ```ts
 chat.get() // Every message.
@@ -641,26 +637,25 @@ chat.get(2) // The first two messages.
 chat.get(0) // An empty initial conversation.
 ```
 
-`get()` returns cloned messages and does not change the chat. It stops before
-the first [continuation turn](#continuations), since a continuation has no
-message without a live transcript, and throws when `count` reaches past one.
+`get()` 은 메시지를 복제해 돌려주며 채팅을 바꾸지 않습니다. 이어지는 차례는 현재
+기록 없이는 메시지가 없으므로 처음 [이어지는 차례](#continuations) 앞에서 멈추고,
+`count` 가 그 너머를 가리키면 예외를 던집니다.
 
-Use `next()` to find the next predefined user message after the messages already
-shown.
+이미 보여 준 메시지 다음에 올, 미리 적어 둔 사용자 메시지는 `next()` 로 찾습니다.
 
 ```ts
 const initialMessages = chat.get(2)
 const nextMessage = chat.next(initialMessages)
 ```
 
-`next()` always accepts a message transcript, not an index. It returns the next
-user message or `null` when none remain.
+`next()` 는 색인이 아니라 언제나 메시지 기록을 받습니다. 다음 사용자 메시지를 돌려주고
+남은 것이 없으면 `null` 을 돌려줍니다.
 
 ---
 
 ## Start from Existing Messages
 
-Pass `messages` to continue from a saved conversation or fixture.
+저장해 둔 대화나 픽스처에서 이어 가려면 `messages` 를 넘기세요.
 
 ```ts
 import { createChat } from "@shadcn/helpers/ai-sdk"
@@ -673,14 +668,13 @@ const chat = createChat({ messages: savedMessages })
   .assistant("Turn the open questions into a checklist.")
 ```
 
-Existing IDs, metadata, and parts are preserved.
+원래 있던 ID·메타데이터·조각은 그대로 남습니다.
 
 ---
 
 ## Transport
 
-`transport()` creates an AI SDK `ChatTransport` that you can pass directly to
-`useChat`.
+`transport()` 는 `useChat` 에 그대로 넘길 수 있는 AI SDK `ChatTransport` 를 만듭니다.
 
 ```ts
 const transport = chat.transport()
@@ -691,23 +685,22 @@ const { messages, sendMessage } = useChat({
 })
 ```
 
-When `sendMessage()` runs, the transport finds the assistant message that
-follows the current transcript and streams it through the normal AI SDK chat
-lifecycle. It uses message IDs first and falls back to matching the role and
-text of the latest message. Automatic sends after tool results and approval
-responses resolve the next [continuation](#continuations); only a
-regeneration replays a turn by its message ID.
+`sendMessage()` 를 부르면 transport 가 현재 기록 다음에 올 어시스턴트 메시지를 찾아
+평소의 AI SDK 채팅 수명 주기로 흘려보냅니다. 먼저 메시지 ID 로 맞춰 보고, 안 되면
+마지막 메시지의 역할과 글을 견줍니다. 도구 결과나 승인 응답 뒤의 자동 전송은 다음
+[이어지는 차례](#continuations)를 풀어내고, 메시지 ID 로 차례를 다시 재생하는 것은
+재생성뿐입니다.
 
 ### Options
 
-| Option     | Type                                       | Default | Description                                                                   |
-| ---------- | ------------------------------------------ | ------- | ----------------------------------------------------------------------------- |
-| `delayMs`  | `number`                                   | `50`    | Delay between text and reasoning deltas. Use `0` or `undefined` to remove it. |
-| `fallback` | `string`, `UIMessagePart[]`, or a callback | None    | Response to stream when no predefined assistant response remains.             |
+| Option     | Type                                       | Default | Description                                                                       |
+| ---------- | ------------------------------------------ | ------- | --------------------------------------------------------------------------------- |
+| `delayMs`  | `number`                                   | `50`    | 글자와 추론이 조금씩 나올 때의 간격입니다. `0` 이나 `undefined` 를 주면 없앱니다. |
+| `fallback` | `string`, `UIMessagePart[]`, or a callback | None    | 미리 적어 둔 어시스턴트 응답이 남지 않았을 때 흘려보낼 응답입니다.                |
 
-The transport-level `delayMs` is the default for every streamed text and
-reasoning part. Override it for one part with `writer.text(..., { delayMs })`
-or `writer.reasoning(..., { delayMs })`.
+transport 에 준 `delayMs` 는 흐르는 모든 텍스트·추론 조각의 기본값입니다. 조각 하나만
+다르게 하려면 `writer.text(..., { delayMs })` 나 `writer.reasoning(..., { delayMs })`
+를 쓰세요.
 
 ```ts
 const transport = chat.transport({
@@ -717,8 +710,8 @@ const transport = chat.transport({
 
 ### Fallback
 
-Use `fallback` when the conversation has no predefined assistant response
-left. This keeps a demo usable after its predefined replies are exhausted.
+미리 적어 둔 응답이 다 떨어졌을 때는 `fallback` 을 쓰세요. 그러면 시연을 계속 쓸 수
+있습니다.
 
 ```ts
 const transport = chat.transport({
@@ -726,9 +719,8 @@ const transport = chat.transport({
 })
 ```
 
-A fallback can also be an array of AI SDK message parts or a writer callback.
-The callback receives the incoming transcript, so it can create a response from
-the current state.
+fallback 에는 AI SDK 메시지 조각 배열이나 writer 콜백을 넘길 수도 있습니다. 콜백은 들어온
+대화 기록을 받으므로 현재 상태에 맞는 응답을 만들 수 있습니다.
 
 ```ts
 const transport = chat.transport({
@@ -740,19 +732,18 @@ const transport = chat.transport({
 })
 ```
 
-Fallback responses stream like assistant responses but are not added to the
-predefined conversation. Without one, the transport throws
-`"No assistant response found for this transcript."` when the conversation is
-exhausted.
+fallback 응답은 어시스턴트 응답처럼 흐르지만 미리 적어 둔 대화에는 더해지지 않습니다.
+fallback 이 없으면 대화가 다 떨어졌을 때 transport 가
+`"No assistant response found for this transcript."` 예외를 던집니다.
 
-Calling `stop()` from `useChat` aborts the active transport stream.
-Reconnecting is not supported; `reconnectToStream()` returns `null`.
+`useChat` 의 `stop()` 을 부르면 흐르던 transport 스트림이 끊깁니다. 다시 잇는 것은
+지원하지 않으며 `reconnectToStream()` 은 `null` 을 돌려줍니다.
 
 ---
 
 ## Timing
 
-Use delays to reproduce the pace of a real response.
+실제 응답의 속도감을 내려면 지연을 주세요.
 
 ```ts
 const chat = createChat()
@@ -767,22 +758,21 @@ const chat = createChat()
 const transport = chat.transport({ delayMs: 50 })
 ```
 
-- `chat.sleep(ms)` waits before the next assistant response starts.
-- `writer.sleep(ms)` waits between parts of an assistant response.
-- `tool.sleep(ms)` waits between a tool's input and its result.
-- `transport({ delayMs })` sets the default delay between text and reasoning
-  deltas.
-- `writer.text(text, { delayMs })` and `writer.reasoning(text, { delayMs })`
-  override that delay for one part.
-- `mode: "instant"` sends a whole text or reasoning part in one delta.
+- `chat.sleep(ms)` 는 다음 어시스턴트 응답이 시작하기 전에 기다립니다.
+- `writer.sleep(ms)` 는 어시스턴트 응답의 조각 사이에서 기다립니다.
+- `tool.sleep(ms)` 는 도구의 입력과 결과 사이에서 기다립니다.
+- `transport({ delayMs })` 는 텍스트·추론이 조금씩 나올 때의 기본 간격을 정합니다.
+- `writer.text(text, { delayMs })` 와 `writer.reasoning(text, { delayMs })` 는 조각
+  하나의 간격만 바꿉니다.
+- `mode: "instant"` 는 텍스트나 추론 조각을 한 번에 보냅니다.
 
-For fast tests, use `chat.transport({ delayMs: 0 })` and instant text.
+테스트를 빠르게 돌리려면 `chat.transport({ delayMs: 0 })` 과 즉시 출력을 쓰세요.
 
 ---
 
 ## Errors
 
-Use `error()` on the chat when the whole assistant response should fail.
+어시스턴트 응답 전체가 실패해야 한다면 채팅에서 `error()` 를 부르세요.
 
 ```ts
 const chat = createChat()
@@ -790,7 +780,7 @@ const chat = createChat()
   .error("The report could not be loaded.")
 ```
 
-Use `writer.error()` to fail after other parts have streamed.
+다른 조각이 다 흐른 뒤에 실패시키려면 `writer.error()` 를 쓰세요.
 
 ```ts
 chat.assistant(({ writer }) => {
@@ -803,8 +793,8 @@ chat.assistant(({ writer }) => {
 
 ## Metadata and IDs
 
-Pass metadata on individual messages. Its type is preserved through `get()`,
-`next()`, and the transport.
+메타데이터는 메시지마다 넘깁니다. 그 타입은 `get()`·`next()`·transport 를 거쳐도
+그대로 유지됩니다.
 
 ```ts
 type Metadata = {
@@ -819,7 +809,7 @@ const chat = createChat<UIMessage<Metadata>>()
   })
 ```
 
-Use chat options when a fixture needs custom prefixes or a fixed clock.
+접두사를 바꾸거나 시각을 고정해야 한다면 채팅 옵션을 쓰세요.
 
 ```ts
 const chat = createChat({
@@ -834,12 +824,12 @@ const chat = createChat({
 
 ## API Reference
 
-The sections above cover the common flows. This reference lists every public
+위에서 자주 쓰는 흐름을 다뤘습니다. 여기서는 공개된 것을 모두 정리합니다
 export and option.
 
 ### `createChat()`
 
-Creates a typed conversation and returns the fluent chat interface.
+타입이 붙은 대화를 만들고 연쇄 호출용 채팅을 돌려줍니다.
 
 ```ts
 function createChat<UI_MESSAGE extends UIMessage = UIMessage>(
@@ -849,12 +839,11 @@ function createChat<UI_MESSAGE extends UIMessage = UIMessage>(
 
 #### Type Parameters
 
-| Parameter    | Description                                                                                                        |
-| ------------ | ------------------------------------------------------------------------------------------------------------------ |
-| `UI_MESSAGE` | The `UIMessage` type for the conversation, the same type parameter `useChat` accepts. Define it once and share it. |
+| Parameter    | Description                                                                                               |
+| ------------ | --------------------------------------------------------------------------------------------------------- |
+| `UI_MESSAGE` | 대화에 쓸 `UIMessage` 타입입니다. `useChat` 이 받는 것과 같은 타입 매개변수이니 한 번 정의해 함께 쓰세요. |
 
-The message type carries the metadata shape, the typed `data-*` parts, and the
-tool definitions.
+메시지 타입에는 메타데이터의 모양과 타입이 붙은 `data-*` 조각, 도구 정의가 담깁니다.
 
 ```ts
 type ChatMessage = UIMessage<Metadata, DataParts, Tools>
@@ -862,45 +851,44 @@ type ChatMessage = UIMessage<Metadata, DataParts, Tools>
 
 #### Options
 
-| Option             | Type             | Default                      | Description                                             |
-| ------------------ | ---------------- | ---------------------------- | ------------------------------------------------------- |
-| `messages`         | `UIMessage[]`    | `[]`                         | Start from an existing transcript. Messages are cloned. |
-| `messageIdPrefix`  | `string`         | `"msg"`                      | Prefix for generated message IDs.                       |
-| `toolCallIdPrefix` | `string`         | `"call"`                     | Prefix for generated tool call IDs.                     |
-| `sourceIdPrefix`   | `string`         | `"source"`                   | Prefix for generated source IDs.                        |
-| `now`              | `Date \| string` | `"2026-01-01T00:00:00.000Z"` | Fixed time used for generated `createdAt` metadata.     |
+| Option             | Type             | Default                      | Description                                              |
+| ------------------ | ---------------- | ---------------------------- | -------------------------------------------------------- |
+| `messages`         | `UIMessage[]`    | `[]`                         | 이미 있는 대화 기록에서 시작합니다. 메시지는 복제됩니다. |
+| `messageIdPrefix`  | `string`         | `"msg"`                      | 만들어지는 메시지 ID 의 접두사입니다.                    |
+| `toolCallIdPrefix` | `string`         | `"call"`                     | 만들어지는 도구 호출 ID 의 접두사입니다.                 |
+| `sourceIdPrefix`   | `string`         | `"source"`                   | 만들어지는 출처 ID 의 접두사입니다.                      |
+| `now`              | `Date \| string` | `"2026-01-01T00:00:00.000Z"` | 만들어지는 `createdAt` 메타데이터에 쓸 고정 시각입니다.  |
 
-IDs found in `messages` are reserved, so newly generated IDs continue after
-the existing transcript.
+`messages` 에 이미 있는 ID 는 비워 두므로, 새로 만들어지는 ID 는 그 뒤 번호부터
+이어집니다.
 
 ### `AiSdkChat`
 
-Every method that adds content returns the same chat, so calls can be chained.
+내용을 더하는 메서드는 모두 같은 채팅을 돌려주므로 이어서 부를 수 있습니다.
 
-| Method                        | Returns             | Description                                                      |
-| ----------------------------- | ------------------- | ---------------------------------------------------------------- |
-| `user(text?, options?)`       | `AiSdkChat`         | Add a user message with text and optional files.                 |
-| `assistant(input?, options?)` | `AiSdkChat`         | Add an assistant message from text, parts, or a writer callback. |
-| `sleep(delayMs)`              | `AiSdkChat`         | Wait before the next assistant response starts.                  |
-| `error(errorText?)`           | `AiSdkChat`         | Add an assistant response that emits an error.                   |
-| `get(count?)`                 | `UIMessage[]`       | Return cloned messages from the start of the conversation.       |
-| `next(messages)`              | `UIMessage \| null` | Return the next predefined user message after a transcript.      |
-| `transport(options?)`         | `ChatTransport`     | Create the transport used by `useChat`.                          |
+| Method                        | Returns             | Description                                                     |
+| ----------------------------- | ------------------- | --------------------------------------------------------------- |
+| `user(text?, options?)`       | `AiSdkChat`         | 글과, 원한다면 파일까지 담은 사용자 메시지를 더합니다.          |
+| `assistant(input?, options?)` | `AiSdkChat`         | 글이나 조각, 또는 writer 콜백으로 어시스턴트 메시지를 더합니다. |
+| `sleep(delayMs)`              | `AiSdkChat`         | 다음 어시스턴트 응답이 시작하기 전에 기다립니다.                |
+| `error(errorText?)`           | `AiSdkChat`         | 오류를 내는 어시스턴트 응답을 더합니다.                         |
+| `get(count?)`                 | `UIMessage[]`       | 대화 처음부터의 메시지를 복제해 돌려줍니다.                     |
+| `next(messages)`              | `UIMessage \| null` | 주어진 기록 다음에 올, 미리 적어 둔 사용자 메시지를 돌려줍니다. |
+| `transport(options?)`         | `ChatTransport`     | `useChat` 이 쓸 transport 를 만듭니다.                          |
 
-Calling `user()` or `assistant()` without content uses
-`"Summarize the uploaded receipt."`. Calling `error()` without a message uses
-`"An error occurred."`. `get(count)` throws when `count` is negative or not an
-integer.
+`user()` 나 `assistant()` 를 내용 없이 부르면 `"Summarize the uploaded receipt."` 가
+쓰입니다. `error()` 를 메시지 없이 부르면 `"An error occurred."` 가 쓰입니다.
+`get(count)` 는 `count` 가 음수이거나 정수가 아니면 예외를 던집니다.
 
 #### `user()` Options
 
-| Option     | Type            | Description                                 |
-| ---------- | --------------- | ------------------------------------------- |
-| `id`       | `string`        | Use a specific message ID.                  |
-| `metadata` | `METADATA`      | Set metadata for this message.              |
-| `files`    | `FilePayload[]` | Append file parts after the user text part. |
+| Option     | Type            | Description                                   |
+| ---------- | --------------- | --------------------------------------------- |
+| `id`       | `string`        | 메시지 ID 를 직접 지정합니다.                 |
+| `metadata` | `METADATA`      | 이 메시지의 메타데이터를 지정합니다.          |
+| `files`    | `FilePayload[]` | 사용자 텍스트 조각 뒤에 파일 조각을 붙입니다. |
 
-A user file has this shape:
+사용자 파일은 이런 모양입니다.
 
 ```ts
 type FilePayload = {
@@ -922,74 +910,71 @@ type FilePayload = {
 
 #### `assistant()` Options
 
-| Option     | Type       | Description                    |
-| ---------- | ---------- | ------------------------------ |
-| `id`       | `string`   | Use a specific message ID.     |
-| `metadata` | `METADATA` | Set metadata for this message. |
+| Option     | Type       | Description                          |
+| ---------- | ---------- | ------------------------------------ |
+| `id`       | `string`   | 메시지 ID 를 직접 지정합니다.        |
+| `metadata` | `METADATA` | 이 메시지의 메타데이터를 지정합니다. |
 
 #### `transport()` Options
 
-| Option     | Type                                                          | Default | Description                                                                   |
-| ---------- | ------------------------------------------------------------- | ------- | ----------------------------------------------------------------------------- |
-| `delayMs`  | `number`                                                      | `50`    | Delay between text and reasoning deltas. Use `0` or `undefined` to remove it. |
-| `fallback` | `string \| UIMessagePart[] \| ({ writer, messages }) => void` | None    | Response used when no predefined assistant response remains.                  |
+| Option     | Type                                                          | Default | Description                                                                       |
+| ---------- | ------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------- |
+| `delayMs`  | `number`                                                      | `50`    | 글자와 추론이 조금씩 나올 때의 간격입니다. `0` 이나 `undefined` 를 주면 없앱니다. |
+| `fallback` | `string \| UIMessagePart[] \| ({ writer, messages }) => void` | None    | 미리 적어 둔 어시스턴트 응답이 남지 않았을 때 쓰는 응답입니다.                    |
 
-See [Transport](#transport) for matching, fallback, abort, and streaming
-behavior.
+맞추기·fallback·중단·스트리밍 동작은 [Transport](#transport)를 보세요.
 
 ### Writer
 
-The writer is available inside `assistant(({ writer }) => {})` and fallback
-callbacks.
+writer 는 `assistant(({ writer }) => {})` 안과 fallback 콜백 안에서 쓸 수 있습니다.
 
-| Method                       | Description                                                       |
-| ---------------------------- | ----------------------------------------------------------------- |
-| `text(text?, options?)`      | Add a text part.                                                  |
-| `reasoning(text?, options?)` | Add a reasoning part.                                             |
-| `tool(name, options?)`       | Add a typed or dynamic tool call and return its lifecycle handle. |
-| `data(part)`                 | Add or update a typed data part.                                  |
-| `file(options?)`             | Add a file part.                                                  |
-| `reasoningFile(options?)`    | Add a reasoning file part.                                        |
-| `sourceUrl(options?)`        | Add a URL source part.                                            |
-| `sourceDocument(options?)`   | Add a document source part.                                       |
-| `stepStart()`                | Add an AI SDK step boundary.                                      |
-| `custom(kind?)`              | Add a custom part with the given `kind`.                          |
-| `sleep(delayMs)`             | Pause before the next writer event.                               |
-| `error(errorText?)`          | Emit an error and end the response without a `finish` chunk.      |
+| Method                       | Description                                                               |
+| ---------------------------- | ------------------------------------------------------------------------- |
+| `text(text?, options?)`      | 텍스트 조각을 더합니다.                                                   |
+| `reasoning(text?, options?)` | 추론 조각을 더합니다.                                                     |
+| `tool(name, options?)`       | 타입이 붙었거나 동적인 도구 호출을 더하고 그 수명 주기 핸들을 돌려줍니다. |
+| `data(part)`                 | 타입이 붙은 데이터 조각을 더하거나 갱신합니다.                            |
+| `file(options?)`             | 파일 조각을 더합니다.                                                     |
+| `reasoningFile(options?)`    | 추론 파일 조각을 더합니다.                                                |
+| `sourceUrl(options?)`        | 주소 출처 조각을 더합니다.                                                |
+| `sourceDocument(options?)`   | 문서 출처 조각을 더합니다.                                                |
+| `stepStart()`                | AI SDK 의 단계 경계를 더합니다.                                           |
+| `custom(kind?)`              | 주어진 `kind` 로 직접 만든 조각을 더합니다.                               |
+| `sleep(delayMs)`             | 다음 writer 이벤트 전에 잠시 멈춥니다.                                    |
+| `error(errorText?)`          | 오류를 내고 `finish` 조각 없이 응답을 끝냅니다.                           |
 
-Calling `text()` without content uses `"Summarize the uploaded receipt."`.
-Calling `reasoning()` without content uses
-`"I need to inspect the available context before answering."`. Calling
-`error()` without a message uses `"An error occurred."`.
+`text()` 를 내용 없이 부르면 `"Summarize the uploaded receipt."` 가 쓰입니다.
+`reasoning()` 을 내용 없이 부르면
+`"I need to inspect the available context before answering."` 가 쓰입니다.
+`error()` 를 메시지 없이 부르면 `"An error occurred."` 가 쓰입니다.
 
 #### Text and Reasoning Options
 
-| Option    | Type                    | Default    | Description                                             |
-| --------- | ----------------------- | ---------- | ------------------------------------------------------- |
-| `id`      | `string`                | Generated  | Use a stable part ID.                                   |
-| `delayMs` | `number`                | Transport  | Override the transport delay for this part.             |
-| `mode`    | `"stream" \| "instant"` | `"stream"` | Stream word deltas or emit the whole part in one delta. |
+| Option    | Type                    | Default    | Description                                                  |
+| --------- | ----------------------- | ---------- | ------------------------------------------------------------ |
+| `id`      | `string`                | Generated  | 고정된 조각 ID 를 씁니다.                                    |
+| `delayMs` | `number`                | Transport  | 이 조각에 한해 transport 의 간격을 바꿉니다.                 |
+| `mode`    | `"stream" \| "instant"` | `"stream"` | 낱말 단위로 흘려보낼지, 조각 전체를 한 번에 보낼지 정합니다. |
 
 #### Tool Options
 
-| Option             | Type                      | Description                                                                                     |
-| ------------------ | ------------------------- | ----------------------------------------------------------------------------------------------- |
-| `toolCallId`       | `string`                  | Use a specific tool call ID.                                                                    |
-| `title`            | `string`                  | Add a display title to the tool part.                                                           |
-| `toolMetadata`     | `Record<string, unknown>` | Add provider or application metadata.                                                           |
-| `providerExecuted` | `boolean`                 | Mark the call as executed by the provider.                                                      |
-| `input`            | `TOOLS[NAME]["input"]`    | Set the typed tool input.                                                                       |
-| `output`           | `TOOLS[NAME]["output"]`   | Immediately finish with a typed output. With `needsApproval`, stream it after approval instead. |
-| `errorText`        | `string`                  | Immediately finish with an error. With `needsApproval`, stream it after approval instead.       |
-| `dynamic`          | `boolean`                 | Emit a `dynamic-tool` part instead of `tool-<name>`.                                            |
-| `needsApproval`    | `boolean`                 | Pause the turn behind the user's decision. See [Human in the Loop](#human-in-the-loop).         |
-| `approvalId`       | `string`                  | Use a specific approval ID.                                                                     |
+| Option             | Type                      | Description                                                                                    |
+| ------------------ | ------------------------- | ---------------------------------------------------------------------------------------------- |
+| `toolCallId`       | `string`                  | 도구 호출 ID 를 직접 지정합니다.                                                               |
+| `title`            | `string`                  | 도구 조각에 보여 줄 제목을 붙입니다.                                                           |
+| `toolMetadata`     | `Record<string, unknown>` | 제공자나 앱의 메타데이터를 더합니다.                                                           |
+| `providerExecuted` | `boolean`                 | 이 호출을 제공자가 실행한 것으로 표시합니다.                                                   |
+| `input`            | `TOOLS[NAME]["input"]`    | 타입이 붙은 도구 입력을 지정합니다.                                                            |
+| `output`           | `TOOLS[NAME]["output"]`   | 타입이 붙은 출력으로 곧바로 끝냅니다. `needsApproval` 과 함께라면 허락받은 뒤에 흘려보냅니다.  |
+| `errorText`        | `string`                  | 오류로 곧바로 끝냅니다. `needsApproval` 과 함께라면 허락받은 뒤에 흘려보냅니다.                |
+| `dynamic`          | `boolean`                 | `tool-<name>` 대신 `dynamic-tool` 조각을 내보냅니다.                                           |
+| `needsApproval`    | `boolean`                 | 사용자의 결정을 기다리며 차례를 멈춥니다. [사람이 끼어드는 흐름](#human-in-the-loop)을 보세요. |
+| `approvalId`       | `string`                  | 승인 ID 를 직접 지정합니다.                                                                    |
 
-`tool()` returns a handle with `sleep(delayMs)`, `output(value)`,
-`error(errorText?)`, and `denied()`. Use the handle when the tool lifecycle
-needs events between its input and result. Calling `tool.error()` without a
-message uses `"Tool call failed."`. The resolution methods throw on a
-`needsApproval` call.
+`tool()` 은 `sleep(delayMs)`·`output(value)`·`error(errorText?)`·`denied()` 를 가진
+핸들을 돌려줍니다. 도구의 입력과 결과 사이에 무언가를 끼워 넣어야 할 때 쓰세요.
+`tool.error()` 를 메시지 없이 부르면 `"Tool call failed."` 가 쓰입니다. 끝내는
+메서드는 `needsApproval` 호출에서 예외를 던집니다.
 
 #### Data Input
 
@@ -1002,9 +987,8 @@ writer.data({
 })
 ```
 
-Repeating the same `type` and `id` replaces the earlier data part. A transient
-part streams to the client but is not included in the final message returned by
-`get()`.
+같은 `type` 과 `id` 를 다시 쓰면 앞의 데이터 조각을 대신합니다. transient 조각은
+클라이언트로 흐르지만 `get()` 이 돌려주는 마지막 메시지에는 담기지 않습니다.
 
 #### File and Source Options
 
@@ -1015,12 +999,12 @@ part streams to the client but is not included in the final message returned by
 | `sourceUrl()`      | `sourceId?`, `url?`, `title?`, `providerMetadata?`                    |
 | `sourceDocument()` | `sourceId?`, `mediaType?`, `title?`, `filename?`, `providerMetadata?` |
 
-These methods provide sample defaults for omitted fields. Pass explicit values
-when the payload matters to the component or test.
+이 메서드들은 빠진 값에 예시 기본값을 채워 넣습니다. 컴포넌트나 테스트에 그 내용이
+중요하다면 값을 직접 넘기세요.
 
 ### Types
 
-| Export              | Description                                       |
-| ------------------- | ------------------------------------------------- |
-| `AiSdkChat`         | The typed fluent chat returned by `createChat()`. |
-| `CreateChatOptions` | Options accepted by `createChat()`.               |
+| Export              | Description                                                     |
+| ------------------- | --------------------------------------------------------------- |
+| `AiSdkChat`         | `createChat()` 이 돌려주는, 타입이 붙은 연쇄 호출용 채팅입니다. |
+| `CreateChatOptions` | `createChat()` 이 받는 옵션입니다.                              |

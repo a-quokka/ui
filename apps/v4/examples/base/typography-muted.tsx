@@ -1,5 +1,5 @@
 export function TypographyMuted() {
   return (
-    <p className="text-sm text-muted-foreground">Enter your email address.</p>
+    <p className="text-sm text-muted-foreground">이메일 주소를 입력하세요.</p>
   )
 }

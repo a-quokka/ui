@@ -29,33 +29,33 @@ const deliveryTimes = [
   {
     value: "asap",
     id: "delivery-asap",
-    label: "Standard delivery",
-    description: "25–35 min · Driver assigned now",
-    badge: "Fastest",
+    label: "일반 배달",
+    description: "25~35분 · 지금 기사 배정",
+    badge: "가장 빠름",
   },
   {
     value: "5-00",
     id: "delivery-5-00",
-    label: "5:00 PM – 5:15 PM",
-    description: "Prep starts at 4:45 PM",
+    label: "오후 5:00 ~ 5:15",
+    description: "오후 4:45에 조리를 시작합니다",
   },
   {
     value: "5-30",
     id: "delivery-5-30",
-    label: "5:30 PM – 5:45 PM",
-    description: "Good if you're heading home",
+    label: "오후 5:30 ~ 5:45",
+    description: "퇴근길에 받기 좋습니다",
   },
   {
     value: "6-00",
     id: "delivery-6-00",
-    label: "6:00 PM – 6:15 PM",
-    description: "Most popular · High demand",
+    label: "오후 6:00 ~ 6:15",
+    description: "가장 인기 있는 시간 · 주문이 몰립니다",
   },
   {
     value: "6-30",
     id: "delivery-6-30",
-    label: "6:30 PM – 6:45 PM",
-    description: "Last slot before kitchen closes",
+    label: "오후 6:30 ~ 6:45",
+    description: "주방 마감 전 마지막 시간",
   },
 ]
 
@@ -72,7 +72,7 @@ export function DrawerDemo() {
     }
 
     setOpen(false)
-    toast("Delivery time confirmed", {
+    toast("배달 시간이 확정됐습니다", {
       description: selected.label,
     })
   }
@@ -85,13 +85,13 @@ export function DrawerDemo() {
       swipeDirection={isMobile ? "down" : "right"}
     >
       <DrawerTrigger render={<Button variant="secondary" />}>
-        Open Drawer
+        Drawer 열기
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Pick a delivery time</DrawerTitle>
+          <DrawerTitle>배달 시간 고르기</DrawerTitle>
           <DrawerDescription>
-            We&apos;ll prepare your order as soon as possible.
+            주문을 최대한 빨리 준비하겠습니다.
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex-1 scroll-fade overflow-y-auto p-4">
@@ -120,11 +120,9 @@ export function DrawerDemo() {
         </div>
         <DrawerFooter>
           <Button onClick={handleConfirm} className="h-[34px]">
-            Confirm Delivery Time
+            이 시간으로 확정
           </Button>
-          <DrawerClose render={<Button variant="outline" />}>
-            Cancel
-          </DrawerClose>
+          <DrawerClose render={<Button variant="outline" />}>취소</DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

@@ -16,16 +16,16 @@ export function BubbleTooltipDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-4 py-12">
       <Bubble variant="secondary">
-        <BubbleContent>Did you remove the stale route?</BubbleContent>
+        <BubbleContent>안 쓰는 라우트는 지웠나요?</BubbleContent>
       </Bubble>
       <Bubble align="end">
-        <BubbleContent>Yes, removed it from the registry.</BubbleContent>
+        <BubbleContent>네, 레지스트리에서 지웠습니다.</BubbleContent>
         <BubbleReactions>
           <Tooltip>
             <TooltipTrigger render={<Button variant="ghost" size="icon-xs" />}>
               <CheckIcon />
             </TooltipTrigger>
-            <TooltipContent>Read on Jan 5, 2026 at 4:32 PM</TooltipContent>
+            <TooltipContent>2026년 1월 5일 오후 4:32 읽음</TooltipContent>
           </Tooltip>
         </BubbleReactions>
       </Bubble>

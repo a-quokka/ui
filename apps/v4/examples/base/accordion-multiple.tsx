@@ -8,21 +8,21 @@ import {
 const items = [
   {
     value: "notifications",
-    trigger: "Notification Settings",
+    trigger: "알림 설정",
     content:
-      "Manage how you receive notifications. You can enable email alerts for updates or push notifications for mobile devices.",
+      "알림을 어떻게 받을지 정합니다. 업데이트는 이메일로, 모바일에는 푸시로 받을 수 있습니다.",
   },
   {
     value: "privacy",
-    trigger: "Privacy & Security",
+    trigger: "개인정보 · 보안",
     content:
-      "Control your privacy settings and security preferences. Enable two-factor authentication, manage connected devices, review active sessions, and configure data sharing preferences. You can also download your data or delete your account.",
+      "개인정보와 보안 설정을 관리합니다. 2단계 인증을 켜고, 연결된 기기를 관리하고, 활성 세션을 확인하고, 데이터 공유 설정을 조정할 수 있습니다. 데이터를 내려받거나 계정을 삭제할 수도 있습니다.",
   },
   {
     value: "billing",
-    trigger: "Billing & Subscription",
+    trigger: "결제 · 구독",
     content:
-      "View your current plan, payment history, and upcoming invoices. Update your payment method, change your subscription tier, or cancel your subscription.",
+      "현재 요금제와 결제 내역, 다가올 청구서를 봅니다. 결제 수단을 바꾸거나 요금제를 변경하거나 해지할 수 있습니다.",
   },
 ]
 

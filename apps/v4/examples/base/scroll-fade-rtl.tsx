@@ -21,40 +21,25 @@ const translations: Translations = {
       legal: "Legal",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      design: "تصميم",
-      engineering: "هندسة",
-      marketing: "تسويق",
-      product: "منتج",
-      research: "أبحاث",
-      sales: "مبيعات",
-      support: "دعم",
-      operations: "عمليات",
-      finance: "مالية",
-      legal: "قانوني",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      design: "עיצוב",
-      engineering: "הנדסה",
-      marketing: "שיווק",
-      product: "מוצר",
-      research: "מחקר",
-      sales: "מכירות",
-      support: "תמיכה",
-      operations: "תפעול",
-      finance: "כספים",
-      legal: "משפטי",
+      design: "디자인",
+      engineering: "엔지니어링",
+      marketing: "마케팅",
+      product: "프로덕트",
+      research: "리서치",
+      sales: "세일즈",
+      support: "지원",
+      operations: "운영",
+      finance: "재무",
+      legal: "법무",
     },
   },
 }
 
 export function ScrollFadeRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div

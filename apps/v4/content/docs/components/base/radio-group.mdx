@@ -1,6 +1,6 @@
 ---
 title: Radio Group
-description: A set of checkable buttons—known as radio buttons—where no more than one of the buttons can be checked at a time.
+description: 여러 후보 중 하나만 고릅니다.
 base: base
 component: true
 links:
@@ -30,13 +30,13 @@ npx shadcn@latest add radio-group
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="radio-group"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -63,18 +63,18 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 <RadioGroup defaultValue="option-one">
   <div className="flex items-center gap-3">
     <RadioGroupItem value="option-one" id="option-one" />
-    <Label htmlFor="option-one">Option One</Label>
+    <Label htmlFor="option-one">첫 번째 선택</Label>
   </div>
   <div className="flex items-center gap-3">
     <RadioGroupItem value="option-two" id="option-two" />
-    <Label htmlFor="option-two">Option Two</Label>
+    <Label htmlFor="option-two">두 번째 선택</Label>
   </div>
 </RadioGroup>
 ```
 
 ## Composition
 
-Use the following composition to build a `RadioGroup`:
+아래 구조로 `RadioGroup`을 만듭니다.
 
 ```text
 RadioGroup
@@ -84,37 +84,37 @@ RadioGroup
 
 ## Description
 
-Radio group items with a description using the `Field` component.
+`Field` 컴포넌트로 설명이 붙은 라디오 그룹 항목을 만듭니다.
 
 <ComponentPreview styleName="base-nova" name="radio-group-description" />
 
 ## Choice Card
 
-Use `FieldLabel` to wrap the entire `Field` for a clickable card-style selection.
+`FieldLabel`로 `Field` 전체를 감싸면 카드처럼 눌러서 고르는 선택지가 됩니다.
 
 <ComponentPreview styleName="base-nova" name="radio-group-choice-card" />
 
 ## Fieldset
 
-Use `FieldSet` and `FieldLegend` to group radio items with a label and description.
+`FieldSet`과 `FieldLegend`로 라디오 항목을 묶고 라벨과 설명을 붙입니다.
 
 <ComponentPreview styleName="base-nova" name="radio-group-fieldset" />
 
 ## Disabled
 
-Use the `disabled` prop on `RadioGroup` to disable all items.
+`RadioGroup`에 `disabled` prop을 주면 모든 항목이 비활성화됩니다.
 
 <ComponentPreview styleName="base-nova" name="radio-group-disabled" />
 
 ## Invalid
 
-Use `aria-invalid` on `RadioGroupItem` and `data-invalid` on `Field` to show validation errors.
+검증 오류는 `RadioGroupItem`의 `aria-invalid`와 `Field`의 `data-invalid`로 표시합니다.
 
 <ComponentPreview styleName="base-nova" name="radio-group-invalid" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -124,4 +124,4 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## API Reference
 
-See the [Base UI Radio Group](https://base-ui.com/react/components/radio-group#api-reference) documentation.
+자세한 내용은 [Base UI Radio Group](https://base-ui.com/react/components/radio-group#api-reference) 문서를 보세요.

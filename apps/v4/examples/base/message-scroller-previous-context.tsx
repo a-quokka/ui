@@ -101,9 +101,9 @@ export function MessageScrollerPreviousContext() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Keeping Context Visible</CardTitle>
+            <CardTitle>맥락 남겨 두기</CardTitle>
             <CardDescription>
-              New turns keep part of the previous reply in view.
+              새 턴이 시작돼도 직전 답변의 일부가 화면에 남습니다.
             </CardDescription>
             <CardAction>
               <Tooltip>
@@ -112,7 +112,7 @@ export function MessageScrollerPreviousContext() {
                     <Button
                       variant="outline"
                       size="icon"
-                      aria-label="Reset context example"
+                      aria-label="예제 초기화"
                       disabled={isBusy}
                       onClick={() => {
                         setMessages(initialMessages)
@@ -125,7 +125,7 @@ export function MessageScrollerPreviousContext() {
                   <RotateCwIcon />
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Reset</p>
+                  <p>초기화</p>
                 </TooltipContent>
               </Tooltip>
             </CardAction>
@@ -170,7 +170,7 @@ export function MessageScrollerPreviousContext() {
                       getMessageText(nextMessage)
                     ) : (
                       <span className="text-muted-foreground">
-                        No messages queued. Reset the context.
+                        대기 중인 메시지가 없습니다. 예제를 초기화하세요.
                       </span>
                     )}
                   </span>
@@ -180,7 +180,7 @@ export function MessageScrollerPreviousContext() {
                     <DropdownMenuTrigger
                       render={
                         <InputGroupButton
-                          aria-label="Add files"
+                          aria-label="파일 추가"
                           type="button"
                           size="icon-sm"
                           variant="outline"
@@ -196,20 +196,19 @@ export function MessageScrollerPreviousContext() {
                     >
                       <DropdownMenuItem>
                         <PaperclipIcon />
-                        Add Photos & Files
+                        사진·파일 추가
                       </DropdownMenuItem>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem>
                         <ImageIcon />
-                        Create Image
+                        이미지 만들기
                       </DropdownMenuItem>
                       <DropdownMenuItem>
                         <TelescopeIcon />
-                        Deep Research
+                        심층 리서치
                       </DropdownMenuItem>
                       <DropdownMenuItem>
-                        <GlobeIcon />
-                        Web Search
+                        <GlobeIcon />웹 검색
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
@@ -218,7 +217,7 @@ export function MessageScrollerPreviousContext() {
                       {peek}px
                     </span>
                     <Slider
-                      aria-label="Previous context peek"
+                      aria-label="직전 맥락 남기기"
                       value={[peek]}
                       min={64}
                       max={128}
@@ -241,7 +240,7 @@ export function MessageScrollerPreviousContext() {
                     className="ml-auto"
                   >
                     <ArrowUpIcon />
-                    <span className="sr-only">Send</span>
+                    <span className="sr-only">보내기</span>
                   </InputGroupButton>
                 </InputGroupAddon>
               </InputGroup>
@@ -249,7 +248,7 @@ export function MessageScrollerPreviousContext() {
           </CardFooter>
         </Card>
         <div className="px-0.5 text-center text-xs text-muted-foreground">
-          Adjust the slider and send. Observe the previous message peak
+          슬라이더를 조절하고 보내 보세요. 직전 메시지가 얼마나 남는지 보입니다
         </div>
       </div>
     </MessageScrollerProvider>

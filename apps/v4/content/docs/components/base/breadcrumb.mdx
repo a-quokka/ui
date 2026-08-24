@@ -1,6 +1,6 @@
 ---
 title: Breadcrumb
-description: Displays the path to the current resource using a hierarchy of links.
+description: 현재 위치까지의 경로를 링크로 보여 줍니다.
 base: base
 component: true
 ---
@@ -31,7 +31,7 @@ npx shadcn@latest add breadcrumb
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="breadcrumb"
@@ -39,7 +39,7 @@ npx shadcn@latest add breadcrumb
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -82,7 +82,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `Breadcrumb`:
+아래 구조로 `Breadcrumb`을 만듭니다.
 
 ```text
 Breadcrumb
@@ -99,25 +99,25 @@ Breadcrumb
 
 ## Basic
 
-A basic breadcrumb with a home link and a components link.
+홈 링크와 컴포넌트 링크가 있는 기본 breadcrumb 입니다.
 
 <ComponentPreview styleName="base-nova" name="breadcrumb-basic" />
 
 ## Custom separator
 
-Use a custom component as `children` for `<BreadcrumbSeparator />` to create a custom separator.
+`<BreadcrumbSeparator />`의 `children`으로 원하는 컴포넌트를 넣어 구분 기호를 바꿉니다.
 
 <ComponentPreview styleName="base-nova" name="breadcrumb-separator" />
 
 ## Dropdown
 
-You can compose `<BreadcrumbItem />` with a `<DropdownMenu />` to create a dropdown in the breadcrumb.
+`<BreadcrumbItem />`과 `<DropdownMenu />`를 조합하면 breadcrumb 안에 드롭다운을 넣을 수 있습니다.
 
 <ComponentPreview styleName="base-nova" name="breadcrumb-dropdown" />
 
 ## Collapsed
 
-We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when the breadcrumb is too long.
+breadcrumb이 너무 길 때는 `<BreadcrumbEllipsis />`로 접힌 상태를 보여 줍니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -127,13 +127,13 @@ We provide a `<BreadcrumbEllipsis />` component to show a collapsed state when t
 
 ## Link component
 
-To use a custom link component from your routing library, you can use the `render` prop on `<BreadcrumbLink />`.
+라우팅 라이브러리의 링크 컴포넌트를 쓰려면 `<BreadcrumbLink />`의 `render` prop을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="breadcrumb-link" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -146,7 +146,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### Breadcrumb
 
-The `Breadcrumb` component is the root navigation element that wraps all breadcrumb components.
+`Breadcrumb`은 breadcrumb 전체를 감싸는 루트 내비게이션 요소입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -154,7 +154,7 @@ The `Breadcrumb` component is the root navigation element that wraps all breadcr
 
 ### BreadcrumbList
 
-The `BreadcrumbList` component displays the ordered list of breadcrumb items.
+`BreadcrumbList`는 breadcrumb 항목을 순서 있는 목록으로 보여 줍니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -162,7 +162,7 @@ The `BreadcrumbList` component displays the ordered list of breadcrumb items.
 
 ### BreadcrumbItem
 
-The `BreadcrumbItem` component wraps individual breadcrumb items.
+`BreadcrumbItem`은 breadcrumb 항목 하나를 감쌉니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -170,7 +170,7 @@ The `BreadcrumbItem` component wraps individual breadcrumb items.
 
 ### BreadcrumbLink
 
-The `BreadcrumbLink` component displays a clickable link in the breadcrumb.
+`BreadcrumbLink`는 breadcrumb 안의 누를 수 있는 링크입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -178,7 +178,7 @@ The `BreadcrumbLink` component displays a clickable link in the breadcrumb.
 
 ### BreadcrumbPage
 
-The `BreadcrumbPage` component displays the current page in the breadcrumb (non-clickable).
+`BreadcrumbPage`는 breadcrumb에서 현재 페이지를 보여 줍니다. 누를 수 없습니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -186,7 +186,7 @@ The `BreadcrumbPage` component displays the current page in the breadcrumb (non-
 
 ### BreadcrumbSeparator
 
-The `BreadcrumbSeparator` component displays a separator between breadcrumb items. You can pass custom children to override the default separator icon.
+`BreadcrumbSeparator`는 breadcrumb 항목 사이의 구분 기호입니다. children을 넘기면 기본 아이콘을 대신할 수 있습니다.
 
 | Prop        | Type              | Default |
 | ----------- | ----------------- | ------- |
@@ -195,7 +195,7 @@ The `BreadcrumbSeparator` component displays a separator between breadcrumb item
 
 ### BreadcrumbEllipsis
 
-The `BreadcrumbEllipsis` component displays an ellipsis indicator for collapsed breadcrumb items.
+`BreadcrumbEllipsis`는 접힌 breadcrumb 항목을 말줄임으로 표시합니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |

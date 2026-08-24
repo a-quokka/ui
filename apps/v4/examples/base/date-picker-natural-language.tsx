@@ -39,12 +39,12 @@ export function DatePickerNaturalLanguage() {
 
   return (
     <Field className="mx-auto max-w-xs">
-      <FieldLabel htmlFor="date-optional">Schedule Date</FieldLabel>
+      <FieldLabel htmlFor="date-optional">예약 날짜</FieldLabel>
       <InputGroup>
         <InputGroupInput
           id="date-optional"
           value={value}
-          placeholder="Tomorrow or next week"
+          placeholder="내일 또는 다음 주"
           onChange={(e) => {
             setValue(e.target.value)
             const date = parseDate(e.target.value)
@@ -67,12 +67,12 @@ export function DatePickerNaturalLanguage() {
                   id="date-picker"
                   variant="ghost"
                   size="icon-xs"
-                  aria-label="Select date"
+                  aria-label="날짜 선택"
                 />
               }
             >
               <CalendarIcon />
-              <span className="sr-only">Select date</span>
+              <span className="sr-only">날짜 선택</span>
             </PopoverTrigger>
             <PopoverContent
               className="w-auto overflow-hidden p-0"
@@ -95,7 +95,7 @@ export function DatePickerNaturalLanguage() {
         </InputGroupAddon>
       </InputGroup>
       <div className="px-1 text-sm text-muted-foreground">
-        Your post will be published on{" "}
+        이 글이 게시될 날짜{" "}
         <span className="font-medium">{formatDate(date)}</span>.
       </div>
     </Field>

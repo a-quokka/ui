@@ -24,30 +24,26 @@ export function ClaimableBalance() {
   return (
     <Card>
       <CardHeader>
-        <CardDescription>Claimable Balance</CardDescription>
+        <CardDescription>받을 수 있는 잔액</CardDescription>
         <CardTitle className="text-4xl tabular-nums">
           ${formatCurrency(totalClaimable)}
         </CardTitle>
         <Badge variant="outline">
           <span className="size-2 rounded-full bg-yellow-500" />
-          Pending Setup
+          설정 대기 중
         </Badge>
       </CardHeader>
       <CardContent className="flex flex-1 flex-col justify-end">
         <Item variant="muted" className="flex-col items-stretch">
           <ItemContent className="gap-3">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">
-                Net Royalties
-              </span>
+              <span className="text-sm text-muted-foreground">순 저작권료</span>
               <span className="text-sm font-medium tabular-nums">
                 ${formatCurrency(netRoyalties)}
               </span>
             </div>
             <div className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">
-                Processing Fee
-              </span>
+              <span className="text-sm text-muted-foreground">처리 수수료</span>
               <span className="text-sm font-medium tabular-nums">
                 -${formatCurrency(processingFee)}
               </span>
@@ -55,7 +51,7 @@ export function ClaimableBalance() {
             <Separator />
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">
-                Total Ready to Claim
+                지금 받을 수 있는 금액
               </span>
               <span className="text-sm font-semibold tabular-nums">
                 ${formatCurrency(totalClaimable)} USD
@@ -66,8 +62,8 @@ export function ClaimableBalance() {
       </CardContent>
       <CardFooter>
         <CardDescription>
-          Once your bank is connected, balances over $10.00 are automatically
-          eligible for monthly distribution on the 15th of each month.
+          은행을 연결하면 $10.00 이상의 잔액은 매달 15일에 자동으로 지급 대상이
+          됩니다.
         </CardDescription>
       </CardFooter>
     </Card>

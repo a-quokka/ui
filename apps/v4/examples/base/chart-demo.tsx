@@ -54,14 +54,14 @@ const chartData = [
 
 const chartConfig = {
   views: {
-    label: "Page Views",
+    label: "페이지 조회수",
   },
   desktop: {
-    label: "Desktop",
+    label: "데스크톱",
     color: "var(--chart-2)",
   },
   mobile: {
-    label: "Mobile",
+    label: "모바일",
     color: "var(--chart-1)",
   },
 } satisfies ChartConfig
@@ -82,10 +82,8 @@ export function ChartDemo() {
     <Card className="py-0 pb-4">
       <CardHeader className="flex flex-col items-stretch border-b p-0! sm:flex-row">
         <div className="flex flex-1 flex-col justify-center gap-1 px-6 pt-4 pb-3 sm:py-0!">
-          <CardTitle>Bar Chart - Interactive</CardTitle>
-          <CardDescription>
-            Showing total visitors for the last 3 months
-          </CardDescription>
+          <CardTitle>막대 차트 — 상호작용</CardTitle>
+          <CardDescription>최근 3개월 전체 방문자 수입니다</CardDescription>
         </div>
         <div className="flex">
           {["desktop", "mobile"].map((key) => {
@@ -130,7 +128,7 @@ export function ChartDemo() {
               minTickGap={32}
               tickFormatter={(value) => {
                 const date = new Date(value)
-                return date.toLocaleDateString("en-US", {
+                return date.toLocaleDateString("ko-KR", {
                   month: "short",
                   day: "numeric",
                 })
@@ -142,7 +140,7 @@ export function ChartDemo() {
                   className="w-[150px]"
                   nameKey="views"
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
+                    return new Date(value).toLocaleDateString("ko-KR", {
                       month: "short",
                       day: "numeric",
                       year: "numeric",

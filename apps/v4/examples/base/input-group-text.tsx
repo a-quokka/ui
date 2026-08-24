@@ -28,13 +28,13 @@ export default function InputGroupTextExample() {
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Enter your username" />
+        <InputGroupInput placeholder="사용자 이름을 입력하세요" />
         <InputGroupAddon align="inline-end">
           <InputGroupText>@company.com</InputGroupText>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupTextarea placeholder="Enter your message" />
+        <InputGroupTextarea placeholder="메시지를 입력하세요" />
         <InputGroupAddon align="block-end">
           <InputGroupText className="text-xs text-muted-foreground">
             120 characters left

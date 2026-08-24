@@ -15,7 +15,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      trigger: "Wireless Headphones",
+      trigger: "무선 헤드폰",
       name: "Wireless Headphones",
       price: "$99.99",
       "inline-start": "Inline Start",
@@ -26,32 +26,18 @@ const translations: Translations = {
       "inline-end": "Inline End",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      trigger: "سماعات لاسلكية",
-      name: "سماعات لاسلكية",
-      price: "٩٩.٩٩ $",
-      "inline-start": "بداية السطر",
-      left: "يسار",
-      top: "أعلى",
-      bottom: "أسفل",
-      right: "يمين",
-      "inline-end": "نهاية السطر",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      trigger: "אוזניות אלחוטיות",
-      name: "אוזניות אלחוטיות",
-      price: "99.99 $",
-      "inline-start": "תחילת השורה",
-      left: "שמאל",
-      top: "למעלה",
-      bottom: "למטה",
-      right: "ימין",
-      "inline-end": "סוף השורה",
+      trigger: "무선 헤드폰",
+      name: "무선 헤드폰",
+      price: "129,000원",
+      "inline-start": "Inline Start",
+      left: "Left",
+      top: "Top",
+      bottom: "Bottom",
+      right: "Right",
+      "inline-end": "Inline End",
     },
   },
 }
@@ -60,7 +46,7 @@ const physicalSides = ["left", "top", "bottom", "right"] as const
 const logicalSides = ["inline-start", "inline-end"] as const
 
 export function HoverCardRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="grid gap-4">

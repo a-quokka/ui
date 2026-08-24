@@ -24,53 +24,54 @@ const questionnaireItems = [
   {
     choices: [
       {
-        description: "Show what the agent ran and what came back.",
-        label: "Tool call timeline",
+        description:
+          "에이전트가 무엇을 실행했고 무엇이 돌아왔는지 보여 줍니다.",
+        label: "도구 호출 타임라인",
         value: "tool-calls",
       },
       {
-        description: "Ask before sensitive or destructive actions.",
-        label: "Approval checkpoints",
+        description: "민감하거나 되돌릴 수 없는 동작 전에 물어봅니다.",
+        label: "승인 지점",
         value: "approvals",
       },
       {
-        description: "Make delegated work and results easier to follow.",
-        label: "Sub-agent handoffs",
+        description: "맡긴 일과 그 결과를 따라가기 쉽게 만듭니다.",
+        label: "서브 에이전트 인계",
         value: "handoffs",
       },
     ],
-    description: "Choose a direction or describe another task.",
+    description: "방향을 고르거나 다른 작업을 적어 주세요.",
     input: {
-      label: "Another agent feature",
-      placeholder: "Describe another feature…",
+      label: "다른 에이전트 기능",
+      placeholder: "다른 기능을 적어 주세요…",
     },
     name: "direction",
     required: true,
-    title: "What should the agent build next?",
+    title: "에이전트가 다음으로 만들 것은 무엇인가요?",
   },
   {
     choices: [
-      { label: "Progress", value: "progress" },
-      { label: "Decisions", value: "decisions" },
-      { label: "Risks", value: "risks" },
-      { label: "Next step", value: "next-step" },
+      { label: "진행 상황", value: "progress" },
+      { label: "결정 사항", value: "decisions" },
+      { label: "위험 요소", value: "risks" },
+      { label: "다음 단계", value: "next-step" },
     ],
-    description: "Select all that apply, or skip this question.",
+    description: "해당하는 것을 모두 고르거나 건너뛰세요.",
     multiple: true,
     name: "signals",
     required: false,
-    title: "What should every progress update include?",
+    title: "진행 보고에 무엇이 꼭 들어가야 하나요?",
   },
   {
     choices: [
-      { label: "Start now", value: "now" },
-      { label: "Next development cycle", value: "next-cycle" },
-      { label: "Add it to the backlog", value: "backlog" },
+      { label: "지금 시작", value: "now" },
+      { label: "다음 개발 주기", value: "next-cycle" },
+      { label: "백로그에 추가", value: "backlog" },
     ],
-    description: "Choose when the agent should begin the work.",
+    description: "에이전트가 언제 작업을 시작할지 고르세요.",
     name: "timing",
     required: true,
-    title: "When should work begin?",
+    title: "작업은 언제 시작할까요?",
   },
 ] as const
 
@@ -85,8 +86,8 @@ export function QuestionnaireDemo() {
       timing: formData.get("timing"),
     }
 
-    toast("Agent plan saved", {
-      description: `Direction: ${answers.direction ?? "None"} · Progress signals: ${answers.signals.join(", ") || "None"} · Timing: ${answers.timing ?? "None"}`,
+    toast("에이전트 계획을 저장했습니다", {
+      description: `방향: ${answers.direction ?? "없음"} · 진행 보고 항목: ${answers.signals.join(", ") || "없음"} · 시작 시점: ${answers.timing ?? "없음"}`,
     })
   }
 
@@ -134,8 +135,8 @@ export function QuestionnaireDemo() {
       <QuestionnaireActions>
         <QuestionnairePrevious />
         <QuestionnaireSkip />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Save plan</QuestionnaireSubmit>
+        <QuestionnaireNext>다음</QuestionnaireNext>
+        <QuestionnaireSubmit>계획 저장</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

@@ -1,6 +1,6 @@
 ---
 title: Date Picker
-description: A date picker component with range and presets.
+description: 달력을 열어 날짜를 고릅니다. 기간과 미리 정한 구간을 함께 씁니다.
 base: base
 component: true
 ---
@@ -9,9 +9,9 @@ component: true
 
 ## Installation
 
-The Date Picker is built using a composition of the `<Popover />` and the `<Calendar />` components.
+Date Picker는 `<Popover />`와 `<Calendar />`를 조합해 만듭니다.
 
-See installation instructions for the [Popover](/docs/components/base/popover#installation) and the [Calendar](/docs/components/base/calendar#installation) components.
+설치 방법은 [Popover](/docs/components/base/popover#installation)와 [Calendar](/docs/components/base/calendar#installation) 문서를 보세요.
 
 ## Usage
 
@@ -46,7 +46,7 @@ export function DatePickerDemo() {
         }
       >
         <CalendarIcon />
-        {date ? format(date, "PPP") : <span>Pick a date</span>}
+        {date ? format(date, "PPP") : <span>날짜 고르기</span>}
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0">
         <Calendar mode="single" selected={date} onSelect={setDate} />
@@ -56,11 +56,11 @@ export function DatePickerDemo() {
 }
 ```
 
-See the [React DayPicker](https://react-day-picker.js.org) documentation for more information.
+자세한 내용은 [React DayPicker](https://react-day-picker.js.org) 문서를 보세요.
 
 ## Composition
 
-A date picker is built from `Popover` and `Calendar` (there is no `DatePicker` root component):
+날짜 선택기는 `Popover`와 `Calendar`로 만듭니다. `DatePicker` 라는 루트 컴포넌트는 없습니다.
 
 ```text
 Popover
@@ -71,43 +71,43 @@ Popover
 
 ## Basic
 
-A basic date picker component.
+기본 날짜 선택기입니다.
 
 <ComponentPreview styleName="base-nova" name="date-picker-basic" />
 
 ## Range Picker
 
-A date picker component for selecting a range of dates.
+기간을 고르는 날짜 선택기입니다.
 
 <ComponentPreview styleName="base-nova" name="date-picker-range" />
 
 ## Date of Birth
 
-A date picker component for selecting a date of birth. This component includes a dropdown caption layout for date and month selection.
+생년월일을 고르는 날짜 선택기입니다. 연·월을 드롭다운으로 고르는 캡션 배치가 들어 있습니다.
 
 <ComponentPreview styleName="base-nova" name="date-picker-dob" />
 
 ## Input
 
-A date picker component with an input field for selecting a date.
+입력 칸이 함께 있는 날짜 선택기입니다.
 
 <ComponentPreview styleName="base-nova" name="date-picker-input" />
 
 ## Time Picker
 
-A date picker component with a time input field for selecting a time.
+시간 입력 칸이 함께 있는 날짜 선택기입니다.
 
 <ComponentPreview styleName="base-nova" name="date-picker-time" />
 
 ## Natural Language Picker
 
-This component uses the `chrono-node` library to parse natural language dates.
+`chrono-node` 라이브러리로 자연어 날짜를 해석하는 예제입니다.
 
 <ComponentPreview styleName="base-nova" name="date-picker-natural-language" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"

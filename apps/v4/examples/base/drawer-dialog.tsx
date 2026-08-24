@@ -34,14 +34,13 @@ export function DrawerDialogDemo() {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger render={<Button variant="outline" />}>
-          Edit Profile
+          프로필 수정
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
+            <DialogTitle>프로필 수정</DialogTitle>
             <DialogDescription>
-              Make changes to your profile here. Click save when you&apos;re
-              done.
+              여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.
             </DialogDescription>
           </DialogHeader>
           <ProfileForm />
@@ -53,13 +52,13 @@ export function DrawerDialogDemo() {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger render={<Button variant="outline" />}>
-        Edit Profile
+        프로필 수정
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
-          <DrawerTitle>Edit profile</DrawerTitle>
+          <DrawerTitle>프로필 수정</DrawerTitle>
           <DrawerDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
+            여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.
           </DrawerDescription>
         </DrawerHeader>
         <ProfileForm className="p-4" />
@@ -72,14 +71,14 @@ function ProfileForm({ className }: React.ComponentProps<"form">) {
   return (
     <form className={cn("grid items-start gap-6", className)}>
       <div className="grid gap-3">
-        <Label htmlFor="email">Email</Label>
-        <Input type="email" id="email" defaultValue="shadcn@example.com" />
+        <Label htmlFor="email">이메일</Label>
+        <Input type="email" id="email" defaultValue="dropshot@example.com" />
       </div>
       <div className="grid gap-3">
-        <Label htmlFor="username">Username</Label>
-        <Input id="username" defaultValue="@shadcn" />
+        <Label htmlFor="username">사용자 이름</Label>
+        <Input id="username" defaultValue="@dropshot" />
       </div>
-      <Button type="submit">Save changes</Button>
+      <Button type="submit">저장</Button>
     </form>
   )
 }

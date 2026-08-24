@@ -7,31 +7,27 @@ import {
 export default function NativeSelectGroups() {
   return (
     <NativeSelect>
-      <NativeSelectOption value="">Select department</NativeSelectOption>
-      <NativeSelectOptGroup label="Engineering">
-        <NativeSelectOption value="frontend">Frontend</NativeSelectOption>
-        <NativeSelectOption value="backend">Backend</NativeSelectOption>
+      <NativeSelectOption value="">부서 선택</NativeSelectOption>
+      <NativeSelectOptGroup label="엔지니어링">
+        <NativeSelectOption value="frontend">프론트엔드</NativeSelectOption>
+        <NativeSelectOption value="backend">백엔드</NativeSelectOption>
         <NativeSelectOption value="devops">DevOps</NativeSelectOption>
       </NativeSelectOptGroup>
-      <NativeSelectOptGroup label="Sales">
-        <NativeSelectOption value="sales-rep">Sales Rep</NativeSelectOption>
+      <NativeSelectOptGroup label="세일즈">
+        <NativeSelectOption value="sales-rep">세일즈 담당</NativeSelectOption>
         <NativeSelectOption value="account-manager">
-          Account Manager
+          어카운트 매니저
         </NativeSelectOption>
         <NativeSelectOption value="sales-director">
-          Sales Director
+          세일즈 디렉터
         </NativeSelectOption>
       </NativeSelectOptGroup>
-      <NativeSelectOptGroup label="Operations">
-        <NativeSelectOption value="support">
-          Customer Support
-        </NativeSelectOption>
+      <NativeSelectOptGroup label="운영">
+        <NativeSelectOption value="support">고객 지원</NativeSelectOption>
         <NativeSelectOption value="product-manager">
-          Product Manager
+          프로덕트 매니저
         </NativeSelectOption>
-        <NativeSelectOption value="ops-manager">
-          Operations Manager
-        </NativeSelectOption>
+        <NativeSelectOption value="ops-manager">운영 매니저</NativeSelectOption>
       </NativeSelectOptGroup>
     </NativeSelect>
   )

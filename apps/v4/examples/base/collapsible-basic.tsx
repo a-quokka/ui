@@ -15,15 +15,12 @@ export function CollapsibleBasic() {
           <CollapsibleTrigger
             render={<Button variant="ghost" className="w-full" />}
           >
-            Product details
+            상품 정보
             <ChevronDownIcon className="ml-auto group-data-panel-open/button:rotate-180" />
           </CollapsibleTrigger>
           <CollapsibleContent className="flex flex-col items-start gap-2 p-2.5 pt-0 text-sm">
-            <div>
-              This panel can be expanded or collapsed to reveal additional
-              content.
-            </div>
-            <Button size="xs">Learn More</Button>
+            <div>이 영역은 펼치거나 접어서 추가 내용을 볼 수 있습니다.</div>
+            <Button size="xs">자세히 보기</Button>
           </CollapsibleContent>
         </Collapsible>
       </CardContent>

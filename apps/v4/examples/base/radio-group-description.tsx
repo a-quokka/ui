@@ -12,25 +12,25 @@ export function RadioGroupDescription() {
       <Field orientation="horizontal">
         <RadioGroupItem value="default" id="desc-r1" />
         <FieldContent>
-          <FieldLabel htmlFor="desc-r1">Default</FieldLabel>
+          <FieldLabel htmlFor="desc-r1">기본</FieldLabel>
           <FieldDescription>
-            Standard spacing for most use cases.
+            대부분의 경우에 알맞은 기본 간격입니다.
           </FieldDescription>
         </FieldContent>
       </Field>
       <Field orientation="horizontal">
         <RadioGroupItem value="comfortable" id="desc-r2" />
         <FieldContent>
-          <FieldLabel htmlFor="desc-r2">Comfortable</FieldLabel>
-          <FieldDescription>More space between elements.</FieldDescription>
+          <FieldLabel htmlFor="desc-r2">여유</FieldLabel>
+          <FieldDescription>요소 사이를 더 넓게 띄웁니다.</FieldDescription>
         </FieldContent>
       </Field>
       <Field orientation="horizontal">
         <RadioGroupItem value="compact" id="desc-r3" />
         <FieldContent>
-          <FieldLabel htmlFor="desc-r3">Compact</FieldLabel>
+          <FieldLabel htmlFor="desc-r3">촘촘</FieldLabel>
           <FieldDescription>
-            Minimal spacing for dense layouts.
+            빽빽한 화면을 위한 최소 간격입니다.
           </FieldDescription>
         </FieldContent>
       </Field>

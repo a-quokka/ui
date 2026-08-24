@@ -62,13 +62,13 @@ export function UIElements() {
               data-icon="inline-end"
             />
           </Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="outline">Outline</Button>
+          <Button variant="secondary">보조</Button>
+          <Button variant="outline">외곽선</Button>
         </div>
         <FieldGroup>
           <Field>
             <InputGroup>
-              <InputGroupInput placeholder="Name" />
+              <InputGroupInput placeholder="이름" />
               <InputGroupAddon align="inline-end">
                 <InputGroupText>
                   <HugeiconsIcon icon={Search01Icon} strokeWidth={2} />
@@ -77,64 +77,62 @@ export function UIElements() {
             </InputGroup>
           </Field>
           <Field className="flex-1">
-            <Textarea placeholder="Message" className="resize-none" />
+            <Textarea placeholder="메시지" className="resize-none" />
           </Field>
         </FieldGroup>
         <div className="flex items-center gap-2">
           <div className="flex gap-2">
-            <Badge>Badge</Badge>
-            <Badge variant="secondary">Secondary</Badge>
+            <Badge>배지</Badge>
+            <Badge variant="secondary">보조</Badge>
             <Badge variant="outline" className="hidden 4xl:flex">
-              Outline
+              외곽선
             </Badge>
           </div>
           <RadioGroup
             defaultValue="apple"
             className="ml-auto flex w-fit gap-3"
-            aria-label="Fruit preference"
+            aria-label="좋아하는 과일"
           >
-            <RadioGroupItem value="apple" aria-label="Apple" />
-            <RadioGroupItem value="banana" aria-label="Banana" />
+            <RadioGroupItem value="apple" aria-label="사과" />
+            <RadioGroupItem value="banana" aria-label="바나나" />
           </RadioGroup>
           <div className="flex gap-3">
-            <Checkbox defaultChecked aria-label="Enable email alerts" />
-            <Checkbox
-              className="hidden 4xl:flex"
-              aria-label="Enable push alerts"
-            />
+            <Checkbox defaultChecked aria-label="이메일 알림 켜기" />
+            <Checkbox className="hidden 4xl:flex" aria-label="푸시 알림 켜기" />
           </div>
           <Switch
             defaultChecked
             className="flex 4xl:hidden"
-            aria-label="Enable compact notifications"
+            aria-label="간략한 알림 켜기"
           />
         </div>
         <div className="flex items-center gap-4">
           <AlertDialog>
             <AlertDialogTrigger render={<Button variant="outline" />}>
               <span className="hidden md:flex style-sera:md:hidden">
-                Alert Dialog
+                경고 대화 상자
               </span>
-              <span className="flex md:hidden style-sera:md:flex">Dialog</span>
+              <span className="flex md:hidden style-sera:md:flex">
+                대화 상자
+              </span>
             </AlertDialogTrigger>
             <AlertDialogContent size="sm" className="theme-neutral">
               <AlertDialogHeader>
-                <AlertDialogTitle>Allow accessory to connect?</AlertDialogTitle>
+                <AlertDialogTitle>액세서리 연결을 허용할까요?</AlertDialogTitle>
                 <AlertDialogDescription>
-                  Do you want to allow the USB accessory to connect to this
-                  device and your data?
+                  이 USB 액세서리가 기기와 데이터에 연결하도록 허용할까요?
                 </AlertDialogDescription>
               </AlertDialogHeader>
               <AlertDialogFooter>
-                <AlertDialogCancel>Don&apos;t allow</AlertDialogCancel>
-                <AlertDialogAction>Allow</AlertDialogAction>
+                <AlertDialogCancel>허용 안 함</AlertDialogCancel>
+                <AlertDialogAction>허용</AlertDialogAction>
               </AlertDialogFooter>
             </AlertDialogContent>
           </AlertDialog>
           <ButtonGroup className="ml-auto">
             <Button variant="outline">
-              <span className="style-sera:hidden">Button Group</span>
-              <span className="hidden style-sera:block">Group</span>
+              <span className="style-sera:hidden">버튼 그룹</span>
+              <span className="hidden style-sera:block">그룹</span>
             </Button>
             <DropdownMenu>
               <DropdownMenuTrigger
@@ -142,7 +140,7 @@ export function UIElements() {
                   <Button
                     variant="outline"
                     size="icon"
-                    aria-label="Open quick actions"
+                    aria-label="빠른 작업 열기"
                   />
                 }
               >
@@ -150,15 +148,15 @@ export function UIElements() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" side="top" className="w-40">
                 <DropdownMenuGroup>
-                  <DropdownMenuLabel>Quick Actions</DropdownMenuLabel>
-                  <DropdownMenuItem>Mute Conversation</DropdownMenuItem>
-                  <DropdownMenuItem>Mark as Read</DropdownMenuItem>
-                  <DropdownMenuItem>Block User</DropdownMenuItem>
+                  <DropdownMenuLabel>빠른 작업</DropdownMenuLabel>
+                  <DropdownMenuItem>대화 알림 끄기</DropdownMenuItem>
+                  <DropdownMenuItem>읽음으로 표시</DropdownMenuItem>
+                  <DropdownMenuItem>사용자 차단</DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuItem variant="destructive">
-                    Delete Conversation
+                    대화 삭제
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
@@ -167,7 +165,7 @@ export function UIElements() {
           <Switch
             defaultChecked
             className="hidden 4xl:flex"
-            aria-label="Enable advanced setting"
+            aria-label="고급 설정 켜기"
           />
         </div>
       </CardContent>

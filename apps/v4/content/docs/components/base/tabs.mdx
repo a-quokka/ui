@@ -1,6 +1,6 @@
 ---
 title: Tabs
-description: A set of layered sections of content—known as tab panels—that are displayed one at a time.
+description: 같은 자리에서 여러 화면을 번갈아 봅니다.
 base: base
 component: true
 links:
@@ -34,13 +34,13 @@ npx shadcn@latest add tabs
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="tabs"
@@ -48,7 +48,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -68,14 +68,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
     <TabsTrigger value="account">Account</TabsTrigger>
     <TabsTrigger value="password">Password</TabsTrigger>
   </TabsList>
-  <TabsContent value="account">Make changes to your account here.</TabsContent>
-  <TabsContent value="password">Change your password here.</TabsContent>
+  <TabsContent value="account">여기서 계정을 고칩니다.</TabsContent>
+  <TabsContent value="password">여기서 비밀번호를 바꿉니다.</TabsContent>
 </Tabs>
 ```
 
 ## Composition
 
-Use the following composition to build `Tabs`:
+아래 구조로 `Tabs`를 만듭니다.
 
 ```text
 Tabs
@@ -88,13 +88,13 @@ Tabs
 
 ## Line
 
-Use the `variant="line"` prop on `TabsList` for a line style.
+`TabsList`에 `variant="line"`을 주면 선 스타일이 됩니다.
 
 <ComponentPreview styleName="base-nova" name="tabs-line" />
 
 ## Vertical
 
-Use `orientation="vertical"` for vertical tabs.
+세로 탭에는 `orientation="vertical"`을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="tabs-vertical" />
 
@@ -106,12 +106,12 @@ Use `orientation="vertical"` for vertical tabs.
 
 <ComponentPreview styleName="base-nova" name="tabs-icons" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="tabs-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [Base UI Tabs](https://base-ui.com/react/components/tabs#api-reference) documentation.
+자세한 내용은 [Base UI Tabs](https://base-ui.com/react/components/tabs#api-reference) 문서를 보세요.

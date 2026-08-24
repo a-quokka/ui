@@ -22,39 +22,29 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "No Projects Yet",
+      title: "아직 프로젝트가 없습니다",
       description:
-        "You haven't created any projects yet. Get started by creating your first project.",
+        "만든 프로젝트가 아직 없습니다. 첫 프로젝트를 만들어 보세요.",
       createProject: "Create Project",
       importProject: "Import Project",
       learnMore: "Learn More",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      title: "لا توجد مشاريع بعد",
-      description: "لم تقم بإنشاء أي مشاريع بعد. ابدأ بإنشاء مشروعك الأول.",
-      createProject: "إنشاء مشروع",
-      importProject: "استيراد مشروع",
-      learnMore: "تعرف على المزيد",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      title: "אין פרויקטים עדיין",
+      title: "아직 프로젝트가 없습니다",
       description:
-        "עדיין לא יצרת פרויקטים. התחל על ידי יצירת הפרויקט הראשון שלך.",
-      createProject: "צור פרויקט",
-      importProject: "ייבא פרויקט",
-      learnMore: "למד עוד",
+        "만든 프로젝트가 아직 없습니다. 첫 프로젝트를 만들어 보세요.",
+      createProject: "프로젝트 만들기",
+      importProject: "프로젝트 가져오기",
+      learnMore: "자세히 보기",
     },
   },
 }
 
 export function EmptyRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Empty dir={dir}>

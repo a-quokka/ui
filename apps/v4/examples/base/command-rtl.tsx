@@ -29,7 +29,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      placeholder: "Type a command or search...",
+      placeholder: "명령을 입력하거나 검색하세요...",
       empty: "No results found.",
       suggestions: "Suggestions",
       calendar: "Calendar",
@@ -40,38 +40,24 @@ const translations: Translations = {
       billing: "Billing",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      placeholder: "اكتب أمرًا أو ابحث...",
-      empty: "لم يتم العثور على نتائج.",
-      suggestions: "اقتراحات",
-      calendar: "التقويم",
-      searchEmoji: "البحث عن الرموز التعبيرية",
-      calculator: "الآلة الحاسبة",
-      settings: "الإعدادات",
-      profile: "الملف الشخصي",
-      billing: "الفوترة",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      placeholder: "הקלד פקודה או חפש...",
-      empty: "לא נמצאו תוצאות.",
-      suggestions: "הצעות",
-      calendar: "לוח שנה",
-      searchEmoji: "חפש אמוג'י",
-      calculator: "מחשבון",
-      settings: "הגדרות",
-      profile: "פרופיל",
-      billing: "חיוב",
+      placeholder: "명령을 입력하거나 검색하세요...",
+      empty: "결과가 없습니다.",
+      suggestions: "추천",
+      calendar: "캘린더",
+      searchEmoji: "이모지 검색",
+      calculator: "계산기",
+      settings: "설정",
+      profile: "프로필",
+      billing: "결제",
     },
   },
 }
 
 export function CommandRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Command className="max-w-sm rounded-lg border" dir={dir}>

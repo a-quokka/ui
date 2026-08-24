@@ -15,14 +15,14 @@ export function ItemDemo() {
     <div className="flex w-full max-w-md flex-col gap-6">
       <Item variant="outline">
         <ItemContent>
-          <ItemTitle>Basic Item</ItemTitle>
+          <ItemTitle>기본 아이템</ItemTitle>
           <ItemDescription>
-            A simple item with title and description.
+            제목과 설명이 있는 단순한 아이템입니다.
           </ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button variant="outline" size="sm">
-            Action
+            동작
           </Button>
         </ItemActions>
       </Item>
@@ -31,7 +31,7 @@ export function ItemDemo() {
           <BadgeCheckIcon className="size-5" />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Your profile has been verified.</ItemTitle>
+          <ItemTitle>프로필 인증이 끝났습니다.</ItemTitle>
         </ItemContent>
         <ItemActions>
           <ChevronRightIcon className="size-4" />

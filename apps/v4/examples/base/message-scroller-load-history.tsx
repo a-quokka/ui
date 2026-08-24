@@ -68,9 +68,9 @@ export function MessageScrollerLoadHistory() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Load History</CardTitle>
+            <CardTitle>이전 기록 불러오기</CardTitle>
             <CardDescription>
-              Prepended messages keep your place.
+              앞쪽에 메시지가 붙어도 읽던 자리가 유지됩니다.
             </CardDescription>
             <CardAction>
               <Tooltip>
@@ -80,7 +80,7 @@ export function MessageScrollerLoadHistory() {
                       type="button"
                       variant="outline"
                       size="icon"
-                      aria-label="Reset loaded messages"
+                      aria-label="불러온 메시지 초기화"
                       disabled={visibleCount === INITIAL_VISIBLE_COUNT}
                       onClick={() => {
                         setVisibleCount(INITIAL_VISIBLE_COUNT)
@@ -92,7 +92,7 @@ export function MessageScrollerLoadHistory() {
                   <RotateCwIcon />
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Reset</p>
+                  <p>초기화</p>
                 </TooltipContent>
               </Tooltip>
             </CardAction>
@@ -134,7 +134,7 @@ export function MessageScrollerLoadHistory() {
                   })}
                   <MessageScrollerItem scrollAnchor={false}>
                     <Marker variant="separator">
-                      <MarkerContent>End of Conversation</MarkerContent>
+                      <MarkerContent>대화의 끝</MarkerContent>
                     </Marker>
                   </MessageScrollerItem>
                 </MessageScrollerContent>
@@ -149,7 +149,7 @@ export function MessageScrollerLoadHistory() {
               onClick={() => {
                 setVisibleCount(history.length)
                 toast("History loaded", {
-                  description: "Scroll up to see earlier messages.",
+                  description: "위로 올리면 이전 메시지를 볼 수 있습니다.",
                 })
               }}
               className="w-full"
@@ -158,12 +158,12 @@ export function MessageScrollerLoadHistory() {
               {canLoadHistory ? "Load History" : "History Loaded"}
             </Button>
             <p className="text-xs text-muted-foreground">
-              Restore earlier messages while keeping your place.
+              읽던 자리를 지키면서 이전 메시지를 되살립니다.
             </p>
           </CardFooter>
         </Card>
         <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-balance text-muted-foreground">
-          Click Load History to load the entire conversation
+          이전 기록 불러오기를 누르면 대화 전체를 불러옵니다
         </div>
       </div>
     </MessageScrollerProvider>

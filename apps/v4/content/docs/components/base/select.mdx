@@ -1,6 +1,6 @@
 ---
 title: Select
-description: Displays a list of options for the user to pick from—triggered by a button.
+description: 목록에서 하나를 고릅니다.
 base: base
 component: true
 featured: true
@@ -31,13 +31,13 @@ npx shadcn@latest add select
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="select"
@@ -45,7 +45,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -91,7 +91,7 @@ const items = [
 
 ## Composition
 
-Use the following composition to build a `Select`:
+아래 구조로 `Select`를 만듭니다.
 
 ```text
 Select
@@ -111,19 +111,19 @@ Select
 
 ## Align Item With Trigger
 
-Use `alignItemWithTrigger` on `SelectContent` to control whether the selected item aligns with the trigger. When `true` (default), the popup positions so the selected item appears over the trigger. When `false`, the popup aligns to the trigger edge.
+`SelectContent`의 `alignItemWithTrigger`로 선택된 항목을 트리거에 맞출지 정합니다. 기본값인 `true` 면 선택된 항목이 트리거 위에 오도록 팝업이 놓이고, `false` 면 팝업이 트리거 가장자리에 맞춰집니다.
 
 <ComponentPreview styleName="base-nova" name="select-align-item" />
 
 ## Groups
 
-Use `SelectGroup`, `SelectLabel`, and `SelectSeparator` to organize items.
+`SelectGroup`·`SelectLabel`·`SelectSeparator`로 항목을 정리합니다.
 
 <ComponentPreview styleName="base-nova" name="select-groups" />
 
 ## Scrollable
 
-A select with many items that scrolls.
+항목이 많아 스크롤되는 셀렉트입니다.
 
 <ComponentPreview styleName="base-nova" name="select-scrollable" />
 
@@ -133,7 +133,7 @@ A select with many items that scrolls.
 
 ## Invalid
 
-Add the `data-invalid` attribute to the `Field` component and the `aria-invalid` attribute to the `SelectTrigger` component to show an error state.
+오류 상태를 보이려면 `Field` 컴포넌트에 `data-invalid` 속성을, `SelectTrigger`에 `aria-invalid` 속성을 붙입니다.
 
 ```tsx showLineNumbers /data-invalid/ /aria-invalid/
 <Field data-invalid>
@@ -146,12 +146,12 @@ Add the `data-invalid` attribute to the `Field` component and the `aria-invalid`
 
 <ComponentPreview styleName="base-nova" name="select-invalid" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="select-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [Base UI Select](https://base-ui.com/react/components/select#api-reference) documentation.
+자세한 내용은 [Base UI Select](https://base-ui.com/react/components/select#api-reference) 문서를 보세요.

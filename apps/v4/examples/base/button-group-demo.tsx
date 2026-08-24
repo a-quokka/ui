@@ -35,20 +35,20 @@ export default function ButtonGroupDemo() {
   return (
     <ButtonGroup>
       <ButtonGroup className="hidden sm:flex">
-        <Button variant="outline" size="icon" aria-label="Go Back">
+        <Button variant="outline" size="icon" aria-label="뒤로">
           <ArrowLeftIcon />
         </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline">Archive</Button>
-        <Button variant="outline">Report</Button>
+        <Button variant="outline">보관</Button>
+        <Button variant="outline">신고</Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline">Snooze</Button>
+        <Button variant="outline">나중에</Button>
         <DropdownMenu>
           <DropdownMenuTrigger
             render={
-              <Button variant="outline" size="icon" aria-label="More Options" />
+              <Button variant="outline" size="icon" aria-label="더 보기" />
             }
           >
             <MoreHorizontalIcon />
@@ -57,31 +57,31 @@ export default function ButtonGroupDemo() {
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <MailCheckIcon />
-                Mark as Read
+                읽음으로 표시
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <ArchiveIcon />
-                Archive
+                보관
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <ClockIcon />
-                Snooze
+                나중에
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <CalendarPlusIcon />
-                Add to Calendar
+                캘린더에 추가
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <ListFilterIcon />
-                Add to List
+                목록에 추가
               </DropdownMenuItem>
               <DropdownMenuSub>
                 <DropdownMenuSubTrigger>
                   <TagIcon />
-                  Label As...
+                  라벨 지정...
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent>
                   <DropdownMenuRadioGroup
@@ -89,13 +89,13 @@ export default function ButtonGroupDemo() {
                     onValueChange={setLabel}
                   >
                     <DropdownMenuRadioItem value="personal">
-                      Personal
+                      개인
                     </DropdownMenuRadioItem>
                     <DropdownMenuRadioItem value="work">
-                      Work
+                      업무
                     </DropdownMenuRadioItem>
                     <DropdownMenuRadioItem value="other">
-                      Other
+                      기타
                     </DropdownMenuRadioItem>
                   </DropdownMenuRadioGroup>
                 </DropdownMenuSubContent>
@@ -105,7 +105,7 @@ export default function ButtonGroupDemo() {
             <DropdownMenuGroup>
               <DropdownMenuItem variant="destructive">
                 <Trash2Icon />
-                Trash
+                휴지통
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>

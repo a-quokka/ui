@@ -21,9 +21,9 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      caption: "A list of your recent invoices.",
+      caption: "최근 청구서 목록입니다.",
       invoice: "Invoice",
-      status: "Status",
+      status: "상태",
       method: "Method",
       amount: "Amount",
       paid: "Paid",
@@ -35,38 +35,21 @@ const translations: Translations = {
       total: "Total",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      caption: "قائمة بفواتيرك الأخيرة.",
-      invoice: "الفاتورة",
-      status: "الحالة",
-      method: "الطريقة",
-      amount: "المبلغ",
-      paid: "مدفوع",
-      pending: "قيد الانتظار",
-      unpaid: "غير مدفوع",
-      creditCard: "بطاقة ائتمانية",
+      caption: "최근 청구서 목록입니다.",
+      invoice: "청구서",
+      status: "상태",
+      method: "결제 수단",
+      amount: "금액",
+      paid: "결제 완료",
+      pending: "대기 중",
+      unpaid: "미결제",
+      creditCard: "신용카드",
       paypal: "PayPal",
-      bankTransfer: "تحويل بنكي",
-      total: "المجموع",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      caption: "רשימת החשבוניות האחרונות שלך.",
-      invoice: "חשבונית",
-      status: "סטטוס",
-      method: "שיטה",
-      amount: "סכום",
-      paid: "שולם",
-      pending: "ממתין",
-      unpaid: "לא שולם",
-      creditCard: "כרטיס אשראי",
-      paypal: "PayPal",
-      bankTransfer: "העברה בנקאית",
-      total: 'סה"כ',
+      bankTransfer: "계좌 이체",
+      total: "합계",
     },
   },
 }
@@ -117,7 +100,7 @@ const invoices = [
 ]
 
 export function TableRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Table dir={dir}>

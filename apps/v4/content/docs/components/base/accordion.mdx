@@ -1,6 +1,6 @@
 ---
 title: Accordion
-description: A vertically stacked set of interactive headings that each reveal a section of content.
+description: 제목을 눌러 아래 내용을 펼치고 접습니다. 여러 항목을 세로로 쌓아 씁니다.
 base: base
 component: true
 links:
@@ -36,13 +36,13 @@ npx shadcn@latest add accordion
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="accordion"
@@ -50,7 +50,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -72,7 +72,7 @@ import {
 ```tsx showLineNumbers
 <Accordion defaultValue={["item-1"]}>
   <AccordionItem value="item-1">
-    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionTrigger>접근성을 갖췄나요?</AccordionTrigger>
     <AccordionContent>
       Yes. It adheres to the WAI-ARIA design pattern.
     </AccordionContent>
@@ -82,7 +82,7 @@ import {
 
 ## Composition
 
-Use the following composition to build an `Accordion`:
+아래 구조로 `Accordion`을 만듭니다.
 
 ```text
 Accordion
@@ -96,7 +96,7 @@ Accordion
 
 ## Basic
 
-A basic accordion that shows one item at a time. The first item is open by default.
+한 번에 하나만 펼쳐지는 기본 아코디언입니다. 첫 항목이 처음부터 열려 있습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -107,7 +107,7 @@ A basic accordion that shows one item at a time. The first item is open by defau
 
 ## Multiple
 
-Use the `multiple` prop to allow multiple items to be open at the same time.
+`multiple` prop을 주면 여러 항목을 동시에 펼칠 수 있습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -118,7 +118,7 @@ Use the `multiple` prop to allow multiple items to be open at the same time.
 
 ## Disabled
 
-Use the `disabled` prop on `AccordionItem` to disable individual items.
+`AccordionItem`의 `disabled` prop으로 항목 하나씩 비활성화합니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -129,7 +129,7 @@ Use the `disabled` prop on `AccordionItem` to disable individual items.
 
 ## Borders
 
-Add `border` to the `Accordion` and `border-b last:border-b-0` to the `AccordionItem` to add borders to the items.
+항목에 테두리를 주려면 `Accordion`에 `border`를, `AccordionItem`에 `border-b last:border-b-0`을 붙입니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -140,7 +140,7 @@ Add `border` to the `Accordion` and `border-b last:border-b-0` to the `Accordion
 
 ## Card
 
-Wrap the `Accordion` in a `Card` component.
+`Accordion`을 `Card` 컴포넌트로 감쌉니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -149,9 +149,9 @@ Wrap the `Accordion` in a `Card` component.
   previewClassName="*:data-[slot=accordion]:max-w-sm h-[435px]"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -162,4 +162,4 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## API Reference
 
-See the [Base UI](https://base-ui.com/react/components/accordion#api-reference) documentation for more information.
+자세한 내용은 [Base UI](https://base-ui.com/react/components/accordion#api-reference) 문서를 보세요.

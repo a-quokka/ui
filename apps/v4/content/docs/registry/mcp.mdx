@@ -1,25 +1,25 @@
 ---
 title: MCP Server
-description: MCP support for registry developers
+description: 레지스트리를 만드는 사람을 위한 MCP 지원
 ---
 
-The [shadcn MCP server](/docs/mcp) works out of the box with any shadcn-compatible registry. You do not need to do anything special to enable MCP support for your registry.
+[shadcn MCP 서버](/docs/mcp)는 shadcn 규격을 따르는 레지스트리라면 그대로 동작합니다. MCP 를 켜려고 따로 할 일은 없습니다.
 
 ---
 
 ## Prerequisites
 
-The MCP server works by requesting your registry index. Make sure you have a registry item file at the root of your registry named `registry`.
+MCP 서버는 레지스트리 색인을 요청해 동작합니다. 레지스트리 루트에 `registry` 라는 이름의 항목 파일이 있어야 합니다.
 
-For example, if your registry is hosted at `https://acme.com/r/[name].json`, you should have a file at `https://acme.com/r/registry.json` or `https://acme.com/r/registry` if you're using a JSON file extension.
+예를 들어 레지스트리가 `https://acme.com/r/[name].json` 에 있다면 `https://acme.com/r/registry.json` 에 파일이 있어야 합니다. 확장자를 쓰지 않는다면 `https://acme.com/r/registry` 입니다.
 
-This file must be a valid JSON file that conforms to the [registry schema](/docs/registry/registry-json).
+이 파일은 [registry 스키마](/docs/registry/registry-json)를 따르는 올바른 JSON 이어야 합니다.
 
 ---
 
 ## Configuring MCP
 
-Ask your registry consumers to configure your registry in their `components.json` file and install the shadcn MCP server:
+레지스트리를 쓰는 사람에게 `components.json` 에 레지스트리를 설정하고 shadcn MCP 서버를 설치하도록 안내하세요.
 
 <Tabs defaultValue="claude">
   <TabsList>
@@ -30,7 +30,7 @@ Ask your registry consumers to configure your registry in their `components.json
     <TabsTrigger value="opencode">OpenCode</TabsTrigger>
   </TabsList>
   <TabsContent value="claude" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` 에 **레지스트리를 설정**합니다.
 
     ```json title="components.json" showLineNumbers
     {
@@ -40,22 +40,22 @@ Ask your registry consumers to configure your registry in their `components.json
     }
     ```
 
-    **Run the following command** in your project:
+    프로젝트에서 **아래 명령을 실행**합니다.
 
     ```bash
     npx shadcn@latest mcp init --client claude
     ```
 
-    **Restart Claude Code** and try the following prompts:
-       - Show me the components in the acme registry
-       - Create a landing page using items from the acme registry
+    **Claude Code 를 다시 시작**하고 이렇게 시켜 보세요.
+       - acme 레지스트리의 컴포넌트를 보여 줘
+       - acme 레지스트리의 항목으로 랜딩 페이지를 만들어 줘
 
-    **Note:** You can use `/mcp` command in Claude Code to debug the MCP server.
+    **참고:** Claude Code 에서 `/mcp` 명령으로 MCP 서버를 점검할 수 있습니다.
 
   </TabsContent>
 
   <TabsContent value="cursor" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` 에 **레지스트리를 설정**합니다.
 
     ```json title="components.json" showLineNumbers
     {
@@ -64,19 +64,19 @@ Ask your registry consumers to configure your registry in their `components.json
       }
     }
     ```
-    **Run the following command** in your project:
+    프로젝트에서 **아래 명령을 실행**합니다.
        ```bash
        npx shadcn@latest mcp init --client cursor
        ```
 
-    Open **Cursor Settings** and **Enable the MCP server** for shadcn. Then try the following prompts:
-       - Show me the components in the acme registry
-       - Create a landing page using items from the acme registry
+    **Cursor 설정**을 열고 shadcn 용 **MCP 서버를 켜세요.** 그다음 이렇게 시켜 보세요.
+       - acme 레지스트리의 컴포넌트를 보여 줘
+       - acme 레지스트리의 항목으로 랜딩 페이지를 만들어 줘
 
   </TabsContent>
 
   <TabsContent value="vscode" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` 에 **레지스트리를 설정**합니다.
 
     ```json title="components.json" showLineNumbers
     {
@@ -85,19 +85,19 @@ Ask your registry consumers to configure your registry in their `components.json
       }
     }
     ```
-    **Run the following command** in your project:
+    프로젝트에서 **아래 명령을 실행**합니다.
        ```bash
        npx shadcn@latest mcp init --client vscode
        ```
 
-    Open `.vscode/mcp.json` and click **Start** next to the shadcn server. Then try the following prompts with GitHub Copilot:
-       - Show me the components in the acme registry
-       - Create a landing page using items from the acme registry
+    `.vscode/mcp.json` 을 열고 shadcn 서버 옆의 **Start** 를 누르세요. 그다음 GitHub Copilot 에 이렇게 시켜 보세요.
+       - acme 레지스트리의 컴포넌트를 보여 줘
+       - acme 레지스트리의 항목으로 랜딩 페이지를 만들어 줘
 
   </TabsContent>
 
   <TabsContent value="codex" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` 에 **레지스트리를 설정**합니다.
 
     ```json title="components.json" showLineNumbers
     {
@@ -107,21 +107,21 @@ Ask your registry consumers to configure your registry in their `components.json
     }
     ```
 
-    **Add the following configuration** to `~/.codex/config.toml`:
+    **`~/.codex/config.toml` 에 아래 설정을 넣으세요.**
        ```toml
        [mcp_servers.shadcn]
        command = "npx"
        args = ["shadcn@latest", "mcp"]
        ```
 
-    **Restart Codex** and try the following prompts:
-       - Show me the components in the acme registry
-       - Create a landing page using items from the acme registry
+    **Codex 를 다시 시작**하고 이렇게 시켜 보세요.
+       - acme 레지스트리의 컴포넌트를 보여 줘
+       - acme 레지스트리의 항목으로 랜딩 페이지를 만들어 줘
 
   </TabsContent>
 
   <TabsContent value="opencode" className="mt-4">
-    **Configure your registry** in your `components.json` file:
+    `components.json` 에 **레지스트리를 설정**합니다.
 
     ```json title="components.json" showLineNumbers
     {
@@ -131,27 +131,27 @@ Ask your registry consumers to configure your registry in their `components.json
     }
     ```
 
-    **Run the following command** in your project:
+    프로젝트에서 **아래 명령을 실행**합니다.
        ```bash
        npx shadcn@latest mcp init --client opencode
        ```
 
-    **Restart OpenCode** and try the following prompts:
-       - Show me the components in the acme registry
-       - Create a landing page using items from the acme registry
+    **OpenCode 를 다시 시작**하고 이렇게 시켜 보세요.
+       - acme 레지스트리의 컴포넌트를 보여 줘
+       - acme 레지스트리의 항목으로 랜딩 페이지를 만들어 줘
 
   </TabsContent>
 </Tabs>
 
-You can read more about the MCP server in the [MCP documentation](/docs/mcp).
+MCP 서버에 대한 자세한 내용은 [MCP 문서](/docs/mcp)를 보세요.
 
 ---
 
 ## Best Practices
 
-Here are some best practices for MCP-compatible registries:
+MCP 와 잘 맞는 레지스트리를 만들 때 지킬 것들입니다.
 
-1. **Clear Descriptions**: Add concise, informative descriptions that help AI assistants understand what a registry item is for and how to use it.
-2. **Proper Dependencies**: List all `dependencies` accurately so MCP can install them automatically.
-3. **Registry Dependencies**: Use `registryDependencies` to indicate relationships between items.
-4. **Consistent Naming**: Use kebab-case for component names and maintain consistency across your registry.
+1. **명확한 설명**: 그 항목이 무엇이고 어떻게 쓰는지 AI 어시스턴트가 알 수 있도록 간결하고 알찬 설명을 답니다.
+2. **정확한 의존성**: MCP 가 자동으로 설치할 수 있도록 `dependencies` 를 빠짐없이 적습니다.
+3. **레지스트리 의존성**: 항목 사이의 관계는 `registryDependencies` 로 나타냅니다.
+4. **일관된 이름**: 컴포넌트 이름에 kebab-case 를 쓰고 레지스트리 전체에서 일관되게 유지합니다.

@@ -1,6 +1,6 @@
 ---
 title: Calendar
-description: A calendar component that allows users to select a date or a range of dates.
+description: 날짜를 고릅니다. 기간 선택도 됩니다.
 base: base
 component: true
 links:
@@ -33,17 +33,17 @@ npx shadcn@latest add calendar
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install react-day-picker date-fns
 ```
 
-<Step>Add the `Button` component to your project.</Step>
+<Step>프로젝트에 `Button` 컴포넌트를 추가합니다.</Step>
 
-The `Calendar` component uses the `Button` component. Make sure you have it installed in your project.
+`Calendar`는 `Button` 컴포넌트를 씁니다. 프로젝트에 설치돼 있는지 확인하세요.
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="calendar"
@@ -51,7 +51,7 @@ The `Calendar` component uses the `Button` component. Make sure you have it inst
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -78,19 +78,19 @@ return (
 )
 ```
 
-See the [React DayPicker](https://react-day-picker.js.org) documentation for more information.
+자세한 내용은 [React DayPicker](https://react-day-picker.js.org) 문서를 보세요.
 
 ## About
 
-The `Calendar` component is built on top of [React DayPicker](https://react-day-picker.js.org).
+`Calendar`는 [React DayPicker](https://react-day-picker.js.org) 위에 만들었습니다.
 
 ## Date Picker
 
-You can use the `<Calendar>` component to build a date picker. See the [Date Picker](/docs/components/base/date-picker) page for more information.
+`<Calendar>`로 날짜 선택기를 만들 수 있습니다. 자세한 내용은 [Date Picker](/docs/components/base/date-picker)를 보세요.
 
 ## Persian / Hijri / Jalali Calendar
 
-To use the Persian calendar, edit `components/ui/calendar.tsx` and replace `react-day-picker` with `react-day-picker/persian`.
+페르시아력을 쓰려면 `components/ui/calendar.tsx`에서 `react-day-picker`를 `react-day-picker/persian`으로 바꾸세요.
 
 ```diff
 - import { DayPicker } from "react-day-picker"
@@ -107,7 +107,7 @@ To use the Persian calendar, edit `components/ui/calendar.tsx` and replace `reac
 
 ## Selected Date (With TimeZone)
 
-The Calendar component accepts a `timeZone` prop to ensure dates are displayed and selected in the user's local timezone.
+Calendar는 `timeZone` prop을 받아 사용자의 현지 시간대로 날짜를 보여 주고 선택하게 합니다.
 
 ```tsx showLineNumbers
 export function CalendarWithTimezone() {
@@ -129,13 +129,13 @@ export function CalendarWithTimezone() {
 }
 ```
 
-**Note:** If you notice a selected date offset (for example, selecting the 20th highlights the 19th), make sure the `timeZone` prop is set to the user's local timezone.
+**참고:** 20일을 골랐는데 19일이 표시되는 식으로 날짜가 하루씩 밀린다면 `timeZone` prop이 사용자의 현지 시간대로 설정돼 있는지 확인하세요.
 
-**Why client-side?** The timezone is detected using `Intl.DateTimeFormat().resolvedOptions().timeZone` inside a `useEffect` to ensure compatibility with server-side rendering. Detecting the timezone during render would cause hydration mismatches, as the server and client may be in different timezones.
+**왜 클라이언트에서 처리하나요?** 시간대는 `useEffect` 안에서 `Intl.DateTimeFormat().resolvedOptions().timeZone`으로 알아냅니다. 서버 사이드 렌더링과 맞추기 위해서입니다. 렌더링 중에 시간대를 알아내면 서버와 클라이언트의 시간대가 달라 하이드레이션이 어긋납니다.
 
 ## Basic
 
-A basic calendar component. We used `className="rounded-lg border"` to style the calendar.
+기본 캘린더입니다. `className="rounded-lg border"`로 꾸몄습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -145,7 +145,7 @@ A basic calendar component. We used `className="rounded-lg border"` to style the
 
 ## Range Calendar
 
-Use the `mode="range"` prop to enable range selection.
+`mode="range"` prop으로 기간 선택을 켭니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -155,7 +155,7 @@ Use the `mode="range"` prop to enable range selection.
 
 ## Month and Year Selector
 
-Use `captionLayout="dropdown"` to show month and year dropdowns.
+`captionLayout="dropdown"`으로 월·연도 드롭다운을 보여 줍니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -197,7 +197,7 @@ Use `captionLayout="dropdown"` to show month and year dropdowns.
   className="**:[.preview]:h-[560px]"
 />
 
-You can customize the size of calendar cells using the `--cell-size` CSS variable. You can also make it responsive by using breakpoint-specific values:
+`--cell-size` CSS 변수로 캘린더 칸 크기를 바꿉니다. 브레이크포인트별 값을 주면 반응형으로도 만들 수 있습니다.
 
 ```tsx showLineNumbers
 <Calendar
@@ -208,7 +208,7 @@ You can customize the size of calendar cells using the `--cell-size` CSS variabl
 />
 ```
 
-Or use fixed values:
+고정 값을 쓸 수도 있습니다.
 
 ```tsx showLineNumbers
 <Calendar
@@ -221,7 +221,7 @@ Or use fixed values:
 
 ## Week Numbers
 
-Use `showWeekNumber` to show week numbers.
+`showWeekNumber`로 주차를 표시합니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -229,11 +229,11 @@ Use `showWeekNumber` to show week numbers.
   previewClassName="h-96"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
-See also the [Hijri Guide](#persian--hijri--jalali-calendar) for enabling the Persian / Hijri / Jalali calendar.
+페르시아력·히즈라력·잘랄리력을 켜는 방법은 [Hijri Guide](#persian--hijri--jalali-calendar)도 함께 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -242,7 +242,7 @@ See also the [Hijri Guide](#persian--hijri--jalali-calendar) for enabling the Pe
   previewClassName="h-96"
 />
 
-When using RTL, import the locale from `react-day-picker/locale` and pass both the `locale` and `dir` props to the Calendar component:
+RTL을 쓸 때는 `react-day-picker/locale`에서 로케일을 가져와 Calendar에 `locale`과 `dir` prop을 함께 넘기세요.
 
 ```tsx showLineNumbers
 import { arSA } from "react-day-picker/locale"
@@ -258,19 +258,19 @@ import { arSA } from "react-day-picker/locale"
 
 ## API Reference
 
-See the [React DayPicker](https://react-day-picker.js.org) documentation for more information on the `Calendar` component.
+`Calendar`에 대한 자세한 내용은 [React DayPicker](https://react-day-picker.js.org) 문서를 보세요.
 
 ## Changelog
 
 ### RTL Support
 
-If you're upgrading from a previous version of the `Calendar` component, you'll need to apply the following updates to add locale support:
+이전 버전 `Calendar`를 쓰고 있다면 로케일을 지원하기 위해 아래를 적용해야 합니다.
 
 <Steps>
 
-<Step>Import the `Locale` type.</Step>
+<Step>`Locale` 타입을 import 합니다.</Step>
 
-Add `Locale` to your imports from `react-day-picker`:
+`react-day-picker`에서 가져오는 목록에 `Locale`을 추가합니다.
 
 ```diff
   import {
@@ -281,9 +281,9 @@ Add `Locale` to your imports from `react-day-picker`:
   } from "react-day-picker"
 ```
 
-<Step>Add `locale` prop to the Calendar component.</Step>
+<Step>Calendar 컴포넌트에 `locale` prop을 추가합니다.</Step>
 
-Add the `locale` prop to the component's props:
+컴포넌트 props에 `locale`을 추가합니다.
 
 ```diff
   function Calendar({
@@ -301,9 +301,9 @@ Add the `locale` prop to the component's props:
   }) {
 ```
 
-<Step>Pass `locale` to DayPicker.</Step>
+<Step>DayPicker에 `locale`을 넘깁니다.</Step>
 
-Pass the `locale` prop to the `DayPicker` component:
+`DayPicker` 컴포넌트에 `locale` prop을 넘깁니다.
 
 ```diff
     <DayPicker
@@ -319,9 +319,9 @@ Pass the `locale` prop to the `DayPicker` component:
       }}
 ```
 
-<Step>Update CalendarDayButton to accept locale.</Step>
+<Step>CalendarDayButton이 locale을 받도록 고칩니다.</Step>
 
-Update the `CalendarDayButton` component signature and pass `locale`:
+`CalendarDayButton`의 시그니처를 고치고 `locale`을 넘깁니다.
 
 ```diff
   function CalendarDayButton({
@@ -334,9 +334,9 @@ Update the `CalendarDayButton` component signature and pass `locale`:
 + }: React.ComponentProps<typeof DayButton> & { locale?: Partial<Locale> }) {
 ```
 
-<Step>Update date formatting in CalendarDayButton.</Step>
+<Step>CalendarDayButton의 날짜 표기를 고칩니다.</Step>
 
-Use `locale?.code` in the date formatting:
+날짜 표기에 `locale?.code`를 씁니다.
 
 ```diff
     <Button
@@ -348,9 +348,9 @@ Use `locale?.code` in the date formatting:
     />
 ```
 
-<Step>Pass locale to DayButton component.</Step>
+<Step>DayButton 컴포넌트에 locale을 넘깁니다.</Step>
 
-Update the `DayButton` component usage to pass the `locale` prop:
+`DayButton`을 쓰는 곳에서 `locale` prop을 넘기도록 고칩니다.
 
 ```diff
       components={{
@@ -363,9 +363,9 @@ Update the `DayButton` component usage to pass the `locale` prop:
       }}
 ```
 
-<Step>Update RTL-aware CSS classes.</Step>
+<Step>RTL을 고려한 CSS 클래스로 고칩니다.</Step>
 
-Replace directional classes with logical properties for better RTL support:
+방향이 박힌 클래스를 논리 속성으로 바꾸면 RTL에서 더 잘 맞습니다.
 
 ```diff
   // In the day classNames:
@@ -393,7 +393,7 @@ Replace directional classes with logical properties for better RTL support:
 
 </Steps>
 
-After applying these changes, you can use the `locale` prop to provide locale-specific formatting:
+여기까지 적용하면 `locale` prop으로 로케일별 표기를 지정할 수 있습니다.
 
 ```tsx
 import { enUS } from "react-day-picker/locale"

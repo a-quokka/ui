@@ -29,31 +29,20 @@ const translations: Translations = {
         "You can enable or disable notifications at any time.",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      acceptTerms: "قبول الشروط والأحكام",
-      acceptTermsDescription: "بالنقر على هذا المربع، فإنك توافق على الشروط.",
-      enableNotifications: "تفعيل الإشعارات",
-      enableNotificationsDescription:
-        "يمكنك تفعيل أو إلغاء تفعيل الإشعارات في أي وقت.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      acceptTerms: "קבל תנאים והגבלות",
+      acceptTerms: "이용약관에 동의합니다",
       acceptTermsDescription:
-        "על ידי לחיצה על תיבת הסימון הזו, אתה מסכים לתנאים.",
-      enableNotifications: "הפעל התראות",
-      enableNotificationsDescription:
-        "אתה יכול להפעיל או להשבית התראות בכל עת.",
+        "이 체크박스를 누르면 약관에 동의하는 것으로 봅니다.",
+      enableNotifications: "알림 켜기",
+      enableNotificationsDescription: "알림은 언제든 켜고 끌 수 있습니다.",
     },
   },
 }
 
 export function CheckboxRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <FieldGroup className="max-w-sm" dir={dir}>

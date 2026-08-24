@@ -21,14 +21,14 @@ export function EmptyDistributeTrack() {
             <HugeiconsIcon icon={Add01Icon} strokeWidth={2} />
           </EmptyMedia>
           <EmptyHeader>
-            <EmptyTitle>Distribute Track</EmptyTitle>
+            <EmptyTitle>음원 유통</EmptyTitle>
             <EmptyDescription>
-              Upload your first master to start reaching listeners on Spotify,
-              Apple Music, and more.
+              첫 마스터 음원을 올려 Spotify·Apple Music 등에서 청취자를 만나
+              보세요.
             </EmptyDescription>
           </EmptyHeader>
           <EmptyContent>
-            <Button>Create Release</Button>
+            <Button>음원 등록</Button>
           </EmptyContent>
         </Empty>
       </CardContent>

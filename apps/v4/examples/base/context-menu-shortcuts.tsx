@@ -13,35 +13,35 @@ export function ContextMenuShortcuts() {
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          여기를 오른쪽 클릭
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          여기를 길게 누르기
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuItem>
-            Back
+            뒤로
             <ContextMenuShortcut>⌘[</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem disabled>
-            Forward
+            앞으로
             <ContextMenuShortcut>⌘]</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Reload
+            새로 고침
             <ContextMenuShortcut>⌘R</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
           <ContextMenuItem>
-            Save
+            저장
             <ContextMenuShortcut>⌘S</ContextMenuShortcut>
           </ContextMenuItem>
           <ContextMenuItem>
-            Save As...
+            다른 이름으로 저장...
             <ContextMenuShortcut>⇧⌘S</ContextMenuShortcut>
           </ContextMenuItem>
         </ContextMenuGroup>

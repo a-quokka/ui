@@ -12,68 +12,68 @@ export function ContextMenuSides() {
       <ContextMenu>
         <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
           <span className="hidden pointer-fine:inline-block">
-            Right click (top)
+            오른쪽 클릭 (위)
           </span>
           <span className="hidden pointer-coarse:inline-block">
-            Long press (top)
+            길게 누르기 (위)
           </span>
         </ContextMenuTrigger>
         <ContextMenuContent side="top">
           <ContextMenuGroup>
-            <ContextMenuItem>Back</ContextMenuItem>
-            <ContextMenuItem>Forward</ContextMenuItem>
-            <ContextMenuItem>Reload</ContextMenuItem>
+            <ContextMenuItem>뒤로</ContextMenuItem>
+            <ContextMenuItem>앞으로</ContextMenuItem>
+            <ContextMenuItem>새로 고침</ContextMenuItem>
           </ContextMenuGroup>
         </ContextMenuContent>
       </ContextMenu>
       <ContextMenu>
         <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
           <span className="hidden pointer-fine:inline-block">
-            Right click (right)
+            오른쪽 클릭 (오른쪽)
           </span>
           <span className="hidden pointer-coarse:inline-block">
-            Long press (right)
+            길게 누르기 (오른쪽)
           </span>
         </ContextMenuTrigger>
         <ContextMenuContent side="right">
           <ContextMenuGroup>
-            <ContextMenuItem>Back</ContextMenuItem>
-            <ContextMenuItem>Forward</ContextMenuItem>
-            <ContextMenuItem>Reload</ContextMenuItem>
+            <ContextMenuItem>뒤로</ContextMenuItem>
+            <ContextMenuItem>앞으로</ContextMenuItem>
+            <ContextMenuItem>새로 고침</ContextMenuItem>
           </ContextMenuGroup>
         </ContextMenuContent>
       </ContextMenu>
       <ContextMenu>
         <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
           <span className="hidden pointer-fine:inline-block">
-            Right click (bottom)
+            오른쪽 클릭 (아래)
           </span>
           <span className="hidden pointer-coarse:inline-block">
-            Long press (bottom)
+            길게 누르기 (아래)
           </span>
         </ContextMenuTrigger>
         <ContextMenuContent side="bottom">
           <ContextMenuGroup>
-            <ContextMenuItem>Back</ContextMenuItem>
-            <ContextMenuItem>Forward</ContextMenuItem>
-            <ContextMenuItem>Reload</ContextMenuItem>
+            <ContextMenuItem>뒤로</ContextMenuItem>
+            <ContextMenuItem>앞으로</ContextMenuItem>
+            <ContextMenuItem>새로 고침</ContextMenuItem>
           </ContextMenuGroup>
         </ContextMenuContent>
       </ContextMenu>
       <ContextMenu>
         <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
           <span className="hidden pointer-fine:inline-block">
-            Right click (left)
+            오른쪽 클릭 (왼쪽)
           </span>
           <span className="hidden pointer-coarse:inline-block">
-            Long press (left)
+            길게 누르기 (왼쪽)
           </span>
         </ContextMenuTrigger>
         <ContextMenuContent side="left">
           <ContextMenuGroup>
-            <ContextMenuItem>Back</ContextMenuItem>
-            <ContextMenuItem>Forward</ContextMenuItem>
-            <ContextMenuItem>Reload</ContextMenuItem>
+            <ContextMenuItem>뒤로</ContextMenuItem>
+            <ContextMenuItem>앞으로</ContextMenuItem>
+            <ContextMenuItem>새로 고침</ContextMenuItem>
           </ContextMenuGroup>
         </ContextMenuContent>
       </ContextMenu>

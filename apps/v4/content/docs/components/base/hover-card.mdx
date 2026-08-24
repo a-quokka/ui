@@ -1,6 +1,6 @@
 ---
 title: Hover Card
-description: For sighted users to preview content available behind a link.
+description: 링크에 마우스를 올리면 내용을 미리 보여 줍니다.
 base: base
 component: true
 links:
@@ -34,13 +34,13 @@ npx shadcn@latest add hover-card
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="hover-card"
@@ -48,7 +48,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -77,7 +77,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `HoverCard`:
+아래 구조로 `HoverCard`를 만듭니다.
 
 ```text
 HoverCard
@@ -87,8 +87,7 @@ HoverCard
 
 ## Trigger Delays
 
-Use `delay` and `closeDelay` on the trigger to control when the card opens and
-closes.
+트리거의 `delay`와 `closeDelay`로 카드가 열리고 닫히는 시점을 정합니다.
 
 ```tsx showLineNumbers
 <HoverCard>
@@ -101,7 +100,7 @@ closes.
 
 ## Positioning
 
-Use the `side` and `align` props on `HoverCardContent` to control placement.
+`HoverCardContent`의 `side`와 `align` prop으로 위치를 정합니다.
 
 ```tsx showLineNumbers
 <HoverCard>
@@ -128,9 +127,9 @@ Use the `side` and `align` props on `HoverCardContent` to control placement.
   previewClassName="h-[22rem]"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -141,4 +140,4 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## API Reference
 
-See the [Base UI](https://base-ui.com/react/components/hover-card#api-reference) documentation for more information.
+자세한 내용은 [Base UI](https://base-ui.com/react/components/hover-card#api-reference) 문서를 보세요.

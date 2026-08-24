@@ -8,11 +8,11 @@ export function TabsIcons() {
       <TabsList>
         <TabsTrigger value="preview">
           <AppWindowIcon />
-          Preview
+          미리보기
         </TabsTrigger>
         <TabsTrigger value="code">
           <CodeIcon />
-          Code
+          코드
         </TabsTrigger>
       </TabsList>
     </Tabs>

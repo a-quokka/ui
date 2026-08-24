@@ -1,42 +1,11 @@
-import {
-  Geist_Mono as FontMono,
-  Noto_Sans_Arabic as FontNotoSansArabic,
-  Noto_Sans_Hebrew as FontNotoSansHebrew,
-  Geist as FontSans,
-} from "next/font/google"
+import { Geist_Mono as FontMono } from "next/font/google"
 
-import { cn } from "@/lib/utils"
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const fontHeading = FontSans({
-  subsets: ["latin"],
-  variable: "--font-heading",
-})
-
+// --font-sans / --font-heading 은 globals.css 의 :root 에서 Dropshot Sans 로 정의한다.
+// next/font 로 로드하면 클래스 선택자가 :root 를 이겨 브랜드 폰트가 덮인다.
 const fontMono = FontMono({
   subsets: ["latin"],
   variable: "--font-mono",
   weight: ["400"],
 })
 
-const fontNotoSansArabic = FontNotoSansArabic({
-  subsets: ["latin"],
-  variable: "--font-ar",
-})
-
-const fontNotoSansHebrew = FontNotoSansHebrew({
-  subsets: ["latin"],
-  variable: "--font-he",
-})
-
-export const fontVariables = cn(
-  fontSans.variable,
-  fontHeading.variable,
-  fontMono.variable,
-  fontNotoSansArabic.variable,
-  fontNotoSansHebrew.variable
-)
+export const fontVariables = fontMono.variable

@@ -29,32 +29,21 @@ const translations: Translations = {
       compactDescription: "Minimal spacing for dense layouts.",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      default: "افتراضي",
-      defaultDescription: "تباعد قياسي لمعظم حالات الاستخدام.",
-      comfortable: "مريح",
-      comfortableDescription: "مساحة أكبر بين العناصر.",
-      compact: "مضغوط",
-      compactDescription: "تباعد أدنى للتخطيطات الكثيفة.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      default: "ברירת מחדל",
-      defaultDescription: "ריווח סטנדרטי לרוב מקרי השימוש.",
-      comfortable: "נוח",
-      comfortableDescription: "יותר מקום בין האלמנטים.",
-      compact: "קומפקטי",
-      compactDescription: "ריווח מינימלי לפריסות צפופות.",
+      default: "기본",
+      defaultDescription: "대부분의 경우에 알맞은 기본 간격입니다.",
+      comfortable: "여유",
+      comfortableDescription: "요소 사이를 더 넓게 띄웁니다.",
+      compact: "촘촘",
+      compactDescription: "빽빽한 화면을 위한 최소 간격입니다.",
     },
   },
 }
 
 export function RadioGroupRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <RadioGroup defaultValue="comfortable" className="w-fit" dir={dir}>

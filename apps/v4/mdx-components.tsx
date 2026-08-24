@@ -4,6 +4,7 @@ import Link from "next/link"
 
 import { source } from "@/lib/source"
 import { cn } from "@/lib/utils"
+import { BrandAsset, BrandAssetGrid } from "@/components/brand-asset"
 import { Callout } from "@/components/callout"
 import { CodeBlockCommand } from "@/components/code-block-command"
 import { CodeCollapsibleWrapper } from "@/components/code-collapsible-wrapper"
@@ -13,6 +14,7 @@ import { ComponentSource } from "@/components/component-source"
 import { ComponentsList } from "@/components/components-list"
 import { CopyButton } from "@/components/copy-button"
 import { DirectoryList } from "@/components/directory-list"
+import { DropshotIcon, DropshotIconGrid } from "@/components/dropshot-icon-grid"
 import { getIconForLanguageExtension } from "@/components/icons"
 import {
   Accordion,
@@ -348,7 +350,11 @@ export const mdxComponents = {
   ComponentSource,
   CodeCollapsibleWrapper,
   ComponentsList: ComponentsListWrapper,
+  BrandAsset,
+  BrandAssetGrid,
   DirectoryList,
+  DropshotIcon,
+  DropshotIconGrid,
   Link,
   LinkedCard: ({ className, ...props }: React.ComponentProps<typeof Link>) => (
     <Link

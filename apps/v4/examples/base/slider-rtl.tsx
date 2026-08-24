@@ -13,18 +13,14 @@ const translations: Translations = {
     dir: "ltr",
     values: {},
   },
-  ar: {
-    dir: "rtl",
-    values: {},
-  },
-  he: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {},
   },
 }
 
 export function SliderRtl() {
-  const { dir } = useTranslation(translations, "ar")
+  const { dir } = useTranslation(translations, "ko")
 
   return (
     <Slider

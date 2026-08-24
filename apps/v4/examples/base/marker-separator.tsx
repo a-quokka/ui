@@ -4,13 +4,13 @@ export function MarkerSeparatorDemo() {
   return (
     <div className="flex w-full max-w-sm flex-col gap-8 py-12">
       <Marker variant="separator">
-        <MarkerContent>Today</MarkerContent>
+        <MarkerContent>오늘</MarkerContent>
       </Marker>
       <Marker variant="separator">
-        <MarkerContent>Worked for 42s</MarkerContent>
+        <MarkerContent>42초 동안 작업했습니다</MarkerContent>
       </Marker>
       <Marker variant="separator">
-        <MarkerContent>Conversation compacted</MarkerContent>
+        <MarkerContent>대화를 정리했습니다</MarkerContent>
       </Marker>
     </div>
   )

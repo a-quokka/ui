@@ -1,31 +1,31 @@
 ---
-title: Getting Started
-description: Learn how to get setup and run your own component registry.
+title: 시작하기
+description: 직접 컴포넌트 레지스트리를 만들고 운영하는 방법입니다.
 ---
 
-This guide will walk you through the process of setting up your own registry. It assumes you already have a project with components, hooks, utilities or other files you would like to distribute.
+직접 레지스트리를 만드는 과정을 살펴봅니다. 나누고 싶은 컴포넌트·훅·유틸리티 같은 파일이 이미 있는 프로젝트를 전제로 합니다.
 
-**If you have an existing public GitHub repository, you can turn it into a
-registry by adding a `registry.json` file at the root.** See
-[GitHub Registries](/docs/registry/github) for details.
+**공개 GitHub 저장소가 이미 있다면 루트에 `registry.json` 을 두는 것만으로
+레지스트리가 됩니다.** 자세한 내용은 [GitHub 레지스트리](/docs/registry/github)를
+보세요.
 
-If you're starting a new registry project, you can use the [registry template](https://github.com/shadcn-ui/registry-template) as a starting point. We have already configured it for you.
+새로 시작한다면 [레지스트리 템플릿](https://github.com/shadcn-ui/registry-template)에서 출발하면 됩니다. 설정은 이미 돼 있습니다.
 
 ## Requirements
 
-You are free to design and publish your custom registry as you see fit. The only requirement is that your registry catalog and registry items must conform to the [registry schema specification](/docs/registry/registry-json) and [registry-item schema specification](/docs/registry/registry-item-json).
+레지스트리는 원하는 대로 설계하고 배포하면 됩니다. 지켜야 할 것은 하나, 카탈로그와 항목이 [registry 스키마 규격](/docs/registry/registry-json)과 [registry-item 스키마 규격](/docs/registry/registry-item-json)을 따라야 한다는 것뿐입니다.
 
-Your registry can be a Next.js, Vite, Vue, Svelte, PHP or any other framework as long as it supports serving JSON over HTTP. It can also be a public GitHub repository with a `registry.json` file at the root.
+HTTP 로 JSON 을 내보낼 수만 있다면 Next.js·Vite·Vue·Svelte·PHP 등 무엇으로 만들어도 됩니다. 루트에 `registry.json` 을 둔 공개 GitHub 저장소여도 됩니다.
 
-If you'd like to see an example of a registry, we have a [template project](https://github.com/shadcn-ui/registry-template) for you to use as a starting point.
+예시가 필요하다면 [템플릿 프로젝트](https://github.com/shadcn-ui/registry-template)에서 시작할 수 있습니다.
 
 ## registry.json
 
-The `registry.json` is the entry point for the registry. It contains the registry's name, homepage, and defines all the items present in the registry.
+`registry.json` 은 레지스트리의 입구입니다. 이름과 홈페이지가 들어 있고 레지스트리에 있는 항목을 모두 정의합니다.
 
-Your registry must have this file (or JSON payload) present at the root of the registry endpoint. The registry endpoint is the URL where your registry is hosted.
+이 파일(또는 JSON 응답)이 레지스트리 엔드포인트 루트에 있어야 합니다. 엔드포인트는 레지스트리를 올려 둔 주소입니다.
 
-Here's an example `registry.json` file:
+`registry.json` 예시입니다.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -51,14 +51,14 @@ Here's an example `registry.json` file:
 
 ## Structure your registry
 
-You can structure your source registry in one of two ways:
+원본 레지스트리는 두 가지 방식으로 짤 수 있습니다.
 
-- Define all items in a single root `registry.json`.
-- Use a root `registry.json` with `include` to compose multiple `registry.json` files.
+- 루트 `registry.json` 하나에 모든 항목을 정의합니다.
+- 루트 `registry.json` 에서 `include` 로 여러 `registry.json` 을 엮습니다.
 
 ### Option A: Single registry.json
 
-Create a `registry.json` file in the root of your project. Add all your registry items to the `items` array. This is the simplest way to define a registry.
+프로젝트 루트에 `registry.json` 을 만들고 `items` 배열에 항목을 모두 넣습니다. 가장 단순한 방법입니다.
 
 ```json title="registry.json" showLineNumbers
 {
@@ -95,12 +95,12 @@ Create a `registry.json` file in the root of your project. Add all your registry
 }
 ```
 
-This `registry.json` file must conform to the [registry schema specification](/docs/registry/registry-json).
+이 `registry.json` 은 [registry 스키마 규격](/docs/registry/registry-json)을 따라야 합니다.
 
 ### Option B: Using include
 
-For larger registries, you can use `include` to compose your source registry
-from multiple `registry.json` files.
+레지스트리가 크다면 `include` 로 여러 `registry.json` 을 엮어 구성할 수
+있습니다.
 
 ```txt
 registry.json
@@ -115,8 +115,8 @@ hooks
 └── use-toggle.ts
 ```
 
-The root `registry.json` defines the registry metadata and includes the nested
-registry files.
+루트 `registry.json` 이 레지스트리 메타데이터를 정의하고 하위 레지스트리
+파일들을 포함합니다.
 
 {/* prettier-ignore */}
 ```json title="registry.json" showLineNumbers
@@ -131,9 +131,8 @@ registry files.
 }
 ```
 
-Included `registry.json` files are valid registry files for composition and may
-omit `name` and `homepage`. Only the root `registry.json` must define the
-registry metadata.
+포함되는 `registry.json` 은 조합용이라 `name` 과 `homepage` 를 생략해도 됩니다.
+메타데이터는 루트 `registry.json` 만 정의하면 됩니다.
 
 ```json title="components/ui/registry.json" showLineNumbers
 {
@@ -191,14 +190,13 @@ registry metadata.
 }
 ```
 
-When using `include`, file paths are relative to the `registry.json` file that
-declares the item.
+`include` 를 쓸 때 파일 경로는 그 항목을 선언한 `registry.json` 기준입니다.
 
 ## Add an item
 
 ### Create a UI component
 
-Add your first item. Here's an example of a simple `<Button />` component:
+첫 항목을 넣습니다. 간단한 `<Button />` 컴포넌트 예시입니다.
 
 ```tsx title="components/ui/button.tsx" showLineNumbers
 import * as React from "react"
@@ -214,9 +212,8 @@ export function Button(props: React.ComponentProps<"button">) {
 ```
 
 <Callout className="mt-6">
-  **Note:** This example places the component in the `components/ui` directory.
-  You can place it anywhere in your project as long as you set the correct path
-  in the `registry.json` file.
+  **참고:** 이 예시는 컴포넌트를 `components/ui` 에 둡니다. `registry.json` 에
+  경로만 맞게 적으면 프로젝트 어디에 둬도 됩니다.
 </Callout>
 
 ```txt
@@ -227,10 +224,9 @@ components
 
 ### Add the item to the registry
 
-To add your component to the registry, add an item definition to `registry.json`.
-If you are using `include`, add the item to the included `registry.json` file
-that owns the component. For example, add a UI component to
-`components/ui/registry.json`.
+컴포넌트를 레지스트리에 넣으려면 `registry.json` 에 항목 정의를 추가합니다.
+`include` 를 쓴다면 그 컴포넌트를 가진 쪽 `registry.json` 에 넣으세요. 예를 들어
+UI 컴포넌트는 `components/ui/registry.json` 에 넣습니다.
 
 ```json title="registry.json" showLineNumbers {6-17}
 {
@@ -254,55 +250,55 @@ that owns the component. For example, add a UI component to
 }
 ```
 
-You define your registry item by adding a `name`, `type`, `title`, `description` and `files`.
+항목은 `name`·`type`·`title`·`description`·`files` 로 정의합니다.
 
-For every file you add, you must specify the `path` and `type` of the file. In a single-file registry, the `path` is relative to the root of your project. When using `include`, the `path` is relative to the `registry.json` file that declares the item. The `type` is the type of the file.
+파일마다 `path` 와 `type` 을 지정해야 합니다. 파일 하나짜리 레지스트리에서는 `path` 가 프로젝트 루트 기준이고, `include` 를 쓸 때는 그 항목을 선언한 `registry.json` 기준입니다. `type` 은 파일의 종류입니다.
 
-You can read more about the registry item schema and file types in the [registry item schema docs](/docs/registry/registry-item-json).
+항목 스키마와 파일 종류는 [registry item 스키마 문서](/docs/registry/registry-item-json)에서 더 볼 수 있습니다.
 
 ## Serve your registry
 
-You can serve your registry as static JSON files or from dynamic route handlers.
+레지스트리는 정적 JSON 파일로 내보내도 되고 동적 라우트 핸들러로 내보내도 됩니다.
 
 ### Option A: Static JSON files
 
-Run the build command to generate static registry JSON files.
+build 명령으로 정적 레지스트리 JSON 파일을 만듭니다.
 
 ```bash
 npx shadcn@latest build
 ```
 
-If your source registry uses `include`, `shadcn build` resolves the included
-registries and writes a flattened registry to your output directory. The
-generated `registry.json` does not contain `include`.
+원본 레지스트리가 `include` 를 쓰면 `shadcn build` 가 포함된 레지스트리를 풀어
+평평하게 만든 결과를 출력 디렉터리에 씁니다. 생성된 `registry.json` 에는
+`include` 가 없습니다.
 
 <Callout className="mt-6">
-  **Note:** By default, the build command will generate the registry JSON files
-  in `public/r` e.g `public/r/button.json`. You can change the output directory by passing the `--output` option. See the [shadcn build command](/docs/cli#build) for more information.
+  **참고:** build 명령은 기본으로 `public/r` 에 JSON 파일을 만듭니다(예:
+  `public/r/button.json`). `--output` 옵션으로 위치를 바꿀 수 있습니다. 자세한 내용은 [shadcn build 명령](/docs/cli#build)을 보세요.
 
 </Callout>
 
-If you're running your registry on Next.js, you can serve these files by running
-the `next` server. The command might differ for other frameworks.
+Next.js 로 레지스트리를 운영한다면 `next` 서버를 띄워 파일을 내보내면 됩니다.
+다른 프레임워크는 명령이 다를 수 있습니다.
 
 ```bash
 npm run dev
 ```
 
-Your files will now be served at `http://localhost:3000/r/[NAME].json` eg. `http://localhost:3000/r/button.json`.
+이제 파일이 `http://localhost:3000/r/[NAME].json` 에서 열립니다(예: `http://localhost:3000/r/button.json`).
 
 ### Option B: Dynamic route handlers
 
-If you want to serve registry JSON from your source `registry.json` at request
-time, use the producer-side loader APIs from `shadcn/registry`.
+요청이 올 때 원본 `registry.json` 에서 바로 JSON 을 만들어 내보내고 싶다면
+`shadcn/registry` 의 로더 API 를 쓰세요.
 
-Install `shadcn` as a runtime dependency:
+`shadcn` 을 런타임 의존성으로 설치합니다.
 
 ```bash
 npm install shadcn
 ```
 
-Use `loadRegistry` to serve the registry catalog.
+카탈로그는 `loadRegistry` 로 내보냅니다.
 
 ```ts title="app/r/registry.json/route.ts" showLineNumbers
 import { loadRegistry } from "shadcn/registry"
@@ -320,7 +316,7 @@ export async function GET() {
 }
 ```
 
-Use `loadRegistryItem` to serve individual registry items.
+개별 항목은 `loadRegistryItem` 으로 내보냅니다.
 
 ```ts title="app/r/[name].json/route.ts" showLineNumbers
 import { loadRegistryItem, RegistryItemNotFoundError } from "shadcn/registry"
@@ -357,49 +353,47 @@ export async function GET(
 }
 ```
 
-Both loaders resolve `include` before returning JSON, so route handlers can use
-the same source `registry.json` structure without running `shadcn build`.
+두 로더 모두 JSON 을 돌려주기 전에 `include` 를 풀어 줍니다. 그래서 라우트
+핸들러는 `shadcn build` 없이도 같은 원본 구조를 그대로 쓸 수 있습니다.
 
 <Accordion type="single" collapsible>
   <AccordionItem value="content-negotiation">
-    <AccordionTrigger>Content negotiation</AccordionTrigger>
+    <AccordionTrigger>콘텐츠 협상</AccordionTrigger>
     <AccordionContent>
 
-The `shadcn` CLI supports **HTTP Content Negotiation**. This allows you to host your registry at any endpoint — including the root of your domain — and serve different content depending on who is asking.
+`shadcn` CLI 는 **HTTP 콘텐츠 협상**을 지원합니다. 그래서 도메인 루트를 포함해 어떤 주소에 레지스트리를 두고도, 누가 요청했는지에 따라 다른 내용을 내보낼 수 있습니다.
 
-From a single URL, you can serve:
+주소 하나로 이런 것들을 내보낼 수 있습니다.
 
 <ul>
   <li>
-    <strong>HTML</strong> to browsers — a landing page, documentation, or
-    marketing site.
+    브라우저에는 <strong>HTML</strong> — 소개 페이지·문서·마케팅 사이트.
   </li>
   <li>
-    <strong>JSON</strong> to the <code>shadcn</code> CLI — an installable
-    registry item.
+    <code>shadcn</code> CLI 에는 <strong>JSON</strong> — 설치할 수 있는
+    레지스트리 항목.
   </li>
   <li>
-    <strong>Markdown</strong> to AI agents and LLMs — a machine-readable version
-    of your content.
+    AI 에이전트와 LLM 에는 <strong>Markdown</strong> — 기계가 읽을 수 있는 형태.
   </li>
 </ul>
 
-The client signals its preference using the `Accept` request header, and your server decides what to return.
+클라이언트가 `Accept` 요청 헤더로 원하는 것을 알리면 서버가 무엇을 돌려줄지 정합니다.
 
-#### Request headers
+**요청 헤더**
 
-When the CLI makes a request to a registry, it sends the following headers:
+CLI 는 레지스트리에 요청할 때 아래 헤더를 보냅니다.
 
 - **User-Agent**: `shadcn`
 - **Accept**: `application/vnd.shadcn.v1+json, application/json;q=0.9`
 
-#### Root hosting
+**루트에 두기**
 
-By checking these headers on your server, you can route CLI traffic to an installable registry item while keeping browser traffic flowing to your documentation or homepage.
+서버에서 이 헤더를 확인하면 CLI 요청은 설치 가능한 레지스트리 항목으로, 브라우저 요청은 문서나 홈페이지로 보낼 수 있습니다.
 
-The examples below assume your built registry item is served at `/r/index.json`. Adjust the path to match your output.
+아래 예시는 빌드된 항목이 `/r/index.json` 에 있다고 가정합니다. 실제 출력 위치에 맞게 고치세요.
 
-In Next.js, express this as a rewrite in `next.config.ts`. This keeps the negotiation in the routing layer and avoids a Proxy function for this static rewrite:
+Next.js 라면 `next.config.ts` 의 rewrite 로 표현합니다. 협상을 라우팅 계층에 두어 이 정적 rewrite 에 Proxy 함수를 쓰지 않아도 됩니다.
 
 ```typescript title="next.config.ts" showLineNumbers
 import type { NextConfig } from "next"
@@ -446,7 +440,7 @@ const nextConfig: NextConfig = {
 export default nextConfig
 ```
 
-Or, in an Express.js server:
+Express.js 서버라면 이렇습니다.
 
 ```javascript title="server.js" showLineNumbers
 app.get("/", (req, res) => {
@@ -468,20 +462,20 @@ app.get("/", (req, res) => {
 })
 ```
 
-This enables:
+이렇게 하면 다음이 가능해집니다.
 
 <ul>
   <li>
-    <strong>Branded Registry URLs</strong>:{" "}
+    <strong>브랜드가 드러나는 주소</strong>:{" "}
     <code>shadcn add https://ui.example.com</code>
   </li>
   <li>
-    <strong>Shorter URLs</strong>: Users type your domain root, not{" "}
-    <code>/r/</code> or <code>/registry/</code> sub-paths.
+    <strong>짧은 주소</strong>: <code>/r/</code> 나 <code>/registry/</code> 같은
+    하위 경로 없이 도메인 루트만 적으면 됩니다.
   </li>
   <li>
-    <strong>Easy Mnemonics</strong>: Easier for users to remember and share your
-    registry.
+    <strong>기억하기 쉬움</strong>: 사용자가 레지스트리를 외우고 나누기
+    쉬워집니다.
   </li>
 </ul>
 
@@ -493,18 +487,17 @@ This enables:
 
 ## Test your registry
 
-After your registry is being served, test it with the same CLI commands that
-other developers will use.
+레지스트리를 내보내기 시작했다면, 다른 개발자가 쓸 CLI 명령 그대로
+확인해 보세요.
 
 ### Using URL
 
-Use the catalog URL for commands that discover items, like `list` and `search`.
-Use item URLs for commands that read or install a specific item, like `view` and
-`add`.
+`list`·`search` 처럼 항목을 찾는 명령에는 카탈로그 주소를, `view`·`add` 처럼
+특정 항목을 읽거나 설치하는 명령에는 항목 주소를 쓰세요.
 
 #### List items
 
-Start by confirming that the registry catalog can be discovered.
+먼저 카탈로그가 발견되는지 확인합니다.
 
 ```bash
 npx shadcn@latest list http://localhost:3000/r/registry.json
@@ -512,7 +505,7 @@ npx shadcn@latest list http://localhost:3000/r/registry.json
 
 #### Search items
 
-Search the registry by query.
+검색어로 레지스트리를 찾습니다.
 
 ```bash
 npx shadcn@latest search http://localhost:3000/r/registry.json --query button
@@ -520,7 +513,7 @@ npx shadcn@latest search http://localhost:3000/r/registry.json --query button
 
 #### View an item
 
-Then view one registry item by name.
+그다음 이름으로 항목 하나를 봅니다.
 
 ```bash
 npx shadcn@latest view http://localhost:3000/r/button.json
@@ -528,8 +521,7 @@ npx shadcn@latest view http://localhost:3000/r/button.json
 
 #### Add an item
 
-To test the install flow, run `add` from a project where you want to install the
-item.
+설치 흐름을 확인하려면 항목을 설치할 프로젝트에서 `add` 를 돌려 보세요.
 
 ```bash
 npx shadcn@latest add http://localhost:3000/r/button.json
@@ -539,20 +531,20 @@ npx shadcn@latest add http://localhost:3000/r/button.json
 
 #### Add the registry
 
-You can also test your registry with a namespace. From a project with a
-`components.json` file, add your registry URL template to the project.
+네임스페이스로도 확인할 수 있습니다. `components.json` 이 있는 프로젝트에
+레지스트리 주소 템플릿을 추가하세요.
 
 ```bash
 npx shadcn@latest registry add @acme=http://localhost:3000/r/{name}.json
 ```
 
-The `{name}` placeholder must resolve to an item JSON file. For example,
-`@acme/button` resolves to `http://localhost:3000/r/button.json`. The catalog is
-still served separately at `http://localhost:3000/r/registry.json`.
+`{name}` 자리표시자는 항목 JSON 파일로 풀려야 합니다. 예를 들어 `@acme/button`
+은 `http://localhost:3000/r/button.json` 이 됩니다. 카탈로그는 여전히
+`http://localhost:3000/r/registry.json` 에서 따로 내보냅니다.
 
 #### List items
 
-Then list the items in your registry.
+그다음 레지스트리의 항목을 나열합니다.
 
 ```bash
 npx shadcn@latest list @acme
@@ -560,7 +552,7 @@ npx shadcn@latest list @acme
 
 #### Search items
 
-Search the registry by query.
+검색어로 레지스트리를 찾습니다.
 
 ```bash
 npx shadcn@latest search @acme --query button
@@ -568,7 +560,7 @@ npx shadcn@latest search @acme --query button
 
 #### View an item
 
-View one registry item by name.
+이름으로 항목 하나를 봅니다.
 
 ```bash
 npx shadcn@latest view @acme/button
@@ -576,41 +568,38 @@ npx shadcn@latest view @acme/button
 
 #### Add an item
 
-To test the install flow, run `add` from a project where you want to install the
-item.
+설치 흐름을 확인하려면 항목을 설치할 프로젝트에서 `add` 를 돌려 보세요.
 
 ```bash
 npx shadcn@latest add @acme/button
 ```
 
-See the [Namespaced Registries](/docs/registry/namespace) docs for more
-information.
+자세한 내용은 [네임스페이스 레지스트리](/docs/registry/namespace) 문서를
+보세요.
 
 ## Publish your registry
 
-To make your registry available to other developers, publish your project to a
-public URL. Once deployed, users can install items directly from item URLs, or
-they can add your registry as a namespace in their project.
+다른 개발자가 쓰게 하려면 프로젝트를 공개 주소에 올리세요. 배포하고 나면
+사용자는 항목 주소로 바로 설치하거나, 자기 프로젝트에 네임스페이스로 등록해
+쓸 수 있습니다.
 
 ### Share namespace setup instructions
 
-If you want users to install items with a namespace like `@acme/button`, tell
-them to add your registry URL template to their project. The `{name}`
-placeholder is replaced by the item name when the CLI resolves the registry
-item.
+`@acme/button` 같은 네임스페이스로 설치하게 하려면, 사용자에게 레지스트리 주소
+템플릿을 프로젝트에 추가하라고 알려 주세요. CLI 가 항목을 풀 때 `{name}` 자리에
+항목 이름이 들어갑니다.
 
-The template must resolve to item JSON files. For example, `@acme/button`
-resolves to `https://acme.com/r/button.json`. Your registry catalog should still
-be served separately at `https://acme.com/r/registry.json`.
+템플릿은 항목 JSON 파일로 풀려야 합니다. 예를 들어 `@acme/button` 은
+`https://acme.com/r/button.json` 이 됩니다. 카탈로그는 여전히
+`https://acme.com/r/registry.json` 에서 따로 내보내야 합니다.
 
-They can add the namespace with the CLI.
+네임스페이스는 CLI 로 추가할 수 있습니다.
 
 ```bash
 npx shadcn@latest registry add @acme=https://acme.com/r/{name}.json
 ```
 
-Or they can add it manually under the `registries` field in their
-`components.json` file.
+또는 `components.json` 의 `registries` 필드에 직접 적어도 됩니다.
 
 ```json title="components.json" showLineNumbers
 {
@@ -620,7 +609,7 @@ Or they can add it manually under the `registries` field in their
 }
 ```
 
-Users can then consume items from your registry by namespace.
+그러면 사용자는 네임스페이스로 레지스트리 항목을 가져다 쓸 수 있습니다.
 
 ```bash
 npx shadcn@latest add @acme/button
@@ -628,21 +617,20 @@ npx shadcn@latest add @acme/button
 
 ### Add your namespace to the registry index
 
-If your registry is open source and publicly available, you can submit your
-namespace to the official registry index. This lets users add your namespace by
-name instead of pasting the full URL template.
+레지스트리가 오픈소스이고 공개돼 있다면 공식 레지스트리 색인에 네임스페이스를
+등록할 수 있습니다. 그러면 사용자가 전체 주소 템플릿을 붙여 넣지 않고 이름만으로
+추가할 수 있습니다.
 
-See the [Registry Index](/docs/registry/registry-index) docs for the submission
-requirements.
+등록 요건은 [레지스트리 색인](/docs/registry/registry-index) 문서를 보세요.
 
 ## Guidelines
 
-Here are some guidelines to follow when building components for a registry.
+레지스트리에 올릴 컴포넌트를 만들 때 지킬 것들입니다.
 
-- Place your registry item in the `registry/[STYLE]/[NAME]` directory. I'm using `default` as an example. It can be anything you want as long as it's nested under the `registry` directory.
-- For blocks, the following properties are required: `name`, `description`, `type` and `files`.
-- It is recommended to add a proper name and description to your registry item. This helps LLMs understand the component and its purpose.
-- Make sure to list all registry dependencies in `registryDependencies`. A registry dependency is an item address such as `button`, `@acme/input-form`, `acme/ui/button` or `http://localhost:3000/r/editor.json`.
-- Make sure to list all dependencies in `dependencies`. A dependency is the name of the package in the registry eg. `zod`, `sonner`, etc. To set a version, you can use the `name@version` format eg. `zod@^3.20.0`.
-- **Imports should always use the `@/registry` path.** eg. `import { HelloWorld } from "@/registry/default/hello-world/hello-world"`
-- Ideally, place your files within a registry item in `components`, `hooks`, `lib` directories.
+- 항목은 `registry/[STYLE]/[NAME]` 에 두세요. 예시로 `default` 를 썼을 뿐이고, `registry` 아래에만 있으면 이름은 무엇이든 됩니다.
+- 블록에는 `name`·`description`·`type`·`files` 가 반드시 있어야 합니다.
+- 항목에 제대로 된 이름과 설명을 붙이는 편이 좋습니다. LLM 이 그 컴포넌트가 무엇이고 무엇에 쓰이는지 이해하는 데 도움이 됩니다.
+- 레지스트리 의존성은 `registryDependencies` 에 빠짐없이 적으세요. 레지스트리 의존성은 `button`·`@acme/input-form`·`acme/ui/button`·`http://localhost:3000/r/editor.json` 같은 항목 주소입니다.
+- 패키지 의존성은 `dependencies` 에 빠짐없이 적으세요. `zod`·`sonner` 처럼 레지스트리에 있는 패키지 이름입니다. 버전을 지정하려면 `zod@^3.20.0` 처럼 `name@version` 형식을 쓰면 됩니다.
+- **import 는 항상 `@/registry` 경로를 쓰세요.** 예: `import { HelloWorld } from "@/registry/default/hello-world/hello-world"`
+- 항목 안의 파일은 되도록 `components`·`hooks`·`lib` 디렉터리에 나눠 두세요.

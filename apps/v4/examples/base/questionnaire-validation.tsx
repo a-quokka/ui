@@ -41,7 +41,7 @@ const questionnaireSchema = z
       context.addIssue({
         code: z.ZodIssueCode.custom,
         message:
-          "Public answers need enough context. Choose a complete answer.",
+          "공개 답변에는 맥락이 충분해야 합니다. 완전한 답변을 고르세요.",
         path: ["detail"],
       })
     }
@@ -129,10 +129,10 @@ export function QuestionnaireValidation() {
         >
           <CardHeader>
             <QuestionnaireTitle>
-              How much detail should the answer include?
+              답변을 얼마나 자세히 쓸까요?
             </QuestionnaireTitle>
             <QuestionnaireDescription>
-              Choose the response depth.
+              답변의 깊이를 고르세요.
             </QuestionnaireDescription>
             <CardAction>
               <ValidationProgress />
@@ -144,13 +144,13 @@ export function QuestionnaireValidation() {
                 value="summary"
                 onChange={() => clearError("detail")}
               >
-                Concise summary
+                간결한 요약
               </QuestionnaireChoice>
               <QuestionnaireChoice
                 value="complete"
                 onChange={() => clearError("detail")}
               >
-                Complete answer
+                완전한 답변
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError>{errors.detail}</QuestionnaireError>
@@ -163,9 +163,9 @@ export function QuestionnaireValidation() {
           required
         >
           <CardHeader>
-            <QuestionnaireTitle>Who will read the answer?</QuestionnaireTitle>
+            <QuestionnaireTitle>이 답변을 누가 읽나요?</QuestionnaireTitle>
             <QuestionnaireDescription>
-              Public answers require complete context.
+              공개 답변에는 맥락이 온전히 담겨야 합니다.
             </QuestionnaireDescription>
             <CardAction>
               <ValidationProgress />
@@ -177,13 +177,13 @@ export function QuestionnaireValidation() {
                 value="team"
                 onChange={() => clearError("audience")}
               >
-                My team
+                우리 팀
               </QuestionnaireChoice>
               <QuestionnaireChoice
                 value="public"
                 onChange={() => clearError("audience")}
               >
-                Public audience
+                공개
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError>{errors.audience}</QuestionnaireError>
@@ -193,8 +193,8 @@ export function QuestionnaireValidation() {
         <CardFooter>
           <QuestionnaireActions>
             <QuestionnairePrevious />
-            <QuestionnaireNext>Next</QuestionnaireNext>
-            <QuestionnaireSubmit>Validate answers</QuestionnaireSubmit>
+            <QuestionnaireNext>다음</QuestionnaireNext>
+            <QuestionnaireSubmit>답변 검증</QuestionnaireSubmit>
           </QuestionnaireActions>
         </CardFooter>
       </Card>

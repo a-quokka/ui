@@ -52,14 +52,14 @@ export default function FieldDemo() {
       <form>
         <FieldGroup>
           <FieldSet>
-            <FieldLegend>Payment Method</FieldLegend>
+            <FieldLegend>결제 수단</FieldLegend>
             <FieldDescription>
-              All transactions are secure and encrypted
+              모든 거래는 암호화돼 안전하게 처리됩니다
             </FieldDescription>
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="checkout-7j9-card-name-43j">
-                  Name on Card
+                  카드 소유자 이름
                 </FieldLabel>
                 <Input
                   id="checkout-7j9-card-name-43j"
@@ -69,7 +69,7 @@ export default function FieldDemo() {
               </Field>
               <Field>
                 <FieldLabel htmlFor="checkout-7j9-card-number-uw1">
-                  Card Number
+                  카드 번호
                 </FieldLabel>
                 <Input
                   id="checkout-7j9-card-number-uw1"
@@ -77,14 +77,12 @@ export default function FieldDemo() {
                   required
                 />
                 <FieldDescription>
-                  Enter your 16-digit card number
+                  16자리 카드 번호를 입력하세요
                 </FieldDescription>
               </Field>
               <div className="grid grid-cols-3 gap-4">
                 <Field>
-                  <FieldLabel htmlFor="checkout-exp-month-ts6">
-                    Month
-                  </FieldLabel>
+                  <FieldLabel htmlFor="checkout-exp-month-ts6">월</FieldLabel>
                   <Select items={months}>
                     <SelectTrigger id="checkout-exp-month-ts6">
                       <SelectValue />
@@ -102,7 +100,7 @@ export default function FieldDemo() {
                 </Field>
                 <Field>
                   <FieldLabel htmlFor="checkout-7j9-exp-year-f59">
-                    Year
+                    연도
                   </FieldLabel>
                   <Select items={years}>
                     <SelectTrigger id="checkout-7j9-exp-year-f59">
@@ -128,9 +126,9 @@ export default function FieldDemo() {
           </FieldSet>
           <FieldSeparator />
           <FieldSet>
-            <FieldLegend>Billing Address</FieldLegend>
+            <FieldLegend>청구지 주소</FieldLegend>
             <FieldDescription>
-              The billing address associated with your payment method
+              결제 수단에 등록된 청구지 주소입니다
             </FieldDescription>
             <FieldGroup>
               <Field orientation="horizontal">
@@ -142,7 +140,7 @@ export default function FieldDemo() {
                   htmlFor="checkout-7j9-same-as-shipping-wgm"
                   className="font-normal"
                 >
-                  Same as shipping address
+                  배송지와 같음
                 </FieldLabel>
               </Field>
             </FieldGroup>
@@ -151,20 +149,20 @@ export default function FieldDemo() {
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="checkout-7j9-optional-comments">
-                  Comments
+                  메모
                 </FieldLabel>
                 <Textarea
                   id="checkout-7j9-optional-comments"
-                  placeholder="Add any additional comments"
+                  placeholder="남길 말이 있으면 적어 주세요"
                   className="resize-none"
                 />
               </Field>
             </FieldGroup>
           </FieldSet>
           <Field orientation="horizontal">
-            <Button type="submit">Submit</Button>
+            <Button type="submit">제출</Button>
             <Button variant="outline" type="button">
-              Cancel
+              취소
             </Button>
           </Field>
         </FieldGroup>

@@ -9,12 +9,12 @@ import {
 } from "@/styles/base-nova/ui/select"
 
 const items = [
-  { label: "Select a fruit", value: null },
-  { label: "Apple", value: "apple" },
-  { label: "Banana", value: "banana" },
-  { label: "Blueberry", value: "blueberry" },
-  { label: "Grapes", value: "grapes" },
-  { label: "Pineapple", value: "pineapple" },
+  { label: "과일 선택", value: null },
+  { label: "사과", value: "apple" },
+  { label: "바나나", value: "banana" },
+  { label: "블루베리", value: "blueberry" },
+  { label: "포도", value: "grapes" },
+  { label: "파인애플", value: "pineapple" },
 ]
 
 export function SelectDemo() {
@@ -25,7 +25,7 @@ export function SelectDemo() {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
+          <SelectLabel>과일</SelectLabel>
           {items.map((item) => (
             <SelectItem key={item.value} value={item.value}>
               {item.label}

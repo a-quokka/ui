@@ -9,7 +9,7 @@ import {
 export default function ButtonGroupSplit() {
   return (
     <ButtonGroup>
-      <Button variant="secondary">Button</Button>
+      <Button variant="secondary">버튼</Button>
       <ButtonGroupSeparator />
       <Button size="icon" variant="secondary">
         <IconPlus />

@@ -1,21 +1,21 @@
 ---
 title: shadcn
-description: Use the shadcn CLI to add components to your project.
+description: shadcn CLI 로 프로젝트에 컴포넌트를 추가합니다.
 ---
 
 import { TriangleAlertIcon } from "lucide-react"
 
 ## init
 
-Use the `init` command to initialize configuration and dependencies for an existing project, or create a new project with `--name`.
+`init` 명령으로 기존 프로젝트의 설정과 의존성을 잡거나, `--name` 을 주어 새 프로젝트를 만듭니다.
 
-The `init` command installs dependencies, adds the `cn` util and configures CSS variables for the project.
+`init` 은 의존성을 설치하고 `cn` 유틸을 넣고 프로젝트의 CSS 변수를 설정합니다.
 
 ```bash
 npx shadcn@latest init
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn init [options] [components...]
@@ -48,7 +48,7 @@ Options:
   -h, --help                 display help for command
 ```
 
-The `create` command is an alias for `init`:
+`create` 는 `init` 의 다른 이름입니다.
 
 ```bash
 npx shadcn@latest create
@@ -58,13 +58,13 @@ npx shadcn@latest create
 
 ## add
 
-Use the `add` command to add components and dependencies to your project.
+`add` 명령으로 컴포넌트와 의존성을 프로젝트에 추가합니다.
 
 ```bash
 npx shadcn@latest add [component]
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn add [options] [components...]
@@ -91,21 +91,21 @@ Options:
 
 ## apply
 
-Use the `apply` command to apply a preset to an existing project.
+`apply` 명령으로 기존 프로젝트에 프리셋을 적용합니다.
 
 ```bash
 npx shadcn@latest apply a2r6bw
 ```
 
-You can apply only the theme or fonts from a preset without reinstalling UI components:
+UI 컴포넌트를 다시 설치하지 않고 프리셋의 테마나 폰트만 적용할 수도 있습니다.
 
 ```bash
 npx shadcn@latest apply a2r6bw --only theme
 ```
 
-Supported values for `--only` are `theme` and `font`.
+`--only` 에는 `theme` 과 `font` 를 줄 수 있습니다.
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn apply [options] [preset]
@@ -128,7 +128,7 @@ Options:
 
 ## preset
 
-Use the `preset` command to inspect preset codes and resolve the preset for an existing project.
+`preset` 명령으로 프리셋 코드를 들여다보거나 기존 프로젝트의 프리셋을 알아냅니다.
 
 ```bash
 npx shadcn@latest preset decode a2r6bw
@@ -136,13 +136,13 @@ npx shadcn@latest preset decode a2r6bw
 
 ### preset decode
 
-Use `preset decode` to decode a preset code.
+`preset decode` 로 프리셋 코드를 풉니다.
 
 ```bash
 npx shadcn@latest preset decode a2r6bw
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn preset decode [options] <code>
@@ -159,19 +159,19 @@ Options:
 
 ### preset resolve
 
-Use `preset resolve` to resolve the preset from the current project.
+`preset resolve` 로 현재 프로젝트의 프리셋을 알아냅니다.
 
 ```bash
 npx shadcn@latest preset resolve
 ```
 
-The `preset info` command is an alias for `preset resolve`:
+`preset info` 는 `preset resolve` 의 다른 이름입니다.
 
 ```bash
 npx shadcn@latest preset info
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn preset resolve|info [options]
@@ -186,13 +186,13 @@ Options:
 
 ### preset url
 
-Use `preset url` to print the create URL for a preset code.
+`preset url` 로 프리셋 코드의 create 주소를 출력합니다.
 
 ```bash
 npx shadcn@latest preset url a2r6bw
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn preset url [options] <code>
@@ -208,13 +208,13 @@ Options:
 
 ### preset open
 
-Use `preset open` to open a preset code in the browser.
+`preset open` 으로 프리셋 코드를 브라우저에서 엽니다.
 
 ```bash
 npx shadcn@latest preset open a2r6bw
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn preset open [options] <code>
@@ -232,25 +232,25 @@ Options:
 
 ## view
 
-Use the `view` command to view items from the registry before installing them.
+`view` 명령으로 설치하기 전에 레지스트리 항목을 살펴봅니다.
 
 ```bash
 npx shadcn@latest view [item]
 ```
 
-You can view multiple items at once:
+여러 항목을 한 번에 볼 수 있습니다.
 
 ```bash
 npx shadcn@latest view button card dialog
 ```
 
-Or view items from namespaced registries:
+네임스페이스가 붙은 레지스트리의 항목도 볼 수 있습니다.
 
 ```bash
 npx shadcn@latest view @acme/auth @v0/dashboard
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn view [options] <items...>
@@ -269,31 +269,31 @@ Options:
 
 ## search
 
-Use the `search` command to search for items from registries.
+`search` 명령으로 레지스트리에서 항목을 찾습니다.
 
 ```bash
 npx shadcn@latest search [registry]
 ```
 
-You can search with a query:
+검색어를 줄 수 있습니다.
 
 ```bash
 npx shadcn@latest search @shadcn -q "button"
 ```
 
-Or search multiple registries at once:
+여러 레지스트리를 한 번에 찾을 수도 있습니다.
 
 ```bash
 npx shadcn@latest search @shadcn @v0 @acme
 ```
 
-The `list` command is an alias for `search`:
+`list` 는 `search` 의 다른 이름입니다.
 
 ```bash
 npx shadcn@latest list @acme
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn search|list [options] <registries...>
@@ -316,15 +316,15 @@ Options:
 
 ## build
 
-Use the `build` command to generate the registry JSON files.
+`build` 명령으로 레지스트리 JSON 파일을 만듭니다.
 
 ```bash
 npx shadcn@latest build
 ```
 
-This command reads the `registry.json` file and generates the registry JSON files in the `public/r` directory.
+이 명령은 `registry.json` 을 읽어 `public/r` 디렉터리에 레지스트리 JSON 파일을 만듭니다.
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn build [options] [registry]
@@ -340,7 +340,7 @@ Options:
   -h, --help           display help for command
 ```
 
-To customize the output directory, use the `--output` option.
+출력 위치를 바꾸려면 `--output` 옵션을 씁니다.
 
 ```bash
 npx shadcn@latest build --output ./public/registry
@@ -350,13 +350,13 @@ npx shadcn@latest build --output ./public/registry
 
 ## docs
 
-Use the `docs` command to fetch documentation and API references for components.
+`docs` 명령으로 컴포넌트의 문서와 API 레퍼런스를 가져옵니다.
 
 ```bash
 npx shadcn@latest docs [component]
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn docs [options] [component]
@@ -377,13 +377,13 @@ Options:
 
 ## info
 
-Use the `info` command to get information about your project.
+`info` 명령으로 프로젝트 정보를 확인합니다.
 
 ```bash
 npx shadcn@latest info
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn info [options]
@@ -400,22 +400,22 @@ Options:
 
 ## migrate
 
-Use the `migrate` command to run migrations on your project.
+`migrate` 명령으로 프로젝트에 마이그레이션을 돌립니다.
 
 ```bash
 npx shadcn@latest migrate [migration]
 ```
 
-**Available Migrations**
+**쓸 수 있는 마이그레이션**
 
-| Migration    | Description                                             |
-| ------------ | ------------------------------------------------------- |
-| `icons`      | Migrate your UI components to a different icon library. |
-| `base-color` | Migrate your theme to a different base color.           |
-| `radix`      | Migrate to radix-ui.                                    |
-| `rtl`        | Migrate your components to support RTL (right-to-left). |
+| Migration    | Description                                            |
+| ------------ | ------------------------------------------------------ |
+| `icons`      | UI 컴포넌트를 다른 아이콘 라이브러리로 옮깁니다.       |
+| `base-color` | 테마를 다른 기준 색으로 옮깁니다.                      |
+| `radix`      | radix-ui 로 옮깁니다.                                  |
+| `rtl`        | 컴포넌트가 RTL(오른쪽에서 왼쪽)을 지원하도록 옮깁니다. |
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn migrate [options] [migration] [path]
@@ -439,27 +439,27 @@ Options:
 
 ### migrate icons
 
-The `icons` migration moves your components from one icon library to another.
+`icons` 마이그레이션은 컴포넌트를 다른 아이콘 라이브러리로 옮깁니다.
 
 ```bash
 npx shadcn@latest migrate icons
 ```
 
-This will prompt you for the source and target libraries, rewrite icon imports and JSX usage in your `ui` directory, install the target library and update `iconLibrary` in your `components.json` so future `npx shadcn add` installs use the new library.
+출발 라이브러리와 목표 라이브러리를 물어본 뒤 `ui` 디렉터리의 아이콘 import 와 JSX 사용을 고치고, 목표 라이브러리를 설치하고, `components.json` 의 `iconLibrary` 를 갱신합니다. 그래야 이후 `npx shadcn add` 가 새 라이브러리를 씁니다.
 
-The following libraries are supported: `lucide`, `tabler`, `hugeicons`, `phosphor`, `remixicon` and `radix` (legacy).
+지원하는 라이브러리는 `lucide`·`tabler`·`hugeicons`·`phosphor`·`remixicon`·`radix`(레거시)입니다.
 
-**Non-interactive**
+**물어보지 않고 돌리기**
 
-Use `--from` and `--to` to skip the prompts:
+`--from` 과 `--to` 를 주면 묻지 않고 진행합니다.
 
 ```bash
 npx shadcn@latest migrate icons --from lucide --to phosphor --yes
 ```
 
-**Migrate specific files**
+**특정 파일만 옮기기**
 
-You can migrate specific files or use glob patterns. Scoped runs do not update `components.json`.
+특정 파일만 옮기거나 glob 패턴을 쓸 수 있습니다. 범위를 좁혀 돌리면 `components.json` 은 건드리지 않습니다.
 
 ```bash
 # Migrate a specific file.
@@ -469,51 +469,51 @@ npx shadcn@latest migrate icons src/components/ui/button.tsx --from lucide --to 
 npx shadcn@latest migrate icons "src/components/**" --from lucide --to tabler
 ```
 
-Icons without an equivalent in the target library are left untouched and reported at the end of the migration.
+목표 라이브러리에 대응이 없는 아이콘은 그대로 두고 마지막에 알려 줍니다.
 
 ---
 
 ### migrate base-color
 
-The `base-color` migration switches your theme from one base color to another.
+`base-color` 마이그레이션은 테마의 기준 색을 다른 색으로 바꿉니다.
 
 ```bash
 npx shadcn@latest migrate base-color
 ```
 
-This will prompt you for the source and target base colors, rewrite the theme CSS variables (the CSS file configured by `tailwind.css` in your `components.json`) and update `baseColor` so future `npx shadcn add` installs use the new base color.
+출발 색과 목표 색을 물어본 뒤 테마 CSS 변수(`components.json` 의 `tailwind.css` 가 가리키는 파일)를 고치고 `baseColor` 를 갱신합니다. 그래야 이후 `npx shadcn add` 가 새 기준 색을 씁니다.
 
-The following base colors are supported: `neutral`, `zinc`, `stone`, `mauve`, `olive`, `mist` and `taupe`.
+지원하는 기준 색은 `neutral`·`zinc`·`stone`·`mauve`·`olive`·`mist`·`taupe` 입니다.
 
-**Non-interactive**
+**물어보지 않고 돌리기**
 
-Use `--to` to migrate from the current `baseColor` in your `components.json`, or pass both `--from` and `--to` explicitly.
+`components.json` 의 현재 `baseColor` 에서 옮기려면 `--to` 만 주고, 아니면 `--from` 과 `--to` 를 모두 지정하세요.
 
 ```bash
 npx shadcn@latest migrate base-color --to zinc --yes
 ```
 
-Theme tokens that no longer match the source base color are left untouched and reported at the end of the migration.
+출발 기준 색과 더 이상 맞지 않는 테마 토큰은 그대로 두고 마지막에 알려 줍니다.
 
 ---
 
 ### migrate rtl
 
-The `rtl` migration transforms your components to support RTL (right-to-left) languages.
+`rtl` 마이그레이션은 컴포넌트가 RTL(오른쪽에서 왼쪽) 언어를 지원하도록 고칩니다.
 
 ```bash
 npx shadcn@latest migrate rtl
 ```
 
-This will:
+이때 이런 일이 일어납니다.
 
-1. Update `components.json` to set `rtl: true`
-2. Transform physical CSS properties to logical equivalents (e.g., `ml-4` → `ms-4`, `text-left` → `text-start`)
-3. Add `rtl:` variants where needed (e.g., `space-x-4` → `space-x-4 rtl:space-x-reverse`)
+1. `components.json` 에 `rtl: true` 를 설정합니다
+2. 방향이 박힌 CSS 속성을 논리 속성으로 바꿉니다(예: `ml-4` → `ms-4`, `text-left` → `text-start`)
+3. 필요한 곳에 `rtl:` variant 를 붙입니다(예: `space-x-4` → `space-x-4 rtl:space-x-reverse`)
 
-**Migrate specific files**
+**특정 파일만 옮기기**
 
-You can migrate specific files or use glob patterns:
+특정 파일만 옮기거나 glob 패턴을 쓸 수 있습니다.
 
 ```bash
 # Migrate a specific file
@@ -523,39 +523,39 @@ npx shadcn@latest migrate rtl src/components/ui/button.tsx
 npx shadcn@latest migrate rtl "src/components/ui/**"
 ```
 
-If no path is provided, the migration will transform all files in your `ui` directory (from `components.json`).
+경로를 주지 않으면 `components.json` 이 가리키는 `ui` 디렉터리의 모든 파일을 고칩니다.
 
 ---
 
 ### migrate radix
 
-The `radix` migration updates your imports from individual `@radix-ui/react-*` packages to the unified `radix-ui` package.
+`radix` 마이그레이션은 낱개 `@radix-ui/react-*` 패키지에서 통합된 `radix-ui` 패키지로 import 를 옮깁니다.
 
 ```bash
 npx shadcn@latest migrate radix
 ```
 
-This will:
+이때 이런 일이 일어납니다.
 
-1. Transform imports from `@radix-ui/react-*` to `radix-ui`
-2. Add the `radix-ui` package to your `package.json`
+1. `@radix-ui/react-*` import 를 `radix-ui` 로 바꿉니다
+2. `package.json` 에 `radix-ui` 패키지를 추가합니다
 
-**Before**
+**전**
 
 ```tsx
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import * as SelectPrimitive from "@radix-ui/react-select"
 ```
 
-**After**
+**후**
 
 ```tsx
 import { Dialog as DialogPrimitive, Select as SelectPrimitive } from "radix-ui"
 ```
 
-**Migrate specific files**
+**특정 파일만 옮기기**
 
-You can migrate specific files or use glob patterns:
+특정 파일만 옮기거나 glob 패턴을 쓸 수 있습니다.
 
 ```bash
 # Migrate a specific file.
@@ -565,28 +565,28 @@ npx shadcn@latest migrate radix src/components/ui/dialog.tsx
 npx shadcn@latest migrate radix "src/components/ui/**"
 ```
 
-If no path is provided, the migration will transform all files in your `ui` directory (from `components.json`).
+경로를 주지 않으면 `components.json` 이 가리키는 `ui` 디렉터리의 모든 파일을 고칩니다.
 
-Once complete, you can remove any unused `@radix-ui/react-*` packages from your `package.json`.
+끝나면 `package.json` 에서 쓰지 않는 `@radix-ui/react-*` 패키지를 지워도 됩니다.
 
 ---
 
 ## eject
 
-When you run `init`, shadcn adds `@import "shadcn/tailwind.css"` to your global CSS file. This import provides shared Tailwind v4 utilities such as custom variants (`data-open:`, `data-closed:`, etc.) and accordion animations.
+`init` 을 돌리면 shadcn 이 전역 CSS 파일에 `@import "shadcn/tailwind.css"` 를 넣습니다. 여기에는 `data-open:`·`data-closed:` 같은 커스텀 variant 와 아코디언 애니메이션 등 공용 Tailwind v4 유틸리티가 들어 있습니다.
 
-Use the `eject` command to inline `shadcn/tailwind.css` into your global CSS file and remove the `shadcn` dependency from your project.
+`eject` 명령으로 `shadcn/tailwind.css` 를 전역 CSS 파일 안에 펼쳐 넣고 프로젝트에서 `shadcn` 의존성을 걷어냅니다.
 
 <Callout icon={<TriangleAlertIcon />}>
-  **Note: This action is irreversible.** After ejecting, future shadcn CLI
-  updates to `shadcn/tailwind.css` will not apply automatically.
+  **참고: 되돌릴 수 없습니다.** eject 한 뒤에는 shadcn CLI 가
+  `shadcn/tailwind.css` 를 갱신해도 자동으로 반영되지 않습니다.
 </Callout>
 
 ```bash
 npx shadcn@latest eject
 ```
 
-**Before**
+**전**
 
 ```css
 @import "tailwindcss";
@@ -594,7 +594,7 @@ npx shadcn@latest eject
 @import "shadcn/tailwind.css";
 ```
 
-**After**
+**후**
 
 ```css
 @import "tailwindcss";
@@ -631,15 +631,15 @@ npx shadcn@latest eject
 }
 ```
 
-**Monorepo**
+**모노레포**
 
-In a monorepo, run the command from the workspace that contains your `components.json` and global CSS file:
+모노레포에서는 `components.json` 과 전역 CSS 파일이 있는 워크스페이스에서 명령을 돌리세요.
 
 ```bash
 npx shadcn@latest eject -c packages/ui
 ```
 
-**Options**
+**옵션**
 
 ```bash
 Usage: shadcn eject [options]

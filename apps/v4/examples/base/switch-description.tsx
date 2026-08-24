@@ -11,10 +11,10 @@ export function SwitchDescription() {
     <Field orientation="horizontal" className="max-w-sm">
       <FieldContent>
         <FieldLabel htmlFor="switch-focus-mode">
-          Share across devices
+          여러 기기에서 함께 쓰기
         </FieldLabel>
         <FieldDescription>
-          Focus is shared across devices, and turns off when you leave the app.
+          집중 모드가 기기 사이에 공유되고, 앱을 벗어나면 꺼집니다.
         </FieldDescription>
       </FieldContent>
       <Switch id="switch-focus-mode" />

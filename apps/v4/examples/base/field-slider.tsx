@@ -14,9 +14,9 @@ export default function FieldSlider() {
 
   return (
     <Field className="w-full max-w-xs">
-      <FieldTitle>Price Range</FieldTitle>
+      <FieldTitle>가격 범위</FieldTitle>
       <FieldDescription>
-        Set your budget range ($
+        예산 범위를 정하세요 ($
         <span className="font-medium tabular-nums">{value[0]}</span> -{" "}
         <span className="font-medium tabular-nums">{value[1]}</span>).
       </FieldDescription>
@@ -27,7 +27,7 @@ export default function FieldSlider() {
         min={0}
         step={10}
         className="mt-2 w-full"
-        aria-label="Price Range"
+        aria-label="가격 범위"
       />
     </Field>
   )

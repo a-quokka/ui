@@ -50,7 +50,7 @@ export default function ButtonGroupInputGroup() {
               >
                 <AudioLinesIcon />
               </TooltipTrigger>
-              <TooltipContent>Voice Mode</TooltipContent>
+              <TooltipContent>음성 모드</TooltipContent>
             </Tooltip>
           </InputGroupAddon>
         </InputGroup>

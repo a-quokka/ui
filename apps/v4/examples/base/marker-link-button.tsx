@@ -12,7 +12,7 @@ export function MarkerLinkButtonDemo() {
         <MarkerIcon>
           <GitBranchIcon />
         </MarkerIcon>
-        <MarkerContent>View the pull request</MarkerContent>
+        <MarkerContent>풀 리퀘스트 보기</MarkerContent>
       </Marker>
       <Marker
         render={
@@ -26,7 +26,7 @@ export function MarkerLinkButtonDemo() {
         <MarkerIcon>
           <RotateCcwIcon />
         </MarkerIcon>
-        <MarkerContent>Revert this change</MarkerContent>
+        <MarkerContent>이 변경 되돌리기</MarkerContent>
       </Marker>
     </div>
   )

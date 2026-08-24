@@ -37,9 +37,9 @@ const translations = {
     dir: "ltr",
     locale: "en-US",
     values: {
-      trigger: "Open Drawer",
-      title: "Pick a delivery time",
-      description: "We'll prepare your order as soon as possible.",
+      trigger: "Drawer 열기",
+      title: "배달 시간 고르기",
+      description: "주문을 최대한 빨리 준비하겠습니다.",
       confirm: "Confirm Delivery Time",
       cancel: "Cancel",
       toastTitle: "Delivery time confirmed",
@@ -56,50 +56,26 @@ const translations = {
       slot630Description: "Last slot before kitchen closes",
     },
   },
-  ar: {
-    dir: "rtl",
-    locale: "ar-EG",
+  ko: {
+    dir: "ltr",
     values: {
-      trigger: "فتح الدرج",
-      title: "اختر وقت التوصيل",
-      description: "سنجهز طلبك في أقرب وقت ممكن.",
-      confirm: "تأكيد وقت التوصيل",
-      cancel: "إلغاء",
-      toastTitle: "تم تأكيد وقت التوصيل",
-      asapLabel: "توصيل قياسي",
-      asapDescription: "25–35 دقيقة · تم تعيين السائق الآن",
-      asapBadge: "الأسرع",
-      slot500Label: "5:00 م – 5:15 م",
-      slot500Description: "يبدأ التحضير في 4:45 م",
-      slot530Label: "5:30 م – 5:45 م",
-      slot530Description: "مناسب إذا كنت في الطريق إلى المنزل",
-      slot600Label: "6:00 م – 6:15 م",
-      slot600Description: "الأكثر شيوعًا · طلب مرتفع",
-      slot630Label: "6:30 م – 6:45 م",
-      slot630Description: "آخر موعد قبل إغلاق المطبخ",
-    },
-  },
-  he: {
-    dir: "rtl",
-    locale: "he-IL",
-    values: {
-      trigger: "פתח מגירה",
-      title: "בחר זמן משלוח",
-      description: "נכין את ההזמנה שלך בהקדם האפשרי.",
-      confirm: "אשר זמן משלוח",
-      cancel: "בטל",
-      toastTitle: "זמן המשלוח אושר",
-      asapLabel: "משלוח רגיל",
-      asapDescription: "25–35 דק׳ · נהג הוקצה כעת",
-      asapBadge: "הכי מהיר",
-      slot500Label: "17:00 – 17:15",
-      slot500Description: "ההכנה מתחילה ב-16:45",
-      slot530Label: "17:30 – 17:45",
-      slot530Description: "מתאים אם אתה בדרך הביתה",
-      slot600Label: "18:00 – 18:15",
-      slot600Description: "הפופולרי ביותר · ביקוש גבוה",
-      slot630Label: "18:30 – 18:45",
-      slot630Description: "המשבצת האחרונה לפני סגירת המטבח",
+      trigger: "Drawer 열기",
+      title: "배달 시간 고르기",
+      description: "주문을 최대한 빨리 준비하겠습니다.",
+      confirm: "이 시간으로 확정",
+      cancel: "취소",
+      toastTitle: "배달 시간이 확정됐습니다",
+      asapLabel: "일반 배달",
+      asapDescription: "25~35분 · 지금 기사 배정",
+      asapBadge: "가장 빠름",
+      slot500Label: "오후 5:00 ~ 5:15",
+      slot500Description: "오후 4:45에 조리를 시작합니다",
+      slot530Label: "오후 5:30 ~ 5:45",
+      slot530Description: "퇴근길에 받기 좋습니다",
+      slot600Label: "오후 6:00 ~ 6:15",
+      slot600Description: "가장 인기 있는 시간 · 주문이 몰립니다",
+      slot630Label: "오후 6:30 ~ 6:45",
+      slot630Description: "주방 마감 전 마지막 시간",
     },
   },
 } satisfies Translations
@@ -147,7 +123,7 @@ const deliveryTimes: Array<{
 ]
 
 export function DrawerRtl() {
-  const { dir, language, t } = useTranslation(translations, "ar")
+  const { dir, language, t } = useTranslation(translations, "ko")
   const [open, setOpen] = React.useState(false)
   const [deliveryTime, setDeliveryTime] = React.useState("asap")
   const isMobile = useIsMobile()

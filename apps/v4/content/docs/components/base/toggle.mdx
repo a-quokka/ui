@@ -1,6 +1,6 @@
 ---
 title: Toggle
-description: A two-state button that can be either on or off.
+description: 켜고 끄는 두 상태를 가진 버튼입니다.
 base: base
 component: true
 links:
@@ -30,13 +30,13 @@ npx shadcn@latest add toggle
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="toggle"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -64,7 +64,7 @@ import { Toggle } from "@/components/ui/toggle"
 
 ## Outline
 
-Use `variant="outline"` for an outline style.
+`variant="outline"`으로 테두리 스타일을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="toggle-outline" />
 
@@ -74,7 +74,7 @@ Use `variant="outline"` for an outline style.
 
 ## Size
 
-Use the `size` prop to change the size of the toggle.
+`size` prop으로 토글 크기를 바꿉니다.
 
 <ComponentPreview styleName="base-nova" name="toggle-sizes" />
 
@@ -82,12 +82,12 @@ Use the `size` prop to change the size of the toggle.
 
 <ComponentPreview styleName="base-nova" name="toggle-disabled" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="toggle-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [Base UI Toggle](https://base-ui.com/react/components/toggle#api-reference) documentation.
+자세한 내용은 [Base UI Toggle](https://base-ui.com/react/components/toggle#api-reference) 문서를 보세요.

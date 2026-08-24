@@ -62,55 +62,53 @@ export function QuestionnaireControlled() {
         <QuestionnaireProgress />
 
         <QuestionnaireItem name="scope" required>
-          <QuestionnaireTitle>What may the agent change?</QuestionnaireTitle>
+          <QuestionnaireTitle>
+            에이전트가 무엇을 바꿔도 될까요?
+          </QuestionnaireTitle>
           <QuestionnaireDescription>
-            The host stores the active checkpoint while Questionnaire navigates.
+            Questionnaire 가 이동하는 동안 현재 지점은 바깥에서 보관합니다.
           </QuestionnaireDescription>
           <QuestionnaireChoices>
             <QuestionnaireChoice value="component">
-              Only the target component
+              대상 컴포넌트만
             </QuestionnaireChoice>
             <QuestionnaireChoice value="tests">
-              Component and related tests
+              컴포넌트와 관련 테스트
             </QuestionnaireChoice>
             <QuestionnaireChoice value="feature">
-              The complete feature area
+              기능 영역 전체
             </QuestionnaireChoice>
           </QuestionnaireChoices>
           <QuestionnaireError />
         </QuestionnaireItem>
 
         <QuestionnaireItem name="checks" required>
-          <QuestionnaireTitle>
-            Which verification level should it use?
-          </QuestionnaireTitle>
+          <QuestionnaireTitle>어느 검증 수준을 쓸까요?</QuestionnaireTitle>
           <QuestionnaireChoices>
             <QuestionnaireChoice value="targeted">
-              Targeted tests
+              필요한 테스트만
             </QuestionnaireChoice>
             <QuestionnaireChoice value="package">
-              Package tests and typecheck
+              패키지 테스트와 타입 검사
             </QuestionnaireChoice>
             <QuestionnaireChoice value="full">
-              Full workspace verification
+              작업 공간 전체 검증
             </QuestionnaireChoice>
           </QuestionnaireChoices>
           <QuestionnaireError />
         </QuestionnaireItem>
 
         <QuestionnaireItem name="output" required>
-          <QuestionnaireTitle>
-            What should the agent return when finished?
-          </QuestionnaireTitle>
+          <QuestionnaireTitle>끝나면 무엇을 돌려줄까요?</QuestionnaireTitle>
           <QuestionnaireChoices>
             <QuestionnaireChoice value="summary">
-              Concise summary
+              간결한 요약
             </QuestionnaireChoice>
             <QuestionnaireChoice value="diff">
-              Summary with changed files
+              요약과 바뀐 파일
             </QuestionnaireChoice>
             <QuestionnaireChoice value="handoff">
-              Detailed implementation handoff
+              상세 구현 인계
             </QuestionnaireChoice>
           </QuestionnaireChoices>
           <QuestionnaireError />
@@ -118,8 +116,8 @@ export function QuestionnaireControlled() {
 
         <QuestionnaireActions>
           <QuestionnairePrevious />
-          <QuestionnaireNext>Next</QuestionnaireNext>
-          <QuestionnaireSubmit>Save workflow</QuestionnaireSubmit>
+          <QuestionnaireNext>다음</QuestionnaireNext>
+          <QuestionnaireSubmit>워크플로 저장</QuestionnaireSubmit>
         </QuestionnaireActions>
       </Questionnaire>
     </div>

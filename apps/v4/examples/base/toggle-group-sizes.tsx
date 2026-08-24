@@ -7,31 +7,31 @@ export function ToggleGroupSizes() {
   return (
     <div className="flex flex-col gap-4">
       <ToggleGroup size="sm" defaultValue={["top"]} variant="outline">
-        <ToggleGroupItem value="top" aria-label="Toggle top">
-          Top
+        <ToggleGroupItem value="top" aria-label="위쪽">
+          위
         </ToggleGroupItem>
-        <ToggleGroupItem value="bottom" aria-label="Toggle bottom">
-          Bottom
+        <ToggleGroupItem value="bottom" aria-label="아래쪽">
+          아래
         </ToggleGroupItem>
-        <ToggleGroupItem value="left" aria-label="Toggle left">
-          Left
+        <ToggleGroupItem value="left" aria-label="왼쪽">
+          왼쪽
         </ToggleGroupItem>
-        <ToggleGroupItem value="right" aria-label="Toggle right">
-          Right
+        <ToggleGroupItem value="right" aria-label="오른쪽">
+          오른쪽
         </ToggleGroupItem>
       </ToggleGroup>
       <ToggleGroup defaultValue={["top"]} variant="outline">
-        <ToggleGroupItem value="top" aria-label="Toggle top">
-          Top
+        <ToggleGroupItem value="top" aria-label="위쪽">
+          위
         </ToggleGroupItem>
-        <ToggleGroupItem value="bottom" aria-label="Toggle bottom">
-          Bottom
+        <ToggleGroupItem value="bottom" aria-label="아래쪽">
+          아래
         </ToggleGroupItem>
-        <ToggleGroupItem value="left" aria-label="Toggle left">
-          Left
+        <ToggleGroupItem value="left" aria-label="왼쪽">
+          왼쪽
         </ToggleGroupItem>
-        <ToggleGroupItem value="right" aria-label="Toggle right">
-          Right
+        <ToggleGroupItem value="right" aria-label="오른쪽">
+          오른쪽
         </ToggleGroupItem>
       </ToggleGroup>
     </div>

@@ -21,17 +21,17 @@ import {
 } from "@/registry/new-york-v4/ui/sidebar"
 
 const TOP_LEVEL_SECTIONS = [
-  { name: "Introduction", href: "/docs" },
+  { name: "소개", href: "/docs" },
   {
-    name: "Components",
+    name: "컴포넌트",
     href: "/docs/components",
   },
   {
-    name: "Installation",
+    name: "설치",
     href: "/docs/installation",
   },
   {
-    name: "Theming",
+    name: "테마",
     href: "/docs/theming",
   },
   {
@@ -39,24 +39,16 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/cli",
   },
   {
-    name: "Typeset",
-    href: "/docs/typeset",
-  },
-  {
-    name: "Skills",
+    name: "스킬",
     href: "/docs/skills",
   },
   {
-    name: "Registry",
+    name: "레지스트리",
     href: "/docs/registry",
   },
-  {
-    name: "Changelog",
-    href: "/docs/changelog",
-  },
 ]
-const EXCLUDED_SECTIONS = ["installation", "dark-mode", "changelog", "rtl"]
-const EXCLUDED_PAGES = ["/docs", "/docs/changelog", "/docs/rtl", "/docs/new"]
+const EXCLUDED_SECTIONS = ["installation", "dark-mode", "rtl"]
+const EXCLUDED_PAGES = ["/docs", "/docs/rtl", "/docs/new"]
 
 function readScrollState() {
   try {
@@ -182,7 +174,7 @@ export function DocsSidebar({
       >
         <SidebarGroup className="pt-12">
           <SidebarGroupLabel className="font-medium text-muted-foreground">
-            Sections
+            섹션
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
@@ -207,7 +199,7 @@ export function DocsSidebar({
                         {PAGES_NEW.includes(href) && (
                           <span
                             className="flex size-2 rounded-full bg-blue-500"
-                            title="New"
+                            title="신규"
                           />
                         )}
                       </Link>
@@ -253,7 +245,7 @@ export function DocsSidebar({
                               {PAGES_NEW.includes(page.url) && (
                                 <span
                                   className="flex size-2 rounded-full bg-blue-500"
-                                  title="New"
+                                  title="신규"
                                 />
                               )}
                             </Link>

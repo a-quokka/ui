@@ -11,12 +11,8 @@ import {
 export function CheckboxGroup() {
   return (
     <FieldSet>
-      <FieldLegend variant="label">
-        Show these items on the desktop:
-      </FieldLegend>
-      <FieldDescription>
-        Select the items you want to show on the desktop.
-      </FieldDescription>
+      <FieldLegend variant="label">바탕화면에 표시할 항목:</FieldLegend>
+      <FieldDescription>바탕화면에 표시할 항목을 고르세요.</FieldDescription>
       <FieldGroup className="gap-3">
         <Field orientation="horizontal">
           <Checkbox
@@ -28,7 +24,7 @@ export function CheckboxGroup() {
             htmlFor="finder-pref-9k2-hard-disks-ljj-checkbox"
             className="font-normal"
           >
-            Hard disks
+            하드 디스크
           </FieldLabel>
         </Field>
         <Field orientation="horizontal">
@@ -41,7 +37,7 @@ export function CheckboxGroup() {
             htmlFor="finder-pref-9k2-external-disks-1yg-checkbox"
             className="font-normal"
           >
-            External disks
+            외장 디스크
           </FieldLabel>
         </Field>
         <Field orientation="horizontal">
@@ -53,7 +49,7 @@ export function CheckboxGroup() {
             htmlFor="finder-pref-9k2-cds-dvds-fzt-checkbox"
             className="font-normal"
           >
-            CDs, DVDs, and iPods
+            CD · DVD · iPod
           </FieldLabel>
         </Field>
         <Field orientation="horizontal">
@@ -65,7 +61,7 @@ export function CheckboxGroup() {
             htmlFor="finder-pref-9k2-connected-servers-6l2-checkbox"
             className="font-normal"
           >
-            Connected servers
+            연결된 서버
           </FieldLabel>
         </Field>
       </FieldGroup>

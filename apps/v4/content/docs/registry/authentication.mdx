@@ -1,23 +1,23 @@
 ---
-title: Authentication
-description: Secure your registry with authentication for private and personalized components.
+title: 인증
+description: 인증으로 비공개·맞춤 컴포넌트를 보호합니다.
 ---
 
-Authentication lets you run private registries, control who can access your components, and give different teams or users different content. This guide shows common authentication patterns and how to set them up.
+인증을 붙이면 비공개 레지스트리를 운영하고, 누가 컴포넌트에 닿을 수 있는지 정하고, 팀이나 사용자마다 다른 내용을 내보낼 수 있습니다. 흔히 쓰는 인증 방식과 설정 방법을 살펴봅니다.
 
-Authentication enables these use cases:
+인증으로 이런 것들이 가능해집니다.
 
-- **Private Components**: Keep your business logic and internal components secure
-- **Team-Specific Resources**: Give different teams different components
-- **Access Control**: Limit who can see sensitive or experimental components
-- **Usage Analytics**: See who's using which components in your organization
-- **Licensing**: Control who gets premium or licensed components
+- **비공개 컴포넌트**: 업무 로직과 내부 컴포넌트를 안전하게 지킵니다
+- **팀별 자원**: 팀마다 다른 컴포넌트를 내보냅니다
+- **접근 제어**: 민감하거나 실험 중인 컴포넌트를 볼 수 있는 사람을 제한합니다
+- **사용 분석**: 조직 안에서 누가 어떤 컴포넌트를 쓰는지 봅니다
+- **라이선스**: 유료나 라이선스가 걸린 컴포넌트를 누가 받을지 정합니다
 
 ## Common Authentication Patterns
 
 ### Token-Based Authentication
 
-The most common approach uses Bearer tokens or API keys:
+가장 흔한 방식은 Bearer 토큰이나 API 키입니다.
 
 ```json title="components.json"
 {
@@ -32,7 +32,7 @@ The most common approach uses Bearer tokens or API keys:
 }
 ```
 
-Set your token in environment variables:
+토큰은 환경 변수에 둡니다.
 
 ```bash title=".env.local"
 REGISTRY_TOKEN=your_secret_token_here
@@ -40,7 +40,7 @@ REGISTRY_TOKEN=your_secret_token_here
 
 ### API Key Authentication
 
-Some registries use API keys in headers:
+헤더에 API 키를 담는 레지스트리도 있습니다.
 
 ```json title="components.json"
 {
@@ -58,7 +58,7 @@ Some registries use API keys in headers:
 
 ### Query Parameter Authentication
 
-For simpler setups, use query parameters:
+더 단순하게 하려면 쿼리 파라미터를 씁니다.
 
 ```json title="components.json"
 {
@@ -73,11 +73,11 @@ For simpler setups, use query parameters:
 }
 ```
 
-This creates: `https://registry.company.com/button.json?token=your_token`
+그러면 이런 주소가 됩니다: `https://registry.company.com/button.json?token=your_token`
 
 ## Server-Side Implementation
 
-Here's how to add authentication to your registry server:
+레지스트리 서버에 인증을 붙이는 방법입니다.
 
 ### Next.js API Route Example
 
@@ -146,7 +146,7 @@ app.get("/registry/:name.json", (req, res) => {
 
 ### Team-Based Access
 
-Give different teams different components:
+팀마다 다른 컴포넌트를 내보냅니다.
 
 ```typescript title="api/registry/route.ts"
 async function GET(request: NextRequest) {
@@ -161,7 +161,7 @@ async function GET(request: NextRequest) {
 
 ### User-Personalized Registries
 
-Give users components based on their preferences:
+사용자의 설정에 따라 다른 컴포넌트를 내보냅니다.
 
 ```typescript
 async function GET(request: NextRequest) {
@@ -179,7 +179,7 @@ async function GET(request: NextRequest) {
 
 ### Temporary Access Tokens
 
-Use expiring tokens for better security:
+보안을 위해 만료되는 토큰을 씁니다.
 
 ```typescript
 interface TemporaryToken {
@@ -200,7 +200,7 @@ async function validateTemporaryToken(token: string) {
 
 ## Multi-Registry Authentication
 
-With [namespaced registries](/docs/registry/namespace), you can set up multiple registries with different authentication:
+[네임스페이스 레지스트리](/docs/registry/namespace)를 쓰면 인증 방식이 서로 다른 레지스트리를 여러 개 둘 수 있습니다.
 
 ```json title="components.json"
 {
@@ -222,24 +222,24 @@ With [namespaced registries](/docs/registry/namespace), you can set up multiple 
 }
 ```
 
-This lets you:
+그러면 이런 것이 가능합니다.
 
-- Mix public and private registries
-- Use different authentication per registry
-- Organize components by access level
+- 공개 레지스트리와 비공개 레지스트리를 섞어 씁니다
+- 레지스트리마다 다른 인증을 씁니다
+- 접근 수준에 따라 컴포넌트를 나눕니다
 
 ## Security Best Practices
 
 ### Use Environment Variables
 
-Never commit tokens to version control. Always use environment variables:
+토큰을 버전 관리에 커밋하지 마세요. 반드시 환경 변수를 쓰세요.
 
 ```bash title=".env.local"
 REGISTRY_TOKEN=your_secret_token_here
 API_KEY=your_api_key_here
 ```
 
-Then reference them in `components.json`:
+그다음 `components.json` 에서 참조합니다.
 
 ```json
 {
@@ -256,7 +256,7 @@ Then reference them in `components.json`:
 
 ### Use HTTPS
 
-Always use HTTPS URLs for registries to protect your tokens in transit:
+전송 중 토큰이 노출되지 않도록 레지스트리 주소에는 항상 HTTPS 를 쓰세요.
 
 ```json
 {
@@ -267,7 +267,7 @@ Always use HTTPS URLs for registries to protect your tokens in transit:
 
 ### Add Rate Limiting
 
-Protect your registry from abuse:
+레지스트리가 남용되지 않도록 보호합니다.
 
 ```typescript
 import rateLimit from "express-rate-limit"
@@ -282,7 +282,7 @@ app.use("/registry", limiter)
 
 ### Rotate Tokens
 
-Change access tokens regularly:
+접근 토큰은 주기적으로 바꿉니다.
 
 ```typescript
 // Create new token with expiration.
@@ -296,7 +296,7 @@ function generateToken() {
 
 ### Log Access
 
-Track registry access for security and analytics:
+보안과 분석을 위해 레지스트리 접근을 기록합니다.
 
 ```typescript
 async function logAccess(request: Request, component: string, userId: string) {
@@ -312,7 +312,7 @@ async function logAccess(request: Request, component: string, userId: string) {
 
 ## Testing Authentication
 
-Test your authenticated registry locally:
+인증이 걸린 레지스트리를 로컬에서 확인합니다.
 
 ```bash
 # Test with curl.
@@ -325,15 +325,15 @@ REGISTRY_TOKEN=your_token npx shadcn@latest add @private/button
 
 ## Error Handling
 
-The shadcn CLI handles authentication errors gracefully:
+shadcn CLI 는 인증 오류를 이렇게 다룹니다.
 
-- **401 Unauthorized**: Token is invalid or missing
-- **403 Forbidden**: Token lacks permission for this resource
-- **429 Too Many Requests**: Rate limit exceeded
+- **401 Unauthorized**: 토큰이 없거나 잘못됐습니다
+- **403 Forbidden**: 토큰에 이 자원에 대한 권한이 없습니다
+- **429 Too Many Requests**: 요청 한도를 넘었습니다
 
 ### Custom Error Messages
 
-Your registry server can return custom error messages in the response body, and the CLI will display them to users:
+레지스트리 서버가 응답 본문에 직접 만든 오류 메시지를 담으면 CLI 가 그대로 보여 줍니다.
 
 ```typescript
 // Registry server returns custom error
@@ -347,13 +347,13 @@ return NextResponse.json(
 )
 ```
 
-The user will see:
+사용자에게는 이렇게 보입니다.
 
 ```txt
 Your subscription has expired. Please renew at company.com/billing
 ```
 
-This helps provide context-specific guidance:
+상황에 맞는 안내를 줄 수 있습니다.
 
 ```typescript
 // Different error messages for different scenarios
@@ -391,9 +391,9 @@ if (!hasTeamAccess(token, component)) {
 
 ## Next Steps
 
-To set up authentication with multiple registries and advanced patterns, see the [Namespaced Registries](/docs/registry/namespace) documentation. It covers:
+여러 레지스트리에 인증을 걸거나 더 복잡한 구성이 필요하다면 [네임스페이스 레지스트리](/docs/registry/namespace) 문서를 보세요. 이런 내용을 다룹니다.
 
-- Setting up multiple authenticated registries
-- Using different authentication per namespace
-- Cross-registry dependency resolution
-- Advanced authentication patterns
+- 인증이 걸린 레지스트리를 여러 개 설정하기
+- 네임스페이스마다 다른 인증 쓰기
+- 레지스트리를 넘나드는 의존성 해석
+- 더 복잡한 인증 구성

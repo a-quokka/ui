@@ -1,6 +1,6 @@
 ---
 title: Carousel
-description: A carousel with motion and swipe built using Embla.
+description: 여러 항목을 좌우로 넘겨 봅니다.
 base: base
 component: true
 links:
@@ -16,7 +16,7 @@ links:
 
 ## About
 
-The carousel component is built using the [Embla Carousel](https://www.embla-carousel.com/) library.
+carousel 컴포넌트는 [Embla Carousel](https://www.embla-carousel.com/) 라이브러리로 만들었습니다.
 
 ## Installation
 
@@ -39,13 +39,13 @@ npx shadcn@latest add carousel
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install embla-carousel-react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="carousel"
@@ -53,7 +53,7 @@ npm install embla-carousel-react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -87,7 +87,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `Carousel`:
+아래 구조로 `Carousel`을 만듭니다.
 
 ```text
 Carousel
@@ -100,7 +100,7 @@ Carousel
 
 ## Sizes
 
-To set the size of the items, you can use the `basis` utility class on the `<CarouselItem />`.
+항목 크기는 `<CarouselItem />`에 `basis` 유틸리티 클래스로 정합니다.
 
 <ComponentPreview styleName="base-nova" name="carousel-size" />
 
@@ -128,7 +128,7 @@ To set the size of the items, you can use the `basis` utility class on the `<Car
 
 ## Spacing
 
-To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<CarouselItem />` and a negative `-ml-[VALUE]` on the `<CarouselContent />`.
+항목 사이 간격은 `<CarouselItem />`의 `pl-[VALUE]`와 `<CarouselContent />`의 음수 `-ml-[VALUE]`로 맞춥니다.
 
 <ComponentPreview styleName="base-nova" name="carousel-spacing" />
 
@@ -154,7 +154,7 @@ To set the spacing between the items, we use a `pl-[VALUE]` utility on the `<Car
 
 ## Orientation
 
-Use the `orientation` prop to set the orientation of the carousel.
+`orientation` prop으로 캐러셀 방향을 정합니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -174,7 +174,7 @@ Use the `orientation` prop to set the orientation of the carousel.
 
 ## Options
 
-You can pass options to the carousel using the `opts` prop. See the [Embla Carousel docs](https://www.embla-carousel.com/api/options/) for more information.
+`opts` prop으로 캐러셀에 옵션을 넘깁니다. 자세한 내용은 [Embla Carousel 문서](https://www.embla-carousel.com/api/options/)를 보세요.
 
 ```tsx showLineNumbers {2-5}
 <Carousel
@@ -193,7 +193,7 @@ You can pass options to the carousel using the `opts` prop. See the [Embla Carou
 
 ## API
 
-Use a state and the `setApi` prop to get an instance of the carousel API.
+state와 `setApi` prop으로 캐러셀 API 인스턴스를 얻습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -236,7 +236,7 @@ export function Example() {
 
 ## Events
 
-You can listen to events using the api instance from `setApi`.
+`setApi`로 받은 api 인스턴스로 이벤트를 들을 수 있습니다.
 
 ```tsx showLineNumbers {1,4-14,16}
 import { type CarouselApi } from "@/components/ui/carousel"
@@ -266,11 +266,11 @@ export function Example() {
 }
 ```
 
-See the [Embla Carousel docs](https://www.embla-carousel.com/api/events/) for more information on using events.
+이벤트 사용법은 [Embla Carousel 문서](https://www.embla-carousel.com/api/events/)를 보세요.
 
 ## Plugins
 
-You can use the `plugins` prop to add plugins to the carousel.
+`plugins` prop으로 캐러셀에 플러그인을 붙입니다.
 
 ```ts showLineNumbers {1,6-10}
 import Autoplay from "embla-carousel-autoplay"
@@ -296,9 +296,9 @@ export function Example() {
   previewClassName="sm:h-[32rem]"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -307,7 +307,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
   previewClassName="h-80 sm:h-[32rem]"
 />
 
-When localizing the carousel for RTL languages, you need to set the `direction` option in the `opts` prop to match the text direction. This ensures the carousel scrolls in the correct direction.
+RTL 언어로 캐러셀을 옮길 때는 `opts` prop의 `direction` 옵션을 텍스트 방향에 맞춰야 합니다. 그래야 캐러셀이 올바른 방향으로 넘어갑니다.
 
 ```tsx showLineNumbers {2-5}
 <Carousel
@@ -326,8 +326,8 @@ When localizing the carousel for RTL languages, you need to set the `direction` 
 </Carousel>
 ```
 
-The `direction` option accepts `"ltr"` or `"rtl"` and should match the `dir` prop value. You may also want to rotate the navigation buttons using the `rtl:rotate-180` class to ensure they point in the correct direction.
+`direction` 옵션은 `"ltr"` 또는 `"rtl"`을 받고 `dir` prop 값과 같아야 합니다. 이동 버튼도 방향이 맞도록 `rtl:rotate-180` 클래스로 돌려 주는 편이 좋습니다.
 
 ## API Reference
 
-See the [Embla Carousel docs](https://www.embla-carousel.com/api/) for more information on props and plugins.
+prop과 플러그인에 대한 자세한 내용은 [Embla Carousel 문서](https://www.embla-carousel.com/api/)를 보세요.

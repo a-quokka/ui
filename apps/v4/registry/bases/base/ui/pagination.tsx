@@ -67,12 +67,12 @@ function PaginationLink({
 
 function PaginationPrevious({
   className,
-  text = "Previous",
+  text = "이전",
   ...props
 }: React.ComponentProps<typeof PaginationLink> & { text?: string }) {
   return (
     <PaginationLink
-      aria-label="Go to previous page"
+      aria-label="이전 페이지로"
       size="default"
       className={cn("cn-pagination-previous", className)}
       {...props}
@@ -95,12 +95,12 @@ function PaginationPrevious({
 
 function PaginationNext({
   className,
-  text = "Next",
+  text = "다음",
   ...props
 }: React.ComponentProps<typeof PaginationLink> & { text?: string }) {
   return (
     <PaginationLink
-      aria-label="Go to next page"
+      aria-label="다음 페이지로"
       size="default"
       className={cn("cn-pagination-next", className)}
       {...props}
@@ -140,7 +140,7 @@ function PaginationEllipsis({
         phosphor="DotsThreeIcon"
         remixicon="RiMoreLine"
       />
-      <span className="sr-only">More pages</span>
+      <span className="sr-only">더 많은 페이지</span>
     </span>
   )
 }

@@ -52,9 +52,9 @@ const timezones = [
 export function ComboboxWithGroupsAndSeparator() {
   return (
     <Combobox items={timezones}>
-      <ComboboxInput placeholder="Select a timezone" />
+      <ComboboxInput placeholder="시간대 선택" />
       <ComboboxContent>
-        <ComboboxEmpty>No timezones found.</ComboboxEmpty>
+        <ComboboxEmpty>시간대가 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(group, index) => (
             <ComboboxGroup key={group.value} items={group.items}>

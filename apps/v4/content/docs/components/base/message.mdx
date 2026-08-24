@@ -1,6 +1,6 @@
 ---
 title: Message
-description: Displays a message in a conversation, with optional avatar, header, footer, and alignment.
+description: 대화 한 건을 보여 줍니다. 아바타·머리말·바닥글을 붙일 수 있습니다.
 base: base
 component: true
 ---
@@ -11,9 +11,9 @@ component: true
   previewClassName="h-auto theme-blue"
 />
 
-The `Message` component lays out a single message in a conversation. It handles the avatar, alignment, header, and footer around the message surface.
+`Message`는 대화 속 메시지 한 줄을 배치합니다. 메시지 표면 주변의 아바타·정렬·헤더·푸터를 맡습니다.
 
-For AI apps, you can render reasoning steps, tool calls and assistant messages using the `Message` component.
+AI 앱이라면 추론 과정, 도구 호출, 어시스턴트 메시지를 `Message`로 그릴 수 있습니다.
 
 ## Installation
 
@@ -35,7 +35,7 @@ npx shadcn@latest add message
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="message"
@@ -43,7 +43,7 @@ npx shadcn@latest add message
   styleName="base-rhea"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -69,20 +69,17 @@ import { Message, MessageAvatar, MessageContent } from "@/components/ui/message"
   </MessageAvatar>
   <MessageContent>
     <Bubble>
-      <BubbleContent>How can I help you today?</BubbleContent>
+      <BubbleContent>무엇을 도와드릴까요?</BubbleContent>
     </Bubble>
   </MessageContent>
 </Message>
 ```
 
-**Note:** `Message` owns the row layout—avatar, alignment, header, and footer.
-Render the visible message surface inside it with
-[`Bubble`](/docs/components/bubble). For the scroll container around a
-conversation, use [`MessageScroller`](/docs/components/message-scroller).
+**참고:** `Message`는 아바타·정렬·헤더·푸터 같은 줄 배치를 맡습니다. 눈에 보이는 메시지 표면은 그 안에 [`Bubble`](/docs/components/bubble)로 그리세요. 대화를 감싸는 스크롤 컨테이너는 [`MessageScroller`](/docs/components/message-scroller)를 씁니다.
 
 ## Composition
 
-Use the following composition to build a message:
+아래 구조로 메시지를 만듭니다.
 
 ```text
 Message
@@ -93,7 +90,7 @@ Message
     └── MessageFooter
 ```
 
-Use `MessageGroup` to stack consecutive messages from the same sender:
+같은 사람이 연달아 보낸 메시지는 `MessageGroup`으로 쌓습니다.
 
 ```text
 MessageGroup
@@ -103,16 +100,16 @@ MessageGroup
 
 ## Features
 
-- Start and end alignment for sender and receiver rows via the `align` prop
-- Avatar slot that anchors to the bottom of the message and stays clear of the footer
-- Header and footer slots for sender names, status, and message actions
-- Footer follows the message side; actions stay aligned on `align="end"` rows
-- Group wrapper for stacking consecutive messages from the same sender
-- Customizable styling through the `className` prop on every part
+- `align` prop으로 보내는 쪽과 받는 쪽 줄을 start·end로 정렬
+- 메시지 아래쪽에 붙되 푸터를 피해 가는 아바타 자리
+- 보낸 사람 이름·상태·메시지 동작을 위한 헤더와 푸터 자리
+- 푸터는 메시지 쪽을 따라가고, `align="end"` 줄에서도 동작 버튼 정렬이 유지됩니다
+- 같은 사람이 연달아 보낸 메시지를 쌓는 그룹 래퍼
+- 모든 파트에서 `className` prop으로 스타일을 바꿀 수 있습니다
 
 ## Avatar
 
-Use `MessageAvatar` to render an avatar next to the message. Set `align="end"` on the message to align the avatar to the end of the message.
+`MessageAvatar`로 메시지 옆에 아바타를 그립니다. 메시지에 `align="end"`를 주면 아바타도 끝 쪽에 붙습니다.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -120,14 +117,14 @@ Use `MessageAvatar` to render an avatar next to the message. Set `align="end"` o
   previewClassName="h-auto theme-blue"
 />
 
-| align   | Description                                         |
-| ------- | --------------------------------------------------- |
-| `start` | Align the message to the start of the conversation. |
-| `end`   | Align the message to the end of the conversation.   |
+| align   | Description                         |
+| ------- | ----------------------------------- |
+| `start` | 메시지를 대화의 시작 쪽에 붙입니다. |
+| `end`   | 메시지를 대화의 끝 쪽에 붙입니다.   |
 
 ## Group
 
-Use `MessageGroup` to stack consecutive messages from the same sender. Render an empty `MessageAvatar` on the earlier messages to keep them aligned with the avatar on the last one.
+같은 사람이 연달아 보낸 메시지는 `MessageGroup`으로 쌓습니다. 앞선 메시지에는 빈 `MessageAvatar`를 그려 두면 마지막 메시지의 아바타와 줄이 맞습니다.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -137,7 +134,7 @@ Use `MessageGroup` to stack consecutive messages from the same sender. Render an
 
 ## Header and Footer
 
-Use `MessageHeader` for a sender name and `MessageFooter` for metadata such as a delivery or read status.
+보낸 사람 이름에는 `MessageHeader`를, 전송·읽음 상태 같은 부가 정보에는 `MessageFooter`를 씁니다.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -147,7 +144,7 @@ Use `MessageHeader` for a sender name and `MessageFooter` for metadata such as a
 
 ## Actions
 
-Place message-level actions in `MessageFooter`, such as copy, retry, or feedback buttons.
+복사·재시도·피드백처럼 메시지 단위 동작은 `MessageFooter`에 둡니다.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -165,11 +162,11 @@ Place message-level actions in `MessageFooter`, such as copy, retry, or feedback
 
 ## Accessibility
 
-`Message` is a presentational layout wrapper. Accessibility comes from the content you place inside it.
+`Message`는 배치만 담당하는 래퍼입니다. 접근성은 그 안에 넣는 내용에서 나옵니다.
 
 ### Label icon-only actions
 
-Action buttons in `MessageFooter` are usually icon-only, so give each one an `aria-label`.
+`MessageFooter`의 동작 버튼은 보통 아이콘만 있으므로 각각 `aria-label`을 주세요.
 
 ```tsx showLineNumbers
 <MessageFooter>
@@ -181,7 +178,7 @@ Action buttons in `MessageFooter` are usually icon-only, so give each one an `ar
 
 ### Status updates
 
-For in-progress messages, use a [`Marker`](/docs/components/marker) with `role="status"` so assistive tech announces the update as it appears.
+진행 중인 메시지에는 `role="status"`를 준 [`Marker`](/docs/components/marker)를 써서 보조 기술이 상태 변화를 바로 읽어 주게 하세요.
 
 ```tsx showLineNumbers
 <Message>
@@ -189,7 +186,7 @@ For in-progress messages, use a [`Marker`](/docs/components/marker) with `role="
     <MarkerIcon>
       <Spinner />
     </MarkerIcon>
-    <MarkerContent>Checking the logs...</MarkerContent>
+    <MarkerContent>로그를 확인하는 중...</MarkerContent>
   </Marker>
 </Message>
 ```
@@ -198,49 +195,49 @@ For in-progress messages, use a [`Marker`](/docs/components/marker) with `role="
 
 ### Message
 
-The message row wrapper.
+메시지 줄을 감싸는 래퍼입니다.
 
-| Prop        | Type               | Default   | Description                                       |
-| ----------- | ------------------ | --------- | ------------------------------------------------- |
-| `align`     | `"start" \| "end"` | `"start"` | The alignment of the message in the conversation. |
-| `className` | `string`           | -         | Additional classes to apply to the row.           |
+| Prop        | Type               | Default   | Description                   |
+| ----------- | ------------------ | --------- | ----------------------------- |
+| `align`     | `"start" \| "end"` | `"start"` | 대화에서 메시지의 정렬입니다. |
+| `className` | `string`           | -         | 줄에 덧붙일 클래스입니다.     |
 
 ### MessageGroup
 
-Groups consecutive messages from the same sender.
+같은 사람이 연달아 보낸 메시지를 묶습니다.
 
-| Prop        | Type     | Default | Description                                    |
-| ----------- | -------- | ------- | ---------------------------------------------- |
-| `className` | `string` | -       | Additional classes to apply to the group root. |
+| Prop        | Type     | Default | Description                      |
+| ----------- | -------- | ------- | -------------------------------- |
+| `className` | `string` | -       | 그룹 루트에 덧붙일 클래스입니다. |
 
 ### MessageAvatar
 
-The avatar slot, aligned to the bottom of the message. When the message has a `MessageFooter`, the avatar shifts up to stay aligned with the message surface instead of the footer.
+메시지 아래쪽에 맞춰 붙는 아바타 자리입니다. 메시지에 `MessageFooter`가 있으면 아바타가 위로 올라가 푸터가 아니라 메시지 표면에 맞춰집니다.
 
-| Prop        | Type     | Default | Description                                     |
-| ----------- | -------- | ------- | ----------------------------------------------- |
-| `className` | `string` | -       | Additional classes to apply to the avatar slot. |
+| Prop        | Type     | Default | Description                        |
+| ----------- | -------- | ------- | ---------------------------------- |
+| `className` | `string` | -       | 아바타 자리에 덧붙일 클래스입니다. |
 
 ### MessageContent
 
-Wraps the header, message surface, and footer.
+헤더·메시지 표면·푸터를 감쌉니다.
 
-| Prop        | Type     | Default | Description                                      |
-| ----------- | -------- | ------- | ------------------------------------------------ |
-| `className` | `string` | -       | Additional classes to apply to the content slot. |
+| Prop        | Type     | Default | Description                      |
+| ----------- | -------- | ------- | -------------------------------- |
+| `className` | `string` | -       | 내용 자리에 덧붙일 클래스입니다. |
 
 ### MessageHeader
 
-Displays content above the message, such as a sender name. Stays aligned to the start regardless of `align`.
+보낸 사람 이름처럼 메시지 위에 놓이는 내용입니다. `align`과 상관없이 항상 시작 쪽에 붙습니다.
 
-| Prop        | Type     | Default | Description                                |
-| ----------- | -------- | ------- | ------------------------------------------ |
-| `className` | `string` | -       | Additional classes to apply to the header. |
+| Prop        | Type     | Default | Description                 |
+| ----------- | -------- | ------- | --------------------------- |
+| `className` | `string` | -       | 헤더에 덧붙일 클래스입니다. |
 
 ### MessageFooter
 
-Displays content below the message, such as status or actions. Aligns to the message side.
+상태나 동작처럼 메시지 아래에 놓이는 내용입니다. 메시지 쪽을 따라 정렬됩니다.
 
-| Prop        | Type     | Default | Description                                |
-| ----------- | -------- | ------- | ------------------------------------------ |
-| `className` | `string` | -       | Additional classes to apply to the footer. |
+| Prop        | Type     | Default | Description                 |
+| ----------- | -------- | ------- | --------------------------- |
+| `className` | `string` | -       | 푸터에 덧붙일 클래스입니다. |

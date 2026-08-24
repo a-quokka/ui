@@ -27,28 +27,19 @@ const translations: Translations = {
       verifiedTitle: "Your profile has been verified.",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      basicItem: "عنصر أساسي",
-      basicItemDesc: "عنصر بسيط يحتوي على عنوان ووصف.",
-      action: "إجراء",
-      verifiedTitle: "تم التحقق من ملفك الشخصي.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      basicItem: "פריט בסיסי",
-      basicItemDesc: "פריט פשוט עם כותרת ותיאור.",
-      action: "פעולה",
-      verifiedTitle: "הפרופיל שלך אומת.",
+      basicItem: "기본 아이템",
+      basicItemDesc: "제목과 설명이 있는 단순한 아이템입니다.",
+      action: "동작",
+      verifiedTitle: "프로필 인증이 끝났습니다.",
     },
   },
 }
 
 export function ItemRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="flex w-full max-w-md flex-col gap-6" dir={dir}>

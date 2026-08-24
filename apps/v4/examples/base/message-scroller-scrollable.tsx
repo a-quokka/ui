@@ -36,9 +36,9 @@ export function MessageScrollerScrollable() {
     <div className="mx-auto flex w-full max-w-sm flex-col gap-4">
       <Card className="h-140 w-full gap-0 overflow-hidden">
         <CardHeader className="gap-1 border-b">
-          <CardTitle>Scroll Status</CardTitle>
+          <CardTitle>스크롤 상태</CardTitle>
           <CardDescription>
-            Where the reader can go scroll to based on current scroll position.
+            지금 위치에서 어느 쪽으로 더 스크롤할 수 있는지 보여 줍니다.
           </CardDescription>
         </CardHeader>
         <MessageScrollerProvider defaultScrollPosition="start">
@@ -56,7 +56,7 @@ export function MessageScrollerScrollable() {
         </MessageScrollerProvider>
       </Card>
       <div className="px-0.5 text-center text-xs text-muted-foreground">
-        Scroll the transcript to see the footer update.
+        기록을 스크롤하면 푸터가 바뀌는 것을 볼 수 있습니다.
       </div>
     </div>
   )

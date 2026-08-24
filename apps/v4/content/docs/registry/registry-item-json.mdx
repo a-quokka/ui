@@ -1,9 +1,9 @@
 ---
 title: registry-item.json
-description: Specification for registry items.
+description: 레지스트리 항목 규격입니다.
 ---
 
-The `registry-item.json` schema is used to define your custom registry items.
+`registry-item.json` 스키마로 직접 만든 레지스트리 항목을 정의합니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -49,11 +49,11 @@ The `registry-item.json` schema is used to define your custom registry items.
 
 ## Definitions
 
-You can see the JSON Schema for `registry-item.json` [here](https://ui.shadcn.com/schema/registry-item.json).
+`registry-item.json` 의 JSON 스키마는 [여기](https://ui.shadcn.com/schema/registry-item.json)에서 볼 수 있습니다.
 
 ### $schema
 
-The `$schema` property is used to specify the schema for the `registry-item.json` file.
+`$schema` 속성으로 `registry-item.json` 이 따를 스키마를 지정합니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -63,7 +63,7 @@ The `$schema` property is used to specify the schema for the `registry-item.json
 
 ### name
 
-The name of the item. This is used to identify the item in the registry. It should be unique for your registry.
+항목의 이름입니다. 레지스트리에서 항목을 구분하는 데 쓰이며 레지스트리 안에서 겹치지 않아야 합니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -73,7 +73,7 @@ The name of the item. This is used to identify the item in the registry. It shou
 
 ### title
 
-A human-readable title for your registry item. Keep it short and descriptive.
+사람이 읽는 제목입니다. 짧고 분명하게 적으세요.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -83,7 +83,7 @@ A human-readable title for your registry item. Keep it short and descriptive.
 
 ### description
 
-A description of your registry item. This can be longer and more detailed than the `title`.
+항목 설명입니다. `title` 보다 길고 자세해도 됩니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -93,7 +93,7 @@ A description of your registry item. This can be longer and more detailed than t
 
 ### type
 
-The `type` property is used to specify the type of your registry item. This is used to determine the type and target path of the item when resolved for a project.
+`type` 으로 항목의 종류를 지정합니다. 프로젝트에서 항목을 풀 때 종류와 설치 경로를 정하는 데 씁니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -101,28 +101,28 @@ The `type` property is used to specify the type of your registry item. This is u
 }
 ```
 
-The following types are supported:
+쓸 수 있는 종류입니다.
 
-| Type                 | Description                                       |
-| -------------------- | ------------------------------------------------- |
-| `registry:base`      | Use for entire design systems.                    |
-| `registry:block`     | Use for complex components with multiple files.   |
-| `registry:component` | Use for simple components.                        |
-| `registry:font`      | Use for fonts.                                    |
-| `registry:lib`       | Use for lib and utils.                            |
-| `registry:hook`      | Use for hooks.                                    |
-| `registry:ui`        | Use for UI components and single-file primitives. |
-| `registry:page`      | Use for page or file-based routes.                |
-| `registry:file`      | Use for miscellaneous files.                      |
-| `registry:style`     | Use for registry styles. eg. `new-york`.          |
-| `registry:theme`     | Use for themes.                                   |
-| `registry:item`      | Use for universal registry items.                 |
+| Type                 | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `registry:base`      | 디자인 시스템 전체에 씁니다.                     |
+| `registry:block`     | 파일이 여러 개인 복합 컴포넌트에 씁니다.         |
+| `registry:component` | 단순한 컴포넌트에 씁니다.                        |
+| `registry:font`      | 폰트에 씁니다.                                   |
+| `registry:lib`       | lib 과 utils 에 씁니다.                          |
+| `registry:hook`      | 훅에 씁니다.                                     |
+| `registry:ui`        | UI 컴포넌트와 파일 하나짜리 프리미티브에 씁니다. |
+| `registry:page`      | 페이지나 파일 기반 라우트에 씁니다.              |
+| `registry:file`      | 그 밖의 파일에 씁니다.                           |
+| `registry:style`     | 레지스트리 스타일에 씁니다. 예: `new-york`.      |
+| `registry:theme`     | 테마에 씁니다.                                   |
+| `registry:item`      | 범용 항목에 씁니다.                              |
 
 ### author
 
-The `author` property is used to specify the author of the registry item.
+`author` 로 항목을 만든 사람을 적습니다.
 
-It can be unique to the registry item or the same as the author of the registry.
+항목마다 다르게 적어도 되고 레지스트리 작성자와 같아도 됩니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -132,9 +132,9 @@ It can be unique to the registry item or the same as the author of the registry.
 
 ### dependencies
 
-The `dependencies` property is used to specify the dependencies of your registry item. This is for `npm` packages.
+`dependencies` 로 항목의 의존성을 적습니다. `npm` 패키지를 뜻합니다.
 
-Use `@version` to specify the version of your registry item.
+버전은 `@version` 으로 지정합니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -149,9 +149,9 @@ Use `@version` to specify the version of your registry item.
 
 ### devDependencies
 
-The `devDependencies` property is used to specify the dev dependencies of your registry item. These are `npm` packages that are only needed during development.
+`devDependencies` 로 개발용 의존성을 적습니다. 개발할 때만 필요한 `npm` 패키지입니다.
 
-Use `@version` to specify the version of the package.
+패키지 버전은 `@version` 으로 지정합니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -161,13 +161,13 @@ Use `@version` to specify the version of the package.
 
 ### registryDependencies
 
-Used for registry dependencies. Each entry is an item address.
+레지스트리 의존성에 씁니다. 각 항목은 주소입니다.
 
-- For `shadcn/ui` registry items such as `button`, `input`, `select`, etc use the name eg. `['button', 'input', 'select']`.
-- For namespaced registry items, use `@namespace/item-name` eg. `['@acme/input-form']`.
-- For GitHub registry items, use `owner/repo/item-name` eg. `['acme/ui/button']`. For published registries, prefer a tag or full commit SHA eg. `['acme/ui/button#v1.2.0']`.
-- For custom registry items use the URL of the registry item eg. `['https://example.com/r/hello-world.json']`.
-- For local registry item files use a file path eg. `['./hello-world.json']`.
+- `button`·`input`·`select` 같은 `shadcn/ui` 항목은 이름만 씁니다. 예: `['button', 'input', 'select']`.
+- 네임스페이스 항목은 `@namespace/item-name` 을 씁니다. 예: `['@acme/input-form']`.
+- GitHub 항목은 `owner/repo/item-name` 을 씁니다. 예: `['acme/ui/button']`. 공개된 레지스트리라면 태그나 전체 커밋 SHA 를 권합니다. 예: `['acme/ui/button#v1.2.0']`.
+- 직접 만든 레지스트리 항목은 항목 주소를 씁니다. 예: `['https://example.com/r/hello-world.json']`.
+- 로컬 항목 파일은 파일 경로를 씁니다. 예: `['./hello-world.json']`.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -181,20 +181,20 @@ Used for registry dependencies. Each entry is an item address.
 }
 ```
 
-Note: Bare names keep their existing behavior. `button` means the built-in
-shadcn `button` item, not an item from the same GitHub repository. For
-same-repository GitHub dependencies, use the full GitHub item address.
+참고: 이름만 적으면 기존 동작을 따릅니다. `button` 은 같은 GitHub 저장소의
+항목이 아니라 내장 shadcn `button` 을 뜻합니다. 같은 저장소의 의존성이라면
+전체 GitHub 항목 주소를 쓰세요.
 
-Refs are not inherited across dependencies. If a GitHub dependency should be
-reproducible, pin that dependency to its own tag or full commit SHA.
+ref 는 의존성에 물려받지 않습니다. GitHub 의존성을 재현 가능하게 하려면 그
+의존성에도 태그나 전체 커밋 SHA 를 붙이세요.
 
-See the [GitHub registry](/docs/registry/github) docs for more information.
+자세한 내용은 [GitHub 레지스트리](/docs/registry/github) 문서를 보세요.
 
 ### files
 
-The `files` property is used to specify the files of your registry item. Each file has a `path`, `type` and `target` (optional) property.
+`files` 로 항목에 담을 파일을 적습니다. 파일마다 `path`·`type` 이 있고 `target` 은 선택입니다.
 
-**The `target` property is required for `registry:page` and `registry:file` types.**
+**`registry:page` 와 `registry:file` 에는 `target` 이 반드시 필요합니다.**
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -223,25 +223,24 @@ The `files` property is used to specify the files of your registry item. Each fi
 
 #### path
 
-The `path` property is used to specify the path to the file in your registry. This path is used by the build script to parse, transform and build the registry JSON payload.
+`path` 로 레지스트리 안의 파일 경로를 적습니다. 빌드 스크립트가 이 경로로 파일을 읽고 변환해 레지스트리 JSON 을 만듭니다.
 
 #### type
 
-The `type` property is used to specify the type of the file. See the [type](#type) section for more information.
+`type` 으로 파일의 종류를 지정합니다. 자세한 내용은 [type](#type) 절을 보세요.
 
 #### target
 
-The `target` property is used to indicate where the file should be placed in a project. This is optional and only required for `registry:page` and `registry:file` types.
+`target` 으로 파일이 프로젝트의 어디에 놓일지 정합니다. 선택 사항이고 `registry:page` 와 `registry:file` 에만 필요합니다.
 
-By default, the `shadcn` cli will read a project's `components.json` file to determine the target path. For some files, such as routes or config you can specify the target path manually.
+`shadcn` CLI 는 기본적으로 프로젝트의 `components.json` 을 읽어 설치 경로를 정합니다. 라우트나 설정처럼 일부 파일은 경로를 직접 지정할 수 있습니다.
 
-Use `~` to refer to the root of the project e.g `~/foo.config.js`.
+프로젝트 루트는 `~` 로 가리킵니다. 예: `~/foo.config.js`.
 
-You can also use registry target placeholders to place files under the
-directories configured by the user's `components.json`. These placeholders are
-only supported at the start of `target` and are independent of the project's
+사용자의 `components.json` 이 정한 디렉터리 아래에 파일을 두려면 자리표시자를
+쓸 수 있습니다. 자리표시자는 `target` 맨 앞에서만 인식되며, 프로젝트가
 import prefix. For example, `@ui/button.tsx` works whether the project imports
-components with `@/`, `#`, package imports or workspace exports.
+`@/`·`#`·패키지 import·워크스페이스 exports 중 무엇을 쓰든 상관없이 동작합니다.
 
 | Placeholder    | Resolves to          |
 | -------------- | -------------------- |
@@ -250,11 +249,10 @@ components with `@/`, `#`, package imports or workspace exports.
 | `@lib/`        | `aliases.lib`        |
 | `@hooks/`      | `aliases.hooks`      |
 
-Use these placeholders when you want a registry item to install into the
-project's configured shadcn directories without hardcoding `components`, `src`
-or workspace package paths. Anything after the placeholder is preserved, so
-`@ui/ai/prompt-input.tsx` installs under the user's configured `ui` directory
-at `ai/prompt-input.tsx`.
+`components`·`src`·워크스페이스 패키지 경로를 박아 넣지 않고 사용자가 설정한
+shadcn 디렉터리에 설치하고 싶을 때 자리표시자를 쓰세요. 자리표시자 뒤는 그대로
+유지되므로 `@ui/ai/prompt-input.tsx` 는 사용자가 설정한 `ui` 디렉터리 아래
+`ai/prompt-input.tsx` 로 설치됩니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -288,8 +286,8 @@ at `ai/prompt-input.tsx`.
 }
 ```
 
-The `target` property decides where the file is written. It can point to a
-different shadcn directory than the file `type`.
+파일이 어디에 쓰일지는 `target` 이 정합니다. 파일 `type` 과 다른 디렉터리를
+가리켜도 됩니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -303,21 +301,21 @@ different shadcn directory than the file `type`.
 }
 ```
 
-Unknown placeholders are treated as regular target paths. For example,
-`@foo/bar.ts` is written as `foo/bar.ts`. Embedded placeholders such as
-`components/@ui/button.tsx` are also treated as regular paths.
+모르는 자리표시자는 평범한 경로로 봅니다. 예를 들어 `@foo/bar.ts` 는
+`foo/bar.ts` 로 쓰입니다. `components/@ui/button.tsx` 처럼 중간에 낀 자리표시자도
+평범한 경로로 봅니다.
 
 <Callout>
-  `@utils/` is not supported because `utils` points to a file, not a directory.
+  `utils` 는 디렉터리가 아니라 파일을 가리키므로 `@utils/` 는 지원하지 않습니다.
 </Callout>
 
 ### tailwind
 
-**DEPRECATED:** Use `cssVars.theme` instead for Tailwind v4 projects.
+**더 이상 쓰지 않습니다.** Tailwind v4 프로젝트에서는 `cssVars.theme` 을 쓰세요.
 
-The `tailwind` property is used for tailwind configuration such as `theme`, `plugins` and `content`.
+`tailwind` 로 `theme`·`plugins`·`content` 같은 tailwind 설정을 적습니다.
 
-You can use the `tailwind.config` property to add colors, animations and plugins to your registry item.
+`tailwind.config` 로 항목에 색·애니메이션·플러그인을 더할 수 있습니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -346,7 +344,7 @@ You can use the `tailwind.config` property to add colors, animations and plugins
 
 ### cssVars
 
-Use to define CSS variables for your registry item.
+항목의 CSS 변수를 정의할 때 씁니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -367,7 +365,7 @@ Use to define CSS variables for your registry item.
 
 ### css
 
-Use `css` to add new rules to the project's CSS file eg. `@layer base`, `@layer components`, `@utility`, `@keyframes`, `@plugin`, etc.
+`css` 로 프로젝트 CSS 파일에 규칙을 더합니다. `@layer base`·`@layer components`·`@utility`·`@keyframes`·`@plugin` 등을 쓸 수 있습니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -404,7 +402,7 @@ Use `css` to add new rules to the project's CSS file eg. `@layer base`, `@layer 
 
 ### envVars
 
-Use `envVars` to add environment variables to your registry item.
+`envVars` 로 항목에 환경 변수를 더합니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -416,17 +414,17 @@ Use `envVars` to add environment variables to your registry item.
 }
 ```
 
-Environment variables are added to the `.env.local` or `.env` file. Existing variables are not overwritten.
+환경 변수는 `.env.local` 이나 `.env` 에 추가됩니다. 기존 변수는 덮어쓰지 않습니다.
 
 <Callout>
 
-**IMPORTANT:** Use `envVars` to add development or example variables. Do NOT use it to add production variables.
+**중요:** `envVars` 는 개발용이나 예시 변수를 넣는 용도입니다. 운영 변수를 넣지 마세요.
 
 </Callout>
 
 ### font
 
-The `font` property is required for `registry:font` items. It configures the font family, provider, import name, CSS variable, and the npm package to install for non-Next.js projects.
+`registry:font` 에는 `font` 가 반드시 필요합니다. 폰트 계열·제공자·import 이름·CSS 변수, 그리고 Next.js 가 아닌 프로젝트에 설치할 npm 패키지를 정합니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -441,20 +439,20 @@ The `font` property is required for `registry:font` items. It configures the fon
 }
 ```
 
-| Property     | Type       | Required | Description                                                                               |
-| ------------ | ---------- | -------- | ----------------------------------------------------------------------------------------- |
-| `family`     | `string`   | Yes      | The CSS font-family value.                                                                |
-| `provider`   | `string`   | Yes      | The font provider. Currently only `google` is supported.                                  |
-| `import`     | `string`   | Yes      | The import name for the font from `next/font/google`.                                     |
-| `variable`   | `string`   | Yes      | The CSS variable name for the font (e.g., `--font-sans`, `--font-mono`).                  |
-| `weight`     | `string[]` | No       | Array of font weights to include.                                                         |
-| `subsets`    | `string[]` | No       | Array of font subsets to include.                                                         |
-| `selector`   | `string`   | No       | CSS selector to apply the font to. Defaults to `html`.                                    |
-| `dependency` | `string`   | No       | The npm package to install for non-Next.js projects (e.g., `@fontsource-variable/inter`). |
+| Property     | Type       | Required | Description                                                                           |
+| ------------ | ---------- | -------- | ------------------------------------------------------------------------------------- |
+| `family`     | `string`   | Yes      | CSS font-family 값입니다.                                                             |
+| `provider`   | `string`   | Yes      | 폰트 제공자입니다. 지금은 `google` 만 지원합니다.                                     |
+| `import`     | `string`   | Yes      | `next/font/google` 에서 가져올 이름입니다.                                            |
+| `variable`   | `string`   | Yes      | 폰트에 쓸 CSS 변수 이름입니다(예: `--font-sans`·`--font-mono`).                       |
+| `weight`     | `string[]` | No       | 포함할 폰트 굵기 배열입니다.                                                          |
+| `subsets`    | `string[]` | No       | 포함할 폰트 서브셋 배열입니다.                                                        |
+| `selector`   | `string`   | No       | 폰트를 적용할 CSS 선택자입니다. 기본값은 `html` 입니다.                               |
+| `dependency` | `string`   | No       | Next.js 가 아닌 프로젝트에 설치할 npm 패키지입니다(예: `@fontsource-variable/inter`). |
 
 ### docs
 
-Use `docs` to show custom documentation or message when installing your registry item via the CLI.
+`docs` 로 CLI 설치 시 보여 줄 안내나 메시지를 담습니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -464,7 +462,7 @@ Use `docs` to show custom documentation or message when installing your registry
 
 ### categories
 
-Use `categories` to organize your registry item.
+`categories` 로 항목을 갈래별로 정리합니다.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -474,7 +472,7 @@ Use `categories` to organize your registry item.
 
 ### meta
 
-Use `meta` to add additional metadata to your registry item. You can add any key/value pair that you want to be available to the registry item.
+`meta` 로 항목에 메타데이터를 더합니다. 원하는 키·값을 자유롭게 담을 수 있습니다.
 
 ```json title="registry-item.json" showLineNumbers
 {

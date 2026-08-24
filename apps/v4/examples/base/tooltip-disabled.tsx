@@ -11,11 +11,11 @@ export function TooltipDisabled() {
       <Tooltip>
         <TooltipTrigger render={<span className="inline-block w-fit" />}>
           <Button variant="outline" disabled>
-            Disabled
+            비활성
           </Button>
         </TooltipTrigger>
         <TooltipContent>
-          <p>This feature is currently unavailable</p>
+          <p>지금은 쓸 수 없는 기능입니다</p>
         </TooltipContent>
       </Tooltip>
     </>

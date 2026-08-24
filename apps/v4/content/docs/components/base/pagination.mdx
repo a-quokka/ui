@@ -1,6 +1,6 @@
 ---
 title: Pagination
-description: Pagination with page navigation, next and previous links.
+description: 페이지를 나눠 이동합니다.
 base: base
 component: true
 ---
@@ -27,7 +27,7 @@ npx shadcn@latest add pagination
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="pagination"
@@ -35,7 +35,7 @@ npx shadcn@latest add pagination
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -86,7 +86,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `Pagination`:
+아래 구조로 `Pagination`을 만듭니다.
 
 ```text
 Pagination
@@ -103,21 +103,21 @@ Pagination
 
 ## Simple
 
-A simple pagination with only page numbers.
+페이지 번호만 있는 단순한 페이지네이션입니다.
 
 <ComponentPreview styleName="base-nova" name="pagination-simple" />
 
 ## Icons Only
 
-Use just the previous and next buttons without page numbers. This is useful for data tables with a rows per page selector.
+페이지 번호 없이 이전·다음 버튼만 씁니다. 페이지당 행 수 선택이 있는 데이터 테이블에 알맞습니다.
 
 <ComponentPreview styleName="base-nova" name="pagination-icons-only" />
 
 ## Next.js
 
-By default the `<PaginationLink />` component will render an `<a />` tag.
+`<PaginationLink />`는 기본적으로 `<a />` 태그를 그립니다.
 
-To use the Next.js `<Link />` component, make the following updates to `pagination.tsx`.
+Next.js의 `<Link />`를 쓰려면 `pagination.tsx`를 아래처럼 고치세요.
 
 ```diff showLineNumbers /typeof Link/ {1}
 + import Link from "next/link"
@@ -139,13 +139,13 @@ const PaginationLink = ({...props }: ) => (
 
 <Callout className="mt-6">
 
-**Note:** We are making updates to the cli to automatically do this for you.
+**참고:**이 작업을 cli가 알아서 해 주도록 준비 중입니다.
 
 </Callout>
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="pagination-rtl" direction="rtl" />
 
@@ -153,11 +153,11 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### RTL Support
 
-If you're upgrading from a previous version of the `Pagination` component, you'll need to apply the following updates to add the `text` prop:
+이전 버전 `Pagination`을 쓰고 있다면 `text` prop을 위해 아래를 적용해야 합니다.
 
 <Steps>
 
-<Step>Update `PaginationPrevious`.</Step>
+<Step>`PaginationPrevious`를 고칩니다.</Step>
 
 ```diff
   function PaginationPrevious({
@@ -183,7 +183,7 @@ If you're upgrading from a previous version of the `Pagination` component, you'l
   }
 ```
 
-<Step>Update `PaginationNext`.</Step>
+<Step>`PaginationNext`를 고칩니다.</Step>
 
 ```diff
   function PaginationNext({

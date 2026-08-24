@@ -27,11 +27,11 @@ export function InputGroupTextareaExamples() {
     <FieldGroup>
       <Field>
         <FieldLabel htmlFor="textarea-header-footer-12">
-          Default Textarea (No Input Group)
+          기본 Textarea (입력 그룹 없음)
         </FieldLabel>
         <Textarea
           id="textarea-header-footer-12"
-          placeholder="Enter your text here..."
+          placeholder="여기에 내용을 입력하세요..."
         />
       </Field>
       <Field>
@@ -39,60 +39,52 @@ export function InputGroupTextareaExamples() {
         <InputGroup>
           <InputGroupTextarea
             id="textarea-header-footer-13"
-            placeholder="Enter your text here..."
+            placeholder="여기에 내용을 입력하세요..."
           />
         </InputGroup>
-        <FieldDescription>
-          This is a description of the input group.
-        </FieldDescription>
+        <FieldDescription>입력 그룹 설명입니다.</FieldDescription>
       </Field>
       <Field data-invalid="true">
-        <FieldLabel htmlFor="textarea-header-footer-14">Invalid</FieldLabel>
+        <FieldLabel htmlFor="textarea-header-footer-14">오류</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-header-footer-14"
-            placeholder="Enter your text here..."
+            placeholder="여기에 내용을 입력하세요..."
             aria-invalid="true"
           />
         </InputGroup>
-        <FieldDescription>
-          This is a description of the input group.
-        </FieldDescription>
+        <FieldDescription>입력 그룹 설명입니다.</FieldDescription>
       </Field>
       <Field data-disabled="true">
-        <FieldLabel htmlFor="textarea-header-footer-15">Disabled</FieldLabel>
+        <FieldLabel htmlFor="textarea-header-footer-15">비활성</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-header-footer-15"
-            placeholder="Enter your text here..."
+            placeholder="여기에 내용을 입력하세요..."
             disabled
           />
         </InputGroup>
-        <FieldDescription>
-          This is a description of the input group.
-        </FieldDescription>
+        <FieldDescription>입력 그룹 설명입니다.</FieldDescription>
       </Field>
       <Field>
-        <FieldLabel htmlFor="prompt-31">Addon (block-start)</FieldLabel>
+        <FieldLabel htmlFor="prompt-31">애드온 (block-start)</FieldLabel>
         <InputGroup>
           <InputGroupTextarea id="prompt-31" />
           <InputGroupAddon align="block-start">
-            <InputGroupText>Ask, Search or Chat...</InputGroupText>
+            <InputGroupText>묻거나, 찾거나, 대화하세요...</InputGroupText>
             <InfoIcon className="ml-auto text-muted-foreground" />
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>
-          This is a description of the input group.
-        </FieldDescription>
+        <FieldDescription>입력 그룹 설명입니다.</FieldDescription>
       </Field>
       <Field>
         <FieldLabel htmlFor="textarea-header-footer-30">
-          Addon (block-end)
+          애드온 (block-end)
         </FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-header-footer-30"
-            placeholder="Enter your text here..."
+            placeholder="여기에 내용을 입력하세요..."
           />
           <InputGroupAddon align="block-end">
             <InputGroupText>0/280 characters</InputGroupText>
@@ -102,31 +94,31 @@ export function InputGroupTextareaExamples() {
               className="ml-auto rounded-full"
             >
               <ArrowUpIcon />
-              <span className="sr-only">Send</span>
+              <span className="sr-only">보내기</span>
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="textarea-comment-31">Addon (Buttons)</FieldLabel>
+        <FieldLabel htmlFor="textarea-comment-31">애드온 (버튼)</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-comment-31"
-            placeholder="Share your thoughts..."
+            placeholder="생각을 들려주세요..."
             className="min-h-[120px]"
           />
           <InputGroupAddon align="block-end">
             <InputGroupButton variant="ghost" className="ml-auto" size="sm">
-              Cancel
+              취소
             </InputGroupButton>
             <InputGroupButton variant="default" size="sm">
-              Post Comment
+              댓글 올리기
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="textarea-code-32">Code Editor</FieldLabel>
+        <FieldLabel htmlFor="textarea-code-32">코드 편집기</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="textarea-code-32"
@@ -146,7 +138,7 @@ export function InputGroupTextareaExamples() {
             </InputGroupButton>
           </InputGroupAddon>
           <InputGroupAddon align="block-end" className="border-t">
-            <InputGroupText>Line 1, Column 1</InputGroupText>
+            <InputGroupText>1행 1열</InputGroupText>
             <InputGroupText className="ml-auto">JavaScript</InputGroupText>
           </InputGroupAddon>
         </InputGroup>

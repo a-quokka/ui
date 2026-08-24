@@ -18,15 +18,15 @@ export function EmptyMuted() {
         <EmptyMedia variant="icon">
           <IconBell />
         </EmptyMedia>
-        <EmptyTitle>No Notifications</EmptyTitle>
+        <EmptyTitle>알림이 없습니다</EmptyTitle>
         <EmptyDescription className="max-w-xs text-pretty">
-          You&apos;re all caught up. New notifications will appear here.
+          모두 확인했습니다. 새 알림은 여기에 표시됩니다.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <Button variant="outline">
           <RefreshCcwIcon data-icon="inline-start" />
-          Refresh
+          새로 고침
         </Button>
       </EmptyContent>
     </Empty>

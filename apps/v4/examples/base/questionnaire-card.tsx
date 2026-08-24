@@ -66,10 +66,10 @@ export function QuestionnaireCard() {
         <QuestionnaireItem aria-labelledby={taskTitleId} name="task" required>
           <CardHeader>
             <QuestionnaireTitle id={taskTitleId} render={<CardTitle />}>
-              What should the agent work on?
+              에이전트가 무엇을 맡을까요?
             </QuestionnaireTitle>
             <QuestionnaireDescription render={<CardDescription />}>
-              Choose the task that should be handled next.
+              다음에 처리할 작업을 고르세요.
             </QuestionnaireDescription>
             <CardAction>
               <QuestionnaireProgress />
@@ -78,13 +78,13 @@ export function QuestionnaireCard() {
           <CardContent>
             <QuestionnaireChoices>
               <QuestionnaireChoice value="fix">
-                Fix the failing tests
+                실패한 테스트를 고친다
               </QuestionnaireChoice>
               <QuestionnaireChoice value="refactor">
-                Refactor the data layer
+                데이터 계층을 리팩터링한다
               </QuestionnaireChoice>
               <QuestionnaireChoice value="docs">
-                Update the integration guide
+                연동 가이드를 갱신한다
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError />
@@ -98,10 +98,10 @@ export function QuestionnaireCard() {
         >
           <CardHeader>
             <QuestionnaireTitle id={outputTitleId} render={<CardTitle />}>
-              What should the final handoff include?
+              최종 인계에 무엇을 담을까요?
             </QuestionnaireTitle>
             <QuestionnaireDescription render={<CardDescription />}>
-              Pick the level of detail needed for review.
+              검토에 필요한 상세 수준을 고르세요.
             </QuestionnaireDescription>
             <CardAction>
               <QuestionnaireProgress />
@@ -109,14 +109,12 @@ export function QuestionnaireCard() {
           </CardHeader>
           <CardContent>
             <QuestionnaireChoices>
-              <QuestionnaireChoice value="summary">
-                Summary only
-              </QuestionnaireChoice>
+              <QuestionnaireChoice value="summary">요약만</QuestionnaireChoice>
               <QuestionnaireChoice value="files">
-                Summary and changed files
+                요약과 바뀐 파일
               </QuestionnaireChoice>
               <QuestionnaireChoice value="review">
-                Full review handoff
+                전체 검토 인계
               </QuestionnaireChoice>
             </QuestionnaireChoices>
             <QuestionnaireError />
@@ -126,8 +124,8 @@ export function QuestionnaireCard() {
         <CardFooter>
           <QuestionnaireActions className="w-full">
             <QuestionnairePrevious />
-            <QuestionnaireNext>Next</QuestionnaireNext>
-            <QuestionnaireSubmit>Create task</QuestionnaireSubmit>
+            <QuestionnaireNext>다음</QuestionnaireNext>
+            <QuestionnaireSubmit>작업 만들기</QuestionnaireSubmit>
           </QuestionnaireActions>
         </CardFooter>
       </Card>

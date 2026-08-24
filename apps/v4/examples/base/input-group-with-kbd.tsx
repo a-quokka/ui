@@ -19,7 +19,7 @@ export function InputGroupWithKbd() {
   return (
     <FieldGroup>
       <Field>
-        <FieldLabel htmlFor="input-kbd-22">Input Group with Kbd</FieldLabel>
+        <FieldLabel htmlFor="input-kbd-22">Kbd 가 있는 입력 그룹</FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-kbd-22" />
           <InputGroupAddon>
@@ -33,11 +33,8 @@ export function InputGroupWithKbd() {
           </InputGroupAddon>
         </InputGroup>
         <InputGroup>
-          <InputGroupInput
-            id="input-search-apps-24"
-            placeholder="Search for Apps..."
-          />
-          <InputGroupAddon align="inline-end">Ask AI</InputGroupAddon>
+          <InputGroupInput id="input-search-apps-24" placeholder="앱 검색..." />
+          <InputGroupAddon align="inline-end">AI 에게 묻기</InputGroupAddon>
           <InputGroupAddon align="inline-end">
             <Kbd>Tab</Kbd>
           </InputGroupAddon>
@@ -45,7 +42,7 @@ export function InputGroupWithKbd() {
         <InputGroup>
           <InputGroupInput
             id="input-search-type-25"
-            placeholder="Type to search..."
+            placeholder="검색어를 입력하세요..."
           />
           <InputGroupAddon align="inline-start">
             <SparklesIcon />
@@ -59,9 +56,9 @@ export function InputGroupWithKbd() {
         </InputGroup>
       </Field>
       <Field>
-        <FieldLabel htmlFor="input-username-26">Username</FieldLabel>
+        <FieldLabel htmlFor="input-username-26">사용자 이름</FieldLabel>
         <InputGroup>
-          <InputGroupInput id="input-username-26" defaultValue="shadcn" />
+          <InputGroupInput id="input-username-26" defaultValue="dropshot" />
           <InputGroupAddon align="inline-end">
             <div className="flex size-4 items-center justify-center rounded-full bg-green-500 dark:bg-green-800">
               <CheckIcon className="size-3 text-white" />
@@ -69,14 +66,11 @@ export function InputGroupWithKbd() {
           </InputGroupAddon>
         </InputGroup>
         <FieldDescription className="text-green-700">
-          This username is available.
+          쓸 수 있는 사용자 이름입니다.
         </FieldDescription>
       </Field>
       <InputGroup>
-        <InputGroupInput
-          id="input-search-docs-27"
-          placeholder="Search documentation..."
-        />
+        <InputGroupInput id="input-search-docs-27" placeholder="문서 검색..." />
         <InputGroupAddon>
           <SearchIcon />
         </InputGroupAddon>
@@ -85,28 +79,28 @@ export function InputGroupWithKbd() {
       <InputGroup data-disabled="true">
         <InputGroupInput
           id="input-search-disabled-28"
-          placeholder="Search documentation..."
+          placeholder="문서 검색..."
           disabled
         />
         <InputGroupAddon>
           <SearchIcon />
         </InputGroupAddon>
-        <InputGroupAddon align="inline-end">Disabled</InputGroupAddon>
+        <InputGroupAddon align="inline-end">비활성</InputGroupAddon>
       </InputGroup>
       <FieldGroup className="grid grid-cols-2 gap-4">
         <Field>
-          <FieldLabel htmlFor="input-group-11">First Name</FieldLabel>
+          <FieldLabel htmlFor="input-group-11">이름</FieldLabel>
           <InputGroup>
-            <InputGroupInput id="input-group-11" placeholder="First Name" />
+            <InputGroupInput id="input-group-11" placeholder="이름" />
             <InputGroupAddon align="inline-end">
               <InfoIcon />
             </InputGroupAddon>
           </InputGroup>
         </Field>
         <Field>
-          <FieldLabel htmlFor="input-group-12">Last Name</FieldLabel>
+          <FieldLabel htmlFor="input-group-12">성</FieldLabel>
           <InputGroup>
-            <InputGroupInput id="input-group-12" placeholder="Last Name" />
+            <InputGroupInput id="input-group-12" placeholder="성" />
             <InputGroupAddon align="inline-end">
               <InfoIcon />
             </InputGroupAddon>
@@ -118,14 +112,16 @@ export function InputGroupWithKbd() {
           Loading (&quot;data-disabled=&quot;true&quot;)
         </FieldLabel>
         <InputGroup>
-          <InputGroupInput id="input-group-29" disabled defaultValue="shadcn" />
+          <InputGroupInput
+            id="input-group-29"
+            disabled
+            defaultValue="dropshot"
+          />
           <InputGroupAddon align="inline-end">
             <Spinner />
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>
-          This is a description of the input group.
-        </FieldDescription>
+        <FieldDescription>입력 그룹 설명입니다.</FieldDescription>
       </Field>
     </FieldGroup>
   )

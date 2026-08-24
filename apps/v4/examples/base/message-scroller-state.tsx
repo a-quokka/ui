@@ -36,9 +36,9 @@ export function MessageScrollerState() {
   return (
     <Card className="mx-auto h-112 w-full max-w-md gap-0">
       <CardHeader className="border-b">
-        <CardTitle>Scroll State</CardTitle>
+        <CardTitle>스크롤 상태</CardTitle>
         <CardDescription>
-          Read scroll state in JavaScript with the state hook.
+          상태 훅으로 자바스크립트에서 스크롤 상태를 읽습니다.
         </CardDescription>
       </CardHeader>
       <CardContent className="min-h-0 flex-1 p-0">
@@ -79,10 +79,10 @@ export function MessageScrollerState() {
 function StatusBar() {
   const { start, end } = useMessageScrollerScrollable()
   const states = [
-    { label: "At top", on: !start },
-    { label: "At bottom", on: !end },
-    { label: "Older above", on: start },
-    { label: "Newer below", on: end },
+    { label: "맨 위", on: !start },
+    { label: "맨 아래", on: !end },
+    { label: "위에 이전 내용", on: start },
+    { label: "아래에 새 내용", on: end },
   ]
 
   return (

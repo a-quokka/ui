@@ -19,7 +19,7 @@ const translations: Translations = {
     dir: "ltr",
     values: {
       orderNumber: "Order #4189",
-      status: "Status",
+      status: "상태",
       shipped: "Shipped",
       shippingAddress: "Shipping address",
       address: "100 Market St, San Francisco",
@@ -27,34 +27,22 @@ const translations: Translations = {
       itemsDescription: "2x Studio Headphones",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      orderNumber: "الطلب #4189",
-      status: "الحالة",
-      shipped: "تم الشحن",
-      shippingAddress: "عنوان الشحن",
-      address: "100 Market St, San Francisco",
-      items: "العناصر",
-      itemsDescription: "2x سماعات الاستوديو",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      orderNumber: "הזמנה #4189",
-      status: "סטטוס",
-      shipped: "נשלח",
-      shippingAddress: "כתובת משלוח",
-      address: "100 Market St, San Francisco",
-      items: "פריטים",
-      itemsDescription: "2x אוזניות סטודיו",
+      orderNumber: "주문 #4189",
+      status: "상태",
+      shipped: "배송 중",
+      shippingAddress: "배송지",
+      address: "서울시 중구 세종대로 110",
+      items: "상품",
+      itemsDescription: "스튜디오 헤드폰 2개",
     },
   },
 }
 
 export function CollapsibleRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
   const [isOpen, setIsOpen] = React.useState(false)
 
   return (
@@ -70,7 +58,7 @@ export function CollapsibleRtl() {
           render={<Button variant="ghost" size="icon" className="size-8" />}
         >
           <ChevronsUpDown />
-          <span className="sr-only">Toggle details</span>
+          <span className="sr-only">상세 보기</span>
         </CollapsibleTrigger>
       </div>
       <div className="flex items-center justify-between rounded-md border px-4 py-2 text-sm">

@@ -12,9 +12,11 @@ if (process.env.NODE_ENV === "development") {
   const componentsMap = path.join(process.cwd(), "registry/__components__.tsx")
   const referencedStyles = existsSync(componentsMap)
     ? new Set(
-        [...readFileSync(componentsMap, "utf-8").matchAll(/@\/styles\/([\w-]+)\//g)].map(
-          (match) => match[1]
-        )
+        [
+          ...readFileSync(componentsMap, "utf-8").matchAll(
+            /@\/styles\/([\w-]+)\//g
+          ),
+        ].map((match) => match[1])
       )
     : new Set(["base-nova"])
   const missingStyles = [...referencedStyles].filter(
@@ -29,8 +31,22 @@ if (process.env.NODE_ENV === "development") {
   }
 }
 
+// Vercel 프리뷰에는 NEXT_PUBLIC_APP_URL 이 없다. 없으면 배포 URL 로 채운다.
+// 채우지 않으면 app/layout.tsx 의 new URL(...) 이 undefined 를 받아
+// "Failed to collect page data" 로 빌드가 통째로 죽는다.
+const appUrl =
+  process.env.NEXT_PUBLIC_APP_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL &&
+    `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`) ||
+  (process.env.VERCEL_URL && `https://${process.env.VERCEL_URL}`) ||
+  "http://localhost:4000"
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    NEXT_PUBLIC_APP_URL: appUrl,
+    NEXT_PUBLIC_V0_URL: process.env.NEXT_PUBLIC_V0_URL || "https://v0.dev",
+  },
   devIndicators: false,
   typescript: {
     ignoreBuildErrors: true,
@@ -92,22 +108,6 @@ const nextConfig = {
         destination: "/docs/forms",
         permanent: true,
       },
-      // Typography redirects to /docs/typeset.
-      {
-        source: "/docs/components/base/typography",
-        destination: "/docs/typeset",
-        permanent: true,
-      },
-      {
-        source: "/docs/components/radix/typography",
-        destination: "/docs/typeset",
-        permanent: true,
-      },
-      {
-        source: "/docs/components/aria/typography",
-        destination: "/docs/typeset",
-        permanent: true,
-      },
       // Base UI Sonner redirects to Toast.
       {
         source: "/docs/components/base/sonner",
@@ -157,11 +157,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/charts",
-        destination: "/charts/area",
-        permanent: true,
-      },
-      {
         source: "/view/styles/:style/:name",
         destination: "/view/:name",
         permanent: true,
@@ -177,11 +172,6 @@ const nextConfig = {
         permanent: false,
       },
       {
-        source: "/directory",
-        destination: "/docs/directory",
-        permanent: false,
-      },
-      {
         source: "/new",
         destination: "/docs/new",
         permanent: false,
@@ -194,11 +184,6 @@ const nextConfig = {
       {
         source: "/cli",
         destination: "/docs/cli",
-        permanent: true,
-      },
-      {
-        source: "/themes",
-        destination: "/create",
         permanent: true,
       },
       {

@@ -24,7 +24,7 @@ function ComponentLink({
       {component.name}
       {isNew && (
         <>
-          <span className="sr-only">New</span>
+          <span className="sr-only">신규</span>
           <span
             aria-hidden="true"
             className="flex size-2 rounded-full bg-blue-500"

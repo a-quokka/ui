@@ -25,43 +25,29 @@ const translations: Translations = {
     values: {
       openDialog: "Open Dialog",
       editProfile: "Edit profile",
-      description:
-        "Make changes to your profile here. Click save when you're done.",
+      description: "여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.",
       name: "Name",
       username: "Username",
       cancel: "Cancel",
       saveChanges: "Save changes",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      openDialog: "فتح الحوار",
-      editProfile: "تعديل الملف الشخصي",
-      description:
-        "قم بإجراء تغييرات على ملفك الشخصي هنا. انقر فوق حفظ عند الانتهاء.",
-      name: "الاسم",
-      username: "اسم المستخدم",
-      cancel: "إلغاء",
-      saveChanges: "حفظ التغييرات",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      openDialog: "פתח דיאלוג",
-      editProfile: "ערוך פרופיל",
-      description: "בצע שינויים בפרופיל שלך כאן. לחץ על שמור כשתסיים.",
-      name: "שם",
-      username: "שם משתמש",
-      cancel: "בטל",
-      saveChanges: "שמור שינויים",
+      openDialog: "다이얼로그 열기",
+      editProfile: "프로필 수정",
+      description: "여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.",
+      name: "이름",
+      username: "사용자 이름",
+      cancel: "취소",
+      saveChanges: "저장",
     },
   },
 }
 
 export function DialogRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <Dialog>

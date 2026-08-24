@@ -22,14 +22,8 @@ const translations: Translations = {
       moreUsers: "+3",
     },
   },
-  ar: {
-    dir: "rtl",
-    values: {
-      moreUsers: "+٣",
-    },
-  },
-  he: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
       moreUsers: "+3",
     },
@@ -37,7 +31,7 @@ const translations: Translations = {
 }
 
 export function AvatarRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div

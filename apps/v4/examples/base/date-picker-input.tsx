@@ -46,12 +46,12 @@ export function DatePickerInput() {
 
   return (
     <Field className="mx-auto w-48">
-      <FieldLabel htmlFor="date-required">Subscription Date</FieldLabel>
+      <FieldLabel htmlFor="date-required">구독 시작일</FieldLabel>
       <InputGroup>
         <InputGroupInput
           id="date-required"
           value={value}
-          placeholder="June 01, 2025"
+          placeholder="2025년 6월 1일"
           onChange={(e) => {
             const date = new Date(e.target.value)
             setValue(e.target.value)
@@ -75,12 +75,12 @@ export function DatePickerInput() {
                   id="date-picker"
                   variant="ghost"
                   size="icon-xs"
-                  aria-label="Select date"
+                  aria-label="날짜 선택"
                 />
               }
             >
               <CalendarIcon />
-              <span className="sr-only">Select date</span>
+              <span className="sr-only">날짜 선택</span>
             </PopoverTrigger>
             <PopoverContent
               className="w-auto overflow-hidden p-0"

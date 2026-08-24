@@ -35,32 +35,21 @@ const translations: Translations = {
       breadcrumb: "Breadcrumb",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      home: "الرئيسية",
-      components: "المكونات",
-      documentation: "التوثيق",
-      themes: "السمات",
-      github: "جيت هاب",
-      breadcrumb: "مسار التنقل",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      home: "בית",
-      components: "רכיבים",
-      documentation: "תיעוד",
-      themes: "ערכות נושא",
-      github: "גיטהאב",
-      breadcrumb: "פירורי לחם",
+      home: "홈",
+      components: "컴포넌트",
+      documentation: "문서",
+      themes: "테마",
+      github: "GitHub",
+      breadcrumb: "Breadcrumb",
     },
   },
 }
 
 export function BreadcrumbRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <Breadcrumb dir={dir}>

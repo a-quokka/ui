@@ -17,17 +17,17 @@ import {
 } from "@/registry/new-york-v4/ui/popover"
 
 const TOP_LEVEL_SECTIONS = [
-  { name: "Introduction", href: "/docs" },
+  { name: "소개", href: "/docs" },
   {
-    name: "Components",
+    name: "컴포넌트",
     href: "/docs/components",
   },
   {
-    name: "Installation",
+    name: "설치",
     href: "/docs/installation",
   },
   {
-    name: "Theming",
+    name: "테마",
     href: "/docs/theming",
   },
   {
@@ -39,7 +39,7 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/rtl",
   },
   {
-    name: "Skills",
+    name: "스킬",
     href: "/docs/skills",
   },
   {
@@ -47,16 +47,12 @@ const TOP_LEVEL_SECTIONS = [
     href: "/docs/mcp",
   },
   {
-    name: "Registry",
+    name: "레지스트리",
     href: "/docs/registry",
   },
   {
     name: "Forms",
     href: "/docs/forms",
-  },
-  {
-    name: "Changelog",
-    href: "/docs/changelog",
   },
 ]
 

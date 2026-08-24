@@ -13,7 +13,7 @@ export function MessageHeaderFooterDemo() {
         <MessageContent>
           <MessageHeader>Olivia</MessageHeader>
           <Bubble variant="muted">
-            <BubbleContent>I already checked the logs.</BubbleContent>
+            <BubbleContent>로그는 이미 봤어요.</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>
@@ -21,12 +21,12 @@ export function MessageHeaderFooterDemo() {
         <MessageContent>
           <Bubble>
             <BubbleContent>
-              Send the report to the team. Ping @shadcn if you need help.
+              리포트를 팀에 보내 주세요. 도움이 필요하면 @dropshot 을 부르세요.
             </BubbleContent>
           </Bubble>
           <MessageFooter>
             <div>
-              Read <span className="font-normal">Yesterday</span>
+              읽음 <span className="font-normal">어제</span>
             </div>
           </MessageFooter>
         </MessageContent>

@@ -1,22 +1,22 @@
 ---
 title: Formisch
-description: Build forms in React using Formisch and Valibot.
+description: Formisch 와 Valibot 으로 React 폼을 만듭니다.
 links:
   doc: https://formisch.dev
 ---
 
 import { InfoIcon } from "lucide-react"
 
-This guide covers building forms with [Formisch](https://formisch.dev), the lightweight, schema-first, and fully type-safe form library for React. We'll create forms with the `<Field />` component, validate them with Valibot schemas, handle errors, and ensure accessibility.
+[Formisch](https://formisch.dev) 로 폼을 만드는 방법을 다룹니다. 스키마를 먼저 두는 가볍고 타입 안전한 React 폼 라이브러리입니다. `<Field />` 로 폼을 만들고, Valibot 스키마로 검증하고, 오류를 처리하고, 접근성을 챙기는 것까지 살펴봅니다.
 
 ## Demo
 
-We'll build the following form. It has a simple text input and a textarea. On submit, we'll validate the form data and display any errors.
+아래 폼을 만듭니다. 텍스트 입력 하나와 textarea 하나가 있고, 제출하면 데이터를 검증해 오류를 보여 줍니다.
 
 <Callout icon={<InfoIcon />}>
-  **Note:** For the purpose of this demo, we have intentionally disabled browser
-  validation to show how schema validation and form errors work in Formisch. It
-  is recommended to add basic browser validation in your production code.
+  **참고:** Formisch 의 스키마 검증과 오류 처리를 보여 주려고 이 데모에서는
+  브라우저 기본 검증을 일부러 껐습니다. 실제 코드에는 기본 검증을 함께 두는 편이
+  좋습니다.
 </Callout>
 
 <ComponentPreview
@@ -28,23 +28,23 @@ We'll build the following form. It has a simple text input and a textarea. On su
 
 ## Approach
 
-This form leverages Formisch for headless, schema-first form handling. We'll build our form using the `<Field />` component, which gives you **complete flexibility over the markup and styling**.
+이 폼은 스키마를 먼저 두는 헤드리스 방식으로 Formisch 를 씁니다. `<Field />` 로 만들기 때문에 **마크업과 스타일을 온전히 마음대로** 할 수 있습니다.
 
-- Uses Formisch's `useForm` hook for form state management.
-- `<Form />` component to wrap the native `<form>` element with submit handling.
-- `<Field />` render-prop component for controlled inputs.
-- Schema validation using [Valibot](https://valibot.dev).
-- Type-safe field paths inferred from the schema.
+- 폼 상태는 Formisch 의 `useForm` 훅으로 관리합니다.
+- `<Form />` 이 네이티브 `<form>` 을 감싸 제출을 처리합니다.
+- 제어되는 입력에는 render-prop 방식의 `<Field />` 를 씁니다.
+- 검증은 [Valibot](https://valibot.dev) 으로 합니다.
+- 필드 경로는 스키마에서 추론돼 타입이 안전합니다.
 
 ## Form Methods
 
-Formisch exposes form operations as **top-level functions** rather than methods on a form object. Import only what you need:
+Formisch 는 폼 동작을 객체의 메서드가 아니라 **최상위 함수**로 제공합니다. 필요한 것만 가져다 쓰세요.
 
 ```ts
 import { getInput, insert, reset, submit } from "@formisch/react"
 ```
 
-Every method follows the same signature: the **first parameter is always the form store**, and the **second parameter (if necessary) is always a config object**.
+모든 함수가 같은 형태입니다. **첫 인자는 언제나 폼 스토어**, **둘째 인자는 필요할 때 설정 객체**입니다.
 
 ```ts
 // Read a field value
@@ -57,11 +57,11 @@ reset(form, { initialInput: { email: "", password: "" } })
 move(form, { path: ["items"], from: 0, to: 3 })
 ```
 
-This design keeps the API flexible and consistent across all methods. You'll see the same `(form, config)` shape used throughout this guide for reading state (`getInput`, `getErrors`), writing state (`setInput`, `setErrors`), form control (`submit`, `validate`, `focus`), and array operations (`insert`, `remove`, `move`, `swap`, `replace`). See the [full methods reference](https://formisch.dev/react/guides/form-methods) for details.
+그래서 API 가 유연하면서도 일관됩니다. 이 문서 전반에서 상태 읽기(`getInput`·`getErrors`), 상태 쓰기(`setInput`·`setErrors`), 폼 제어(`submit`·`validate`·`focus`), 배열 조작(`insert`·`remove`·`move`·`swap`·`replace`) 모두 같은 `(form, config)` 모양으로 나옵니다. 자세한 내용은 [전체 메서드 레퍼런스](https://formisch.dev/react/guides/form-methods)를 보세요.
 
 ## Anatomy
 
-Here's a basic example of a form using the `<Field />` component from Formisch and the shadcn `<Field />` component.
+Formisch 의 `<Field />` 와 shadcn 의 `<Field />` 를 함께 쓴 기본 예시입니다.
 
 ```tsx showLineNumbers {3-21}
 <Form of={form} onSubmit={handleSubmit}>
@@ -69,13 +69,13 @@ Here's a basic example of a form using the `<Field />` component from Formisch a
     <FormischField of={form} path={["title"]}>
       {(field) => (
         <Field data-invalid={field.errors !== null}>
-          <FieldLabel htmlFor="form-title">Bug Title</FieldLabel>
+          <FieldLabel htmlFor="form-title">버그 제목</FieldLabel>
           <Input
             {...field.props}
             id="form-title"
             value={field.input}
             aria-invalid={field.errors !== null}
-            placeholder="Login button not working on mobile"
+            placeholder="모바일에서 로그인 버튼이 안 눌립니다"
             autoComplete="off"
           />
           <FieldDescription>
@@ -92,17 +92,17 @@ Here's a basic example of a form using the `<Field />` component from Formisch a
 ```
 
 <Callout icon={<InfoIcon />}>
-  **Note:** Formisch ships its own `Field` component. To avoid a name clash with
-  the shadcn `Field`, the examples below import the Formisch one as
-  `FormischField` and keep the shadcn `Field` under its original name. In your
-  own code you can alias either side — just be consistent.
+  **참고:** Formisch 에도 `Field` 컴포넌트가 있습니다. shadcn 의 `Field` 와
+  이름이 겹치지 않도록 아래 예시에서는 Formisch 쪽을 `FormischField` 로 가져오고
+  shadcn 쪽은 원래 이름을 씁니다. 실제 코드에서는 어느 쪽에 별칭을 붙여도 되지만
+  일관되게 쓰세요.
 </Callout>
 
 ## Form
 
 ### Create a form schema
 
-We'll start by defining the shape of our form using a Valibot schema. Formisch infers all input and output types directly from this schema.
+먼저 Valibot 스키마로 폼의 모양을 정의합니다. Formisch 는 이 스키마에서 입력·출력 타입을 모두 추론합니다.
 
 ```tsx showLineNumbers title="form.tsx"
 import * as v from "valibot"
@@ -123,7 +123,7 @@ const FormSchema = v.object({
 
 ### Set up the form
 
-Next, we'll use the `useForm` hook from Formisch to create our form instance. The schema is passed directly to `useForm` — there is no resolver step.
+다음으로 Formisch 의 `useForm` 훅으로 폼 인스턴스를 만듭니다. 스키마를 `useForm` 에 바로 넘기며 resolver 단계는 없습니다.
 
 ```tsx showLineNumbers title="form.tsx" {1-2,21-25}
 import { Form, Field as FormischField, useForm } from "@formisch/react"
@@ -167,11 +167,11 @@ export function BugReportForm() {
 }
 ```
 
-The `<Form />` component wraps a native `<form>` element. It calls `event.preventDefault()`, runs validation, and only invokes `onSubmit` when the data is valid. The `output` you receive is fully typed from the schema.
+`<Form />` 은 네이티브 `<form>` 을 감쌉니다. `event.preventDefault()` 를 부르고 검증을 돌린 뒤 데이터가 올바를 때만 `onSubmit` 을 호출합니다. 받는 `output` 은 스키마에서 추론된 타입을 그대로 가집니다.
 
 ### Build the form
 
-We can now build the form using the `<Field />` component from Formisch and the shadcn `<Field />` component.
+이제 Formisch 의 `<Field />` 와 shadcn 의 `<Field />` 로 폼을 만듭니다.
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-formisch-demo.tsx"
@@ -180,15 +180,15 @@ We can now build the form using the `<Field />` component from Formisch and the 
 
 ### Done
 
-That's it. You now have a fully accessible form with client-side validation.
+여기까지입니다. 이제 클라이언트 검증이 붙은, 접근성을 갖춘 폼이 생겼습니다.
 
-When you submit the form, the `handleSubmit` function will be called with the validated form data. If the form data is invalid, Formisch will populate `field.errors` for each invalid field and the UI will display them.
+폼을 제출하면 검증된 데이터와 함께 `handleSubmit` 이 불립니다. 데이터가 올바르지 않으면 Formisch 가 각 필드의 `field.errors` 를 채우고 화면에 표시됩니다.
 
 ## Validation
 
 ### Client-side Validation
 
-Formisch validates your form data using the Valibot schema you pass to `useForm`. There is no resolver — the schema is the single source of truth for both runtime validation and static types.
+Formisch 는 `useForm` 에 넘긴 Valibot 스키마로 데이터를 검증합니다. resolver 는 없고, 스키마 하나가 런타임 검증과 정적 타입 모두의 기준이 됩니다.
 
 ```tsx showLineNumbers title="form.tsx" {1,3-6,11}
 import { useForm } from "@formisch/react"
@@ -211,7 +211,7 @@ export function ExampleForm() {
 
 ### Validation Modes
 
-Formisch separates the **first** validation from **subsequent** validations. You configure them with the `validate` and `revalidate` options on `useForm`.
+Formisch 는 **첫 검증**과 **그 이후 검증**을 나눠 다룹니다. `useForm` 의 `validate` 와 `revalidate` 옵션으로 정합니다.
 
 ```tsx showLineNumbers title="form.tsx" {3-4}
 const form = useForm({
@@ -221,22 +221,22 @@ const form = useForm({
 })
 ```
 
-| Option       | Value       | Description                                                     |
-| ------------ | ----------- | --------------------------------------------------------------- |
-| `validate`   | `"submit"`  | Validate on form submission (default).                          |
-| `validate`   | `"blur"`    | Validate when a field loses focus.                              |
-| `validate`   | `"input"`   | Validate on every input change.                                 |
-| `validate`   | `"initial"` | Validate immediately on form creation.                          |
-| `revalidate` | `"input"`   | Revalidate on every input change after the first run (default). |
-| `revalidate` | `"blur"`    | Revalidate on blur after the first run.                         |
-| `revalidate` | `"submit"`  | Revalidate only on form submission.                             |
+| Option       | Value       | Description                                              |
+| ------------ | ----------- | -------------------------------------------------------- |
+| `validate`   | `"submit"`  | 폼을 제출할 때 검증합니다(기본값).                       |
+| `validate`   | `"blur"`    | 필드에서 포커스가 빠질 때 검증합니다.                    |
+| `validate`   | `"input"`   | 값이 바뀔 때마다 검증합니다.                             |
+| `validate`   | `"initial"` | 폼을 만들자마자 검증합니다.                              |
+| `revalidate` | `"input"`   | 첫 검증 뒤에는 값이 바뀔 때마다 다시 검증합니다(기본값). |
+| `revalidate` | `"blur"`    | 첫 검증 뒤에는 포커스가 빠질 때 다시 검증합니다.         |
+| `revalidate` | `"submit"`  | 제출할 때만 다시 검증합니다.                             |
 
 ## Displaying Errors
 
-Display errors next to the field using `<FieldError />`. Formisch returns errors as an array of strings, so map them to the shape `<FieldError />` expects. For styling and accessibility:
+오류는 `<FieldError />` 로 입력 옆에 보여 줍니다. Formisch 는 오류를 문자열 배열로 돌려주므로 `<FieldError />` 가 기대하는 모양으로 옮겨 주세요. 스타일과 접근성을 위해 이렇게 하세요.
 
-- Add the `data-invalid` prop to the `<Field />` component.
-- Add the `aria-invalid` prop to the form control such as `<Input />`, `<SelectTrigger />`, `<Checkbox />`, etc.
+- `<Field />` 에 `data-invalid` prop 을 붙입니다.
+- `<Input />`·`<SelectTrigger />`·`<Checkbox />` 같은 입력에는 `aria-invalid` prop 을 붙입니다.
 
 ```tsx showLineNumbers title="form.tsx" {3,10,12-14}
 <FormischField of={form} path={["email"]}>
@@ -260,15 +260,15 @@ Display errors next to the field using `<FieldError />`. Formisch returns errors
 
 ## Working with Different Field Types
 
-Formisch exposes two ways to bind a field to an element:
+Formisch 는 필드를 요소에 연결하는 방법을 두 가지 제공합니다.
 
-- **Native HTML elements** (like `<Input />` and `<Textarea />`) — spread `field.props` and provide `value={field.input}`. Formisch wires up `name`, `ref`, `onChange`, `onBlur`, and `onFocus` for you.
-- **Component-library inputs** (like Radix-based `<Select />`, `<Checkbox />`, `<RadioGroup />`, `<Switch />`) — read the value from `field.input` and call `field.onChange(value)` to update it.
+- **네이티브 HTML 요소**(`<Input />`·`<Textarea />` 등) — `field.props` 를 펼쳐 넣고 `value={field.input}` 을 줍니다. `name`·`ref`·`onChange`·`onBlur`·`onFocus` 는 Formisch 가 연결해 줍니다.
+- **컴포넌트 라이브러리 입력**(Radix 기반 `<Select />`·`<Checkbox />`·`<RadioGroup />`·`<Switch />` 등) — 값은 `field.input` 에서 읽고 바꿀 때는 `field.onChange(value)` 를 부릅니다.
 
 ### Input
 
-- For input fields, spread `field.props` and provide `value={field.input}`.
-- To show errors, add the `aria-invalid` prop to the `<Input />` component and the `data-invalid` prop to the `<Field />` component.
+- 입력 필드에는 `field.props` 를 펼쳐 넣고 `value={field.input}` 을 줍니다.
+- 오류를 보이려면 `<Input />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -298,8 +298,8 @@ Formisch exposes two ways to bind a field to an element:
 
 ### Textarea
 
-- For textarea fields, spread `field.props` and provide `value={field.input}`.
-- To show errors, add the `aria-invalid` prop to the `<Textarea />` component and the `data-invalid` prop to the `<Field />` component.
+- textarea 에는 `field.props` 를 펼쳐 넣고 `value={field.input}` 을 줍니다.
+- 오류를 보이려면 `<Textarea />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -312,13 +312,13 @@ Formisch exposes two ways to bind a field to an element:
 <FormischField of={form} path={["about"]}>
   {(field) => (
     <Field data-invalid={field.errors !== null}>
-      <FieldLabel htmlFor="form-about">More about you</FieldLabel>
+      <FieldLabel htmlFor="form-about">더 알려 주세요</FieldLabel>
       <Textarea
         {...field.props}
         id="form-about"
         value={field.input}
         aria-invalid={field.errors !== null}
-        placeholder="I'm a software engineer..."
+        placeholder="저는 소프트웨어 엔지니어입니다..."
         className="min-h-[120px]"
       />
       <FieldDescription>
@@ -335,8 +335,8 @@ Formisch exposes two ways to bind a field to an element:
 
 ### Select
 
-- For select components, read `field.input` and call `field.onChange` from `<Select />`'s `onValueChange`.
-- To show errors, add the `aria-invalid` prop to the `<SelectTrigger />` component and the `data-invalid` prop to the `<Field />` component.
+- 셀렉트는 `field.input` 을 읽고 `<Select />` 의 `onValueChange` 에서 `field.onChange` 를 부릅니다.
+- 오류를 보이려면 `<SelectTrigger />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -350,7 +350,7 @@ Formisch exposes two ways to bind a field to an element:
   {(field) => (
     <Field orientation="responsive" data-invalid={field.errors !== null}>
       <FieldContent>
-        <FieldLabel htmlFor="form-language">Spoken Language</FieldLabel>
+        <FieldLabel htmlFor="form-language">사용 언어</FieldLabel>
         <FieldDescription>
           For best results, select the language you speak.
         </FieldDescription>
@@ -378,9 +378,9 @@ Formisch exposes two ways to bind a field to an element:
 
 ### Checkbox
 
-- For checkbox arrays, read `field.input` and update it from `onCheckedChange` using `field.onChange`.
-- To show errors, add the `aria-invalid` prop to the `<Checkbox />` component and the `data-invalid` prop to the `<Field />` component.
-- Remember to add `data-slot="checkbox-group"` to the `<FieldGroup />` component for proper styling and spacing.
+- 체크박스 배열은 `field.input` 을 읽고 `onCheckedChange` 에서 `field.onChange` 로 갱신합니다.
+- 오류를 보이려면 `<Checkbox />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
+- 스타일과 간격이 맞도록 `<FieldGroup />` 에 `data-slot="checkbox-group"` 을 꼭 붙이세요.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -436,8 +436,8 @@ Formisch exposes two ways to bind a field to an element:
 
 ### Radio Group
 
-- For radio groups, read `field.input` and call `field.onChange` from `onValueChange`.
-- To show errors, add the `aria-invalid` prop to the `<RadioGroupItem />` component and the `data-invalid` prop to the `<Field />` component.
+- 라디오 그룹은 `field.input` 을 읽고 `onValueChange` 에서 `field.onChange` 를 부릅니다.
+- 오류를 보이려면 `<RadioGroupItem />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -484,8 +484,8 @@ Formisch exposes two ways to bind a field to an element:
 
 ### Switch
 
-- For switches, read `field.input` and call `field.onChange` from `onCheckedChange`.
-- To show errors, add the `aria-invalid` prop to the `<Switch />` component and the `data-invalid` prop to the `<Field />` component.
+- 스위치는 `field.input` 을 읽고 `onCheckedChange` 에서 `field.onChange` 를 부릅니다.
+- 오류를 보이려면 `<Switch />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -522,7 +522,7 @@ Formisch exposes two ways to bind a field to an element:
 
 ### Complex Forms
 
-Here is an example of a more complex form with multiple fields and validation.
+입력이 여러 개이고 검증이 붙은 조금 복잡한 폼 예시입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -533,7 +533,7 @@ Here is an example of a more complex form with multiple fields and validation.
 
 ## Resetting the Form
 
-Formisch exposes a top-level `reset` function. Pass the form store to reset it to its initial input.
+Formisch 는 최상위 `reset` 함수를 제공합니다. 폼 스토어를 넘기면 처음 값으로 되돌립니다.
 
 ```tsx showLineNumbers
 <Button type="button" variant="outline" onClick={() => reset(form)}>
@@ -541,7 +541,7 @@ Formisch exposes a top-level `reset` function. Pass the form store to reset it t
 </Button>
 ```
 
-You can also reset to new initial values, or reset while keeping the user's current input:
+새 초기값으로 되돌리거나, 사용자가 입력한 값을 유지한 채 되돌릴 수도 있습니다.
 
 ```tsx showLineNumbers
 // Reset to a fresh set of initial values
@@ -553,7 +553,7 @@ reset(form, { initialInput: serverData, keepInput: true })
 
 ## Array Fields
 
-Formisch provides a `<FieldArray />` component and a set of helper functions for managing dynamic array fields. Use it whenever you need to add, remove, or reorder items.
+Formisch 는 동적 배열 필드를 위한 `<FieldArray />` 와 도우미 함수들을 제공합니다. 항목을 더하거나 빼거나 순서를 바꿔야 할 때 씁니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -564,7 +564,7 @@ Formisch provides a `<FieldArray />` component and a set of helper functions for
 
 ### Using FieldArray
 
-`<FieldArray />` follows the same render-prop pattern as `<Field />`. Its `items` array contains a stable key per item that you should use as the React `key`.
+`<FieldArray />` 도 `<Field />` 와 같은 render-prop 방식입니다. `items` 배열에는 항목마다 값이 바뀌지 않는 키가 들어 있으니 React `key` 로 쓰세요.
 
 ```tsx showLineNumbers title="form.tsx" {1,7-22}
 import {
@@ -599,11 +599,11 @@ export function ExampleForm() {
 
 ### Array Field Structure
 
-Wrap your array fields in a `<FieldSet />` with a `<FieldLegend />` and `<FieldDescription />`.
+배열 입력은 `<FieldLegend />` 와 `<FieldDescription />` 을 둔 `<FieldSet />` 으로 감쌉니다.
 
 ```tsx showLineNumbers title="form.tsx"
 <FieldSet className="gap-4">
-  <FieldLegend variant="label">Email Addresses</FieldLegend>
+  <FieldLegend variant="label">이메일 주소</FieldLegend>
   <FieldDescription>
     Add up to 5 email addresses where we can contact you.
   </FieldDescription>
@@ -613,7 +613,7 @@ Wrap your array fields in a `<FieldSet />` with a `<FieldLegend />` and `<FieldD
 
 ### Adding Items
 
-Use the `insert` function to add new items to the array. By default new items are appended to the end. You can also pass an `at` index to insert at a specific position.
+`insert` 로 배열에 항목을 더합니다. 기본은 끝에 붙이고, `at` 으로 위치를 지정할 수도 있습니다.
 
 ```tsx showLineNumbers title="form.tsx"
 <Button
@@ -631,7 +631,7 @@ Use the `insert` function to add new items to the array. By default new items ar
 
 ### Removing Items
 
-Use the `remove` function with an `at` index to remove items from the array.
+`remove` 에 `at` 을 주어 배열에서 항목을 뺍니다.
 
 ```tsx showLineNumbers title="form.tsx"
 import { remove } from "@formisch/react"
@@ -653,11 +653,11 @@ import { remove } from "@formisch/react"
 }
 ```
 
-Formisch also exposes `move`, `swap`, and `replace` for reordering and replacing items. They follow the same `(form, config)` signature.
+순서를 바꾸거나 교체하는 `move`·`swap`·`replace` 도 있습니다. 모두 같은 `(form, config)` 형태입니다.
 
 ### Array Validation
 
-Use Valibot's `array` and pipeline validators to constrain array fields.
+배열 필드에 조건을 걸려면 Valibot 의 `array` 와 파이프라인 검증기를 쓰세요.
 
 ```tsx showLineNumbers title="form.tsx"
 const FormSchema = v.object({

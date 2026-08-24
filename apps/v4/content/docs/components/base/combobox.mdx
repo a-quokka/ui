@@ -1,6 +1,6 @@
 ---
 title: Combobox
-description: Autocomplete input with a list of suggestions.
+description: 입력하면서 후보를 좁혀 고릅니다.
 base: base
 component: true
 links:
@@ -33,13 +33,13 @@ npx shadcn@latest add combobox
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="combobox"
@@ -47,7 +47,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -74,9 +74,9 @@ const frameworks = ["Next.js", "SvelteKit", "Nuxt.js", "Remix", "Astro"]
 export function ExampleCombobox() {
   return (
     <Combobox items={frameworks}>
-      <ComboboxInput placeholder="Select a framework" />
+      <ComboboxInput placeholder="프레임워크를 고르세요" />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>항목이 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>
@@ -94,7 +94,7 @@ export function ExampleCombobox() {
 
 ### Simple
 
-A single-line input and a flat list (see [Basic](#basic)).
+한 줄 입력과 평평한 목록입니다([Basic](#basic) 참고).
 
 ```text
 Combobox
@@ -108,7 +108,7 @@ Combobox
 
 ### With chips
 
-Multi-select with `multiple`, chips, and a chips input (see [Multiple](#multiple)).
+`multiple`과 칩, 칩 입력으로 만드는 다중 선택입니다([Multiple](#multiple) 참고).
 
 ```text
 Combobox
@@ -125,7 +125,7 @@ Combobox
 
 ### With groups and collection
 
-Nested items per group using `ComboboxCollection` inside each `ComboboxGroup`, with a separator between groups (see [Groups](#groups)).
+각 `ComboboxGroup` 안에 `ComboboxCollection`을 넣어 그룹별로 항목을 중첩하고, 그룹 사이에 구분선을 둡니다([Groups](#groups) 참고).
 
 ```text
 Combobox
@@ -148,7 +148,7 @@ Combobox
 
 ## Custom Items
 
-Use `itemToStringValue` when your items are objects.
+항목이 객체라면 `itemToStringValue`를 씁니다.
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -179,9 +179,9 @@ export function ExampleComboboxCustomItems() {
       items={frameworks}
       itemToStringValue={(framework) => framework.label}
     >
-      <ComboboxInput placeholder="Select a framework" />
+      <ComboboxInput placeholder="프레임워크를 고르세요" />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>항목이 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(framework) => (
             <ComboboxItem key={framework.value} value={framework}>
@@ -197,7 +197,7 @@ export function ExampleComboboxCustomItems() {
 
 ## Multiple Selection
 
-Use `multiple` with chips for multi-select behavior.
+다중 선택은 `multiple`과 칩을 함께 씁니다.
 
 ```tsx showLineNumbers
 import * as React from "react"
@@ -233,10 +233,10 @@ export function ExampleComboboxMultiple() {
             <ComboboxChip key={item}>{item}</ComboboxChip>
           ))}
         </ComboboxValue>
-        <ComboboxChipsInput placeholder="Add framework" />
+        <ComboboxChipsInput placeholder="프레임워크 추가" />
       </ComboboxChips>
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>항목이 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>
@@ -252,67 +252,67 @@ export function ExampleComboboxMultiple() {
 
 ## Basic
 
-A simple combobox with a list of frameworks.
+프레임워크 목록을 보여 주는 기본 콤보박스입니다.
 
 <ComponentPreview styleName="base-nova" name="combobox-basic" />
 
 ## Multiple
 
-A combobox with multiple selection using `multiple` and `ComboboxChips`.
+`multiple`과 `ComboboxChips`로 여러 개를 고르는 콤보박스입니다.
 
 <ComponentPreview styleName="base-nova" name="combobox-multiple" />
 
 ## Clear Button
 
-Use the `showClear` prop to show a clear button.
+`showClear` prop으로 지우기 버튼을 보여 줍니다.
 
 <ComponentPreview styleName="base-nova" name="combobox-clear" />
 
 ## Groups
 
-Use `ComboboxGroup` and `ComboboxSeparator` to group items.
+`ComboboxGroup`과 `ComboboxSeparator`로 항목을 묶습니다.
 
 <ComponentPreview styleName="base-nova" name="combobox-groups" />
 
 ## Custom Items
 
-You can render a custom component inside `ComboboxItem`.
+`ComboboxItem` 안에 원하는 컴포넌트를 그릴 수 있습니다.
 
 <ComponentPreview styleName="base-nova" name="combobox-custom" />
 
 ## Invalid
 
-Use the `aria-invalid` prop to make the combobox invalid.
+`aria-invalid` prop으로 콤보박스를 오류 상태로 표시합니다.
 
 <ComponentPreview styleName="base-nova" name="combobox-invalid" />
 
 ## Disabled
 
-Use the `disabled` prop to disable the combobox.
+`disabled` prop으로 콤보박스를 비활성화합니다.
 
 <ComponentPreview styleName="base-nova" name="combobox-disabled" />
 
 ## Auto Highlight
 
-Use the `autoHighlight` prop to automatically highlight the first item on filter.
+`autoHighlight` prop을 주면 필터링할 때 첫 항목이 자동으로 선택 표시됩니다.
 
 <ComponentPreview styleName="base-nova" name="combobox-auto-highlight" />
 
 ## Popup
 
-You can trigger the combobox from a button or any other component by using the `render` prop. Move the `ComboboxInput` inside the `ComboboxContent`.
+`render` prop을 쓰면 버튼이나 다른 컴포넌트로 콤보박스를 열 수 있습니다. `ComboboxInput`은 `ComboboxContent` 안으로 옮기세요.
 
 <ComponentPreview styleName="base-nova" name="combobox-popup" />
 
 ## Input Group
 
-You can add an addon to the combobox by using the `InputGroupAddon` component inside the `ComboboxInput`.
+`ComboboxInput` 안에 `InputGroupAddon`을 넣어 콤보박스에 애드온을 붙일 수 있습니다.
 
 <ComponentPreview styleName="base-nova" name="combobox-input-group" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -323,4 +323,4 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ## API Reference
 
-See the [Base UI](https://base-ui.com/react/components/combobox#api-reference) documentation for more information.
+자세한 내용은 [Base UI](https://base-ui.com/react/components/combobox#api-reference) 문서를 보세요.

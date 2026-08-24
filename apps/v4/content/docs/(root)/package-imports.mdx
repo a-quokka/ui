@@ -1,18 +1,17 @@
 ---
-title: Package Imports
-description: Configure shadcn/ui with package.json imports.
+title: 패키지 import
+description: package.json 의 imports 로 Dropshot UI 를 설정합니다.
 ---
 
-The `shadcn` CLI supports [package imports](https://nodejs.org/api/packages.html#imports)
-for installing components, rewriting imports, and resolving third-party
-registries.
+`shadcn` CLI 는 컴포넌트 설치, import 고쳐 쓰기, 서드파티 레지스트리 해석에
+[패키지 import](https://nodejs.org/api/packages.html#imports) 를 지원합니다.
 
-Package imports let you use private `#...` import aliases from your
-`package.json` instead of `compilerOptions.paths` in `tsconfig.json`.
+패키지 import 를 쓰면 `tsconfig.json` 의 `compilerOptions.paths` 대신
+`package.json` 의 비공개 `#...` 별칭을 쓸 수 있습니다.
 
 ## Example
 
-You configure `imports` in your `package.json`:
+`package.json` 에 `imports` 를 설정합니다.
 
 ```json title="package.json" showLineNumbers
 {
@@ -24,7 +23,7 @@ You configure `imports` in your `package.json`:
 }
 ```
 
-Then import generated components using `#...` specifiers:
+그다음 생성된 컴포넌트를 `#...` 지정자로 가져옵니다.
 
 ```tsx
 import { Button } from "#components/ui/button"
@@ -32,20 +31,20 @@ import { cn } from "#lib/utils"
 ```
 
 <Callout className="mt-6">
-  Package import specifiers must start with `#`. Use TypeScript 5 or later with
-  `moduleResolution: "bundler"` and `resolvePackageJsonImports: true`.
+  패키지 import 지정자는 `#` 로 시작해야 합니다. TypeScript 5 이상에서
+  `moduleResolution: "bundler"` 와 `resolvePackageJsonImports: true` 를 쓰세요.
 </Callout>
 
 ## App
 
-For Next.js, Vite, and TanStack Start apps that install
-components into the same workspace.
+컴포넌트를 같은 워크스페이스에 설치하는 Next.js·Vite·TanStack Start 앱을
+위한 설정입니다.
 
 <Steps>
 
 ### Configure `package.json`
 
-Add imports for the shadcn/ui install targets.
+Dropshot UI 설치 대상에 대한 imports 를 추가합니다.
 
 ```json title="package.json" showLineNumbers
 {
@@ -57,8 +56,8 @@ Add imports for the shadcn/ui install targets.
 }
 ```
 
-If your app does not use a `src` directory, remove `src/` from the targets. For
-example:
+앱이 `src` 디렉터리를 쓰지 않는다면 대상에서 `src/` 를 빼세요. 예를 들면
+이렇습니다.
 
 ```json title="package.json" showLineNumbers
 {
@@ -72,7 +71,7 @@ example:
 
 ### Configure TypeScript
 
-Enable package import resolution.
+패키지 import 해석을 켭니다.
 
 ```json title="tsconfig.json" showLineNumbers
 {
@@ -83,11 +82,11 @@ Enable package import resolution.
 }
 ```
 
-You do not need `compilerOptions.paths` for these aliases.
+이 별칭들에는 `compilerOptions.paths` 가 필요 없습니다.
 
 ### Configure `components.json`
 
-Use the same `#...` roots in `components.json`.
+`components.json` 에도 같은 `#...` 루트를 씁니다.
 
 ```json title="components.json" showLineNumbers
 {
@@ -101,20 +100,20 @@ Use the same `#...` roots in `components.json`.
 }
 ```
 
-The `ui` alias uses `#components/ui`. It is still covered by the
-`#components/*` import in `package.json`.
+`ui` 별칭은 `#components/ui` 를 씁니다. `package.json` 의 `#components/*`
+`import` 가 이를 감쌉니다.
 
-The `utils` alias uses `#lib/utils`. It is covered by `#lib/*`, so you do not
-need a separate `#utils` import.
+`utils` 별칭은 `#lib/utils` 를 씁니다. `#lib/*` 가 감싸므로 `#utils` 를 따로
+둘 필요는 없습니다.
 
 </Steps>
 
 ## Monorepo
 
-In a monorepo, use package imports for files inside each package and package
-exports for files shared across workspaces.
+모노레포에서는 패키지 안의 파일에는 패키지 import 를, 워크스페이스 사이에서
+공유하는 파일에는 패키지 exports 를 쓰세요.
 
-For an app workspace:
+앱 워크스페이스라면 이렇습니다.
 
 ```json title="apps/web/package.json" showLineNumbers
 {
@@ -143,7 +142,7 @@ For an app workspace:
 }
 ```
 
-For the shared UI package:
+공용 UI 패키지라면 이렇습니다.
 
 ```json title="packages/ui/package.json" showLineNumbers
 {
@@ -175,8 +174,8 @@ For the shared UI package:
 }
 ```
 
-When you run `add` from `apps/web`, app-local files use `#...` imports and
-shared UI files are imported from `@workspace/ui`.
+`apps/web` 에서 `add` 를 돌리면 앱 안의 파일은 `#...` import 를 쓰고 공용 UI
+파일은 `@workspace/ui` 에서 가져옵니다.
 
 ```tsx
 import { Button } from "@workspace/ui/components/button"
@@ -185,8 +184,8 @@ import { LoginForm } from "#components/login-form"
 
 ## File extensions
 
-The target pattern in `package.json#imports` controls whether generated imports
-include file extensions.
+`package.json#imports` 의 대상 패턴이 생성된 import 에 확장자를 붙일지
+결정합니다.
 
 ```json title="package.json" showLineNumbers
 {
@@ -196,13 +195,13 @@ include file extensions.
 }
 ```
 
-This generates imports without extensions:
+이렇게 하면 확장자 없는 import 가 만들어집니다.
 
 ```tsx
 import { Button } from "#components/ui/button"
 ```
 
-If you use a target without the extension:
+확장자 없는 대상을 쓰면,
 
 ```json title="package.json" showLineNumbers
 {
@@ -212,23 +211,23 @@ If you use a target without the extension:
 }
 ```
 
-The generated import keeps the source extension:
+생성된 import 가 원본 확장자를 그대로 답니다.
 
 ```tsx
 import { Button } from "#components/ui/button.tsx"
 ```
 
-For most apps, use the extension in the target pattern.
+대부분의 앱에서는 대상 패턴에 확장자를 넣는 편이 좋습니다.
 
 ## Troubleshooting
 
-If TypeScript cannot resolve a `#...` import, check that:
+TypeScript 가 `#...` import 를 풀지 못한다면 이것들을 확인하세요.
 
-- the specifier starts with `#`
-- the `imports` entry is in the nearest `package.json`
-- `moduleResolution` is set to `bundler`
-- `resolvePackageJsonImports` is enabled
-- the matching target exists after components are added
+- 지정자가 `#` 로 시작하는지
+- `imports` 항목이 가장 가까운 `package.json` 에 있는지
+- `moduleResolution` 이 `bundler` 인지
+- `resolvePackageJsonImports` 가 켜져 있는지
+- 컴포넌트를 추가한 뒤 대상 경로가 실제로 있는지
 
-If a component is installed but imports still point to `@/...`, check that
-`components.json` uses the same `#...` aliases as your package imports.
+컴포넌트는 설치됐는데 import 가 여전히 `@/...` 를 가리킨다면, `components.json`
+의 별칭이 패키지 import 와 같은 `#...` 인지 확인하세요.

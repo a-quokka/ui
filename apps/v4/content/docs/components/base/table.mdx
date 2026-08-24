@@ -1,6 +1,6 @@
 ---
 title: Table
-description: A responsive table component.
+description: 행과 열로 데이터를 보여 줍니다. 좁은 화면에서는 가로로 스크롤됩니다.
 base: base
 component: true
 ---
@@ -31,7 +31,7 @@ npx shadcn@latest add table
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="table"
@@ -39,7 +39,7 @@ npx shadcn@latest add table
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -85,7 +85,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `Table`:
+아래 구조로 `Table`을 만듭니다.
 
 ```text
 Table
@@ -112,27 +112,25 @@ Table
 
 ## Footer
 
-Use the `<TableFooter />` component to add a footer to the table.
+`<TableFooter />`로 표에 푸터를 붙입니다.
 
 <ComponentPreview styleName="base-nova" name="table-footer" />
 
 ## Actions
 
-A table showing actions for each row using a `<DropdownMenu />` component.
+`<DropdownMenu />`로 각 행의 동작을 보여 주는 표입니다.
 
 <ComponentPreview styleName="base-nova" name="table-actions" />
 
 ## Data Table
 
-You can use the `<Table />` component to build more complex data tables. Combine it with [@tanstack/react-table](https://tanstack.com/table/latest) to create tables with sorting, filtering and pagination.
+`<Table />`로 더 복잡한 데이터 테이블도 만들 수 있습니다. [@tanstack/react-table](https://tanstack.com/table/latest)과 조합하면 정렬·필터·페이지네이션이 되는 표가 됩니다.
 
-See the [Data Table](/docs/components/data-table) documentation for more information.
+자세한 내용은 [Data Table](/docs/components/data-table) 문서를 보세요.
 
-You can also see an example of a data table in the [Tasks](/examples/tasks) demo.
+## i18n
 
-## RTL
-
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"

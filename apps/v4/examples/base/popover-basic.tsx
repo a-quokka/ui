@@ -13,14 +13,12 @@ export function PopoverBasic() {
     <>
       <Popover>
         <PopoverTrigger render={<Button variant="outline" className="w-fit" />}>
-          Open Popover
+          팝오버 열기
         </PopoverTrigger>
         <PopoverContent align="start">
           <PopoverHeader>
-            <PopoverTitle>Dimensions</PopoverTitle>
-            <PopoverDescription>
-              Set the dimensions for the layer.
-            </PopoverDescription>
+            <PopoverTitle>크기</PopoverTitle>
+            <PopoverDescription>레이어의 크기를 정합니다.</PopoverDescription>
           </PopoverHeader>
         </PopoverContent>
       </Popover>

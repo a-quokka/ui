@@ -3,7 +3,7 @@ export function ShimmerRtl() {
     <div className="mx-auto grid w-full max-w-lg gap-6 text-center text-sm text-muted-foreground sm:grid-cols-2">
       <div className="flex flex-col gap-3">
         <p dir="ltr" className="shimmer">
-          Generating response&hellip;
+          답변을 만드는 중&hellip;
         </p>
         <p className="font-mono text-xs">dir=&quot;ltr&quot;</p>
       </div>

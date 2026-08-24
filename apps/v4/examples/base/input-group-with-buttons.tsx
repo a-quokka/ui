@@ -14,29 +14,29 @@ export function InputGroupWithButtons() {
   return (
     <FieldGroup>
       <Field>
-        <FieldLabel htmlFor="input-button-13">Button</FieldLabel>
+        <FieldLabel htmlFor="input-button-13">버튼</FieldLabel>
         <InputGroup>
           <InputGroupInput id="input-button-13" />
           <InputGroupAddon>
-            <InputGroupButton>Default</InputGroupButton>
+            <InputGroupButton>기본</InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <InputGroup>
           <InputGroupInput id="input-button-14" />
           <InputGroupAddon>
-            <InputGroupButton variant="outline">Outline</InputGroupButton>
+            <InputGroupButton variant="outline">외곽선</InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <InputGroup>
           <InputGroupInput id="input-button-15" />
           <InputGroupAddon>
-            <InputGroupButton variant="secondary">Secondary</InputGroupButton>
+            <InputGroupButton variant="secondary">보조</InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <InputGroup>
           <InputGroupInput id="input-button-16" />
           <InputGroupAddon align="inline-end">
-            <InputGroupButton variant="secondary">Button</InputGroupButton>
+            <InputGroupButton variant="secondary">버튼</InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
         <InputGroup>

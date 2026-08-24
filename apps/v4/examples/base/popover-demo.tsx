@@ -11,19 +11,19 @@ export default function PopoverDemo() {
   return (
     <Popover>
       <PopoverTrigger render={<Button variant="outline" />}>
-        Open popover
+        팝오버 열기
       </PopoverTrigger>
       <PopoverContent className="w-80">
         <div className="grid gap-4">
           <div className="space-y-2">
-            <h4 className="leading-none font-medium">Dimensions</h4>
+            <h4 className="leading-none font-medium">크기</h4>
             <p className="text-sm text-muted-foreground">
-              Set the dimensions for the layer.
+              레이어의 크기를 정합니다.
             </p>
           </div>
           <div className="grid gap-2">
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="width">Width</Label>
+              <Label htmlFor="width">너비</Label>
               <Input
                 id="width"
                 defaultValue="100%"
@@ -31,7 +31,7 @@ export default function PopoverDemo() {
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxWidth">Max. width</Label>
+              <Label htmlFor="maxWidth">최대 너비</Label>
               <Input
                 id="maxWidth"
                 defaultValue="300px"
@@ -39,7 +39,7 @@ export default function PopoverDemo() {
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="height">Height</Label>
+              <Label htmlFor="height">높이</Label>
               <Input
                 id="height"
                 defaultValue="25px"
@@ -47,7 +47,7 @@ export default function PopoverDemo() {
               />
             </div>
             <div className="grid grid-cols-3 items-center gap-4">
-              <Label htmlFor="maxHeight">Max. height</Label>
+              <Label htmlFor="maxHeight">최대 높이</Label>
               <Input
                 id="maxHeight"
                 defaultValue="none"

@@ -6,7 +6,6 @@ import { IconArrowRight } from "@tabler/icons-react"
 import { useDocsSearch } from "fumadocs-core/search/client"
 import { CornerDownLeftIcon, SquareDashedIcon } from "lucide-react"
 import { Dialog as DialogPrimitive } from "radix-ui"
-import { encodePreset } from "shadcn/preset"
 
 import { type Color, type ColorPalette } from "@/lib/colors"
 import { trackEvent } from "@/lib/events"
@@ -37,7 +36,6 @@ import {
 } from "@/registry/new-york-v4/ui/dialog"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 import { Spinner } from "@/registry/new-york-v4/ui/spinner"
-import { STYLES } from "@/registry/styles"
 
 export function CommandMenu({
   tree,
@@ -58,7 +56,7 @@ export function CommandMenu({
   const [open, setOpen] = React.useState(false)
   const [renderDelayedGroups, setRenderDelayedGroups] = React.useState(false)
   const [selectedType, setSelectedType] = React.useState<
-    "color" | "page" | "component" | "block" | "style" | null
+    "color" | "page" | "component" | "block" | null
   >(null)
   const [copyPayload, setCopyPayload] = React.useState("")
 
@@ -186,7 +184,7 @@ export function CommandMenu({
 
     return (
       <CommandGroup
-        heading="Pages"
+        heading="페이지"
         className="p-0! **:[[cmdk-group-heading]]:scroll-mt-16 **:[[cmdk-group-heading]]:p-3! **:[[cmdk-group-heading]]:pb-1!"
       >
         {navItems.map((item) => (
@@ -209,40 +207,6 @@ export function CommandMenu({
       </CommandGroup>
     )
   }, [navItems, runCommand, router])
-
-  const stylesSection = React.useMemo(() => {
-    return (
-      <CommandGroup
-        heading="Styles"
-        className="p-0! **:[[cmdk-group-heading]]:scroll-mt-16 **:[[cmdk-group-heading]]:p-3! **:[[cmdk-group-heading]]:pb-1!"
-      >
-        {STYLES.map((style) => (
-          <CommandMenuItem
-            key={style.name}
-            value={`Style ${style.title} ${style.description}`}
-            keywords={["style", "preset", style.name, style.title]}
-            onHighlight={() => {
-              setSelectedType("style")
-              setCopyPayload("")
-            }}
-            onSelect={() => {
-              runCommand(() =>
-                router.push(
-                  `/create?preset=${encodePreset({ style: style.name })}`
-                )
-              )
-            }}
-          >
-            {style.icon}
-            {style.title}
-            <span className="ml-auto text-xs font-normal text-muted-foreground">
-              Open style in shadcn/create
-            </span>
-          </CommandMenuItem>
-        ))}
-      </CommandGroup>
-    )
-  }, [runCommand, router])
 
   const pageGroupsSection = React.useMemo(() => {
     return tree.children.map((group) => {
@@ -432,14 +396,14 @@ export function CommandMenu({
           onClick={() => setOpen(true)}
           {...props}
         >
-          <span className="hidden xl:inline-flex">Search documentation...</span>
+          <span className="hidden xl:inline-flex">문서 검색...</span>
           <span className="inline-flex xl:hidden">Search...</span>
         </Button>
       </DialogTrigger>
       <DialogContent className="rounded-xl border-none bg-clip-padding p-2 pb-11 shadow-2xl ring-4 ring-neutral-200/80 dark:bg-neutral-900 dark:ring-neutral-800">
         <DialogHeader className="sr-only">
-          <DialogTitle>Search documentation...</DialogTitle>
-          <DialogDescription>Search for a command to run...</DialogDescription>
+          <DialogTitle>문서 검색...</DialogTitle>
+          <DialogDescription>실행할 명령을 검색하세요...</DialogDescription>
         </DialogHeader>
         <Command
           className="rounded-none bg-transparent **:data-[slot=command-input]:h-9! **:data-[slot=command-input]:py-0 **:data-[slot=command-input-wrapper]:mb-0 **:data-[slot=command-input-wrapper]:h-9! **:data-[slot=command-input-wrapper]:rounded-md **:data-[slot=command-input-wrapper]:border **:data-[slot=command-input-wrapper]:border-input **:data-[slot=command-input-wrapper]:bg-input/50"
@@ -447,7 +411,7 @@ export function CommandMenu({
         >
           <div className="relative">
             <CommandInput
-              placeholder="Search documentation..."
+              placeholder="문서 검색..."
               onValueChange={handleSearchChange}
             />
             {query.isLoading && (
@@ -458,10 +422,9 @@ export function CommandMenu({
           </div>
           <CommandList className="no-scrollbar min-h-80 scroll-pt-2 scroll-pb-1.5">
             <CommandEmpty className="py-12 text-center text-sm text-muted-foreground">
-              {query.isLoading ? "Searching..." : "No results found."}
+              {query.isLoading ? "검색 중..." : "결과가 없습니다."}
             </CommandEmpty>
             {navItemsSection}
-            {stylesSection}
             {renderDelayedGroups ? (
               <>
                 {pageGroupsSection}
@@ -482,10 +445,9 @@ export function CommandMenu({
               <CornerDownLeftIcon />
             </CommandMenuKbd>{" "}
             {selectedType === "page" || selectedType === "component"
-              ? "Go to Page"
+              ? "페이지로 이동"
               : null}
-            {selectedType === "color" ? "Copy OKLCH" : null}
-            {selectedType === "style" ? "Open in shadcn/create" : null}
+            {selectedType === "color" ? "OKLCH 복사" : null}
           </div>
           {copyPayload && (
             <>
@@ -594,7 +556,7 @@ function SearchResults({
   return (
     <CommandGroup
       className="px-0! **:[[cmdk-group-heading]]:scroll-mt-16 **:[[cmdk-group-heading]]:p-3! **:[[cmdk-group-heading]]:pb-1!"
-      heading="Search Results"
+      heading="검색 결과"
     >
       {uniqueResults.map((item) => {
         return (

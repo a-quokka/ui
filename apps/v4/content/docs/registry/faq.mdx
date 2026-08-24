@@ -1,13 +1,13 @@
 ---
 title: FAQ
-description: Frequently asked questions about running a registry.
+description: 레지스트리 운영에 대해 자주 묻는 질문입니다.
 ---
 
 ## Frequently asked questions
 
 ### What does a complex component look like?
 
-Here's an example of a complex component that installs a page, two components, a hook, a format-date utils and a config file.
+페이지 하나, 컴포넌트 둘, 훅 하나, format-date 유틸, 설정 파일을 한꺼번에 설치하는 복합 컴포넌트 예시입니다.
 
 ```json showLineNumbers
 {
@@ -49,7 +49,7 @@ Here's an example of a complex component that installs a page, two components, a
 
 ### How do I add a new Tailwind color?
 
-To add a new color you need to add it to `cssVars` under `light` and `dark` keys.
+새 색을 넣으려면 `cssVars` 의 `light` 와 `dark` 아래에 추가하세요.
 
 ```json showLineNumbers {10-18}
 {
@@ -74,14 +74,14 @@ To add a new color you need to add it to `cssVars` under `light` and `dark` keys
 }
 ```
 
-The CLI will update the project CSS file. Once updated, the new colors will be available to be used as utility classes: `bg-brand` and `text-brand-accent`.
+CLI 가 프로젝트 CSS 파일을 갱신합니다. 그러면 `bg-brand`·`text-brand-accent` 같은 유틸리티 클래스로 새 색을 쓸 수 있습니다.
 
 ### Why does `button` in `registryDependencies` not resolve to my GitHub repository?
 
-Bare registry dependency names keep the existing shadcn behavior. `button`
-means the built-in shadcn `button` item.
+이름만 적은 레지스트리 의존성은 기존 shadcn 동작을 따릅니다. `button` 은 내장
+shadcn `button` 항목을 뜻합니다.
 
-For a dependency from a GitHub repository, use the full GitHub item address.
+GitHub 저장소의 의존성이라면 전체 GitHub 항목 주소를 쓰세요.
 
 ```json title="registry-item.json" showLineNumbers
 {
@@ -91,23 +91,23 @@ For a dependency from a GitHub repository, use the full GitHub item address.
 
 ### How do I pin a GitHub registry item?
 
-Add `#ref` to the GitHub item address. The ref can be a branch, tag or full
-commit SHA.
+GitHub 항목 주소에 `#ref` 를 붙입니다. ref 에는 브랜치·태그·전체 커밋 SHA 를
+쓸 수 있습니다.
 
 ```bash
 npx shadcn@latest add acme/ui/button#v1.2.0
 ```
 
-For published registries, prefer tags or full commit SHAs.
+배포하는 레지스트리라면 태그나 전체 커밋 SHA 를 쓰는 편이 낫습니다.
 
 ### Can GitHub registry addresses use private repositories?
 
-Not currently. GitHub registry addresses support public `github.com`
-repositories. For private registries, use a namespace with authenticated URLs.
+지금은 안 됩니다. GitHub 레지스트리 주소는 공개 `github.com` 저장소만
+지원합니다. 비공개라면 인증이 걸린 주소를 네임스페이스로 쓰세요.
 
 ### How do I add or override a Tailwind theme variable?
 
-To add or override a theme variable you add it to `cssVars.theme` under the key you want to add or override.
+테마 변수를 넣거나 덮어쓰려면 `cssVars.theme` 아래 원하는 키에 추가하세요.
 
 ```json showLineNumbers {10-15}
 {

@@ -1,6 +1,6 @@
 ---
 title: Dialog
-description: A window overlaid on either the primary window or another dialog window, rendering the content underneath inert.
+description: 화면 위에 겹쳐 뜨는 창입니다. 열려 있는 동안 뒤쪽 내용은 조작할 수 없습니다.
 featured: true
 base: base
 component: true
@@ -35,13 +35,13 @@ npx shadcn@latest add dialog
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="dialog"
@@ -49,7 +49,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -75,7 +75,7 @@ import {
   <DialogTrigger>Open</DialogTrigger>
   <DialogContent>
     <DialogHeader>
-      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogTitle>정말 진행할까요?</DialogTitle>
       <DialogDescription>
         This action cannot be undone. This will permanently delete your account
         and remove your data from our servers.
@@ -87,7 +87,7 @@ import {
 
 ## Composition
 
-Use the following composition to build a `Dialog`:
+아래 구조로 `Dialog`를 만듭니다.
 
 ```text
 Dialog
@@ -101,34 +101,34 @@ Dialog
 
 ## Custom Close Button
 
-Replace the default close control with your own button.
+기본 닫기 버튼을 직접 만든 버튼으로 바꿉니다.
 
 <ComponentPreview styleName="base-nova" name="dialog-close-button" />
 
 ## No Close Button
 
-Use `showCloseButton={false}` to hide the close button.
+`showCloseButton={false}`로 닫기 버튼을 숨깁니다.
 
 <ComponentPreview styleName="base-nova" name="dialog-no-close-button" />
 
 ## Sticky Footer
 
-Keep actions visible while the content scrolls.
+내용이 스크롤되는 동안에도 동작 버튼을 계속 보여 줍니다.
 
 <ComponentPreview styleName="base-nova" name="dialog-sticky-footer" />
 
 ## Scrollable Content
 
-Long content can scroll while the header stays in view.
+내용이 길면 헤더는 그대로 두고 본문만 스크롤됩니다.
 
 <ComponentPreview styleName="base-nova" name="dialog-scrollable-content" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="dialog-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [Base UI](https://base-ui.com/react/components/dialog#api-reference) documentation for more information.
+자세한 내용은 [Base UI](https://base-ui.com/react/components/dialog#api-reference) 문서를 보세요.

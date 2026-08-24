@@ -11,7 +11,7 @@ export function CheckboxInvalid() {
           aria-invalid
         />
         <FieldLabel htmlFor="terms-checkbox-invalid">
-          Accept terms and conditions
+          이용약관에 동의합니다
         </FieldLabel>
       </Field>
     </FieldGroup>

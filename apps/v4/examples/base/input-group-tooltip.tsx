@@ -16,14 +16,14 @@ export default function InputGroupTooltip() {
   return (
     <div className="grid w-full max-w-sm gap-4">
       <InputGroup>
-        <InputGroupInput placeholder="Enter password" type="password" />
+        <InputGroupInput placeholder="비밀번호를 입력하세요" type="password" />
         <InputGroupAddon align="inline-end">
           <Tooltip>
             <TooltipTrigger
               render={
                 <InputGroupButton
                   variant="ghost"
-                  aria-label="Info"
+                  aria-label="안내"
                   size="icon-xs"
                 />
               }
@@ -31,20 +31,20 @@ export default function InputGroupTooltip() {
               <InfoIcon />
             </TooltipTrigger>
             <TooltipContent>
-              <p>Password must be at least 8 characters</p>
+              <p>비밀번호는 8자 이상이어야 합니다</p>
             </TooltipContent>
           </Tooltip>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Your email address" />
+        <InputGroupInput placeholder="이메일 주소" />
         <InputGroupAddon align="inline-end">
           <Tooltip>
             <TooltipTrigger
               render={
                 <InputGroupButton
                   variant="ghost"
-                  aria-label="Help"
+                  aria-label="도움말"
                   size="icon-xs"
                 />
               }
@@ -52,21 +52,25 @@ export default function InputGroupTooltip() {
               <HelpCircle />
             </TooltipTrigger>
             <TooltipContent>
-              <p>We&apos;ll use this to send you notifications</p>
+              <p>알림을 보낼 때 씁니다</p>
             </TooltipContent>
           </Tooltip>
         </InputGroupAddon>
       </InputGroup>
       <InputGroup>
-        <InputGroupInput placeholder="Enter API key" />
+        <InputGroupInput placeholder="API 키를 입력하세요" />
         <Tooltip>
           <TooltipTrigger render={<InputGroupAddon />}>
-            <InputGroupButton variant="ghost" aria-label="Help" size="icon-xs">
+            <InputGroupButton
+              variant="ghost"
+              aria-label="도움말"
+              size="icon-xs"
+            >
               <HelpCircle />
             </InputGroupButton>
           </TooltipTrigger>
           <TooltipContent side="left">
-            <p>Click for help with API keys</p>
+            <p>API 키에 대한 도움말 보기</p>
           </TooltipContent>
         </Tooltip>
       </InputGroup>

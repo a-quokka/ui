@@ -15,25 +15,23 @@ export function PopoverForm() {
     <>
       <Popover>
         <PopoverTrigger render={<Button variant="outline" />}>
-          Open Popover
+          팝오버 열기
         </PopoverTrigger>
         <PopoverContent className="w-64" align="start">
           <PopoverHeader>
-            <PopoverTitle>Dimensions</PopoverTitle>
-            <PopoverDescription>
-              Set the dimensions for the layer.
-            </PopoverDescription>
+            <PopoverTitle>크기</PopoverTitle>
+            <PopoverDescription>레이어의 크기를 정합니다.</PopoverDescription>
           </PopoverHeader>
           <FieldGroup className="gap-4">
             <Field orientation="horizontal">
               <FieldLabel htmlFor="width" className="w-1/2">
-                Width
+                너비
               </FieldLabel>
               <Input id="width" defaultValue="100%" />
             </Field>
             <Field orientation="horizontal">
               <FieldLabel htmlFor="height" className="w-1/2">
-                Height
+                높이
               </FieldLabel>
               <Input id="height" defaultValue="25px" />
             </Field>

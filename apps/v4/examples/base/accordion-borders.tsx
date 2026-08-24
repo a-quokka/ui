@@ -8,21 +8,21 @@ import {
 const items = [
   {
     value: "billing",
-    trigger: "How does billing work?",
+    trigger: "결제는 어떻게 되나요?",
     content:
-      "We offer monthly and annual subscription plans. Billing is charged at the beginning of each cycle, and you can cancel anytime. All plans include automatic backups, 24/7 support, and unlimited team members.",
+      "월간 요금제와 연간 요금제가 있습니다. 결제는 각 주기가 시작될 때 이뤄지고 언제든 해지할 수 있습니다. 모든 요금제에 자동 백업, 24시간 지원, 팀원 수 제한 없음이 포함됩니다.",
   },
   {
     value: "security",
-    trigger: "Is my data secure?",
+    trigger: "데이터는 안전한가요?",
     content:
-      "Yes. We use end-to-end encryption, SOC 2 Type II compliance, and regular third-party security audits. All data is encrypted at rest and in transit using industry-standard protocols.",
+      "네. 종단 간 암호화를 쓰고 SOC 2 Type II 를 준수하며 외부 보안 감사를 정기적으로 받습니다. 저장된 데이터와 전송 중인 데이터 모두 업계 표준 프로토콜로 암호화합니다.",
   },
   {
     value: "integration",
-    trigger: "What integrations do you support?",
+    trigger: "어떤 연동을 지원하나요?",
     content:
-      "We integrate with 500+ popular tools including Slack, Zapier, Salesforce, HubSpot, and more. You can also build custom integrations using our REST API and webhooks.",
+      "Slack, Zapier, Salesforce, HubSpot 을 비롯해 500개가 넘는 도구와 연동합니다. REST API 와 웹훅으로 직접 연동을 만들 수도 있습니다.",
   },
 ]
 

@@ -1,28 +1,28 @@
 ---
 title: Tailwind v4
-description: How to use shadcn/ui with Tailwind v4 and React 19.
+description: Tailwind v4 와 React 19 에서 Dropshot UI 를 쓰는 방법입니다.
 ---
 
-It’s here! Tailwind v4 and React 19. Ready for you to try out. You can start using it today.
+Tailwind v4 와 React 19 가 준비됐습니다. 오늘부터 바로 써 볼 수 있습니다.
 
 ## What's New
 
-- The CLI can now initialize projects with Tailwind v4.
-- Full support for the new `@theme` directive and `@theme inline` option.
-- All components are updated for Tailwind v4 and React 19.
-- We’ve removed the forwardRefs and adjusted the types.
-- Every primitive now has a `data-slot` attribute for styling.
-- We've fixed and cleaned up the style of the components.
-- We're deprecating the `toast` component in favor of `sonner`.
-- Buttons now use the default cursor.
-- We're deprecating the `default` style. New projects will use `new-york`.
-- HSL colors are now converted to OKLCH.
+- CLI 가 Tailwind v4 로 프로젝트를 초기화합니다.
+- 새 `@theme` 지시자와 `@theme inline` 옵션을 온전히 지원합니다.
+- 모든 컴포넌트를 Tailwind v4 와 React 19 에 맞게 고쳤습니다.
+- forwardRef 를 걷어내고 타입을 다듬었습니다.
+- 모든 프리미티브에 스타일링용 `data-slot` 속성이 붙었습니다.
+- 컴포넌트 스타일을 고치고 정리했습니다.
+- `toast` 컴포넌트는 `sonner` 로 대체되고 더 이상 쓰지 않습니다.
+- 버튼이 기본 커서를 씁니다.
+- `default` 스타일은 더 이상 쓰지 않습니다. 새 프로젝트는 `new-york` 을 씁니다.
+- HSL 색상을 OKLCH 로 옮겼습니다.
 
-**Note: this is non-breaking. Your existing apps with Tailwind v3 and React 18 will still work. When you add new components, they'll still be in v3 and React 18 until you upgrade. Only new projects start with Tailwind v4 and React 19.**
+**참고: 기존 동작을 깨지 않습니다. Tailwind v3 와 React 18 을 쓰는 앱은 그대로 동작합니다. 업그레이드하기 전까지 새로 추가하는 컴포넌트도 v3·React 18 로 들어옵니다. 새 프로젝트만 Tailwind v4 와 React 19 로 시작합니다.**
 
 ## Try It Out
 
-You can start using Tailwind v4 + React 19 today. See the framework specific guides below for how to get started.
+Tailwind v4 와 React 19 는 오늘부터 쓸 수 있습니다. 시작하는 방법은 아래 프레임워크별 문서를 보세요.
 
 <div className="mt-8 grid gap-4 sm:grid-cols-2 sm:gap-6">
   <LinkedCard href="/docs/installation/next">
@@ -132,26 +132,26 @@ You can start using Tailwind v4 + React 19 today. See the framework specific gui
 ## Upgrade Your Project
 
 <Callout className="mt-6 mb-6 border-blue-600 bg-blue-50 dark:border-blue-900 dark:bg-blue-950 [&_code]:bg-blue-100 dark:[&_code]:bg-blue-900">
-  **Important:** Before upgrading, please read the [Tailwind v4 Compatibility
-  Docs](https://tailwindcss.com/docs/compatibility) and make sure your project
-  is ready for the upgrade. Tailwind v4 uses bleeding-edge browser features and
-  is designed for modern browsers.
+  **중요:** 올리기 전에 [Tailwind v4 호환성
+  문서](https://tailwindcss.com/docs/compatibility)를 읽고 프로젝트가 준비됐는지
+  확인하세요. Tailwind v4 는 최신 브라우저 기능을 쓰며 최신 브라우저를 전제로
+  만들어졌습니다.
 </Callout>
 
-One of the major advantages of using `shadcn/ui` is that the code you end up with is exactly what you'd write yourself. There are no hidden abstractions.
+`Dropshot UI` 의 큰 장점 하나는, 손에 남는 코드가 여러분이 직접 썼을 코드와 똑같다는 것입니다. 숨은 추상이 없습니다.
 
-This means when a dependency has a new release, you can just follow the official upgrade paths.
+그래서 의존성에 새 버전이 나오면 공식 업그레이드 절차를 그대로 따라가면 됩니다.
 
-Here's how to upgrade your existing projects (full docs are on the way):
+기존 프로젝트를 올리는 방법입니다(전체 문서는 준비 중입니다).
 
 ### 1. Follow the Tailwind v4 Upgrade Guide
 
-- Upgrade to Tailwind v4 by following the official upgrade guide: https://tailwindcss.com/docs/upgrade-guide
-- Use the `@tailwindcss/upgrade@next` codemod to remove deprecated utility classes and update tailwind config.
+- 공식 업그레이드 문서를 따라 Tailwind v4 로 올립니다: https://tailwindcss.com/docs/upgrade-guide
+- `@tailwindcss/upgrade@next` 코드모드로 더 이상 쓰지 않는 유틸리티 클래스를 걷어내고 tailwind 설정을 갱신합니다.
 
 ### 2. Update your CSS variables
 
-The codemod will migrate your CSS variables as references under the `@theme` directive.
+코드모드는 CSS 변수를 `@theme` 지시자 아래 참조 형태로 옮깁니다.
 
 ```css showLineNumbers
 @layer base {
@@ -167,14 +167,14 @@ The codemod will migrate your CSS variables as references under the `@theme` dir
 }
 ```
 
-This works. But to make it easier to work with colors and other variables, we'll need to move the `hsl` wrappers and use `@theme inline`.
+그대로도 동작합니다. 다만 색과 변수를 다루기 쉽게 하려면 `hsl` 감싸기를 옮기고 `@theme inline` 을 쓰는 편이 낫습니다.
 
-Here's how you do it:
+방법은 이렇습니다.
 
-1. Move `:root` and `.dark` out of the `@layer` base.
-2. Wrap the color values in `hsl()`
-3. Add the `inline` option to `@theme` i.e `@theme inline`
-4. Remove the `hsl()` wrappers from `@theme`
+1. `:root` 와 `.dark` 를 `@layer base` 밖으로 옮깁니다.
+2. 색상 값을 `hsl()` 로 감쌉니다.
+3. `@theme` 에 `inline` 옵션을 붙입니다(`@theme inline`).
+4. `@theme` 안의 `hsl()` 감싸기를 걷어냅니다.
 
 ```css showLineNumbers
 :root {
@@ -193,11 +193,11 @@ Here's how you do it:
 }
 ```
 
-This change makes it much simpler to access your theme variables in both utility classes and outside of CSS, e.g. using color values in JavaScript.
+이렇게 하면 유틸리티 클래스에서도, CSS 밖에서도 테마 변수를 다루기가 훨씬 간단해집니다. 예를 들어 자바스크립트에서 색상 값을 쓸 때 그렇습니다.
 
 ### 3. Update colors for charts
 
-Now that the theme colors come with `hsl()`, you can remove the wrapper in your `chartConfig`:
+이제 테마 색상에 `hsl()` 이 붙어 있으니 `chartConfig` 의 감싸기는 지워도 됩니다.
 
 ```diff
 const chartConfig = {
@@ -216,7 +216,7 @@ const chartConfig = {
 
 ### 4. Use new `size-*` utility
 
-The new `size-*` utility (added in Tailwind v3.4), is now fully supported by `tailwind-merge`. You can replace `w-* h-*` with the new `size-*` utility:
+Tailwind v3.4 에서 들어온 `size-*` 유틸리티를 `tailwind-merge` 가 온전히 지원합니다. `w-* h-*` 를 `size-*` 로 바꿀 수 있습니다.
 
 ```diff
 - w-4 h-4
@@ -231,16 +231,16 @@ pnpm up "@radix-ui/*" cmdk lucide-react recharts tailwind-merge clsx --latest
 
 ### 6. Remove forwardRef
 
-You can use the `remove-forward-ref` codemod to migrate your `forwardRef` to props or manually update the primitives.
+`remove-forward-ref` 코드모드로 `forwardRef` 를 props 로 옮기거나, 프리미티브를 직접 고칠 수 있습니다.
 
-For the codemod, see https://github.com/reactjs/react-codemod#remove-forward-ref.
+코드모드는 https://github.com/reactjs/react-codemod#remove-forward-ref 를 보세요.
 
-If you want to do it manually, here's how to do it step by step:
+직접 고치겠다면 순서는 이렇습니다.
 
-1. Replace `React.forwardRef<...>` with `React.ComponentProps<...>`
-2. Remove `ref={ref}` from the component.
-3. Add a `data-slot` attribute. This will come in handy for styling with Tailwind.
-4. You can optionally convert to a named function and remove the `displayName`.
+1. `React.forwardRef<...>` 를 `React.ComponentProps<...>` 로 바꿉니다.
+2. 컴포넌트에서 `ref={ref}` 를 지웁니다.
+3. `data-slot` 속성을 붙입니다. Tailwind 로 꾸밀 때 요긴합니다.
+4. 원한다면 이름 있는 함수로 바꾸고 `displayName` 을 지웁니다.
 
 #### Before
 
@@ -279,16 +279,16 @@ function AccordionItem({
 
 ### March 19, 2025 - Deprecate `tailwindcss-animate`
 
-We've deprecated `tailwindcss-animate` in favor of `tw-animate-css`.
+`tailwindcss-animate` 는 더 이상 쓰지 않고 `tw-animate-css` 로 대체했습니다.
 
-New projects will have `tw-animate-css` installed by default.
+새 프로젝트에는 `tw-animate-css` 가 기본으로 설치됩니다.
 
-For existing projects, follow the steps below to migrate.
+기존 프로젝트는 아래 순서로 옮기세요.
 
-1. Remove `tailwindcss-animate` from your dependencies.
-2. Remove the `@plugin 'tailwindcss-animate'` from your globals.css file.
-3. Install `tw-animate-css` as a dev dependency.
-4. Add the `@import "tw-animate-css"` to your globals.css file.
+1. 의존성에서 `tailwindcss-animate` 를 지웁니다.
+2. globals.css 에서 `@plugin 'tailwindcss-animate'` 를 지웁니다.
+3. `tw-animate-css` 를 개발 의존성으로 설치합니다.
+4. globals.css 에 `@import "tw-animate-css"` 를 넣습니다.
 
 ```diff showLineNumbers
 - @plugin 'tailwindcss-animate';
@@ -297,37 +297,37 @@ For existing projects, follow the steps below to migrate.
 
 ### March 12, 2025 - New Dark Mode Colors
 
-We've revisited the dark mode colors and updated them to be more accessible.
+다크 모드 색을 다시 손봐 더 잘 읽히도록 고쳤습니다.
 
-If you're running an existing Tailwind v4 project (**not an upgraded one**[^1]), you can update your components to use the new dark mode colors by re-adding your components using the CLI[^2].
+이미 Tailwind v4 로 만든 프로젝트라면(**업그레이드한 것이 아니라**[^1]) CLI 로 컴포넌트를 다시 추가해 새 다크 모드 색을 적용할 수 있습니다[^2].
 
 <Steps>
 
-<Step>Commit any changes</Step>
+<Step>변경 사항을 먼저 커밋합니다</Step>
 
-**The CLI will overwrite your existing components.** We recommend committing any changes you've made to your components before running the CLI.
+**CLI 가 기존 컴포넌트를 덮어씁니다.** 돌리기 전에 컴포넌트에 한 변경을 커밋해 두세요.
 
 ```bash
 git add .
 git commit -m "..."
 ```
 
-<Step>Update components</Step>
+<Step>컴포넌트 갱신</Step>
 
 ```bash
 npx shadcn@latest add --all --overwrite
 ```
 
-<Step>Update colors</Step>
+<Step>색 갱신</Step>
 
-Update the dark mode colors in your `globals.css` file to new OKLCH colors. See the [Base Colors](/docs/theming#base-colors) reference for a list of colors.
+`globals.css` 의 다크 모드 색을 새 OKLCH 값으로 바꾸세요. 색 목록은 [Base Colors](/docs/theming#base-colors) 를 보세요.
 
-<Step>Review changes</Step>
+<Step>변경 확인</Step>
 
-Review and re-apply any changes you made to your components.
+컴포넌트에 했던 변경을 확인하고 다시 적용하세요.
 
 </Steps>
 
-[^1]: Upgraded projects are not affected by this change. You can continue using the old dark mode colors.
+[^1]: 업그레이드한 프로젝트는 이 변경의 영향을 받지 않습니다. 기존 다크 모드 색을 그대로 써도 됩니다.
 
-[^2]: Updating your components will overwrite your existing components.
+[^2]: 컴포넌트를 갱신하면 기존 컴포넌트를 덮어씁니다.

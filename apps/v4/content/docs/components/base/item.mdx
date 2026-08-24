@@ -1,13 +1,13 @@
 ---
 title: Item
-description: A versatile component for displaying content with media, title, description, and actions.
+description: 이미지·제목·설명·동작을 한 줄에 담는 범용 항목입니다.
 base: base
 component: true
 ---
 
 <ComponentPreview styleName="base-nova" name="item-demo" />
 
-The `Item` component is a straightforward flex container that can house nearly any type of content. Use it to display a title, description, and actions. Group it with the `ItemGroup` component to create a list of items.
+`Item`은 거의 모든 내용을 담을 수 있는 단순한 flex 컨테이너입니다. 제목·설명·동작 버튼을 함께 보여 줄 때 씁니다. `ItemGroup`과 묶으면 목록이 됩니다.
 
 ## Installation
 
@@ -29,7 +29,7 @@ npx shadcn@latest add item
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="item"
@@ -37,7 +37,7 @@ npx shadcn@latest add item
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -75,7 +75,7 @@ import {
 
 ## Composition
 
-Use the following composition to build an `Item`:
+아래 구조로 `Item`을 만듭니다.
 
 ```text
 ItemGroup
@@ -91,13 +91,13 @@ ItemGroup
 
 ## Item vs Field
 
-Use `Field` if you need to display a form input such as a checkbox, input, radio, or select.
+체크박스·입력·라디오·셀렉트처럼 폼 입력을 보여 줘야 한다면 `Field`를 쓰세요.
 
-If you only need to display content such as a title, description, and actions, use `Item`.
+제목·설명·동작 버튼처럼 내용만 보여 준다면 `Item`을 쓰세요.
 
 ## Variant
 
-Use the `variant` prop to change the visual style of the item.
+`variant` prop으로 아이템의 시각 스타일을 바꿉니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -107,7 +107,7 @@ Use the `variant` prop to change the visual style of the item.
 
 ## Size
 
-Use the `size` prop to change the size of the item. Available sizes are `default`, `sm`, and `xs`.
+`size` prop으로 아이템 크기를 바꿉니다. `default`·`sm`·`xs` 중에서 고릅니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -117,25 +117,25 @@ Use the `size` prop to change the size of the item. Available sizes are `default
 
 ## Icon
 
-Use `ItemMedia` with `variant="icon"` to display an icon.
+아이콘을 보여 주려면 `ItemMedia`에 `variant="icon"`을 줍니다.
 
 <ComponentPreview styleName="base-nova" name="item-icon" />
 
 ## Avatar
 
-You can use `ItemMedia` with `variant="avatar"` to display an avatar.
+아바타를 보여 주려면 `ItemMedia`에 `variant="avatar"`를 줍니다.
 
 <ComponentPreview styleName="base-nova" name="item-avatar" />
 
 ## Image
 
-Use `ItemMedia` with `variant="image"` to display an image.
+이미지를 보여 주려면 `ItemMedia`에 `variant="image"`를 줍니다.
 
 <ComponentPreview styleName="base-nova" name="item-image" />
 
 ## Group
 
-Use `ItemGroup` to group related items together.
+관련된 아이템은 `ItemGroup`으로 묶습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -145,7 +145,7 @@ Use `ItemGroup` to group related items together.
 
 ## Header
 
-Use `ItemHeader` to add a header above the item content.
+`ItemHeader`로 아이템 내용 위에 헤더를 둡니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -155,7 +155,7 @@ Use `ItemHeader` to add a header above the item content.
 
 ## Link
 
-Use the `render` prop to render the item as a link. The hover and focus states will be applied to the anchor element.
+`render` prop으로 아이템을 링크로 그립니다. hover와 focus 상태가 anchor 요소에 적용됩니다.
 
 <ComponentPreview styleName="base-nova" name="item-link" />
 
@@ -166,7 +166,7 @@ Use the `render` prop to render the item as a link. The hover and focus states w
   </ItemMedia>
   <ItemContent>
     <ItemTitle>Dashboard</ItemTitle>
-    <ItemDescription>Overview of your account and activity.</ItemDescription>
+    <ItemDescription>계정과 활동을 한눈에 봅니다.</ItemDescription>
   </ItemContent>
 </Item>
 ```
@@ -175,9 +175,9 @@ Use the `render` prop to render the item as a link. The hover and focus states w
 
 <ComponentPreview styleName="base-nova" name="item-dropdown" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="item-rtl" direction="rtl" />
 
@@ -185,7 +185,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### Item
 
-The main component for displaying content with media, title, description, and actions.
+미디어·제목·설명·동작 버튼을 함께 보여 주는 기본 컴포넌트입니다.
 
 | Prop      | Type                                | Default     |
 | --------- | ----------------------------------- | ----------- |
@@ -195,7 +195,7 @@ The main component for displaying content with media, title, description, and ac
 
 ### ItemGroup
 
-A container that groups related items together with consistent styling.
+관련된 아이템을 같은 스타일로 묶는 컨테이너입니다.
 
 ```tsx
 <ItemGroup>
@@ -206,7 +206,7 @@ A container that groups related items together with consistent styling.
 
 ### ItemSeparator
 
-A separator between items in a group.
+그룹 안 아이템 사이의 구분선입니다.
 
 ```tsx
 <ItemGroup>
@@ -218,7 +218,7 @@ A separator between items in a group.
 
 ### ItemMedia
 
-Use `ItemMedia` to display media content such as icons, images, or avatars.
+`ItemMedia`로 아이콘·이미지·아바타 같은 미디어를 보여 줍니다.
 
 | Prop      | Type                             | Default     |
 | --------- | -------------------------------- | ----------- |
@@ -238,7 +238,7 @@ Use `ItemMedia` to display media content such as icons, images, or avatars.
 
 ### ItemContent
 
-Wraps the title and description of the item.
+아이템의 제목과 설명을 감쌉니다.
 
 ```tsx
 <ItemContent>
@@ -249,23 +249,23 @@ Wraps the title and description of the item.
 
 ### ItemTitle
 
-Displays the title of the item.
+아이템의 제목을 보여 줍니다.
 
 ```tsx
-<ItemTitle>Item Title</ItemTitle>
+<ItemTitle>항목 제목</ItemTitle>
 ```
 
 ### ItemDescription
 
-Displays the description of the item.
+아이템의 설명을 보여 줍니다.
 
 ```tsx
-<ItemDescription>Item description</ItemDescription>
+<ItemDescription>항목 설명</ItemDescription>
 ```
 
 ### ItemActions
 
-Container for action buttons or other interactive elements.
+동작 버튼이나 다른 상호작용 요소를 담는 컨테이너입니다.
 
 ```tsx
 <ItemActions>
@@ -275,7 +275,7 @@ Container for action buttons or other interactive elements.
 
 ### ItemHeader
 
-Displays a header above the item content.
+아이템 내용 위에 헤더를 보여 줍니다.
 
 ```tsx
 <Item>
@@ -286,7 +286,7 @@ Displays a header above the item content.
 
 ### ItemFooter
 
-Displays a footer below the item content.
+아이템 내용 아래에 푸터를 보여 줍니다.
 
 ```tsx
 <Item>

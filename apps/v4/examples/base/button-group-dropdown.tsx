@@ -25,7 +25,7 @@ import {
 export default function ButtonGroupDropdown() {
   return (
     <ButtonGroup>
-      <Button variant="outline">Follow</Button>
+      <Button variant="outline">팔로우</Button>
       <DropdownMenu>
         <DropdownMenuTrigger
           render={<Button variant="outline" className="pl-2!" />}
@@ -36,34 +36,34 @@ export default function ButtonGroupDropdown() {
           <DropdownMenuGroup>
             <DropdownMenuItem>
               <VolumeOffIcon />
-              Mute Conversation
+              대화 알림 끄기
             </DropdownMenuItem>
             <DropdownMenuItem>
               <CheckIcon />
-              Mark as Read
+              읽음으로 표시
             </DropdownMenuItem>
             <DropdownMenuItem>
               <AlertTriangleIcon />
-              Report Conversation
+              대화 신고
             </DropdownMenuItem>
             <DropdownMenuItem>
               <UserRoundXIcon />
-              Block User
+              사용자 차단
             </DropdownMenuItem>
             <DropdownMenuItem>
               <ShareIcon />
-              Share Conversation
+              대화 공유
             </DropdownMenuItem>
             <DropdownMenuItem>
               <CopyIcon />
-              Copy Conversation
+              대화 복사
             </DropdownMenuItem>
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuGroup>
             <DropdownMenuItem variant="destructive">
               <TrashIcon />
-              Delete Conversation
+              대화 삭제
             </DropdownMenuItem>
           </DropdownMenuGroup>
         </DropdownMenuContent>

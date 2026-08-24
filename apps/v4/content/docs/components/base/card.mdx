@@ -1,6 +1,6 @@
 ---
 title: Card
-description: Displays a card with header, content, and footer.
+description: 관련 있는 내용을 하나의 면으로 묶습니다. 머리말·본문·바닥글로 나눠 쓸 수 있습니다.
 base: base
 component: true
 ---
@@ -31,7 +31,7 @@ npx shadcn@latest add card
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="card"
@@ -39,7 +39,7 @@ npx shadcn@latest add card
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -64,22 +64,22 @@ import {
 ```tsx showLineNumbers
 <Card>
   <CardHeader>
-    <CardTitle>Card Title</CardTitle>
-    <CardDescription>Card Description</CardDescription>
-    <CardAction>Card Action</CardAction>
+    <CardTitle>카드 제목</CardTitle>
+    <CardDescription>카드 설명</CardDescription>
+    <CardAction>카드 동작</CardAction>
   </CardHeader>
   <CardContent>
-    <p>Card Content</p>
+    <p>카드 내용</p>
   </CardContent>
   <CardFooter>
-    <p>Card Footer</p>
+    <p>카드 바닥글</p>
   </CardFooter>
 </Card>
 ```
 
 ## Composition
 
-Use the following composition to build a `Card`:
+아래 구조로 `Card`를 만듭니다.
 
 ```text
 Card
@@ -93,7 +93,7 @@ Card
 
 ## Size
 
-Use the `size="sm"` prop to set the size of the card to small. The small size variant uses smaller spacing.
+`size="sm"` prop으로 카드를 작은 크기로 만듭니다. 작은 크기는 여백이 좁습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -103,7 +103,7 @@ Use the `size="sm"` prop to set the size of the card to small. The small size va
 
 ## Spacing
 
-In addition to the `size` prop, you can use the `--card-spacing` CSS variable to control the spacing between sections and the inset of card parts.
+`size` prop 말고도 `--card-spacing` CSS 변수로 구획 사이 간격과 카드 파트의 안쪽 여백을 조절할 수 있습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -111,7 +111,7 @@ In addition to the `size` prop, you can use the `--card-spacing` CSS variable to
   previewClassName="h-[34rem]"
 />
 
-Use negative margins with `-mx-(--card-spacing)` to make content go edge to edge while keeping it aligned with the card inset. When the edge-to-edge content sits above a footer, use `-mb-(--card-spacing)` on `CardContent` to remove the section gap.
+`-mx-(--card-spacing)`처럼 음수 여백을 쓰면 카드 안쪽 여백에 맞춰 정렬을 유지하면서 내용을 좌우 끝까지 채울 수 있습니다. 그 내용이 푸터 위에 놓인다면 `CardContent`에 `-mb-(--card-spacing)`을 줘서 구획 간격을 없애세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -121,7 +121,7 @@ Use negative margins with `-mx-(--card-spacing)` to make content go edge to edge
 
 ## Image
 
-Add an image before the card header to create a card with an image.
+카드 헤더 앞에 이미지를 넣으면 이미지가 있는 카드가 됩니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -129,9 +129,9 @@ Add an image before the card header to create a card with an image.
   previewClassName="h-[32rem]"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -144,7 +144,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### Card
 
-The `Card` component is the root container for card content.
+`Card`는 카드 내용을 담는 루트 컨테이너입니다.
 
 | Prop        | Type                | Default     |
 | ----------- | ------------------- | ----------- |
@@ -153,7 +153,7 @@ The `Card` component is the root container for card content.
 
 ### CardHeader
 
-The `CardHeader` component is used for a title, description, and optional action.
+`CardHeader` 에는 제목과 설명, 필요하면 동작 버튼이 들어갑니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -161,7 +161,7 @@ The `CardHeader` component is used for a title, description, and optional action
 
 ### CardTitle
 
-The `CardTitle` component is used for the card title.
+`CardTitle`은 카드 제목입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -169,7 +169,7 @@ The `CardTitle` component is used for the card title.
 
 ### CardDescription
 
-The `CardDescription` component is used for helper text under the title.
+`CardDescription`은 제목 아래 도움말입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -177,7 +177,7 @@ The `CardDescription` component is used for helper text under the title.
 
 ### CardAction
 
-The `CardAction` component places content in the top-right of the header (for example, a button or a badge).
+`CardAction`은 헤더 오른쪽 위에 버튼이나 배지 같은 내용을 놓습니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -185,7 +185,7 @@ The `CardAction` component places content in the top-right of the header (for ex
 
 ### CardContent
 
-The `CardContent` component is used for the main card body.
+`CardContent`는 카드의 본문입니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -193,7 +193,7 @@ The `CardContent` component is used for the main card body.
 
 ### CardFooter
 
-The `CardFooter` component is used for actions and secondary content at the bottom of the card.
+`CardFooter`는 카드 아래쪽의 동작 버튼과 보조 내용을 담습니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -203,13 +203,13 @@ The `CardFooter` component is used for actions and secondary content at the bott
 
 ### Spacing Variable
 
-If you're upgrading from a previous version of the `Card` component, you'll need to apply the following updates to use the `--card-spacing` variable:
+이전 버전 `Card`를 쓰고 있다면 `--card-spacing` 변수를 쓰기 위해 아래를 적용해야 합니다.
 
 <Steps>
 
-<Step>Update the Card root spacing classes.</Step>
+<Step>Card 루트의 여백 클래스를 고칩니다.</Step>
 
-Replace the hard-coded gap and vertical padding with `--card-spacing`, and set the default and small size values on the root:
+박아 둔 gap과 세로 padding을 `--card-spacing`으로 바꾸고, 루트에 기본 크기와 작은 크기 값을 지정합니다.
 
 ```diff
   className={cn(
@@ -219,9 +219,9 @@ Replace the hard-coded gap and vertical padding with `--card-spacing`, and set t
   )}
 ```
 
-<Step>Update CardHeader spacing classes.</Step>
+<Step>CardHeader의 여백 클래스를 고칩니다.</Step>
 
-Replace the horizontal padding and border spacing with the shared variable:
+가로 padding과 테두리 여백을 공용 변수로 바꿉니다.
 
 ```diff
   className={cn(
@@ -231,9 +231,9 @@ Replace the horizontal padding and border spacing with the shared variable:
   )}
 ```
 
-<Step>Update CardContent and CardFooter spacing classes.</Step>
+<Step>CardContent와 CardFooter의 여백 클래스를 고칩니다.</Step>
 
-Use `--card-spacing` for the content inset and footer padding:
+내용의 안쪽 여백과 푸터 padding에 `--card-spacing`을 씁니다.
 
 ```diff
   function CardContent({ className, ...props }: React.ComponentProps<"div">) {
@@ -258,7 +258,7 @@ Use `--card-spacing` for the content inset and footer padding:
 
 </Steps>
 
-After applying these changes, you can customize card spacing by setting `--card-spacing` on the `Card` with an arbitrary property class:
+여기까지 적용하면 `Card`에 임의 속성 클래스로 `--card-spacing`을 지정해 카드 여백을 조절할 수 있습니다.
 
 ```tsx
 function Example() {

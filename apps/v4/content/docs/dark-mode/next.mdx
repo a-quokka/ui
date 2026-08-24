@@ -1,13 +1,13 @@
 ---
 title: Next.js
-description: Adding dark mode to your Next.js app.
+description: Next.js 앱에 다크 모드를 붙입니다.
 ---
 
 <Steps>
 
 ## Install next-themes
 
-Start by installing `next-themes`:
+`next-themes` 를 설치하는 것부터 시작합니다.
 
 ```bash
 npm install next-themes
@@ -31,7 +31,7 @@ export function ThemeProvider({
 
 ## Wrap your root layout
 
-Add the `ThemeProvider` to your root layout and add the `suppressHydrationWarning` prop to the `html` tag.
+루트 레이아웃에 `ThemeProvider` 를 넣고 `html` 태그에 `suppressHydrationWarning` 을 붙입니다.
 
 ```tsx {1,6,9-14,16} title="app/layout.tsx" showLineNumbers
 import { ThemeProvider } from "@/components/theme-provider"
@@ -59,7 +59,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
 
 ## Add a mode toggle
 
-Place a mode toggle on your site to toggle between light and dark mode.
+라이트 모드와 다크 모드를 오갈 수 있는 전환 버튼을 사이트에 둡니다.
 
 <ComponentPreview
   styleName="new-york-v4"

@@ -25,8 +25,8 @@ export function CollapsibleSettings() {
   return (
     <Card className="mx-auto w-full max-w-xs" size="sm">
       <CardHeader>
-        <CardTitle>Radius</CardTitle>
-        <CardDescription>Set the corner radius of the element.</CardDescription>
+        <CardTitle>반경</CardTitle>
+        <CardDescription>요소의 모서리 반경을 정합니다.</CardDescription>
       </CardHeader>
       <CardContent>
         <Collapsible
@@ -37,26 +37,26 @@ export function CollapsibleSettings() {
           <FieldGroup className="grid w-full grid-cols-2 gap-2">
             <Field>
               <FieldLabel htmlFor="radius-x" className="sr-only">
-                Radius X
+                가로 반경
               </FieldLabel>
               <Input id="radius" placeholder="0" defaultValue={0} />
             </Field>
             <Field>
               <FieldLabel htmlFor="radius-y" className="sr-only">
-                Radius Y
+                세로 반경
               </FieldLabel>
               <Input id="radius" placeholder="0" defaultValue={0} />
             </Field>
             <CollapsibleContent className="col-span-full grid grid-cols-subgrid gap-2">
               <Field>
                 <FieldLabel htmlFor="radius-x" className="sr-only">
-                  Radius X
+                  가로 반경
                 </FieldLabel>
                 <Input id="radius" placeholder="0" defaultValue={0} />
               </Field>
               <Field>
                 <FieldLabel htmlFor="radius-y" className="sr-only">
-                  Radius Y
+                  세로 반경
                 </FieldLabel>
                 <Input id="radius" placeholder="0" defaultValue={0} />
               </Field>

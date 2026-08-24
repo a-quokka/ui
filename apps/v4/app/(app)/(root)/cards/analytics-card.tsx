@@ -15,13 +15,13 @@ export function AnalyticsCard() {
   return (
     <Card className="mx-auto w-full max-w-sm data-[size=sm]:pb-0" size="sm">
       <CardHeader>
-        <CardTitle>Analytics</CardTitle>
+        <CardTitle>분석</CardTitle>
         <CardDescription>
           418.2K Visitors <Badge>+10%</Badge>
         </CardDescription>
         <CardAction>
           <Button variant="outline" size="sm">
-            View Analytics
+            분석 보기
           </Button>
         </CardAction>
       </CardHeader>
@@ -30,7 +30,7 @@ export function AnalyticsCard() {
         preserveAspectRatio="none"
         className="aspect-[1/0.35] w-full text-chart-1"
         role="img"
-        aria-label="Visitor trend"
+        aria-label="방문자 추이"
       >
         <path d={areaPath} fill="currentColor" opacity="0.28" />
         <path

@@ -15,7 +15,7 @@ export function TooltipKeyboard() {
         <SaveIcon />
       </TooltipTrigger>
       <TooltipContent>
-        Save Changes <Kbd>S</Kbd>
+        저장 <Kbd>S</Kbd>
       </TooltipContent>
     </Tooltip>
   )

@@ -66,64 +66,58 @@ export function QuestionnaireProgressExample() {
       />
 
       <QuestionnaireItem name="scope" required>
-        <QuestionnaireTitle>How large is the change?</QuestionnaireTitle>
+        <QuestionnaireTitle>변경 규모가 어느 정도인가요?</QuestionnaireTitle>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="small">Small patch</QuestionnaireChoice>
+          <QuestionnaireChoice value="small">작은 패치</QuestionnaireChoice>
           <QuestionnaireChoice value="medium">
-            Feature-sized change
+            기능 단위 변경
           </QuestionnaireChoice>
           <QuestionnaireChoice value="large">
-            Cross-package change
+            여러 패키지에 걸친 변경
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireItem name="strategy" required>
-        <QuestionnaireTitle>
-          How should commits be organized?
-        </QuestionnaireTitle>
+        <QuestionnaireTitle>커밋을 어떻게 나눌까요?</QuestionnaireTitle>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="single">
-            Single commit
-          </QuestionnaireChoice>
+          <QuestionnaireChoice value="single">커밋 하나</QuestionnaireChoice>
           <QuestionnaireChoice value="logical">
-            Logical commits
+            의미 단위 커밋
           </QuestionnaireChoice>
           <QuestionnaireChoice value="squash">
-            Squash before review
+            검토 전에 하나로 합치기
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireItem name="tests" required>
-        <QuestionnaireTitle>Which tests should run?</QuestionnaireTitle>
+        <QuestionnaireTitle>어떤 테스트를 돌릴까요?</QuestionnaireTitle>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="targeted">
-            Targeted tests
+            필요한 테스트만
           </QuestionnaireChoice>
           <QuestionnaireChoice value="package">
-            Package suite
+            패키지 테스트 묶음
           </QuestionnaireChoice>
           <QuestionnaireChoice value="workspace">
-            Full workspace
+            작업 공간 전체
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireItem name="delivery" required>
-        <QuestionnaireTitle>
-          How should the work be delivered?
-        </QuestionnaireTitle>
+        <QuestionnaireTitle>작업 결과를 어떻게 전달할까요?</QuestionnaireTitle>
         <QuestionnaireChoices>
-          <QuestionnaireChoice value="patch">Patch only</QuestionnaireChoice>
+          <QuestionnaireChoice value="patch">패치만</QuestionnaireChoice>
           <QuestionnaireChoice value="commit">
-            Committed locally
+            로컬에만 커밋
           </QuestionnaireChoice>
           <QuestionnaireChoice value="branch">
-            Push a review branch
+            검토용 브랜치 푸시
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
@@ -131,8 +125,8 @@ export function QuestionnaireProgressExample() {
 
       <QuestionnaireActions>
         <QuestionnairePrevious />
-        <QuestionnaireNext>Next</QuestionnaireNext>
-        <QuestionnaireSubmit>Finish plan</QuestionnaireSubmit>
+        <QuestionnaireNext>다음</QuestionnaireNext>
+        <QuestionnaireSubmit>계획 마무리</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

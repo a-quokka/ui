@@ -6,10 +6,10 @@ export default function ButtonWithIcon() {
   return (
     <div className="flex gap-2">
       <Button variant="outline">
-        <IconGitBranch data-icon="inline-start" /> New Branch
+        <IconGitBranch data-icon="inline-start" /> 새 브랜치
       </Button>
       <Button variant="outline">
-        Fork
+        포크
         <IconGitFork data-icon="inline-end" />
       </Button>
     </div>

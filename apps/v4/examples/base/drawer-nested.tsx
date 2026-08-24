@@ -21,13 +21,13 @@ export function DrawerNested() {
   return (
     <Drawer showSwipeHandle={isMobile} swipeDirection={swipeDirection}>
       <DrawerTrigger render={<Button variant="secondary" />}>
-        Open Drawer
+        Drawer 열기
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Drawer</DrawerTitle>
           <DrawerDescription>
-            Open another drawer from the same direction.
+            같은 방향에서 drawer 를 하나 더 엽니다.
           </DrawerDescription>
         </DrawerHeader>
         <div className="flex-1 p-4">
@@ -36,13 +36,13 @@ export function DrawerNested() {
         <DrawerFooter>
           <Drawer showSwipeHandle={isMobile} swipeDirection={swipeDirection}>
             <DrawerTrigger render={<Button variant="outline" />}>
-              Open Nested Drawer
+              중첩 Drawer 열기
             </DrawerTrigger>
             <DrawerContent>
               <DrawerHeader>
-                <DrawerTitle>Nested Drawer</DrawerTitle>
+                <DrawerTitle>중첩 Drawer</DrawerTitle>
                 <DrawerDescription>
-                  The parent drawer stays mounted behind this one.
+                  부모 drawer 는 이 뒤에 그대로 남아 있습니다.
                 </DrawerDescription>
               </DrawerHeader>
               <div className="flex-1 p-4">
@@ -54,13 +54,13 @@ export function DrawerNested() {
                   swipeDirection={swipeDirection}
                 >
                   <DrawerTrigger render={<Button variant="outline" />}>
-                    Open Third Drawer
+                    세 번째 Drawer 열기
                   </DrawerTrigger>
                   <DrawerContent>
                     <DrawerHeader>
-                      <DrawerTitle>Third Drawer</DrawerTitle>
+                      <DrawerTitle>세 번째 Drawer</DrawerTitle>
                       <DrawerDescription>
-                        Two drawers are stacked behind this one.
+                        이 뒤로 drawer 두 개가 쌓여 있습니다.
                       </DrawerDescription>
                     </DrawerHeader>
                     <div className="flex-1 p-4">
@@ -72,13 +72,13 @@ export function DrawerNested() {
                         swipeDirection={swipeDirection}
                       >
                         <DrawerTrigger render={<Button variant="outline" />}>
-                          Open Fourth Drawer
+                          네 번째 Drawer 열기
                         </DrawerTrigger>
                         <DrawerContent>
                           <DrawerHeader>
-                            <DrawerTitle>Fourth Drawer</DrawerTitle>
+                            <DrawerTitle>네 번째 Drawer</DrawerTitle>
                             <DrawerDescription>
-                              This is the frontmost drawer in the stack.
+                              쌓인 drawer 중 맨 앞에 있는 것입니다.
                             </DrawerDescription>
                           </DrawerHeader>
                           <div className="flex-1 p-4">
@@ -86,24 +86,24 @@ export function DrawerNested() {
                           </div>
                           <DrawerFooter>
                             <DrawerClose render={<Button variant="outline" />}>
-                              Close
+                              닫기
                             </DrawerClose>
                           </DrawerFooter>
                         </DrawerContent>
                       </Drawer>
                       <DrawerClose render={<Button variant="outline" />}>
-                        Close
+                        닫기
                       </DrawerClose>
                     </DrawerFooter>
                   </DrawerContent>
                 </Drawer>
                 <DrawerClose render={<Button variant="outline" />}>
-                  Close
+                  닫기
                 </DrawerClose>
               </DrawerFooter>
             </DrawerContent>
           </Drawer>
-          <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
+          <DrawerClose render={<Button variant="outline" />}>닫기</DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

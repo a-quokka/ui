@@ -27,14 +27,14 @@ export function ItemAvatar() {
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Evil Rabbit</ItemTitle>
-          <ItemDescription>Last seen 5 months ago</ItemDescription>
+          <ItemDescription>5개월 전 접속</ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button
             size="icon-sm"
             variant="outline"
             className="rounded-full"
-            aria-label="Invite"
+            aria-label="초대"
           >
             <Plus />
           </Button>
@@ -64,14 +64,14 @@ export function ItemAvatar() {
           </div>
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>No Team Members</ItemTitle>
+          <ItemTitle>팀원이 없습니다</ItemTitle>
           <ItemDescription>
-            Invite your team to collaborate on this project.
+            이 프로젝트를 함께할 팀원을 초대하세요.
           </ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button size="sm" variant="outline">
-            Invite
+            초대
           </Button>
         </ItemActions>
       </Item>

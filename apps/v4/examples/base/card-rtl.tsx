@@ -23,8 +23,8 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "Login to your account",
-      description: "Enter your email below to login to your account",
+      title: "계정에 로그인",
+      description: "계정에 로그인하려면 아래에 이메일을 입력하세요",
       signUp: "Sign Up",
       email: "Email",
       emailPlaceholder: "m@example.com",
@@ -34,38 +34,24 @@ const translations: Translations = {
       loginWithGoogle: "Login with Google",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      title: "تسجيل الدخول إلى حسابك",
-      description: "أدخل بريدك الإلكتروني أدناه لتسجيل الدخول إلى حسابك",
-      signUp: "إنشاء حساب",
-      email: "البريد الإلكتروني",
+      title: "계정에 로그인",
+      description: "계정에 로그인하려면 아래에 이메일을 입력하세요",
+      signUp: "가입하기",
+      email: "이메일",
       emailPlaceholder: "m@example.com",
-      password: "كلمة المرور",
-      forgotPassword: "نسيت كلمة المرور؟",
-      login: "تسجيل الدخول",
-      loginWithGoogle: "تسجيل الدخول باستخدام Google",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      title: "התחבר לחשבון שלך",
-      description: "הזן את האימייל שלך למטה כדי להתחבר לחשבון שלך",
-      signUp: "הירשם",
-      email: "אימייל",
-      emailPlaceholder: "m@example.com",
-      password: "סיסמה",
-      forgotPassword: "שכחת את הסיסמה?",
-      login: "התחבר",
-      loginWithGoogle: "התחבר עם Google",
+      password: "비밀번호",
+      forgotPassword: "비밀번호를 잊으셨나요?",
+      login: "로그인",
+      loginWithGoogle: "Google로 로그인",
     },
   },
 }
 
 export function CardRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Card className="w-full max-w-sm" dir={dir}>

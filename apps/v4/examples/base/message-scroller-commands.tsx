@@ -68,10 +68,8 @@ export function MessageScrollerCommands() {
       <div className="relative flex flex-col gap-4">
         <Card className="mx-auto h-140 w-full max-w-sm gap-0">
           <CardHeader className="gap-1 border-b">
-            <CardTitle>Commands</CardTitle>
-            <CardDescription>
-              Drive the transcript from outside.
-            </CardDescription>
+            <CardTitle>명령</CardTitle>
+            <CardDescription>기록을 바깥에서 움직입니다.</CardDescription>
             <CardAction>
               <CommandMenu />
             </CardAction>
@@ -120,7 +118,7 @@ export function MessageScrollerCommands() {
           </CardContent>
         </Card>
         <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-balance text-muted-foreground">
-          Use the controls to jump to any message in the conversation.
+          컨트롤로 대화의 아무 메시지로나 건너뜁니다.
         </div>
       </div>
     </MessageScrollerProvider>
@@ -135,11 +133,11 @@ function CommandMenu() {
       <DropdownMenuTrigger
         render={<Button type="button" variant="secondary" />}
       >
-        Jump to...
+        이동...
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" side="bottom" className="w-64">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Conversations</DropdownMenuLabel>
+          <DropdownMenuLabel>대화</DropdownMenuLabel>
           {userMessages.map((message) => (
             <DropdownMenuItem
               key={message.id}

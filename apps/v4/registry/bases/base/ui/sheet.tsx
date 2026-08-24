@@ -77,7 +77,7 @@ function SheetContent({
               phosphor="XIcon"
               remixicon="RiCloseLine"
             />
-            <span className="sr-only">Close</span>
+            <span className="sr-only">닫기</span>
           </SheetPrimitive.Close>
         )}
       </SheetPrimitive.Popup>

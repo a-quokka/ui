@@ -15,14 +15,14 @@ export function BreadcrumbSeparatorDemo() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="/" />}>Home</BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/" />}>홈</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
           <DotIcon />
         </BreadcrumbSeparator>
         <BreadcrumbItem>
           <BreadcrumbLink render={<Link href="/components" />}>
-            Components
+            컴포넌트
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>

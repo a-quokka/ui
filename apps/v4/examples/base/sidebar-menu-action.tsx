@@ -62,7 +62,7 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>프로젝트</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
                 {projects.map((project) => (
@@ -77,14 +77,14 @@ export default function AppSidebar() {
                     <DropdownMenu>
                       <DropdownMenuTrigger render={<SidebarMenuAction />}>
                         <MoreHorizontalIcon />
-                        <span className="sr-only">More</span>
+                        <span className="sr-only">더 보기</span>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent side="right" align="start">
                         <DropdownMenuItem>
-                          <span>Edit Project</span>
+                          <span>프로젝트 수정</span>
                         </DropdownMenuItem>
                         <DropdownMenuItem>
-                          <span>Delete Project</span>
+                          <span>프로젝트 삭제</span>
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>

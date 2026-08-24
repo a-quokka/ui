@@ -1,6 +1,6 @@
 ---
 title: scroll-fade
-description: Utilities for adding a fade effect to the edges of a scroll container.
+description: 스크롤 컨테이너의 가장자리를 흐리게 만드는 유틸리티입니다.
 ---
 
 <ComponentPreview
@@ -11,15 +11,15 @@ description: Utilities for adding a fade effect to the edges of a scroll contain
 
 ## Installation
 
-If your project was set up with `npx shadcn@latest init`, you already have `scroll-fade`. It ships with the `shadcn` package, which the CLI imports in your global CSS file.
+`npx shadcn@latest init` 으로 프로젝트를 잡았다면 `scroll-fade` 는 이미 있습니다. `shadcn` 패키지에 들어 있고 CLI 가 전역 CSS 파일에서 불러옵니다.
 
-Otherwise, install the `shadcn` package:
+그렇지 않다면 `shadcn` 패키지를 설치하세요.
 
 ```bash
 npm install shadcn
 ```
 
-Then import the shared utilities in your global CSS file:
+그다음 전역 CSS 파일에서 공용 유틸리티를 불러옵니다.
 
 ```css
 @import "tailwindcss";
@@ -45,25 +45,25 @@ Then import the shared utilities in your global CSS file:
 | `scroll-fade-{t,b,s,e}-[<value>]` | `--scroll-fade-{t,b,s,e}-size: <value>;`                                                                            |
 | `scroll-fade-none`                | `--scroll-fade-mask: none;`                                                                                         |
 
-Add `scroll-fade` or `scroll-fade-y` to the scroll container, i.e. the element that has `overflow-y-auto`.
+`overflow-y-auto` 가 붙은 스크롤 컨테이너에 `scroll-fade` 나 `scroll-fade-y` 를 붙입니다.
 
 ```tsx
 <div className="scroll-fade overflow-y-auto">{/* ... */}</div>
 ```
 
-The fade is scroll-aware and tracks the scroll position:
+흐림 효과는 스크롤 위치를 따라갑니다.
 
-- At rest, the top edge is crisp and the bottom edge fades to hint at more content.
-- As you scroll, a fade appears at the top and both edges stay faded mid-scroll.
-- At the end, the bottom edge sharpens to show you have reached the last item.
+- 처음에는 위쪽이 선명하고 아래쪽이 흐려져 아래에 더 있다는 걸 알려 줍니다.
+- 스크롤을 내리면 위쪽에도 흐림이 생기고, 중간에서는 양쪽이 모두 흐려집니다.
+- 끝에 닿으면 아래쪽이 다시 선명해져 마지막 항목임을 알려 줍니다.
 
-The fade is applied with `mask-image`, so it dissolves the content itself rather than overlaying a color. The mask uses a linear fade from transparent to black, so it adapts to any background without configuration. If your scroll area sits inside a card, put the background and border on a wrapper and `scroll-fade` on the inner scroller, so the fade dissolves the content and not the card.
+흐림은 `mask-image` 로 만듭니다. 색을 덮는 게 아니라 내용 자체를 흐리게 지웁니다. 마스크가 투명에서 검정으로 이어지는 선형 그러데이션이라 어떤 배경에서도 설정 없이 맞아떨어집니다. 스크롤 영역이 카드 안에 있다면 배경과 테두리는 바깥 래퍼에, `scroll-fade` 는 안쪽 스크롤러에 두세요. 그래야 카드가 아니라 내용이 흐려집니다.
 
-The [`ScrollArea`](/docs/components/scroll-area) and [`MessageScroller`](/docs/components/message-scroller) components can use `scroll-fade` on their scrollable viewport.
+[`ScrollArea`](/docs/components/scroll-area) 와 [`MessageScroller`](/docs/components/message-scroller) 는 스크롤 뷰포트에 `scroll-fade` 를 쓸 수 있습니다.
 
 ## No Overflow, No Fade
 
-If the content does not overflow, no fade is shown. You can apply `scroll-fade` to any list without checking whether it scrolls.
+내용이 넘치지 않으면 흐림도 나타나지 않습니다. 스크롤이 생기는지 확인하지 않고 아무 목록에나 붙여도 됩니다.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -73,7 +73,7 @@ If the content does not overflow, no fade is shown. You can apply `scroll-fade` 
 
 ## Horizontal Scrolling
 
-Use `scroll-fade-x` on containers that scroll horizontally, i.e. the element that has `overflow-x-auto`.
+가로로 스크롤되는 컨테이너, 즉 `overflow-x-auto` 가 붙은 요소에는 `scroll-fade-x` 를 씁니다.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -85,11 +85,11 @@ Use `scroll-fade-x` on containers that scroll horizontally, i.e. the element tha
 <div className="flex scroll-fade-x overflow-x-auto">{/* ... */}</div>
 ```
 
-The horizontal fade is direction-aware. In RTL layouts, the crisp edge and the fade follow the reading direction with no extra classes needed. `scroll-fade-<number>` and `scroll-fade-none` work the same for both axes.
+가로 흐림은 방향을 압니다. RTL 배치에서는 선명한 쪽과 흐린 쪽이 읽는 방향을 따라가며, 클래스를 더 붙일 필요가 없습니다. `scroll-fade-<number>` 와 `scroll-fade-none` 은 두 축에서 똑같이 동작합니다.
 
 ## Edge Fades
 
-Use edge utilities when only one edge should track the scroll position.
+한쪽 가장자리만 스크롤을 따라가야 한다면 가장자리 유틸리티를 씁니다.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -101,11 +101,11 @@ Use edge utilities when only one edge should track the scroll position.
 <div className="scroll-fade-b overflow-y-auto">{/* ... */}</div>
 ```
 
-The edge utilities are scroll-aware. Start edges fade in after you scroll away from the start, and end edges fade out when you reach the end. Use `scroll-fade-t`, `scroll-fade-b`, `scroll-fade-l`, and `scroll-fade-r` for physical edges. Use `scroll-fade-s` and `scroll-fade-e` for logical inline edges that mirror in RTL.
+가장자리 유틸리티도 스크롤을 따라갑니다. 시작 쪽은 처음에서 벗어나면 흐려지고, 끝 쪽은 끝에 닿으면 선명해집니다. 물리적 가장자리에는 `scroll-fade-t`·`scroll-fade-b`·`scroll-fade-l`·`scroll-fade-r` 를, RTL 에서 좌우가 뒤집히는 논리 가장자리에는 `scroll-fade-s` 와 `scroll-fade-e` 를 씁니다.
 
 ## Fade Size
 
-The fade depth defaults to `12%` of the container, capped at `40px` so tall scrollers stay subtle. Use `scroll-fade-<number>` to set a fixed size on the spacing scale instead, the same way `scroll-mt-<number>` works.
+흐림 깊이는 컨테이너의 `12%` 가 기본이고 `40px` 를 넘지 않습니다. 그래야 긴 스크롤러에서도 과하지 않습니다. 고정 값을 쓰려면 `scroll-mt-<number>` 처럼 `scroll-fade-<number>` 로 간격 스케일 값을 지정하세요.
 
 <ComponentPreview
   styleName="base-rhea"
@@ -117,13 +117,13 @@ The fade depth defaults to `12%` of the container, capped at `40px` so tall scro
 <div className="scroll-fade overflow-y-auto scroll-fade-24">{/* ... */}</div>
 ```
 
-For one-off values, use an arbitrary length or percentage:
+한 번만 쓰는 값이라면 임의 길이나 백분율을 쓰세요.
 
 ```tsx
 <div className="scroll-fade overflow-y-auto scroll-fade-[15%]">{/* ... */}</div>
 ```
 
-To fade opposite edges by different amounts, use the per-edge modifiers `scroll-fade-t-<number>`, `scroll-fade-b-<number>`, `scroll-fade-s-<number>`, and `scroll-fade-e-<number>`. They override `scroll-fade-<number>` on the edge they target and accept arbitrary values too.
+양쪽 가장자리를 다른 정도로 흐리게 하려면 `scroll-fade-t-<number>`·`scroll-fade-b-<number>`·`scroll-fade-s-<number>`·`scroll-fade-e-<number>` 를 쓰세요. 해당 가장자리에서 `scroll-fade-<number>` 를 덮어쓰고 임의 값도 받습니다.
 
 ```tsx
 <div className="scroll-fade overflow-y-auto scroll-fade-b-8 scroll-fade-t-2">
@@ -131,9 +131,9 @@ To fade opposite edges by different amounts, use the per-edge modifiers `scroll-
 </div>
 ```
 
-Use the logical `s`/`e` modifiers for horizontal scrollers so the sizes mirror in RTL.
+가로 스크롤러에는 논리 `s`·`e` 를 쓰면 RTL 에서 크기도 함께 뒤집힙니다.
 
-The fade eases in and out over a fixed scroll distance rather than appearing instantly. That distance is the `--scroll-fade-reveal` variable, `96px` by default and independent of the fade depth. Lower it for a snappier reveal or raise it for a more gradual one:
+흐림은 갑자기 나타나지 않고 정해진 스크롤 거리 동안 서서히 들고 납니다. 그 거리는 `--scroll-fade-reveal` 변수이고 기본값은 `96px` 로, 흐림 깊이와는 별개입니다. 더 빠르게 나타나게 하려면 값을 낮추고, 더 완만하게 하려면 올리세요.
 
 ```tsx
 <div className="scroll-fade overflow-y-auto [--scroll-fade-reveal:64px]">
@@ -143,7 +143,7 @@ The fade eases in and out over a fixed scroll distance rather than appearing ins
 
 ## Disabling the Fade
 
-Use `scroll-fade-none` to remove the fade. It works in any class order, so the typical use is responsive or stateful:
+흐림을 없애려면 `scroll-fade-none` 을 씁니다. 클래스 순서와 무관하게 동작하므로 보통 반응형이나 상태별로 씁니다.
 
 ```tsx
 <div className="scroll-fade overflow-y-auto md:scroll-fade-none">
@@ -159,15 +159,15 @@ Use `scroll-fade-none` to remove the fade. It works in any class order, so the t
 
 ## Fallback
 
-The scroll-aware behavior is implemented with [CSS scroll-driven animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations), with no JavaScript and no scroll listeners. In browsers that do not support scroll-driven animations, `scroll-fade` falls back to a static fade on both edges, and edge utilities fall back to a static fade on the selected edge.
+스크롤을 따라가는 동작은 [CSS 스크롤 기반 애니메이션](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll-driven_animations)으로 만들었습니다. 자바스크립트도 스크롤 리스너도 쓰지 않습니다. 이를 지원하지 않는 브라우저에서는 `scroll-fade` 가 양쪽에 고정 흐림을, 가장자리 유틸리티는 지정한 쪽에 고정 흐림을 보여 줍니다.
 
-Since the mask is applied to the scroll container itself, a visible scrollbar fades with the content at the edges. Pair `scroll-fade` with `no-scrollbar`, which ships in the same package, if you want to hide the scrollbar entirely.
+마스크가 스크롤 컨테이너 자체에 걸리므로 스크롤바가 보이면 가장자리에서 내용과 함께 흐려집니다. 스크롤바를 아예 감추고 싶다면 같은 패키지에 들어 있는 `no-scrollbar` 와 함께 쓰세요.
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
-`scroll-fade-x` follows the reading direction. At rest, the start edge is crisp and the end edge fades. In RTL layouts that means a crisp right edge and a fade on the left, mirrored from LTR.
+`scroll-fade-x` 는 읽는 방향을 따릅니다. 처음에는 시작 쪽이 선명하고 끝 쪽이 흐립니다. RTL 배치에서는 오른쪽이 선명하고 왼쪽이 흐려져 LTR 과 거울처럼 뒤집힙니다.
 
 <ComponentPreview
   styleName="base-nova"

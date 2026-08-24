@@ -33,8 +33,8 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      label: "Categories",
-      placeholder: "Add categories",
+      label: "분류",
+      placeholder: "분류 추가",
       empty: "No categories found.",
       technology: "Technology",
       design: "Design",
@@ -44,38 +44,24 @@ const translations: Translations = {
       health: "Health",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      label: "الفئات",
-      placeholder: "أضف فئات",
-      empty: "لم يتم العثور على فئات.",
-      technology: "التكنولوجيا",
-      design: "التصميم",
-      business: "الأعمال",
-      marketing: "التسويق",
-      education: "التعليم",
-      health: "الصحة",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      label: "קטגוריות",
-      placeholder: "הוסף קטגוריות",
-      empty: "לא נמצאו קטגוריות.",
-      technology: "טכנולוגיה",
-      design: "עיצוב",
-      business: "עסקים",
-      marketing: "שיווק",
-      education: "חינוך",
-      health: "בריאות",
+      label: "분류",
+      placeholder: "분류 추가",
+      empty: "분류가 없습니다.",
+      technology: "기술",
+      design: "디자인",
+      business: "비즈니스",
+      marketing: "마케팅",
+      education: "교육",
+      health: "건강",
     },
   },
 }
 
 export function ComboboxRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
   const anchor = useComboboxAnchor()
 
   const categoryLabels: Record<string, string> = {

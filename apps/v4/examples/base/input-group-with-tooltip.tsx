@@ -62,16 +62,14 @@ export function InputGroupWithTooltip({
                 >
                   <InfoIcon />
                 </TooltipTrigger>
-                <TooltipContent>This is content in a tooltip.</TooltipContent>
+                <TooltipContent>툴팁에 들어가는 내용입니다.</TooltipContent>
               </Tooltip>
             </InputGroupAddon>
           </InputGroup>
-          <FieldDescription>
-            This is a description of the input group.
-          </FieldDescription>
+          <FieldDescription>입력 그룹 설명입니다.</FieldDescription>
         </Field>
         <Field>
-          <FieldLabel htmlFor="input-dropdown-21">Dropdown</FieldLabel>
+          <FieldLabel htmlFor="input-dropdown-21">드롭다운</FieldLabel>
           <InputGroup>
             <InputGroupInput id="input-dropdown-21" />
             <InputGroupAddon>
@@ -102,9 +100,7 @@ export function InputGroupWithTooltip({
               </DropdownMenu>
             </InputGroupAddon>
           </InputGroup>
-          <FieldDescription>
-            This is a description of the input group.
-          </FieldDescription>
+          <FieldDescription>입력 그룹 설명입니다.</FieldDescription>
         </Field>
         <Field>
           <FieldLabel htmlFor="input-secure-19">Popover</FieldLabel>
@@ -117,9 +113,9 @@ export function InputGroupWithTooltip({
               </PopoverTrigger>
               <PopoverContent align="start">
                 <PopoverHeader>
-                  <PopoverTitle>Your connection is not secure.</PopoverTitle>
+                  <PopoverTitle>연결이 안전하지 않습니다.</PopoverTitle>
                   <PopoverDescription>
-                    You should not enter any sensitive information on this site.
+                    이 사이트에 민감한 정보를 입력하지 마세요.
                   </PopoverDescription>
                 </PopoverHeader>
               </PopoverContent>
@@ -137,9 +133,7 @@ export function InputGroupWithTooltip({
               </InputGroupButton>
             </InputGroupAddon>
           </InputGroup>
-          <FieldDescription>
-            This is a description of the input group.
-          </FieldDescription>
+          <FieldDescription>입력 그룹 설명입니다.</FieldDescription>
         </Field>
         <Field>
           <FieldLabel htmlFor="url">Button Group</FieldLabel>
@@ -153,9 +147,7 @@ export function InputGroupWithTooltip({
             </InputGroup>
             <ButtonGroupText>.com</ButtonGroupText>
           </ButtonGroup>
-          <FieldDescription>
-            This is a description of the input group.
-          </FieldDescription>
+          <FieldDescription>입력 그룹 설명입니다.</FieldDescription>
         </Field>
       </FieldGroup>
     </>

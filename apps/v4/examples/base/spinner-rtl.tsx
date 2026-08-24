@@ -18,28 +18,21 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "Processing payment...",
+      title: "결제 처리 중...",
       amount: "$100.00",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      title: "جاري معالجة الدفع...",
-      amount: "١٠٠.٠٠ دولار",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      title: "מעבד תשלום...",
-      amount: "$100.00",
+      title: "결제 처리 중...",
+      amount: "100,000원",
     },
   },
 }
 
 export function SpinnerRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div

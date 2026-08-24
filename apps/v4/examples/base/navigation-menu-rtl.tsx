@@ -58,72 +58,38 @@ const translations: Translations = {
       docs: "Docs",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      gettingStarted: "البدء",
-      introduction: "مقدمة",
-      introductionDesc:
-        "مكونات قابلة لإعادة الاستخدام مبنية باستخدام Tailwind CSS.",
-      installation: "التثبيت",
-      installationDesc: "كيفية تثبيت التبعيات وتنظيم تطبيقك.",
-      typography: "الطباعة",
-      typographyDesc: "أنماط للعناوين والفقرات والقوائم...إلخ",
-      components: "المكونات",
-      alertDialog: "حوار التنبيه",
-      alertDialogDesc: "حوار نافذة يقطع المستخدم بمحتوى مهم ويتوقع استجابة.",
-      hoverCard: "بطاقة التحويم",
-      hoverCardDesc: "للمستخدمين المبصرين لمعاينة المحتوى المتاح خلف الرابط.",
-      progress: "التقدم",
+      gettingStarted: "시작하기",
+      introduction: "소개",
+      introductionDesc: "Tailwind CSS 로 만든 재사용 가능한 컴포넌트입니다.",
+      installation: "설치",
+      installationDesc: "의존성을 설치하고 앱 구조를 잡는 방법입니다.",
+      typography: "Typography",
+      typographyDesc: "제목·문단·목록 등의 스타일입니다.",
+      components: "컴포넌트",
+      alertDialog: "Alert Dialog",
+      alertDialogDesc:
+        "중요한 내용으로 사용자를 멈춰 세우고 응답을 받는 모달 다이얼로그입니다.",
+      hoverCard: "Hover Card",
+      hoverCardDesc: "링크 뒤의 내용을 미리 보여 줍니다.",
+      progress: "Progress",
       progressDesc:
-        "يعرض مؤشرًا يوضح تقدم إتمام المهمة، عادةً يتم عرضه كشريط تقدم.",
-      scrollArea: "منطقة التمرير",
-      scrollAreaDesc: "يفصل المحتوى بصريًا أو دلاليًا.",
-      tabs: "التبويبات",
+        "작업이 얼마나 진행됐는지 보여 줍니다. 보통 막대 형태입니다.",
+      scrollArea: "Scroll-area",
+      scrollAreaDesc: "내용을 시각적으로, 또 의미상으로 나눕니다.",
+      tabs: "Tabs",
       tabsDesc:
-        "مجموعة من أقسام المحتوى المتعددة الطبقات—المعروفة بألواح التبويب—التي يتم عرضها واحدة في كل مرة.",
-      tooltip: "تلميح",
+        "탭 패널이라 부르는 여러 겹의 구획을 한 번에 하나씩 보여 줍니다.",
+      tooltip: "Tooltip",
       tooltipDesc:
-        "نافذة منبثقة تعرض معلومات متعلقة بعنصر عندما يتلقى العنصر التركيز على لوحة المفاتيح أو عند تحويم الماوس فوقه.",
-      withIcon: "مع أيقونة",
-      backlog: "قائمة الانتظار",
-      toDo: "المهام",
-      done: "منجز",
-      docs: "الوثائق",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      gettingStarted: "התחלה",
-      introduction: "הקדמה",
-      introductionDesc: "רכיבים לשימוש חוזר שנבנו עם Tailwind CSS.",
-      installation: "התקנה",
-      installationDesc: "כיצד להתקין תלויות ולבנות את האפליקציה שלך.",
-      typography: "טיפוגרפיה",
-      typographyDesc: "סגנונות לכותרות, פסקאות, רשימות...וכו'",
-      components: "רכיבים",
-      alertDialog: "דיאלוג התראה",
-      alertDialogDesc: "דיאלוג מודאלי שמפריע למשתמש עם תוכן חשוב ומצפה לתגובה.",
-      hoverCard: "כרטיס ריחוף",
-      hoverCardDesc:
-        "למשתמשים רואים כדי להציג תצוגה מקדימה של תוכן זמין מאחורי קישור.",
-      progress: "התקדמות",
-      progressDesc:
-        "מציג אינדיקטור המציג את התקדמות ההשלמה של משימה, בדרך כלל מוצג כסרגל התקדמות.",
-      scrollArea: "אזור גלילה",
-      scrollAreaDesc: "מפריד תוכן חזותית או סמנטית.",
-      tabs: "כרטיסיות",
-      tabsDesc:
-        "קבוצה של חלקי תוכן מרובדים—המכונים לוחות כרטיסיות—המוצגים אחד בכל פעם.",
-      tooltip: "טולטיפ",
-      tooltipDesc:
-        "חלון קופץ המציג מידע הקשור לאלמנט כאשר האלמנט מקבל מיקוד מקלדת או כאשר העכבר מרחף מעליו.",
-      withIcon: "עם אייקון",
-      backlog: "רשימת המתנה",
-      toDo: "לעשות",
-      done: "הושלם",
-      docs: "תיעוד",
+        "요소에 키보드 포커스가 가거나 마우스를 올리면 관련 정보를 띄웁니다.",
+      withIcon: "아이콘 함께 쓰기",
+      backlog: "백로그",
+      toDo: "할 일",
+      done: "완료",
+      docs: "문서",
     },
   },
 }
@@ -162,7 +128,7 @@ const components = [
 ] as const
 
 export function NavigationMenuRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <NavigationMenu dir={dir} align={dir === "rtl" ? "end" : "start"}>

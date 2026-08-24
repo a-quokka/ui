@@ -9,11 +9,11 @@ import {
 export function InputGroupDemo() {
   return (
     <InputGroup className="max-w-xs">
-      <InputGroupInput placeholder="Search..." />
+      <InputGroupInput placeholder="검색..." />
       <InputGroupAddon>
         <Search />
       </InputGroupAddon>
-      <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
+      <InputGroupAddon align="inline-end">12개 결과</InputGroupAddon>
     </InputGroup>
   )
 }

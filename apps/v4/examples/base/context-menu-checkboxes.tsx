@@ -11,20 +11,20 @@ export function ContextMenuCheckboxes() {
     <ContextMenu>
       <ContextMenuTrigger className="flex aspect-video w-full max-w-xs items-center justify-center rounded-xl border border-dashed text-sm">
         <span className="hidden pointer-fine:inline-block">
-          Right click here
+          여기를 오른쪽 클릭
         </span>
         <span className="hidden pointer-coarse:inline-block">
-          Long press here
+          여기를 길게 누르기
         </span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuCheckboxItem defaultChecked>
-            Show Bookmarks Bar
+            북마크 바 표시
           </ContextMenuCheckboxItem>
-          <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
+          <ContextMenuCheckboxItem>전체 URL 표시</ContextMenuCheckboxItem>
           <ContextMenuCheckboxItem defaultChecked>
-            Show Developer Tools
+            개발자 도구 표시
           </ContextMenuCheckboxItem>
         </ContextMenuGroup>
       </ContextMenuContent>

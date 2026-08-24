@@ -47,46 +47,24 @@ const translations: Translations = {
       colm: "Colm Tuite",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      rightClick: "انقر بزر الماوس الأيمن هنا",
-      longPress: "اضغط مطولاً هنا",
-      navigation: "التنقل",
-      back: "رجوع",
-      forward: "تقدم",
-      reload: "إعادة تحميل",
-      moreTools: "المزيد من الأدوات",
-      savePage: "حفظ الصفحة...",
-      createShortcut: "إنشاء اختصار...",
-      nameWindow: "تسمية النافذة...",
-      developerTools: "أدوات المطور",
-      delete: "حذف",
-      showBookmarks: "إظهار الإشارات المرجعية",
-      showFullUrls: "إظهار عناوين URL الكاملة",
-      people: "الأشخاص",
-      pedro: "Pedro Duarte",
-      colm: "Colm Tuite",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      rightClick: "לחץ לחיצה ימנית כאן",
-      longPress: "לחץ לחיצה ארוכה כאן",
-      navigation: "ניווט",
-      back: "חזור",
-      forward: "קדימה",
-      reload: "רענן",
-      moreTools: "כלים נוספים",
-      savePage: "שמור עמוד...",
-      createShortcut: "צור קיצור דרך...",
-      nameWindow: "שם חלון...",
-      developerTools: "כלי מפתח",
-      delete: "מחק",
-      showBookmarks: "הצג סימניות",
-      showFullUrls: "הצג כתובות URL מלאות",
-      people: "אנשים",
+      rightClick: "여기를 오른쪽 클릭",
+      longPress: "여기를 길게 누르기",
+      navigation: "이동",
+      back: "뒤로",
+      forward: "앞으로",
+      reload: "새로 고침",
+      moreTools: "도구 더 보기",
+      savePage: "페이지 저장...",
+      createShortcut: "바로 가기 만들기...",
+      nameWindow: "창 이름 지정...",
+      developerTools: "개발자 도구",
+      delete: "삭제",
+      showBookmarks: "북마크 표시",
+      showFullUrls: "전체 URL 표시",
+      people: "사람",
       pedro: "Pedro Duarte",
       colm: "Colm Tuite",
     },
@@ -94,7 +72,7 @@ const translations: Translations = {
 }
 
 export function ContextMenuRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
   const [people, setPeople] = React.useState("pedro")
 
   return (

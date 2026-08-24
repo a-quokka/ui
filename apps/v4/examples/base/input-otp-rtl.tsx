@@ -20,22 +20,16 @@ const translations: Translations = {
       verificationCode: "Verification code",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      verificationCode: "رمز التحقق",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      verificationCode: "קוד אימות",
+      verificationCode: "인증 번호",
     },
   },
 }
 
 export function InputOTPRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <Field className="mx-auto max-w-xs">

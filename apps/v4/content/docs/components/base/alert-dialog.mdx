@@ -1,6 +1,6 @@
 ---
 title: Alert Dialog
-description: A modal dialog that interrupts the user with important content and expects a response.
+description: 사용자의 확인이 필요할 때 막고 묻는 창입니다. 답하기 전에는 다음으로 넘어가지 않습니다.
 featured: true
 base: base
 component: true
@@ -35,13 +35,13 @@ npx shadcn@latest add alert-dialog
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="alert-dialog"
@@ -49,7 +49,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -80,7 +80,7 @@ import {
   </AlertDialogTrigger>
   <AlertDialogContent>
     <AlertDialogHeader>
-      <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+      <AlertDialogTitle>정말 진행할까요?</AlertDialogTitle>
       <AlertDialogDescription>
         This action cannot be undone. This will permanently delete your account
         from our servers.
@@ -96,7 +96,7 @@ import {
 
 ## Composition
 
-Use the following composition to build an `AlertDialog`:
+아래 구조로 `AlertDialog`를 만듭니다.
 
 ```text
 AlertDialog
@@ -113,7 +113,7 @@ AlertDialog
 
 ## Basic
 
-A basic alert dialog with a title, description, and cancel and continue buttons.
+제목·설명과 취소·계속 버튼이 있는 기본 알림 다이얼로그입니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -123,7 +123,7 @@ A basic alert dialog with a title, description, and cancel and continue buttons.
 
 ## Small
 
-Use the `size="sm"` prop to make the alert dialog smaller.
+`size="sm"` prop으로 알림 다이얼로그를 작게 만듭니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -133,7 +133,7 @@ Use the `size="sm"` prop to make the alert dialog smaller.
 
 ## Media
 
-Use the `AlertDialogMedia` component to add a media element such as an icon or image to the alert dialog.
+`AlertDialogMedia`로 알림 다이얼로그에 아이콘이나 이미지를 넣습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -143,7 +143,7 @@ Use the `AlertDialogMedia` component to add a media element such as an icon or i
 
 ## Small with Media
 
-Use the `size="sm"` prop to make the alert dialog smaller and the `AlertDialogMedia` component to add a media element such as an icon or image to the alert dialog.
+`size="sm"` prop으로 크기를 줄이고 `AlertDialogMedia`로 아이콘이나 이미지를 함께 넣습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -153,7 +153,7 @@ Use the `size="sm"` prop to make the alert dialog smaller and the `AlertDialogMe
 
 ## Destructive
 
-Use the `AlertDialogAction` component to add a destructive action button to the alert dialog.
+`AlertDialogAction`으로 알림 다이얼로그에 위험한 동작 버튼을 넣습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -161,9 +161,9 @@ Use the `AlertDialogAction` component to add a destructive action button to the 
   previewClassName="h-56"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -176,10 +176,10 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### size
 
-Use the `size` prop on the `AlertDialogContent` component to control the size of the alert dialog. It accepts the following values:
+`AlertDialogContent`의 `size` prop으로 알림 다이얼로그 크기를 정합니다. 받는 값은 다음과 같습니다.
 
 | Prop   | Type                | Default     |
 | ------ | ------------------- | ----------- |
 | `size` | `"default" \| "sm"` | `"default"` |
 
-For more information about the other components and their props, see the [Base UI documentation](https://base-ui.com/react/components/alert-dialog#api-reference).
+다른 컴포넌트와 그 prop은 [Base UI 문서](https://base-ui.com/react/components/alert-dialog#api-reference)를 보세요.

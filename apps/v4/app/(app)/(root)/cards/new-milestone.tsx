@@ -14,37 +14,33 @@ export function NewMilestone() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Set a new milestone</CardTitle>
+        <CardTitle>새 이정표 세우기</CardTitle>
         <CardDescription>
-          Define your financial target and we&apos;ll help you pace your
-          savings.
+          재무 목표를 정하면 저축 속도를 함께 맞춰 드립니다.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <FieldGroup>
           <Field>
-            <FieldLabel htmlFor="goal-name">Goal Name</FieldLabel>
-            <Input
-              id="goal-name"
-              placeholder="e.g. New Car, Home Downpayment"
-            />
+            <FieldLabel htmlFor="goal-name">목표 이름</FieldLabel>
+            <Input id="goal-name" placeholder="예: 새 차, 주택 계약금" />
           </Field>
           <div className="grid grid-cols-2 gap-3">
             <Field>
-              <FieldLabel htmlFor="target-amount">Target Amount</FieldLabel>
+              <FieldLabel htmlFor="target-amount">목표 금액</FieldLabel>
               <Input id="target-amount" defaultValue="$15,000" />
             </Field>
             <Field>
-              <FieldLabel htmlFor="target-date">Target Date</FieldLabel>
+              <FieldLabel htmlFor="target-date">목표 날짜</FieldLabel>
               <Input id="target-date" defaultValue="Dec 2025" />
             </Field>
           </div>
         </FieldGroup>
       </CardContent>
       <CardFooter className="flex-col gap-2">
-        <Button className="w-full">Create Goal</Button>
+        <Button className="w-full">목표 만들기</Button>
         <Button variant="outline" className="w-full">
-          Cancel
+          취소
         </Button>
       </CardFooter>
     </Card>

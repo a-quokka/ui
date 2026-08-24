@@ -4,7 +4,7 @@ import { registryItemSchema, registrySchema } from "shadcn/schema"
 import { type z } from "zod"
 
 import { registry as baseRegistry } from "@/registry/bases/base/registry"
-import { registry as radixRegistry } from "@/registry/bases/radix/registry"
+import { registry as radixRegistry } from "@/registry/bases/base/registry"
 
 export async function getAllBlockIds(
   types: z.infer<typeof registryItemSchema>["type"][] = [

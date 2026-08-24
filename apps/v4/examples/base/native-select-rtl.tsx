@@ -15,37 +15,27 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      placeholder: "Select status",
+      placeholder: "상태 선택",
       todo: "Todo",
       inProgress: "In Progress",
       done: "Done",
       cancelled: "Cancelled",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      placeholder: "اختر الحالة",
-      todo: "مهام",
-      inProgress: "قيد التنفيذ",
-      done: "منجز",
-      cancelled: "ملغي",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      placeholder: "בחר סטטוס",
-      todo: "לעשות",
-      inProgress: "בתהליך",
-      done: "הושלם",
-      cancelled: "בוטל",
+      placeholder: "상태 선택",
+      todo: "할 일",
+      inProgress: "진행 중",
+      done: "완료",
+      cancelled: "취소됨",
     },
   },
 }
 
 export function NativeSelectRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <NativeSelect dir={dir}>

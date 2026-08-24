@@ -80,10 +80,7 @@ export default async function Page(props: {
 
   const doc = page.data
   const MDX = doc.body
-  const isChangelog = params.slug?.[0] === "changelog"
-  const neighbours = isChangelog
-    ? { previous: null, next: null }
-    : findNeighbour(source.pageTree, page.url)
+  const neighbours = findNeighbour(source.pageTree, page.url)
   const raw = replaceComponentsList(await page.data.getText("raw"))
 
   return (
@@ -114,7 +111,7 @@ export default async function Page(props: {
                       >
                         <Link href={neighbours.previous.url}>
                           <IconArrowLeft />
-                          <span className="sr-only">Previous</span>
+                          <span className="sr-only">이전</span>
                         </Link>
                       </Button>
                     )}
@@ -126,7 +123,7 @@ export default async function Page(props: {
                         asChild
                       >
                         <Link href={neighbours.next.url}>
-                          <span className="sr-only">Next</span>
+                          <span className="sr-only">다음</span>
                           <IconArrowRight />
                         </Link>
                       </Button>

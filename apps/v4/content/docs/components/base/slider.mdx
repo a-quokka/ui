@@ -1,6 +1,6 @@
 ---
 title: Slider
-description: An input where the user selects a value from within a given range.
+description: 정해진 범위 안에서 값을 끌어 고릅니다.
 base: base
 component: true
 links:
@@ -30,13 +30,13 @@ npx shadcn@latest add slider
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="slider"
@@ -44,7 +44,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -64,19 +64,19 @@ import { Slider } from "@/components/ui/slider"
 
 ## Range
 
-Use an array with two values for a range slider.
+값 두 개짜리 배열을 주면 구간 슬라이더가 됩니다.
 
 <ComponentPreview styleName="base-nova" name="slider-range" />
 
 ## Multiple Thumbs
 
-Use an array with multiple values for multiple thumbs.
+값을 여러 개 주면 손잡이도 여러 개가 됩니다.
 
 <ComponentPreview styleName="base-nova" name="slider-multiple" />
 
 ## Vertical
 
-Use `orientation="vertical"` for a vertical slider.
+세로 슬라이더에는 `orientation="vertical"`을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="slider-vertical" />
 
@@ -86,16 +86,16 @@ Use `orientation="vertical"` for a vertical slider.
 
 ## Disabled
 
-Use the `disabled` prop to disable the slider.
+`disabled` prop으로 슬라이더를 비활성화합니다.
 
 <ComponentPreview styleName="base-nova" name="slider-disabled" />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="slider-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [Base UI Slider](https://base-ui.com/react/components/slider#api-reference) documentation.
+자세한 내용은 [Base UI Slider](https://base-ui.com/react/components/slider#api-reference) 문서를 보세요.

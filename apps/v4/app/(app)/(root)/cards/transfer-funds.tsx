@@ -30,29 +30,27 @@ import {
 import { Separator } from "@/styles/base-rhea/ui/separator"
 
 const FROM_ACCOUNTS = [
-  { label: "Main Checking (··8402) — $12,450.00", value: "checking" },
-  { label: "Business (··7731) — $8,920.00", value: "business" },
+  { label: "주 입출금 (··8402) — $12,450.00", value: "checking" },
+  { label: "사업자 (··7731) — $8,920.00", value: "business" },
 ]
 
 const TO_ACCOUNTS = [
-  { label: "High Yield Savings (··1192) — $42,100.00", value: "savings" },
-  { label: "Investment (··3349) — $18,200.00", value: "investment" },
+  { label: "고금리 예금 (··1192) — $42,100.00", value: "savings" },
+  { label: "투자 (··3349) — $18,200.00", value: "investment" },
 ]
 
 export function TransferFunds() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Transfer Funds</CardTitle>
-        <CardDescription>
-          Move money between your connected accounts.
-        </CardDescription>
+        <CardTitle>이체</CardTitle>
+        <CardDescription>연결된 계좌끼리 돈을 옮깁니다.</CardDescription>
         <CardAction>
           <Button
             variant="ghost"
             size="icon-sm"
             className="bg-muted"
-            aria-label="Dismiss transfer funds"
+            aria-label="이체 카드 닫기"
           >
             <HugeiconsIcon icon={Cancel01Icon} strokeWidth={2} />
           </Button>
@@ -61,9 +59,7 @@ export function TransferFunds() {
       <CardContent>
         <FieldGroup>
           <Field>
-            <FieldLabel htmlFor="transfer-amount">
-              Amount to Transfer
-            </FieldLabel>
+            <FieldLabel htmlFor="transfer-amount">이체 금액</FieldLabel>
             <InputGroup>
               <InputGroupAddon>
                 <InputGroupText>$</InputGroupText>
@@ -72,7 +68,7 @@ export function TransferFunds() {
             </InputGroup>
           </Field>
           <Field>
-            <FieldLabel htmlFor="from-account">From Account</FieldLabel>
+            <FieldLabel htmlFor="from-account">보내는 계좌</FieldLabel>
             <Select items={FROM_ACCOUNTS} defaultValue="checking">
               <SelectTrigger id="from-account" className="w-full">
                 <SelectValue />
@@ -89,7 +85,7 @@ export function TransferFunds() {
             </Select>
           </Field>
           <Field>
-            <FieldLabel htmlFor="to-account">To Account</FieldLabel>
+            <FieldLabel htmlFor="to-account">받는 계좌</FieldLabel>
             <Select items={TO_ACCOUNTS} defaultValue="savings">
               <SelectTrigger id="to-account" className="w-full">
                 <SelectValue />
@@ -108,21 +104,19 @@ export function TransferFunds() {
           <Item variant="muted" className="flex-col items-stretch">
             <ItemContent className="gap-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-muted-foreground">
-                  Estimated arrival
-                </span>
-                <span className="text-sm font-medium">Today, Apr 14</span>
+                <span className="text-sm text-muted-foreground">도착 예상</span>
+                <span className="text-sm font-medium">오늘, 4월 14일</span>
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">
-                  Transaction fee
+                  거래 수수료
                 </span>
                 <span className="text-sm font-medium tabular-nums">$0.00</span>
               </div>
               <Separator />
               <div className="flex items-center justify-between">
-                <span className="text-sm font-medium">Total amount</span>
+                <span className="text-sm font-medium">총액</span>
                 <span className="text-sm font-semibold tabular-nums">
                   $1,200.00
                 </span>
@@ -132,7 +126,7 @@ export function TransferFunds() {
         </FieldGroup>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">Confirm Transfer</Button>
+        <Button className="w-full">이체 확인</Button>
       </CardFooter>
     </Card>
   )

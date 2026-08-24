@@ -24,43 +24,29 @@ const translations: Translations = {
     values: {
       open: "Open",
       editProfile: "Edit profile",
-      description:
-        "Make changes to your profile here. Click save when you're done.",
+      description: "여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.",
       name: "Name",
       username: "Username",
       save: "Save changes",
       close: "Close",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      open: "فتح",
-      editProfile: "تعديل الملف الشخصي",
-      description:
-        "قم بإجراء تغييرات على ملفك الشخصي هنا. انقر حفظ عند الانتهاء.",
-      name: "الاسم",
-      username: "اسم المستخدم",
-      save: "حفظ التغييرات",
-      close: "إغلاق",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      open: "פתח",
-      editProfile: "עריכת פרופיל",
-      description: "בצע שינויים בפרופיל שלך כאן. לחץ שמור כשתסיים.",
-      name: "שם",
-      username: "שם משתמש",
-      save: "שמור שינויים",
-      close: "סגור",
+      open: "열기",
+      editProfile: "프로필 수정",
+      description: "여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.",
+      name: "이름",
+      username: "사용자 이름",
+      save: "저장",
+      close: "닫기",
     },
   },
 }
 
 export function SheetRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <Sheet>

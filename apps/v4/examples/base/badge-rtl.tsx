@@ -21,32 +21,21 @@ const translations: Translations = {
       bookmark: "Bookmark",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      badge: "شارة",
-      secondary: "ثانوي",
-      destructive: "مدمر",
-      outline: "مخطط",
-      verified: "متحقق",
-      bookmark: "إشارة مرجعية",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      badge: "תג",
-      secondary: "משני",
-      destructive: "הרסני",
-      outline: "קווי מתאר",
-      verified: "מאומת",
-      bookmark: "סימנייה",
+      badge: "배지",
+      secondary: "보조",
+      destructive: "경고",
+      outline: "외곽선",
+      verified: "인증됨",
+      bookmark: "북마크",
     },
   },
 }
 
 export function BadgeRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="flex w-full flex-wrap justify-center gap-2" dir={dir}>

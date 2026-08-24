@@ -1,6 +1,6 @@
 ---
 title: Label
-description: Renders an accessible label associated with controls.
+description: 입력 요소에 연결되는 이름표입니다.
 base: base
 component: true
 links:
@@ -11,8 +11,8 @@ links:
 <ComponentPreview styleName="base-nova" name="label-demo" />
 
 <Callout>
-  For form fields, use the [Field](/docs/components/base/field) component which
-  includes built-in label, description, and error handling.
+  폼 입력에는 라벨·설명·오류 처리가 들어 있는
+  [Field](/docs/components/base/field) 컴포넌트를 쓰세요.
 </Callout>
 
 ## Installation
@@ -35,13 +35,13 @@ npx shadcn@latest add label
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="label"
@@ -49,7 +49,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -64,17 +64,16 @@ import { Label } from "@/components/ui/label"
 ```
 
 ```tsx
-<Label htmlFor="email">Your email address</Label>
+<Label htmlFor="email">이메일 주소</Label>
 ```
 
 ## Label in Field
 
-For form fields, use the [Field](/docs/components/base/field) component which
-includes built-in `FieldLabel`, `FieldDescription`, and `FieldError` components.
+폼 입력에는 `FieldLabel`·`FieldDescription`·`FieldError`가 들어 있는 [Field](/docs/components/base/field) 컴포넌트를 쓰세요.
 
 ```tsx
 <Field>
-  <FieldLabel htmlFor="email">Your email address</FieldLabel>
+  <FieldLabel htmlFor="email">이메일 주소</FieldLabel>
   <Input id="email" />
 </Field>
 ```
@@ -85,12 +84,12 @@ includes built-in `FieldLabel`, `FieldDescription`, and `FieldError` components.
   previewClassName="h-[44rem]"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="label-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [Base UI Label](https://base-ui.com/react/components/label#api-reference) documentation for more information.
+자세한 내용은 [Base UI Label](https://base-ui.com/react/components/label#api-reference) 문서를 보세요.

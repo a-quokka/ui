@@ -25,26 +25,15 @@ const translations: Translations = {
         "We've added dark mode support. You can enable it in your account settings.",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      paymentTitle: "تم الدفع بنجاح",
+      paymentTitle: "결제가 끝났습니다",
       paymentDescription:
-        "تمت معالجة دفعتك البالغة 29.99 دولارًا. تم إرسال إيصال إلى عنوان بريدك الإلكتروني.",
-      featureTitle: "ميزة جديدة متاحة",
+        "29.99달러 결제가 처리됐습니다. 영수증은 이메일로 보내 드렸습니다.",
+      featureTitle: "새 기능이 추가됐습니다",
       featureDescription:
-        "لقد أضفنا دعم الوضع الداكن. يمكنك تفعيله في إعدادات حسابك.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      paymentTitle: "התשלום בוצע בהצלחה",
-      paymentDescription:
-        "התשלום שלך בסך 29.99 דולר עובד. קבלה נשלחה לכתובת האימייל שלך.",
-      featureTitle: "תכונה חדשה זמינה",
-      featureDescription:
-        "הוספנו תמיכה במצב כהה. אתה יכול להפעיל אותו בהגדרות החשבון שלך.",
+        "다크 모드를 지원합니다. 계정 설정에서 켤 수 있습니다.",
     },
   },
 }
@@ -63,7 +52,7 @@ const alerts = [
 ] as const
 
 export function AlertRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="grid w-full max-w-md items-start gap-4" dir={dir}>

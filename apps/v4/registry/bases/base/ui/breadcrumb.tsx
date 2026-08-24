@@ -121,7 +121,7 @@ function BreadcrumbEllipsis({
         phosphor="DotsThreeIcon"
         remixicon="RiMoreLine"
       />
-      <span className="sr-only">More</span>
+      <span className="sr-only">더 보기</span>
     </span>
   )
 }

@@ -48,30 +48,26 @@ export function QuestionnaireMultiple() {
     >
       <QuestionnaireItem name="context" multiple required>
         <QuestionnaireTitle>
-          What context should the agent inspect?
+          에이전트가 무엇을 살펴봐야 할까요?
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          Select every source that may affect the implementation.
+          구현에 영향을 줄 만한 자료를 모두 고르세요.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="source">
-            Relevant source files
+            관련 소스 파일
           </QuestionnaireChoice>
-          <QuestionnaireChoice value="tests">
-            Existing tests
-          </QuestionnaireChoice>
-          <QuestionnaireChoice value="docs">
-            Architecture documentation
-          </QuestionnaireChoice>
+          <QuestionnaireChoice value="tests">기존 테스트</QuestionnaireChoice>
+          <QuestionnaireChoice value="docs">구조 문서</QuestionnaireChoice>
           <QuestionnaireChoice value="history">
-            Recent commit history
+            최근 커밋 기록
           </QuestionnaireChoice>
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireActions>
-        <QuestionnaireSubmit>Share context</QuestionnaireSubmit>
+        <QuestionnaireSubmit>맥락 공유</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

@@ -23,14 +23,13 @@ export function MessageAttachmentDemo() {
             <AttachmentMedia variant="image">
               <img
                 src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80"
-                alt="Workspace"
+                alt="워크스페이스"
               />
             </AttachmentMedia>
           </Attachment>
           <Bubble>
             <BubbleContent>
-              Here&apos;s the image. Can you add it to the PDF? Use it for the
-              cover page.
+              이미지예요. PDF 에 넣어 줄래요? 표지로 쓰면 좋겠어요.
             </BubbleContent>
           </Bubble>
         </MessageContent>
@@ -39,7 +38,7 @@ export function MessageAttachmentDemo() {
         <MessageContent>
           <Bubble variant="muted">
             <BubbleContent>
-              Done. Here&apos;s the PDF with the image added as the cover page.
+              됐습니다. 이미지를 표지로 넣은 PDF 예요.
             </BubbleContent>
           </Bubble>
           <Attachment>
@@ -53,8 +52,8 @@ export function MessageAttachmentDemo() {
             <AttachmentActions>
               <AttachmentAction
                 type="button"
-                title="Download"
-                aria-label="Download"
+                title="내려받기"
+                aria-label="내려받기"
                 size="icon-sm"
                 variant="secondary"
               >
@@ -67,7 +66,7 @@ export function MessageAttachmentDemo() {
       <Message align="end">
         <MessageContent>
           <Bubble>
-            <BubbleContent>Thanks. Looks good.</BubbleContent>
+            <BubbleContent>고마워요. 좋네요.</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>

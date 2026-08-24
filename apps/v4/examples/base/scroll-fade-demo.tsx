@@ -8,7 +8,7 @@ export function ScrollFadeDemo() {
               key={index}
               className="rounded-lg bg-muted px-3 py-2.5 text-sm"
             >
-              Item {index + 1}
+              항목 {index + 1}
             </div>
           ))}
         </div>

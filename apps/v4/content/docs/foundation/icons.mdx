@@ -1,0 +1,117 @@
+---
+title: Icons
+description: Dropshot AI 가 쓰는 아이콘 70개입니다. 24×24 그리드의 단색 fill 패스로 그려져 있습니다.
+---
+
+아이콘 원본은 aiStudio CDN 에 있습니다.
+
+```
+https://cdn.aistudio.dropshot.io/public/icons/ic_<이름>.svg
+```
+
+제품 코드에서는 `getIconAttributes` 가 이름 앞에 `ic_` 를 붙여 주소를 만듭니다.
+그래서 코드에 적는 이름에는 접두사가 없습니다.
+
+```tsx
+import { getIconAttributes } from "@stock/web/utils/icon"
+
+<Image {...getIconAttributes({ iconName: "twinkle_filled", size: 24 })} />
+```
+
+<Callout>
+  이 문서의 아이콘은 CDN 을 부르지 않고 저장소 안에 인라인해 두었습니다. 제품은
+  CSS `filter` 로 색을 입히지만 인라인 SVG 에서는 그 방식이 맞지 않아 `fill` 과
+  `stroke` 를 `currentColor` 로 바꿨습니다. 부모의 `color` 가 그대로 아이콘 색이
+  됩니다.
+</Callout>
+
+## Grid
+
+아이콘은 **viewBox 24×24 의 단색 fill 패스**입니다. stroke 로 그린 것이 아니므로
+굵기를 바꿀 수는 없고, 표시 크기만 `width`·`height` 로 정합니다.
+
+이름을 누르면 복사됩니다.
+
+<DropshotIconGrid />
+
+## Off-grid
+
+아래 여섯 개는 24 그리드를 벗어나 있습니다. 다른 아이콘과 나란히 놓을 때는
+광학 크기가 어긋나므로 크기를 따로 맞춰야 합니다.
+
+<DropshotIconGrid grid="other" />
+
+| 이름                        | viewBox |
+| --------------------------- | ------- |
+| `arrow_right_thickness-1.5` | 24×25   |
+| `avatar`                    | 20×20   |
+| `canvas`                    | 20×20   |
+| `doubleweek_new`            | 16×16   |
+| `home`                      | 20×20   |
+| `sbs`                       | 32×14   |
+
+## Color
+
+색은 부모에서 물려받습니다. 시맨틱 변수를 그대로 쓰면 됩니다.
+
+<div className="not-prose my-6 flex flex-wrap items-center gap-6 rounded-lg border p-6">
+  <span className="flex items-center gap-2 text-foreground">
+    <DropshotIcon name="ic_twinkle_filled" />
+    <code className="text-xs">text-foreground</code>
+  </span>
+  <span className="flex items-center gap-2 text-muted-foreground">
+    <DropshotIcon name="ic_twinkle_filled" />
+    <code className="text-xs">text-muted-foreground</code>
+  </span>
+  <span className="flex items-center gap-2 text-primary">
+    <DropshotIcon name="ic_twinkle_filled" />
+    <code className="text-xs">text-primary</code>
+  </span>
+  <span className="flex items-center gap-2 text-destructive">
+    <DropshotIcon name="ic_twinkle_filled" />
+    <code className="text-xs">text-destructive</code>
+  </span>
+</div>
+
+## Size
+
+이 문서 컴포넌트의 기본값은 `size-6`(24px)입니다. 크기는 클래스로 바꿉니다.
+
+<div className="not-prose my-6 flex flex-wrap items-end gap-6 rounded-lg border p-6">
+  <span className="flex flex-col items-center gap-2">
+    <DropshotIcon name="ic_gem" className="size-4" />
+    <code className="text-xs text-muted-foreground">size-4</code>
+  </span>
+  <span className="flex flex-col items-center gap-2">
+    <DropshotIcon name="ic_gem" className="size-5" />
+    <code className="text-xs text-muted-foreground">size-5</code>
+  </span>
+  <span className="flex flex-col items-center gap-2">
+    <DropshotIcon name="ic_gem" className="size-6" />
+    <code className="text-xs text-muted-foreground">size-6</code>
+  </span>
+  <span className="flex flex-col items-center gap-2">
+    <DropshotIcon name="ic_gem" className="size-8" />
+    <code className="text-xs text-muted-foreground">size-8</code>
+  </span>
+</div>
+
+## 없는 아이콘
+
+CDN 에 없는 이름을 부르면 S3 가 404 가 아니라 **403** 을 돌려줍니다. 권한 문제가
+아니라 그 이름이 없다는 뜻으로 읽으면 됩니다.
+
+레포가 참조하는데도 CDN 에 없는 것이 있습니다. 확인한 것은 `bytedance`,
+`dropshot_stock`, `facebook`, `flux-kontext-pro`, `kling`, `openai`, `twitter`,
+`video_add` 여덟 개입니다. 대부분 외부 서비스 로고라 저작권 때문에 CDN 에
+올리지 않은 것으로 보입니다.
+
+없는 아이콘이 필요하면 24×24 viewBox 에 fill 패스로 직접 그립니다. stroke 로
+그리면 제품 아이콘 옆에서 결이 눈에 띄게 다릅니다. 이모지나 딩벳으로 대체하지
+않습니다.
+
+## 배너·워드마크
+
+`doubleweek_wordmark_desktop`, `seoria_logo`, `studio_logo-v2`, `superweek_banner_bg`
+같은 것들은 아이콘 이름을 달고 있지만 캠페인 그래픽이나 로고입니다. viewBox 가
+제각각이고 아이콘 체계에 속하지 않으므로 이 문서에서는 다루지 않습니다.

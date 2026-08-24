@@ -12,34 +12,25 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      title: "shadcn/ui",
-      subtitle: "The Foundation for your Design System",
+      title: "Dropshot UI",
+      subtitle: "디자인 시스템의 토대",
       description:
-        "A set of beautifully designed components that you can customize, extend, and build on.",
+        "원하는 대로 고치고 확장해 쓸 수 있는, 잘 다듬어진 컴포넌트 모음입니다.",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      title: "shadcn/ui",
-      subtitle: "الأساس لنظام التصميم الخاص بك",
+      title: "Dropshot UI",
+      subtitle: "디자인 시스템의 토대",
       description:
-        "مجموعة من المكونات المصممة بشكل جميل يمكنك تخصيصها وتوسيعها والبناء عليها.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      title: "shadcn/ui",
-      subtitle: "הבסיס למערכת העיצוב שלך",
-      description:
-        "סט של רכיבים מעוצבים בצורה יפה שאתה יכול להתאים אישית, להרחיב ולבנות עליהם.",
+        "원하는 대로 고치고 확장해 쓸 수 있는, 잘 다듬어진 컴포넌트 모음입니다.",
     },
   },
 }
 
 export function SeparatorRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="flex max-w-sm flex-col gap-4 text-sm" dir={dir}>

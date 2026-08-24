@@ -114,7 +114,7 @@ export function CopyButton({
       }}
       {...props}
     >
-      <span className="sr-only">Copy</span>
+      <span className="sr-only">복사</span>
       {hasCopied ? <IconCheck /> : <IconCopy />}
     </Button>
   )

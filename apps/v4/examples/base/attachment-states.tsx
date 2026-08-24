@@ -27,10 +27,10 @@ export function AttachmentStates() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>selected-file.pdf</AttachmentTitle>
-          <AttachmentDescription>Ready to upload</AttachmentDescription>
+          <AttachmentDescription>업로드 준비됨</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Remove selected-file.pdf">
+          <AttachmentAction aria-label="selected-file.pdf 삭제">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>
@@ -41,10 +41,10 @@ export function AttachmentStates() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>design-system.zip</AttachmentTitle>
-          <AttachmentDescription>Uploading · 64%</AttachmentDescription>
+          <AttachmentDescription>업로드 중 · 64%</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Cancel upload">
+          <AttachmentAction aria-label="업로드 취소">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>
@@ -55,10 +55,10 @@ export function AttachmentStates() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>market-research.pdf</AttachmentTitle>
-          <AttachmentDescription>Processing document</AttachmentDescription>
+          <AttachmentDescription>문서 처리 중</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Remove market-research.pdf">
+          <AttachmentAction aria-label="market-research.pdf 삭제">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>
@@ -70,14 +70,14 @@ export function AttachmentStates() {
         <AttachmentContent>
           <AttachmentTitle>financial-model.xlsx</AttachmentTitle>
           <AttachmentDescription>
-            Upload failed. Try again.
+            업로드에 실패했습니다. 다시 시도하세요.
           </AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Retry upload">
+          <AttachmentAction aria-label="업로드 다시 시도">
             <RefreshCwIcon />
           </AttachmentAction>
-          <AttachmentAction aria-label="Remove financial-model.xlsx">
+          <AttachmentAction aria-label="financial-model.xlsx 삭제">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>
@@ -88,10 +88,10 @@ export function AttachmentStates() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>uploaded-report.pdf</AttachmentTitle>
-          <AttachmentDescription>Uploaded · 1.8 MB</AttachmentDescription>
+          <AttachmentDescription>업로드 완료 · 1.8 MB</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
-          <AttachmentAction aria-label="Remove uploaded-report.pdf">
+          <AttachmentAction aria-label="uploaded-report.pdf 삭제">
             <XIcon />
           </AttachmentAction>
         </AttachmentActions>

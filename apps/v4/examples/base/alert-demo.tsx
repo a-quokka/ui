@@ -11,18 +11,16 @@ export default function AlertDemo() {
     <div className="grid w-full max-w-md items-start gap-4">
       <Alert>
         <CheckCircle2Icon />
-        <AlertTitle>Payment successful</AlertTitle>
+        <AlertTitle>결제가 끝났습니다</AlertTitle>
         <AlertDescription>
-          Your payment of $29.99 has been processed. A receipt has been sent to
-          your email address.
+          29.99달러 결제가 처리됐습니다. 영수증은 이메일로 보내 드렸습니다.
         </AlertDescription>
       </Alert>
       <Alert>
         <InfoIcon />
-        <AlertTitle>New feature available</AlertTitle>
+        <AlertTitle>새 기능이 추가됐습니다</AlertTitle>
         <AlertDescription>
-          We&apos;ve added dark mode support. You can enable it in your account
-          settings.
+          다크 모드를 지원합니다. 계정 설정에서 켤 수 있습니다.
         </AlertDescription>
       </Alert>
     </div>

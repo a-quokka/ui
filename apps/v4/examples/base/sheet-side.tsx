@@ -27,30 +27,27 @@ export default function SheetSide() {
             className="data-[side=bottom]:max-h-[50vh] data-[side=top]:max-h-[50vh]"
           >
             <SheetHeader>
-              <SheetTitle>Edit profile</SheetTitle>
+              <SheetTitle>프로필 수정</SheetTitle>
               <SheetDescription>
-                Make changes to your profile here. Click save when you&apos;re
-                done.
+                여기서 프로필을 고칠 수 있습니다. 다 되면 저장을 누르세요.
               </SheetDescription>
             </SheetHeader>
             <div className="no-scrollbar overflow-y-auto px-4">
               {Array.from({ length: 10 }).map((_, index) => (
                 <p key={index} className="mb-2 leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  다람쥐 헌 쳇바퀴에 타고파. 이 문장은 글자 크기와 행간을 눈으로
+                  가늠하려고 넣어 둔 예시 문장입니다. 특별한 뜻은 없고, 한글이
+                  실제로 어떻게 흐르는지 보기 위한 자리 채움 글입니다. 문단이
+                  길어졌을 때 줄이 어떻게 나뉘고 여백이 어떻게 잡히는지, 굵기와
+                  자간이 화면에서 어떻게 읽히는지 확인하는 데 씁니다. 실제
+                  문안이 들어가면 이 자리는 그대로 대체됩니다.
                 </p>
               ))}
             </div>
             <SheetFooter>
-              <Button type="submit">Save changes</Button>
+              <Button type="submit">저장</Button>
               <SheetClose render={<Button variant="outline" />}>
-                Cancel
+                취소
               </SheetClose>
             </SheetFooter>
           </SheetContent>

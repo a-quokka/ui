@@ -28,31 +28,31 @@ export default function AppSidebar() {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarGroupLabel>Projects</SidebarGroupLabel>
+            <SidebarGroupLabel>프로젝트</SidebarGroupLabel>
             <SidebarGroupAction
-              title="Add Project"
+              title="프로젝트 추가"
               onClick={() => toast("You clicked the group action!")}
             >
-              <PlusIcon /> <span className="sr-only">Add Project</span>
+              <PlusIcon /> <span className="sr-only">프로젝트 추가</span>
             </SidebarGroupAction>
             <SidebarGroupContent>
               <SidebarMenu>
                 <SidebarMenuItem>
                   <SidebarMenuButton render={<a href="#" />}>
                     <FrameIcon />
-                    <span>Design Engineering</span>
+                    <span>디자인 엔지니어링</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton render={<a href="#" />}>
                     <PieChartIcon />
-                    <span>Sales & Marketing</span>
+                    <span>세일즈 · 마케팅</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
                 <SidebarMenuItem>
                   <SidebarMenuButton render={<a href="#" />}>
                     <MapIcon />
-                    <span>Travel</span>
+                    <span>출장</span>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               </SidebarMenu>

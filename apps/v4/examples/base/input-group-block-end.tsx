@@ -17,32 +17,33 @@ export function InputGroupBlockEnd() {
   return (
     <FieldGroup className="max-w-sm">
       <Field>
-        <FieldLabel htmlFor="block-end-input">Input</FieldLabel>
+        <FieldLabel htmlFor="block-end-input">입력</FieldLabel>
         <InputGroup className="h-auto">
-          <InputGroupInput id="block-end-input" placeholder="Enter amount" />
+          <InputGroupInput
+            id="block-end-input"
+            placeholder="금액을 입력하세요"
+          />
           <InputGroupAddon align="block-end">
             <InputGroupText>USD</InputGroupText>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>Footer positioned below the input.</FieldDescription>
+        <FieldDescription>입력 아래에 놓인 푸터입니다.</FieldDescription>
       </Field>
       <Field>
         <FieldLabel htmlFor="block-end-textarea">Textarea</FieldLabel>
         <InputGroup>
           <InputGroupTextarea
             id="block-end-textarea"
-            placeholder="Write a comment..."
+            placeholder="댓글을 남겨 보세요..."
           />
           <InputGroupAddon align="block-end">
             <InputGroupText>0/280</InputGroupText>
             <InputGroupButton variant="default" size="sm" className="ml-auto">
-              Post
+              올리기
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>
-          Footer positioned below the textarea.
-        </FieldDescription>
+        <FieldDescription>textarea 아래에 놓인 푸터입니다.</FieldDescription>
       </Field>
     </FieldGroup>
   )

@@ -20,7 +20,7 @@ import { Separator } from "@/registry/new-york-v4/ui/separator"
 
 function getPromptUrl(baseURL: string, url: string) {
   return `${baseURL}?q=${encodeURIComponent(
-    `I’m looking at this shadcn/ui documentation: ${url}.
+    `I’m looking at this Dropshot UI documentation: ${url}.
 Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.
   `
   )}`
@@ -37,7 +37,7 @@ const menuItems = {
           fill="currentColor"
         />
       </svg>
-      View as Markdown
+      Markdown 으로 보기
     </a>
   ),
   v0: (url: string) => (
@@ -177,7 +177,7 @@ export function DocsCopyPage({ page, url }: { page: string; url: string }) {
           onClick={() => copyToClipboard(page)}
         >
           {isCopied ? <IconCheck /> : <IconCopy />}
-          Copy Page
+          페이지 복사
         </Button>
         <DropdownMenu>
           <DropdownMenuTrigger asChild className="hidden sm:flex">

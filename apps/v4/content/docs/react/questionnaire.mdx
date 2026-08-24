@@ -1,17 +1,15 @@
 ---
 title: Questionnaire
-description: Build accessible, multi-step questionnaires with single, multiple, freeform, and intentionally skipped answers.
+description: 단일 선택·복수 선택·자유 입력·의도적 건너뛰기를 갖춘 접근성 있는 여러 단계 설문을 만듭니다.
 ---
 
-`Questionnaire` is an unstyled form primitive for presenting one question at a
-time. It manages answers, progress, validation, and navigation.
+`Questionnaire` 는 한 번에 질문 하나를 보여 주는 스타일 없는 폼 프리미티브입니다.
+답변·진행도·검증·이동을 모두 맡습니다.
 
-It works well for agent clarification prompts, onboarding, surveys, intake
-forms, and configuration.
+에이전트의 확인 질문, 온보딩, 설문, 접수 양식, 설정 화면에 잘 맞습니다.
 
-The unstyled package gives you full control over markup and styles. For the
-styled version and themed examples, see
-[Questionnaire](/docs/components/base/questionnaire).
+스타일 없는 패키지를 쓰면 마크업과 스타일을 온전히 다룰 수 있습니다. 스타일이 붙은
+버전과 테마 예시는 [Questionnaire](/docs/components/base/questionnaire) 를 보세요.
 
 ## Installation
 
@@ -25,8 +23,8 @@ npm install @shadcn/react
 import { Questionnaire } from "@shadcn/react/questionnaire"
 ```
 
-`Questionnaire` exports its parts from one namespace. Each part accepts the
-native props for its default element.
+`Questionnaire` 는 구성 요소를 네임스페이스 하나로 내보냅니다. 각 구성 요소는 기본
+요소의 기본 prop 을 그대로 받습니다.
 
 ## Anatomy
 
@@ -53,12 +51,12 @@ native props for its default element.
 </Questionnaire.Root>
 ```
 
-`Root` renders a form. Each `Item` is a fieldset, with `Title` as its legend.
-`ChoiceInput` renders a native radio or checkbox.
+`Root` 는 form 을 그립니다. `Item` 은 fieldset 이고 `Title` 이 그 legend 입니다.
+`ChoiceInput` 은 기본 radio 나 checkbox 를 그립니다.
 
 ## Styled version
 
-The styled registry component uses flat component names:
+스타일이 붙은 레지스트리 컴포넌트는 개별 이름을 씁니다.
 
 | Styled component                                                                         | Unstyled part                                                                                |
 | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
@@ -74,13 +72,13 @@ The styled registry component uses flat component names:
 | `QuestionnaireActions`                                                                   | None. Layout only; use your own container.                                                   |
 | `QuestionnairePrevious`, `QuestionnaireSkip`, `QuestionnaireNext`, `QuestionnaireSubmit` | `Questionnaire.Previous`, `Questionnaire.Skip`, `Questionnaire.Next`, `Questionnaire.Submit` |
 
-The styled `QuestionnaireChoice` composes the input, label, shortcut, and visual
-indicator for you. With the unstyled package, compose those parts yourself.
+스타일이 붙은 `QuestionnaireChoice` 는 입력·레이블·단축키·표시를 대신 엮어 줍니다.
+스타일 없는 패키지에서는 그 구성 요소를 직접 엮으면 됩니다.
 
 ## Basic usage
 
-Each `Item` is one step. Its `name` identifies the step and becomes the form
-field name for its answers. `Choice.value` is the submitted answer.
+`Item` 하나가 한 단계입니다. `name` 이 그 단계를 가리키며 답변의 폼 필드 이름이
+됩니다. 제출되는 답은 `Choice.value` 입니다.
 
 <ComponentPreview
   align="end"
@@ -188,15 +186,14 @@ export function ProjectQuestionnaire() {
 }
 ```
 
-Pass the same `items` collection to `Root` that you render as `Item` and
-`Choice` parts. This makes item order, progress, action visibility, and answer
-shortcuts available in the server-rendered HTML.
+`Item` 과 `Choice` 로 그리는 것과 같은 `items` 를 `Root` 에도 넘기세요. 그러면 항목
+순서·진행도·동작 노출·답변 단축키가 서버에서 그린 HTML 에도 담깁니다.
 
 ## Multiple selection
 
-`multiple` turns an item's fixed choices into native checkboxes. Read the answers with
-`FormData.getAll()`. Keep `multiple` in your application data and pass it to
-the rendered `Item`.
+`multiple` 을 주면 항목의 고정 선택지가 기본 checkbox 가 됩니다. 답변은
+`FormData.getAll()` 로 읽습니다. `multiple` 값은 앱 데이터에 두었다가 그리는 `Item`
+에 넘기세요.
 
 <ComponentPreview
   align="end"
@@ -255,7 +252,7 @@ const signals = new FormData(form).getAll("signals").map(String)
 
 ## Freeform answers
 
-`Input` adds a freeform answer and renders a native text input.
+`Input` 은 자유 입력 답변을 더하며 기본 텍스트 입력을 그립니다.
 
 <ComponentPreview
   align="end"
@@ -311,9 +308,8 @@ items.map((question) => (
 
 ## Explicit skip
 
-`Skip` records that an optional item was intentionally left unanswered. Use
-`onStatusChange` when your application needs to distinguish a skipped answer
-from a missing one.
+`Skip` 은 선택 항목을 일부러 비워 뒀다고 기록합니다. 건너뛴 답과 빠진 답을 구분해야
+한다면 `onStatusChange` 를 쓰세요.
 
 <ComponentPreview
   align="end"
@@ -364,12 +360,12 @@ export function PlanningQuestionnaire() {
         <Questionnaire.Choices>
           <Questionnaire.Choice value="week">
             <Questionnaire.ChoiceInput />
-            <Questionnaire.ChoiceLabel>This week</Questionnaire.ChoiceLabel>
+            <Questionnaire.ChoiceLabel>이번 주</Questionnaire.ChoiceLabel>
             <Questionnaire.ChoiceShortcut />
           </Questionnaire.Choice>
           <Questionnaire.Choice value="cycle">
             <Questionnaire.ChoiceInput />
-            <Questionnaire.ChoiceLabel>Next cycle</Questionnaire.ChoiceLabel>
+            <Questionnaire.ChoiceLabel>다음 주기</Questionnaire.ChoiceLabel>
             <Questionnaire.ChoiceShortcut />
           </Questionnaire.Choice>
         </Questionnaire.Choices>
@@ -383,9 +379,9 @@ export function PlanningQuestionnaire() {
 
 ## Answer shortcuts
 
-Use `shortcuts="letters"` or `shortcuts="numbers"` to assign a key to each
-enabled fixed choice, following the `items` order when it is provided. Compose
-`ChoiceShortcut` wherever its hint should appear.
+`shortcuts="letters"` 나 `shortcuts="numbers"` 로 활성화된 고정 선택지마다 키를
+배정합니다. `items` 가 있으면 그 순서를 따릅니다. 안내를 보여 줄 자리에
+`ChoiceShortcut` 을 넣으세요.
 
 <ComponentPreview
   align="end"
@@ -398,16 +394,16 @@ enabled fixed choice, following the `items` order when it is provided. Compose
 ```tsx
 <Questionnaire.Root shortcuts="letters">
   <Questionnaire.Item name="review" required>
-    <Questionnaire.Title>What should the agent review?</Questionnaire.Title>
+    <Questionnaire.Title>에이전트가 무엇을 검토할까요?</Questionnaire.Title>
     <Questionnaire.Choices>
       <Questionnaire.Choice value="api">
         <Questionnaire.ChoiceInput />
-        <Questionnaire.ChoiceLabel>Public API</Questionnaire.ChoiceLabel>
+        <Questionnaire.ChoiceLabel>공개 API</Questionnaire.ChoiceLabel>
         <Questionnaire.ChoiceShortcut />
       </Questionnaire.Choice>
       <Questionnaire.Choice value="tests">
         <Questionnaire.ChoiceInput />
-        <Questionnaire.ChoiceLabel>Test coverage</Questionnaire.ChoiceLabel>
+        <Questionnaire.ChoiceLabel>테스트 커버리지</Questionnaire.ChoiceLabel>
         <Questionnaire.ChoiceShortcut />
       </Questionnaire.Choice>
     </Questionnaire.Choices>
@@ -415,24 +411,23 @@ enabled fixed choice, following the `items` order when it is provided. Compose
 </Questionnaire.Root>
 ```
 
-`"letters"` assigns `A` through `Z`; `"numbers"` assigns `1` through `9`.
-Disabled choices are skipped. Selecting an answer by shortcut does not advance
-to the next item.
+`"letters"` 는 `A` 부터 `Z` 까지, `"numbers"` 는 `1` 부터 `9` 까지 배정합니다.
+비활성 선택지는 건너뜁니다. 단축키로 답을 골라도 다음 항목으로 넘어가지는 않습니다.
 
 ## Validation
 
-Questionnaire validates the active item before moving forward and validates all
-enabled items when the form submits.
+Questionnaire 는 다음으로 넘어가기 전에 현재 항목을 검증하고, 폼을 제출할 때는
+활성화된 모든 항목을 검증합니다.
 
-- A required item is valid after it has an answer.
-- An optional item is valid after it has an answer or is explicitly skipped.
-- Disabled items and answers are ignored.
+- 필수 항목은 답이 있어야 통과합니다.
+- 선택 항목은 답이 있거나 명시적으로 건너뛰어야 통과합니다.
+- 비활성 항목과 답변은 무시합니다.
 
-`required` does not add visible “Required” text. Say it in the `Title` or
-`Description`.
+`required` 를 준다고 “필수” 같은 글자가 보이지는 않습니다. `Title` 이나
+`Description` 에 적어 주세요.
 
-When validation fails, Questionnaire keeps or opens the invalid item and
-focuses an answer. Add `Error` to show a message.
+검증에 실패하면 Questionnaire 가 문제가 있는 항목을 그대로 두거나 열고 답변에
+포커스를 줍니다. 메시지를 보여 주려면 `Error` 를 넣으세요.
 
 ```tsx
 <Questionnaire.Item name="scope" required>
@@ -444,18 +439,18 @@ focuses an answer. Add `Error` to show a message.
 </Questionnaire.Item>
 ```
 
-`Error` remains hidden until the item is invalid. Pass children to replace its
-default message.
+`Error` 는 항목에 문제가 생기기 전까지 숨어 있습니다. 자식을 넘기면 기본 메시지를
+바꿀 수 있습니다.
 
 ```tsx
-<Questionnaire.Error>Please choose a project scope.</Questionnaire.Error>
+<Questionnaire.Error>검토 범위를 골라 주세요.</Questionnaire.Error>
 ```
 
-Validation still works without `Error`. When rendered, the message is announced
-to screen readers.
+`Error` 가 없어도 검증은 동작합니다. 그려진 경우 메시지는 스크린 리더에도
+읽힙니다.
 
-For Zod or another external validator, set `Item.invalid`, render the message in
-`Error`, and move `Root.item` to the first invalid item.
+Zod 같은 외부 검증기를 쓴다면 `Item.invalid` 를 지정하고 `Error` 에 메시지를 그린 뒤
+`Root.item` 을 문제가 있는 첫 항목으로 옮기세요.
 
 <ComponentPreview
   align="end"
@@ -468,7 +463,7 @@ For Zod or another external validator, set `Item.invalid`, render the message in
 ```tsx
 <Questionnaire.Root item={item} onItemChange={setItem} onSubmit={handleSubmit}>
   <Questionnaire.Item invalid={Boolean(errors.detail)} name="detail" required>
-    <Questionnaire.Title>How much detail?</Questionnaire.Title>
+    <Questionnaire.Title>얼마나 자세히 볼까요?</Questionnaire.Title>
     <Questionnaire.Choices>{/* choices */}</Questionnaire.Choices>
     <Questionnaire.Error>{errors.detail}</Questionnaire.Error>
   </Questionnaire.Item>
@@ -477,7 +472,7 @@ For Zod or another external validator, set `Item.invalid`, render the message in
 
 ## Controlled navigation
 
-Pass `item` and `onItemChange` to control the active item.
+`item` 과 `onItemChange` 를 넘기면 현재 항목을 직접 제어할 수 있습니다.
 
 <ComponentPreview
   align="end"
@@ -505,7 +500,7 @@ const [item, setItem] = React.useState("scope")
 
 ## Resume with defaults
 
-Restore a saved draft with `defaultItem`, `defaultChecked`, and `defaultValue`.
+저장해 둔 임시 답안은 `defaultItem`·`defaultChecked`·`defaultValue` 로 되살립니다.
 
 <ComponentPreview
   align="end"
@@ -518,29 +513,29 @@ Restore a saved draft with `defaultItem`, `defaultChecked`, and `defaultValue`.
 ```tsx
 <Questionnaire.Root defaultItem="verification">
   <Questionnaire.Item name="scope" required>
-    <Questionnaire.Title>Which files are in scope?</Questionnaire.Title>
+    <Questionnaire.Title>어떤 파일을 볼까요?</Questionnaire.Title>
     <Questionnaire.Choices>
       <Questionnaire.Choice value="component" defaultChecked>
         <Questionnaire.ChoiceInput />
-        <Questionnaire.ChoiceLabel>Component only</Questionnaire.ChoiceLabel>
+        <Questionnaire.ChoiceLabel>컴포넌트만</Questionnaire.ChoiceLabel>
       </Questionnaire.Choice>
     </Questionnaire.Choices>
   </Questionnaire.Item>
   <Questionnaire.Item name="verification" required>
-    <Questionnaire.Title>Any extra instructions?</Questionnaire.Title>
+    <Questionnaire.Title>더 알려 줄 것이 있나요?</Questionnaire.Title>
     <Questionnaire.Input
-      aria-label="Extra instructions"
+      aria-label="추가 지시"
       defaultValue="Run the package tests."
     />
   </Questionnaire.Item>
-  <button type="reset">Reset draft</button>
+  <button type="reset">임시 저장 지우기</button>
 </Questionnaire.Root>
 ```
 
 ## Conditional items
 
-Set `disabled` to remove an item from the current flow. Disabled items are
-excluded from progress, navigation, validation, and submission.
+`disabled` 를 주면 그 항목이 흐름에서 빠집니다. 비활성 항목은 진행도·이동·검증·제출에서
+모두 제외됩니다.
 
 <ComponentPreview
   align="end"
@@ -555,7 +550,7 @@ const [runtime, setRuntime] = React.useState("local")
 
 <Questionnaire.Root>
   <Questionnaire.Item name="runtime" required>
-    <Questionnaire.Title>Where should the agent run?</Questionnaire.Title>
+    <Questionnaire.Title>에이전트를 어디서 돌릴까요?</Questionnaire.Title>
     <Questionnaire.Choices>
       <Questionnaire.Choice
         value="local"
@@ -585,9 +580,8 @@ const [runtime, setRuntime] = React.useState("local")
 
 ## Navigation state
 
-Navigation actions stay enabled by default so activating Next or Submit can
-show a validation error. Use the render state when you want to disable an
-action yourself.
+다음이나 제출을 눌렀을 때 검증 오류를 보여 줄 수 있도록 이동 버튼은 기본적으로 켜져
+있습니다. 직접 잠그고 싶다면 render 상태를 쓰세요.
 
 <ComponentPreview
   align="end"
@@ -607,8 +601,8 @@ action yourself.
 </Questionnaire.Next>
 ```
 
-The render state contains `visible`, `disabled`, `shortcut`, and the active
-item's `status`. To change only the appearance, target `data-status` instead:
+render 상태에는 `visible`·`disabled`·`shortcut` 과 현재 항목의 `status` 가 담깁니다.
+모양만 바꾸려면 `data-status` 를 쓰세요.
 
 ```tsx
 <Questionnaire.Next data-navigation-action>Next</Questionnaire.Next>
@@ -622,8 +616,8 @@ item's `status`. To change only the appearance, target `data-status` instead:
 
 ## Custom progress
 
-`Progress` renders `Question {current} of {total}` by default. Use `render` to
-change its element or format.
+`Progress` 는 기본적으로 `Question {current} of {total}` 을 그립니다. 요소나 형식을
+바꾸려면 `render` 를 쓰세요.
 
 <ComponentPreview
   align="end"
@@ -635,7 +629,7 @@ change its element or format.
 
 ```tsx
 <Questionnaire.Progress
-  aria-label="Setup progress"
+  aria-label="설정 진행률"
   render={(props, state) => (
     <output {...props}>
       Checkpoint {state.current} of {state.total}
@@ -644,12 +638,12 @@ change its element or format.
 />
 ```
 
-The render state contains `current`, `total`, `first`, and `last`. Pass a
-localized `aria-label` when needed.
+render 상태에는 `current`·`total`·`first`·`last` 가 담깁니다. 필요하면 각 언어에 맞는
+`aria-label` 을 넘기세요.
 
 ## Animated items
 
-Animate the active item while keeping progress and navigation stationary.
+진행도와 이동 영역은 그대로 두고 현재 항목만 움직이게 합니다.
 
 <ComponentPreview
   align="end"
@@ -672,13 +666,12 @@ const itemClassName =
 </Questionnaire.Item>
 ```
 
-Inactive items hide immediately, so animate the entry only.
+활성이 아닌 항목은 곧바로 숨으므로 들어올 때만 움직이게 하세요.
 
 ## Card composition
 
-Place the root around a card and render `Title` and `Description` into the
-card header. Give the title an `id` and connect it with the item's
-`aria-labelledby` since it replaces the default legend.
+루트로 카드를 감싸고 `Title` 과 `Description` 을 카드 헤더에 그립니다. 제목이 기본
+legend 를 대신하므로 `id` 를 주고 항목의 `aria-labelledby` 와 이어 주세요.
 
 <ComponentPreview
   align="end"
@@ -720,8 +713,8 @@ const titleId = React.useId()
 
 ## Dialog composition
 
-Keep dialog dismissal separate from `Skip`: closing cancels the flow, while
-skipping records an intentional unanswered item.
+대화 상자를 닫는 것과 `Skip` 은 다릅니다. 닫으면 흐름이 취소되고, 건너뛰면 일부러
+답하지 않았다고 기록됩니다.
 
 <ComponentPreview
   align="end"
@@ -735,7 +728,7 @@ skipping records an intentional unanswered item.
 const titleId = React.useId()
 
 <Dialog>
-  <DialogTrigger>Open clarification</DialogTrigger>
+  <DialogTrigger>확인 질문 열기</DialogTrigger>
   <DialogContent>
     <Questionnaire.Root onSubmit={handleSubmit}>
       <Questionnaire.Item aria-labelledby={titleId} name="scope" required>
@@ -754,7 +747,7 @@ const titleId = React.useId()
       <DialogFooter>
         <DialogClose>Cancel</DialogClose>
         <Questionnaire.Next>Next</Questionnaire.Next>
-        <Questionnaire.Submit>Send answer</Questionnaire.Submit>
+        <Questionnaire.Submit>답 보내기</Questionnaire.Submit>
       </DialogFooter>
     </Questionnaire.Root>
   </DialogContent>
@@ -763,41 +756,41 @@ const titleId = React.useId()
 
 ## Custom render targets
 
-Use `render` to replace a part's default element. Pass an element, or use a
-function when you need its state.
+구성 요소의 기본 요소를 바꾸려면 `render` 를 쓰세요. 요소를 넘기거나, 상태가 필요하면
+함수를 넘깁니다.
 
 ```tsx
 <Questionnaire.Next render={<Button />}>Next</Questionnaire.Next>
 ```
 
-`Root` and `Item` always render a `form` and `fieldset`. If `Title` no longer
-renders a `legend`, give it an `id` and pass that ID to `Item` with
-`aria-labelledby`.
+`Root` 와 `Item` 은 언제나 `form` 과 `fieldset` 을 그립니다. `Title` 이 더 이상
+`legend` 를 그리지 않는다면 `id` 를 주고 그 값을 `Item` 의 `aria-labelledby` 로
+넘기세요.
 
-The primitive does not emit `data-slot`. Styled wrappers own slots and visual
-indicators.
+프리미티브는 `data-slot` 을 붙이지 않습니다. 슬롯과 시각 표시는 스타일이 붙은 껍데기가
+맡습니다.
 
 ## Native forms
 
-`Root` always renders a native form and supports `onSubmit`, `onReset`, `action`,
-and the other form props. Do not nest a Questionnaire inside another form.
+`Root` 는 언제나 기본 form 을 그리며 `onSubmit`·`onReset`·`action` 을 비롯한 form prop 을
+지원합니다. Questionnaire 를 다른 form 안에 넣지 마세요.
 
-Answers serialize through native controls:
+답변은 기본 입력 요소를 통해 직렬화됩니다.
 
-- `FormData.get(itemName)` reads a single answer.
-- `FormData.getAll(itemName)` reads multiple answers.
-- Skipped items are absent from `FormData`.
-- Use `Item.onStatusChange` to distinguish a skip from a missing answer.
+- 답이 하나면 `FormData.get(itemName)` 으로 읽습니다.
+- 답이 여럿이면 `FormData.getAll(itemName)` 으로 읽습니다.
+- 건너뛴 항목은 `FormData` 에 담기지 않습니다.
+- 건너뛴 답과 빠진 답을 구분하려면 `Item.onStatusChange` 를 쓰세요.
 
-`Root` sets `noValidate` by default so validation uses `Questionnaire.Error`
-instead of the browser's constraint validation UI.
+`Root` 는 기본으로 `noValidate` 를 붙입니다. 그래서 브라우저 기본 검증 UI 대신
+`Questionnaire.Error` 로 검증 결과를 보여 줍니다.
 
-`form.reset()` restores the initial item, default answers, skip state, and
-validation state.
+`form.reset()` 을 부르면 처음 항목·기본 답변·건너뛴 상태·검증 상태가 모두 처음으로
+돌아갑니다.
 
 ## Keyboard navigation
 
-Questionnaire builds on native radio, checkbox, input, and button behavior.
+Questionnaire 는 기본 radio·checkbox·input·button 동작 위에 올려져 있습니다.
 
 | Key                      | Behavior                                                                                                                        |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
@@ -811,57 +804,51 @@ Questionnaire builds on native radio, checkbox, input, and button behavior.
 | `Enter`                  | Continues from a selected choice or selected, filled input; activates a focused action.                                         |
 | `Command/Ctrl` + `Enter` | Validates and continues from anywhere inside the questionnaire, or submits the final item.                                      |
 
-Shortcuts and arrow navigation pause while you type in a text field.
-Preventing the root `onKeyDown` event turns off questionnaire key handling.
+텍스트 입력에 글자를 넣는 동안에는 단축키와 화살표 이동이 멈춥니다. 루트의
+`onKeyDown` 을 막으면 키 처리가 아예 꺼집니다.
 
-Navigation actions stay enabled by default so an attempted action can reveal
-validation feedback. See [Navigation state](#navigation-state) to disable or
-restyle an unanswered action.
+눌렀을 때 검증 결과를 보여 줄 수 있도록 이동 버튼은 기본적으로 켜져 있습니다. 답하지
+않은 상태의 버튼을 잠그거나 다르게 꾸미려면 [이동 상태](#navigation-state)를 보세요.
 
 ## Accessibility
 
-- `Item` renders a `fieldset`.
-- `Title` renders the fieldset `legend` by default. If it uses a custom render
-  target, connect its `id` to the item with `aria-labelledby`.
-- `Description` and the active `Error` are connected with
-  `aria-describedby`.
-- Invalid items and answer controls expose `aria-invalid`.
-- `Progress` renders a named progressbar with current, minimum, maximum, and
-  text values.
-- Fixed choices use native radios and checkboxes.
-- Assigned shortcut keys and available navigation are exposed with
-  `aria-keyshortcuts`.
-- Inactive items and actions are hidden and inert.
-- Navigation focuses the newly active fieldset.
-- Validation focuses the first available answer control.
-- Disabled items are omitted from progress and navigation.
+- `Item` 은 `fieldset` 을 그립니다.
+- `Title` 은 기본적으로 fieldset 의 `legend` 를 그립니다. 다른 요소로 바꿨다면 그
+  `id` 를 항목의 `aria-labelledby` 와 이어 주세요.
+- `Description` 과 현재 `Error` 는 `aria-describedby` 로 이어집니다.
+- 문제가 있는 항목과 답변 요소에는 `aria-invalid` 가 붙습니다.
+- `Progress` 는 현재값·최솟값·최댓값·텍스트를 갖춘 이름 있는 progressbar 를 그립니다.
+- 고정 선택지는 기본 radio 와 checkbox 를 씁니다.
+- 배정된 단축키와 쓸 수 있는 이동은 `aria-keyshortcuts` 로 알립니다.
+- 활성이 아닌 항목과 버튼은 숨겨지고 동작하지 않습니다.
+- 이동하면 새로 활성이 된 fieldset 에 포커스가 갑니다.
+- 검증에 걸리면 처음 답변 요소에 포커스가 갑니다.
+- 비활성 항목은 진행도와 이동에서 빠집니다.
 
-Always give `Input` an accessible name. Use an explicit `id` with a visible
-label:
+`Input` 에는 언제나 접근성 이름을 주세요. 보이는 레이블이 있다면 `id` 로 이어 줍니다.
 
 ```tsx
-<Label htmlFor="other-answer">Other answer</Label>
+<Label htmlFor="other-answer">직접 입력</Label>
 <Questionnaire.Input
   id="other-answer"
-  placeholder="Type another answer…"
+  placeholder="다른 답을 적어 주세요…"
 />
 ```
 
-When the design has no visible label, use `aria-label` or `aria-labelledby`:
+디자인에 보이는 레이블이 없다면 `aria-label` 이나 `aria-labelledby` 를 쓰세요.
 
 ```tsx
 <Questionnaire.Input
-  aria-label="Other answer"
-  placeholder="Type another answer…"
+  aria-label="직접 입력"
+  placeholder="다른 답을 적어 주세요…"
 />
 ```
 
-A placeholder is not a label.
+placeholder 는 레이블이 아닙니다.
 
 ## Data attributes
 
-Use these attributes for styling. Boolean attributes are present when true and
-absent when false.
+꾸밀 때는 아래 속성을 쓰세요. 참·거짓 속성은 참일 때만 붙고 거짓이면 사라집니다.
 
 ### Root and Progress
 
@@ -926,31 +913,29 @@ absent when false.
 | `data-shortcut` | `"Enter"` on an enabled, visible Next or Submit.           |
 | `data-status`   | Active item: `"unanswered"`, `"answered"`, or `"skipped"`. |
 
-`Title` and `Description` have no state attributes. The headless parts do not
-emit `data-slot`.
+`Title` 과 `Description` 에는 상태 속성이 없습니다. 헤드리스 구성 요소는 `data-slot` 을
+붙이지 않습니다.
 
 ## API Reference
 
 ### Questionnaire.Root
 
-The form and coordination root.
+폼이자 전체를 조율하는 루트입니다.
 
-| Prop           | Type                                     | Default            | Description                                                              |
-| -------------- | ---------------------------------------- | ------------------ | ------------------------------------------------------------------------ |
-| `item`         | `string`                                 | -                  | Controlled active item name.                                             |
-| `defaultItem`  | `string`                                 | first enabled item | Initially active item name.                                              |
-| `items`        | `readonly QuestionnaireItemDefinition[]` | -                  | Optional item data for server rendering and item order.                  |
-| `onItemChange` | `(item: string) => void`                 | -                  | Called when navigation requests a different item.                        |
-| `shortcuts`    | `"letters" \| "numbers"`                 | -                  | Assigns scoped answer shortcuts in definition or rendered DOM order.     |
-| `noValidate`   | `boolean`                                | `true`             | Disables native constraint UI while preserving questionnaire validation. |
-| `onSubmit`     | `FormEventHandler<HTMLFormElement>`      | -                  | Native form submission handler after every item validates.               |
-| `onReset`      | `FormEventHandler<HTMLFormElement>`      | -                  | Native reset handler. Prevent default to stop questionnaire reset.       |
+| Prop           | Type                                     | Default            | Description                                                                       |
+| -------------- | ---------------------------------------- | ------------------ | --------------------------------------------------------------------------------- |
+| `item`         | `string`                                 | -                  | 제어되는 현재 항목의 이름입니다.                                                  |
+| `defaultItem`  | `string`                                 | first enabled item | 처음 활성이 되는 항목의 이름입니다.                                               |
+| `items`        | `readonly QuestionnaireItemDefinition[]` | -                  | 서버 렌더링과 항목 순서를 위한 선택 데이터입니다.                                 |
+| `onItemChange` | `(item: string) => void`                 | -                  | 다른 항목으로 이동해 달라는 요청이 있을 때 불립니다.                              |
+| `shortcuts`    | `"letters" \| "numbers"`                 | -                  | 정의된 순서나 그려진 DOM 순서로 답변 단축키를 배정합니다.                         |
+| `noValidate`   | `boolean`                                | `true`             | questionnaire 검증은 그대로 두고 브라우저 기본 검증 UI 만 끕니다.                 |
+| `onSubmit`     | `FormEventHandler<HTMLFormElement>`      | -                  | 모든 항목이 검증을 통과한 뒤 불리는 기본 form 제출 핸들러입니다.                  |
+| `onReset`      | `FormEventHandler<HTMLFormElement>`      | -                  | 기본 reset 핸들러입니다. 기본 동작을 막으면 questionnaire 가 초기화되지 않습니다. |
 
-Root exposes `current`, `total`, `first`, `last`, and `shortcuts` through data
-attributes.
+루트는 `current`·`total`·`first`·`last`·`shortcuts` 를 데이터 속성으로 알려 줍니다.
 
-The optional collection types are exported from
-`@shadcn/react/questionnaire`:
+선택 데이터의 타입은 `@shadcn/react/questionnaire` 에서 내보냅니다.
 
 ```ts
 type QuestionnaireChoiceDefinition = {
@@ -968,127 +953,125 @@ type QuestionnaireItemDefinition = {
 
 ### Questionnaire.Progress
 
-Position within the enabled item collection.
+활성화된 항목들 안에서의 위치입니다.
 
-| Prop         | Type                                             | Default                         | Description                               |
-| ------------ | ------------------------------------------------ | ------------------------------- | ----------------------------------------- |
-| `children`   | `React.ReactNode`                                | `Question {current} of {total}` | Custom progress content.                  |
-| `aria-label` | `string`                                         | `Questionnaire progress`        | Accessible progressbar name.              |
-| `render`     | `ReactElement \| (props, state) => ReactElement` | `<div>`                         | Custom render target with progress state. |
+| Prop         | Type                                             | Default                         | Description                              |
+| ------------ | ------------------------------------------------ | ------------------------------- | ---------------------------------------- |
+| `children`   | `React.ReactNode`                                | `Question {current} of {total}` | 진행도 자리에 넣을 내용입니다.           |
+| `aria-label` | `string`                                         | `Questionnaire progress`        | progressbar 의 접근성 이름입니다.        |
+| `render`     | `ReactElement \| (props, state) => ReactElement` | `<div>`                         | 진행도 상태를 함께 받는 렌더 대상입니다. |
 
-The render state contains `current`, `total`, `first`, and `last`.
+render 상태에는 `current`·`total`·`first`·`last` 가 담깁니다.
 
 ### Questionnaire.Item
 
-One questionnaire step.
+설문의 한 단계입니다.
 
 | Prop             | Type                                        | Default  | Description                                                     |
 | ---------------- | ------------------------------------------- | -------- | --------------------------------------------------------------- |
-| `name`           | `string`                                    | required | Unique item identifier and native form field name.              |
-| `invalid`        | `boolean`                                   | `false`  | Marks the item invalid from an external validator.              |
-| `required`       | `boolean`                                   | `false`  | Requires an answer and prevents Skip.                           |
-| `multiple`       | `boolean`                                   | `false`  | Renders fixed choices as checkboxes.                            |
-| `disabled`       | `boolean`                                   | `false`  | Omits the item from progress and navigation.                    |
-| `onStatusChange` | `(status: QuestionnaireItemStatus) => void` | -        | Observes `"unanswered"`, `"answered"`, and `"skipped"` changes. |
+| `name`           | `string`                                    | required | 항목을 구분하는 이름이자 폼 필드 이름입니다.                    |
+| `invalid`        | `boolean`                                   | `false`  | 외부 검증기가 이 항목에 문제가 있다고 표시할 때 씁니다.         |
+| `required`       | `boolean`                                   | `false`  | 답을 반드시 받고 건너뛰기를 막습니다.                           |
+| `multiple`       | `boolean`                                   | `false`  | 고정 선택지를 checkbox 로 그립니다.                             |
+| `disabled`       | `boolean`                                   | `false`  | 이 항목을 진행도와 이동에서 뺍니다.                             |
+| `onStatusChange` | `(status: QuestionnaireItemStatus) => void` | -        | `"unanswered"`·`"answered"`·`"skipped"` 로 바뀔 때 알려 줍니다. |
 
-Item exposes `active`, `disabled`, `invalid`, `multiple`, `required`, and
-`status` through data attributes.
+항목은 `active`·`disabled`·`invalid`·`multiple`·`required`·`status` 를 데이터 속성으로
+알려 줍니다.
 
-Item names must be unique within a Root. The name belongs to the answer
-controls, not the fieldset.
+항목 이름은 한 Root 안에서 겹치면 안 됩니다. 이 이름은 fieldset 이 아니라 답변
+요소의 것입니다.
 
 ### Questionnaire.Title
 
-The item title. Renders a semantic `legend` by default.
+항목 제목입니다. 기본적으로 의미가 있는 `legend` 를 그립니다.
 
-| Prop     | Type                              | Default    | Description                                                            |
-| -------- | --------------------------------- | ---------- | ---------------------------------------------------------------------- |
-| `render` | `ReactElement \| render function` | `<legend>` | Custom render target. Pair its `id` with the item’s `aria-labelledby`. |
+| Prop     | Type                              | Default    | Description                                                                        |
+| -------- | --------------------------------- | ---------- | ---------------------------------------------------------------------------------- |
+| `render` | `ReactElement \| render function` | `<legend>` | 직접 지정하는 렌더 대상입니다. 그 `id` 를 항목의 `aria-labelledby` 와 이어 주세요. |
 
 ### Questionnaire.Description
 
-Supporting text connected to the item with `aria-describedby`.
+`aria-describedby` 로 항목과 이어지는 보조 설명입니다.
 
-| Prop     | Type                              | Default | Description           |
-| -------- | --------------------------------- | ------- | --------------------- |
-| `render` | `ReactElement \| render function` | `<p>`   | Custom render target. |
+| Prop     | Type                              | Default | Description                    |
+| -------- | --------------------------------- | ------- | ------------------------------ |
+| `render` | `ReactElement \| render function` | `<p>`   | 직접 지정하는 렌더 대상입니다. |
 
 ### Questionnaire.Choices
 
-A layout container for fixed and freeform answers.
+고정 선택지와 자유 입력을 담는 레이아웃 컨테이너입니다.
 
-| Prop     | Type                              | Default | Description           |
-| -------- | --------------------------------- | ------- | --------------------- |
-| `render` | `ReactElement \| render function` | `<div>` | Custom render target. |
+| Prop     | Type                              | Default | Description                    |
+| -------- | --------------------------------- | ------- | ------------------------------ |
+| `render` | `ReactElement \| render function` | `<div>` | 직접 지정하는 렌더 대상입니다. |
 
-The render state contains `shortcuts`.
+render 상태에는 `shortcuts` 가 담깁니다.
 
 ### Questionnaire.Choice
 
-A fixed-answer container. Compose one `ChoiceInput`, one `ChoiceLabel`, and an
-optional `ChoiceShortcut` inside it. The default `<label>` keeps the whole row
-associated with its native control.
+고정 답변을 담는 컨테이너입니다. 안에 `ChoiceInput` 하나와 `ChoiceLabel` 하나, 그리고
+원한다면 `ChoiceShortcut` 을 넣습니다. 기본 `<label>` 덕분에 행 전체가 입력 요소와
+이어집니다.
 
-| Prop             | Type                                             | Default   | Description                             |
-| ---------------- | ------------------------------------------------ | --------- | --------------------------------------- |
-| `value`          | `string`                                         | required  | Native answer value.                    |
-| `checked`        | `boolean`                                        | -         | Controlled checked state.               |
-| `defaultChecked` | `boolean`                                        | `false`   | Initial checked state.                  |
-| `disabled`       | `boolean`                                        | `false`   | Disables the native answer control.     |
-| `onChange`       | `ChangeEventHandler<HTMLInputElement>`           | -         | Native input change handler.            |
-| `render`         | `ReactElement \| (props, state) => ReactElement` | `<label>` | Custom render target with choice state. |
+| Prop             | Type                                             | Default   | Description                            |
+| ---------------- | ------------------------------------------------ | --------- | -------------------------------------- |
+| `value`          | `string`                                         | required  | 기본 입력에 담기는 답변 값입니다.      |
+| `checked`        | `boolean`                                        | -         | 제어되는 선택 상태입니다.              |
+| `defaultChecked` | `boolean`                                        | `false`   | 처음 선택 상태입니다.                  |
+| `disabled`       | `boolean`                                        | `false`   | 기본 답변 입력 요소를 잠급니다.        |
+| `onChange`       | `ChangeEventHandler<HTMLInputElement>`           | -         | 기본 input 의 change 핸들러입니다.     |
+| `render`         | `ReactElement \| (props, state) => ReactElement` | `<label>` | 선택 상태를 함께 받는 렌더 대상입니다. |
 
-The render state contains `checked`, `disabled`, `invalid`, `shortcut`, and
-`type`.
+render 상태에는 `checked`·`disabled`·`invalid`·`shortcut`·`type` 이 담깁니다.
 
 ### Questionnaire.ChoiceInput
 
-The native radio or checkbox for its containing `Choice`. Questionnaire supplies
-the props needed for selection, form submission, validation, and keyboard
-interaction. It also accepts `className`, `id`, `ref`, `render`, and other
-non-conflicting native input props.
+자신을 감싼 `Choice` 의 기본 radio 나 checkbox 입니다. 선택·제출·검증·키보드 조작에
+필요한 prop 은 Questionnaire 가 넣어 줍니다. `className`·`id`·`ref`·`render` 를 비롯해
+부딪히지 않는 기본 input prop 도 받습니다.
 
-`ChoiceInput` must be used inside `Choice`. Its render state matches `Choice`.
+`ChoiceInput` 은 반드시 `Choice` 안에서 써야 합니다. render 상태는 `Choice` 와 같습니다.
 
 ### Questionnaire.ChoiceLabel
 
-The visible label content for a fixed choice. It renders a `<span>` inside the
-`Choice` label and accepts native span props and `render`.
+고정 선택지에 보이는 레이블입니다. `Choice` 레이블 안에 `<span>` 을 그리며 기본 span
+prop 과 `render` 를 받습니다.
 
 ### Questionnaire.ChoiceShortcut
 
-The visible shortcut for a fixed choice. It renders a `<span>` containing the
-assigned letter or number and remains hidden when the choice has no shortcut.
-It accepts native span props and `render`; its render state contains `shortcut`.
+고정 선택지에 보이는 단축키입니다. 배정된 글자나 숫자를 담은 `<span>` 을 그리고,
+단축키가 없으면 숨습니다. 기본 span prop 과 `render` 를 받으며 render 상태에는
+`shortcut` 이 담깁니다.
 
 ### Questionnaire.Input
 
-A freeform answer. Its native `name` is managed by the containing item.
+자유 입력 답변입니다. 기본 `name` 은 이 답변을 담은 항목이 관리합니다.
 
-| Prop           | Type                                             | Default   | Description                                                   |
-| -------------- | ------------------------------------------------ | --------- | ------------------------------------------------------------- |
-| `value`        | `string \| number \| readonly string[]`          | -         | Controlled native input value.                                |
-| `defaultValue` | `string \| number \| readonly string[]`          | -         | Initial native input value.                                   |
-| `disabled`     | `boolean`                                        | `false`   | Disables the input.                                           |
-| `onChange`     | `ChangeEventHandler<HTMLInputElement>`           | -         | Native input change handler.                                  |
-| `type`         | `QuestionnaireInputType`                         | `"text"`  | A text-entry type such as `"email"`, `"number"`, or `"date"`. |
-| `render`       | `ReactElement \| (props, state) => ReactElement` | `<input>` | Custom render target with input state.                        |
+| Prop           | Type                                             | Default   | Description                                                     |
+| -------------- | ------------------------------------------------ | --------- | --------------------------------------------------------------- |
+| `value`        | `string \| number \| readonly string[]`          | -         | 제어되는 기본 input 값입니다.                                   |
+| `defaultValue` | `string \| number \| readonly string[]`          | -         | 처음 기본 input 값입니다.                                       |
+| `disabled`     | `boolean`                                        | `false`   | 입력을 잠급니다.                                                |
+| `onChange`     | `ChangeEventHandler<HTMLInputElement>`           | -         | 기본 input 의 change 핸들러입니다.                              |
+| `type`         | `QuestionnaireInputType`                         | `"text"`  | `"email"`·`"number"`·`"date"` 처럼 글자를 넣는 입력 종류입니다. |
+| `render`       | `ReactElement \| (props, state) => ReactElement` | `<input>` | 입력 상태를 함께 받는 렌더 대상입니다.                          |
 
-The render state contains `disabled`, `filled`, and `invalid`.
+render 상태에는 `disabled`·`filled`·`invalid` 가 담깁니다.
 
 ### Questionnaire.Error
 
-The validation message. It is hidden until its item fails validation.
+검증 메시지입니다. 항목이 검증에 걸리기 전까지는 숨어 있습니다.
 
-| Prop       | Type                                             | Default            | Description                              |
-| ---------- | ------------------------------------------------ | ------------------ | ---------------------------------------- |
-| `children` | `React.ReactNode`                                | contextual message | Custom validation message.               |
-| `render`   | `ReactElement \| (props, state) => ReactElement` | `<p>`              | Custom render target with invalid state. |
+| Prop       | Type                                             | Default            | Description                            |
+| ---------- | ------------------------------------------------ | ------------------ | -------------------------------------- |
+| `children` | `React.ReactNode`                                | contextual message | 직접 지정하는 검증 메시지입니다.       |
+| `render`   | `ReactElement \| (props, state) => ReactElement` | `<p>`              | 오류 상태를 함께 받는 렌더 대상입니다. |
 
 ### Navigation actions
 
-`Previous`, `Skip`, `Next`, and `Submit` render native buttons and stay mounted
-while their visibility changes.
+`Previous`·`Skip`·`Next`·`Submit` 는 기본 button 을 그리며, 보였다 숨었다 하는 동안에도
+계속 붙어 있습니다.
 
 | Part       | Default type | Visible when             | Disabled when             |
 | ---------- | ------------ | ------------------------ | ------------------------- |
@@ -1097,11 +1080,10 @@ while their visibility changes.
 | `Next`     | `"button"`   | Not on the last item.    | Consumer sets `disabled`. |
 | `Submit`   | `"submit"`   | On the last item.        | Consumer sets `disabled`. |
 
-Each accepts native button props and:
+각각 기본 button prop 과 아래 값을 받습니다.
 
-| Prop     | Type                                             | Description                                 |
-| -------- | ------------------------------------------------ | ------------------------------------------- |
-| `render` | `ReactElement \| (props, state) => ReactElement` | Custom render target with navigation state. |
+| Prop     | Type                                             | Description                            |
+| -------- | ------------------------------------------------ | -------------------------------------- |
+| `render` | `ReactElement \| (props, state) => ReactElement` | 이동 상태를 함께 받는 렌더 대상입니다. |
 
-The render state contains `visible`, `disabled`, `shortcut`, and the active
-item's `status`.
+render 상태에는 `visible`·`disabled`·`shortcut` 과 현재 항목의 `status` 가 담깁니다.

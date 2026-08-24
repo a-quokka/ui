@@ -1,6 +1,6 @@
 ---
 title: Input OTP
-description: Accessible one-time password component with copy-paste functionality.
+description: 인증번호를 한 자씩 입력합니다. 붙여넣기도 됩니다.
 base: base
 component: true
 links:
@@ -11,7 +11,7 @@ links:
 
 ## About
 
-Input OTP is built on top of [input-otp](https://github.com/guilhermerodz/input-otp) by [@guilherme_rodz](https://twitter.com/guilherme_rodz).
+Input OTP는 [@guilherme_rodz](https://twitter.com/guilherme_rodz)가 만든 [input-otp](https://github.com/guilhermerodz/input-otp) 위에 만들었습니다.
 
 ## Installation
 
@@ -33,13 +33,13 @@ npx shadcn@latest add input-otp
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install input-otp
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="input-otp"
@@ -47,7 +47,7 @@ npm install input-otp
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -84,7 +84,7 @@ import {
 
 ## Composition
 
-Use the following composition to build an `InputOTP`:
+아래 구조로 `InputOTP`를 만듭니다.
 
 ```text
 InputOTP
@@ -105,7 +105,7 @@ InputOTP
 
 ## Pattern
 
-Use the `pattern` prop to define a custom pattern for the OTP input.
+`pattern` prop으로 OTP 입력에 원하는 패턴을 지정합니다.
 
 ```tsx showLineNumbers {1,5}
 import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
@@ -119,37 +119,37 @@ import { REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
 
 ## Separator
 
-Use the `<InputOTPSeparator />` component to add a separator between input groups.
+`<InputOTPSeparator />`로 입력 그룹 사이에 구분 기호를 넣습니다.
 
 <ComponentPreview styleName="base-nova" name="input-otp-separator" />
 
 ## Disabled
 
-Use the `disabled` prop to disable the input.
+`disabled` prop으로 입력을 비활성화합니다.
 
 <ComponentPreview styleName="base-nova" name="input-otp-disabled" />
 
 ## Controlled
 
-Use the `value` and `onChange` props to control the input value.
+`value`와 `onChange` prop으로 입력 값을 제어합니다.
 
 <ComponentPreview styleName="base-nova" name="input-otp-controlled" />
 
 ## Invalid
 
-Use `aria-invalid` on the slots to show an error state.
+슬롯에 `aria-invalid`를 주면 오류 상태로 표시됩니다.
 
 <ComponentPreview styleName="base-nova" name="input-otp-invalid" />
 
 ## Four Digits
 
-A common pattern for PIN codes. This uses the `pattern={REGEXP_ONLY_DIGITS}` prop.
+PIN 번호에 흔히 쓰는 형태입니다. `pattern={REGEXP_ONLY_DIGITS}` prop을 씁니다.
 
 <ComponentPreview styleName="base-nova" name="input-otp-four-digits" />
 
 ## Alphanumeric
 
-Use `REGEXP_ONLY_DIGITS_AND_CHARS` to accept both letters and numbers.
+글자와 숫자를 함께 받으려면 `REGEXP_ONLY_DIGITS_AND_CHARS`를 씁니다.
 
 <ComponentPreview styleName="base-nova" name="input-otp-alphanumeric" />
 
@@ -161,12 +161,12 @@ Use `REGEXP_ONLY_DIGITS_AND_CHARS` to accept both letters and numbers.
   previewClassName="h-[30rem]"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="input-otp-rtl" direction="rtl" />
 
 ## API Reference
 
-See the [input-otp](https://input-otp.rodz.dev) documentation for more information.
+자세한 내용은 [input-otp](https://input-otp.rodz.dev) 문서를 보세요.

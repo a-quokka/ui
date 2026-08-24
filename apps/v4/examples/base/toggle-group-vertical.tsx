@@ -13,13 +13,13 @@ export function ToggleGroupVertical() {
       spacing={1}
       defaultValue={["bold", "italic"]}
     >
-      <ToggleGroupItem value="bold" aria-label="Toggle bold">
+      <ToggleGroupItem value="bold" aria-label="굵게">
         <BoldIcon />
       </ToggleGroupItem>
-      <ToggleGroupItem value="italic" aria-label="Toggle italic">
+      <ToggleGroupItem value="italic" aria-label="기울임">
         <ItalicIcon />
       </ToggleGroupItem>
-      <ToggleGroupItem value="underline" aria-label="Toggle underline">
+      <ToggleGroupItem value="underline" aria-label="밑줄">
         <UnderlineIcon />
       </ToggleGroupItem>
     </ToggleGroup>

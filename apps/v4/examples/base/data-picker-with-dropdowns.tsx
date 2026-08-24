@@ -21,7 +21,7 @@ export function DataPickerWithDropdowns() {
     <Field className="mx-auto w-72">
       <Popover open={open} onOpenChange={setOpen}>
         <FieldLabel htmlFor="date-picker-with-dropdowns-desktop">
-          Date
+          날짜
         </FieldLabel>
         <PopoverTrigger
           render={
@@ -33,7 +33,7 @@ export function DataPickerWithDropdowns() {
           }
         >
           <ChevronDownIcon className="ml-auto" />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
+          {date ? format(date, "PPP") : <span>날짜 선택</span>}
         </PopoverTrigger>
         <PopoverContent className="w-auto p-0" align="start">
           <Calendar
@@ -49,7 +49,7 @@ export function DataPickerWithDropdowns() {
               className="w-full"
               onClick={() => setOpen(false)}
             >
-              Done
+              완료
             </Button>
           </div>
         </PopoverContent>

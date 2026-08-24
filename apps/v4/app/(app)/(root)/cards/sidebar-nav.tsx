@@ -68,13 +68,13 @@ export function SidebarNav() {
   return (
     <div className="grid w-full grid-cols-2 gap-4 xl:gap-6">
       <SidebarSection
-        label="Overview"
+        label="한눈에 보기"
         className="xl:col-start-1 xl:row-start-2"
       >
         <SidebarMenuItem>
           <SidebarMenuButton isActive>
             <HugeiconsIcon icon={Analytics01Icon} strokeWidth={2} />
-            Analytics
+            분석
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
@@ -83,133 +83,130 @@ export function SidebarNav() {
               icon={ArrowDataTransferHorizontalIcon}
               strokeWidth={2}
             />
-            Transactions
+            거래 내역
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={AnalyticsUpIcon} strokeWidth={2} />
-            Investments
+            투자
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={BankIcon} strokeWidth={2} />
-            Accounts
+            계좌
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={PieChartIcon} strokeWidth={2} />
-            Spending
+            지출
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarSection>
 
-      <SidebarSection
-        label="Planning"
-        className="xl:col-start-1 xl:row-start-1"
-      >
+      <SidebarSection label="계획" className="xl:col-start-1 xl:row-start-1">
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={File02Icon} strokeWidth={2} />
-            Documents
+            문서
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={Wallet01Icon} strokeWidth={2} />
-            Budget
+            예산
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={ChartBarLineIcon} strokeWidth={2} />
-            Reports
+            보고서
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={Target02Icon} strokeWidth={2} />
-            Goals
+            목표
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={Calendar03Icon} strokeWidth={2} />
-            Calendar
+            달력
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarSection>
 
       <SidebarSection
-        label="Support"
+        label="지원"
         className="flex xl:col-start-2 xl:row-start-1"
       >
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={HelpCircleIcon} strokeWidth={2} />
-            Help Center
+            도움말 센터
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={BookOpen02Icon} strokeWidth={2} />
-            Docs
+            문서
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={Message01Icon} strokeWidth={2} />
-            Contact Us
+            문의하기
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={ActivityIcon} strokeWidth={2} />
-            Status
+            상태
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={Globe02Icon} strokeWidth={2} />
-            Community
+            커뮤니티
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarSection>
 
       <SidebarSection
-        label="Account"
+        label="계정"
         className="flex xl:col-start-2 xl:row-start-2"
       >
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={UserIcon} strokeWidth={2} />
-            Profile
+            프로필
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton isActive>
             <HugeiconsIcon icon={CreditCardIcon} strokeWidth={2} />
-            Billing
+            결제 정보
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={Notification03Icon} strokeWidth={2} />
-            Notifications
+            알림
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={ShieldIcon} strokeWidth={2} />
-            Security
+            보안
           </SidebarMenuButton>
         </SidebarMenuItem>
         <SidebarMenuItem>
           <SidebarMenuButton>
             <HugeiconsIcon icon={PaintBoardIcon} strokeWidth={2} />
-            Appearance
+            표시 설정
           </SidebarMenuButton>
         </SidebarMenuItem>
       </SidebarSection>

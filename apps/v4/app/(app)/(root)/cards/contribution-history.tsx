@@ -25,14 +25,14 @@ export function ContributionHistory() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Contribution History</CardTitle>
-        <CardDescription>Last 6 months of activity</CardDescription>
+        <CardTitle>납입 내역</CardTitle>
+        <CardDescription>최근 6개월 활동</CardDescription>
       </CardHeader>
       <CardContent>
         <div
           className="flex h-[200px] w-full items-end gap-3"
           role="img"
-          aria-label="Last 6 months of contribution activity"
+          aria-label="최근 6개월 납입 내역"
         >
           {chartData.map((item, index) => (
             <div
@@ -56,12 +56,12 @@ export function ContributionHistory() {
           <Item variant="muted" className="flex-col items-stretch">
             <ItemContent className="gap-1">
               <ItemDescription className="text-xs font-medium tracking-wider text-muted-foreground uppercase">
-                Upcoming
+                예정
               </ItemDescription>
               <span className="cn-font-heading text-base font-semibold">
-                May 2024
+                2024년 5월
               </span>
-              <span className="text-sm text-muted-foreground">Scheduled</span>
+              <span className="text-sm text-muted-foreground">예약됨</span>
             </ItemContent>
           </Item>
           <Item
@@ -70,18 +70,18 @@ export function ContributionHistory() {
           >
             <ItemContent className="gap-1">
               <ItemDescription className="text-xs font-medium tracking-wider text-muted-foreground uppercase">
-                Savings Plan
+                저축 계획
               </ItemDescription>
               <span className="cn-font-heading text-base font-semibold">
-                Accelerated
+                가속
               </span>
-              <span className="text-sm text-muted-foreground">Recurring</span>
+              <span className="text-sm text-muted-foreground">정기</span>
             </ItemContent>
           </Item>
         </div>
       </CardContent>
       <CardFooter>
-        <Button className="w-full">View Full Report</Button>
+        <Button className="w-full">전체 보고서 보기</Button>
       </CardFooter>
     </Card>
   )

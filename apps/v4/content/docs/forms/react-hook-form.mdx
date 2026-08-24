@@ -1,23 +1,22 @@
 ---
 title: React Hook Form
-description: Build forms in React using React Hook Form and Zod.
+description: React Hook Form 과 Zod 로 React 폼을 만듭니다.
 links:
   doc: https://react-hook-form.com
 ---
 
 import { InfoIcon } from "lucide-react"
 
-In this guide, we will take a look at building forms with React Hook Form. We'll cover building forms with the `<Field />` component, adding schema validation using Zod, error handling, accessibility, and more.
+React Hook Form 으로 폼을 만드는 방법을 살펴봅니다. `<Field />` 로 폼을 만들고, Zod 로 스키마 검증을 붙이고, 오류를 처리하고, 접근성을 챙기는 것까지 다룹니다.
 
 ## Demo
 
-We are going to build the following form. It has a simple text input and a textarea. On submit, we'll validate the form data and display any errors.
+아래 폼을 만듭니다. 텍스트 입력 하나와 textarea 하나가 있고, 제출하면 데이터를 검증해 오류를 보여 줍니다.
 
 <Callout icon={<InfoIcon />}>
-  **Note:** For the purpose of this demo, we have intentionally disabled browser
-  validation to show how schema validation and form errors work in React Hook
-  Form. It is recommended to add basic browser validation in your production
-  code.
+  **참고:** React Hook Form 의 스키마 검증과 오류 처리를 보여 주려고 이
+  데모에서는 브라우저 기본 검증을 일부러 껐습니다. 실제 코드에는 기본 검증을
+  함께 두는 편이 좋습니다.
 </Callout>
 
 <ComponentPreview
@@ -29,16 +28,16 @@ We are going to build the following form. It has a simple text input and a texta
 
 ## Approach
 
-This form leverages React Hook Form for performant, flexible form handling. We'll build our form using the `<Field />` component, which gives you **complete flexibility over the markup and styling**.
+이 폼은 빠르고 유연한 폼 처리를 위해 React Hook Form 을 씁니다. `<Field />` 로 만들기 때문에 **마크업과 스타일을 온전히 마음대로** 할 수 있습니다.
 
-- Uses React Hook Form's `useForm` hook for form state management.
-- `<Controller />` component for controlled inputs.
-- `<Field />` components for building accessible forms.
-- Client-side validation using Zod with `zodResolver`.
+- 폼 상태는 React Hook Form 의 `useForm` 훅으로 관리합니다.
+- 제어되는 입력에는 `<Controller />` 를 씁니다.
+- 접근성 있는 폼은 `<Field />` 로 만듭니다.
+- 클라이언트 검증은 Zod 와 `zodResolver` 로 합니다.
 
 ## Anatomy
 
-Here's a basic example of a form using the `<Controller />` component from React Hook Form and the `<Field />` component.
+React Hook Form 의 `<Controller />` 와 `<Field />` 를 함께 쓴 기본 예시입니다.
 
 ```tsx showLineNumbers {5-18}
 <Controller
@@ -46,12 +45,12 @@ Here's a basic example of a form using the `<Controller />` component from React
   control={form.control}
   render={({ field, fieldState }) => (
     <Field data-invalid={fieldState.invalid}>
-      <FieldLabel htmlFor={field.name}>Bug Title</FieldLabel>
+      <FieldLabel htmlFor={field.name}>버그 제목</FieldLabel>
       <Input
         {...field}
         id={field.name}
         aria-invalid={fieldState.invalid}
-        placeholder="Login button not working on mobile"
+        placeholder="모바일에서 로그인 버튼이 안 눌립니다"
         autoComplete="off"
       />
       <FieldDescription>
@@ -67,12 +66,11 @@ Here's a basic example of a form using the `<Controller />` component from React
 
 ### Create a form schema
 
-We'll start by defining the shape of our form using a Zod schema.
+먼저 Zod 스키마로 폼의 모양을 정의합니다.
 
 <Callout icon={<InfoIcon />}>
-  **Note:** This example uses `zod v3` for schema validation, but you can
-  replace it with any other Standard Schema validation library supported by
-  React Hook Form.
+  **참고:** 이 예시는 `zod v3` 로 검증하지만, React Hook Form 이 지원하는 다른
+  Standard Schema 라이브러리로 바꿔도 됩니다.
 </Callout>
 
 ```tsx showLineNumbers title="form.tsx"
@@ -92,7 +90,7 @@ const formSchema = z.object({
 
 ### Set up the form
 
-Next, we'll use the `useForm` hook from React Hook Form to create our form instance. We'll also add the Zod resolver to validate the form data.
+다음으로 React Hook Form 의 `useForm` 훅으로 폼 인스턴스를 만들고, 데이터를 검증할 Zod resolver 를 붙입니다.
 
 ```tsx showLineNumbers title="form.tsx" {17-23}
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -136,7 +134,7 @@ export function BugReportForm() {
 
 ### Build the form
 
-We can now build the form using the `<Controller />` component from React Hook Form and the `<Field />` component.
+이제 React Hook Form 의 `<Controller />` 와 `<Field />` 로 폼을 만듭니다.
 
 <ComponentSource
   src="/registry/new-york-v4/examples/form-rhf-demo.tsx"
@@ -145,15 +143,15 @@ We can now build the form using the `<Controller />` component from React Hook F
 
 ### Done
 
-That's it. You now have a fully accessible form with client-side validation.
+여기까지입니다. 이제 클라이언트 검증이 붙은, 접근성을 갖춘 폼이 생겼습니다.
 
-When you submit the form, the `onSubmit` function will be called with the validated form data. If the form data is invalid, React Hook Form will display the errors next to each field.
+폼을 제출하면 검증된 데이터와 함께 `onSubmit` 이 불립니다. 데이터가 올바르지 않으면 React Hook Form 이 각 필드 옆에 오류를 보여 줍니다.
 
 ## Validation
 
 ### Client-side Validation
 
-React Hook Form validates your form data using the Zod schema. Define a schema and pass it to the `resolver` option of the `useForm` hook.
+React Hook Form 은 Zod 스키마로 데이터를 검증합니다. 스키마를 정의해 `useForm` 의 `resolver` 옵션에 넘기세요.
 
 ```tsx showLineNumbers title="example-form.tsx" {5-8,12}
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -178,7 +176,7 @@ export function ExampleForm() {
 
 ### Validation Modes
 
-React Hook Form supports different validation modes.
+React Hook Form 은 여러 검증 모드를 지원합니다.
 
 ```tsx showLineNumbers title="form.tsx" {3}
 const form = useForm<z.infer<typeof formSchema>>({
@@ -187,20 +185,20 @@ const form = useForm<z.infer<typeof formSchema>>({
 })
 ```
 
-| Mode          | Description                                              |
-| ------------- | -------------------------------------------------------- |
-| `"onChange"`  | Validation triggers on every change.                     |
-| `"onBlur"`    | Validation triggers on blur.                             |
-| `"onSubmit"`  | Validation triggers on submit (default).                 |
-| `"onTouched"` | Validation triggers on first blur, then on every change. |
-| `"all"`       | Validation triggers on blur and change.                  |
+| Mode          | Description                                                          |
+| ------------- | -------------------------------------------------------------------- |
+| `"onChange"`  | 값이 바뀔 때마다 검증합니다.                                         |
+| `"onBlur"`    | 포커스가 빠질 때 검증합니다.                                         |
+| `"onSubmit"`  | 제출할 때 검증합니다(기본값).                                        |
+| `"onTouched"` | 처음에는 포커스가 빠질 때, 그다음부터는 값이 바뀔 때마다 검증합니다. |
+| `"all"`       | 포커스가 빠질 때와 값이 바뀔 때 검증합니다.                          |
 
 ## Displaying Errors
 
-Display errors next to the field using `<FieldError />`. For styling and accessibility:
+오류는 `<FieldError />` 로 입력 옆에 보여 줍니다. 스타일과 접근성을 위해 이렇게 하세요.
 
-- Add the `data-invalid` prop to the `<Field />` component.
-- Add the `aria-invalid` prop to the form control such as `<Input />`, `<SelectTrigger />`, `<Checkbox />`, etc.
+- `<Field />` 에 `data-invalid` prop 을 붙입니다.
+- `<Input />`·`<SelectTrigger />`·`<Checkbox />` 같은 입력에는 `aria-invalid` prop 을 붙입니다.
 
 ```tsx showLineNumbers title="form.tsx" {5,11,13}
 <Controller
@@ -225,8 +223,8 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
 
 ### Input
 
-- For input fields, spread the `field` object onto the `<Input />` component.
-- To show errors, add the `aria-invalid` prop to the `<Input />` component and the `data-invalid` prop to the `<Field />` component.
+- 입력 필드에는 `field` 객체를 `<Input />` 에 펼쳐 넣습니다.
+- 오류를 보이려면 `<Input />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -235,7 +233,7 @@ Display errors next to the field using `<FieldError />`. For styling and accessi
   chromeLessOnMobile
 />
 
-For simple text inputs, spread the `field` object onto the input.
+단순한 텍스트 입력에는 `field` 객체를 입력에 펼쳐 넣습니다.
 
 ```tsx showLineNumbers title="form.tsx" {5,7,8}
 <Controller
@@ -253,8 +251,8 @@ For simple text inputs, spread the `field` object onto the input.
 
 ### Textarea
 
-- For textarea fields, spread the `field` object onto the `<Textarea />` component.
-- To show errors, add the `aria-invalid` prop to the `<Textarea />` component and the `data-invalid` prop to the `<Field />` component.
+- textarea 에는 `field` 객체를 `<Textarea />` 에 펼쳐 넣습니다.
+- 오류를 보이려면 `<Textarea />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -263,7 +261,7 @@ For simple text inputs, spread the `field` object onto the input.
   chromeLessOnMobile
 />
 
-For textarea fields, spread the `field` object onto the textarea.
+textarea 에는 `field` 객체를 textarea 에 펼쳐 넣습니다.
 
 ```tsx showLineNumbers title="form.tsx" {5,10,18}
 <Controller
@@ -271,12 +269,12 @@ For textarea fields, spread the `field` object onto the textarea.
   control={form.control}
   render={({ field, fieldState }) => (
     <Field data-invalid={fieldState.invalid}>
-      <FieldLabel htmlFor="form-rhf-textarea-about">More about you</FieldLabel>
+      <FieldLabel htmlFor="form-rhf-textarea-about">더 알려 주세요</FieldLabel>
       <Textarea
         {...field}
         id="form-rhf-textarea-about"
         aria-invalid={fieldState.invalid}
-        placeholder="I'm a software engineer..."
+        placeholder="저는 소프트웨어 엔지니어입니다..."
         className="min-h-[120px]"
       />
       <FieldDescription>
@@ -291,8 +289,8 @@ For textarea fields, spread the `field` object onto the textarea.
 
 ### Select
 
-- For select components, use `field.value` and `field.onChange` on the `<Select />` component.
-- To show errors, add the `aria-invalid` prop to the `<SelectTrigger />` component and the `data-invalid` prop to the `<Field />` component.
+- 셀렉트는 `<Select />` 에 `field.value` 와 `field.onChange` 를 씁니다.
+- 오류를 보이려면 `<SelectTrigger />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -340,9 +338,9 @@ For textarea fields, spread the `field` object onto the textarea.
 
 ### Checkbox
 
-- For checkbox arrays, use `field.value` and `field.onChange` with array manipulation.
-- To show errors, add the `aria-invalid` prop to the `<Checkbox />` component and the `data-invalid` prop to the `<Field />` component.
-- Remember to add `data-slot="checkbox-group"` to the `<FieldGroup />` component for proper styling and spacing.
+- 체크박스 배열은 `field.value` 와 `field.onChange` 로 배열을 다룹니다.
+- 오류를 보이려면 `<Checkbox />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
+- 스타일과 간격이 맞도록 `<FieldGroup />` 에 `data-slot="checkbox-group"` 을 꼭 붙이세요.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -397,8 +395,8 @@ For textarea fields, spread the `field` object onto the textarea.
 
 ### Radio Group
 
-- For radio groups, use `field.value` and `field.onChange` on the `<RadioGroup />` component.
-- To show errors, add the `aria-invalid` prop to the `<RadioGroupItem />` component and the `data-invalid` prop to the `<Field />` component.
+- 라디오 그룹은 `<RadioGroup />` 에 `field.value` 와 `field.onChange` 를 씁니다.
+- 오류를 보이려면 `<RadioGroupItem />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -446,8 +444,8 @@ For textarea fields, spread the `field` object onto the textarea.
 
 ### Switch
 
-- For switches, use `field.value` and `field.onChange` on the `<Switch />` component.
-- To show errors, add the `aria-invalid` prop to the `<Switch />` component and the `data-invalid` prop to the `<Field />` component.
+- 스위치는 `<Switch />` 에 `field.value` 와 `field.onChange` 를 씁니다.
+- 오류를 보이려면 `<Switch />` 에 `aria-invalid` 를, `<Field />` 에 `data-invalid` 를 붙입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -485,7 +483,7 @@ For textarea fields, spread the `field` object onto the textarea.
 
 ### Complex Forms
 
-Here is an example of a more complex form with multiple fields and validation.
+입력이 여러 개이고 검증이 붙은 조금 복잡한 폼 예시입니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -496,7 +494,7 @@ Here is an example of a more complex form with multiple fields and validation.
 
 ## Resetting the Form
 
-Use `form.reset()` to reset the form to its default values.
+`form.reset()` 으로 폼을 기본값으로 되돌립니다.
 
 ```tsx showLineNumbers
 <Button type="button" variant="outline" onClick={() => form.reset()}>
@@ -506,7 +504,7 @@ Use `form.reset()` to reset the form to its default values.
 
 ## Array Fields
 
-React Hook Form provides a `useFieldArray` hook for managing dynamic array fields. This is useful when you need to add or remove fields dynamically.
+React Hook Form 은 동적 배열 필드를 다루는 `useFieldArray` 훅을 제공합니다. 필드를 동적으로 더하거나 뺄 때 씁니다.
 
 <ComponentPreview
   styleName="new-york-v4"
@@ -517,7 +515,7 @@ React Hook Form provides a `useFieldArray` hook for managing dynamic array field
 
 ### Using useFieldArray
 
-Use the `useFieldArray` hook to manage array fields. It provides `fields`, `append`, and `remove` methods.
+배열 필드는 `useFieldArray` 훅으로 다룹니다. `fields`·`append`·`remove` 를 제공합니다.
 
 ```tsx showLineNumbers title="form.tsx" {8-11}
 import { useFieldArray, useForm } from "react-hook-form"
@@ -536,11 +534,11 @@ export function ExampleForm() {
 
 ### Array Field Structure
 
-Wrap your array fields in a `<FieldSet />` with a `<FieldLegend />` and `<FieldDescription />`.
+배열 입력은 `<FieldLegend />` 와 `<FieldDescription />` 을 둔 `<FieldSet />` 으로 감쌉니다.
 
 ```tsx showLineNumbers title="form.tsx"
 <FieldSet className="gap-4">
-  <FieldLegend variant="label">Email Addresses</FieldLegend>
+  <FieldLegend variant="label">이메일 주소</FieldLegend>
   <FieldDescription>
     Add up to 5 email addresses where we can contact you.
   </FieldDescription>
@@ -550,7 +548,7 @@ Wrap your array fields in a `<FieldSet />` with a `<FieldLegend />` and `<FieldD
 
 ### Controller Pattern for Array Items
 
-Map over the `fields` array and use `<Controller />` for each item. **Make sure to use `field.id` as the key**.
+`fields` 배열을 돌면서 항목마다 `<Controller />` 를 씁니다. **key 로는 반드시 `field.id` 를 쓰세요**.
 
 ```tsx showLineNumbers title="form.tsx"
 {
@@ -584,7 +582,7 @@ Map over the `fields` array and use `<Controller />` for each item. **Make sure 
 
 ### Adding Items
 
-Use the `append` method to add new items to the array.
+배열에 항목을 더할 때는 `append` 를 씁니다.
 
 ```tsx showLineNumbers title="form.tsx"
 <Button
@@ -600,7 +598,7 @@ Use the `append` method to add new items to the array.
 
 ### Removing Items
 
-Use the `remove` method to remove items from the array. Add the remove button conditionally.
+배열에서 항목을 뺄 때는 `remove` 를 씁니다. 삭제 버튼은 조건에 따라 보여 주세요.
 
 ```tsx showLineNumbers title="form.tsx"
 {
@@ -622,7 +620,7 @@ Use the `remove` method to remove items from the array. Add the remove button co
 
 ### Array Validation
 
-Use Zod's `array` method to validate array fields.
+배열 필드는 Zod 의 `array` 로 검증합니다.
 
 ```tsx showLineNumbers title="form.tsx"
 const formSchema = z.object({

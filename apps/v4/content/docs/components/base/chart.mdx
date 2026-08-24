@@ -1,13 +1,13 @@
 ---
 title: Chart
-description: Beautiful charts. Built using Recharts. Copy and paste into your apps.
+description: 데이터를 그래프로 보여 줍니다. Recharts 기반입니다.
 base: base
 component: true
 ---
 
 <Callout className="mt-4">
 
-**Updated:** The `chart` component now uses Recharts v3. If you're upgrading existing chart code, see [Updating to Recharts v3](#updating-to-recharts-v3).
+**업데이트:** 이제 `chart` 컴포넌트는 Recharts v3를 씁니다. 예전 차트 코드를 올리는 중이라면 [Updating to Recharts v3](#updating-to-recharts-v3)를 보세요.
 
 </Callout>
 
@@ -18,17 +18,15 @@ component: true
   hideCode
 />
 
-Introducing **Charts**. A collection of chart components that you can copy and paste into your apps.
+**Charts**를 소개합니다. 프로젝트에 복사해 붙여 넣고 바로 쓰는 차트 컴포넌트 모음입니다.
 
-Charts are designed to look great out of the box. They work well with the other components and are fully customizable to fit your project.
-
-[Browse the Charts Library](/charts).
+차트는 기본값 그대로도 보기 좋습니다. 다른 컴포넌트와 잘 어울리고, 프로젝트에 맞게 원하는 만큼 고칠 수 있습니다.
 
 ## Component
 
-We use [Recharts](https://recharts.org/) under the hood.
+내부적으로 [Recharts](https://recharts.org/)를 씁니다.
 
-We designed the `chart` component with composition in mind. **You build your charts using Recharts components and only bring in custom components, such as `ChartTooltip`, when and where you need it**.
+`chart` 컴포넌트는 조합을 염두에 두고 만들었습니다. **차트는 Recharts 컴포넌트로 직접 만들고, `ChartTooltip` 같은 전용 컴포넌트는 필요한 자리에만 가져다 씁니다**.
 
 ```tsx showLineNumbers /ChartContainer/ /ChartTooltipContent/
 import { Bar, BarChart } from "recharts"
@@ -47,18 +45,18 @@ export function MyChart() {
 }
 ```
 
-We do not wrap Recharts. This means you're not locked into an abstraction. When a new Recharts version is released, you can follow the official upgrade path to upgrade your charts.
+Recharts를 감싸지 않습니다. 특정 추상화에 묶이지 않는다는 뜻입니다. Recharts 새 버전이 나오면 공식 업그레이드 절차를 그대로 따라가면 됩니다.
 
-**The components are yours**.
+**이 컴포넌트는 이제 여러분의 것입니다**.
 
 ## Updating to Recharts v3
 
-If you're updating older chart code to Recharts v3:
+예전 차트 코드를 Recharts v3로 올린다면 아래를 확인하세요.
 
-- Use `var(--chart-1)` instead of `hsl(var(--chart-1))` when you reference chart tokens from your CSS variables.
-- Use `ChartTooltip.defaultIndex` for initial tooltip state only. Keep persistent active shapes in your own chart state.
-- Remove `layout` from `<Bar>` when the parent `<BarChart>` already defines it.
-- Keep a height, `min-h-*`, or `aspect-*` on `ChartContainer` so `ResponsiveContainer` can measure on first render.
+- CSS 변수로 차트 토큰을 참조할 때 `hsl(var(--chart-1))` 대신 `var(--chart-1)`을 씁니다.
+- `ChartTooltip.defaultIndex`는 툴팁 초기 상태에만 씁니다. 계속 유지되는 활성 도형은 차트 상태에서 직접 관리하세요.
+- 부모 `<BarChart>`에 이미 지정돼 있다면 `<Bar>`의 `layout`은 지웁니다.
+- `ResponsiveContainer`가 첫 렌더에서 크기를 잴 수 있도록 `ChartContainer`에 높이나 `min-h-*`, `aspect-*` 중 하나는 남겨 둡니다.
 
 ## Installation
 
@@ -80,13 +78,13 @@ npx shadcn@latest add chart
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install recharts
 ```
 
-<Step>Copy and paste the following code into `components/ui/chart.tsx`.</Step>
+<Step>`components/ui/chart.tsx`에 아래 코드를 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="chart"
@@ -94,7 +92,7 @@ npm install recharts
   styleName="base-nova"
 />
 
-<Step>Add the following colors to your CSS file</Step>
+<Step>CSS 파일에 아래 색상을 추가합니다</Step>
 
 ```css title="app/globals.css" showLineNumbers
 @layer base {
@@ -124,17 +122,17 @@ npm install recharts
 
 ## Your First Chart
 
-Let's build your first chart. We'll build a bar chart, add a grid, axis, tooltip and legend.
+첫 차트를 만들어 봅시다. 막대 차트를 만들고 그리드, 축, 툴팁, 범례를 차례로 붙입니다.
 
 <Steps>
 
-<Step>Start by defining your data</Step>
+<Step>데이터부터 정의합니다</Step>
 
-The following data represents the number of desktop and mobile users for each month.
+아래 데이터는 월별 데스크톱·모바일 사용자 수입니다.
 
 <Callout className="mt-4">
 
-**Note:** Your data can be in any shape. You are not limited to the shape of the data below. Use the `dataKey` prop to map your data to the chart.
+**참고:** 데이터 모양은 자유입니다. 아래 형태를 따를 필요 없이 `dataKey` prop으로 원하는 필드를 연결하면 됩니다.
 
 </Callout>
 
@@ -149,9 +147,9 @@ const chartData = [
 ]
 ```
 
-<Step>Define your chart config</Step>
+<Step>차트 config를 정의합니다</Step>
 
-The chart config holds configuration for the chart. This is where you place human-readable strings, such as labels, icons and color tokens for theming.
+차트 config에는 차트 설정이 들어갑니다. 라벨처럼 사람이 읽는 문구, 아이콘, 테마용 색상 토큰을 여기에 둡니다.
 
 ```tsx title="components/example-chart.tsx" showLineNumbers
 import { type ChartConfig } from "@/components/ui/chart"
@@ -168,13 +166,13 @@ const chartConfig = {
 } satisfies ChartConfig
 ```
 
-<Step>Build your chart</Step>
+<Step>차트를 만듭니다</Step>
 
-You can now build your chart using Recharts components.
+이제 Recharts 컴포넌트로 차트를 구성합니다.
 
 <Callout className="mt-4 bg-amber-50 border-amber-200 dark:bg-amber-950/50 dark:border-amber-950">
 
-**Important:** Remember to set a `min-h-[VALUE]` on the `ChartContainer` component. This is required for the chart to be responsive.
+**중요:** `ChartContainer`에 `min-h-[VALUE]`를 꼭 지정하세요. 이 값이 있어야 차트가 반응형으로 동작합니다.
 
 </Callout>
 
@@ -188,17 +186,17 @@ You can now build your chart using Recharts components.
 
 ### Add a Grid
 
-Let's add a grid to the chart.
+차트에 그리드를 추가합니다.
 
 <Steps className="mb-0 pt-2">
 
-<Step>Import the `CartesianGrid` component.</Step>
+<Step>`CartesianGrid` 컴포넌트를 import 합니다.</Step>
 
 ```tsx /CartesianGrid/
 import { Bar, BarChart, CartesianGrid } from "recharts"
 ```
 
-<Step>Add the `CartesianGrid` component to your chart.</Step>
+<Step>차트에 `CartesianGrid` 컴포넌트를 추가합니다.</Step>
 
 ```tsx showLineNumbers {3}
 <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
@@ -220,17 +218,17 @@ import { Bar, BarChart, CartesianGrid } from "recharts"
 
 ### Add an Axis
 
-To add an x-axis to the chart, we'll use the `XAxis` component.
+x축은 `XAxis` 컴포넌트로 추가합니다.
 
 <Steps className="mb-0 pt-2">
 
-<Step>Import the `XAxis` component.</Step>
+<Step>`XAxis` 컴포넌트를 import 합니다.</Step>
 
 ```tsx /XAxis/
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 ```
 
-<Step>Add the `XAxis` component to your chart.</Step>
+<Step>차트에 `XAxis` 컴포넌트를 추가합니다.</Step>
 
 ```tsx showLineNumbers {4-10}
 <ChartContainer config={chartConfig} className="h-[200px] w-full">
@@ -259,19 +257,19 @@ import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 
 ### Add Tooltip
 
-So far we've only used components from Recharts. They look great out of the box thanks to some customization in the `chart` component.
+여기까지는 Recharts 컴포넌트만 썼습니다. `chart` 컴포넌트에서 손봐 둔 덕분에 기본값 그대로도 보기 좋습니다.
 
-To add a tooltip, we'll use the custom `ChartTooltip` and `ChartTooltipContent` components from `chart`.
+툴팁은 `chart`가 제공하는 `ChartTooltip`·`ChartTooltipContent` 컴포넌트로 붙입니다.
 
 <Steps className="mb-0 pt-2">
 
-<Step>Import the `ChartTooltip` and `ChartTooltipContent` components.</Step>
+<Step>`ChartTooltip`과 `ChartTooltipContent` 컴포넌트를 import 합니다.</Step>
 
 ```tsx
 import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 ```
 
-<Step>Add the components to your chart.</Step>
+<Step>차트에 두 컴포넌트를 추가합니다.</Step>
 
 ```tsx showLineNumbers {11}
 <ChartContainer config={chartConfig} className="h-[200px] w-full">
@@ -297,23 +295,23 @@ import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
   previewClassName="h-80"
 />
 
-Hover to see the tooltips. Easy, right? Two components, and we've got a beautiful tooltip.
+마우스를 올리면 툴팁이 보입니다. 컴포넌트 두 개로 끝났습니다.
 
 </Steps>
 
 ### Add Legend
 
-We'll do the same for the legend. We'll use the `ChartLegend` and `ChartLegendContent` components from `chart`.
+범례도 같은 방식입니다. `chart`의 `ChartLegend`·`ChartLegendContent` 컴포넌트를 씁니다.
 
 <Steps className="mb-0 pt-2">
 
-<Step>Import the `ChartLegend` and `ChartLegendContent` components.</Step>
+<Step>`ChartLegend`와 `ChartLegendContent` 컴포넌트를 import 합니다.</Step>
 
 ```tsx
 import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 ```
 
-<Step>Add the components to your chart.</Step>
+<Step>차트에 두 컴포넌트를 추가합니다.</Step>
 
 ```tsx showLineNumbers {12}
 <ChartContainer config={chartConfig} className="h-[200px] w-full">
@@ -342,19 +340,19 @@ import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 
 </Steps>
 
-Done. You've built your first chart! What's next?
+첫 차트를 완성했습니다. 이어서 볼 만한 문서입니다.
 
-- [Themes and Colors](/docs/components/chart#theming)
+- [Theming](/docs/components/chart#theming)
 - [Tooltip](/docs/components/chart#tooltip)
 - [Legend](/docs/components/chart#legend)
 
 ## Chart Config
 
-The chart config is where you define the labels, icons and colors for a chart.
+차트 config에는 차트의 라벨·아이콘·색상을 정의합니다.
 
-It is intentionally decoupled from chart data.
+차트 데이터와는 일부러 분리해 두었습니다.
 
-This allows you to share config and color tokens between charts. It can also work independently for cases where your data or color tokens live remotely or in a different format.
+그래서 config와 색상 토큰을 여러 차트가 나눠 쓸 수 있습니다. 데이터나 색상 토큰이 원격에 있거나 형식이 다를 때도 config만 따로 쓸 수 있습니다.
 
 ```tsx showLineNumbers /ChartConfig/
 import { Monitor } from "lucide-react"
@@ -378,13 +376,13 @@ const chartConfig = {
 
 ## Theming
 
-Charts have built-in support for theming. You can use css variables (recommended) or color values in any color format, such as hex, hsl or oklch.
+차트는 테마를 기본으로 지원합니다. CSS 변수(권장)를 쓰거나 hex·hsl·oklch 같은 색상 값을 직접 넣을 수 있습니다.
 
 ### CSS Variables
 
 <Steps className="mb-0 pt-2">
 
-<Step>Define your colors in your css file</Step>
+<Step>CSS 파일에 색상을 정의합니다</Step>
 
 ```css title="app/globals.css" showLineNumbers
 @layer base {
@@ -400,7 +398,7 @@ Charts have built-in support for theming. You can use css variables (recommended
 }
 ```
 
-<Step>Add the color to your `chartConfig`</Step>
+<Step>`chartConfig`에 색상을 추가합니다</Step>
 
 ```tsx title="components/example-chart.tsx" showLineNumbers
 const chartConfig = {
@@ -419,7 +417,7 @@ const chartConfig = {
 
 ### hex, hsl or oklch
 
-You can also define your colors directly in the chart config. Use the color format you prefer.
+색상을 차트 config에 직접 적어도 됩니다. 원하는 색상 형식을 쓰세요.
 
 ```tsx title="components/example-chart.tsx" showLineNumbers
 const chartConfig = {
@@ -444,7 +442,7 @@ const chartConfig = {
 
 ### Using Colors
 
-To use the theme colors in your chart, reference the colors using the format `var(--color-KEY)`.
+차트에서 테마 색상을 쓸 때는 `var(--color-KEY)` 형식으로 참조합니다.
 
 #### Components
 
@@ -469,15 +467,15 @@ const chartData = [
 
 ## Tooltip
 
-A chart tooltip contains a label, name, indicator and value. You can use a combination of these to customize your tooltip.
+차트 툴팁은 라벨·이름·인디케이터·값으로 이루어집니다. 필요한 것만 골라 조합하면 됩니다.
 
 <ComponentPreview styleName="base-nova" name="chart-tooltip" hideCode />
 
-You can turn on/off any of these using the `hideLabel`, `hideIndicator` props and customize the indicator style using the `indicator` prop.
+`hideLabel`·`hideIndicator` prop으로 표시 여부를 정하고, `indicator` prop으로 인디케이터 모양을 바꿉니다.
 
-Use `labelKey` and `nameKey` to use a custom key for the tooltip label and name.
+툴팁 라벨과 이름에 다른 키를 쓰려면 `labelKey`와 `nameKey`를 지정합니다.
 
-Chart comes with the `<ChartTooltip>` and `<ChartTooltipContent>` components. You can use these two components to add custom tooltips to your chart.
+Chart에는 `<ChartTooltip>`과 `<ChartTooltipContent>` 컴포넌트가 함께 들어 있습니다. 이 둘로 차트에 원하는 툴팁을 붙입니다.
 
 ```tsx title="components/example-chart.tsx"
 import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
@@ -489,23 +487,23 @@ import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 
 ### Props
 
-Use the following props to customize the tooltip.
+아래 prop으로 툴팁을 조정합니다.
 
-| Prop            | Type                     | Description                                  |
-| :-------------- | :----------------------- | :------------------------------------------- |
-| `labelKey`      | string                   | The config or data key to use for the label. |
-| `nameKey`       | string                   | The config or data key to use for the name.  |
-| `indicator`     | `dot` `line` or `dashed` | The indicator style for the tooltip.         |
-| `hideLabel`     | boolean                  | Whether to hide the label.                   |
-| `hideIndicator` | boolean                  | Whether to hide the indicator.               |
+| Prop            | Type                     | Description                            |
+| :-------------- | :----------------------- | :------------------------------------- |
+| `labelKey`      | string                   | 라벨에 쓸 config 또는 데이터 키입니다. |
+| `nameKey`       | string                   | 이름에 쓸 config 또는 데이터 키입니다. |
+| `indicator`     | `dot` `line` or `dashed` | 툴팁 인디케이터 모양입니다.            |
+| `hideLabel`     | boolean                  | 라벨을 숨길지 여부입니다.              |
+| `hideIndicator` | boolean                  | 인디케이터를 숨길지 여부입니다.        |
 
 ### Colors
 
-Colors are automatically referenced from the chart config.
+색상은 차트 config에서 자동으로 가져옵니다.
 
 ### Custom
 
-To use a custom key for tooltip label and names, use the `labelKey` and `nameKey` props.
+툴팁 라벨과 이름에 다른 키를 쓰려면 `labelKey`와 `nameKey` prop을 지정합니다.
 
 ```tsx showLineNumbers /browser/
 const chartData = [
@@ -534,11 +532,11 @@ const chartConfig = {
 />
 ```
 
-This will use `Total Visitors` for label and `Chrome` and `Safari` for the tooltip names.
+이렇게 하면 라벨은 `Total Visitors`, 툴팁 이름은 `Chrome`과 `Safari`가 됩니다.
 
 ## Legend
 
-You can use the custom `<ChartLegend>` and `<ChartLegendContent>` components to add a legend to your chart.
+범례는 `<ChartLegend>`와 `<ChartLegendContent>` 컴포넌트로 붙입니다.
 
 ```tsx title="components/example-chart.tsx"
 import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
@@ -550,11 +548,11 @@ import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
 
 ### Colors
 
-Colors are automatically referenced from the chart config.
+색상은 차트 config에서 자동으로 가져옵니다.
 
 ### Custom
 
-To use a custom key for legend names, use the `nameKey` prop.
+범례 이름에 다른 키를 쓰려면 `nameKey` prop을 지정합니다.
 
 ```tsx showLineNumbers /browser/
 const chartData = [
@@ -578,21 +576,21 @@ const chartConfig = {
 <ChartLegend content={<ChartLegendContent nameKey="browser" />} />
 ```
 
-This will use `Chrome` and `Safari` for the legend names.
+이렇게 하면 범례 이름이 `Chrome`과 `Safari`가 됩니다.
 
 ## Accessibility
 
-You can turn on the `accessibilityLayer` prop to add an accessible layer to your chart.
+`accessibilityLayer` prop을 켜면 차트에 접근성 레이어가 붙습니다.
 
-This prop adds keyboard access and screen reader support to your charts.
+키보드 조작과 스크린 리더 지원이 추가됩니다.
 
 ```tsx title="components/example-chart.tsx"
 <LineChart accessibilityLayer />
 ```
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"

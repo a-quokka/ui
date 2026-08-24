@@ -1,23 +1,17 @@
 ---
-title: Theming
-description: Using CSS variables and theme tokens.
+title: 테마
+description: CSS 변수와 테마 토큰으로 꾸미기.
 ---
 
-<Callout>
+테마에는 CSS 변수를 쓰고, 또 권합니다.
 
-Want to build your theme visually? Use [shadcn/create](/create) to preview colors, radius, fonts, and icons, then generate a preset for your project.
-
-</Callout>
-
-We use and recommend CSS variables for theming.
-
-This gives you semantic theme tokens like `background`, `foreground`, and `primary` that components use by default. Override those tokens in your CSS to change the look of your app without rewriting component classes.
+그러면 `background`·`foreground`·`primary` 같은 의미 단위 토큰이 생기고 컴포넌트가 그것을 기본으로 씁니다. 컴포넌트 클래스를 다시 쓰지 않고 CSS 에서 토큰만 덮어써도 앱의 인상이 바뀝니다.
 
 ```tsx /bg-background/ /text-foreground/
 <div className="bg-background text-foreground" />
 ```
 
-To use CSS variables for theming, set `tailwind.cssVariables` to `true` in your `components.json` file. This is the default.
+CSS 변수로 테마를 쓰려면 `components.json` 의 `tailwind.cssVariables` 를 `true` 로 두세요. 기본값입니다.
 
 ```json {8} title="components.json" showLineNumbers
 {
@@ -32,28 +26,28 @@ To use CSS variables for theming, set `tailwind.cssVariables` to `true` in your 
 }
 ```
 
-Tailwind maps these tokens into utilities like `bg-background`, `text-foreground`, `border-border`, and `ring-ring`.
+Tailwind 는 이 토큰들을 `bg-background`·`text-foreground`·`border-border`·`ring-ring` 같은 유틸리티로 연결합니다.
 
-Dark mode works by overriding the same tokens inside a `.dark` selector. See the [dark mode docs](/docs/dark-mode/next) for adding a theme provider and toggling the `.dark` class.
+다크 모드는 같은 토큰을 `.dark` 선택자 안에서 덮어쓰는 방식입니다. 테마 provider 를 붙이고 `.dark` 클래스를 토글하는 방법은 [다크 모드 문서](/docs/dark-mode/next)를 보세요.
 
 ## Token Convention
 
-We use semantic background and foreground pairs. The base token controls the surface color and the `-foreground` token controls the text and icon color that sits on that surface.
+면과 글자를 의미 단위로 짝지어 씁니다. 기본 토큰이 면 색을, `-foreground` 토큰이 그 면 위 글자와 아이콘 색을 정합니다.
 
 <Callout className="mt-4">
 
-The background suffix is omitted for the surface token. For example, `primary` pairs with `primary-foreground`.
+면 토큰에는 background 를 붙이지 않습니다. 예를 들어 `primary` 는 `primary-foreground` 와 짝입니다.
 
 </Callout>
 
-Given the following CSS variables:
+아래와 같은 CSS 변수가 있다고 하면,
 
 ```css
 --primary: oklch(0.205 0 0);
 --primary-foreground: oklch(0.985 0 0);
 ```
 
-The `background` color of the following component will be `var(--primary)` and the `foreground` color will be `var(--primary-foreground)`.
+이 컴포넌트의 `background` 는 `var(--primary)` 가 되고 `foreground` 는 `var(--primary-foreground)` 가 됩니다.
 
 ```tsx
 <div className="bg-primary text-primary-foreground">Hello</div>
@@ -61,7 +55,7 @@ The `background` color of the following component will be `var(--primary)` and t
 
 ## Theme Tokens
 
-These tokens live in your CSS file under `:root` and `.dark`.
+이 토큰들은 CSS 파일의 `:root` 와 `.dark` 안에 있습니다.
 
 | Token                                            | What it controls                                       | Used by                                                                      |
 | ------------------------------------------------ | ------------------------------------------------------ | ---------------------------------------------------------------------------- |
@@ -86,15 +80,15 @@ These tokens live in your CSS file under `:root` and `.dark`.
 
 <Callout className="mt-4">
 
-The chart tokens are covered in more detail in the [Chart theming docs](/docs/components/chart#theming).
+차트 토큰은 [차트 테마 문서](/docs/components/chart#theming)에서 더 자세히 다룹니다.
 
 </Callout>
 
 ## Radius Scale
 
-`--radius` is the base radius token for your theme.
+`--radius` 는 테마의 기준 반경 토큰입니다.
 
-We derive a small radius scale from it so components can use consistent corner sizes while still sharing a single source of truth.
+여기서 작은 반경 스케일을 파생시켜, 하나의 출처를 공유하면서도 컴포넌트마다 일관된 모서리 크기를 쓰게 합니다.
 
 ```css title="app/globals.css" showLineNumbers
 @theme inline {
@@ -108,16 +102,16 @@ We derive a small radius scale from it so components can use consistent corner s
 }
 ```
 
-This means:
+정리하면 이렇습니다.
 
-- `radius-lg` is the base value.
-- Smaller radii scale down from `--radius`.
-- Larger radii scale up from `--radius`.
-- Changing `--radius` updates the entire radius scale.
+- `radius-lg` 가 기준 값입니다.
+- 더 작은 반경은 `--radius` 에서 줄어듭니다.
+- 더 큰 반경은 `--radius` 에서 늘어납니다.
+- `--radius` 를 바꾸면 반경 스케일 전체가 따라 바뀝니다.
 
 ## Adding New Tokens
 
-To add a new token, define it under `:root` and `.dark`, then expose it to Tailwind with `@theme inline`.
+토큰을 새로 넣으려면 `:root` 와 `.dark` 에 정의한 뒤 `@theme inline` 으로 Tailwind 에 노출하세요.
 
 ```css title="app/globals.css" showLineNumbers
 :root {
@@ -136,7 +130,7 @@ To add a new token, define it under `:root` and `.dark`, then expose it to Tailw
 }
 ```
 
-You can now use `bg-warning` and `text-warning-foreground` in your components.
+이제 컴포넌트에서 `bg-warning` 과 `text-warning-foreground` 를 쓸 수 있습니다.
 
 ```tsx /bg-warning/ /text-warning-foreground/
 <div className="bg-warning text-warning-foreground" />
@@ -144,13 +138,13 @@ You can now use `bg-warning` and `text-warning-foreground` in your components.
 
 ## Base Colors
 
-`tailwind.baseColor` controls the default token values generated for your project when you run `init` or use a preset.
+`tailwind.baseColor` 는 `init` 을 돌리거나 프리셋을 쓸 때 프로젝트에 생성될 토큰 기본값을 정합니다.
 
-The available base colors are: **Neutral**, **Stone**, **Zinc**, **Mauve**, **Olive**, **Mist**, and **Taupe**.
+고를 수 있는 기준 색은 **Neutral**·**Stone**·**Zinc**·**Mauve**·**Olive**·**Mist**·**Taupe** 입니다.
 
 ## Default Theme CSS
 
-The following is the full default `neutral` theme scaffold. Copy it into your global CSS file and adjust the tokens as needed.
+아래는 기본 `neutral` 테마 전체입니다. 전역 CSS 파일에 복사해 넣고 토큰을 필요에 맞게 고치세요.
 
 <CodeCollapsibleWrapper>
 
@@ -285,13 +279,13 @@ The following is the full default `neutral` theme scaffold. Copy it into your gl
 
 ## Without CSS Variables
 
-If you do not want to use CSS variables, the CLI can generate components with inline Tailwind color utilities instead.
+CSS 변수를 쓰고 싶지 않다면, CLI 가 Tailwind 색상 유틸리티를 직접 박은 컴포넌트를 만들어 줄 수도 있습니다.
 
 ```bash
 npx shadcn@latest init --no-css-variables
 ```
 
-This sets `tailwind.cssVariables` to `false` in your `components.json` file.
+`components.json` 의 `tailwind.cssVariables` 가 `false` 로 설정됩니다.
 
 ```tsx /bg-zinc-950/ /text-zinc-50/ /dark:bg-white/ /dark:text-zinc-950/
 <div className="bg-zinc-950 text-zinc-50 dark:bg-white dark:text-zinc-950" />
@@ -299,6 +293,6 @@ This sets `tailwind.cssVariables` to `false` in your `components.json` file.
 
 <Callout className="mt-4">
 
-This is an installation-time choice. To switch an existing project, delete and re-install your components.
+이건 설치할 때 정하는 선택입니다. 이미 만든 프로젝트에서 바꾸려면 컴포넌트를 지우고 다시 설치해야 합니다.
 
 </Callout>

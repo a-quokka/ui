@@ -19,26 +19,26 @@ export default function MenubarDemo() {
   return (
     <Menubar className="w-72">
       <MenubarMenu>
-        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarTrigger>파일</MenubarTrigger>
         <MenubarContent>
           <MenubarGroup>
             <MenubarItem>
-              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+              새 탭 <MenubarShortcut>⌘T</MenubarShortcut>
             </MenubarItem>
             <MenubarItem>
-              New Window <MenubarShortcut>⌘N</MenubarShortcut>
+              새 창 <MenubarShortcut>⌘N</MenubarShortcut>
             </MenubarItem>
-            <MenubarItem disabled>New Incognito Window</MenubarItem>
+            <MenubarItem disabled>새 시크릿 창</MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
             <MenubarSub>
-              <MenubarSubTrigger>Share</MenubarSubTrigger>
+              <MenubarSubTrigger>공유</MenubarSubTrigger>
               <MenubarSubContent>
                 <MenubarGroup>
-                  <MenubarItem>Email link</MenubarItem>
-                  <MenubarItem>Messages</MenubarItem>
-                  <MenubarItem>Notes</MenubarItem>
+                  <MenubarItem>링크 메일로 보내기</MenubarItem>
+                  <MenubarItem>메시지</MenubarItem>
+                  <MenubarItem>메모</MenubarItem>
                 </MenubarGroup>
               </MenubarSubContent>
             </MenubarSub>
@@ -46,75 +46,75 @@ export default function MenubarDemo() {
           <MenubarSeparator />
           <MenubarGroup>
             <MenubarItem>
-              Print... <MenubarShortcut>⌘P</MenubarShortcut>
+              인쇄... <MenubarShortcut>⌘P</MenubarShortcut>
             </MenubarItem>
           </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarTrigger>편집</MenubarTrigger>
         <MenubarContent>
           <MenubarGroup>
             <MenubarItem>
-              Undo <MenubarShortcut>⌘Z</MenubarShortcut>
+              실행 취소 <MenubarShortcut>⌘Z</MenubarShortcut>
             </MenubarItem>
             <MenubarItem>
-              Redo <MenubarShortcut>⇧⌘Z</MenubarShortcut>
+              다시 실행 <MenubarShortcut>⇧⌘Z</MenubarShortcut>
             </MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
             <MenubarSub>
-              <MenubarSubTrigger>Find</MenubarSubTrigger>
+              <MenubarSubTrigger>찾기</MenubarSubTrigger>
               <MenubarSubContent>
                 <MenubarGroup>
-                  <MenubarItem>Search the web</MenubarItem>
+                  <MenubarItem>웹에서 검색</MenubarItem>
                 </MenubarGroup>
                 <MenubarSeparator />
                 <MenubarGroup>
-                  <MenubarItem>Find...</MenubarItem>
-                  <MenubarItem>Find Next</MenubarItem>
-                  <MenubarItem>Find Previous</MenubarItem>
+                  <MenubarItem>찾기...</MenubarItem>
+                  <MenubarItem>다음 찾기</MenubarItem>
+                  <MenubarItem>이전 찾기</MenubarItem>
                 </MenubarGroup>
               </MenubarSubContent>
             </MenubarSub>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem>Cut</MenubarItem>
-            <MenubarItem>Copy</MenubarItem>
-            <MenubarItem>Paste</MenubarItem>
+            <MenubarItem>잘라내기</MenubarItem>
+            <MenubarItem>복사</MenubarItem>
+            <MenubarItem>붙여넣기</MenubarItem>
           </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>View</MenubarTrigger>
+        <MenubarTrigger>보기</MenubarTrigger>
         <MenubarContent className="w-44">
           <MenubarGroup>
-            <MenubarCheckboxItem>Bookmarks Bar</MenubarCheckboxItem>
-            <MenubarCheckboxItem checked>Full URLs</MenubarCheckboxItem>
+            <MenubarCheckboxItem>북마크 바</MenubarCheckboxItem>
+            <MenubarCheckboxItem checked>전체 URL</MenubarCheckboxItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
             <MenubarItem inset>
-              Reload <MenubarShortcut>⌘R</MenubarShortcut>
+              새로 고침 <MenubarShortcut>⌘R</MenubarShortcut>
             </MenubarItem>
             <MenubarItem disabled inset>
-              Force Reload <MenubarShortcut>⇧⌘R</MenubarShortcut>
+              강제 새로 고침 <MenubarShortcut>⇧⌘R</MenubarShortcut>
             </MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem inset>Toggle Fullscreen</MenubarItem>
+            <MenubarItem inset>전체 화면 전환</MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem inset>Hide Sidebar</MenubarItem>
+            <MenubarItem inset>사이드바 숨기기</MenubarItem>
           </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Profiles</MenubarTrigger>
+        <MenubarTrigger>프로필</MenubarTrigger>
         <MenubarContent>
           <MenubarRadioGroup value="benoit">
             <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
@@ -123,11 +123,11 @@ export default function MenubarDemo() {
           </MenubarRadioGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem inset>Edit...</MenubarItem>
+            <MenubarItem inset>수정...</MenubarItem>
           </MenubarGroup>
           <MenubarSeparator />
           <MenubarGroup>
-            <MenubarItem inset>Add Profile...</MenubarItem>
+            <MenubarItem inset>프로필 추가...</MenubarItem>
           </MenubarGroup>
         </MenubarContent>
       </MenubarMenu>

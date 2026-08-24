@@ -25,9 +25,9 @@ import {
 
 const people = [
   {
-    username: "shadcn",
+    username: "dropshot",
     avatar: "https://github.com/shadcn.png",
-    email: "shadcn@vercel.com",
+    email: "dropshot@dropshot.io",
   },
   {
     username: "maxleiter",
@@ -45,7 +45,7 @@ export function ItemDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Select <ChevronDownIcon />
+        선택 <ChevronDownIcon />
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-48" align="end">
         <DropdownMenuGroup>

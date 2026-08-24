@@ -30,11 +30,11 @@ export function CalendarWithPresets() {
       </CardContent>
       <CardFooter className="flex flex-wrap gap-2 border-t">
         {[
-          { label: "Today", value: 0 },
-          { label: "Tomorrow", value: 1 },
-          { label: "In 3 days", value: 3 },
-          { label: "In a week", value: 7 },
-          { label: "In 2 weeks", value: 14 },
+          { label: "오늘", value: 0 },
+          { label: "내일", value: 1 },
+          { label: "3일 뒤", value: 3 },
+          { label: "일주일 뒤", value: 7 },
+          { label: "2주 뒤", value: 14 },
         ].map((preset) => (
           <Button
             key={preset.value}

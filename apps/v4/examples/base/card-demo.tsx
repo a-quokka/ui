@@ -15,19 +15,19 @@ export default function CardDemo() {
   return (
     <Card className="w-full max-w-sm">
       <CardHeader>
-        <CardTitle>Login to your account</CardTitle>
+        <CardTitle>계정에 로그인</CardTitle>
         <CardDescription>
-          Enter your email below to login to your account
+          계정에 로그인하려면 아래에 이메일을 입력하세요
         </CardDescription>
         <CardAction>
-          <Button variant="link">Sign Up</Button>
+          <Button variant="link">가입하기</Button>
         </CardAction>
       </CardHeader>
       <CardContent>
         <form>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email">이메일</Label>
               <Input
                 id="email"
                 type="email"
@@ -37,12 +37,12 @@ export default function CardDemo() {
             </div>
             <div className="grid gap-2">
               <div className="flex items-center">
-                <Label htmlFor="password">Password</Label>
+                <Label htmlFor="password">비밀번호</Label>
                 <a
                   href="#"
                   className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
                 >
-                  Forgot your password?
+                  비밀번호를 잊으셨나요?
                 </a>
               </div>
               <Input id="password" type="password" required />
@@ -52,10 +52,10 @@ export default function CardDemo() {
       </CardContent>
       <CardFooter className="flex-col gap-2">
         <Button type="submit" className="w-full">
-          Login
+          로그인
         </Button>
         <Button variant="outline" className="w-full">
-          Login with Google
+          Google로 로그인
         </Button>
       </CardFooter>
     </Card>

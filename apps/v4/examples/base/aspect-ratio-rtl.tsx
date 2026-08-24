@@ -13,32 +13,26 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      caption: "Beautiful landscape",
+      caption: "멋진 풍경",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      caption: "منظر طبيعي جميل",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      caption: "נוף יפה",
+      caption: "멋진 풍경",
     },
   },
 }
 
 export function AspectRatioRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <figure className="w-full max-w-sm" dir={dir}>
       <AspectRatio ratio={16 / 9} className="rounded-lg bg-muted">
         <Image
           src="https://avatar.vercel.sh/shadcn1"
-          alt="Photo"
+          alt="사진"
           fill
           className="rounded-lg object-cover grayscale dark:brightness-20"
         />

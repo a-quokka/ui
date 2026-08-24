@@ -26,9 +26,9 @@ const translations: Translations = {
     values: {
       showDialog: "Show Dialog",
       showDialogSm: "Show Dialog (sm)",
-      title: "Are you absolutely sure?",
+      title: "정말 진행할까요?",
       description:
-        "This action cannot be undone. This will permanently delete your account from our servers.",
+        "이 작업은 되돌릴 수 없습니다. 계정이 서버에서 완전히 삭제됩니다.",
       cancel: "Cancel",
       continue: "Continue",
       smallTitle: "Allow accessory to connect?",
@@ -38,42 +38,26 @@ const translations: Translations = {
       allow: "Allow",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      showDialog: "إظهار الحوار",
-      showDialogSm: "إظهار الحوار (صغير)",
-      title: "هل أنت متأكد تمامًا؟",
+      showDialog: "다이얼로그 열기",
+      showDialogSm: "다이얼로그 열기 (sm)",
+      title: "정말 진행할까요?",
       description:
-        "لا يمكن التراجع عن هذا الإجراء. سيؤدي هذا إلى حذف حسابك نهائيًا من خوادمنا.",
-      cancel: "إلغاء",
-      continue: "متابعة",
-      smallTitle: "السماح للملحق بالاتصال؟",
-      smallDescription: "هل تريد السماح لملحق USB بالاتصال بهذا الجهاز؟",
-      dontAllow: "عدم السماح",
-      allow: "السماح",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      showDialog: "הצג דיאלוג",
-      showDialogSm: "הצג דיאלוג (קטן)",
-      title: "האם אתה בטוח לחלוטין?",
-      description:
-        "פעולה זו לא ניתנת לביטול. זה ימחק לצמיתות את החשבון שלך מהשרתים שלנו.",
-      cancel: "ביטול",
-      continue: "המשך",
-      smallTitle: "לאפשר להתקן להתחבר?",
-      smallDescription: "האם אתה רוצה לאפשר להתקן USB להתחבר למכשיר זה?",
-      dontAllow: "אל תאפשר",
-      allow: "אפשר",
+        "이 작업은 되돌릴 수 없습니다. 계정이 서버에서 완전히 삭제됩니다.",
+      cancel: "취소",
+      continue: "계속",
+      smallTitle: "액세서리 연결을 허용할까요?",
+      smallDescription: "이 기기에 USB 액세서리가 연결되도록 허용할까요?",
+      dontAllow: "허용 안 함",
+      allow: "허용",
     },
   },
 }
 
 export function AlertDialogRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
 
   return (
     <div className="flex gap-4" dir={dir}>

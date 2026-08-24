@@ -18,10 +18,10 @@ export function CheckboxDescription() {
         />
         <FieldContent>
           <FieldLabel htmlFor="terms-checkbox-desc">
-            Accept terms and conditions
+            이용약관에 동의합니다
           </FieldLabel>
           <FieldDescription>
-            By clicking this checkbox, you agree to the terms and conditions.
+            이 체크박스를 누르면 약관에 동의하는 것으로 봅니다.
           </FieldDescription>
         </FieldContent>
       </Field>

@@ -62,10 +62,8 @@ export function MessageScrollerVisibility() {
         <div className="relative mx-auto w-full max-w-sm">
           <Card className="h-140 w-full gap-0">
             <CardHeader className="gap-1 border-b">
-              <CardTitle>Transcript Outline</CardTitle>
-              <CardDescription>
-                Track the current anchored turn.
-              </CardDescription>
+              <CardTitle>기록 목차</CardTitle>
+              <CardDescription>현재 고정된 턴을 따라갑니다.</CardDescription>
             </CardHeader>
             <CardContent className="flex-1 overflow-hidden p-0">
               <MessageScroller>
@@ -117,7 +115,7 @@ export function MessageScrollerVisibility() {
           </div>
         </div>
         <div className="mx-auto max-w-sm px-0.5 text-center text-xs text-muted-foreground">
-          Open the outline to jump between anchored turns as you read.
+          목차를 열면 읽으면서 고정된 턴 사이를 오갈 수 있습니다.
         </div>
       </div>
     </MessageScrollerProvider>
@@ -134,7 +132,7 @@ function TranscriptOutline() {
         render={
           <button
             type="button"
-            aria-label="Open transcript outline"
+            aria-label="기록 목차 열기"
             className="flex h-9 w-9 flex-col items-center justify-center gap-1 rounded-md transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/50"
           />
         }

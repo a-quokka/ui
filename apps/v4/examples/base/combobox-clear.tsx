@@ -20,9 +20,9 @@ const frameworks = [
 export function ComboboxWithClear() {
   return (
     <Combobox items={frameworks} defaultValue={frameworks[0]}>
-      <ComboboxInput placeholder="Select a framework" showClear />
+      <ComboboxInput placeholder="프레임워크 선택" showClear />
       <ComboboxContent>
-        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxEmpty>항목이 없습니다.</ComboboxEmpty>
         <ComboboxList>
           {(item) => (
             <ComboboxItem key={item} value={item}>

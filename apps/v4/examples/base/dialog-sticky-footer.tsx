@@ -14,31 +14,29 @@ export function DialogStickyFooter() {
   return (
     <Dialog>
       <DialogTrigger render={<Button variant="outline" />}>
-        Sticky Footer
+        고정 푸터
       </DialogTrigger>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Sticky Footer</DialogTitle>
+          <DialogTitle>고정 푸터</DialogTitle>
           <DialogDescription>
-            This dialog has a sticky footer that stays visible while the content
-            scrolls.
+            내용이 스크롤되는 동안에도 푸터가 계속 보이는 다이얼로그입니다.
           </DialogDescription>
         </DialogHeader>
         <div className="-mx-4 no-scrollbar max-h-[50vh] overflow-y-auto px-4">
           {Array.from({ length: 10 }).map((_, index) => (
             <p key={index} className="mb-4 leading-normal">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
+              다람쥐 헌 쳇바퀴에 타고파. 이 문장은 글자 크기와 행간을 눈으로
+              가늠하려고 넣어 둔 예시 문장입니다. 특별한 뜻은 없고, 한글이
+              실제로 어떻게 흐르는지 보기 위한 자리 채움 글입니다. 문단이
+              길어졌을 때 줄이 어떻게 나뉘고 여백이 어떻게 잡히는지, 굵기와
+              자간이 화면에서 어떻게 읽히는지 확인하는 데 씁니다. 실제 문안이
+              들어가면 이 자리는 그대로 대체됩니다.
             </p>
           ))}
         </div>
         <DialogFooter>
-          <DialogClose render={<Button variant="outline" />}>Close</DialogClose>
+          <DialogClose render={<Button variant="outline" />}>닫기</DialogClose>
         </DialogFooter>
       </DialogContent>
     </Dialog>

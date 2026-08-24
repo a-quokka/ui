@@ -23,36 +23,34 @@ const components: { title: string; href: string; description: string }[] = [
     title: "Alert Dialog",
     href: "/docs/primitives/alert-dialog",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response.",
+      "중요한 내용으로 사용자를 멈춰 세우고 응답을 받는 모달 다이얼로그입니다.",
   },
   {
     title: "Hover Card",
     href: "/docs/primitives/hover-card",
-    description:
-      "For sighted users to preview content available behind a link.",
+    description: "링크 뒤의 내용을 미리 보여 줍니다.",
   },
   {
     title: "Progress",
     href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    description: "작업이 얼마나 진행됐는지 보여 줍니다. 보통 막대 형태입니다.",
   },
   {
     title: "Scroll-area",
     href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
+    description: "내용을 시각적으로, 또 의미상으로 나눕니다.",
   },
   {
     title: "Tabs",
     href: "/docs/primitives/tabs",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "탭 패널이라 부르는 여러 겹의 구획을 한 번에 하나씩 보여 줍니다.",
   },
   {
     title: "Tooltip",
     href: "/docs/primitives/tooltip",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "요소에 키보드 포커스가 가거나 마우스를 올리면 관련 정보를 띄웁니다.",
   },
 ]
 
@@ -61,23 +59,23 @@ export default function NavigationMenuDemo() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>시작하기</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="w-96">
               <ListItem href="/docs" title="Introduction">
-                Re-usable components built with Tailwind CSS.
+                Tailwind CSS 로 만든 재사용 가능한 컴포넌트입니다.
               </ListItem>
-              <ListItem href="/docs/installation" title="Installation">
-                How to install dependencies and structure your app.
+              <ListItem href="/docs/installation" title="설치">
+                의존성을 설치하고 앱 구조를 잡는 방법입니다.
               </ListItem>
               <ListItem href="/docs/primitives/typography" title="Typography">
-                Styles for headings, paragraphs, lists...etc
+                제목·문단·목록 등의 스타일입니다.
               </ListItem>
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem className="hidden md:flex">
-          <NavigationMenuTrigger>Components</NavigationMenuTrigger>
+          <NavigationMenuTrigger>컴포넌트</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-2 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
@@ -93,7 +91,7 @@ export default function NavigationMenuDemo() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>With Icon</NavigationMenuTrigger>
+          <NavigationMenuTrigger>아이콘 함께 쓰기</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[200px]">
               <li>
@@ -103,15 +101,14 @@ export default function NavigationMenuDemo() {
                   }
                 >
                   <CircleAlertIcon />
-                  Backlog
+                  백로그
                 </NavigationMenuLink>
                 <NavigationMenuLink
                   render={
                     <Link href="#" className="flex-row items-center gap-2" />
                   }
                 >
-                  <CircleDashedIcon />
-                  To Do
+                  <CircleDashedIcon />할 일
                 </NavigationMenuLink>
                 <NavigationMenuLink
                   render={
@@ -119,7 +116,7 @@ export default function NavigationMenuDemo() {
                   }
                 >
                   <CircleCheckIcon />
-                  Done
+                  완료
                 </NavigationMenuLink>
               </li>
             </ul>
@@ -130,7 +127,7 @@ export default function NavigationMenuDemo() {
             render={<Link href="/docs" />}
             className={navigationMenuTriggerStyle()}
           >
-            Docs
+            문서
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

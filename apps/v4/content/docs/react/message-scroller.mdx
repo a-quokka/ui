@@ -1,19 +1,19 @@
 ---
 title: Message Scroller
-description: Use the MessageScroller behavior directly from the @shadcn/react package with your own markup and styles.
+description: "@shadcn/react 패키지의 MessageScroller 동작을 직접 가져와 원하는 마크업과 스타일에 씁니다."
 ---
 
-`MessageScroller` ships as a headless primitive in the `@shadcn/react` package.
-The package owns all of the scroll behavior, anchoring turns, following streamed
-output, preserving the reader's place as history loads, and tracking visibility,
-and renders no styles of its own.
+`MessageScroller` 는 `@shadcn/react` 패키지에 헤드리스 프리미티브로 들어 있습니다.
+턴 고정, 스트리밍 출력 따라가기, 이전 기록을 불러올 때 읽던 자리 지키기,
+노출 상태 추적 같은 스크롤 동작을 모두 패키지가 맡고, 스타일은 전혀 넣지
+않습니다.
 
-The `message-scroller.tsx` component in the registry is a thin wrapper that adds
-Tailwind classes on top. Use the package directly when you want full control over
-the markup and styles, or when you are not using the registry.
+레지스트리의 `message-scroller.tsx` 는 여기에 Tailwind 클래스만 얹은 얇은 껍데기입니다.
+마크업과 스타일을 온전히 다루고 싶거나 레지스트리를 쓰지 않는다면 패키지를 바로
+쓰세요.
 
-For the behavior guide and live examples, see the
-[Message Scroller](/docs/components/base/message-scroller) component.
+동작 설명과 실제 예시는 [Message Scroller](/docs/components/base/message-scroller)
+컴포넌트 문서를 보세요.
 
 ## Installation
 
@@ -30,8 +30,8 @@ import {
 } from "@shadcn/react/message-scroller"
 ```
 
-The package exports a namespace object instead of flat components. The parts and
-behavior are the same as the styled component, just unstyled.
+이 패키지는 개별 컴포넌트 대신 네임스페이스 객체를 내보냅니다. 구성 요소와 동작은
+스타일이 붙은 컴포넌트와 같고 스타일만 없습니다.
 
 ```tsx
 <MessageScroller.Provider>
@@ -56,8 +56,8 @@ behavior are the same as the styled component, just unstyled.
 
 ## Parts
 
-If you are coming from the styled component, the flat parts map to the namespace
-object like this.
+스타일이 붙은 컴포넌트를 쓰던 분이라면 각 구성 요소가 네임스페이스 객체와 이렇게
+대응합니다.
 
 | Styled component          | Unstyled part              |
 | ------------------------- | -------------------------- |
@@ -68,8 +68,8 @@ object like this.
 | `MessageScrollerItem`     | `MessageScroller.Item`     |
 | `MessageScrollerButton`   | `MessageScroller.Button`   |
 
-The hooks are imported the same way and behave identically, since they read from
-`MessageScroller.Provider`.
+훅은 `MessageScroller.Provider` 에서 값을 읽으므로 가져오는 방법도 동작도
+똑같습니다.
 
 ```tsx
 import {
@@ -81,8 +81,7 @@ import {
 
 ## Example
 
-Here is a complete example that brings its own styles and wires the scroller to
-the AI SDK.
+직접 스타일을 넣고 스크롤러를 AI SDK 와 이어 붙인 전체 예시입니다.
 
 ```tsx showLineNumbers
 "use client"
@@ -136,142 +135,139 @@ export function Chat() {
 
 ### MessageScroller.Provider
 
-The headless root. It owns scroll state and the behavior props, and provides
-them to the parts and the hooks. It renders no DOM of its own.
+헤드리스 루트입니다. 스크롤 상태와 동작 관련 prop 을 갖고 있다가 각 구성 요소와
+훅에 전달합니다. 자체 DOM 은 만들지 않습니다.
 
-| Prop                     | Type                                | Default | Description                                                                                                                                                                          |
-| ------------------------ | ----------------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `autoScroll`             | `boolean`                           | `false` | Follow new content only while the reader is already at the live edge. Wheel, touch, keyboard scroll, and explicit jumps release it.                                                  |
-| `defaultScrollPosition`  | `"start" \| "end" \| "last-anchor"` | `"end"` | Opening position on the first non-empty render, applied once. `"last-anchor"` opens at the last `scrollAnchor` row and falls back to `"end"` when the turn fits or no anchor exists. |
-| `scrollEdgeThreshold`    | `number`                            | `8`     | Distance from either edge that still counts as being at the start or end. Controls state attributes and scroll button visibility.                                                    |
-| `scrollMargin`           | `number`                            | `0`     | Margin applied to the aligned edge for `scrollToMessage`, visibility, and programmatic targets.                                                                                      |
-| `scrollPreviousItemPeek` | `number`                            | `64`    | Extra margin added to `scrollMargin` when a newly appended `scrollAnchor` item is positioned so part of the previous item stays visible.                                             |
+| Prop                     | Type                                | Default | Description                                                                                                                                                                        |
+| ------------------------ | ----------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `autoScroll`             | `boolean`                           | `false` | 읽는 사람이 이미 맨 아래에 있을 때만 새 내용을 따라갑니다. 휠·터치·키보드 스크롤이나 직접 이동하면 따라가기가 풀립니다.                                                            |
+| `defaultScrollPosition`  | `"start" \| "end" \| "last-anchor"` | `"end"` | 내용이 처음 채워질 때의 시작 위치이며 한 번만 적용됩니다. `"last-anchor"` 는 마지막 `scrollAnchor` 행에서 시작하고, 턴이 화면에 다 들어가거나 앵커가 없으면 `"end"` 로 물러납니다. |
+| `scrollEdgeThreshold`    | `number`                            | `8`     | 이만큼 떨어져 있어도 맨 위·맨 아래로 봅니다. 상태 속성과 스크롤 버튼 노출을 좌우합니다.                                                                                            |
+| `scrollMargin`           | `number`                            | `0`     | `scrollToMessage` 와 노출 판정, 코드로 지정한 대상에서 맞춰지는 쪽에 주는 여백입니다.                                                                                              |
+| `scrollPreviousItemPeek` | `number`                            | `64`    | 새로 붙은 `scrollAnchor` 항목을 놓을 때 앞 항목이 조금 보이도록 `scrollMargin` 에 더하는 여백입니다.                                                                               |
 
 ### MessageScroller.Root
 
-The frame and layout container. It fills its parent, so use it inside a
-height-constrained layout, within a `MessageScroller.Provider`.
+틀이자 레이아웃 컨테이너입니다. 부모를 가득 채우므로 높이가 정해진 레이아웃 안,
+그리고 `MessageScroller.Provider` 안에서 쓰세요.
 
 | Prop       | Type                          | Default | Description                        |
 | ---------- | ----------------------------- | ------- | ---------------------------------- |
-| `...props` | `React.ComponentProps<"div">` | -       | Props spread to the frame element. |
+| `...props` | `React.ComponentProps<"div">` | -       | 틀 요소에 그대로 넘길 prop 입니다. |
 
-The root mirrors the scroll-state attributes below (the viewport carries them
-too), so you can style the container by scroll state, such as edge fades on the
-frame.
+루트에도 아래의 스크롤 상태 속성이 그대로 붙습니다(뷰포트에도 붙습니다). 그래서
+틀 가장자리를 흐리게 하는 식으로 스크롤 상태에 따라 컨테이너를 꾸밀 수 있습니다.
 
-| Data attribute       | Value                                             | Description                                                                                            |
-| -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `data-scrollable`    | `"start"` \| `"end"` \| `"start end"` \| _absent_ | Edges the viewport can scroll toward. Query one with `[data-scrollable~="end"]`; absent means it fits. |
-| `data-autoscrolling` | present                                           | Present while the viewport is programmatically scrolling to the latest message.                        |
+| Data attribute       | Value                                             | Description                                                                                                         |
+| -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `data-scrollable`    | `"start"` \| `"end"` \| `"start end"` \| _absent_ | 뷰포트가 스크롤할 수 있는 방향입니다. `[data-scrollable~="end"]` 로 확인하며, 없으면 내용이 다 들어간다는 뜻입니다. |
+| `data-autoscrolling` | present                                           | 뷰포트가 최신 메시지로 스크롤하는 동안 붙습니다.                                                                    |
 
 ### MessageScroller.Viewport
 
-The scrollable viewport.
+스크롤되는 뷰포트입니다.
 
-| Prop                      | Type                          | Default      | Description                                                               |
-| ------------------------- | ----------------------------- | ------------ | ------------------------------------------------------------------------- |
-| `preserveScrollOnPrepend` | `boolean`                     | `true`       | Keep the first visible message item stable when older rows are prepended. |
-| `role`                    | `string`                      | `"region"`   | Landmark role for the labelled scrollable transcript viewport.            |
-| `aria-label`              | `string`                      | `"Messages"` | Accessible name for the scrollable chat transcript.                       |
-| `tabIndex`                | `number`                      | `0`          | Makes the transcript viewport keyboard-scrollable.                        |
-| `...props`                | `React.ComponentProps<"div">` | -            | Props spread to the viewport element.                                     |
+| Prop                      | Type                          | Default      | Description                                                       |
+| ------------------------- | ----------------------------- | ------------ | ----------------------------------------------------------------- |
+| `preserveScrollOnPrepend` | `boolean`                     | `true`       | 이전 기록이 위에 붙을 때 처음 보이던 메시지가 그대로 있게 합니다. |
+| `role`                    | `string`                      | `"region"`   | 이름이 붙은 대화 기록 뷰포트의 랜드마크 role 입니다.              |
+| `aria-label`              | `string`                      | `"Messages"` | 스크롤되는 대화 기록의 접근성 이름입니다.                         |
+| `tabIndex`                | `number`                      | `0`          | 대화 기록 뷰포트를 키보드로 스크롤할 수 있게 합니다.              |
+| `...props`                | `React.ComponentProps<"div">` | -            | 뷰포트 요소에 그대로 넘길 prop 입니다.                            |
 
-| Data attribute       | Value                                             | Description                                                                                            |
-| -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `data-scrollable`    | `"start"` \| `"end"` \| `"start end"` \| _absent_ | Edges the viewport can scroll toward. Query one with `[data-scrollable~="end"]`; absent means it fits. |
-| `data-autoscrolling` | present                                           | Present while the viewport is programmatically scrolling to the latest message.                        |
+| Data attribute       | Value                                             | Description                                                                                                         |
+| -------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| `data-scrollable`    | `"start"` \| `"end"` \| `"start end"` \| _absent_ | 뷰포트가 스크롤할 수 있는 방향입니다. `[data-scrollable~="end"]` 로 확인하며, 없으면 내용이 다 들어간다는 뜻입니다. |
+| `data-autoscrolling` | present                                           | 뷰포트가 최신 메시지로 스크롤하는 동안 붙습니다.                                                                    |
 
 ### MessageScroller.Content
 
-The transcript content element. Every direct child should be a
-`MessageScroller.Item`.
+대화 기록의 내용 요소입니다. 바로 아래 자식은 모두 `MessageScroller.Item` 이어야
+합니다.
 
-| Prop              | Type                          | Default       | Description                                                             |
-| ----------------- | ----------------------------- | ------------- | ----------------------------------------------------------------------- |
-| `role`            | `string`                      | `"log"`       | ARIA role applied to the message list for live announcements.           |
-| `aria-relevant`   | `string`                      | `"additions"` | Live-region updates to announce. Defaults to new transcript rows only.  |
-| `aria-busy`       | `boolean`                     | -             | Marks the live region busy while a turn streams, if needed.             |
-| `spacerClassName` | `string`                      | -             | Class name for the internal spacer used to make room for anchored rows. |
-| `...props`        | `React.ComponentProps<"div">` | -             | Props spread to the content element.                                    |
+| Prop              | Type                          | Default       | Description                                                         |
+| ----------------- | ----------------------------- | ------------- | ------------------------------------------------------------------- |
+| `role`            | `string`                      | `"log"`       | 실시간 안내를 위해 메시지 목록에 붙는 ARIA role 입니다.             |
+| `aria-relevant`   | `string`                      | `"additions"` | 안내할 라이브 영역 변경 범위입니다. 기본값은 새로 생긴 행만입니다.  |
+| `aria-busy`       | `boolean`                     | -             | 필요하다면 턴이 스트리밍되는 동안 라이브 영역을 busy 로 표시합니다. |
+| `spacerClassName` | `string`                      | -             | 고정된 행의 자리를 만드는 내부 여백 요소의 클래스 이름입니다.       |
+| `...props`        | `React.ComponentProps<"div">` | -             | 내용 요소에 그대로 넘길 prop 입니다.                                |
 
 ### MessageScroller.Item
 
-One transcript row: a message, marker, typing row, separator, or load-more row.
+대화 기록의 한 행입니다. 메시지·표식·입력 중 표시·구분선·더 보기 행이 될 수 있습니다.
 
-| Prop           | Type                          | Default | Description                                                                    |
-| -------------- | ----------------------------- | ------- | ------------------------------------------------------------------------------ |
-| `messageId`    | `string`                      | -       | Stable row id used by `scrollToMessage`, visibility, and prepend preservation. |
-| `scrollAnchor` | `boolean`                     | `false` | Marks this row as a turn boundary that can anchor newly appended turns.        |
-| `...props`     | `React.ComponentProps<"div">` | -       | Props spread to the item element.                                              |
+| Prop           | Type                          | Default | Description                                                                        |
+| -------------- | ----------------------------- | ------- | ---------------------------------------------------------------------------------- |
+| `messageId`    | `string`                      | -       | `scrollToMessage`·노출 판정·앞쪽 추가 시 자리 지키기에 쓰이는 고정된 행 id 입니다. |
+| `scrollAnchor` | `boolean`                     | `false` | 이 행을 새 턴이 붙을 때 기준이 되는 턴 경계로 표시합니다.                          |
+| `...props`     | `React.ComponentProps<"div">` | -       | 항목 요소에 그대로 넘길 prop 입니다.                                               |
 
-| Data attribute       | Value                 | Description                        |
-| -------------------- | --------------------- | ---------------------------------- |
-| `data-message-id`    | `string`              | Mirrors `messageId` when provided. |
-| `data-scroll-anchor` | `"true"` \| `"false"` | Mirrors `scrollAnchor`.            |
+| Data attribute       | Value                 | Description                                    |
+| -------------------- | --------------------- | ---------------------------------------------- |
+| `data-message-id`    | `string`              | `messageId` 가 있으면 그 값을 그대로 붙입니다. |
+| `data-scroll-anchor` | `"true"` \| `"false"` | `scrollAnchor` 값을 그대로 붙입니다.           |
 
 ### MessageScroller.Button
 
-A button that scrolls to the start or end of the transcript. It is inert and
-removed from the tab order when there is nothing to scroll toward.
+대화 기록의 처음이나 끝으로 스크롤하는 버튼입니다. 갈 곳이 없으면 동작하지 않고
+탭 순서에서도 빠집니다.
 
-| Prop        | Type                                    | Default    | Description                                                              |
-| ----------- | --------------------------------------- | ---------- | ------------------------------------------------------------------------ |
-| `behavior`  | `ScrollBehavior`                        | `"smooth"` | Native scroll behavior used when the button scrolls to its target edge.  |
-| `direction` | `"start" \| "end"`                      | `"end"`    | Transcript edge the button scrolls toward.                               |
-| `children`  | `React.ReactNode`                       | -          | Custom button content. Defaults to the scroll icon and accessible label. |
-| `render`    | `React.ReactElement \| render function` | -          | Custom render target.                                                    |
-| `...props`  | `React.ComponentProps<"button">`        | -          | Props spread to the button.                                              |
+| Prop        | Type                                    | Default    | Description                                                            |
+| ----------- | --------------------------------------- | ---------- | ---------------------------------------------------------------------- |
+| `behavior`  | `ScrollBehavior`                        | `"smooth"` | 버튼이 목표 끝으로 스크롤할 때 쓰는 기본 스크롤 동작입니다.            |
+| `direction` | `"start" \| "end"`                      | `"end"`    | 버튼이 향하는 대화 기록의 끝입니다.                                    |
+| `children`  | `React.ReactNode`                       | -          | 버튼 안에 넣을 내용입니다. 기본값은 스크롤 아이콘과 접근성 이름입니다. |
+| `render`    | `React.ReactElement \| render function` | -          | 직접 지정하는 렌더 대상입니다.                                         |
+| `...props`  | `React.ComponentProps<"button">`        | -          | 버튼에 그대로 넘길 prop 입니다.                                        |
 
-| Data attribute   | Value                 | Description                               |
-| ---------------- | --------------------- | ----------------------------------------- |
-| `data-direction` | `"start"` \| `"end"`  | Mirrors `direction`.                      |
-| `data-active`    | `"true"` \| `"false"` | Whether this button can currently scroll. |
+| Data attribute   | Value                 | Description                                     |
+| ---------------- | --------------------- | ----------------------------------------------- |
+| `data-direction` | `"start"` \| `"end"`  | `direction` 값을 그대로 붙입니다.               |
+| `data-active`    | `"true"` \| `"false"` | 지금 이 버튼으로 스크롤할 수 있는지 여부입니다. |
 
 ### useMessageScroller
 
-Imperative transcript controls.
+대화 기록을 직접 조작하는 명령입니다.
 
-| Method            | Type                                       | Description                     |
-| ----------------- | ------------------------------------------ | ------------------------------- |
-| `scrollToMessage` | `(messageId: string, options?) => boolean` | Scroll to a mounted message id. |
-| `scrollToEnd`     | `(options?) => boolean`                    | Scroll to the latest message.   |
-| `scrollToStart`   | `(options?) => boolean`                    | Scroll to the top.              |
+| Method            | Type                                       | Description                            |
+| ----------------- | ------------------------------------------ | -------------------------------------- |
+| `scrollToMessage` | `(messageId: string, options?) => boolean` | 이미 그려진 메시지 id 로 스크롤합니다. |
+| `scrollToEnd`     | `(options?) => boolean`                    | 최신 메시지로 스크롤합니다.            |
+| `scrollToStart`   | `(options?) => boolean`                    | 맨 위로 스크롤합니다.                  |
 
-All commands return `false` when the command could not be applied.
-`scrollToStart` and `scrollToEnd` return `false` only when the viewport is not
-mounted yet. `scrollToMessage` returns `false` when the target is not mounted and
-cannot be queued.
+명령을 적용하지 못하면 모두 `false` 를 돌려줍니다.
+`scrollToStart` 와 `scrollToEnd` 는 뷰포트가 아직 없을 때만 `false` 입니다.
+`scrollToMessage` 는 대상이 없고 대기열에도 넣을 수 없을 때 `false` 입니다.
 
-Command options:
+명령 옵션입니다.
 
-| Option         | Type                                              | Default                 | Description                                          |
-| -------------- | ------------------------------------------------- | ----------------------- | ---------------------------------------------------- |
-| `align`        | `"start"` \| `"center"` \| `"end"` \| `"nearest"` | `"start"`               | How a message target aligns in the viewport.         |
-| `behavior`     | `ScrollBehavior`                                  | `"auto"`                | Native scroll behavior for the command.              |
-| `scrollMargin` | `number`                                          | provider `scrollMargin` | Margin applied to the aligned edge for this command. |
+| Option         | Type                                              | Default                 | Description                                         |
+| -------------- | ------------------------------------------------- | ----------------------- | --------------------------------------------------- |
+| `align`        | `"start"` \| `"center"` \| `"end"` \| `"nearest"` | `"start"`               | 대상 메시지를 뷰포트 안에서 어디에 맞출지 정합니다. |
+| `behavior`     | `ScrollBehavior`                                  | `"auto"`                | 이 명령에 쓸 기본 스크롤 동작입니다.                |
+| `scrollMargin` | `number`                                          | provider `scrollMargin` | 이 명령에서 맞춰지는 쪽에 주는 여백입니다.          |
 
 ### useMessageScrollerScrollable
 
-Which edges the viewport can scroll toward, for sibling UI that needs the values
-in JavaScript. Prefer the `data-scrollable` attribute for styling the scroller
-itself.
+뷰포트가 어느 쪽으로 스크롤할 수 있는지 알려 줍니다. 옆에 있는 UI 가 이 값을
+자바스크립트로 써야 할 때 쓰세요. 스크롤러 자체를 꾸밀 때는 `data-scrollable`
+속성을 쓰는 편이 낫습니다.
 
-| Value   | Type      | Description                                                                                                                                                                     |
-| ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `start` | `boolean` | Whether the viewport can scroll toward the start. Content is hidden above (`!start` means at the top).                                                                          |
-| `end`   | `boolean` | Whether the viewport can scroll toward the end. Content is hidden below (`!end` means at the bottom). Stays `false` while follow-output is keeping the reader at the live edge. |
+| Value   | Type      | Description                                                                                                                                                           |
+| ------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `start` | `boolean` | 위쪽으로 스크롤할 수 있는지 여부입니다. 위에 가려진 내용이 있다는 뜻이며, `!start` 면 맨 위입니다.                                                                    |
+| `end`   | `boolean` | 아래쪽으로 스크롤할 수 있는지 여부입니다. 아래에 가려진 내용이 있다는 뜻이며, `!end` 면 맨 아래입니다. 따라가기가 맨 아래를 붙잡고 있는 동안에는 계속 `false` 입니다. |
 
 ### useMessageScrollerVisibility
 
-Visibility state for outline, search, and active-turn UI. It subscribes
-separately from `useMessageScrollerScrollable`, so visibility work is only paid for
-when a consumer needs it.
+개요·검색·현재 턴 UI 를 위한 노출 상태입니다. `useMessageScrollerScrollable` 과
+따로 구독하므로 필요한 곳에서만 비용을 치릅니다.
 
-| Value               | Type             | Description                                                                                    |
-| ------------------- | ---------------- | ---------------------------------------------------------------------------------------------- |
-| `currentAnchorId`   | `string \| null` | The current anchored turn, based on the last `scrollAnchor` item at or above the reading line. |
-| `visibleMessageIds` | `string[]`       | Message ids intersecting the viewport, in document order.                                      |
+| Value               | Type             | Description                                                                 |
+| ------------------- | ---------------- | --------------------------------------------------------------------------- |
+| `currentAnchorId`   | `string \| null` | 읽는 줄 위쪽에 있는 마지막 `scrollAnchor` 항목을 기준으로 한 현재 턴입니다. |
+| `visibleMessageIds` | `string[]`       | 뷰포트에 걸쳐 있는 메시지 id 를 문서 순서대로 담습니다.                     |
 
-Filter `visibleMessageIds` in your app when you need a narrower outline, such as
-user messages, anchored turns, or search hits.
+사용자 메시지·고정된 턴·검색 결과처럼 더 좁은 개요가 필요하면 앱에서
+`visibleMessageIds` 를 걸러 쓰세요.

@@ -10,7 +10,7 @@ import {
   getRegistryItem,
 } from "@/lib/registry"
 import { absoluteUrl } from "@/lib/utils"
-import { getStyle, legacyStyles, type Style } from "@/registry/_legacy-styles"
+import { getStyle, type Style } from "@/registry/_legacy-styles"
 
 import "@/app/legacy-themes.css"
 
@@ -18,7 +18,7 @@ import { ComponentPreview } from "./component-preview"
 
 export const revalidate = false
 export const dynamic = "force-static"
-export const dynamicParams = false
+export const dynamicParams = true
 
 const getCachedRegistryItem = React.cache(
   async (name: string, styleName: Style["name"]) => {
@@ -83,79 +83,10 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const { Index } = await import("@/registry/__index__")
-  // const { Index: BasesIndex } = await import("@/registry/bases/__index__")
-  const { ExamplesIndex } = await import("@/examples/__index__")
-  const params: Array<{ style: string; name: string }> = []
-
-  for (const style of legacyStyles) {
-    // Check if this is a base-prefixed style (e.g., base-nova, radix-nova).
-    const baseMatch = style.name.match(/^(base|radix|aria)-/)
-    if (baseMatch) {
-      const baseName = baseMatch[1]
-
-      // Add examples from ExamplesIndex.
-      const examples = ExamplesIndex[baseName]
-      if (examples) {
-        for (const exampleName of Object.keys(examples)) {
-          if (exampleName.startsWith("sidebar-")) {
-            params.push({
-              style: style.name,
-              name: exampleName,
-            })
-          }
-        }
-      }
-
-      // // Add UI components from BasesIndex.
-      // const baseIndex = BasesIndex[baseName]
-      // if (baseIndex) {
-      //   for (const itemName in baseIndex) {
-      //     const item = baseIndex[itemName]
-      //     if (
-      //       [
-      //         "registry:block",
-      //         "registry:component",
-      //         "registry:example",
-      //         "registry:internal",
-      //       ].includes(item.type)
-      //     ) {
-      //       params.push({
-      //         style: style.name,
-      //         name: item.name,
-      //       })
-      //     }
-      //   }
-      // }
-
-      continue
-    }
-
-    // Handle legacy styles (e.g., new-york-v4).
-    if (!Index[style.name]) {
-      continue
-    }
-
-    const styleIndex = Index[style.name]
-    for (const itemName in styleIndex) {
-      const item = styleIndex[itemName]
-      if (
-        [
-          "registry:block",
-          "registry:component",
-          "registry:example",
-          "registry:internal",
-        ].includes(item.type)
-      ) {
-        params.push({
-          style: style.name,
-          name: item.name,
-        })
-      }
-    }
-  }
-
-  return params
+  // 이 포크의 범위는 menu / sections / components 다.
+  // 이 라우트는 문서에 박힌 미리보기 iframe 이 쓰므로 남기되,
+  // 사전 생성은 끊고 요청 시 생성으로 돌린다 (빌드 시간·산출물 절감).
+  return []
 }
 
 export default async function BlockPage({

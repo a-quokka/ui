@@ -3,7 +3,6 @@
 import * as React from "react"
 import Link from "next/link"
 import { IconAlertCircle } from "@tabler/icons-react"
-import { I18nProvider } from "react-aria-components"
 
 import { cn } from "@/lib/utils"
 import {
@@ -14,7 +13,6 @@ import {
   type Translations,
 } from "@/components/language-selector"
 import { DirectionProvider as BaseDirectionProvider } from "@/registry/bases/base/ui/direction"
-import { DirectionProvider as RadixDirectionProvider } from "@/registry/bases/radix/ui/direction"
 import { Button } from "@/registry/new-york-v4/ui/button"
 import { Separator } from "@/registry/new-york-v4/ui/separator"
 import {
@@ -60,7 +58,7 @@ export function ComponentPreviewTabs({
       {...props}
     >
       {direction === "rtl" ? (
-        <LanguageProvider defaultLanguage="ar">
+        <LanguageProvider defaultLanguage="ko">
           <div className="flex h-16 items-center border-b px-4">
             <RtlLanguageSelector />
             <Popover>
@@ -72,7 +70,7 @@ export function ComponentPreviewTabs({
                     className="ml-auto size-7"
                   >
                     <IconAlertCircle />
-                    <span className="sr-only">Toggle</span>
+                    <span className="sr-only">전환</span>
                   </Button>
                 }
               ></PopoverTrigger>
@@ -82,18 +80,13 @@ export function ComponentPreviewTabs({
                 className="w-56 text-xs"
               >
                 <div>
-                  I used AI to translate the text for demonstration purposes.
-                  It&apos;s not perfect and may contain errors.
+                  예시 문구는 데모용으로 옮긴 것이라 어색하거나 틀린 부분이 있을
+                  수 있습니다.
                 </div>
                 <Separator className="-mx-2.5 w-auto!" />
-                <div data-lang="ar">
-                  لقد استخدمت الذكاء الاصطناعي لترجمة النص للأغراض التجريبية
-                  فقط. قد لا تكون الترجمة دقيقة وقد تحتوي على أخطاء.
-                </div>
-                <Separator className="-mx-2.5 w-auto!" />
-                <div data-lang="he">
-                  השתמשתי בבינה מלאכותית כדי לתרגם את הטקסט למטרות הדגמה. זה לא
-                  מושלם ויכול להכיל שגיאות.
+                <div>
+                  The sample copy is for demonstration only and may read
+                  awkwardly or contain errors.
                 </div>
               </PopoverContent>
             </Popover>
@@ -167,7 +160,7 @@ export function ComponentPreviewTabs({
                     setIsMobileCodeVisible(true)
                   }}
                 >
-                  View Code
+                  코드 보기
                 </Button>
               </div>
             </div>
@@ -183,12 +176,8 @@ const directionTranslations: Translations<Record<string, never>> = {
     dir: "ltr",
     values: {},
   },
-  ar: {
-    dir: "rtl",
-    values: {},
-  },
-  he: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {},
   },
 }
@@ -222,7 +211,7 @@ function PreviewWrapper({
 }) {
   // useTranslation handles the case when there's no LanguageProvider context.
   // It will fall back to local state with defaultLanguage.
-  const translation = useTranslation(directionTranslations, "ar")
+  const translation = useTranslation(directionTranslations, "ko")
   const dir = explicitDir ?? translation.dir
 
   return (
@@ -256,28 +245,11 @@ function DirectionProviderWrapper({
 }) {
   // useTranslation handles the case when there's no LanguageProvider context.
   // It will fall back to local state with defaultLanguage.
-  const translation = useTranslation(directionTranslations, "ar")
+  const translation = useTranslation(directionTranslations, "ko")
   const dir = explicitDir ?? translation.dir
 
-  if (base === "base") {
-    return (
-      <BaseDirectionProvider direction={dir}>{children}</BaseDirectionProvider>
-    )
-  }
-
-  if (base === "aria") {
-    return (
-      <I18nProvider
-        locale={
-          explicitDir === "ltr"
-            ? "en"
-            : (translation.locale ?? translation.language)
-        }
-      >
-        {children}
-      </I18nProvider>
-    )
-  }
-
-  return <RadixDirectionProvider dir={dir}>{children}</RadixDirectionProvider>
+  // 이 포크는 base 한 벌만 담는다.
+  return (
+    <BaseDirectionProvider direction={dir}>{children}</BaseDirectionProvider>
+  )
 }

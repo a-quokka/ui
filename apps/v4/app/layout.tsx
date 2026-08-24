@@ -9,13 +9,12 @@ import { ActiveThemeProvider } from "@/components/active-theme"
 import { Analytics } from "@/components/analytics"
 import { TailwindIndicator } from "@/components/tailwind-indicator"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/registry/bases/base/ui/sonner"
 import { TooltipProvider as BaseTooltipProvider } from "@/registry/bases/base/ui/tooltip"
-import { Toaster } from "@/registry/bases/radix/ui/sonner"
-import { TooltipProvider as RadixTooltipProvider } from "@/registry/bases/radix/ui/tooltip"
 import { Toaster as BaseToaster } from "@/styles/base-nova/ui/toast"
 
 import "@/app/globals.css"
-import "@/app/(app)/(typeset)/typeset.css"
+import "@/app/typeset.css"
 
 export const metadata: Metadata = {
   title: {
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL!),
   description: siteConfig.description,
-  keywords: ["Next.js", "React", "Tailwind CSS", "Components", "shadcn"],
+  keywords: ["Next.js", "React", "Tailwind CSS", "컴포넌트", "shadcn"],
   authors: [
     {
       name: "shadcn",
@@ -34,7 +33,7 @@ export const metadata: Metadata = {
   creator: "shadcn",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "ko_KR",
     url: process.env.NEXT_PUBLIC_APP_URL!,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -61,11 +60,6 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
-  alternates: {
-    types: {
-      "application/rss+xml": `${siteConfig.url}/rss.xml`,
-    },
-  },
 }
 
 export default function RootLayout({
@@ -75,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ko"
       suppressHydrationWarning
       className={cn(
         fontVariables,
@@ -110,11 +104,9 @@ export default function RootLayout({
           <ActiveThemeProvider>
             <NuqsAdapter>
               <BaseTooltipProvider delay={0}>
-                <RadixTooltipProvider delayDuration={0}>
-                  {children}
-                  <Toaster position="top-center" />
-                  <BaseToaster />
-                </RadixTooltipProvider>
+                {children}
+                <Toaster position="top-center" />
+                <BaseToaster />
               </BaseTooltipProvider>
             </NuqsAdapter>
             <TailwindIndicator />

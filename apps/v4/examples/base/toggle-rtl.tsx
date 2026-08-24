@@ -13,28 +13,22 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      label: "Bookmark",
+      label: "북마크",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      label: "إشارة مرجعية",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      label: "סימנייה",
+      label: "북마크",
     },
   },
 }
 
 export function ToggleRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
-    <Toggle aria-label="Toggle bookmark" size="sm" variant="outline" dir={dir}>
+    <Toggle aria-label="북마크" size="sm" variant="outline" dir={dir}>
       <BookmarkIcon className="group-aria-pressed/toggle:fill-foreground" />
       {t.label}
     </Toggle>

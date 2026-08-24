@@ -13,18 +13,14 @@ const translations: Translations = {
     dir: "ltr",
     values: {},
   },
-  ar: {
-    dir: "rtl",
-    values: {},
-  },
-  he: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {},
   },
 }
 
 export function KbdRtl() {
-  const { dir } = useTranslation(translations, "ar")
+  const { dir } = useTranslation(translations, "ko")
 
   return (
     <div className="flex flex-col items-center gap-4" dir={dir}>

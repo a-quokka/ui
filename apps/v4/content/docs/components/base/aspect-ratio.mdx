@@ -1,6 +1,6 @@
 ---
 title: Aspect Ratio
-description: Displays content within a desired ratio.
+description: 내용을 정해진 가로세로 비율에 맞춥니다.
 base: base
 component: true
 ---
@@ -27,13 +27,13 @@ npx shadcn@latest add aspect-ratio
 
 <Steps className="mb-0 pt-2">
 
-<Step>Install the following dependencies:</Step>
+<Step>아래 의존성을 설치합니다.</Step>
 
 ```bash
 npm install @base-ui/react
 ```
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="aspect-ratio"
@@ -41,7 +41,7 @@ npm install @base-ui/react
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -63,13 +63,13 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 
 ## Square
 
-A square aspect ratio component using the `ratio={1 / 1}` prop. This is useful for displaying images in a square format.
+`ratio={1 / 1}` prop을 쓴 정사각형 비율입니다. 이미지를 정사각형으로 보여 줄 때 씁니다.
 
 <ComponentPreview name="aspect-ratio-square" styleName="base-nova" />
 
 ## Portrait
 
-A portrait aspect ratio component using the `ratio={9 / 16}` prop. This is useful for displaying images in a portrait format.
+`ratio={9 / 16}` prop을 쓴 세로 비율입니다. 이미지를 세로형으로 보여 줄 때 씁니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -77,9 +77,9 @@ A portrait aspect ratio component using the `ratio={9 / 16}` prop. This is usefu
   previewClassName="h-96"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview
   styleName="base-nova"
@@ -92,11 +92,11 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### AspectRatio
 
-The `AspectRatio` component displays content within a desired ratio.
+`AspectRatio`는 원하는 비율 안에 콘텐츠를 담습니다.
 
 | Prop        | Type     | Default | Required |
 | ----------- | -------- | ------- | -------- |
 | `ratio`     | `number` | -       | Yes      |
 | `className` | `string` | -       | No       |
 
-For more information, see the [Base UI documentation](https://base-ui.com/react/components/aspect-ratio#api-reference).
+자세한 내용은 [Base UI 문서](https://base-ui.com/react/components/aspect-ratio#api-reference)를 보세요.

@@ -18,14 +18,14 @@ export function ItemIcon() {
           <ShieldAlertIcon />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>Security Alert</ItemTitle>
+          <ItemTitle>보안 알림</ItemTitle>
           <ItemDescription>
-            New login detected from unknown device.
+            모르는 기기에서 로그인이 감지됐습니다.
           </ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button size="sm" variant="outline">
-            Review
+            확인
           </Button>
         </ItemActions>
       </Item>

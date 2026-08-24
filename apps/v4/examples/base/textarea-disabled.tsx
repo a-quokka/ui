@@ -4,10 +4,10 @@ import { Textarea } from "@/styles/base-nova/ui/textarea"
 export function TextareaDisabled() {
   return (
     <Field data-disabled>
-      <FieldLabel htmlFor="textarea-disabled">Message</FieldLabel>
+      <FieldLabel htmlFor="textarea-disabled">메시지</FieldLabel>
       <Textarea
         id="textarea-disabled"
-        placeholder="Type your message here."
+        placeholder="메시지를 입력하세요."
         disabled
       />
     </Field>

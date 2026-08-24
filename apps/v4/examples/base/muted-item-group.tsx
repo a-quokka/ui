@@ -13,34 +13,34 @@ export function MutedItemGroup() {
     <ItemGroup>
       <Item variant="muted">
         <ItemContent>
-          <ItemTitle>Item 1</ItemTitle>
-          <ItemDescription>First item in muted group.</ItemDescription>
+          <ItemTitle>항목 1</ItemTitle>
+          <ItemDescription>muted 그룹의 첫 아이템입니다.</ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button variant="outline" size="sm">
-            Action
+            동작
           </Button>
         </ItemActions>
       </Item>
       <Item variant="muted">
         <ItemContent>
-          <ItemTitle>Item 2</ItemTitle>
-          <ItemDescription>Second item in muted group.</ItemDescription>
+          <ItemTitle>항목 2</ItemTitle>
+          <ItemDescription>muted 그룹의 두 번째 아이템입니다.</ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button variant="outline" size="sm">
-            Action
+            동작
           </Button>
         </ItemActions>
       </Item>
       <Item variant="muted">
         <ItemContent>
-          <ItemTitle>Item 3</ItemTitle>
-          <ItemDescription>Third item in muted group.</ItemDescription>
+          <ItemTitle>항목 3</ItemTitle>
+          <ItemDescription>muted 그룹의 세 번째 아이템입니다.</ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button variant="outline" size="sm">
-            Action
+            동작
           </Button>
         </ItemActions>
       </Item>

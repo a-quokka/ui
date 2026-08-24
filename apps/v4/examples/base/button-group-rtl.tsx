@@ -50,49 +50,33 @@ const translations: Translations = {
       trash: "Trash",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      archive: "أرشفة",
-      report: "تقرير",
-      snooze: "تأجيل",
-      markAsRead: "وضع علامة كمقروء",
-      addToCalendar: "إضافة إلى التقويم",
-      addToList: "إضافة إلى القائمة",
-      labelAs: "تصنيف كـ...",
-      personal: "شخصي",
-      work: "عمل",
-      other: "آخر",
-      trash: "سلة المهملات",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      archive: "ארכיון",
-      report: "דוח",
-      snooze: "דחה",
-      markAsRead: "סמן כנקרא",
-      addToCalendar: "הוסף ליומן",
-      addToList: "הוסף לרשימה",
-      labelAs: "תייג כ...",
-      personal: "אישי",
-      work: "עבודה",
-      other: "אחר",
-      trash: "פח",
+      archive: "보관",
+      report: "신고",
+      snooze: "나중에",
+      markAsRead: "읽음으로 표시",
+      addToCalendar: "캘린더에 추가",
+      addToList: "목록에 추가",
+      labelAs: "라벨 지정...",
+      personal: "개인",
+      work: "업무",
+      other: "기타",
+      trash: "휴지통",
     },
   },
 }
 
 export function ButtonGroupRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
   const [label, setLabel] = React.useState("personal")
 
   return (
     <div dir={dir}>
       <ButtonGroup>
         <ButtonGroup className="hidden sm:flex">
-          <Button variant="outline" size="icon" aria-label="Go Back">
+          <Button variant="outline" size="icon" aria-label="뒤로">
             <ArrowLeftIcon className="rtl:rotate-180" />
           </Button>
         </ButtonGroup>
@@ -105,11 +89,7 @@ export function ButtonGroupRtl() {
           <DropdownMenu>
             <DropdownMenuTrigger
               render={
-                <Button
-                  variant="outline"
-                  size="icon"
-                  aria-label="More Options"
-                />
+                <Button variant="outline" size="icon" aria-label="더 보기" />
               }
             >
               <MoreHorizontalIcon />

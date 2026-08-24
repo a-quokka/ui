@@ -10,9 +10,7 @@ export function CheckboxDisabled() {
           name="toggle-checkbox-disabled"
           disabled
         />
-        <FieldLabel htmlFor="toggle-checkbox-disabled">
-          Enable notifications
-        </FieldLabel>
+        <FieldLabel htmlFor="toggle-checkbox-disabled">알림 켜기</FieldLabel>
       </Field>
     </FieldGroup>
   )

@@ -21,38 +21,38 @@ import {
 export function CommandDemo() {
   return (
     <Command className="max-w-sm rounded-lg border">
-      <CommandInput placeholder="Type a command or search..." />
+      <CommandInput placeholder="명령을 입력하거나 검색하세요..." />
       <CommandList>
-        <CommandEmpty>No results found.</CommandEmpty>
-        <CommandGroup heading="Suggestions">
+        <CommandEmpty>결과가 없습니다.</CommandEmpty>
+        <CommandGroup heading="추천">
           <CommandItem>
             <Calendar />
-            <span>Calendar</span>
+            <span>캘린더</span>
           </CommandItem>
           <CommandItem>
             <Smile />
-            <span>Search Emoji</span>
+            <span>이모지 검색</span>
           </CommandItem>
           <CommandItem disabled>
             <Calculator />
-            <span>Calculator</span>
+            <span>계산기</span>
           </CommandItem>
         </CommandGroup>
         <CommandSeparator />
-        <CommandGroup heading="Settings">
+        <CommandGroup heading="설정">
           <CommandItem>
             <User />
-            <span>Profile</span>
+            <span>프로필</span>
             <CommandShortcut>⌘P</CommandShortcut>
           </CommandItem>
           <CommandItem>
             <CreditCard />
-            <span>Billing</span>
+            <span>결제</span>
             <CommandShortcut>⌘B</CommandShortcut>
           </CommandItem>
           <CommandItem>
             <Settings />
-            <span>Settings</span>
+            <span>설정</span>
             <CommandShortcut>⌘S</CommandShortcut>
           </CommandItem>
         </CommandGroup>

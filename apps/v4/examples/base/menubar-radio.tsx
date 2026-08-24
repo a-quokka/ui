@@ -20,7 +20,7 @@ export function MenubarRadio() {
   return (
     <Menubar className="w-72">
       <MenubarMenu>
-        <MenubarTrigger>Profiles</MenubarTrigger>
+        <MenubarTrigger>프로필</MenubarTrigger>
         <MenubarContent>
           <MenubarRadioGroup value={user} onValueChange={setUser}>
             <MenubarRadioItem value="andy">Andy</MenubarRadioItem>
@@ -28,17 +28,17 @@ export function MenubarRadio() {
             <MenubarRadioItem value="luis">Luis</MenubarRadioItem>
           </MenubarRadioGroup>
           <MenubarSeparator />
-          <MenubarItem inset>Edit...</MenubarItem>
-          <MenubarItem inset>Add Profile...</MenubarItem>
+          <MenubarItem inset>수정...</MenubarItem>
+          <MenubarItem inset>프로필 추가...</MenubarItem>
         </MenubarContent>
       </MenubarMenu>
       <MenubarMenu>
-        <MenubarTrigger>Theme</MenubarTrigger>
+        <MenubarTrigger>테마</MenubarTrigger>
         <MenubarContent>
           <MenubarRadioGroup value={theme} onValueChange={setTheme}>
-            <MenubarRadioItem value="light">Light</MenubarRadioItem>
-            <MenubarRadioItem value="dark">Dark</MenubarRadioItem>
-            <MenubarRadioItem value="system">System</MenubarRadioItem>
+            <MenubarRadioItem value="light">라이트</MenubarRadioItem>
+            <MenubarRadioItem value="dark">다크</MenubarRadioItem>
+            <MenubarRadioItem value="system">시스템</MenubarRadioItem>
           </MenubarRadioGroup>
         </MenubarContent>
       </MenubarMenu>

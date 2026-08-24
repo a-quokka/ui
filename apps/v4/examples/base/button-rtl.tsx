@@ -19,28 +19,19 @@ const translations: Translations = {
       loading: "Loading",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      button: "زر",
-      submit: "إرسال",
-      delete: "حذف",
-      loading: "جاري التحميل",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      button: "כפתור",
-      submit: "שלח",
-      delete: "מחק",
-      loading: "טוען",
+      button: "버튼",
+      submit: "제출",
+      delete: "삭제",
+      loading: "불러오는 중",
     },
   },
 }
 
 export function ButtonRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="flex flex-wrap items-center gap-2 md:flex-row" dir={dir}>
@@ -50,7 +41,7 @@ export function ButtonRtl() {
         {t.submit}{" "}
         <ArrowRightIcon className="rtl:rotate-180" data-icon="inline-end" />
       </Button>
-      <Button variant="outline" size="icon" aria-label="Add">
+      <Button variant="outline" size="icon" aria-label="추가">
         <PlusIcon />
       </Button>
       <Button variant="secondary" disabled>

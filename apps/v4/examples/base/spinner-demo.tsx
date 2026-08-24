@@ -14,10 +14,10 @@ export function SpinnerDemo() {
           <Spinner />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle className="line-clamp-1">Processing payment...</ItemTitle>
+          <ItemTitle className="line-clamp-1">결제 처리 중...</ItemTitle>
         </ItemContent>
         <ItemContent className="flex-none justify-end">
-          <span className="text-sm tabular-nums">$100.00</span>
+          <span className="text-sm tabular-nums">100,000원</span>
         </ItemContent>
       </Item>
     </div>

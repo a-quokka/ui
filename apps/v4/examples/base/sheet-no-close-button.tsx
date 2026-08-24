@@ -12,14 +12,13 @@ export default function SheetNoCloseButton() {
   return (
     <Sheet>
       <SheetTrigger render={<Button variant="outline" />}>
-        Open Sheet
+        시트 열기
       </SheetTrigger>
       <SheetContent showCloseButton={false}>
         <SheetHeader>
-          <SheetTitle>No Close Button</SheetTitle>
+          <SheetTitle>닫기 버튼 없음</SheetTitle>
           <SheetDescription>
-            This sheet doesn&apos;t have a close button in the top-right corner.
-            Click outside to close.
+            이 시트에는 오른쪽 위 닫기 버튼이 없습니다. 바깥을 누르면 닫힙니다.
           </SheetDescription>
         </SheetHeader>
       </SheetContent>

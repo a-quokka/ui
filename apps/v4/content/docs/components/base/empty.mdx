@@ -1,6 +1,6 @@
 ---
 title: Empty
-description: Use the Empty component to display an empty state.
+description: 보여 줄 내용이 없을 때의 화면입니다.
 base: base
 component: true
 ---
@@ -31,7 +31,7 @@ npx shadcn@latest add empty
 
 <Steps className="mb-0 pt-2">
 
-<Step>Copy and paste the following code into your project.</Step>
+<Step>아래 코드를 프로젝트에 붙여 넣습니다.</Step>
 
 <ComponentSource
   name="empty"
@@ -39,7 +39,7 @@ npx shadcn@latest add empty
   styleName="base-nova"
 />
 
-<Step>Update the import paths to match your project setup.</Step>
+<Step>import 경로를 프로젝트 구조에 맞게 고칩니다.</Step>
 
 </Steps>
 
@@ -66,18 +66,18 @@ import {
     <EmptyMedia variant="icon">
       <Icon />
     </EmptyMedia>
-    <EmptyTitle>No data</EmptyTitle>
-    <EmptyDescription>No data found</EmptyDescription>
+    <EmptyTitle>데이터 없음</EmptyTitle>
+    <EmptyDescription>데이터가 없습니다</EmptyDescription>
   </EmptyHeader>
   <EmptyContent>
-    <Button>Add data</Button>
+    <Button>데이터 추가</Button>
   </EmptyContent>
 </Empty>
 ```
 
 ## Composition
 
-Use the following composition to build an `Empty` state:
+아래 구조로 `Empty` 상태를 만듭니다.
 
 ```text
 Empty
@@ -90,7 +90,7 @@ Empty
 
 ## Outline
 
-Use the `border` utility class to create an outline empty state.
+`border` 유틸리티 클래스로 테두리가 있는 빈 상태를 만듭니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -100,7 +100,7 @@ Use the `border` utility class to create an outline empty state.
 
 ## Background
 
-Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty state.
+`bg-*`와 `bg-gradient-*` 유틸리티로 빈 상태에 배경을 넣습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -110,7 +110,7 @@ Use the `bg-*` and `bg-gradient-*` utilities to add a background to the empty st
 
 ## Avatar
 
-Use the `EmptyMedia` component to display an avatar in the empty state.
+`EmptyMedia`로 빈 상태에 아바타를 보여 줍니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -120,7 +120,7 @@ Use the `EmptyMedia` component to display an avatar in the empty state.
 
 ## Avatar Group
 
-Use the `EmptyMedia` component to display an avatar group in the empty state.
+`EmptyMedia`로 빈 상태에 아바타 그룹을 보여 줍니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -130,7 +130,7 @@ Use the `EmptyMedia` component to display an avatar group in the empty state.
 
 ## InputGroup
 
-You can add an `InputGroup` component to the `EmptyContent` component.
+`EmptyContent` 안에 `InputGroup` 컴포넌트를 넣을 수 있습니다.
 
 <ComponentPreview
   styleName="base-nova"
@@ -138,9 +138,9 @@ You can add an `InputGroup` component to the `EmptyContent` component.
   previewClassName="h-96 p-0"
 />
 
-## RTL
+## i18n
 
-To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl).
+언어를 바꾸면 컴포넌트 안의 문구가 함께 바뀝니다. 오른쪽에서 왼쪽으로 읽는 언어를 지원하려면 [RTL 설정 가이드](/docs/rtl)를 보세요.
 
 <ComponentPreview styleName="base-nova" name="empty-rtl" direction="rtl" />
 
@@ -148,7 +148,7 @@ To enable RTL support in shadcn/ui, see the [RTL configuration guide](/docs/rtl)
 
 ### Empty
 
-The main component of the empty state. Wraps the `EmptyHeader` and `EmptyContent` components.
+빈 상태의 기본 컴포넌트입니다. `EmptyHeader`와 `EmptyContent`를 감쌉니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -163,7 +163,7 @@ The main component of the empty state. Wraps the `EmptyHeader` and `EmptyContent
 
 ### EmptyHeader
 
-The `EmptyHeader` component wraps the empty media, title, and description.
+`EmptyHeader`는 미디어·제목·설명을 감쌉니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -179,7 +179,7 @@ The `EmptyHeader` component wraps the empty media, title, and description.
 
 ### EmptyMedia
 
-Use the `EmptyMedia` component to display the media of the empty state such as an icon or an image. You can also use it to display other components such as an avatar.
+`EmptyMedia`로 빈 상태의 아이콘이나 이미지를 보여 줍니다. 아바타 같은 다른 컴포넌트를 넣을 수도 있습니다.
 
 | Prop        | Type                  | Default   |
 | ----------- | --------------------- | --------- |
@@ -203,31 +203,31 @@ Use the `EmptyMedia` component to display the media of the empty state such as a
 
 ### EmptyTitle
 
-Use the `EmptyTitle` component to display the title of the empty state.
+`EmptyTitle`로 빈 상태의 제목을 보여 줍니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
 ```tsx
-<EmptyTitle>No data</EmptyTitle>
+<EmptyTitle>데이터 없음</EmptyTitle>
 ```
 
 ### EmptyDescription
 
-Use the `EmptyDescription` component to display the description of the empty state.
+`EmptyDescription`으로 빈 상태의 설명을 보여 줍니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
 | `className` | `string` |         |
 
 ```tsx
-<EmptyDescription>You do not have any notifications.</EmptyDescription>
+<EmptyDescription>받은 알림이 없습니다.</EmptyDescription>
 ```
 
 ### EmptyContent
 
-Use the `EmptyContent` component to display the content of the empty state such as a button, input or a link.
+`EmptyContent`로 버튼·입력·링크처럼 빈 상태의 내용을 보여 줍니다.
 
 | Prop        | Type     | Default |
 | ----------- | -------- | ------- |
@@ -235,6 +235,6 @@ Use the `EmptyContent` component to display the content of the empty state such 
 
 ```tsx
 <EmptyContent>
-  <Button>Add Project</Button>
+  <Button>프로젝트 추가</Button>
 </EmptyContent>
 ```

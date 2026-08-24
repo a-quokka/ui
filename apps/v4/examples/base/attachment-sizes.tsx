@@ -16,7 +16,7 @@ export function AttachmentSizes() {
           <FileTextIcon />
         </AttachmentMedia>
         <AttachmentContent>
-          <AttachmentTitle>Default attachment</AttachmentTitle>
+          <AttachmentTitle>기본 첨부</AttachmentTitle>
           <AttachmentDescription>PDF · 2.4 MB</AttachmentDescription>
         </AttachmentContent>
       </Attachment>
@@ -25,7 +25,7 @@ export function AttachmentSizes() {
           <FileTextIcon />
         </AttachmentMedia>
         <AttachmentContent>
-          <AttachmentTitle>Small attachment</AttachmentTitle>
+          <AttachmentTitle>작은 첨부</AttachmentTitle>
           <AttachmentDescription>PDF · 2.4 MB</AttachmentDescription>
         </AttachmentContent>
       </Attachment>
@@ -34,7 +34,7 @@ export function AttachmentSizes() {
           <FileTextIcon />
         </AttachmentMedia>
         <AttachmentContent>
-          <AttachmentTitle>Extra small attachment</AttachmentTitle>
+          <AttachmentTitle>아주 작은 첨부</AttachmentTitle>
         </AttachmentContent>
       </Attachment>
     </div>

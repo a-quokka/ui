@@ -25,19 +25,13 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      placeholder: "Pick a date",
+      placeholder: "날짜 선택",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      placeholder: "اختر تاريخًا",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      placeholder: "בחר תאריך",
+      placeholder: "날짜 선택",
     },
   },
 }
@@ -53,7 +47,7 @@ const dateFnsLocales = {
 } as const
 
 export function DatePickerRtl() {
-  const { dir, t, language } = useTranslation(translations, "ar")
+  const { dir, t, language } = useTranslation(translations, "ko")
   const [date, setDate] = React.useState<Date>()
 
   const dateFnsLocale =

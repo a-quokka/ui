@@ -59,52 +59,50 @@ export function DropdownMenuComplex() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Complex Menu
+        복합 메뉴
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-44">
         <DropdownMenuGroup>
-          <DropdownMenuLabel>File</DropdownMenuLabel>
+          <DropdownMenuLabel>파일</DropdownMenuLabel>
           <DropdownMenuItem>
-            <FileIcon />
-            New File
+            <FileIcon />새 파일
             <DropdownMenuShortcut>⌘N</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
-            <FolderIcon />
-            New Folder
+            <FolderIcon />새 폴더
             <DropdownMenuShortcut>⇧⌘N</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <FolderOpenIcon />
-              Open Recent
+              최근 항목 열기
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
                 <DropdownMenuGroup>
-                  <DropdownMenuLabel>Recent Projects</DropdownMenuLabel>
+                  <DropdownMenuLabel>최근 프로젝트</DropdownMenuLabel>
                   <DropdownMenuItem>
                     <FileCodeIcon />
-                    Project Alpha
+                    프로젝트 알파
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <FileCodeIcon />
-                    Project Beta
+                    프로젝트 베타
                   </DropdownMenuItem>
                   <DropdownMenuSub>
                     <DropdownMenuSubTrigger>
                       <MoreHorizontalIcon />
-                      More Projects
+                      다른 프로젝트
                     </DropdownMenuSubTrigger>
                     <DropdownMenuPortal>
                       <DropdownMenuSubContent>
                         <DropdownMenuItem>
                           <FileCodeIcon />
-                          Project Gamma
+                          프로젝트 감마
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                           <FileCodeIcon />
-                          Project Delta
+                          프로젝트 델타
                         </DropdownMenuItem>
                       </DropdownMenuSubContent>
                     </DropdownMenuPortal>
@@ -114,7 +112,7 @@ export function DropdownMenuComplex() {
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
                     <FolderSearchIcon />
-                    Browse...
+                    찾아보기...
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuSubContent>
@@ -123,18 +121,18 @@ export function DropdownMenuComplex() {
           <DropdownMenuSeparator />
           <DropdownMenuItem>
             <SaveIcon />
-            Save
+            저장
             <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <DownloadIcon />
-            Export
+            내보내기
             <DropdownMenuShortcut>⇧⌘E</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuLabel>View</DropdownMenuLabel>
+          <DropdownMenuLabel>보기</DropdownMenuLabel>
           <DropdownMenuCheckboxItem
             checked={notifications.email}
             onCheckedChange={(checked) =>
@@ -142,7 +140,7 @@ export function DropdownMenuComplex() {
             }
           >
             <EyeIcon />
-            Show Sidebar
+            사이드바 표시
           </DropdownMenuCheckboxItem>
           <DropdownMenuCheckboxItem
             checked={notifications.sms}
@@ -151,32 +149,32 @@ export function DropdownMenuComplex() {
             }
           >
             <LayoutIcon />
-            Show Status Bar
+            상태 표시줄 표시
           </DropdownMenuCheckboxItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <PaletteIcon />
-              Theme
+              테마
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
                 <DropdownMenuGroup>
-                  <DropdownMenuLabel>Appearance</DropdownMenuLabel>
+                  <DropdownMenuLabel>화면</DropdownMenuLabel>
                   <DropdownMenuRadioGroup
                     value={theme}
                     onValueChange={setTheme}
                   >
                     <DropdownMenuRadioItem value="light">
                       <SunIcon />
-                      Light
+                      라이트
                     </DropdownMenuRadioItem>
                     <DropdownMenuRadioItem value="dark">
                       <MoonIcon />
-                      Dark
+                      다크
                     </DropdownMenuRadioItem>
                     <DropdownMenuRadioItem value="system">
                       <MonitorIcon />
-                      System
+                      시스템
                     </DropdownMenuRadioItem>
                   </DropdownMenuRadioGroup>
                 </DropdownMenuGroup>
@@ -186,44 +184,42 @@ export function DropdownMenuComplex() {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuLabel>Account</DropdownMenuLabel>
+          <DropdownMenuLabel>계정</DropdownMenuLabel>
           <DropdownMenuItem>
             <UserIcon />
-            Profile
+            프로필
             <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <CreditCardIcon />
-            Billing
+            결제
           </DropdownMenuItem>
           <DropdownMenuSub>
             <DropdownMenuSubTrigger>
               <SettingsIcon />
-              Settings
+              설정
             </DropdownMenuSubTrigger>
             <DropdownMenuPortal>
               <DropdownMenuSubContent>
                 <DropdownMenuGroup>
-                  <DropdownMenuLabel>Preferences</DropdownMenuLabel>
+                  <DropdownMenuLabel>환경설정</DropdownMenuLabel>
                   <DropdownMenuItem>
                     <KeyboardIcon />
-                    Keyboard Shortcuts
+                    키보드 단축키
                   </DropdownMenuItem>
                   <DropdownMenuItem>
                     <LanguagesIcon />
-                    Language
+                    언어
                   </DropdownMenuItem>
                   <DropdownMenuSub>
                     <DropdownMenuSubTrigger>
                       <BellIcon />
-                      Notifications
+                      알림
                     </DropdownMenuSubTrigger>
                     <DropdownMenuPortal>
                       <DropdownMenuSubContent>
                         <DropdownMenuGroup>
-                          <DropdownMenuLabel>
-                            Notification Types
-                          </DropdownMenuLabel>
+                          <DropdownMenuLabel>알림 종류</DropdownMenuLabel>
                           <DropdownMenuCheckboxItem
                             checked={notifications.push}
                             onCheckedChange={(checked) =>
@@ -234,7 +230,7 @@ export function DropdownMenuComplex() {
                             }
                           >
                             <BellIcon />
-                            Push Notifications
+                            푸시 알림
                           </DropdownMenuCheckboxItem>
                           <DropdownMenuCheckboxItem
                             checked={notifications.email}
@@ -246,7 +242,7 @@ export function DropdownMenuComplex() {
                             }
                           >
                             <MailIcon />
-                            Email Notifications
+                            이메일 알림
                           </DropdownMenuCheckboxItem>
                         </DropdownMenuGroup>
                       </DropdownMenuSubContent>
@@ -257,7 +253,7 @@ export function DropdownMenuComplex() {
                 <DropdownMenuGroup>
                   <DropdownMenuItem>
                     <ShieldIcon />
-                    Privacy & Security
+                    개인정보 · 보안
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuSubContent>
@@ -268,18 +264,18 @@ export function DropdownMenuComplex() {
         <DropdownMenuGroup>
           <DropdownMenuItem>
             <HelpCircleIcon />
-            Help & Support
+            도움말 · 지원
           </DropdownMenuItem>
           <DropdownMenuItem>
             <FileTextIcon />
-            Documentation
+            문서
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
           <DropdownMenuItem variant="destructive">
             <LogOutIcon />
-            Sign Out
+            로그아웃
             <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
           </DropdownMenuItem>
         </DropdownMenuGroup>

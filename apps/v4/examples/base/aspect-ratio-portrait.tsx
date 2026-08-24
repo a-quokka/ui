@@ -10,7 +10,7 @@ export function AspectRatioPortrait() {
     >
       <Image
         src="https://avatar.vercel.sh/shadcn1"
-        alt="Photo"
+        alt="사진"
         fill
         className="rounded-lg object-cover grayscale dark:brightness-20"
       />

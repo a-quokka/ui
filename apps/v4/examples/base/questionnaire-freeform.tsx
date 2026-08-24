@@ -48,31 +48,31 @@ export function QuestionnaireFreeform() {
     >
       <QuestionnaireItem name="approach" required>
         <QuestionnaireTitle>
-          How should the agent approach this refactor?
+          이 리팩터링을 어떻게 진행할까요?
         </QuestionnaireTitle>
         <QuestionnaireDescription>
-          Choose a strategy or write a more specific instruction.
+          방식을 고르거나 더 구체적인 지시를 적어 주세요.
         </QuestionnaireDescription>
         <QuestionnaireChoices>
           <QuestionnaireChoice value="incremental">
-            Make the smallest safe change
+            가장 작고 안전한 변경만 한다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="module">
-            Refactor one module at a time
+            모듈을 하나씩 리팩터링한다
           </QuestionnaireChoice>
           <QuestionnaireChoice value="rewrite">
-            Replace the implementation completely
+            구현을 통째로 갈아엎는다
           </QuestionnaireChoice>
           <QuestionnaireInput
-            aria-label="Another refactoring approach"
-            placeholder="Describe another approach…"
+            aria-label="다른 리팩터링 방식"
+            placeholder="다른 방식을 적어 주세요…"
           />
         </QuestionnaireChoices>
         <QuestionnaireError />
       </QuestionnaireItem>
 
       <QuestionnaireActions>
-        <QuestionnaireSubmit>Use this approach</QuestionnaireSubmit>
+        <QuestionnaireSubmit>이 방식으로 진행</QuestionnaireSubmit>
       </QuestionnaireActions>
     </Questionnaire>
   )

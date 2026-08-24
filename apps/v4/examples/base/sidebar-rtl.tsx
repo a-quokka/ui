@@ -108,92 +108,55 @@ const translations: Translations = {
       travel: "Travel",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      teamName: "شركة أكمي",
-      teamPlan: "المؤسسة",
-      platform: "المنصة",
-      projects: "المشاريع",
-      viewProject: "عرض المشروع",
-      shareProject: "مشاركة المشروع",
-      deleteProject: "حذف المشروع",
-      more: "المزيد",
-      upgradeToPro: "ترقية إلى Pro",
-      account: "الحساب",
-      billing: "الفوترة",
-      notifications: "الإشعارات",
-      logOut: "تسجيل الخروج",
-      playground: "ملعب",
-      history: "السجل",
-      starred: "المميز",
-      settings: "الإعدادات",
-      models: "النماذج",
-      genesis: "جينيسيس",
-      explorer: "إكسبلورر",
-      quantum: "كوانتوم",
-      documentation: "التوثيق",
-      introduction: "مقدمة",
-      getStarted: "ابدأ",
-      tutorials: "الدروس",
-      changelog: "سجل التغييرات",
-      general: "عام",
-      team: "الفريق",
-      limits: "الحدود",
-      designEngineering: "هندسة التصميم",
-      salesMarketing: "المبيعات والتسويق",
-      travel: "السفر",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      teamName: "אקמי בע״מ",
-      teamPlan: "ארגוני",
-      platform: "פלטפורמה",
-      projects: "פרויקטים",
-      viewProject: "הצג פרויקט",
-      shareProject: "שתף פרויקט",
-      deleteProject: "מחק פרויקט",
-      more: "עוד",
-      upgradeToPro: "שדרג ל-Pro",
-      account: "חשבון",
-      billing: "חיוב",
-      notifications: "התראות",
-      logOut: "התנתק",
-      playground: "מגרש משחקים",
-      history: "היסטוריה",
-      starred: "מועדפים",
-      settings: "הגדרות",
-      models: "מודלים",
-      genesis: "ג'נסיס",
-      explorer: "אקספלורר",
-      quantum: "קוונטום",
-      documentation: "תיעוד",
-      introduction: "מבוא",
-      getStarted: "התחל",
-      tutorials: "מדריכים",
-      changelog: "יומן שינויים",
-      general: "כללי",
-      team: "צוות",
-      limits: "מגבלות",
-      designEngineering: "הנדסת עיצוב",
-      salesMarketing: "מכירות ושיווק",
-      travel: "נסיעות",
+      teamName: "Acme Inc",
+      teamPlan: "Enterprise",
+      platform: "플랫폼",
+      projects: "프로젝트",
+      viewProject: "프로젝트 보기",
+      shareProject: "프로젝트 공유",
+      deleteProject: "프로젝트 삭제",
+      more: "더 보기",
+      upgradeToPro: "Pro 로 업그레이드",
+      account: "계정",
+      billing: "결제",
+      notifications: "알림",
+      logOut: "로그아웃",
+      playground: "플레이그라운드",
+      history: "기록",
+      starred: "즐겨찾기",
+      settings: "설정",
+      models: "모델",
+      genesis: "Genesis",
+      explorer: "Explorer",
+      quantum: "Quantum",
+      documentation: "문서",
+      introduction: "소개",
+      getStarted: "시작하기",
+      tutorials: "튜토리얼",
+      changelog: "변경 기록",
+      general: "일반",
+      team: "팀",
+      limits: "한도",
+      designEngineering: "디자인 엔지니어링",
+      salesMarketing: "세일즈 · 마케팅",
+      travel: "출장",
     },
   },
 }
 
 export function SidebarRtl() {
   return (
-    <LanguageProvider defaultLanguage="ar">
+    <LanguageProvider defaultLanguage="ko">
       <AppSidebarWithProvider />
     </LanguageProvider>
   )
 }
 
 function AppSidebarWithProvider() {
-  const { language, setLanguage, dir } = useTranslation(translations, "ar")
+  const { language, setLanguage, dir } = useTranslation(translations, "ko")
 
   return (
     <DirectionProvider direction={dir}>
@@ -210,7 +173,7 @@ function AppSidebarWithProvider() {
 }
 
 function AppSidebar() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   const navMain = [
     {
@@ -265,7 +228,7 @@ function AppSidebar() {
   ]
 
   const user = {
-    name: "shadcn",
+    name: "dropshot",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   }
@@ -291,7 +254,7 @@ function SidebarContentInner({
   user,
 }: {
   dir: "ltr" | "rtl"
-  t: typeof translations.ar.values
+  t: typeof translations.en.values
   navMain: Array<{
     title: string
     url: string

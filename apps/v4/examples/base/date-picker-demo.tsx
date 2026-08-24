@@ -26,7 +26,7 @@ export function DatePickerDemo() {
           />
         }
       >
-        {date ? format(date, "PPP") : <span>Pick a date</span>}
+        {date ? format(date, "PPP") : <span>날짜 선택</span>}
         <ChevronDownIcon data-icon="inline-end" />
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">

@@ -10,10 +10,9 @@ export default function AlertBasic() {
   return (
     <Alert className="max-w-md">
       <CheckCircle2Icon />
-      <AlertTitle>Account updated successfully</AlertTitle>
+      <AlertTitle>계정 정보를 저장했습니다</AlertTitle>
       <AlertDescription>
-        Your profile information has been saved. Changes will be reflected
-        immediately.
+        프로필 정보를 저장했습니다. 변경 내용은 바로 반영됩니다.
       </AlertDescription>
     </Alert>
   )

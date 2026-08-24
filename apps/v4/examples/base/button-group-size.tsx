@@ -8,35 +8,35 @@ export default function ButtonGroupSize() {
     <div className="flex flex-col items-start gap-8">
       <ButtonGroup>
         <Button variant="outline" size="sm">
-          Small
+          작게
         </Button>
         <Button variant="outline" size="sm">
-          Button
+          버튼
         </Button>
         <Button variant="outline" size="sm">
-          Group
+          그룹
         </Button>
         <Button variant="outline" size="icon-sm">
           <PlusIcon />
         </Button>
       </ButtonGroup>
       <ButtonGroup>
-        <Button variant="outline">Default</Button>
-        <Button variant="outline">Button</Button>
-        <Button variant="outline">Group</Button>
+        <Button variant="outline">기본</Button>
+        <Button variant="outline">버튼</Button>
+        <Button variant="outline">그룹</Button>
         <Button variant="outline" size="icon">
           <PlusIcon />
         </Button>
       </ButtonGroup>
       <ButtonGroup>
         <Button variant="outline" size="lg">
-          Large
+          크게
         </Button>
         <Button variant="outline" size="lg">
-          Button
+          버튼
         </Button>
         <Button variant="outline" size="lg">
-          Group
+          그룹
         </Button>
         <Button variant="outline" size="icon-lg">
           <PlusIcon />

@@ -27,7 +27,7 @@ const translations: Translations = {
   en: {
     dir: "ltr",
     values: {
-      placeholder: "Search...",
+      placeholder: "검색...",
       results: "12 results",
       searching: "Searching...",
       saving: "Saving...",
@@ -39,40 +39,25 @@ const translations: Translations = {
       textareaDescription: "Footer positioned below the textarea.",
     },
   },
-  ar: {
-    dir: "rtl",
+  ko: {
+    dir: "ltr",
     values: {
-      placeholder: "بحث...",
-      results: "١٢ نتيجة",
-      searching: "جاري البحث...",
-      saving: "جاري الحفظ...",
-      savingChanges: "جاري حفظ التغييرات...",
-      textareaLabel: "منطقة النص",
-      textareaPlaceholder: "اكتب تعليقًا...",
-      characterCount: "٠/٢٨٠",
-      post: "نشر",
-      textareaDescription: "تذييل موضع أسفل منطقة النص.",
-    },
-  },
-  he: {
-    dir: "rtl",
-    values: {
-      placeholder: "חפש...",
-      results: "12 תוצאות",
-      searching: "מחפש...",
-      saving: "שומר...",
-      savingChanges: "שומר שינויים...",
-      textareaLabel: "אזור טקסט",
-      textareaPlaceholder: "כתוב תגובה...",
+      placeholder: "검색...",
+      results: "12개 결과",
+      searching: "검색 중...",
+      saving: "저장 중...",
+      savingChanges: "변경 사항 저장 중...",
+      textareaLabel: "Textarea",
+      textareaPlaceholder: "댓글을 남겨 보세요...",
       characterCount: "0/280",
-      post: "פרסם",
-      textareaDescription: "כותרת תחתונה ממוקמת מתחת לאזור הטקסט.",
+      post: "올리기",
+      textareaDescription: "textarea 아래에 놓인 푸터입니다.",
     },
   },
 }
 
 export function InputGroupRtl() {
-  const { dir, t } = useTranslation(translations, "ar")
+  const { dir, t } = useTranslation(translations, "ko")
 
   return (
     <div className="grid w-full max-w-sm gap-6">

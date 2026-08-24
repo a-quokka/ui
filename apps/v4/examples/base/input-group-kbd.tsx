@@ -10,7 +10,7 @@ import { Kbd } from "@/styles/base-nova/ui/kbd"
 export function InputGroupKbd() {
   return (
     <InputGroup className="max-w-sm">
-      <InputGroupInput placeholder="Search..." />
+      <InputGroupInput placeholder="검색..." />
       <InputGroupAddon>
         <SearchIcon className="text-muted-foreground" />
       </InputGroupAddon>

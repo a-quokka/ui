@@ -1,24 +1,24 @@
 ---
 title: Next.js 15 + React 19
-description: Using shadcn/ui with Next.js 15 and React 19.
+description: Next.js 15 와 React 19 에서 Dropshot UI 를 쓰는 방법입니다.
 ---
 
 <Callout className="">
-  **Update:** We have added full support for React 19 and Tailwind v4 in the
-  `latest` release. **This guide might be outdated. Proceed with caution.**
+  **업데이트:** `latest` 릴리스에서 React 19 와 Tailwind v4 를 온전히
+  지원합니다. **이 문서는 오래됐을 수 있으니 참고만 하세요.**
 </Callout>
 
 ## TL;DR
 
-If you're using `npm`, you can install shadcn/ui dependencies with a flag. The `shadcn` CLI will prompt you to select a flag when you run it. No flags required for pnpm, bun, or yarn.
+`npm` 을 쓴다면 플래그를 붙여 의존성을 설치할 수 있습니다. `shadcn` CLI 가 실행할 때 어떤 플래그를 쓸지 물어봅니다. pnpm·bun·yarn 은 플래그가 필요 없습니다.
 
-See [Upgrade Status](#upgrade-status) for the status of React 19 support for each package.
+패키지별 React 19 지원 현황은 [Upgrade Status](#upgrade-status) 를 보세요.
 
 ## What's happening?
 
-React 19 is now [rc](https://www.npmjs.com/package/react?activeTab=versions) and is [tested and supported in the latest Next.js 15 release](https://nextjs.org/blog/next-15#react-19).
+React 19 는 현재 [rc](https://www.npmjs.com/package/react?activeTab=versions) 이고 [최신 Next.js 15 릴리스에서 검증되고 지원됩니다](https://nextjs.org/blog/next-15#react-19).
 
-To support React 19, package maintainers will need to test and update their packages to include React 19 as a peer dependency. This is [already](https://github.com/radix-ui/primitives/pull/2952) [in](https://github.com/pacocoursey/cmdk/pull/318) [progress](https://github.com/emilkowalski/vaul/pull/498).
+React 19 를 지원하려면 각 패키지 관리자가 React 19 를 peer dependency 로 넣고 검증해야 합니다. [이미](https://github.com/radix-ui/primitives/pull/2952) [진행](https://github.com/pacocoursey/cmdk/pull/318) [중입니다](https://github.com/emilkowalski/vaul/pull/498).
 
 ```diff /^19.0/
 "peerDependencies": {
@@ -30,11 +30,11 @@ To support React 19, package maintainers will need to test and update their pack
 ```
 
 <Callout>
-  You can check if a package lists React 19 as a peer dependency by running
-  `npm info <package> peerDependencies`.
+  `npm info <package> peerDependencies` 로 그 패키지가 React 19 를 peer
+  dependency 로 두는지 확인할 수 있습니다.
 </Callout>
 
-In the meantime, if you are installing a package that **does not** list React 19 as a peer dependency, you will see an error message like this:
+그전까지는 React 19 를 peer dependency 로 두지 **않은** 패키지를 설치할 때 이런 오류가 뜹니다.
 
 ```bash
 npm error code ERESOLVE
@@ -47,14 +47,14 @@ npm error   react@"19.0.0-rc-69d4b800-20241021" from the root project
 ```
 
 <Callout>
-  **Note:** This is npm only. PNPM and Bun will only show a silent warning.
+  **참고:** npm 에서만 그렇습니다. PNPM 과 Bun 은 조용히 경고만 띄웁니다.
 </Callout>
 
 ## How to fix this
 
 ### Solution 1: `--force` or `--legacy-peer-deps`
 
-You can force install a package with the `--force` or the `--legacy-peer-deps` flag.
+`--force` 나 `--legacy-peer-deps` 플래그로 강제 설치할 수 있습니다.
 
 ```bash
 npm i <package> --force
@@ -62,19 +62,18 @@ npm i <package> --force
 npm i <package> --legacy-peer-deps
 ```
 
-This will install the package and ignore the peer dependency warnings.
+그러면 peer dependency 경고를 무시하고 설치합니다.
 
 <Accordion type="multiple">
   <AccordionItem value="flags">
     <AccordionTrigger className="font-medium">
-      What do the `--force` and `--legacy-peer-deps` flag do?
+      `--force` 와 `--legacy-peer-deps` 는 무슨 일을 하나요?
     </AccordionTrigger>
     <AccordionContent className="[&_ul]:mt-0">
 
-      - `--force`: Ignores and overrides any dependency conflicts, forcing the
-        installation of packages.
-      - `--legacy-peer-deps`: Skips strict peer dependency checks, allowing
-        installation of packages with unmet peer dependencies to avoid errors.
+      - `--force`: 의존성 충돌을 무시하고 덮어써서 설치를 강행합니다.
+      - `--legacy-peer-deps`: 엄격한 peer dependency 검사를 건너뛰어, 조건을
+        못 맞춘 패키지도 오류 없이 설치되게 합니다.
 
     </AccordionContent>
 
@@ -83,24 +82,23 @@ This will install the package and ignore the peer dependency warnings.
 
 ### Solution 2: Use React 18
 
-You can downgrade `react` and `react-dom` to version 18, which is compatible with the package you are installing and upgrade when the dependency is updated.
+설치하려는 패키지와 맞는 18 버전으로 `react` 와 `react-dom` 을 내렸다가, 의존성이 갱신되면 다시 올리는 방법도 있습니다.
 
 ```bash
 npm i react@18 react-dom@18
 ```
 
-Whichever solution you choose, make sure you test your app thoroughly to ensure
-there are no regressions.
+어느 쪽을 고르든 되돌아간 부분이 없는지 앱을 꼼꼼히 확인하세요.
 
-## Using shadcn/ui on Next.js 15
+## Using Dropshot UI on Next.js 15
 
 ### Using pnpm, bun, or yarn
 
-Follow the instructions in the [installation guide](/docs/installation/next) to install shadcn/ui. No flags are needed.
+[설치 문서](/docs/installation/next)를 따라 Dropshot UI 를 설치하세요. 플래그는 필요 없습니다.
 
 ### Using npm
 
-When you run `npx shadcn@latest init -d`, you will be prompted to select an option to resolve the peer dependency issues.
+`npx shadcn@latest init -d` 를 돌리면 peer dependency 문제를 어떻게 풀지 물어봅니다.
 
 ```bash
 It looks like you are using React 19.
@@ -111,20 +109,20 @@ Some packages may fail to install due to peer dependency issues (see https://ui.
     Use --legacy-peer-deps
 ```
 
-You can then run the command with the flag you choose.
+그다음 고른 플래그를 붙여 명령을 돌리면 됩니다.
 
 ## Adding components
 
-The process for adding components is the same as above. Select a flag to resolve the peer dependency issues.
+컴포넌트를 추가하는 과정도 위와 같습니다. peer dependency 문제를 풀 플래그를 고르세요.
 
-**Remember to always test your app after installing new dependencies.**
+**새 의존성을 설치한 뒤에는 반드시 앱을 확인하세요.**
 
 ## Upgrade Status
 
-To make it easy for you to track the progress of the upgrade, here is a table with the React 19 support status for the shadcn/ui dependencies.
+업그레이드 진행 상황을 보기 쉽도록 Dropshot UI 의존성별 React 19 지원 현황을 표로 정리했습니다.
 
-- ✅ - Works with React 19 using npm, pnpm, and bun.
-- 🚧 - Works with React 19 using pnpm and bun. Requires flag for npm. PR is in progress.
+- ✅ — npm·pnpm·bun 모두에서 React 19 와 동작합니다.
+- 🚧 — pnpm·bun 에서는 동작하고 npm 은 플래그가 필요합니다. PR 이 진행 중입니다.
 
 | Package                                                                            | Status | Note                                                        |
 | ---------------------------------------------------------------------------------- | ------ | ----------------------------------------------------------- |
@@ -143,15 +141,15 @@ To make it easy for you to track the progress of the upgrade, here is a table wi
 | [@radix-ui/react-icons](https://www.npmjs.com/package/@radix-ui/react-icons)       | ✅     | See [PR #194](https://github.com/radix-ui/icons/pull/194)   |
 | [cmdk](https://www.npmjs.com/package/cmdk)                                         | ✅     |                                                             |
 
-If you have any questions, please [open an issue](https://github.com/shadcn/ui/issues) on GitHub.
+궁금한 점이 있으면 GitHub 에 [이슈를 남겨 주세요](https://github.com/shadcn/ui/issues).
 
 ## Recharts
 
-To use recharts with React 19, you will need to override the `react-is` dependency.
+React 19 에서 recharts 를 쓰려면 `react-is` 의존성을 덮어써야 합니다.
 
 <Steps>
 
-<Step>Add the following to your `package.json`</Step>
+<Step>`package.json` 에 아래를 추가하세요.</Step>
 
 ```json title="package.json"
 "overrides": {
@@ -159,8 +157,8 @@ To use recharts with React 19, you will need to override the `react-is` dependen
 }
 ```
 
-Note: the `react-is` version needs to match the version of React 19 you are using. The above is an example.
+참고: `react-is` 버전은 쓰고 있는 React 19 버전과 맞아야 합니다. 위는 예시입니다.
 
-<Step>Run `npm install --legacy-peer-deps`</Step>
+<Step>`npm install --legacy-peer-deps` 를 돌립니다.</Step>
 
 </Steps>

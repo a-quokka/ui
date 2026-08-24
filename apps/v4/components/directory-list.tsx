@@ -37,11 +37,9 @@ import { Skeleton } from "@/styles/base-nova/ui/skeleton"
 import { SearchDirectory } from "./directory-search"
 
 function getHomepageUrl(homepage: string) {
-  const url = new URL(homepage)
-  url.searchParams.set("utm_source", "ui.shadcn.com")
-  url.searchParams.set("utm_medium", "referral")
-  url.searchParams.set("utm_campaign", "directory")
-  return url.toString()
+  // 포크에서 나간 클릭이 원본 사이트 유입으로 집계되지 않도록
+  // utm_source=ui.shadcn.com 계열 파라미터를 붙이지 않는다.
+  return new URL(homepage).toString()
 }
 
 function getPageHref(pathname: string, query: string, page: number) {
@@ -125,12 +123,12 @@ function DirectoryPaginationLink({
 
 function DirectoryPaginationPrevious({
   className,
-  text = "Previous",
+  text = "이전",
   ...props
 }: DirectoryPaginationLinkProps & { text?: string }) {
   return (
     <DirectoryPaginationLink
-      aria-label="Go to previous page"
+      aria-label="이전 페이지로"
       size="default"
       className={cn("pl-1.5!", className)}
       {...props}
@@ -143,12 +141,12 @@ function DirectoryPaginationPrevious({
 
 function DirectoryPaginationNext({
   className,
-  text = "Next",
+  text = "다음",
   ...props
 }: DirectoryPaginationLinkProps & { text?: string }) {
   return (
     <DirectoryPaginationLink
-      aria-label="Go to next page"
+      aria-label="다음 페이지로"
       size="default"
       className={cn("pr-1.5!", className)}
       {...props}

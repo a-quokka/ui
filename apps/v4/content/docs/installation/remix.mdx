@@ -1,11 +1,11 @@
 ---
 title: Remix
-description: Install and configure shadcn/ui for Remix.
+description: Remix 에 Dropshot UI 를 설치하고 설정합니다.
 ---
 
 <Callout>
 
-**Note:** This guide is for Remix. For React Router, see the [React Router](/docs/installation/react-router) guide.
+**참고:** 이 문서는 Remix 기준입니다. React Router 는 [React Router](/docs/installation/react-router) 문서를 보세요.
 
 </Callout>
 
@@ -13,7 +13,7 @@ description: Install and configure shadcn/ui for Remix.
 
 ### Create project
 
-Start by creating a new Remix project using `create-remix`:
+`create-remix` 로 새 Remix 프로젝트를 만드는 것부터 시작합니다.
 
 ```bash
 npx create-remix@latest my-app
@@ -21,7 +21,7 @@ npx create-remix@latest my-app
 
 ### Run the CLI
 
-Run the `shadcn` init command to set up your project:
+`shadcn` init 명령으로 프로젝트를 설정합니다.
 
 ```bash
 npx shadcn@latest init
@@ -29,13 +29,13 @@ npx shadcn@latest init
 
 ### That's it
 
-You can now start adding components to your project.
+이제 프로젝트에 컴포넌트를 추가할 수 있습니다.
 
 ```bash
 npx shadcn@latest add button
 ```
 
-The command above will add the `Button` component to your project. You can then import it like this:
+위 명령으로 `Button` 컴포넌트가 프로젝트에 추가됩니다. 이렇게 가져다 쓰면 됩니다.
 
 ```tsx {1,6} showLineNumbers title="app/routes/index.tsx"
 import { Button } from "~/components/ui/button"
@@ -43,7 +43,7 @@ import { Button } from "~/components/ui/button"
 export default function Home() {
   return (
     <div>
-      <Button>Click me</Button>
+      <Button>눌러 보세요</Button>
     </div>
   )
 }
