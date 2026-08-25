@@ -104,6 +104,28 @@ Dropshot 은 blue·red·green·pink·orange 를 각 9단계로 정의해 두었�
 채움" 이다. 슬라이더는 값을 고르는 입력 컨트롤이라 체크박스·스위치처럼 선택
 상태를 나타내는 primary 가 맞다. 진행 표시와 입력 컨트롤을 나눠 본 판단이다.
 
+### A-9. 모션 — Dropshot 값으로
+
+값은 `apps/aiStudio/web/tailwind.config.ts` 에서 그대로 가져왔다.
+
+| 토큰 | 값 |
+|---|---|
+| `--ease-dropshot` | `cubic-bezier(0.4, 0, 0.2, 1)` |
+| `--animate-grow-in` | `grow-in 225ms` · scale .75 → 1 + fade |
+| `--animate-skeleton` | `skeleton 1.5s ease-in infinite` |
+
+떠 있는 면이 열릴 때의 타이밍을 `duration-100` 에서 `duration-225 ease-dropshot`
+으로 바꿨다. 스켈레톤은 Tailwind 기본 `animate-pulse`(불투명도만 깜빡임)에서
+Dropshot 것(왼쪽에서 오른쪽으로 훑고 지나가는 빛)으로 바꿨다.
+
+**`grow-in` 의 scale 0.75 는 적용하지 않았다.** shadcn 의 `zoom-in-95` 를 두었다.
+0.75 에서 커지는 동작은 드롭다운마다 튀는 느낌이 강해 문서 사이트에서는 과하다.
+타이밍과 이징만 Dropshot 값으로 맞췄다. 제품 화면을 그릴 때는 `animate-grow-in`
+토큰이 준비돼 있으니 그대로 쓰면 된다.
+
+> **확인이 필요한 것:** 이 판단은 되돌리기 쉽다. 원본 그대로 가려면
+> `zoom-in-95` 를 `zoom-in-75` 로 바꾸면 된다.
+
 ## B. 처리가 끝난 것
 
 ### B-1. Vercel 빌드 메모리 초과 — 해결
