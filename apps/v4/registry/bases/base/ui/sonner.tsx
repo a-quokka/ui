@@ -20,7 +20,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
             hugeicons="CheckmarkCircle02Icon"
             phosphor="CheckCircleIcon"
             remixicon="RiCheckboxCircleLine"
-            className="size-4"
+            className="size-4 text-success-emphasis"
           />
         ),
         info: (
@@ -30,7 +30,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
             hugeicons="InformationCircleIcon"
             phosphor="InfoIcon"
             remixicon="RiInformationLine"
-            className="size-4"
+            className="size-4 text-info-emphasis"
           />
         ),
         warning: (
@@ -40,7 +40,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
             hugeicons="Alert02Icon"
             phosphor="WarningIcon"
             remixicon="RiErrorWarningLine"
-            className="size-4"
+            className="size-4 text-warning-emphasis"
           />
         ),
         error: (
@@ -50,7 +50,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
             hugeicons="MultiplicationSignCircleIcon"
             phosphor="XCircleIcon"
             remixicon="RiCloseCircleLine"
-            className="size-4"
+            className="size-4 text-destructive-emphasis"
           />
         ),
         loading: (

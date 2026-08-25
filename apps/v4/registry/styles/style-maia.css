@@ -55,7 +55,7 @@
   }
 
   .cn-alert-variant-destructive {
-    @apply text-destructive bg-card *:data-[slot=alert-description]:text-destructive/90 *:[svg]:text-current;
+    @apply bg-destructive-surface text-destructive-emphasis *:data-[slot=alert-description]:text-destructive-emphasis/90 *:[svg]:text-current;
   }
 
   .cn-alert-title {
@@ -109,7 +109,7 @@
   }
 
   .cn-badge-variant-destructive {
-    @apply bg-destructive/10 [a]:hover:bg-destructive/20 focus-visible:ring-destructive/20 dark:focus-visible:ring-destructive/40 text-destructive dark:bg-destructive/20;
+    @apply bg-destructive-surface text-destructive-emphasis [a]:hover:bg-destructive-surface/80 focus-visible:ring-destructive/40;
   }
 
   .cn-badge-variant-ghost {
@@ -954,7 +954,7 @@
   }
 
   .cn-progress-indicator {
-    @apply bg-primary;
+    @apply bg-progress;
   }
 
   .cn-progress-label {
