@@ -44,7 +44,7 @@ function ContextMenuContent({
   return (
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Positioner
-        className="isolate z-151 outline-none"
+        className="isolate z-50 outline-none"
         align={align}
         alignOffset={alignOffset}
         side={side}
@@ -53,7 +53,7 @@ function ContextMenuContent({
         <ContextMenuPrimitive.Popup
           data-slot="context-menu-content"
           className={cn(
-            "cn-context-menu-content cn-context-menu-content-logical cn-menu-target cn-menu-translucent z-151 max-h-(--available-height) origin-(--transform-origin) overflow-x-hidden overflow-y-auto outline-none",
+            "cn-context-menu-content cn-context-menu-content-logical cn-menu-target cn-menu-translucent z-50 max-h-(--available-height) origin-(--transform-origin) overflow-x-hidden overflow-y-auto outline-none",
             className
           )}
           {...props}

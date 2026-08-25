@@ -71,57 +71,19 @@
 @custom-variant dark (&:is(.dark *));
 @custom-variant fixed (&:is(.layout-fixed *));
 
-@keyframes grow-in {
-  0% {
-    transform: scale(0.75);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes skeleton {
-  0% {
-    transform: translateX(10%);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.25;
-  }
-  50% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0.5;
-  }
-  100% {
-    transform: translateX(110%);
-    opacity: 0;
-  }
-}
-
 @theme inline {
   --breakpoint-3xl: 1600px;
   --breakpoint-4xl: 2000px;
   --font-sans: var(--font-sans);
   --font-heading: var(--font-heading);
   --font-mono: var(--font-mono);
-  /* 드롭샷 반경 — rounded-N = N × 4px. 배수 계산이 아니라 실제 사용 값이다. */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
-  --radius-2xl: 16px;
-  --radius-3xl: 20px;
-  --radius-4xl: 24px;
-
-  /* Dropshot 에는 그림자가 둘뿐이다. 크기별 사다리가 아니라 쓰임새로 나뉜다.
-     darkShadow — 모달·토스트·드롭다운 / dropBox — 툴팁 */
-  --shadow-dark: 0px 4px 20px 0px rgb(0 0 0 / 0.4);
-  --shadow-drop-box:
-    2px 6px 12px 0px rgb(0 0 0 / 0.12), 0px 0px 4px 0px rgb(0 0 0 / 0.12);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -130,29 +92,6 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-primary-hover: var(--primary-hover);
-  --color-primary-active: var(--primary-active);
-  --color-primary-emphasis: var(--primary-emphasis);
-  --color-secondary-hover: var(--secondary-hover);
-  --color-destructive-hover: var(--destructive-hover);
-  --color-destructive-active: var(--destructive-active);
-  --color-destructive-surface: var(--destructive-surface);
-  --color-destructive-emphasis: var(--destructive-emphasis);
-  --color-success: var(--success);
-  --color-success-surface: var(--success-surface);
-  --color-success-emphasis: var(--success-emphasis);
-  --color-info: var(--info);
-  --color-info-surface: var(--info-surface);
-  --color-info-emphasis: var(--info-emphasis);
-  --color-progress: var(--progress);
-  --color-warning: var(--warning);
-  --color-warning-surface: var(--warning-surface);
-  --color-warning-emphasis: var(--warning-emphasis);
-
-  /* Dropshot 모션. apps/aiStudio/web/tailwind.config.ts 의 값 그대로다. */
-  --ease-dropshot: cubic-bezier(0.4, 0, 0.2, 1);
-  --animate-grow-in: grow-in 225ms cubic-bezier(0.4, 0, 0.2, 1);
-  --animate-skeleton: skeleton 1.5s ease-in infinite;
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -187,139 +126,95 @@
   --color-selection-foreground: var(--selection-foreground);
 }
 
-/* 라이트 — 드롭샷은 다크 전용이라 공식 라이트 팔레트가 없다.
-   같은 grayscale 램프를 뒤집어 파생한 값이고 primary·차트만 원본을 쓴다.
-   확정값이 아니다. NOTES-DECISIONS.md B-3 참고. */
 :root {
   --font-sans:
     "Dropshot Sans", "Apple SD Gothic Neo", "Malgun Gothic", system-ui,
     -apple-system, "Segoe UI", sans-serif;
   --font-heading: var(--font-sans);
-  --radius: 8px;
-  --background: #ffffff;
-  --foreground: #15191e;
-  --card: #ffffff;
-  --card-foreground: #15191e;
-  --popover: #ffffff;
-  --popover-foreground: #15191e;
-  --primary: #6633ff;
-  --primary-foreground: #ffffff;
-  /* Dropshot primary 스케일. shadcn 은 불투명도로 상태를 만들지만
-     Dropshot 은 단계로 만든다. 어두운 면에서 채도가 유지된다. */
-  --primary-hover: #5a20f1;
-  --primary-active: #4d07d8;
-  --primary-emphasis: #7f5cff;
-  --secondary: #f0f3f6;
-  --secondary-hover: #e5e8ed;
-  --secondary-foreground: #15191e;
-  --muted: #f4f7f9;
-  --muted-foreground: #5e656f;
-  --accent: #f0f3f6;
-  --accent-foreground: #15191e;
-  --destructive: #df1b36;
-  --destructive-hover: #e62e48;
-  --destructive-active: #eb5d70;
-  --destructive-surface: #fce8eb;
-  --destructive-emphasis: #c91831;
-  --success: #1eb466;
-  --success-surface: #e7fbf1;
-  --success-emphasis: #178c4f;
-  --info: #006ee6;
-  --info-surface: #e5f2ff;
-  --info-emphasis: #0055b3;
-  --progress: #006ee6;
-  --warning: #e35107;
-  --warning-surface: #feefe7;
-  --warning-emphasis: #b03f06;
-  --destructive-foreground: #ffffff;
-  --border: #e5e8ed;
-  --input: #e5e8ed;
-  --ring: #6633ff;
-  --chart-1: #6633ff;
-  --chart-2: #007aff;
-  --chart-3: #21c871;
-  --chart-4: #f03ea0;
-  --chart-5: #f75c0d;
-  --sidebar: #f8fafc;
-  --sidebar-foreground: #15191e;
-  --sidebar-primary: #6633ff;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #f0f3f6;
-  --sidebar-accent-foreground: #15191e;
-  --sidebar-border: #e5e8ed;
-  --sidebar-ring: #6633ff;
-  --surface: #f8fafc;
-  --surface-foreground: #15191e;
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0% 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0% 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0% 0 0);
+  --primary: oklch(0% 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.97 0.01 17);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0% 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  --surface: oklch(0.98 0 0);
+  --surface-foreground: var(--foreground);
   --code: var(--surface);
   --code-foreground: var(--surface-foreground);
-  --code-highlight: #f0f3f6;
-  --code-number: #5e656f;
-  --selection: #6633ff;
-  --selection-foreground: #ffffff;
+  --code-highlight: oklch(0.96 0 0);
+  --code-number: oklch(0.56 0 0);
+  --selection: oklch(0% 0 0);
+  --selection-foreground: oklch(1 0 0);
 }
 
-/* 다크 — 드롭샷 원본 값이다. history/docs/TOKEN-MAP.md 의 배정을 그대로 옮겼다. */
 .dark {
-  --background: #15191e;
-  --foreground: #e5e8ed;
-  --card: #1f242a;
-  --card-foreground: #e5e8ed;
-  --popover: #2a2f36;
-  --popover-foreground: #e5e8ed;
-  --primary: #6633ff;
-  --primary-foreground: #ffffff;
-  /* Dropshot primary 스케일. shadcn 은 불투명도로 상태를 만들지만
-     Dropshot 은 단계로 만든다. 어두운 면에서 채도가 유지된다. */
-  --primary-hover: #5a20f1;
-  --primary-active: #4d07d8;
-  --primary-emphasis: #7f5cff;
-  --secondary: #2a2f36;
-  --secondary-hover: #393e46;
-  --secondary-foreground: #ffffff;
-  --muted: #2a2f36;
-  --muted-foreground: #8e97a4;
-  --accent: #393e46;
-  --accent-foreground: #f0f3f6;
-  --destructive: #e62e48;
-  --destructive-hover: #ea4855;
-  --destructive-active: #ed5f6b;
-  --destructive-surface: #3a070e;
-  --destructive-emphasis: #eb5d70;
-  --success: #29dc7f;
-  --success-surface: #072817;
-  --success-emphasis: #59e49b;
-  --info: #68adff;
-  --info-surface: #00254c;
-  --info-emphasis: #4da2ff;
-  --progress: #1a87ff;
-  --warning: #f86c25;
-  --warning-surface: #321202;
-  --warning-emphasis: #f98d56;
-  --destructive-foreground: #ffffff;
-  --border: #393e46;
-  --input: #393e46;
-  --ring: #6633ff;
-  --chart-1: #6633ff;
-  --chart-2: #1a87ff;
-  --chart-3: #29dc7f;
-  --chart-4: #f249aa;
-  --chart-5: #f86c25;
-  --sidebar: #1f242a;
-  --sidebar-foreground: #e5e8ed;
-  --sidebar-primary: #6633ff;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #2a2f36;
-  --sidebar-accent-foreground: #ffffff;
-  --sidebar-border: #393e46;
-  --sidebar-ring: #6633ff;
-  --surface: #1f242a;
-  --surface-foreground: #e5e8ed;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.371 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.58 0.22 27);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: var(--color-blue-300);
+  --chart-2: var(--color-blue-500);
+  --chart-3: var(--color-blue-600);
+  --chart-4: var(--color-blue-700);
+  --chart-5: var(--color-blue-800);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.439 0 0);
+  --surface: oklch(0.2 0 0);
+  --surface-foreground: oklch(0.708 0 0);
   --code: var(--surface);
   --code-foreground: var(--surface-foreground);
-  --code-highlight: #2a2f36;
-  --code-number: #8e97a4;
-  --selection: #6633ff;
-  --selection-foreground: #ffffff;
+  --code-highlight: oklch(0.27 0 0);
+  --code-number: oklch(0.72 0 0);
+  --selection: oklch(0.922 0 0);
+  --selection-foreground: oklch(0.205 0 0);
 }
 
 @layer base {
@@ -360,176 +255,14 @@
   button:active {
     @apply opacity-60 md:opacity-100;
   }
-}
 
-/* 드롭샷 타이포 램프 20개 — 크기·행간·굵기·자간이 한 클래스에 묶여 있어
-   text-sm 류 조합으로 대체되지 않는다. 유틸리티로만 노출하고 컴포넌트에는
-   아직 적용하지 않았다. NOTES-DECISIONS.md B-4 참고. */
+  [data-lang="ar"] {
+    font-family: var(--font-ar);
+  }
 
-@utility font-headline1 {
-  font-size: 46px;
-  line-height: 64px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
-
-@utility font-headline2 {
-  font-size: 42px;
-  line-height: 60px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
-
-@utility font-headline3 {
-  font-size: 34px;
-  line-height: 52px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
-
-@utility font-headline4 {
-  font-size: 28px;
-  line-height: 40px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
-
-@utility font-headline5 {
-  font-size: 24px;
-  line-height: 34px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
-
-@utility font-headline6 {
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
-
-@utility font-headline7 {
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
-}
-
-@utility font-subtitle1 {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 700;
-  letter-spacing: -0.1px;
-}
-
-@utility font-subtitle2 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 700;
-  letter-spacing: -0.1px;
-}
-
-@utility font-subtitle3 {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  letter-spacing: -0.1px;
-}
-
-@utility font-subtitle4 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 500;
-  letter-spacing: -0.1px;
-}
-
-@utility font-body1 {
-  font-size: 16px;
-  line-height: 26px;
-  font-weight: 400;
-  letter-spacing: -0.2px;
-}
-
-@utility font-body2 {
-  font-size: 15px;
-  line-height: 25px;
-  font-weight: 400;
-  letter-spacing: -0.2px;
-}
-
-@utility font-body3 {
-  font-size: 14px;
-  line-height: 24px;
-  font-weight: 400;
-  letter-spacing: -0.2px;
-}
-
-@utility font-button1 {
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 500;
-  letter-spacing: 0px;
-}
-
-@utility font-button2 {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 500;
-  letter-spacing: 0px;
-}
-
-@utility font-button3 {
-  font-size: 14px;
-  line-height: 22px;
-  font-weight: 500;
-  letter-spacing: 0px;
-}
-
-@utility font-button4 {
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: 500;
-  letter-spacing: 0px;
-}
-
-@utility font-caption1 {
-  font-size: 12px;
-  line-height: 20px;
-  font-weight: 400;
-  letter-spacing: -0.1px;
-}
-
-@utility font-caption2 {
-  font-size: 10px;
-  line-height: 18px;
-  font-weight: 400;
-  letter-spacing: -0.1px;
-}
-
-/* 드롭샷 원본 반경 이름 — rounded-N = N × 4px */
-
-@utility rounded-1 {
-  border-radius: 4px;
-}
-
-@utility rounded-2 {
-  border-radius: 8px;
-}
-
-@utility rounded-3 {
-  border-radius: 12px;
-}
-
-@utility rounded-4 {
-  border-radius: 16px;
-}
-
-@utility rounded-5 {
-  border-radius: 20px;
-}
-
-@utility rounded-6 {
-  border-radius: 24px;
+  [data-lang="he"] {
+    font-family: var(--font-he);
+  }
 }
 
 @utility border-grid {
@@ -550,40 +283,6 @@
 
 @utility container {
   @apply mx-auto max-w-[1400px] px-4 3xl:max-w-screen-2xl lg:px-8;
-}
-
-@utility scroll-style {
-  /* Dropshot scrollBar.ts — 6px, thumb #4D4D4D r3 */
-  &::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #4d4d4d;
-    border-radius: 3px;
-  }
-  scrollbar-width: thin;
-  scrollbar-color: #4d4d4d transparent;
-}
-
-@utility scroll-style-dropdown {
-  /* 4px, thumb #393E46 r2 — 드롭다운처럼 좁은 면에서 쓴다 */
-  &::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: #393e46;
-    border-radius: 2px;
-  }
-  scrollbar-width: thin;
-  scrollbar-color: #393e46 transparent;
 }
 
 @utility no-scrollbar {
