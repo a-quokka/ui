@@ -3,6 +3,65 @@
 > `main` 에 머지 완료(`98b3f4b`). 프로덕션 배포가 붙어 있다.
 > 프리뷰: https://shadcn-ui-fork-git-trim-menu-sections-20e2c9-a-quokkas-projects.vercel.app
 
+## 0. 색·UI 전면 롤백 — 2026-08-25
+
+**지시:** 한국어 번역만 남기고 색 변경과 UI 변경을 전부 되돌린다.
+기준은 upstream 커밋 `ac60ef5` 다.
+
+### 되돌린 것
+
+| 항목 | 어디 |
+|---|---|
+| 색 팔레트 전체 (라이트·다크·차트·시맨틱·상호작용 상태) | `apps/v4/app/globals.css` |
+| 반경 스케일 — `8px` 고정에서 `calc(var(--radius) * n)` 으로 | 같음 |
+| 타이포 램프 20개 `@utility` | 같음 |
+| 그림자 두 종 (`shadow-dark`·`shadow-drop-box`) | 같음 · 컴포넌트 |
+| 모션 (`duration-225 ease-dropshot`·`grow-in`·스켈레톤) | 같음 · 컴포넌트 |
+| z-index 층 (toast 200·modal 150·gnb 100) → 전부 `z-50` | 같음 · 컴포넌트 143곳 |
+| 스크롤바 유틸리티 `.scroll-style` | 같음 |
+| 버튼 pill `rounded-[69px]` (nova·rhea 각 4곳) | `registry/styles/style-*.css` |
+| 스타일 8벌 전체 | 같음 — upstream 그대로 원복 |
+| 레지스트리 컴포넌트 35개 | `registry/bases/base/ui`·`registry/new-york-v4/ui` |
+
+### 남긴 것
+
+| 항목 | 이유 |
+|---|---|
+| 한국어 번역 전부 | 이번 롤백의 대상이 아니다 |
+| Dropshot Sans 세 웨이트 | 사용자 결정. `@font-face` 와 `--font-sans`·`--font-heading` 만 남겼다 |
+| 제품 이름 Dropshot UI | 사용자 결정. 색도 UI 도 아니다 |
+| 기본 테마 `dark` | 사용자 결정 |
+| 인프라 수정 전부 | 되돌리면 배포가 깨진다 — B-1·B-2·B-4·B-7 참고 |
+
+### 지운 것
+
+Foundation 3페이지(Colors·Typography·Icons)와 Brand 1페이지(Logos), 그리고 이
+페이지들만 쓰던 컴포넌트 `dropshot-icons.tsx`·`dropshot-icon-grid.tsx`·
+`brand-asset.tsx`. 되돌린 토큰을 문서화하던 페이지라 그대로 두면 틀린 문서가 된다.
+페이지 132 → 128.
+
+### 검증
+
+| 항목 | 결과 |
+|---|---|
+| `npx tsc --noEmit` | 통과 |
+| `npx next build` | 통과 · 128페이지 |
+| 렌더된 HTML 의 Dropshot 디자인 토큰 | 0 |
+| 빌드된 CSS 의 드롭샷 하드코딩 색 | 0 |
+| 소스 전체의 upstream 밖 색 리터럴 | 0 |
+| Dropshot Sans woff2 세 웨이트 | 살아 있음 |
+| `foundation`·`brand` 로 가는 죽은 링크 | 0 |
+
+### 이 저장소에 대해 새로 알아낸 것
+
+**`registry:build` 는 `bun` 없이도 돈다.** `package.json` 이 `bun run` 으로
+적혀 있어 직전 세션들이 "생성물을 손으로 맞춰야 한다" 고 적어 두었는데, 루트의
+`tsx` 로 그대로 실행된다. 생성물을 손으로 맞출 필요가 없다.
+
+```bash
+cd apps/v4 && ../../node_modules/.bin/tsx ./scripts/build-registry.mts --style all
+```
+
 ## A. 결정된 것
 
 ### A-1. 프로덕션 URL — `main` 에 머지하기로
@@ -36,6 +95,8 @@ Vercel 프로덕션 브랜치를 따로 두는 쪽이 나았다.
 
 ### A-3. 차트 팔레트 — 임시값이 아니었다
 
+> **롤백됨 (0절).** 차트 색은 upstream 값으로 돌아갔다.
+
 한동안 "임의 배정" 이라고 적어 두었는데 틀린 말이었다. 실제 값은
 `#6633FF · #1A87FF · #29DC7F · #F249AA · #F86C25` 이고, 이건 primary-400 과
 secondary blue·green·pink·orange 의 400 단계다. 이미 Dropshot 스케일을
@@ -60,6 +121,8 @@ en/ko 만 남기면서 두 언어 모두 `dir` 이 `ltr` 이 됐고, 그래서 �
 
 ### A-6. 상호작용 상태 — 불투명도에서 스케일로
 
+> **롤백됨 (0절).** shadcn 의 불투명도 방식으로 돌아갔다.
+
 shadcn 은 `hover:bg-primary/80` 처럼 불투명도로 상태를 만든다. 이 방식은 뒤에
 무엇이 있느냐에 따라 색이 달라진다. 카드(`#1F242A`) 위에서 `bg-primary/80` 은
 `#5830D4` 가 되고 채도가 100% 에서 65.6% 로 떨어진다.
@@ -68,6 +131,8 @@ Dropshot 은 스케일 단계로 만든다. 배경과 무관하게 언제나 같
 primary 를 12단계로 정의해 둔 이유가 이것인데 그중 한 단계만 쓰고 있었다.
 
 ### A-7. 그림자 — 두 종으로
+
+> **롤백됨 (0절).** shadcn 의 크기별 그림자 사다리로 돌아갔다.
 
 Dropshot 에는 그림자가 둘뿐이다. 크기별 사다리가 아니라 쓰임새로 나뉜다.
 
@@ -84,6 +149,8 @@ Dropshot 에는 그림자가 둘뿐이다. 크기별 사다리가 아니라 쓰�
 툴팁·토스트·다이얼로그에는 원래 그림자가 아예 없었다. 넣어 주었다.
 
 ### A-8. Secondary 스케일을 시맨틱에 연결
+
+> **롤백됨 (0절).** 시맨틱 색은 upstream 값으로 돌아갔다.
 
 Dropshot 은 blue·red·green·pink·orange 를 각 9단계로 정의해 두었는데 45개 중
 하나도 안 쓰이고 있었다. 실사용 관례대로 연결했다.
@@ -106,6 +173,8 @@ Dropshot 은 blue·red·green·pink·orange 를 각 9단계로 정의해 두었�
 
 ### A-9. 모션 — Dropshot 값으로
 
+> **롤백됨 (0절).** `duration-100` 과 `animate-pulse` 로 돌아갔다.
+
 값은 `apps/aiStudio/web/tailwind.config.ts` 에서 그대로 가져왔다.
 
 | 토큰 | 값 |
@@ -127,6 +196,8 @@ Dropshot 것(왼쪽에서 오른쪽으로 훑고 지나가는 빛)으로 바꿨�
 > `zoom-in-95` 를 `zoom-in-75` 로 바꾸면 된다.
 
 ### A-10. z-index·스크롤바
+
+> **롤백됨 (0절).** 전부 `z-50` 으로 돌아갔고 스크롤바 유틸리티는 지웠다.
 
 shadcn 은 떠 있는 것에 전부 `z-50` 을 준다. 143개 파일이 같은 값이라 DOM 순서로만
 겹침이 정해진다. Dropshot 은 층을 나눠 두었다.
@@ -215,6 +286,8 @@ rss.xml, 홈 화면의 Announcement 배너, Typeset·Directory 문서, `/colors`
 
 ### B-5. 드롭샷 토큰화 — 완료
 
+> **대부분 롤백됨 (0절).** 색·반경·타이포 램프는 되돌렸고 Dropshot Sans 만 남았다.
+
 `.dark` 는 TOKEN-MAP 원본 값, 반경은 `rounded-N = N×4px`, 폰트는 Dropshot Sans
 세 웨이트를 CDN 에서 받는다. Foundation 섹션에 Colors·Typography 두 페이지를 새로 넣었다.
 
@@ -268,6 +341,8 @@ value·name·id·href 같은 식별자는 손대지 않았다. 고유명사 6종
 
 ### B-10. Foundation·Brand 섹션 — 완료
 
+> **지움 (0절).** 되돌린 토큰을 문서화하던 페이지라 함께 걷어냈다.
+
 - Foundation 에 Icons 를 더했다. aiStudio CDN(`cdn.aistudio.dropshot.io`)에서
   받은 70개다. 24×24 가 64개로 이게 아이콘 체계의 본체이고, 그리드를 벗어난
   여섯 개는 따로 적었다. `fill`·`stroke` 를 `currentColor` 로 바꿔 인라인했으므로
@@ -287,10 +362,10 @@ value·name·id·href 같은 식별자는 손대지 않았다. 고유명사 6종
 | ---- | -------------------------------------------------------------------------------------------------------------------- |
 | C-1  | 문서 한국어화를 8배치로 쪼개 커밋. 배치 단위로 되돌릴 수 있다                                                        |
 | C-2  | 조사 앞 공백을 붙여 씀. `` `Button` 을 `` 가 아니라 `` `Button`을 ``                                                 |
-| C-3  | **라이트 팔레트를 파생해서 만듦.** 드롭샷에 공식 값이 없어 같은 램프를 뒤집었다. 확정값이 아니다. 기본 테마는 `dark` |
-| C-4  | 타이포 램프 20개는 `@utility` 로만 노출. 컴포넌트 41곳 클래스 교체는 하지 않음                                       |
-| C-5  | 반경 배수 계산을 걷어내고 실제 값을 직접 박음                                                                        |
-| C-6  | next/font 의 Geist 제거. 클래스 선택자가 `:root` 를 이겨 브랜드 폰트를 덮음                                          |
+| C-3  | ~~라이트 팔레트를 파생해서 만듦~~ — **롤백됨(0절).** 팔레트는 upstream 으로 돌아갔다. 기본 테마 `dark` 만 남았다 |
+| C-4  | ~~타이포 램프 20개를 `@utility` 로 노출~~ — **롤백됨(0절).** 유틸리티를 지웠다                                       |
+| C-5  | ~~반경 배수 계산을 걷어냄~~ — **롤백됨(0절).** `calc(var(--radius) * n)` 으로 돌아갔다                               |
+| C-6  | next/font 의 Geist 제거. 클래스 선택자가 `:root` 를 이겨 브랜드 폰트를 덮음. Dropshot Sans 를 남기기로 해 유지        |
 | C-7  | `<html lang="ko">`                                                                                                   |
 | C-8  | 도달 불가 코드 삭제. `return []` 뒤에 원본 코드가 남아 `tsc` 가 깨져 있었다                                          |
 | C-9  | 홈 화면의 "Build Your Own" 버튼이 지워진 `/create` 로 가고 있어 `/docs/components` 로 돌렸다                         |
@@ -299,19 +374,16 @@ value·name·id·href 같은 식별자는 손대지 않았다. 고유명사 6종
 
 ## D. 남은 것
 
-- **차트 팔레트는 임시값이다.** 드롭샷에 차트 색이 없어 secondary 400 단계를
-  색상환 순서로 임의 배정했다. → **A 항목에 가까운 결정 사항**
 - **`## RTL` 섹션은 이제 LTR 로 렌더된다.** English·한국어 둘 다 `ltr` 이라
   방향 시연이 되지 않는다. 지시대로 en/ko 만 남긴 결과다. 섹션을 지울지 결정 필요
 - **`registry/bases/base/blocks/*` 는 영어 그대로다.** dashboard-01, sidebar-01~16,
   login-01~05 등. 문서에서 이름만 언급될 뿐 렌더되는 페이지가 없어 손대지 않았다.
   사용자가 `shadcn add` 로 설치하는 템플릿이라 한국어화가 오히려 어색할 수 있다
 - 로컬 시각 확인은 지침대로 dev 서버를 띄우지 않아 배포된 프리뷰로만 했다.
-  이 저장소에 `bun` 이 없어 `registry:build` 를 로컬에서 돌리지 못했다
-  (Vercel 빌드에서는 돌아간다)
+  `registry:build` 는 루트의 `tsx` 로 로컬에서도 돌아간다 (0절 참고).
 
-### D 에서 빠진 것 — 이번에 처리 완료
+### D 에서 빠진 것 — 처리 완료
 
-- Calendar 데모 한국어 달력 (`date-fns/locale` 의 `ko`)
-- 텍스트 버튼 완전 pill(69px)
-- 타이포그래피 램프 20단계를 `registry/styles/style-*.css` 의 `@apply` 에 반영
+- Calendar 데모 한국어 달력 (`date-fns/locale` 의 `ko`) — 남아 있다
+- ~~텍스트 버튼 완전 pill(69px)~~ — 롤백됨(0절)
+- ~~타이포그래피 램프 20단계를 `@apply` 에 반영~~ — 롤백됨(0절)
