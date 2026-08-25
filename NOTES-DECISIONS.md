@@ -126,6 +126,34 @@ Dropshot 것(왼쪽에서 오른쪽으로 훑고 지나가는 빛)으로 바꿨�
 > **확인이 필요한 것:** 이 판단은 되돌리기 쉽다. 원본 그대로 가려면
 > `zoom-in-95` 를 `zoom-in-75` 로 바꾸면 된다.
 
+### A-10. z-index·스크롤바
+
+shadcn 은 떠 있는 것에 전부 `z-50` 을 준다. 143개 파일이 같은 값이라 DOM 순서로만
+겹침이 정해진다. Dropshot 은 층을 나눠 두었다.
+
+| 층 | 값 | 무엇 |
+|---|---|---|
+| toast | 200 | 토스트 |
+| modalAbove | 151 | 모달 위에 뜨는 것 |
+| modal | 150 | 대화 상자·드로어·시트·명령 팔레트 |
+| gnb | 100 | 사이트 헤더 |
+| gnbBelow | 99 | 문서 사이드바 |
+| filter | 20 | 필터 |
+| floating | 10 | 흐름 안에서 뜨는 것 |
+
+**떠 있는 면은 `dropdown: 10` 이 아니라 `modalAbove: 151` 로 두었다.** Dropshot 의
+`dropdown: 10` 은 모달 위로 뜰 일이 없는 자리 기준이다. 컴포넌트 라이브러리는
+대화 상자 안에서도 드롭다운이 열리므로 10 을 그대로 쓰면 뒤로 숨는다. 실제로
+그런 데모가 셋 있다 — `dropdown-menu-dialog`, `combobox-responsive`,
+`breadcrumb-responsive`.
+
+Dropshot 의 `zIndex.ts` 에도 `// TODO : 추후 컨벤션에 맞게 zIndex 정리하기` 가
+달려 있다. 원본에서도 정리되지 않은 영역이다.
+
+스크롤바는 `.scroll-style`(6px, `#4D4D4D`)과 `.scroll-style-dropdown`(4px,
+`#393E46`)을 유틸리티로 넣었다. 아직 어디에도 적용하지 않았다. 필요한 자리에
+붙여 쓰면 된다.
+
 ## B. 처리가 끝난 것
 
 ### B-1. Vercel 빌드 메모리 초과 — 해결

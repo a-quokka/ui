@@ -33,12 +33,12 @@ function HoverCardContent({
         alignOffset={alignOffset}
         side={side}
         sideOffset={sideOffset}
-        className="isolate z-50"
+        className="isolate z-151"
       >
         <PreviewCardPrimitive.Popup
           data-slot="hover-card-content"
           className={cn(
-            "cn-hover-card-content cn-hover-card-content-logical z-50 origin-(--transform-origin) outline-hidden",
+            "cn-hover-card-content cn-hover-card-content-logical z-151 origin-(--transform-origin) outline-hidden",
             className
           )}
           {...props}

@@ -552,6 +552,40 @@
   @apply mx-auto max-w-[1400px] px-4 3xl:max-w-screen-2xl lg:px-8;
 }
 
+@utility scroll-style {
+  /* Dropshot scrollBar.ts — 6px, thumb #4D4D4D r3 */
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #4d4d4d;
+    border-radius: 3px;
+  }
+  scrollbar-width: thin;
+  scrollbar-color: #4d4d4d transparent;
+}
+
+@utility scroll-style-dropdown {
+  /* 4px, thumb #393E46 r2 — 드롭다운처럼 좁은 면에서 쓴다 */
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #393e46;
+    border-radius: 2px;
+  }
+  scrollbar-width: thin;
+  scrollbar-color: #393e46 transparent;
+}
+
 @utility no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
