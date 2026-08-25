@@ -20,9 +20,10 @@ import tailwind from "@tailwindcss/postcss"
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const V4 = path.resolve(HERE, "..")
 const OUT = path.resolve(V4, "../../dropshot-export")
+const PKG = path.join(OUT, "packages/design-system")
 const GLOBALS = path.join(V4, "app/globals.css")
 
-if (!fs.existsSync(path.join(OUT, "components"))) {
+if (!fs.existsSync(path.join(PKG, "components"))) {
   console.error("먼저 export-dropshot.mts 를 돌려라. 내보낸 컴포넌트가 없다.")
   process.exit(1)
 }
@@ -73,7 +74,7 @@ const input = `/* Dropshot UI — 미리 컴파일한 스타일. 손으로 고�
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@source "${path.join(OUT, "components")}";
+@source "${path.join(PKG, "components")}";
 
 ${parts.join("\n\n")}
 `
@@ -85,11 +86,12 @@ fs.mkdirSync(buildDir, { recursive: true })
 const inputPath = path.join(buildDir, "input.css")
 fs.writeFileSync(inputPath, input)
 
+const outPath = path.join(PKG, "dropshot-ui.css")
 const result = await postcss([tailwind()]).process(input, {
   from: inputPath,
-  to: path.join(OUT, "dropshot-ui.css"),
+  to: outPath,
 })
 
-fs.writeFileSync(path.join(OUT, "dropshot-ui.css"), result.css)
+fs.writeFileSync(outPath, result.css)
 const kb = (result.css.length / 1024).toFixed(0)
 console.log(`\ndropshot-ui.css 생성 — ${kb} KB`)
