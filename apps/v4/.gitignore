@@ -61,3 +61,6 @@ next-env.d.ts
 # `pnpm registry:build --style all`). See styles/README.md.
 /styles/*
 !/styles/README.md
+
+# Dropshot CSS 내보내기 중간 산출물
+/.dropshot-css-build/
