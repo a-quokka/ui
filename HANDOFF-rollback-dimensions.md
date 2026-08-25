@@ -92,6 +92,31 @@ find .next -name '*.css' -path '*static*' -exec grep -hoiE '#(15191e|1f242a|e62e
 배포 확인은 프로덕션을 크롤해서 모든 문서 페이지가 200 인지, 죽은 내부 링크가
 없는지 본다.
 
+### 배포 뒤에는 배포된 CSS 의 `:root` 까지 봐야 한다
+
+**Vercel 빌드 캐시가 `globals.css` 의 통과 CSS 를 재사용한 적이 있다.** 색·UI
+롤백 배포에서 실제로 겪었다. 빌드 로그에 `Restored build cache from previous
+deployment` 가 찍히면 Turbopack 이 `:root` 변수 블록과 `@keyframes` 를 캐시에서
+그대로 가져오고, Tailwind 가 만드는 **유틸리티만** 새로 생성한다. 그래서 한
+CSS 안에 신구가 섞인다.
+
+이때 페이지 목록·HTML·유틸리티는 전부 새것이라 **렌더된 HTML 검사는 통과한다.**
+색과 반경만 예전 값으로 나온다. HTML 만 보면 절대 못 잡는다.
+
+```bash
+B=https://shadcn-ui-fork.vercel.app
+curl -s $B/docs/components/base/button > p.html
+for c in $(grep -oE '/_next/static/immutable/chunks/[^"]*\.css' p.html | sort -u); do
+  curl -s "$B$c"; done > prod.css
+grep -c -- '--radius:8px' prod.css        # 0 이어야 한다 (구 드롭샷 반경)
+grep -c 'translate(110%)' prod.css        # 0 이어야 한다 (구 스켈레톤 keyframe)
+grep -c -- '--radius:\.625rem' prod.css   # 1 이상이어야 한다 (upstream 반경)
+```
+
+걸렸다면 소스를 고칠 게 아니라 **빌드 캐시 없이 재배포**한다. Vercel →
+Deployments → 해당 배포의 ⋯ → Redeploy → **Use existing Build Cache 체크 해제**.
+MCP 도구로는 캐시를 끌 수 없으니 사용자에게 부탁해야 한다.
+
 ### dev 서버를 띄우지 마라
 
 사용자 지침이다. 확인은 배포된 프리뷰나 프로덕션으로 한다. 필요하면 명령만
