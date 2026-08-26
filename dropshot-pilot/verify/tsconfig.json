@@ -22,5 +22,10 @@
       ]
     }
   },
-  "include": ["../components/**/*.tsx", "../overlap/**/*.tsx", "shims/**/*.ts"]
+  "include": [
+    "../components/**/*.tsx",
+    "../overlap/**/*.tsx",
+    "usage/**/*.tsx",
+    "shims/**/*.ts"
+  ]
 }
