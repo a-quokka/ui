@@ -15,6 +15,11 @@ import { cn } from '@configs/tailwind';
  *
  * ! `AlertAction` 을 쓰면 오른쪽에 72px 를 비워 둔다(`pr-18`). 버튼이 본문 위로
  *   겹치지 않게 하려는 원본 의도라 값을 그대로 남겼다.
+ *
+ * ! 본문의 줄바꿈 규칙을 뒤집어 적었다. 원본은 `text-balance md:text-pretty`
+ *   (좁은 화면에서 balance, 768px 이상에서 pretty)인데, 드롭샷의 화면 접두사는
+ *   **max-width 기준**이라 `md:` 를 그대로 쓰면 뜻이 반대가 된다. 기본을 pretty 로
+ *   두고 `sm:`(1023px 이하)에서 balance 로 돌린다. 의도는 같고 기준점만 다르다.
  */
 const alertVariants = cva(
   "group/alert relative grid w-full gap-0.5 rounded-2 border px-2.5 py-2 text-left font-body3 has-[[data-slot=alert-action]]:pr-18 has-[>svg]:grid-cols-[auto_1fr] has-[>svg]:gap-x-2 [&>svg]:row-span-2 [&>svg]:translate-y-0.5 [&>svg]:text-current [&>svg:not([class*='size-'])]:size-4",
@@ -69,7 +74,7 @@ const AlertDescription = (props: AlertDescriptionProps) => {
   return (
     <div
       className={cn(
-        'font-body3 text-balance text-grayscale-400 md:text-pretty [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-grayscale-300 [&_p:not(:last-child)]:mb-4',
+        'font-body3 text-pretty text-grayscale-400 sm:text-balance [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:hover:text-grayscale-300 [&_p:not(:last-child)]:mb-4',
         className
       )}
       data-slot={'alert-description'}

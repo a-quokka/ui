@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "../..",
+    "paths": {
+      "@configs/tailwind": ["dropshot-pilot/verify/shims/configs-tailwind.ts"],
+      "react": ["apps/v4/node_modules/@types/react"],
+      "react/jsx-runtime": ["apps/v4/node_modules/@types/react/jsx-runtime"],
+      "clsx": ["apps/v4/node_modules/clsx"],
+      "tailwind-merge": ["apps/v4/node_modules/tailwind-merge"],
+      "class-variance-authority": [
+        "apps/v4/node_modules/class-variance-authority"
+      ]
+    }
+  },
+  "include": ["../components/**/*.tsx", "shims/**/*.ts"]
+}
