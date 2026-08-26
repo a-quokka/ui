@@ -173,15 +173,22 @@ Toggle 은 원본에 `xs` 가 없어 `S`·`M`·`L` 만 둔다. 기본값은 `M` 
 
 `rounded-N = N × 4px`, `N` 은 1~6 이다. 그 위는 없다.
 
-| shadcn | px | Dropshot |
-| --- | --- | --- |
-| `rounded-sm` | 4 | `rounded-1` |
-| `rounded-md` | 6 | `rounded-1` 또는 `rounded-2` — 실측 후 결정 |
-| `rounded-lg` | 8 | `rounded-2` |
-| `rounded-xl` | 12 | `rounded-3` |
-| `rounded-2xl` | 16 | `rounded-4` |
-| `rounded-3xl` | 20 | `rounded-5` |
-| `rounded-4xl` | 26 | `rounded-6`(24) 또는 `rounded-full` — 의도가 pill 이면 full |
+shadcn 쪽 값은 `--radius: 0.625rem`(10px)에서 파생된다. 실제 px 로 환산해 옮긴다.
+
+| shadcn | 계산 | px | Dropshot |
+| --- | --- | --- | --- |
+| `rounded-sm` | `--radius × 0.6` | 6 | `rounded-1`(4) 또는 `rounded-2`(8) — 자리를 보고 정한다 |
+| `rounded-md` | `--radius × 0.8` | 8 | `rounded-2` |
+| `rounded-lg` | `--radius` | 10 | **`rounded-2`(8)** — 10px 단계가 없다 |
+| `rounded-xl` | `--radius × 1.4` | 14 | `rounded-3`(12) 또는 `rounded-4`(16) |
+| `rounded-2xl` | `--radius × 1.8` | 18 | `rounded-4`(16) 또는 `rounded-5`(20) |
+| `rounded-3xl` | `--radius × 2.2` | 22 | `rounded-5`(20) 또는 `rounded-6`(24) |
+| `rounded-4xl` | `--radius × 2.6` | 26 | `rounded-6`(24) 또는 `rounded-full` — 의도가 pill 이면 full |
+
+> ⚠️ **드롭샷 스케일은 4px 배수뿐이라 딱 맞아떨어지는 값이 절반도 안 된다.**
+> 어느 쪽으로 붙일지는 자리마다 다르다. 작은 컨트롤은 내림, 카드·모달처럼 큰 면은
+> 올림이 대체로 맞는다. `InlineButton` 은 10px 을 8px 로 내렸다 — shadcn 자신이
+> 작은 크기(XS·S)에 8px 을 쓰기 때문이다.
 
 ### 그림자·층·모션
 

@@ -164,7 +164,23 @@ function check(file: string, raw: string) {
     if (re.test(s)) add(rel, "v4 전용 문법", label)
   }
 
-  // 6. 코드 규칙
+  /**
+   * 6. 클래스 안의 큰따옴표.
+   *
+   * `[&_svg:not([class*="size-"])]:size-4` 처럼 클래스 문자열에 `"` 가 들어가면
+   * 렌더된 `class="..."` 속성이 거기서 닫힌다. **그 뒤 클래스가 통째로 사라진다.**
+   * 컴파일도 되고 타입 검사도 통과하므로 화면을 봐야만 알아챈다 — 실제로 여백이
+   * 사라진 채로 한참 갔다. shadcn 원본은 작은따옴표를 쓴다.
+   */
+  for (const m of s.matchAll(/\[[^\]]*\*="[^"]*"[^\]]*\]/g)) {
+    add(
+      rel,
+      "클래스 안 큰따옴표",
+      `\`${m[0]}\` — 렌더된 class 속성이 여기서 닫혀 뒤 클래스가 사라진다. 작은따옴표를 쓴다`
+    )
+  }
+
+  // 7. 코드 규칙
   if (/export\s+default/.test(s)) {
     add(rel, "export 규칙", "`export default` 대신 파일 맨 아래 named export 로 모은다")
   }

@@ -29,6 +29,22 @@ import { cn } from '@configs/tailwind';
  * ! `themeColor` 에 `ghost`·`outline` 이 섞여 있는 것은 드롭샷 `Button` 의 관례를
  *   따른 것이다. 거기서도 색 목록 안에 `ghost` 가 들어 있다.
  *
+ * ## 반경을 `rounded-2`(8px)로 둔 이유
+ *
+ * shadcn 버튼의 반경은 크기마다 다르다.
+ *
+ * | 크기 | shadcn 실제 값 | 여기 |
+ * | --- | --- | --- |
+ * | XS · S | `min(var(--radius-md), 10\|12px)` = **8px** | `rounded-2` — 정확히 같다 |
+ * | M · L | `rounded-lg` = `--radius` = **10px** | `rounded-2` — 2px 작다 |
+ *
+ * 드롭샷 반경 스케일은 `rounded-N = N × 4px` 이라 **10px 단계가 없다.** 8px 과 12px
+ * 사이에서 8px 을 골랐다. shadcn 자신이 작은 크기에 쓰는 값이고, 12px 로 올리면
+ * 드롭샷 `Button` 의 pill 과 더 멀어진다.
+ *
+ * 드롭샷 `Button` 은 `rounded-[69px]` 완전 pill 이다. 이 컴포넌트는 치수를 shadcn
+ * 에서 가져오는 것이 원칙이라 pill 을 따르지 않는다.
+ *
  * ## 버튼 모양의 링크가 필요하면
  *
  * shadcn 은 `<Button render={<a … />} nativeButton={false} />` 로 태그를 바꾼다.
@@ -58,11 +74,21 @@ const inlineButtonVariants = cva(
           'border-solid border-grayscale-700 bg-transparent text-white hover:bg-grayscale-800 active:bg-grayscale-700',
         ghost: 'bg-transparent text-white hover:bg-grayscale-800 active:bg-grayscale-700',
       },
+      /**
+       * 치수는 shadcn 것을 그대로 쓰고 글꼴만 드롭샷 램프에서 가장 가까운 단계로
+       * 바꾼다. 이게 이 작업의 원칙이다 — 색과 글꼴은 드롭샷, 나머지 px 은 shadcn.
+       *
+       *   shadcn `text-xs`(12) + medium   → `font-button4` 12/500/20
+       *   shadcn `text-sm`(14) + medium   → `font-button3` 14/500/22
+       *
+       * ! shadcn `S` 의 글자는 `text-[0.8rem]`(12.8px)이다. 드롭샷 램프에 12.8px 이
+       *   없어 `font-button4`(12px)로 내렸다. 0.8px 차이다.
+       */
       size: {
-        XS: 'gap-1 font-button4 [&_svg:not([class*="size-"])]:size-3',
-        S: 'gap-1 font-button4 [&_svg:not([class*="size-"])]:size-3.5',
-        M: 'gap-1.5 font-button3 [&_svg:not([class*="size-"])]:size-4',
-        L: 'gap-1.5 font-button3 [&_svg:not([class*="size-"])]:size-4',
+        XS: "gap-1 font-button4 [&_svg:not([class*='size-'])]:size-3",
+        S: "gap-1 font-button4 [&_svg:not([class*='size-'])]:size-3.5",
+        M: "gap-1.5 font-button3 [&_svg:not([class*='size-'])]:size-4",
+        L: "gap-1.5 font-button3 [&_svg:not([class*='size-'])]:size-4",
       },
       /** 정사각형으로 만들고 좌우 여백을 없앤다. 아이콘 하나만 넣는 자리다. */
       iconOnly: {
@@ -71,32 +97,55 @@ const inlineButtonVariants = cva(
       },
     },
     compoundVariants: [
-      // 글자가 있는 경우 — 높이와 좌우 여백. 아이콘이 붙는 쪽은 여백을 조금 줄인다.
+      /**
+       * 글자가 있는 경우 — 여백과 높이는 shadcn 그대로다.
+       *
+       *   XS  h-6 px-2     24px 높이 · 좌우 8px
+       *   S   h-7 px-2.5   28px · 10px
+       *   M   h-8 px-2.5   32px · 10px
+       *   L   h-9 px-2.5   36px · 10px
+       *
+       * 다만 높이를 `h-*` 로 **박지 않고** `min-h-*` + `py-*` 로 만든다. 박아 두면
+       * 세로 여백이 "남는 공간"일 뿐이라 글자가 커지거나 두 줄이 되면 여백이 0이
+       * 되고 결국 넘친다. 이렇게 두면 최소 여백이 보장되고 버튼이 늘어난다.
+       * 보이는 높이는 shadcn 과 같다.
+       *
+       * ! 기본 클래스의 `border border-transparent` 때문에 XS·S 는 2px 커진다
+       *   (26 · 30px). 이 투명 테두리가 있어야 `outline` 변형으로 바꿔도 크기가
+       *   흔들리지 않는다. M · L 은 `min-h` 가 이겨 32 · 36px 그대로다.
+       */
       {
         iconOnly: false,
         size: 'XS',
-        class: 'h-6 px-2 has-[[data-icon=inline-end]]:pr-1.5 has-[[data-icon=inline-start]]:pl-1.5',
+        class:
+          'min-h-6 px-2 py-0.5 has-[[data-icon=inline-end]]:pr-1.5 has-[[data-icon=inline-start]]:pl-1.5',
       },
       {
         iconOnly: false,
         size: 'S',
-        class: 'h-7 px-2.5 has-[[data-icon=inline-end]]:pr-1.5 has-[[data-icon=inline-start]]:pl-1.5',
+        class:
+          'min-h-7 px-2.5 py-1 has-[[data-icon=inline-end]]:pr-1.5 has-[[data-icon=inline-start]]:pl-1.5',
       },
       {
         iconOnly: false,
         size: 'M',
-        class: 'h-8 px-2.5 has-[[data-icon=inline-end]]:pr-2 has-[[data-icon=inline-start]]:pl-2',
+        class:
+          'min-h-8 px-2.5 py-1 has-[[data-icon=inline-end]]:pr-2 has-[[data-icon=inline-start]]:pl-2',
       },
       {
         iconOnly: false,
         size: 'L',
-        class: 'h-9 px-2.5 has-[[data-icon=inline-end]]:pr-2 has-[[data-icon=inline-start]]:pl-2',
+        class:
+          'min-h-9 px-2.5 py-1.5 has-[[data-icon=inline-end]]:pr-2 has-[[data-icon=inline-start]]:pl-2',
       },
-      // 아이콘만 있는 경우 — 정사각형
-      { iconOnly: true, size: 'XS', class: 'size-6' },
-      { iconOnly: true, size: 'S', class: 'size-7' },
-      { iconOnly: true, size: 'M', class: 'size-8' },
-      { iconOnly: true, size: 'L', class: 'size-9' },
+      /**
+       * 아이콘만 있는 경우 — shadcn 의 `size-6`·`size-7`·`size-8`·`size-9` 정사각형.
+       * 여기도 최소 여백을 두어 아이콘이 커지면 잘리지 않고 늘어난다.
+       */
+      { iconOnly: true, size: 'XS', class: 'min-h-6 min-w-6 p-0.5' },
+      { iconOnly: true, size: 'S', class: 'min-h-7 min-w-7 p-1' },
+      { iconOnly: true, size: 'M', class: 'min-h-8 min-w-8 p-1' },
+      { iconOnly: true, size: 'L', class: 'min-h-9 min-w-9 p-1.5' },
       // 꺼진 상태 — 면을 채우는 것과 비우는 것의 처리가 다르다.
       // 드롭샷 `Button` 이 compoundVariants 로 같은 구분을 한다.
       {

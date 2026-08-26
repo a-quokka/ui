@@ -26,7 +26,7 @@ const toggleVariants = cva(
         outline: 'border border-grayscale-700 bg-transparent hover:bg-grayscale-800',
       },
       size: {
-        S: 'h-7 min-w-7 px-2.5 font-button4 has-[[data-icon=inline-end]]:pr-1.5 has-[[data-icon=inline-start]]:pl-1.5 [&_svg:not([class*="size-"])]:size-3.5',
+        S: "h-7 min-w-7 px-2.5 font-button4 has-[[data-icon=inline-end]]:pr-1.5 has-[[data-icon=inline-start]]:pl-1.5 [&_svg:not([class*='size-'])]:size-3.5",
         M: 'h-8 min-w-8 px-2.5 has-[[data-icon=inline-end]]:pr-2 has-[[data-icon=inline-start]]:pl-2',
         L: 'h-9 min-w-9 px-2.5 has-[[data-icon=inline-end]]:pr-2 has-[[data-icon=inline-start]]:pl-2',
       },

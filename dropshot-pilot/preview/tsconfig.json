@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "../..",
+    "paths": {
+      "@configs/tailwind": ["dropshot-pilot/verify/shims/configs-tailwind.ts"],
+      "react": ["apps/v4/node_modules/react/index.js"],
+      "react/jsx-runtime": ["apps/v4/node_modules/react/jsx-runtime.js"],
+      "clsx": ["apps/v4/node_modules/clsx/dist/clsx.mjs"],
+      "tailwind-merge": ["apps/v4/node_modules/tailwind-merge/dist/bundle-mjs.mjs"],
+      "class-variance-authority": [
+        "apps/v4/node_modules/class-variance-authority/dist/index.mjs"
+      ]
+    }
+  },
+  "include": ["*.mts", "../components/**/*.tsx"]
+}

@@ -57,3 +57,12 @@ docs/adr
 
 # Dropshot 내보내기 산출물 — apps/v4/scripts/export-dropshot*.mts 가 다시 만든다
 /dropshot-export/
+
+# 드롭샷 미리보기 산출물 — dropshot-pilot/preview 의 스크립트가 다시 만든다
+/dropshot-pilot/preview/fonts/
+/dropshot-pilot/preview/fonts.css
+/dropshot-pilot/preview/out.css
+/dropshot-pilot/preview/input.css
+/dropshot-pilot/preview/index.html
+/dropshot-pilot/preview/standalone.html
+/dropshot-pilot/preview/artifact.html

@@ -40,10 +40,10 @@ const buttonVariants = cva(
       },
       // shadcn 의 크기 체계를 드롭샷 어휘로 옮긴 것 — xs→XS · sm→S · default→M · lg→L
       size: {
-        XS: 'h-6 gap-1 px-2 font-button4 [&_svg:not([class*="size-"])]:size-3',
-        S: 'h-7 gap-1 px-2.5 font-button4 [&_svg:not([class*="size-"])]:size-3.5',
-        M: 'h-8 px-2.5 font-button3 [&_svg:not([class*="size-"])]:size-4',
-        L: 'h-9 px-2.5 font-button3 [&_svg:not([class*="size-"])]:size-4',
+        XS: "h-6 gap-1 px-2 font-button4 [&_svg:not([class*='size-'])]:size-3",
+        S: "h-7 gap-1 px-2.5 font-button4 [&_svg:not([class*='size-'])]:size-3.5",
+        M: "h-8 px-2.5 font-button3 [&_svg:not([class*='size-'])]:size-4",
+        L: "h-9 px-2.5 font-button3 [&_svg:not([class*='size-'])]:size-4",
       },
       disabled: {
         true: 'disabled:bg-grayscale-600 disabled:text-grayscale-400',
