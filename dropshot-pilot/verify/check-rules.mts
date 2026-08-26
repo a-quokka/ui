@@ -4,7 +4,7 @@
  *   cd dropshot-pilot/verify
  *   ../../node_modules/.bin/tsx ./check-rules.mts [검사할 폴더]
  *
- * 기본값은 `dropshot-pilot/components` 다. 폴더를 넘기면 그쪽을 본다.
+ * 기본값은 `dropshot-pilot/packages/design-system/components` 다. 폴더를 넘기면 그쪽을 본다.
  *
  * 타입 검사는 따로다.
  *   ../../node_modules/.bin/tsc --noEmit -p tsconfig.json
@@ -16,7 +16,7 @@ import { fileURLToPath } from "node:url"
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 const TARGET = process.argv[2]
   ? path.resolve(process.argv[2])
-  : path.resolve(HERE, "../components")
+  : path.resolve(HERE, "../packages/design-system/components")
 
 // ── 드롭샷 토큰 (configs/tailwind/src 에서 옮겨 적은 것) ────────────────────
 const COLOR_SCALES: Record<string, number[]> = {
@@ -140,9 +140,24 @@ function check(file: string, raw: string) {
   )) {
     if (!TYPO.has(m[0])) add(rel, "없는 글꼴", `\`${m[0]}\``)
   }
-  for (const m of s.matchAll(/\brounded-(?:\w+)\b/g)) {
-    if (m[0].startsWith("rounded-[")) continue
-    if (!RADIUS.has(m[0])) {
+  /**
+   * 반경. `rounded-b-2` 처럼 방향이 붙은 것을 `rounded-b` 로 잘라 읽으면 안 된다.
+   * 방향을 먼저 떼고 남은 값이 드롭샷 스케일에 있는지 본다.
+   */
+  const DIR = /^(t|r|b|l|tl|tr|bl|br|s|e|ss|se|es|ee)$/
+  for (const m of s.matchAll(/\brounded(?:-[\w[\]()%.,-]+)*/g)) {
+    const parts = m[0].split("-").slice(1)
+    if (parts.length === 0) {
+      add(rel, "없는 반경", "`rounded` — 드롭샷 스케일에는 기본값이 없다. rounded-1~6 을 쓴다")
+      continue
+    }
+    const value = DIR.test(parts[0]) ? parts.slice(1).join("-") : parts.join("-")
+    if (value.startsWith("[")) continue // 임의 값은 통과
+    if (!value) {
+      add(rel, "없는 반경", `\`${m[0]}\` — 크기가 없다. 드롭샷 스케일에는 기본값이 없다`)
+      continue
+    }
+    if (!RADIUS.has(`rounded-${value}`)) {
       add(rel, "없는 반경", `\`${m[0]}\` — rounded-1~6 · full · none 만 있다`)
     }
   }
@@ -203,9 +218,23 @@ const walk = (dir: string) => {
 }
 walk(TARGET)
 
-for (const f of files) check(f, fs.readFileSync(f, "utf8"))
+/**
+ * 드롭샷에서 포크해 온 복사본은 검사하지 않는다. 이식 규칙은 **이 저장소에서 새로
+ * 만드는 것**에 적용하는 것이고, 복사본은 원본 그대로 두는 게 목적이다.
+ */
+const FORKED = "드롭샷 저장소의 복사본이다"
+let skipped = 0
+for (const f of files) {
+  const src = fs.readFileSync(f, "utf8")
+  if (src.includes(FORKED)) {
+    skipped++
+    continue
+  }
+  check(f, src)
+}
 
-console.log(`\n검사 대상 ${files.length}개 — ${TARGET}`)
+console.log(`\n검사 대상 ${files.length - skipped}개 — ${TARGET}`)
+if (skipped) console.log(`  드롭샷 복사본 ${skipped}개는 건너뛴다`)
 
 const report = (severity: Severity, label: string) => {
   const rows = findings.filter((f) => f.severity === severity)

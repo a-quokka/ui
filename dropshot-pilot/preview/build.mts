@@ -17,7 +17,7 @@ import path from "node:path"
 import { fileURLToPath } from "node:url"
 import { cva } from "class-variance-authority"
 import { cn } from "@configs/tailwind"
-import { inlineButtonVariants } from "../components/Button/InlineButton"
+import { inlineButtonVariants } from "../packages/design-system/components/Button/InlineButton"
 
 const HERE = path.dirname(fileURLToPath(import.meta.url))
 

@@ -66,3 +66,6 @@ docs/adr
 /dropshot-pilot/preview/index.html
 /dropshot-pilot/preview/standalone.html
 /dropshot-pilot/preview/artifact.html
+/dropshot-pilot/node_modules
+/dropshot-pilot/preview/gallery*.html
+/dropshot-pilot/preview/gallery.css

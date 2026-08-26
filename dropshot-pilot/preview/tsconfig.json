@@ -13,6 +13,10 @@
       "@configs/tailwind": ["dropshot-pilot/verify/shims/configs-tailwind.ts"],
       "react": ["apps/v4/node_modules/react/index.js"],
       "react/jsx-runtime": ["apps/v4/node_modules/react/jsx-runtime.js"],
+      "react-dom/server": ["apps/v4/node_modules/react-dom/server.js"],
+      "@base-ui/react/*": ["apps/v4/node_modules/@base-ui/react/*"],
+      "@base-ui/react": ["apps/v4/node_modules/@base-ui/react"],
+      "lucide-react": ["apps/v4/node_modules/lucide-react"],
       "clsx": ["apps/v4/node_modules/clsx/dist/clsx.mjs"],
       "tailwind-merge": ["apps/v4/node_modules/tailwind-merge/dist/bundle-mjs.mjs"],
       "class-variance-authority": [
@@ -20,5 +24,5 @@
       ]
     }
   },
-  "include": ["*.mts", "../components/**/*.tsx"]
+  "include": ["*.mts", "../packages/design-system/components/**/*.tsx"]
 }

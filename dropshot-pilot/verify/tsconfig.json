@@ -12,6 +12,19 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "../..",
     "paths": {
+      "@base-ui/react": ["apps/v4/node_modules/@base-ui/react"],
+      "@base-ui/react/*": ["apps/v4/node_modules/@base-ui/react/*"],
+      "@shadcn/react/*": ["packages/react/src/*"],
+      "lucide-react": ["apps/v4/node_modules/lucide-react"],
+      "sonner": ["apps/v4/node_modules/sonner"],
+      "recharts": ["apps/v4/node_modules/recharts"],
+      "react-day-picker": ["apps/v4/node_modules/react-day-picker"],
+      "react-resizable-panels": ["apps/v4/node_modules/react-resizable-panels"],
+      "next-themes": ["apps/v4/node_modules/next-themes"],
+      "input-otp": ["apps/v4/node_modules/input-otp"],
+      "embla-carousel-react": ["apps/v4/node_modules/embla-carousel-react"],
+      "date-fns/*": ["apps/v4/node_modules/date-fns/*"],
+      "cmdk": ["apps/v4/node_modules/cmdk"],
       "@configs/tailwind": ["dropshot-pilot/verify/shims/configs-tailwind.ts"],
       "react": ["apps/v4/node_modules/@types/react"],
       "react/jsx-runtime": ["apps/v4/node_modules/@types/react/jsx-runtime"],
@@ -23,7 +36,7 @@
     }
   },
   "include": [
-    "../components/**/*.tsx",
+    "../packages/design-system/components/**/*.tsx",
     "../overlap/**/*.tsx",
     "usage/**/*.tsx",
     "shims/**/*.ts"
