@@ -204,6 +204,16 @@ const nextConfig = {
         source: "/init.md",
         destination: "/init/md",
       },
+      // 드롭샷 이식 결과 미리보기. public/design-system 의 정적 HTML 이라
+      // 확장자 없이 열리도록 이어 준다 — Next 는 public 에 디렉터리 색인을 주지 않는다.
+      {
+        source: "/design-system",
+        destination: "/design-system/index.html",
+      },
+      {
+        source: "/design-system/button",
+        destination: "/design-system/button.html",
+      },
     ]
   },
 }
